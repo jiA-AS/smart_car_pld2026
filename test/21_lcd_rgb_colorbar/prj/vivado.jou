@@ -1,0 +1,29 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Thu Jul 23 03:53:56 2026
+# Process ID: 42844
+# Current directory: E:/FPGA/project/smart_car_pld2026/test/21_lcd_rgb_colorbar/prj
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent49476 E:\FPGA\project\smart_car_pld2026\test\21_lcd_rgb_colorbar\prj\lcd_rgb_colorbar.xpr
+# Log file: E:/FPGA/project/smart_car_pld2026/test/21_lcd_rgb_colorbar/prj/vivado.log
+# Journal file: E:/FPGA/project/smart_car_pld2026/test/21_lcd_rgb_colorbar/prj\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project E:/FPGA/project/smart_car_pld2026/test/21_lcd_rgb_colorbar/prj/lcd_rgb_colorbar.xpr
+update_compile_order -fileset sources_1
+save_project_as _lcd_rgb_colorbar E:/FPGA/project/smart_car_pld2026/test/_lcd_rgb_colorbar -force
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+wait_on_run impl_1
+open_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {E:/FPGA/project/smart_car_pld2026/test/_lcd_rgb_colorbar/_lcd_rgb_colorbar.runs/impl_1/lcd_rgb_colorbar.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {E:/FPGA/project/smart_car_pld2026/test/_lcd_rgb_colorbar/_lcd_rgb_colorbar.runs/impl_1/lcd_rgb_colorbar.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]

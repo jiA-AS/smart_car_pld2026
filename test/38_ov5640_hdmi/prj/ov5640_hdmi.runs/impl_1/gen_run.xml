@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a100tfgg484-2" LaunchTime="1762758506">
+  <File Type="BITSTR-BMM" Name="ov5640_hdmi_bd.bmm"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="ov5640_hdmi_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="ov5640_hdmi_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR" Name="ov5640_hdmi_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="ov5640_hdmi.tcl"/>
+  <File Type="OPT-TIMING" Name="ov5640_hdmi_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="ov5640_hdmi_opt.dcp"/>
+  <File Type="ROUTE-PWR-SUM" Name="ov5640_hdmi_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="ov5640_hdmi_reports.tcl"/>
+  <File Type="OPT-DRC" Name="ov5640_hdmi_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="ov5640_hdmi.hwdef"/>
+  <File Type="PWROPT-DCP" Name="ov5640_hdmi_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="ov5640_hdmi_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="ov5640_hdmi_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="ov5640_hdmi_placed.dcp"/>
+  <File Type="PLACE-IO" Name="ov5640_hdmi_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="ov5640_hdmi_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="ov5640_hdmi_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="ov5640_hdmi_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="ov5640_hdmi_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="ov5640_hdmi_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="ov5640_hdmi_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="ov5640_hdmi_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="ov5640_hdmi_postplace_pwropt.dcp"/>
+  <File Type="BG-BIN" Name="ov5640_hdmi.bin"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="ov5640_hdmi_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="ov5640_hdmi_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="ov5640_hdmi_drc_physopted.rpt"/>
+  <File Type="BITSTR-MSK" Name="ov5640_hdmi.msk"/>
+  <File Type="PHYSOPT-TIMING" Name="ov5640_hdmi_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="ov5640_hdmi_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="ov5640_hdmi_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="ov5640_hdmi_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="ov5640_hdmi_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="ov5640_hdmi_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="ov5640_hdmi_drc_routed.rpx"/>
+  <File Type="BITSTR-MMI" Name="ov5640_hdmi.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="ov5640_hdmi_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="ov5640_hdmi_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="ov5640_hdmi_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="ov5640_hdmi_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="ov5640_hdmi_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="ov5640_hdmi_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="ov5640_hdmi_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="ov5640_hdmi_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="ov5640_hdmi_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="ov5640_hdmi_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="ov5640_hdmi_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="ov5640_hdmi_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="ov5640_hdmi_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="ov5640_hdmi_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="ov5640_hdmi_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="ov5640_hdmi_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="ov5640_hdmi_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="ov5640_hdmi_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="ov5640_hdmi_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="ov5640_hdmi_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="ov5640_hdmi_bus_skew_postroute_physopted.pb"/>
+  <File Type="BG-BIT" Name="ov5640_hdmi.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="ov5640_hdmi_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-RBT" Name="ov5640_hdmi.rbt"/>
+  <File Type="BITSTR-NKY" Name="ov5640_hdmi.nky"/>
+  <File Type="PDI-FILE" Name="ov5640_hdmi.pdi"/>
+  <File Type="RCFI_FILE" Name="ov5640_hdmi.rcfi"/>
+  <File Type="CFI_FILE" Name="ov5640_hdmi.cfi"/>
+  <File Type="RNPI_FILE" Name="ov5640_hdmi.rnpi"/>
+  <File Type="NPI_FILE" Name="ov5640_hdmi.npi"/>
+  <File Type="RBD_FILE" Name="ov5640_hdmi.rbd"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="ov5640_hdmi.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="ov5640_hdmi.sysdef"/>
+  <File Type="BG-BGN" Name="ov5640_hdmi.bgn"/>
+  <File Type="BG-DRC" Name="ov5640_hdmi.drc"/>
+  <File Type="RDI-RDI" Name="ov5640_hdmi.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/ip/clk_wiz_0/clk_wiz_0.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/wr_fifo/wr_fifo.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/rd_fifo/rd_fifo.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/mig_7series_0_1/mig_7series_0.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/asyn_rst_syn.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/cmos_capture_data.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/ddr3_fifo_ctrl.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/ddr3_rw.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/ddr3_top.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/dvi_encoder.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/dvi_transmitter_top.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/hdmi_top.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/i2c_dri.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/i2c_ov5640_rgb565_cfg.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/ov5640_dri.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/serializer_10_to_1.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/video_driver.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/ov5640_hdmi.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/mig_7series_0/mig_a.prj">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="ScopedToCell" Val="mig_7series_0"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/mig_7series_0_1/mig_a.prj">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="ScopedToCell" Val="mig_7series_0"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="ov5640_hdmi"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/pin.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/new/pin.xdc"/>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>

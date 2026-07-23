@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Thu Jul 23 03:55:40 2026
+# Process ID: 11020
+# Current directory: E:/FPGA/project/smart_car_pld2026/test/_lcd_rgb_colorbar/_lcd_rgb_colorbar.runs/synth_1
+# Command line: vivado.exe -log lcd_rgb_colorbar.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source lcd_rgb_colorbar.tcl
+# Log file: E:/FPGA/project/smart_car_pld2026/test/_lcd_rgb_colorbar/_lcd_rgb_colorbar.runs/synth_1/lcd_rgb_colorbar.vds
+# Journal file: E:/FPGA/project/smart_car_pld2026/test/_lcd_rgb_colorbar/_lcd_rgb_colorbar.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source lcd_rgb_colorbar.tcl -notrace

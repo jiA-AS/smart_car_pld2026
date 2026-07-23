@@ -1,0 +1,20 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Thu Jul 23 00:10:22 2026
+# Process ID: 47096
+# Current directory: E:/FPGA/project/smart_car_pld2026/test/37_ov5640_lcd/prj
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent68424 E:\FPGA\project\smart_car_pld2026\test\37_ov5640_lcd\prj\ov5640_lcd.xpr
+# Log file: E:/FPGA/project/smart_car_pld2026/test/37_ov5640_lcd/prj/vivado.log
+# Journal file: E:/FPGA/project/smart_car_pld2026/test/37_ov5640_lcd/prj\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project E:/FPGA/project/smart_car_pld2026/test/37_ov5640_lcd/prj/ov5640_lcd.xpr
+update_compile_order -fileset sources_1
+save_project_as _ov5640_lcd E:/FPGA/project/smart_car_pld2026/test/_ov5640_lcd -force
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+wait_on_run impl_1

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Mon Sep 29 17:01:25 2025
+# Process ID: 18844
+# Current directory: D:/Project/FPGA/Project_up/XZ7A100T/19_uart_loopback/prj/uart_loopback.runs/impl_1
+# Command line: vivado.exe -log uart_loopback.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source uart_loopback.tcl -notrace
+# Log file: D:/Project/FPGA/Project_up/XZ7A100T/19_uart_loopback/prj/uart_loopback.runs/impl_1/uart_loopback.vdi
+# Journal file: D:/Project/FPGA/Project_up/XZ7A100T/19_uart_loopback/prj/uart_loopback.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source uart_loopback.tcl -notrace

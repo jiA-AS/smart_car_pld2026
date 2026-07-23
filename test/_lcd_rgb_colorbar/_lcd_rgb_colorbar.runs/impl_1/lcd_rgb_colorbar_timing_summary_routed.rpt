@@ -1,0 +1,1637 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Thu Jul 23 03:56:33 2026
+| Host         : LAPTOP-2K88VM5F running 64-bit major release  (build 9200)
+| Command      : report_timing_summary -max_paths 10 -file lcd_rgb_colorbar_timing_summary_routed.rpt -pb lcd_rgb_colorbar_timing_summary_routed.pb -rpx lcd_rgb_colorbar_timing_summary_routed.rpx -warn_on_violation
+| Design       : lcd_rgb_colorbar
+| Device       : 7a100t-fgg484
+| Speed File   : -2  PRODUCTION 1.23 2018-06-13
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  false
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock
+2. checking constant_clock
+3. checking pulse_width_clock
+4. checking unconstrained_internal_endpoints
+5. checking no_input_delay
+6. checking no_output_delay
+7. checking multiple_clock
+8. checking generated_clocks
+9. checking loops
+10. checking partial_input_delay
+11. checking partial_output_delay
+12. checking latch_loops
+
+1. checking no_clock
+--------------------
+ There are 0 register/latch pins with no clock.
+
+
+2. checking constant_clock
+--------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock
+-----------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints
+--------------------------------------------
+ There are 0 pins that are not constrained for maximum delay.
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay
+--------------------------
+ There are 4 input ports with no input delay specified. (HIGH)
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay
+---------------------------
+ There are 25 ports with no output delay specified. (HIGH)
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There is 1 port with no output delay but with a timing clock defined on it or propagating through it (LOW)
+
+
+7. checking multiple_clock
+--------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks
+----------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops
+-----------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay
+--------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay
+---------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops
+------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+     11.140        0.000                      0                   84        0.087        0.000                      0                   84        9.500        0.000                       0                    75  
+
+
+All user specified timing constraints are met.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+Clock    Waveform(ns)       Period(ns)      Frequency(MHz)
+-----    ------------       ----------      --------------
+sys_clk  {0.000 10.000}     20.000          50.000          
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+sys_clk            11.140        0.000                      0                   84        0.087        0.000                      0                   84        9.500        0.000                       0                    75  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  sys_clk
+  To Clock:  sys_clk
+
+Setup :            0  Failing Endpoints,  Worst Slack       11.140ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.087ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack        9.500ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             11.140ns  (required time - arrival time)
+  Source:                 u_rd_id/lcd_id_reg[7]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            u_lcd_driver/data_req_reg/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             sys_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (sys_clk rise@20.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        9.956ns  (logic 3.219ns (32.332%)  route 6.737ns (67.668%))
+  Logic Levels:           12  (CARRY4=5 LUT1=1 LUT2=1 LUT3=1 LUT4=2 LUT6=2)
+  Clock Path Skew:        1.101ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.091ns = ( 25.091 - 20.000 ) 
+    Source Clock Delay      (SCD):    4.122ns
+    Clock Pessimism Removal (CPR):    0.132ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.945     0.945 r  sys_clk_IBUF_inst/O
+                         net (fo=2, routed)           1.717     2.662    sys_clk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.081     2.743 r  sys_clk_IBUF_BUFG_inst/O
+                         net (fo=14, routed)          1.379     4.122    u_rd_id/sys_clk_IBUF_BUFG
+    SLICE_X44Y95         FDCE                                         r  u_rd_id/lcd_id_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X44Y95         FDCE (Prop_fdce_C_Q)         0.348     4.470 r  u_rd_id/lcd_id_reg[7]/Q
+                         net (fo=11, routed)          1.484     5.954    u_rd_id/lcd_id_reg_n_0_[7]
+    SLICE_X51Y95         LUT6 (Prop_lut6_I2_O)        0.239     6.193 f  u_rd_id/h_cnt1_carry_i_8/O
+                         net (fo=1, routed)           0.791     6.984    u_rd_id/h_cnt1_carry_i_8_n_0
+    SLICE_X51Y95         LUT6 (Prop_lut6_I0_O)        0.105     7.089 f  u_rd_id/h_cnt1_carry_i_6/O
+                         net (fo=59, routed)          0.998     8.087    u_rd_id/lcd_id_reg[13]_0[1]
+    SLICE_X45Y94         LUT2 (Prop_lut2_I0_O)        0.105     8.192 r  u_rd_id/h_cnt1_carry_i_5/O
+                         net (fo=26, routed)          0.833     9.025    u_rd_id/lcd_id_reg[13]_1
+    SLICE_X50Y94         LUT3 (Prop_lut3_I2_O)        0.105     9.130 r  u_rd_id/data_req5_carry_i_2/O
+                         net (fo=1, routed)           0.000     9.130    u_lcd_driver/data_req4_carry_1[1]
+    SLICE_X50Y94         CARRY4 (Prop_carry4_S[1]_CO[2])
+                                                      0.477     9.607 f  u_lcd_driver/data_req5_carry/CO[2]
+                         net (fo=6, routed)           0.982    10.589    u_lcd_driver/data_req5_carry_n_1
+    SLICE_X48Y96         LUT1 (Prop_lut1_I0_O)        0.252    10.841 r  u_lcd_driver/data_req4_carry_i_3/O
+                         net (fo=1, routed)           0.000    10.841    u_lcd_driver/data_req4_carry_i_3_n_0
+    SLICE_X48Y96         CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.332    11.173 r  u_lcd_driver/data_req4_carry/CO[3]
+                         net (fo=1, routed)           0.000    11.173    u_lcd_driver/data_req4_carry_n_0
+    SLICE_X48Y97         CARRY4 (Prop_carry4_CI_O[3])
+                                                      0.260    11.433 r  u_lcd_driver/data_req4_carry__0/O[3]
+                         net (fo=2, routed)           0.889    12.322    u_lcd_driver/data_req4[7]
+    SLICE_X49Y97         LUT4 (Prop_lut4_I0_O)        0.257    12.579 r  u_lcd_driver/data_req3_carry_i_5/O
+                         net (fo=1, routed)           0.000    12.579    u_lcd_driver/data_req3_carry_i_5_n_0
+    SLICE_X49Y97         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.332    12.911 r  u_lcd_driver/data_req3_carry/CO[3]
+                         net (fo=1, routed)           0.000    12.911    u_lcd_driver/data_req3_carry_n_0
+    SLICE_X49Y98         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.132    13.043 r  u_lcd_driver/data_req3_carry__0/CO[1]
+                         net (fo=1, routed)           0.760    13.803    u_lcd_driver/data_req3
+    SLICE_X45Y95         LUT4 (Prop_lut4_I1_O)        0.275    14.078 r  u_lcd_driver/data_req_i_1/O
+                         net (fo=1, routed)           0.000    14.078    u_lcd_driver/data_req0
+    SLICE_X45Y95         FDCE                                         r  u_lcd_driver/data_req_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)   20.000    20.000 r  
+    R4                                                0.000    20.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000    20.000    sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.813    20.813 r  sys_clk_IBUF_inst/O
+                         net (fo=2, routed)           1.680    22.492    u_rd_id/sys_clk_IBUF
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.084    22.576 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5/O
+                         net (fo=1, routed)           0.167    22.744    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.084    22.828 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4/O
+                         net (fo=1, routed)           0.422    23.250    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I5_O)        0.084    23.334 r  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_1/O
+                         net (fo=1, routed)           0.412    23.746    lcd_clk_OBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.077    23.823 r  lcd_clk_OBUF_BUFG_inst/O
+                         net (fo=60, routed)          1.268    25.091    u_lcd_driver/lcd_clk_OBUF_BUFG
+    SLICE_X45Y95         FDCE                                         r  u_lcd_driver/data_req_reg/C
+                         clock pessimism              0.132    25.223    
+                         clock uncertainty           -0.035    25.187    
+    SLICE_X45Y95         FDCE (Setup_fdce_C_D)        0.030    25.217    u_lcd_driver/data_req_reg
+  -------------------------------------------------------------------
+                         required time                         25.217    
+                         arrival time                         -14.078    
+  -------------------------------------------------------------------
+                         slack                                 11.140    
+
+Slack (MET) :             11.664ns  (required time - arrival time)
+  Source:                 u_rd_id/lcd_id_reg[7]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            u_lcd_display/pixel_data_reg[15]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             sys_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (sys_clk rise@20.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        9.432ns  (logic 2.781ns (29.485%)  route 6.651ns (70.515%))
+  Logic Levels:           10  (CARRY4=3 LUT2=2 LUT4=3 LUT6=2)
+  Clock Path Skew:        1.101ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.091ns = ( 25.091 - 20.000 ) 
+    Source Clock Delay      (SCD):    4.122ns
+    Clock Pessimism Removal (CPR):    0.132ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.945     0.945 r  sys_clk_IBUF_inst/O
+                         net (fo=2, routed)           1.717     2.662    sys_clk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.081     2.743 r  sys_clk_IBUF_BUFG_inst/O
+                         net (fo=14, routed)          1.379     4.122    u_rd_id/sys_clk_IBUF_BUFG
+    SLICE_X44Y95         FDCE                                         r  u_rd_id/lcd_id_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X44Y95         FDCE (Prop_fdce_C_Q)         0.348     4.470 r  u_rd_id/lcd_id_reg[7]/Q
+                         net (fo=11, routed)          1.484     5.954    u_rd_id/lcd_id_reg_n_0_[7]
+    SLICE_X51Y95         LUT6 (Prop_lut6_I2_O)        0.239     6.193 r  u_rd_id/h_cnt1_carry_i_8/O
+                         net (fo=1, routed)           0.791     6.984    u_rd_id/h_cnt1_carry_i_8_n_0
+    SLICE_X51Y95         LUT6 (Prop_lut6_I0_O)        0.105     7.089 r  u_rd_id/h_cnt1_carry_i_6/O
+                         net (fo=59, routed)          0.998     8.087    u_rd_id/lcd_id_reg[13]_0[1]
+    SLICE_X45Y94         LUT2 (Prop_lut2_I0_O)        0.127     8.214 r  u_rd_id/i__carry_i_8__4/O
+                         net (fo=17, routed)          1.039     9.253    u_rd_id/lcd_id_reg[13]_3
+    SLICE_X48Y94         LUT2 (Prop_lut2_I0_O)        0.268     9.521 r  u_rd_id/i__carry_i_12/O
+                         net (fo=1, routed)           0.000     9.521    u_rd_id/i__carry_i_12_n_0
+    SLICE_X48Y94         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.332     9.853 r  u_rd_id/i__carry_i_9/CO[3]
+                         net (fo=1, routed)           0.000     9.853    u_rd_id/i__carry_i_9_n_0
+    SLICE_X48Y95         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.180    10.033 r  u_rd_id/i__carry__0_i_5/O[0]
+                         net (fo=4, routed)           1.042    11.075    u_lcd_driver/pixel_data3[8]
+    SLICE_X47Y97         LUT4 (Prop_lut4_I0_O)        0.249    11.324 r  u_lcd_driver/i__carry__0_i_4__0/O
+                         net (fo=1, routed)           0.000    11.324    u_lcd_display/pixel_data_reg[23]_2[0]
+    SLICE_X47Y97         CARRY4 (Prop_carry4_S[0]_CO[1])
+                                                      0.380    11.704 f  u_lcd_display/pixel_data2_inferred__2/i__carry__0/CO[1]
+                         net (fo=2, routed)           0.720    12.424    u_lcd_display/pixel_data21_in
+    SLICE_X43Y98         LUT4 (Prop_lut4_I2_O)        0.278    12.702 r  u_lcd_display/pixel_data[15]_i_2/O
+                         net (fo=2, routed)           0.576    13.278    u_lcd_display/pixel_data[15]_i_2_n_0
+    SLICE_X43Y98         LUT4 (Prop_lut4_I3_O)        0.275    13.553 r  u_lcd_display/pixel_data[15]_i_1/O
+                         net (fo=1, routed)           0.000    13.553    u_lcd_display/pixel_data[15]
+    SLICE_X43Y98         FDCE                                         r  u_lcd_display/pixel_data_reg[15]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)   20.000    20.000 r  
+    R4                                                0.000    20.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000    20.000    sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.813    20.813 r  sys_clk_IBUF_inst/O
+                         net (fo=2, routed)           1.680    22.492    u_rd_id/sys_clk_IBUF
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.084    22.576 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5/O
+                         net (fo=1, routed)           0.167    22.744    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.084    22.828 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4/O
+                         net (fo=1, routed)           0.422    23.250    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I5_O)        0.084    23.334 r  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_1/O
+                         net (fo=1, routed)           0.412    23.746    lcd_clk_OBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.077    23.823 r  lcd_clk_OBUF_BUFG_inst/O
+                         net (fo=60, routed)          1.268    25.091    u_lcd_display/lcd_clk_OBUF_BUFG
+    SLICE_X43Y98         FDCE                                         r  u_lcd_display/pixel_data_reg[15]/C
+                         clock pessimism              0.132    25.223    
+                         clock uncertainty           -0.035    25.187    
+    SLICE_X43Y98         FDCE (Setup_fdce_C_D)        0.030    25.217    u_lcd_display/pixel_data_reg[15]
+  -------------------------------------------------------------------
+                         required time                         25.217    
+                         arrival time                         -13.553    
+  -------------------------------------------------------------------
+                         slack                                 11.664    
+
+Slack (MET) :             11.700ns  (required time - arrival time)
+  Source:                 u_rd_id/lcd_id_reg[7]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            u_lcd_display/pixel_data_reg[7]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             sys_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (sys_clk rise@20.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        9.435ns  (logic 2.784ns (29.508%)  route 6.651ns (70.492%))
+  Logic Levels:           10  (CARRY4=3 LUT2=2 LUT4=3 LUT6=2)
+  Clock Path Skew:        1.101ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.091ns = ( 25.091 - 20.000 ) 
+    Source Clock Delay      (SCD):    4.122ns
+    Clock Pessimism Removal (CPR):    0.132ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.945     0.945 r  sys_clk_IBUF_inst/O
+                         net (fo=2, routed)           1.717     2.662    sys_clk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.081     2.743 r  sys_clk_IBUF_BUFG_inst/O
+                         net (fo=14, routed)          1.379     4.122    u_rd_id/sys_clk_IBUF_BUFG
+    SLICE_X44Y95         FDCE                                         r  u_rd_id/lcd_id_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X44Y95         FDCE (Prop_fdce_C_Q)         0.348     4.470 r  u_rd_id/lcd_id_reg[7]/Q
+                         net (fo=11, routed)          1.484     5.954    u_rd_id/lcd_id_reg_n_0_[7]
+    SLICE_X51Y95         LUT6 (Prop_lut6_I2_O)        0.239     6.193 r  u_rd_id/h_cnt1_carry_i_8/O
+                         net (fo=1, routed)           0.791     6.984    u_rd_id/h_cnt1_carry_i_8_n_0
+    SLICE_X51Y95         LUT6 (Prop_lut6_I0_O)        0.105     7.089 r  u_rd_id/h_cnt1_carry_i_6/O
+                         net (fo=59, routed)          0.998     8.087    u_rd_id/lcd_id_reg[13]_0[1]
+    SLICE_X45Y94         LUT2 (Prop_lut2_I0_O)        0.127     8.214 r  u_rd_id/i__carry_i_8__4/O
+                         net (fo=17, routed)          1.039     9.253    u_rd_id/lcd_id_reg[13]_3
+    SLICE_X48Y94         LUT2 (Prop_lut2_I0_O)        0.268     9.521 r  u_rd_id/i__carry_i_12/O
+                         net (fo=1, routed)           0.000     9.521    u_rd_id/i__carry_i_12_n_0
+    SLICE_X48Y94         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.332     9.853 r  u_rd_id/i__carry_i_9/CO[3]
+                         net (fo=1, routed)           0.000     9.853    u_rd_id/i__carry_i_9_n_0
+    SLICE_X48Y95         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.180    10.033 r  u_rd_id/i__carry__0_i_5/O[0]
+                         net (fo=4, routed)           1.042    11.075    u_lcd_driver/pixel_data3[8]
+    SLICE_X47Y97         LUT4 (Prop_lut4_I0_O)        0.249    11.324 r  u_lcd_driver/i__carry__0_i_4__0/O
+                         net (fo=1, routed)           0.000    11.324    u_lcd_display/pixel_data_reg[23]_2[0]
+    SLICE_X47Y97         CARRY4 (Prop_carry4_S[0]_CO[1])
+                                                      0.380    11.704 f  u_lcd_display/pixel_data2_inferred__2/i__carry__0/CO[1]
+                         net (fo=2, routed)           0.720    12.424    u_lcd_display/pixel_data21_in
+    SLICE_X43Y98         LUT4 (Prop_lut4_I2_O)        0.278    12.702 r  u_lcd_display/pixel_data[15]_i_2/O
+                         net (fo=2, routed)           0.576    13.278    u_lcd_display/pixel_data[15]_i_2_n_0
+    SLICE_X43Y98         LUT4 (Prop_lut4_I3_O)        0.278    13.556 r  u_lcd_display/pixel_data[7]_i_1/O
+                         net (fo=1, routed)           0.000    13.556    u_lcd_display/pixel_data[7]
+    SLICE_X43Y98         FDCE                                         r  u_lcd_display/pixel_data_reg[7]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)   20.000    20.000 r  
+    R4                                                0.000    20.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000    20.000    sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.813    20.813 r  sys_clk_IBUF_inst/O
+                         net (fo=2, routed)           1.680    22.492    u_rd_id/sys_clk_IBUF
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.084    22.576 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5/O
+                         net (fo=1, routed)           0.167    22.744    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.084    22.828 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4/O
+                         net (fo=1, routed)           0.422    23.250    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I5_O)        0.084    23.334 r  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_1/O
+                         net (fo=1, routed)           0.412    23.746    lcd_clk_OBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.077    23.823 r  lcd_clk_OBUF_BUFG_inst/O
+                         net (fo=60, routed)          1.268    25.091    u_lcd_display/lcd_clk_OBUF_BUFG
+    SLICE_X43Y98         FDCE                                         r  u_lcd_display/pixel_data_reg[7]/C
+                         clock pessimism              0.132    25.223    
+                         clock uncertainty           -0.035    25.187    
+    SLICE_X43Y98         FDCE (Setup_fdce_C_D)        0.069    25.256    u_lcd_display/pixel_data_reg[7]
+  -------------------------------------------------------------------
+                         required time                         25.256    
+                         arrival time                         -13.556    
+  -------------------------------------------------------------------
+                         slack                                 11.700    
+
+Slack (MET) :             11.728ns  (required time - arrival time)
+  Source:                 u_rd_id/lcd_id_reg[7]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            u_lcd_display/pixel_data_reg[23]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             sys_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (sys_clk rise@20.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        9.323ns  (logic 2.503ns (26.848%)  route 6.820ns (73.152%))
+  Logic Levels:           9  (CARRY4=3 LUT2=2 LUT4=1 LUT5=1 LUT6=2)
+  Clock Path Skew:        1.101ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.091ns = ( 25.091 - 20.000 ) 
+    Source Clock Delay      (SCD):    4.122ns
+    Clock Pessimism Removal (CPR):    0.132ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.945     0.945 r  sys_clk_IBUF_inst/O
+                         net (fo=2, routed)           1.717     2.662    sys_clk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.081     2.743 r  sys_clk_IBUF_BUFG_inst/O
+                         net (fo=14, routed)          1.379     4.122    u_rd_id/sys_clk_IBUF_BUFG
+    SLICE_X44Y95         FDCE                                         r  u_rd_id/lcd_id_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X44Y95         FDCE (Prop_fdce_C_Q)         0.348     4.470 r  u_rd_id/lcd_id_reg[7]/Q
+                         net (fo=11, routed)          1.484     5.954    u_rd_id/lcd_id_reg_n_0_[7]
+    SLICE_X51Y95         LUT6 (Prop_lut6_I2_O)        0.239     6.193 r  u_rd_id/h_cnt1_carry_i_8/O
+                         net (fo=1, routed)           0.791     6.984    u_rd_id/h_cnt1_carry_i_8_n_0
+    SLICE_X51Y95         LUT6 (Prop_lut6_I0_O)        0.105     7.089 r  u_rd_id/h_cnt1_carry_i_6/O
+                         net (fo=59, routed)          0.998     8.087    u_rd_id/lcd_id_reg[13]_0[1]
+    SLICE_X45Y94         LUT2 (Prop_lut2_I0_O)        0.127     8.214 r  u_rd_id/i__carry_i_8__4/O
+                         net (fo=17, routed)          1.039     9.253    u_rd_id/lcd_id_reg[13]_3
+    SLICE_X48Y94         LUT2 (Prop_lut2_I0_O)        0.268     9.521 r  u_rd_id/i__carry_i_12/O
+                         net (fo=1, routed)           0.000     9.521    u_rd_id/i__carry_i_12_n_0
+    SLICE_X48Y94         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.332     9.853 r  u_rd_id/i__carry_i_9/CO[3]
+                         net (fo=1, routed)           0.000     9.853    u_rd_id/i__carry_i_9_n_0
+    SLICE_X48Y95         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.180    10.033 r  u_rd_id/i__carry__0_i_5/O[0]
+                         net (fo=4, routed)           1.042    11.075    u_lcd_driver/pixel_data3[8]
+    SLICE_X47Y97         LUT4 (Prop_lut4_I0_O)        0.249    11.324 r  u_lcd_driver/i__carry__0_i_4__0/O
+                         net (fo=1, routed)           0.000    11.324    u_lcd_display/pixel_data_reg[23]_2[0]
+    SLICE_X47Y97         CARRY4 (Prop_carry4_S[0]_CO[1])
+                                                      0.380    11.704 r  u_lcd_display/pixel_data2_inferred__2/i__carry__0/CO[1]
+                         net (fo=2, routed)           0.720    12.424    u_lcd_display/pixel_data21_in
+    SLICE_X43Y98         LUT5 (Prop_lut5_I2_O)        0.275    12.699 r  u_lcd_display/pixel_data[23]_i_1/O
+                         net (fo=1, routed)           0.745    13.444    u_lcd_display/pixel_data[23]
+    SLICE_X42Y98         FDCE                                         r  u_lcd_display/pixel_data_reg[23]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)   20.000    20.000 r  
+    R4                                                0.000    20.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000    20.000    sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.813    20.813 r  sys_clk_IBUF_inst/O
+                         net (fo=2, routed)           1.680    22.492    u_rd_id/sys_clk_IBUF
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.084    22.576 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5/O
+                         net (fo=1, routed)           0.167    22.744    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.084    22.828 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4/O
+                         net (fo=1, routed)           0.422    23.250    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I5_O)        0.084    23.334 r  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_1/O
+                         net (fo=1, routed)           0.412    23.746    lcd_clk_OBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.077    23.823 r  lcd_clk_OBUF_BUFG_inst/O
+                         net (fo=60, routed)          1.268    25.091    u_lcd_display/lcd_clk_OBUF_BUFG
+    SLICE_X42Y98         FDCE                                         r  u_lcd_display/pixel_data_reg[23]/C
+                         clock pessimism              0.132    25.223    
+                         clock uncertainty           -0.035    25.187    
+    SLICE_X42Y98         FDCE (Setup_fdce_C_D)       -0.015    25.172    u_lcd_display/pixel_data_reg[23]
+  -------------------------------------------------------------------
+                         required time                         25.172    
+                         arrival time                         -13.444    
+  -------------------------------------------------------------------
+                         slack                                 11.728    
+
+Slack (MET) :             12.925ns  (required time - arrival time)
+  Source:                 u_rd_id/lcd_id_reg[7]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            u_lcd_driver/pixel_xpos_reg[9]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             sys_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (sys_clk rise@20.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        8.206ns  (logic 2.037ns (24.824%)  route 6.169ns (75.176%))
+  Logic Levels:           8  (CARRY4=2 LUT2=2 LUT3=1 LUT5=1 LUT6=2)
+  Clock Path Skew:        1.097ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.087ns = ( 25.087 - 20.000 ) 
+    Source Clock Delay      (SCD):    4.122ns
+    Clock Pessimism Removal (CPR):    0.132ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.945     0.945 r  sys_clk_IBUF_inst/O
+                         net (fo=2, routed)           1.717     2.662    sys_clk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.081     2.743 r  sys_clk_IBUF_BUFG_inst/O
+                         net (fo=14, routed)          1.379     4.122    u_rd_id/sys_clk_IBUF_BUFG
+    SLICE_X44Y95         FDCE                                         r  u_rd_id/lcd_id_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X44Y95         FDCE (Prop_fdce_C_Q)         0.348     4.470 r  u_rd_id/lcd_id_reg[7]/Q
+                         net (fo=11, routed)          1.484     5.954    u_rd_id/lcd_id_reg_n_0_[7]
+    SLICE_X51Y95         LUT6 (Prop_lut6_I2_O)        0.239     6.193 f  u_rd_id/h_cnt1_carry_i_8/O
+                         net (fo=1, routed)           0.791     6.984    u_rd_id/h_cnt1_carry_i_8_n_0
+    SLICE_X51Y95         LUT6 (Prop_lut6_I0_O)        0.105     7.089 f  u_rd_id/h_cnt1_carry_i_6/O
+                         net (fo=59, routed)          0.998     8.087    u_rd_id/lcd_id_reg[13]_0[1]
+    SLICE_X45Y94         LUT2 (Prop_lut2_I0_O)        0.105     8.192 r  u_rd_id/h_cnt1_carry_i_5/O
+                         net (fo=26, routed)          1.095     9.287    u_lcd_driver/v_cnt_reg[0]_0
+    SLICE_X46Y94         LUT3 (Prop_lut3_I1_O)        0.116     9.403 r  u_lcd_driver/pixel_xpos0_carry__0_i_2/O
+                         net (fo=2, routed)           0.849    10.252    u_lcd_driver/pixel_xpos0_carry__0_i_2_n_0
+    SLICE_X46Y94         LUT5 (Prop_lut5_I4_O)        0.283    10.535 r  u_lcd_driver/pixel_xpos0_carry__0_i_6/O
+                         net (fo=1, routed)           0.000    10.535    u_lcd_driver/pixel_xpos0_carry__0_i_6_n_0
+    SLICE_X46Y94         CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.316    10.851 r  u_lcd_driver/pixel_xpos0_carry__0/CO[3]
+                         net (fo=1, routed)           0.000    10.851    u_lcd_driver/pixel_xpos0_carry__0_n_0
+    SLICE_X46Y95         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.257    11.108 r  u_lcd_driver/pixel_xpos0_carry__1/O[1]
+                         net (fo=1, routed)           0.951    12.059    u_lcd_driver/pixel_xpos0[9]
+    SLICE_X47Y95         LUT2 (Prop_lut2_I1_O)        0.268    12.327 r  u_lcd_driver/pixel_xpos[9]_i_1/O
+                         net (fo=1, routed)           0.000    12.327    u_lcd_driver/pixel_xpos[9]_i_1_n_0
+    SLICE_X47Y95         FDCE                                         r  u_lcd_driver/pixel_xpos_reg[9]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)   20.000    20.000 r  
+    R4                                                0.000    20.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000    20.000    sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.813    20.813 r  sys_clk_IBUF_inst/O
+                         net (fo=2, routed)           1.680    22.492    u_rd_id/sys_clk_IBUF
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.084    22.576 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5/O
+                         net (fo=1, routed)           0.167    22.744    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.084    22.828 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4/O
+                         net (fo=1, routed)           0.422    23.250    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I5_O)        0.084    23.334 r  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_1/O
+                         net (fo=1, routed)           0.412    23.746    lcd_clk_OBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.077    23.823 r  lcd_clk_OBUF_BUFG_inst/O
+                         net (fo=60, routed)          1.264    25.087    u_lcd_driver/lcd_clk_OBUF_BUFG
+    SLICE_X47Y95         FDCE                                         r  u_lcd_driver/pixel_xpos_reg[9]/C
+                         clock pessimism              0.132    25.219    
+                         clock uncertainty           -0.035    25.183    
+    SLICE_X47Y95         FDCE (Setup_fdce_C_D)        0.069    25.252    u_lcd_driver/pixel_xpos_reg[9]
+  -------------------------------------------------------------------
+                         required time                         25.252    
+                         arrival time                         -12.327    
+  -------------------------------------------------------------------
+                         slack                                 12.925    
+
+Slack (MET) :             12.952ns  (required time - arrival time)
+  Source:                 u_rd_id/lcd_id_reg[7]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            u_lcd_driver/pixel_xpos_reg[8]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             sys_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (sys_clk rise@20.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        8.179ns  (logic 1.942ns (23.744%)  route 6.237ns (76.256%))
+  Logic Levels:           8  (CARRY4=2 LUT2=2 LUT3=1 LUT5=1 LUT6=2)
+  Clock Path Skew:        1.097ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.087ns = ( 25.087 - 20.000 ) 
+    Source Clock Delay      (SCD):    4.122ns
+    Clock Pessimism Removal (CPR):    0.132ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.945     0.945 r  sys_clk_IBUF_inst/O
+                         net (fo=2, routed)           1.717     2.662    sys_clk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.081     2.743 r  sys_clk_IBUF_BUFG_inst/O
+                         net (fo=14, routed)          1.379     4.122    u_rd_id/sys_clk_IBUF_BUFG
+    SLICE_X44Y95         FDCE                                         r  u_rd_id/lcd_id_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X44Y95         FDCE (Prop_fdce_C_Q)         0.348     4.470 r  u_rd_id/lcd_id_reg[7]/Q
+                         net (fo=11, routed)          1.484     5.954    u_rd_id/lcd_id_reg_n_0_[7]
+    SLICE_X51Y95         LUT6 (Prop_lut6_I2_O)        0.239     6.193 f  u_rd_id/h_cnt1_carry_i_8/O
+                         net (fo=1, routed)           0.791     6.984    u_rd_id/h_cnt1_carry_i_8_n_0
+    SLICE_X51Y95         LUT6 (Prop_lut6_I0_O)        0.105     7.089 f  u_rd_id/h_cnt1_carry_i_6/O
+                         net (fo=59, routed)          0.998     8.087    u_rd_id/lcd_id_reg[13]_0[1]
+    SLICE_X45Y94         LUT2 (Prop_lut2_I0_O)        0.105     8.192 r  u_rd_id/h_cnt1_carry_i_5/O
+                         net (fo=26, routed)          1.095     9.287    u_lcd_driver/v_cnt_reg[0]_0
+    SLICE_X46Y94         LUT3 (Prop_lut3_I1_O)        0.116     9.403 r  u_lcd_driver/pixel_xpos0_carry__0_i_2/O
+                         net (fo=2, routed)           0.849    10.252    u_lcd_driver/pixel_xpos0_carry__0_i_2_n_0
+    SLICE_X46Y94         LUT5 (Prop_lut5_I4_O)        0.283    10.535 r  u_lcd_driver/pixel_xpos0_carry__0_i_6/O
+                         net (fo=1, routed)           0.000    10.535    u_lcd_driver/pixel_xpos0_carry__0_i_6_n_0
+    SLICE_X46Y94         CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.316    10.851 r  u_lcd_driver/pixel_xpos0_carry__0/CO[3]
+                         net (fo=1, routed)           0.000    10.851    u_lcd_driver/pixel_xpos0_carry__0_n_0
+    SLICE_X46Y95         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.178    11.029 r  u_lcd_driver/pixel_xpos0_carry__1/O[0]
+                         net (fo=1, routed)           1.020    12.049    u_lcd_driver/pixel_xpos0[8]
+    SLICE_X47Y95         LUT2 (Prop_lut2_I1_O)        0.252    12.301 r  u_lcd_driver/pixel_xpos[8]_i_1/O
+                         net (fo=1, routed)           0.000    12.301    u_lcd_driver/pixel_xpos[8]_i_1_n_0
+    SLICE_X47Y95         FDCE                                         r  u_lcd_driver/pixel_xpos_reg[8]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)   20.000    20.000 r  
+    R4                                                0.000    20.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000    20.000    sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.813    20.813 r  sys_clk_IBUF_inst/O
+                         net (fo=2, routed)           1.680    22.492    u_rd_id/sys_clk_IBUF
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.084    22.576 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5/O
+                         net (fo=1, routed)           0.167    22.744    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.084    22.828 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4/O
+                         net (fo=1, routed)           0.422    23.250    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I5_O)        0.084    23.334 r  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_1/O
+                         net (fo=1, routed)           0.412    23.746    lcd_clk_OBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.077    23.823 r  lcd_clk_OBUF_BUFG_inst/O
+                         net (fo=60, routed)          1.264    25.087    u_lcd_driver/lcd_clk_OBUF_BUFG
+    SLICE_X47Y95         FDCE                                         r  u_lcd_driver/pixel_xpos_reg[8]/C
+                         clock pessimism              0.132    25.219    
+                         clock uncertainty           -0.035    25.183    
+    SLICE_X47Y95         FDCE (Setup_fdce_C_D)        0.069    25.252    u_lcd_driver/pixel_xpos_reg[8]
+  -------------------------------------------------------------------
+                         required time                         25.252    
+                         arrival time                         -12.301    
+  -------------------------------------------------------------------
+                         slack                                 12.952    
+
+Slack (MET) :             13.035ns  (required time - arrival time)
+  Source:                 u_rd_id/lcd_id_reg[7]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            u_lcd_driver/pixel_xpos_reg[10]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             sys_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (sys_clk rise@20.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        8.059ns  (logic 1.955ns (24.259%)  route 6.104ns (75.741%))
+  Logic Levels:           8  (CARRY4=2 LUT2=2 LUT3=1 LUT5=1 LUT6=2)
+  Clock Path Skew:        1.097ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.087ns = ( 25.087 - 20.000 ) 
+    Source Clock Delay      (SCD):    4.122ns
+    Clock Pessimism Removal (CPR):    0.132ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.945     0.945 r  sys_clk_IBUF_inst/O
+                         net (fo=2, routed)           1.717     2.662    sys_clk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.081     2.743 r  sys_clk_IBUF_BUFG_inst/O
+                         net (fo=14, routed)          1.379     4.122    u_rd_id/sys_clk_IBUF_BUFG
+    SLICE_X44Y95         FDCE                                         r  u_rd_id/lcd_id_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X44Y95         FDCE (Prop_fdce_C_Q)         0.348     4.470 r  u_rd_id/lcd_id_reg[7]/Q
+                         net (fo=11, routed)          1.484     5.954    u_rd_id/lcd_id_reg_n_0_[7]
+    SLICE_X51Y95         LUT6 (Prop_lut6_I2_O)        0.239     6.193 f  u_rd_id/h_cnt1_carry_i_8/O
+                         net (fo=1, routed)           0.791     6.984    u_rd_id/h_cnt1_carry_i_8_n_0
+    SLICE_X51Y95         LUT6 (Prop_lut6_I0_O)        0.105     7.089 f  u_rd_id/h_cnt1_carry_i_6/O
+                         net (fo=59, routed)          0.998     8.087    u_rd_id/lcd_id_reg[13]_0[1]
+    SLICE_X45Y94         LUT2 (Prop_lut2_I0_O)        0.105     8.192 r  u_rd_id/h_cnt1_carry_i_5/O
+                         net (fo=26, routed)          1.095     9.287    u_lcd_driver/v_cnt_reg[0]_0
+    SLICE_X46Y94         LUT3 (Prop_lut3_I1_O)        0.116     9.403 r  u_lcd_driver/pixel_xpos0_carry__0_i_2/O
+                         net (fo=2, routed)           0.849    10.252    u_lcd_driver/pixel_xpos0_carry__0_i_2_n_0
+    SLICE_X46Y94         LUT5 (Prop_lut5_I4_O)        0.283    10.535 r  u_lcd_driver/pixel_xpos0_carry__0_i_6/O
+                         net (fo=1, routed)           0.000    10.535    u_lcd_driver/pixel_xpos0_carry__0_i_6_n_0
+    SLICE_X46Y94         CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.316    10.851 r  u_lcd_driver/pixel_xpos0_carry__0/CO[3]
+                         net (fo=1, routed)           0.000    10.851    u_lcd_driver/pixel_xpos0_carry__0_n_0
+    SLICE_X46Y95         CARRY4 (Prop_carry4_CI_O[2])
+                                                      0.199    11.050 r  u_lcd_driver/pixel_xpos0_carry__1/O[2]
+                         net (fo=1, routed)           0.886    11.936    u_lcd_driver/pixel_xpos0[10]
+    SLICE_X47Y95         LUT2 (Prop_lut2_I0_O)        0.244    12.180 r  u_lcd_driver/pixel_xpos[10]_i_1/O
+                         net (fo=1, routed)           0.000    12.180    u_lcd_driver/pixel_xpos[10]_i_1_n_0
+    SLICE_X47Y95         FDCE                                         r  u_lcd_driver/pixel_xpos_reg[10]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)   20.000    20.000 r  
+    R4                                                0.000    20.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000    20.000    sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.813    20.813 r  sys_clk_IBUF_inst/O
+                         net (fo=2, routed)           1.680    22.492    u_rd_id/sys_clk_IBUF
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.084    22.576 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5/O
+                         net (fo=1, routed)           0.167    22.744    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.084    22.828 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4/O
+                         net (fo=1, routed)           0.422    23.250    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I5_O)        0.084    23.334 r  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_1/O
+                         net (fo=1, routed)           0.412    23.746    lcd_clk_OBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.077    23.823 r  lcd_clk_OBUF_BUFG_inst/O
+                         net (fo=60, routed)          1.264    25.087    u_lcd_driver/lcd_clk_OBUF_BUFG
+    SLICE_X47Y95         FDCE                                         r  u_lcd_driver/pixel_xpos_reg[10]/C
+                         clock pessimism              0.132    25.219    
+                         clock uncertainty           -0.035    25.183    
+    SLICE_X47Y95         FDCE (Setup_fdce_C_D)        0.032    25.215    u_lcd_driver/pixel_xpos_reg[10]
+  -------------------------------------------------------------------
+                         required time                         25.215    
+                         arrival time                         -12.180    
+  -------------------------------------------------------------------
+                         slack                                 13.035    
+
+Slack (MET) :             13.042ns  (required time - arrival time)
+  Source:                 u_rd_id/lcd_id_reg[7]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            u_lcd_driver/v_cnt_reg[0]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             sys_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (sys_clk rise@20.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        8.054ns  (logic 1.632ns (20.263%)  route 6.422ns (79.737%))
+  Logic Levels:           6  (CARRY4=1 LUT2=2 LUT6=3)
+  Clock Path Skew:        1.101ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.091ns = ( 25.091 - 20.000 ) 
+    Source Clock Delay      (SCD):    4.122ns
+    Clock Pessimism Removal (CPR):    0.132ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.945     0.945 r  sys_clk_IBUF_inst/O
+                         net (fo=2, routed)           1.717     2.662    sys_clk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.081     2.743 r  sys_clk_IBUF_BUFG_inst/O
+                         net (fo=14, routed)          1.379     4.122    u_rd_id/sys_clk_IBUF_BUFG
+    SLICE_X44Y95         FDCE                                         r  u_rd_id/lcd_id_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X44Y95         FDCE (Prop_fdce_C_Q)         0.348     4.470 r  u_rd_id/lcd_id_reg[7]/Q
+                         net (fo=11, routed)          1.484     5.954    u_rd_id/lcd_id_reg_n_0_[7]
+    SLICE_X51Y95         LUT6 (Prop_lut6_I2_O)        0.239     6.193 r  u_rd_id/h_cnt1_carry_i_8/O
+                         net (fo=1, routed)           0.791     6.984    u_rd_id/h_cnt1_carry_i_8_n_0
+    SLICE_X51Y95         LUT6 (Prop_lut6_I0_O)        0.105     7.089 r  u_rd_id/h_cnt1_carry_i_6/O
+                         net (fo=59, routed)          0.998     8.087    u_rd_id/lcd_id_reg[13]_0[1]
+    SLICE_X45Y94         LUT2 (Prop_lut2_I0_O)        0.127     8.214 r  u_rd_id/i__carry_i_8__4/O
+                         net (fo=17, routed)          1.286     9.500    u_lcd_driver/pixel_data2_inferred__5/i__carry
+    SLICE_X43Y96         LUT6 (Prop_lut6_I3_O)        0.268     9.768 r  u_lcd_driver/v_cnt1_carry_i_4/O
+                         net (fo=1, routed)           0.000     9.768    u_lcd_driver/v_cnt1_carry_i_4_n_0
+    SLICE_X43Y96         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.440    10.208 f  u_lcd_driver/v_cnt1_carry/CO[3]
+                         net (fo=11, routed)          1.863    12.070    u_lcd_driver/load
+    SLICE_X44Y94         LUT2 (Prop_lut2_I1_O)        0.105    12.175 r  u_lcd_driver/v_cnt[0]_i_1/O
+                         net (fo=1, routed)           0.000    12.175    u_lcd_driver/p_0_in__0[0]
+    SLICE_X44Y94         FDCE                                         r  u_lcd_driver/v_cnt_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)   20.000    20.000 r  
+    R4                                                0.000    20.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000    20.000    sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.813    20.813 r  sys_clk_IBUF_inst/O
+                         net (fo=2, routed)           1.680    22.492    u_rd_id/sys_clk_IBUF
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.084    22.576 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5/O
+                         net (fo=1, routed)           0.167    22.744    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.084    22.828 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4/O
+                         net (fo=1, routed)           0.422    23.250    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I5_O)        0.084    23.334 r  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_1/O
+                         net (fo=1, routed)           0.412    23.746    lcd_clk_OBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.077    23.823 r  lcd_clk_OBUF_BUFG_inst/O
+                         net (fo=60, routed)          1.268    25.091    u_lcd_driver/lcd_clk_OBUF_BUFG
+    SLICE_X44Y94         FDCE                                         r  u_lcd_driver/v_cnt_reg[0]/C
+                         clock pessimism              0.132    25.223    
+                         clock uncertainty           -0.035    25.187    
+    SLICE_X44Y94         FDCE (Setup_fdce_C_D)        0.030    25.217    u_lcd_driver/v_cnt_reg[0]
+  -------------------------------------------------------------------
+                         required time                         25.217    
+                         arrival time                         -12.175    
+  -------------------------------------------------------------------
+                         slack                                 13.042    
+
+Slack (MET) :             13.071ns  (required time - arrival time)
+  Source:                 u_rd_id/lcd_id_reg[7]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            u_lcd_driver/v_cnt_reg[10]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             sys_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (sys_clk rise@20.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        8.064ns  (logic 1.642ns (20.362%)  route 6.422ns (79.638%))
+  Logic Levels:           6  (CARRY4=1 LUT2=1 LUT4=1 LUT6=3)
+  Clock Path Skew:        1.101ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.091ns = ( 25.091 - 20.000 ) 
+    Source Clock Delay      (SCD):    4.122ns
+    Clock Pessimism Removal (CPR):    0.132ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.945     0.945 r  sys_clk_IBUF_inst/O
+                         net (fo=2, routed)           1.717     2.662    sys_clk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.081     2.743 r  sys_clk_IBUF_BUFG_inst/O
+                         net (fo=14, routed)          1.379     4.122    u_rd_id/sys_clk_IBUF_BUFG
+    SLICE_X44Y95         FDCE                                         r  u_rd_id/lcd_id_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X44Y95         FDCE (Prop_fdce_C_Q)         0.348     4.470 r  u_rd_id/lcd_id_reg[7]/Q
+                         net (fo=11, routed)          1.484     5.954    u_rd_id/lcd_id_reg_n_0_[7]
+    SLICE_X51Y95         LUT6 (Prop_lut6_I2_O)        0.239     6.193 r  u_rd_id/h_cnt1_carry_i_8/O
+                         net (fo=1, routed)           0.791     6.984    u_rd_id/h_cnt1_carry_i_8_n_0
+    SLICE_X51Y95         LUT6 (Prop_lut6_I0_O)        0.105     7.089 r  u_rd_id/h_cnt1_carry_i_6/O
+                         net (fo=59, routed)          0.998     8.087    u_rd_id/lcd_id_reg[13]_0[1]
+    SLICE_X45Y94         LUT2 (Prop_lut2_I0_O)        0.127     8.214 r  u_rd_id/i__carry_i_8__4/O
+                         net (fo=17, routed)          1.286     9.500    u_lcd_driver/pixel_data2_inferred__5/i__carry
+    SLICE_X43Y96         LUT6 (Prop_lut6_I3_O)        0.268     9.768 r  u_lcd_driver/v_cnt1_carry_i_4/O
+                         net (fo=1, routed)           0.000     9.768    u_lcd_driver/v_cnt1_carry_i_4_n_0
+    SLICE_X43Y96         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.440    10.208 f  u_lcd_driver/v_cnt1_carry/CO[3]
+                         net (fo=11, routed)          1.863    12.070    u_lcd_driver/load
+    SLICE_X44Y94         LUT4 (Prop_lut4_I0_O)        0.115    12.185 r  u_lcd_driver/v_cnt[10]_i_1/O
+                         net (fo=1, routed)           0.000    12.185    u_lcd_driver/v_cnt[10]_i_1_n_0
+    SLICE_X44Y94         FDCE                                         r  u_lcd_driver/v_cnt_reg[10]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)   20.000    20.000 r  
+    R4                                                0.000    20.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000    20.000    sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.813    20.813 r  sys_clk_IBUF_inst/O
+                         net (fo=2, routed)           1.680    22.492    u_rd_id/sys_clk_IBUF
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.084    22.576 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5/O
+                         net (fo=1, routed)           0.167    22.744    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.084    22.828 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4/O
+                         net (fo=1, routed)           0.422    23.250    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I5_O)        0.084    23.334 r  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_1/O
+                         net (fo=1, routed)           0.412    23.746    lcd_clk_OBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.077    23.823 r  lcd_clk_OBUF_BUFG_inst/O
+                         net (fo=60, routed)          1.268    25.091    u_lcd_driver/lcd_clk_OBUF_BUFG
+    SLICE_X44Y94         FDCE                                         r  u_lcd_driver/v_cnt_reg[10]/C
+                         clock pessimism              0.132    25.223    
+                         clock uncertainty           -0.035    25.187    
+    SLICE_X44Y94         FDCE (Setup_fdce_C_D)        0.069    25.256    u_lcd_driver/v_cnt_reg[10]
+  -------------------------------------------------------------------
+                         required time                         25.256    
+                         arrival time                         -12.185    
+  -------------------------------------------------------------------
+                         slack                                 13.071    
+
+Slack (MET) :             13.082ns  (required time - arrival time)
+  Source:                 u_rd_id/lcd_id_reg[2]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            u_lcd_driver/h_cnt_reg[6]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             sys_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (sys_clk rise@20.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        7.950ns  (logic 1.362ns (17.132%)  route 6.588ns (82.868%))
+  Logic Levels:           5  (CARRY4=1 LUT3=1 LUT4=1 LUT5=1 LUT6=1)
+  Clock Path Skew:        1.097ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.087ns = ( 25.087 - 20.000 ) 
+    Source Clock Delay      (SCD):    4.122ns
+    Clock Pessimism Removal (CPR):    0.132ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.945     0.945 r  sys_clk_IBUF_inst/O
+                         net (fo=2, routed)           1.717     2.662    sys_clk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.081     2.743 r  sys_clk_IBUF_BUFG_inst/O
+                         net (fo=14, routed)          1.379     4.122    u_rd_id/sys_clk_IBUF_BUFG
+    SLICE_X43Y97         FDCE                                         r  u_rd_id/lcd_id_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X43Y97         FDCE (Prop_fdce_C_Q)         0.348     4.470 r  u_rd_id/lcd_id_reg[2]/Q
+                         net (fo=5, routed)           1.774     6.243    u_rd_id/lcd_id_reg_n_0_[2]
+    SLICE_X50Y96         LUT4 (Prop_lut4_I0_O)        0.242     6.485 f  u_rd_id/data_req5__5_carry_i_6/O
+                         net (fo=2, routed)           0.912     7.397    u_rd_id/data_req5__5_carry_i_6_n_0
+    SLICE_X50Y96         LUT6 (Prop_lut6_I0_O)        0.105     7.502 r  u_rd_id/data_req5__5_carry_i_1/O
+                         net (fo=47, routed)          1.472     8.974    u_lcd_driver/pixel_data3_0[0]
+    SLICE_X47Y94         LUT5 (Prop_lut5_I2_O)        0.105     9.079 r  u_lcd_driver/h_cnt1_carry_i_3/O
+                         net (fo=1, routed)           0.000     9.079    u_lcd_driver/h_cnt1_carry_i_3_n_0
+    SLICE_X47Y94         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.457     9.536 f  u_lcd_driver/h_cnt1_carry/CO[3]
+                         net (fo=22, routed)          1.763    11.299    u_lcd_driver/sel
+    SLICE_X47Y98         LUT3 (Prop_lut3_I0_O)        0.105    11.404 r  u_lcd_driver/h_cnt[6]_i_1/O
+                         net (fo=1, routed)           0.668    12.071    u_lcd_driver/h_cnt[6]_i_1_n_0
+    SLICE_X46Y98         FDCE                                         r  u_lcd_driver/h_cnt_reg[6]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)   20.000    20.000 r  
+    R4                                                0.000    20.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000    20.000    sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.813    20.813 r  sys_clk_IBUF_inst/O
+                         net (fo=2, routed)           1.680    22.492    u_rd_id/sys_clk_IBUF
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.084    22.576 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5/O
+                         net (fo=1, routed)           0.167    22.744    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.084    22.828 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4/O
+                         net (fo=1, routed)           0.422    23.250    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I5_O)        0.084    23.334 r  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_1/O
+                         net (fo=1, routed)           0.412    23.746    lcd_clk_OBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.077    23.823 r  lcd_clk_OBUF_BUFG_inst/O
+                         net (fo=60, routed)          1.264    25.087    u_lcd_driver/lcd_clk_OBUF_BUFG
+    SLICE_X46Y98         FDCE                                         r  u_lcd_driver/h_cnt_reg[6]/C
+                         clock pessimism              0.132    25.219    
+                         clock uncertainty           -0.035    25.183    
+    SLICE_X46Y98         FDCE (Setup_fdce_C_D)       -0.030    25.153    u_lcd_driver/h_cnt_reg[6]
+  -------------------------------------------------------------------
+                         required time                         25.153    
+                         arrival time                         -12.071    
+  -------------------------------------------------------------------
+                         slack                                 13.082    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.087ns  (arrival time - required time)
+  Source:                 u_rd_id/lcd_id_reg[3]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            u_lcd_driver/data_req_reg/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             sys_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk rise@0.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        1.670ns  (logic 0.637ns (38.143%)  route 1.033ns (61.857%))
+  Logic Levels:           6  (CARRY4=3 LUT4=2 LUT6=1)
+  Clock Path Skew:        1.492ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.127ns
+    Source Clock Delay      (SCD):    1.406ns
+    Clock Pessimism Removal (CPR):    0.229ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.171     0.171 r  sys_clk_IBUF_inst/O
+                         net (fo=2, routed)           0.644     0.815    sys_clk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.841 r  sys_clk_IBUF_BUFG_inst/O
+                         net (fo=14, routed)          0.566     1.406    u_rd_id/sys_clk_IBUF_BUFG
+    SLICE_X44Y95         FDCE                                         r  u_rd_id/lcd_id_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X44Y95         FDCE (Prop_fdce_C_Q)         0.141     1.547 f  u_rd_id/lcd_id_reg[3]/Q
+                         net (fo=6, routed)           0.303     1.850    u_rd_id/lcd_id_reg_n_0_[3]
+    SLICE_X48Y96         LUT6 (Prop_lut6_I4_O)        0.045     1.895 r  u_rd_id/data_req4_carry_i_2/O
+                         net (fo=1, routed)           0.000     1.895    u_lcd_driver/data_req3_carry_i_8_1[0]
+    SLICE_X48Y96         CARRY4 (Prop_carry4_S[3]_O[3])
+                                                      0.063     1.958 r  u_lcd_driver/data_req4_carry/O[3]
+                         net (fo=2, routed)           0.371     2.330    u_lcd_driver/data_req4[3]
+    SLICE_X49Y97         LUT4 (Prop_lut4_I1_O)        0.110     2.440 r  u_lcd_driver/data_req3_carry_i_3/O
+                         net (fo=1, routed)           0.000     2.440    u_lcd_driver/data_req3_carry_i_3_n_0
+    SLICE_X49Y97         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.119     2.559 r  u_lcd_driver/data_req3_carry/CO[3]
+                         net (fo=1, routed)           0.000     2.559    u_lcd_driver/data_req3_carry_n_0
+    SLICE_X49Y98         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.045     2.604 r  u_lcd_driver/data_req3_carry__0/CO[1]
+                         net (fo=1, routed)           0.359     2.962    u_lcd_driver/data_req3
+    SLICE_X45Y95         LUT4 (Prop_lut4_I1_O)        0.114     3.076 r  u_lcd_driver/data_req_i_1/O
+                         net (fo=1, routed)           0.000     3.076    u_lcd_driver/data_req0
+    SLICE_X45Y95         FDCE                                         r  u_lcd_driver/data_req_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.400     0.400 r  sys_clk_IBUF_inst/O
+                         net (fo=2, routed)           1.117     1.516    u_rd_id/sys_clk_IBUF
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.056     1.572 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5/O
+                         net (fo=1, routed)           0.098     1.670    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.056     1.726 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4/O
+                         net (fo=1, routed)           0.259     1.985    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I5_O)        0.056     2.041 r  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_1/O
+                         net (fo=1, routed)           0.221     2.263    lcd_clk_OBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     2.292 r  lcd_clk_OBUF_BUFG_inst/O
+                         net (fo=60, routed)          0.836     3.127    u_lcd_driver/lcd_clk_OBUF_BUFG
+    SLICE_X45Y95         FDCE                                         r  u_lcd_driver/data_req_reg/C
+                         clock pessimism             -0.229     2.898    
+    SLICE_X45Y95         FDCE (Hold_fdce_C_D)         0.091     2.989    u_lcd_driver/data_req_reg
+  -------------------------------------------------------------------
+                         required time                         -2.989    
+                         arrival time                           3.076    
+  -------------------------------------------------------------------
+                         slack                                  0.087    
+
+Slack (MET) :             0.175ns  (arrival time - required time)
+  Source:                 u_rd_id/lcd_id_reg[7]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            u_lcd_display/pixel_data_reg[7]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             sys_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk rise@0.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        1.775ns  (logic 0.652ns (36.728%)  route 1.123ns (63.272%))
+  Logic Levels:           6  (CARRY4=3 LUT4=2 LUT6=1)
+  Clock Path Skew:        1.493ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.128ns
+    Source Clock Delay      (SCD):    1.406ns
+    Clock Pessimism Removal (CPR):    0.229ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.171     0.171 r  sys_clk_IBUF_inst/O
+                         net (fo=2, routed)           0.644     0.815    sys_clk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.841 r  sys_clk_IBUF_BUFG_inst/O
+                         net (fo=14, routed)          0.566     1.406    u_rd_id/sys_clk_IBUF_BUFG
+    SLICE_X44Y95         FDCE                                         r  u_rd_id/lcd_id_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X44Y95         FDCE (Prop_fdce_C_Q)         0.128     1.534 r  u_rd_id/lcd_id_reg[7]/Q
+                         net (fo=11, routed)          0.421     1.955    u_rd_id/lcd_id_reg_n_0_[7]
+    SLICE_X48Y94         LUT6 (Prop_lut6_I5_O)        0.098     2.053 r  u_rd_id/i__carry_i_13/O
+                         net (fo=1, routed)           0.000     2.053    u_rd_id/i__carry_i_13_n_0
+    SLICE_X48Y94         CARRY4 (Prop_carry4_S[2]_O[2])
+                                                      0.066     2.119 f  u_rd_id/i__carry_i_9/O[2]
+                         net (fo=4, routed)           0.334     2.453    u_lcd_driver/pixel_data3[6]
+    SLICE_X46Y96         LUT4 (Prop_lut4_I1_O)        0.107     2.560 r  u_lcd_driver/i__carry_i_1__5/O
+                         net (fo=1, routed)           0.000     2.560    u_lcd_display/pixel_data2_inferred__1/i__carry__0_0[3]
+    SLICE_X46Y96         CARRY4 (Prop_carry4_DI[3]_CO[3])
+                                                      0.091     2.651 r  u_lcd_display/pixel_data2_inferred__1/i__carry/CO[3]
+                         net (fo=1, routed)           0.000     2.651    u_lcd_display/pixel_data2_inferred__1/i__carry_n_0
+    SLICE_X46Y97         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.045     2.696 f  u_lcd_display/pixel_data2_inferred__1/i__carry__0/CO[1]
+                         net (fo=2, routed)           0.368     3.065    u_lcd_display/pixel_data20_in
+    SLICE_X43Y98         LUT4 (Prop_lut4_I1_O)        0.117     3.182 r  u_lcd_display/pixel_data[7]_i_1/O
+                         net (fo=1, routed)           0.000     3.182    u_lcd_display/pixel_data[7]
+    SLICE_X43Y98         FDCE                                         r  u_lcd_display/pixel_data_reg[7]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.400     0.400 r  sys_clk_IBUF_inst/O
+                         net (fo=2, routed)           1.117     1.516    u_rd_id/sys_clk_IBUF
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.056     1.572 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5/O
+                         net (fo=1, routed)           0.098     1.670    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.056     1.726 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4/O
+                         net (fo=1, routed)           0.259     1.985    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I5_O)        0.056     2.041 r  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_1/O
+                         net (fo=1, routed)           0.221     2.263    lcd_clk_OBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     2.292 r  lcd_clk_OBUF_BUFG_inst/O
+                         net (fo=60, routed)          0.837     3.128    u_lcd_display/lcd_clk_OBUF_BUFG
+    SLICE_X43Y98         FDCE                                         r  u_lcd_display/pixel_data_reg[7]/C
+                         clock pessimism             -0.229     2.899    
+    SLICE_X43Y98         FDCE (Hold_fdce_C_D)         0.107     3.006    u_lcd_display/pixel_data_reg[7]
+  -------------------------------------------------------------------
+                         required time                         -3.006    
+                         arrival time                           3.182    
+  -------------------------------------------------------------------
+                         slack                                  0.175    
+
+Slack (MET) :             0.190ns  (arrival time - required time)
+  Source:                 u_rd_id/lcd_id_reg[7]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            u_lcd_display/pixel_data_reg[15]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             sys_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk rise@0.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        1.774ns  (logic 0.651ns (36.692%)  route 1.123ns (63.308%))
+  Logic Levels:           6  (CARRY4=3 LUT4=2 LUT6=1)
+  Clock Path Skew:        1.493ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.128ns
+    Source Clock Delay      (SCD):    1.406ns
+    Clock Pessimism Removal (CPR):    0.229ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.171     0.171 r  sys_clk_IBUF_inst/O
+                         net (fo=2, routed)           0.644     0.815    sys_clk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.841 r  sys_clk_IBUF_BUFG_inst/O
+                         net (fo=14, routed)          0.566     1.406    u_rd_id/sys_clk_IBUF_BUFG
+    SLICE_X44Y95         FDCE                                         r  u_rd_id/lcd_id_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X44Y95         FDCE (Prop_fdce_C_Q)         0.128     1.534 r  u_rd_id/lcd_id_reg[7]/Q
+                         net (fo=11, routed)          0.421     1.955    u_rd_id/lcd_id_reg_n_0_[7]
+    SLICE_X48Y94         LUT6 (Prop_lut6_I5_O)        0.098     2.053 r  u_rd_id/i__carry_i_13/O
+                         net (fo=1, routed)           0.000     2.053    u_rd_id/i__carry_i_13_n_0
+    SLICE_X48Y94         CARRY4 (Prop_carry4_S[2]_O[2])
+                                                      0.066     2.119 f  u_rd_id/i__carry_i_9/O[2]
+                         net (fo=4, routed)           0.334     2.453    u_lcd_driver/pixel_data3[6]
+    SLICE_X46Y96         LUT4 (Prop_lut4_I1_O)        0.107     2.560 r  u_lcd_driver/i__carry_i_1__5/O
+                         net (fo=1, routed)           0.000     2.560    u_lcd_display/pixel_data2_inferred__1/i__carry__0_0[3]
+    SLICE_X46Y96         CARRY4 (Prop_carry4_DI[3]_CO[3])
+                                                      0.091     2.651 r  u_lcd_display/pixel_data2_inferred__1/i__carry/CO[3]
+                         net (fo=1, routed)           0.000     2.651    u_lcd_display/pixel_data2_inferred__1/i__carry_n_0
+    SLICE_X46Y97         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.045     2.696 r  u_lcd_display/pixel_data2_inferred__1/i__carry__0/CO[1]
+                         net (fo=2, routed)           0.368     3.065    u_lcd_display/pixel_data20_in
+    SLICE_X43Y98         LUT4 (Prop_lut4_I1_O)        0.116     3.181 r  u_lcd_display/pixel_data[15]_i_1/O
+                         net (fo=1, routed)           0.000     3.181    u_lcd_display/pixel_data[15]
+    SLICE_X43Y98         FDCE                                         r  u_lcd_display/pixel_data_reg[15]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.400     0.400 r  sys_clk_IBUF_inst/O
+                         net (fo=2, routed)           1.117     1.516    u_rd_id/sys_clk_IBUF
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.056     1.572 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5/O
+                         net (fo=1, routed)           0.098     1.670    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.056     1.726 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4/O
+                         net (fo=1, routed)           0.259     1.985    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I5_O)        0.056     2.041 r  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_1/O
+                         net (fo=1, routed)           0.221     2.263    lcd_clk_OBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     2.292 r  lcd_clk_OBUF_BUFG_inst/O
+                         net (fo=60, routed)          0.837     3.128    u_lcd_display/lcd_clk_OBUF_BUFG
+    SLICE_X43Y98         FDCE                                         r  u_lcd_display/pixel_data_reg[15]/C
+                         clock pessimism             -0.229     2.899    
+    SLICE_X43Y98         FDCE (Hold_fdce_C_D)         0.091     2.990    u_lcd_display/pixel_data_reg[15]
+  -------------------------------------------------------------------
+                         required time                         -2.990    
+                         arrival time                           3.181    
+  -------------------------------------------------------------------
+                         slack                                  0.190    
+
+Slack (MET) :             0.255ns  (arrival time - required time)
+  Source:                 u_lcd_driver/v_cnt_reg[6]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            u_lcd_driver/v_cnt_reg[6]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             sys_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk rise@0.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        0.360ns  (logic 0.183ns (50.766%)  route 0.177ns (49.234%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.127ns
+    Source Clock Delay      (SCD):    2.327ns
+    Clock Pessimism Removal (CPR):    0.800ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.171     0.171 r  sys_clk_IBUF_inst/O
+                         net (fo=2, routed)           0.940     1.110    u_rd_id/sys_clk_IBUF
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.045     1.155 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5/O
+                         net (fo=1, routed)           0.080     1.235    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.045     1.280 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4/O
+                         net (fo=1, routed)           0.213     1.493    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I5_O)        0.045     1.538 r  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_1/O
+                         net (fo=1, routed)           0.197     1.735    lcd_clk_OBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     1.761 r  lcd_clk_OBUF_BUFG_inst/O
+                         net (fo=60, routed)          0.566     2.327    u_lcd_driver/lcd_clk_OBUF_BUFG
+    SLICE_X45Y94         FDCE                                         r  u_lcd_driver/v_cnt_reg[6]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X45Y94         FDCE (Prop_fdce_C_Q)         0.141     2.468 r  u_lcd_driver/v_cnt_reg[6]/Q
+                         net (fo=11, routed)          0.177     2.646    u_lcd_driver/v_cnt_reg[9]_0[6]
+    SLICE_X45Y94         LUT3 (Prop_lut3_I2_O)        0.042     2.688 r  u_lcd_driver/v_cnt[6]_i_1/O
+                         net (fo=1, routed)           0.000     2.688    u_lcd_driver/v_cnt[6]_i_1_n_0
+    SLICE_X45Y94         FDCE                                         r  u_lcd_driver/v_cnt_reg[6]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.400     0.400 r  sys_clk_IBUF_inst/O
+                         net (fo=2, routed)           1.117     1.516    u_rd_id/sys_clk_IBUF
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.056     1.572 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5/O
+                         net (fo=1, routed)           0.098     1.670    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.056     1.726 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4/O
+                         net (fo=1, routed)           0.259     1.985    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I5_O)        0.056     2.041 r  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_1/O
+                         net (fo=1, routed)           0.221     2.263    lcd_clk_OBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     2.292 r  lcd_clk_OBUF_BUFG_inst/O
+                         net (fo=60, routed)          0.836     3.127    u_lcd_driver/lcd_clk_OBUF_BUFG
+    SLICE_X45Y94         FDCE                                         r  u_lcd_driver/v_cnt_reg[6]/C
+                         clock pessimism             -0.800     2.327    
+    SLICE_X45Y94         FDCE (Hold_fdce_C_D)         0.105     2.432    u_lcd_driver/v_cnt_reg[6]
+  -------------------------------------------------------------------
+                         required time                         -2.432    
+                         arrival time                           2.688    
+  -------------------------------------------------------------------
+                         slack                                  0.255    
+
+Slack (MET) :             0.256ns  (arrival time - required time)
+  Source:                 u_lcd_driver/v_cnt_reg[6]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            u_lcd_driver/v_cnt_reg[8]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             sys_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk rise@0.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        0.363ns  (logic 0.184ns (50.622%)  route 0.179ns (49.378%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.127ns
+    Source Clock Delay      (SCD):    2.327ns
+    Clock Pessimism Removal (CPR):    0.800ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.171     0.171 r  sys_clk_IBUF_inst/O
+                         net (fo=2, routed)           0.940     1.110    u_rd_id/sys_clk_IBUF
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.045     1.155 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5/O
+                         net (fo=1, routed)           0.080     1.235    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.045     1.280 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4/O
+                         net (fo=1, routed)           0.213     1.493    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I5_O)        0.045     1.538 r  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_1/O
+                         net (fo=1, routed)           0.197     1.735    lcd_clk_OBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     1.761 r  lcd_clk_OBUF_BUFG_inst/O
+                         net (fo=60, routed)          0.566     2.327    u_lcd_driver/lcd_clk_OBUF_BUFG
+    SLICE_X45Y94         FDCE                                         r  u_lcd_driver/v_cnt_reg[6]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X45Y94         FDCE (Prop_fdce_C_Q)         0.141     2.468 r  u_lcd_driver/v_cnt_reg[6]/Q
+                         net (fo=11, routed)          0.179     2.648    u_lcd_driver/v_cnt_reg[9]_0[6]
+    SLICE_X45Y94         LUT5 (Prop_lut5_I1_O)        0.043     2.691 r  u_lcd_driver/v_cnt[8]_i_1/O
+                         net (fo=1, routed)           0.000     2.691    u_lcd_driver/v_cnt[8]_i_1_n_0
+    SLICE_X45Y94         FDCE                                         r  u_lcd_driver/v_cnt_reg[8]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.400     0.400 r  sys_clk_IBUF_inst/O
+                         net (fo=2, routed)           1.117     1.516    u_rd_id/sys_clk_IBUF
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.056     1.572 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5/O
+                         net (fo=1, routed)           0.098     1.670    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.056     1.726 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4/O
+                         net (fo=1, routed)           0.259     1.985    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I5_O)        0.056     2.041 r  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_1/O
+                         net (fo=1, routed)           0.221     2.263    lcd_clk_OBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     2.292 r  lcd_clk_OBUF_BUFG_inst/O
+                         net (fo=60, routed)          0.836     3.127    u_lcd_driver/lcd_clk_OBUF_BUFG
+    SLICE_X45Y94         FDCE                                         r  u_lcd_driver/v_cnt_reg[8]/C
+                         clock pessimism             -0.800     2.327    
+    SLICE_X45Y94         FDCE (Hold_fdce_C_D)         0.107     2.434    u_lcd_driver/v_cnt_reg[8]
+  -------------------------------------------------------------------
+                         required time                         -2.434    
+                         arrival time                           2.691    
+  -------------------------------------------------------------------
+                         slack                                  0.256    
+
+Slack (MET) :             0.257ns  (arrival time - required time)
+  Source:                 u_lcd_driver/h_cnt_reg[7]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            u_lcd_driver/h_cnt_reg[8]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             sys_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk rise@0.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        0.364ns  (logic 0.192ns (52.744%)  route 0.172ns (47.256%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.127ns
+    Source Clock Delay      (SCD):    2.326ns
+    Clock Pessimism Removal (CPR):    0.801ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.171     0.171 r  sys_clk_IBUF_inst/O
+                         net (fo=2, routed)           0.940     1.110    u_rd_id/sys_clk_IBUF
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.045     1.155 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5/O
+                         net (fo=1, routed)           0.080     1.235    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.045     1.280 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4/O
+                         net (fo=1, routed)           0.213     1.493    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I5_O)        0.045     1.538 r  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_1/O
+                         net (fo=1, routed)           0.197     1.735    lcd_clk_OBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     1.761 r  lcd_clk_OBUF_BUFG_inst/O
+                         net (fo=60, routed)          0.565     2.326    u_lcd_driver/lcd_clk_OBUF_BUFG
+    SLICE_X47Y98         FDCE                                         r  u_lcd_driver/h_cnt_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X47Y98         FDCE (Prop_fdce_C_Q)         0.141     2.467 r  u_lcd_driver/h_cnt_reg[7]/Q
+                         net (fo=13, routed)          0.172     2.639    u_lcd_driver/Q[3]
+    SLICE_X47Y98         LUT5 (Prop_lut5_I3_O)        0.051     2.690 r  u_lcd_driver/h_cnt[8]_i_1/O
+                         net (fo=1, routed)           0.000     2.690    u_lcd_driver/h_cnt[8]_i_1_n_0
+    SLICE_X47Y98         FDCE                                         r  u_lcd_driver/h_cnt_reg[8]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.400     0.400 r  sys_clk_IBUF_inst/O
+                         net (fo=2, routed)           1.117     1.516    u_rd_id/sys_clk_IBUF
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.056     1.572 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5/O
+                         net (fo=1, routed)           0.098     1.670    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.056     1.726 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4/O
+                         net (fo=1, routed)           0.259     1.985    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I5_O)        0.056     2.041 r  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_1/O
+                         net (fo=1, routed)           0.221     2.263    lcd_clk_OBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     2.292 r  lcd_clk_OBUF_BUFG_inst/O
+                         net (fo=60, routed)          0.836     3.127    u_lcd_driver/lcd_clk_OBUF_BUFG
+    SLICE_X47Y98         FDCE                                         r  u_lcd_driver/h_cnt_reg[8]/C
+                         clock pessimism             -0.801     2.326    
+    SLICE_X47Y98         FDCE (Hold_fdce_C_D)         0.107     2.433    u_lcd_driver/h_cnt_reg[8]
+  -------------------------------------------------------------------
+                         required time                         -2.433    
+                         arrival time                           2.690    
+  -------------------------------------------------------------------
+                         slack                                  0.257    
+
+Slack (MET) :             0.260ns  (arrival time - required time)
+  Source:                 u_lcd_driver/data_req_reg/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            u_lcd_driver/pixel_xpos_reg[7]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             sys_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk rise@0.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        0.367ns  (logic 0.184ns (50.170%)  route 0.183ns (49.830%))
+  Logic Levels:           1  (LUT2=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.127ns
+    Source Clock Delay      (SCD):    2.327ns
+    Clock Pessimism Removal (CPR):    0.800ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.171     0.171 r  sys_clk_IBUF_inst/O
+                         net (fo=2, routed)           0.940     1.110    u_rd_id/sys_clk_IBUF
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.045     1.155 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5/O
+                         net (fo=1, routed)           0.080     1.235    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.045     1.280 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4/O
+                         net (fo=1, routed)           0.213     1.493    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I5_O)        0.045     1.538 r  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_1/O
+                         net (fo=1, routed)           0.197     1.735    lcd_clk_OBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     1.761 r  lcd_clk_OBUF_BUFG_inst/O
+                         net (fo=60, routed)          0.566     2.327    u_lcd_driver/lcd_clk_OBUF_BUFG
+    SLICE_X45Y95         FDCE                                         r  u_lcd_driver/data_req_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X45Y95         FDCE (Prop_fdce_C_Q)         0.141     2.468 r  u_lcd_driver/data_req_reg/Q
+                         net (fo=12, routed)          0.183     2.651    u_lcd_driver/data_req
+    SLICE_X45Y95         LUT2 (Prop_lut2_I0_O)        0.043     2.694 r  u_lcd_driver/pixel_xpos[7]_i_1/O
+                         net (fo=1, routed)           0.000     2.694    u_lcd_driver/pixel_xpos[7]_i_1_n_0
+    SLICE_X45Y95         FDCE                                         r  u_lcd_driver/pixel_xpos_reg[7]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.400     0.400 r  sys_clk_IBUF_inst/O
+                         net (fo=2, routed)           1.117     1.516    u_rd_id/sys_clk_IBUF
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.056     1.572 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5/O
+                         net (fo=1, routed)           0.098     1.670    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.056     1.726 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4/O
+                         net (fo=1, routed)           0.259     1.985    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I5_O)        0.056     2.041 r  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_1/O
+                         net (fo=1, routed)           0.221     2.263    lcd_clk_OBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     2.292 r  lcd_clk_OBUF_BUFG_inst/O
+                         net (fo=60, routed)          0.836     3.127    u_lcd_driver/lcd_clk_OBUF_BUFG
+    SLICE_X45Y95         FDCE                                         r  u_lcd_driver/pixel_xpos_reg[7]/C
+                         clock pessimism             -0.800     2.327    
+    SLICE_X45Y95         FDCE (Hold_fdce_C_D)         0.107     2.434    u_lcd_driver/pixel_xpos_reg[7]
+  -------------------------------------------------------------------
+                         required time                         -2.434    
+                         arrival time                           2.694    
+  -------------------------------------------------------------------
+                         slack                                  0.260    
+
+Slack (MET) :             0.262ns  (arrival time - required time)
+  Source:                 u_lcd_driver/data_req_reg/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            u_lcd_driver/pixel_xpos_reg[1]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             sys_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk rise@0.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        0.354ns  (logic 0.186ns (52.603%)  route 0.168ns (47.397%))
+  Logic Levels:           1  (LUT2=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.127ns
+    Source Clock Delay      (SCD):    2.327ns
+    Clock Pessimism Removal (CPR):    0.800ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.171     0.171 r  sys_clk_IBUF_inst/O
+                         net (fo=2, routed)           0.940     1.110    u_rd_id/sys_clk_IBUF
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.045     1.155 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5/O
+                         net (fo=1, routed)           0.080     1.235    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.045     1.280 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4/O
+                         net (fo=1, routed)           0.213     1.493    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I5_O)        0.045     1.538 r  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_1/O
+                         net (fo=1, routed)           0.197     1.735    lcd_clk_OBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     1.761 r  lcd_clk_OBUF_BUFG_inst/O
+                         net (fo=60, routed)          0.566     2.327    u_lcd_driver/lcd_clk_OBUF_BUFG
+    SLICE_X45Y95         FDCE                                         r  u_lcd_driver/data_req_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X45Y95         FDCE (Prop_fdce_C_Q)         0.141     2.468 r  u_lcd_driver/data_req_reg/Q
+                         net (fo=12, routed)          0.168     2.636    u_lcd_driver/data_req
+    SLICE_X45Y95         LUT2 (Prop_lut2_I0_O)        0.045     2.681 r  u_lcd_driver/pixel_xpos[1]_i_1/O
+                         net (fo=1, routed)           0.000     2.681    u_lcd_driver/pixel_xpos[1]_i_1_n_0
+    SLICE_X45Y95         FDCE                                         r  u_lcd_driver/pixel_xpos_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.400     0.400 r  sys_clk_IBUF_inst/O
+                         net (fo=2, routed)           1.117     1.516    u_rd_id/sys_clk_IBUF
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.056     1.572 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5/O
+                         net (fo=1, routed)           0.098     1.670    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.056     1.726 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4/O
+                         net (fo=1, routed)           0.259     1.985    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I5_O)        0.056     2.041 r  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_1/O
+                         net (fo=1, routed)           0.221     2.263    lcd_clk_OBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     2.292 r  lcd_clk_OBUF_BUFG_inst/O
+                         net (fo=60, routed)          0.836     3.127    u_lcd_driver/lcd_clk_OBUF_BUFG
+    SLICE_X45Y95         FDCE                                         r  u_lcd_driver/pixel_xpos_reg[1]/C
+                         clock pessimism             -0.800     2.327    
+    SLICE_X45Y95         FDCE (Hold_fdce_C_D)         0.092     2.419    u_lcd_driver/pixel_xpos_reg[1]
+  -------------------------------------------------------------------
+                         required time                         -2.419    
+                         arrival time                           2.681    
+  -------------------------------------------------------------------
+                         slack                                  0.262    
+
+Slack (MET) :             0.262ns  (arrival time - required time)
+  Source:                 u_clk_div/clk_12_5m_reg/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            u_clk_div/clk_12_5m_reg/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             sys_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk rise@0.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        0.353ns  (logic 0.186ns (52.687%)  route 0.167ns (47.313%))
+  Logic Levels:           1  (LUT2=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.961ns
+    Source Clock Delay      (SCD):    1.404ns
+    Clock Pessimism Removal (CPR):    0.557ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.171     0.171 r  sys_clk_IBUF_inst/O
+                         net (fo=2, routed)           0.644     0.815    sys_clk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.026     0.841 r  sys_clk_IBUF_BUFG_inst/O
+                         net (fo=14, routed)          0.564     1.404    u_clk_div/sys_clk_IBUF_BUFG
+    SLICE_X51Y97         FDCE                                         r  u_clk_div/clk_12_5m_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X51Y97         FDCE (Prop_fdce_C_Q)         0.141     1.545 r  u_clk_div/clk_12_5m_reg/Q
+                         net (fo=2, routed)           0.167     1.712    u_clk_div/clk_12_5m
+    SLICE_X51Y97         LUT2 (Prop_lut2_I1_O)        0.045     1.757 r  u_clk_div/clk_12_5m_i_1/O
+                         net (fo=1, routed)           0.000     1.757    u_clk_div/clk_12_5m_i_1_n_0
+    SLICE_X51Y97         FDCE                                         r  u_clk_div/clk_12_5m_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.400     0.400 r  sys_clk_IBUF_inst/O
+                         net (fo=2, routed)           0.699     1.098    sys_clk_IBUF
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.029     1.127 r  sys_clk_IBUF_BUFG_inst/O
+                         net (fo=14, routed)          0.834     1.961    u_clk_div/sys_clk_IBUF_BUFG
+    SLICE_X51Y97         FDCE                                         r  u_clk_div/clk_12_5m_reg/C
+                         clock pessimism             -0.557     1.404    
+    SLICE_X51Y97         FDCE (Hold_fdce_C_D)         0.091     1.495    u_clk_div/clk_12_5m_reg
+  -------------------------------------------------------------------
+                         required time                         -1.495    
+                         arrival time                           1.757    
+  -------------------------------------------------------------------
+                         slack                                  0.262    
+
+Slack (MET) :             0.262ns  (arrival time - required time)
+  Source:                 u_lcd_driver/h_cnt_reg[1]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            u_lcd_driver/h_cnt_reg[1]/D
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             sys_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk rise@0.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        0.353ns  (logic 0.186ns (52.687%)  route 0.167ns (47.313%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.126ns
+    Source Clock Delay      (SCD):    2.325ns
+    Clock Pessimism Removal (CPR):    0.801ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.171     0.171 r  sys_clk_IBUF_inst/O
+                         net (fo=2, routed)           0.940     1.110    u_rd_id/sys_clk_IBUF
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.045     1.155 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5/O
+                         net (fo=1, routed)           0.080     1.235    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.045     1.280 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4/O
+                         net (fo=1, routed)           0.213     1.493    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I5_O)        0.045     1.538 r  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_1/O
+                         net (fo=1, routed)           0.197     1.735    lcd_clk_OBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     1.761 r  lcd_clk_OBUF_BUFG_inst/O
+                         net (fo=60, routed)          0.564     2.325    u_lcd_driver/lcd_clk_OBUF_BUFG
+    SLICE_X49Y93         FDCE                                         r  u_lcd_driver/h_cnt_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X49Y93         FDCE (Prop_fdce_C_Q)         0.141     2.466 r  u_lcd_driver/h_cnt_reg[1]/Q
+                         net (fo=13, routed)          0.167     2.633    u_lcd_driver/Q[1]
+    SLICE_X49Y93         LUT3 (Prop_lut3_I0_O)        0.045     2.678 r  u_lcd_driver/h_cnt[1]_i_1/O
+                         net (fo=1, routed)           0.000     2.678    u_lcd_driver/p_0_in[1]
+    SLICE_X49Y93         FDCE                                         r  u_lcd_driver/h_cnt_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.400     0.400 r  sys_clk_IBUF_inst/O
+                         net (fo=2, routed)           1.117     1.516    u_rd_id/sys_clk_IBUF
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.056     1.572 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5/O
+                         net (fo=1, routed)           0.098     1.670    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_5_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I0_O)        0.056     1.726 f  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4/O
+                         net (fo=1, routed)           0.259     1.985    u_rd_id/lcd_clk_OBUF_BUFG_inst_i_4_n_0
+    SLICE_X51Y96         LUT6 (Prop_lut6_I5_O)        0.056     2.041 r  u_rd_id/lcd_clk_OBUF_BUFG_inst_i_1/O
+                         net (fo=1, routed)           0.221     2.263    lcd_clk_OBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     2.292 r  lcd_clk_OBUF_BUFG_inst/O
+                         net (fo=60, routed)          0.835     3.126    u_lcd_driver/lcd_clk_OBUF_BUFG
+    SLICE_X49Y93         FDCE                                         r  u_lcd_driver/h_cnt_reg[1]/C
+                         clock pessimism             -0.801     2.325    
+    SLICE_X49Y93         FDCE (Hold_fdce_C_D)         0.091     2.416    u_lcd_driver/h_cnt_reg[1]
+  -------------------------------------------------------------------
+                         required time                         -2.416    
+                         arrival time                           2.678    
+  -------------------------------------------------------------------
+                         slack                                  0.262    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         sys_clk
+Waveform(ns):       { 0.000 10.000 }
+Period(ns):         20.000
+Sources:            { sys_clk }
+
+Check Type        Corner  Lib Pin  Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location       Pin
+Min Period        n/a     BUFG/I   n/a            1.592         20.000      18.408     BUFGCTRL_X0Y0  lcd_clk_OBUF_BUFG_inst/I
+Min Period        n/a     BUFG/I   n/a            1.592         20.000      18.408     BUFGCTRL_X0Y1  sys_clk_IBUF_BUFG_inst/I
+Min Period        n/a     FDCE/C   n/a            1.000         20.000      19.000     SLICE_X43Y98   u_lcd_display/pixel_data_reg[15]/C
+Min Period        n/a     FDCE/C   n/a            1.000         20.000      19.000     SLICE_X42Y98   u_lcd_display/pixel_data_reg[23]/C
+Min Period        n/a     FDCE/C   n/a            1.000         20.000      19.000     SLICE_X43Y98   u_lcd_display/pixel_data_reg[7]/C
+Min Period        n/a     FDCE/C   n/a            1.000         20.000      19.000     SLICE_X45Y95   u_lcd_driver/data_req_reg/C
+Min Period        n/a     FDCE/C   n/a            1.000         20.000      19.000     SLICE_X47Y98   u_lcd_driver/h_cnt_reg[0]/C
+Min Period        n/a     FDCE/C   n/a            1.000         20.000      19.000     SLICE_X47Y98   u_lcd_driver/h_cnt_reg[10]/C
+Min Period        n/a     FDCE/C   n/a            1.000         20.000      19.000     SLICE_X49Y93   u_lcd_driver/h_cnt_reg[1]/C
+Min Period        n/a     FDCE/C   n/a            1.000         20.000      19.000     SLICE_X50Y97   u_lcd_driver/h_cnt_reg[2]/C
+Low Pulse Width   Slow    FDPE/C   n/a            0.500         10.000      9.500      SLICE_X28Y100  u_lcd_driver/lcd_de_reg_lopt_replica_18/C
+Low Pulse Width   Slow    FDPE/C   n/a            0.500         10.000      9.500      SLICE_X28Y100  u_lcd_driver/lcd_de_reg_lopt_replica_19/C
+Low Pulse Width   Slow    FDPE/C   n/a            0.500         10.000      9.500      SLICE_X28Y100  u_lcd_driver/lcd_de_reg_lopt_replica_2/C
+Low Pulse Width   Slow    FDPE/C   n/a            0.500         10.000      9.500      SLICE_X28Y100  u_lcd_driver/lcd_de_reg_lopt_replica_20/C
+Low Pulse Width   Slow    FDPE/C   n/a            0.500         10.000      9.500      SLICE_X28Y100  u_lcd_driver/lcd_de_reg_lopt_replica_21/C
+Low Pulse Width   Slow    FDPE/C   n/a            0.500         10.000      9.500      SLICE_X28Y100  u_lcd_driver/lcd_de_reg_lopt_replica_3/C
+Low Pulse Width   Slow    FDPE/C   n/a            0.500         10.000      9.500      SLICE_X28Y100  u_lcd_driver/lcd_de_reg_lopt_replica_4/C
+Low Pulse Width   Slow    FDPE/C   n/a            0.500         10.000      9.500      SLICE_X29Y100  u_lcd_driver/lcd_de_reg_lopt_replica_5/C
+Low Pulse Width   Slow    FDCE/C   n/a            0.500         10.000      9.500      SLICE_X43Y97   u_rd_id/lcd_id_reg[12]/C
+Low Pulse Width   Slow    FDCE/C   n/a            0.500         10.000      9.500      SLICE_X44Y95   u_rd_id/lcd_id_reg[13]/C
+High Pulse Width  Fast    FDCE/C   n/a            0.500         10.000      9.500      SLICE_X43Y98   u_lcd_display/pixel_data_reg[15]/C
+High Pulse Width  Fast    FDCE/C   n/a            0.500         10.000      9.500      SLICE_X42Y98   u_lcd_display/pixel_data_reg[23]/C
+High Pulse Width  Fast    FDCE/C   n/a            0.500         10.000      9.500      SLICE_X43Y98   u_lcd_display/pixel_data_reg[7]/C
+High Pulse Width  Fast    FDCE/C   n/a            0.500         10.000      9.500      SLICE_X45Y95   u_lcd_driver/data_req_reg/C
+High Pulse Width  Fast    FDCE/C   n/a            0.500         10.000      9.500      SLICE_X47Y98   u_lcd_driver/h_cnt_reg[0]/C
+High Pulse Width  Fast    FDCE/C   n/a            0.500         10.000      9.500      SLICE_X47Y98   u_lcd_driver/h_cnt_reg[10]/C
+High Pulse Width  Fast    FDCE/C   n/a            0.500         10.000      9.500      SLICE_X49Y93   u_lcd_driver/h_cnt_reg[1]/C
+High Pulse Width  Fast    FDCE/C   n/a            0.500         10.000      9.500      SLICE_X50Y97   u_lcd_driver/h_cnt_reg[2]/C
+High Pulse Width  Fast    FDCE/C   n/a            0.500         10.000      9.500      SLICE_X50Y97   u_lcd_driver/h_cnt_reg[3]/C
+High Pulse Width  Fast    FDCE/C   n/a            0.500         10.000      9.500      SLICE_X48Y99   u_lcd_driver/h_cnt_reg[4]/C
+
+
+

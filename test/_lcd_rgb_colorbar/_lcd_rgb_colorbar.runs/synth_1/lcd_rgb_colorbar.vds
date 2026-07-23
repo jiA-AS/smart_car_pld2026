@@ -1,0 +1,508 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Thu Jul 23 03:55:40 2026
+# Process ID: 11020
+# Current directory: E:/FPGA/project/smart_car_pld2026/test/_lcd_rgb_colorbar/_lcd_rgb_colorbar.runs/synth_1
+# Command line: vivado.exe -log lcd_rgb_colorbar.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source lcd_rgb_colorbar.tcl
+# Log file: E:/FPGA/project/smart_car_pld2026/test/_lcd_rgb_colorbar/_lcd_rgb_colorbar.runs/synth_1/lcd_rgb_colorbar.vds
+# Journal file: E:/FPGA/project/smart_car_pld2026/test/_lcd_rgb_colorbar/_lcd_rgb_colorbar.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source lcd_rgb_colorbar.tcl -notrace
+Command: synth_design -top lcd_rgb_colorbar -part xc7a100tfgg484-2
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 62972 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.993 . Memory (MB): peak = 431.184 ; gain = 98.395
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'lcd_rgb_colorbar' [E:/FPGA/project/smart_car_pld2026/test/21_lcd_rgb_colorbar/rtl/lcd_rgb_colorbar.v:19]
+INFO: [Synth 8-6157] synthesizing module 'rd_id' [E:/FPGA/project/smart_car_pld2026/test/21_lcd_rgb_colorbar/rtl/rd_id.v:19]
+INFO: [Synth 8-6155] done synthesizing module 'rd_id' (1#1) [E:/FPGA/project/smart_car_pld2026/test/21_lcd_rgb_colorbar/rtl/rd_id.v:19]
+INFO: [Synth 8-6157] synthesizing module 'clk_div' [E:/FPGA/project/smart_car_pld2026/test/21_lcd_rgb_colorbar/rtl/clk_div.v:19]
+INFO: [Synth 8-6155] done synthesizing module 'clk_div' (2#1) [E:/FPGA/project/smart_car_pld2026/test/21_lcd_rgb_colorbar/rtl/clk_div.v:19]
+INFO: [Synth 8-6157] synthesizing module 'lcd_display' [E:/FPGA/project/smart_car_pld2026/test/21_lcd_rgb_colorbar/rtl/lcd_display.v:19]
+	Parameter WHITE bound to: 24'b111111111111111111111111 
+	Parameter BLACK bound to: 24'b000000000000000000000000 
+	Parameter RED bound to: 24'b111111110000000000000000 
+	Parameter GREEN bound to: 24'b000000001111111100000000 
+	Parameter BLUE bound to: 24'b000000000000000011111111 
+INFO: [Synth 8-6155] done synthesizing module 'lcd_display' (3#1) [E:/FPGA/project/smart_car_pld2026/test/21_lcd_rgb_colorbar/rtl/lcd_display.v:19]
+INFO: [Synth 8-6157] synthesizing module 'lcd_driver' [E:/FPGA/project/smart_car_pld2026/test/21_lcd_rgb_colorbar/rtl/lcd_driver.v:19]
+	Parameter H_SYNC_4342 bound to: 11'b00000101001 
+	Parameter H_BACK_4342 bound to: 11'b00000000010 
+	Parameter H_DISP_4342 bound to: 11'b00111100000 
+	Parameter H_FRONT_4342 bound to: 11'b00000000010 
+	Parameter H_TOTAL_4342 bound to: 11'b01000001101 
+	Parameter V_SYNC_4342 bound to: 11'b00000001010 
+	Parameter V_BACK_4342 bound to: 11'b00000000010 
+	Parameter V_DISP_4342 bound to: 11'b00100010000 
+	Parameter V_FRONT_4342 bound to: 11'b00000000010 
+	Parameter V_TOTAL_4342 bound to: 11'b00100011110 
+	Parameter H_SYNC_7084 bound to: 11'b00010000000 
+	Parameter H_BACK_7084 bound to: 11'b00001011000 
+	Parameter H_DISP_7084 bound to: 11'b01100100000 
+	Parameter H_FRONT_7084 bound to: 11'b00000101000 
+	Parameter H_TOTAL_7084 bound to: 11'b10000100000 
+	Parameter V_SYNC_7084 bound to: 11'b00000000010 
+	Parameter V_BACK_7084 bound to: 11'b00000100001 
+	Parameter V_DISP_7084 bound to: 11'b00111100000 
+	Parameter V_FRONT_7084 bound to: 11'b00000001010 
+	Parameter V_TOTAL_7084 bound to: 11'b01000001101 
+	Parameter H_SYNC_7016 bound to: 11'b00000010100 
+	Parameter H_BACK_7016 bound to: 11'b00010001100 
+	Parameter H_DISP_7016 bound to: 11'b10000000000 
+	Parameter H_FRONT_7016 bound to: 11'b00010100000 
+	Parameter H_TOTAL_7016 bound to: 11'b10101000000 
+	Parameter V_SYNC_7016 bound to: 11'b00000000011 
+	Parameter V_BACK_7016 bound to: 11'b00000010100 
+	Parameter V_DISP_7016 bound to: 11'b01001011000 
+	Parameter V_FRONT_7016 bound to: 11'b00000001100 
+	Parameter V_TOTAL_7016 bound to: 11'b01001111011 
+	Parameter H_SYNC_1018 bound to: 11'b00000001010 
+	Parameter H_BACK_1018 bound to: 11'b00001010000 
+	Parameter H_DISP_1018 bound to: 11'b10100000000 
+	Parameter H_FRONT_1018 bound to: 11'b00001000110 
+	Parameter H_TOTAL_1018 bound to: 11'b10110100000 
+	Parameter V_SYNC_1018 bound to: 11'b00000000011 
+	Parameter V_BACK_1018 bound to: 11'b00000001010 
+	Parameter V_DISP_1018 bound to: 11'b01100100000 
+	Parameter V_FRONT_1018 bound to: 11'b00000001010 
+	Parameter V_TOTAL_1018 bound to: 11'b01100110111 
+	Parameter H_SYNC_4384 bound to: 11'b00010000000 
+	Parameter H_BACK_4384 bound to: 11'b00001011000 
+	Parameter H_DISP_4384 bound to: 11'b01100100000 
+	Parameter H_FRONT_4384 bound to: 11'b00000101000 
+	Parameter H_TOTAL_4384 bound to: 11'b10000100000 
+	Parameter V_SYNC_4384 bound to: 11'b00000000010 
+	Parameter V_BACK_4384 bound to: 11'b00000100001 
+	Parameter V_DISP_4384 bound to: 11'b00111100000 
+	Parameter V_FRONT_4384 bound to: 11'b00000001010 
+	Parameter V_TOTAL_4384 bound to: 11'b01000001101 
+INFO: [Synth 8-6155] done synthesizing module 'lcd_driver' (4#1) [E:/FPGA/project/smart_car_pld2026/test/21_lcd_rgb_colorbar/rtl/lcd_driver.v:19]
+INFO: [Synth 8-6155] done synthesizing module 'lcd_rgb_colorbar' (5#1) [E:/FPGA/project/smart_car_pld2026/test/21_lcd_rgb_colorbar/rtl/lcd_rgb_colorbar.v:19]
+WARNING: [Synth 8-3331] design lcd_display has unconnected port pixel_ypos[10]
+WARNING: [Synth 8-3331] design lcd_display has unconnected port pixel_ypos[9]
+WARNING: [Synth 8-3331] design lcd_display has unconnected port pixel_ypos[8]
+WARNING: [Synth 8-3331] design lcd_display has unconnected port pixel_ypos[7]
+WARNING: [Synth 8-3331] design lcd_display has unconnected port pixel_ypos[6]
+WARNING: [Synth 8-3331] design lcd_display has unconnected port pixel_ypos[5]
+WARNING: [Synth 8-3331] design lcd_display has unconnected port pixel_ypos[4]
+WARNING: [Synth 8-3331] design lcd_display has unconnected port pixel_ypos[3]
+WARNING: [Synth 8-3331] design lcd_display has unconnected port pixel_ypos[2]
+WARNING: [Synth 8-3331] design lcd_display has unconnected port pixel_ypos[1]
+WARNING: [Synth 8-3331] design lcd_display has unconnected port pixel_ypos[0]
+WARNING: [Synth 8-3331] design lcd_display has unconnected port v_disp[10]
+WARNING: [Synth 8-3331] design lcd_display has unconnected port v_disp[9]
+WARNING: [Synth 8-3331] design lcd_display has unconnected port v_disp[8]
+WARNING: [Synth 8-3331] design lcd_display has unconnected port v_disp[7]
+WARNING: [Synth 8-3331] design lcd_display has unconnected port v_disp[6]
+WARNING: [Synth 8-3331] design lcd_display has unconnected port v_disp[5]
+WARNING: [Synth 8-3331] design lcd_display has unconnected port v_disp[4]
+WARNING: [Synth 8-3331] design lcd_display has unconnected port v_disp[3]
+WARNING: [Synth 8-3331] design lcd_display has unconnected port v_disp[2]
+WARNING: [Synth 8-3331] design lcd_display has unconnected port v_disp[1]
+WARNING: [Synth 8-3331] design lcd_display has unconnected port v_disp[0]
+WARNING: [Synth 8-3331] design rd_id has unconnected port lcd_rgb[22]
+WARNING: [Synth 8-3331] design rd_id has unconnected port lcd_rgb[21]
+WARNING: [Synth 8-3331] design rd_id has unconnected port lcd_rgb[20]
+WARNING: [Synth 8-3331] design rd_id has unconnected port lcd_rgb[19]
+WARNING: [Synth 8-3331] design rd_id has unconnected port lcd_rgb[18]
+WARNING: [Synth 8-3331] design rd_id has unconnected port lcd_rgb[17]
+WARNING: [Synth 8-3331] design rd_id has unconnected port lcd_rgb[16]
+WARNING: [Synth 8-3331] design rd_id has unconnected port lcd_rgb[14]
+WARNING: [Synth 8-3331] design rd_id has unconnected port lcd_rgb[13]
+WARNING: [Synth 8-3331] design rd_id has unconnected port lcd_rgb[12]
+WARNING: [Synth 8-3331] design rd_id has unconnected port lcd_rgb[11]
+WARNING: [Synth 8-3331] design rd_id has unconnected port lcd_rgb[10]
+WARNING: [Synth 8-3331] design rd_id has unconnected port lcd_rgb[9]
+WARNING: [Synth 8-3331] design rd_id has unconnected port lcd_rgb[8]
+WARNING: [Synth 8-3331] design rd_id has unconnected port lcd_rgb[6]
+WARNING: [Synth 8-3331] design rd_id has unconnected port lcd_rgb[5]
+WARNING: [Synth 8-3331] design rd_id has unconnected port lcd_rgb[4]
+WARNING: [Synth 8-3331] design rd_id has unconnected port lcd_rgb[3]
+WARNING: [Synth 8-3331] design rd_id has unconnected port lcd_rgb[2]
+WARNING: [Synth 8-3331] design rd_id has unconnected port lcd_rgb[1]
+WARNING: [Synth 8-3331] design rd_id has unconnected port lcd_rgb[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 486.824 ; gain = 154.035
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 486.824 ; gain = 154.035
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 486.824 ; gain = 154.035
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tfgg484-2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [E:/FPGA/project/smart_car_pld2026/test/_lcd_rgb_colorbar/_lcd_rgb_colorbar.srcs/constrs_1/new/lcd_rgb_colorbar.xdc]
+Finished Parsing XDC File [E:/FPGA/project/smart_car_pld2026/test/_lcd_rgb_colorbar/_lcd_rgb_colorbar.srcs/constrs_1/new/lcd_rgb_colorbar.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [E:/FPGA/project/smart_car_pld2026/test/_lcd_rgb_colorbar/_lcd_rgb_colorbar.srcs/constrs_1/new/lcd_rgb_colorbar.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/lcd_rgb_colorbar_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/lcd_rgb_colorbar_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 841.672 ; gain = 0.000
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 841.672 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 841.672 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 841.672 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 841.672 ; gain = 508.883
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tfgg484-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 841.672 ; gain = 508.883
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 841.672 ; gain = 508.883
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "h_disp" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "v_disp" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "h_sync" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "h_back" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "v_sync" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "v_back" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "h_total" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "v_total" won't be mapped to RAM because it is too sparse
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 841.672 ; gain = 508.883
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   4 Input     12 Bit       Adders := 1     
+	   3 Input     11 Bit       Adders := 2     
+	   2 Input     11 Bit       Adders := 5     
+	   4 Input     11 Bit       Adders := 1     
+	   2 Input      9 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               24 Bit    Registers := 1     
+	               16 Bit    Registers := 1     
+	               11 Bit    Registers := 4     
+	                1 Bit    Registers := 6     
++---Muxes : 
+	   5 Input     24 Bit        Muxes := 1     
+	   2 Input     24 Bit        Muxes := 1     
+	   6 Input     15 Bit        Muxes := 1     
+	   4 Input     11 Bit        Muxes := 2     
+	   2 Input     11 Bit        Muxes := 6     
+	   4 Input     10 Bit        Muxes := 2     
+	   2 Input     10 Bit        Muxes := 2     
+	   4 Input      8 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 2     
+	   4 Input      6 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 1     
+	   3 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   6 Input      2 Bit        Muxes := 8     
+	   6 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module rd_id 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   6 Input     15 Bit        Muxes := 1     
+Module clk_div 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   6 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module lcd_display 
+Detailed RTL Component Info : 
++---Registers : 
+	               24 Bit    Registers := 1     
++---Muxes : 
+	   5 Input     24 Bit        Muxes := 1     
+Module lcd_driver 
+Detailed RTL Component Info : 
++---Adders : 
+	   4 Input     12 Bit       Adders := 1     
+	   3 Input     11 Bit       Adders := 2     
+	   2 Input     11 Bit       Adders := 5     
+	   4 Input     11 Bit       Adders := 1     
+	   2 Input      9 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 1     
++---Registers : 
+	               11 Bit    Registers := 4     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     24 Bit        Muxes := 1     
+	   4 Input     11 Bit        Muxes := 2     
+	   2 Input     11 Bit        Muxes := 6     
+	   4 Input     10 Bit        Muxes := 2     
+	   2 Input     10 Bit        Muxes := 2     
+	   4 Input      8 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 2     
+	   4 Input      6 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 1     
+	   3 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   6 Input      2 Bit        Muxes := 8     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5546] ROM "u_lcd_driver/h_disp" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "u_lcd_driver/h_back" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "u_lcd_driver/h_sync" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "u_lcd_driver/h_total" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "u_lcd_driver/v_back" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "u_lcd_driver/v_sync" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "u_lcd_driver/v_total" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "u_lcd_driver/v_disp" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-3917] design lcd_rgb_colorbar has port lcd_hs driven by constant 1
+WARNING: [Synth 8-3917] design lcd_rgb_colorbar has port lcd_vs driven by constant 1
+WARNING: [Synth 8-3917] design lcd_rgb_colorbar has port lcd_bl driven by constant 1
+WARNING: [Synth 8-3917] design lcd_rgb_colorbar has port lcd_rst driven by constant 1
+INFO: [Synth 8-3886] merging instance 'u_lcd_display/pixel_data_reg[0]' (FDC) to 'u_lcd_display/pixel_data_reg[1]'
+INFO: [Synth 8-3886] merging instance 'u_lcd_display/pixel_data_reg[1]' (FDC) to 'u_lcd_display/pixel_data_reg[2]'
+INFO: [Synth 8-3886] merging instance 'u_lcd_display/pixel_data_reg[2]' (FDC) to 'u_lcd_display/pixel_data_reg[3]'
+INFO: [Synth 8-3886] merging instance 'u_lcd_display/pixel_data_reg[3]' (FDC) to 'u_lcd_display/pixel_data_reg[4]'
+INFO: [Synth 8-3886] merging instance 'u_lcd_display/pixel_data_reg[4]' (FDC) to 'u_lcd_display/pixel_data_reg[5]'
+INFO: [Synth 8-3886] merging instance 'u_lcd_display/pixel_data_reg[5]' (FDC) to 'u_lcd_display/pixel_data_reg[6]'
+INFO: [Synth 8-3886] merging instance 'u_lcd_display/pixel_data_reg[6]' (FDC) to 'u_lcd_display/pixel_data_reg[7]'
+INFO: [Synth 8-3886] merging instance 'u_lcd_display/pixel_data_reg[8]' (FDC) to 'u_lcd_display/pixel_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'u_lcd_display/pixel_data_reg[9]' (FDC) to 'u_lcd_display/pixel_data_reg[10]'
+INFO: [Synth 8-3886] merging instance 'u_lcd_display/pixel_data_reg[10]' (FDC) to 'u_lcd_display/pixel_data_reg[11]'
+INFO: [Synth 8-3886] merging instance 'u_lcd_display/pixel_data_reg[11]' (FDC) to 'u_lcd_display/pixel_data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'u_lcd_display/pixel_data_reg[12]' (FDC) to 'u_lcd_display/pixel_data_reg[13]'
+INFO: [Synth 8-3886] merging instance 'u_lcd_display/pixel_data_reg[13]' (FDC) to 'u_lcd_display/pixel_data_reg[14]'
+INFO: [Synth 8-3886] merging instance 'u_lcd_display/pixel_data_reg[14]' (FDC) to 'u_lcd_display/pixel_data_reg[15]'
+INFO: [Synth 8-3886] merging instance 'u_lcd_display/pixel_data_reg[16]' (FDC) to 'u_lcd_display/pixel_data_reg[17]'
+INFO: [Synth 8-3886] merging instance 'u_lcd_display/pixel_data_reg[17]' (FDC) to 'u_lcd_display/pixel_data_reg[18]'
+INFO: [Synth 8-3886] merging instance 'u_lcd_display/pixel_data_reg[18]' (FDC) to 'u_lcd_display/pixel_data_reg[19]'
+INFO: [Synth 8-3886] merging instance 'u_lcd_display/pixel_data_reg[19]' (FDC) to 'u_lcd_display/pixel_data_reg[20]'
+INFO: [Synth 8-3886] merging instance 'u_lcd_display/pixel_data_reg[20]' (FDC) to 'u_lcd_display/pixel_data_reg[21]'
+INFO: [Synth 8-3886] merging instance 'u_lcd_display/pixel_data_reg[21]' (FDC) to 'u_lcd_display/pixel_data_reg[22]'
+INFO: [Synth 8-3886] merging instance 'u_lcd_display/pixel_data_reg[22]' (FDC) to 'u_lcd_display/pixel_data_reg[23]'
+INFO: [Synth 8-3886] merging instance 'u_rd_id/lcd_id_reg[15]' (FDCE) to 'u_rd_id/lcd_id_reg[11]'
+INFO: [Synth 8-3886] merging instance 'u_rd_id/lcd_id_reg[11]' (FDCE) to 'u_rd_id/lcd_id_reg[10]'
+INFO: [Synth 8-3886] merging instance 'u_rd_id/lcd_id_reg[10]' (FDCE) to 'u_rd_id/lcd_id_reg[5]'
+INFO: [Synth 8-3886] merging instance 'u_rd_id/lcd_id_reg[0]' (FDCE) to 'u_rd_id/lcd_id_reg[5]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rd_id/lcd_id_reg[5] )
+INFO: [Synth 8-3886] merging instance 'u_rd_id/lcd_id_reg[9]' (FDCE) to 'u_rd_id/lcd_id_reg[8]'
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 841.672 ; gain = 508.883
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 841.672 ; gain = 508.883
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 864.273 ; gain = 531.484
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 864.273 ; gain = 531.484
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 864.273 ; gain = 531.484
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 864.273 ; gain = 531.484
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 864.273 ; gain = 531.484
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 864.273 ; gain = 531.484
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 864.273 ; gain = 531.484
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 864.273 ; gain = 531.484
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     2|
+|2     |CARRY4 |    36|
+|3     |LUT1   |    22|
+|4     |LUT2   |    70|
+|5     |LUT3   |    49|
+|6     |LUT4   |    81|
+|7     |LUT5   |    26|
+|8     |LUT6   |    24|
+|9     |FDCE   |    51|
+|10    |FDPE   |     1|
+|11    |IBUF   |     2|
+|12    |IOBUF  |     3|
+|13    |OBUF   |     6|
+|14    |OBUFT  |    21|
++------+-------+------+
+
+Report Instance Areas: 
++------+----------------+------------+------+
+|      |Instance        |Module      |Cells |
++------+----------------+------------+------+
+|1     |top             |            |   394|
+|2     |  u_clk_div     |clk_div     |     6|
+|3     |  u_lcd_display |lcd_display |    21|
+|4     |  u_lcd_driver  |lcd_driver  |   226|
+|5     |  u_rd_id       |rd_id       |   107|
++------+----------------+------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 864.273 ; gain = 531.484
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 4 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 864.273 ; gain = 176.637
+Synthesis Optimization Complete : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 864.273 ; gain = 531.484
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 39 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 865.648 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 3 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 3 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+65 Infos, 47 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 865.648 ; gain = 546.008
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 865.648 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'E:/FPGA/project/smart_car_pld2026/test/_lcd_rgb_colorbar/_lcd_rgb_colorbar.runs/synth_1/lcd_rgb_colorbar.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file lcd_rgb_colorbar_utilization_synth.rpt -pb lcd_rgb_colorbar_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Jul 23 03:55:57 2026...

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Wed Jul 22 20:42:29 2026
+# Process ID: 44240
+# Current directory: E:/FPGA/project/smart_car_pld2026/test/_uart_loopback/_uart_loopback.runs/synth_1
+# Command line: vivado.exe -log uart_loopback.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source uart_loopback.tcl
+# Log file: E:/FPGA/project/smart_car_pld2026/test/_uart_loopback/_uart_loopback.runs/synth_1/uart_loopback.vds
+# Journal file: E:/FPGA/project/smart_car_pld2026/test/_uart_loopback/_uart_loopback.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source uart_loopback.tcl -notrace
