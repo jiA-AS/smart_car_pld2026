@@ -1,0 +1,16 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../../rtl/berath_led.v" \
+"../../../../../rtl/order_exe.v" \
+"../../../../../rtl/packet_coding.v" \
+"../../../../../rtl/packet_decoding.v" \
+"../../../../../rtl/top_uart_packet.v" \
+"../../../../../rtl/uart_rx.v" \
+"../../../../../rtl/uart_tx.v" \
+"../../../../top_uart_packet.srcs/sim_1/new/tb_top_uart_packet.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

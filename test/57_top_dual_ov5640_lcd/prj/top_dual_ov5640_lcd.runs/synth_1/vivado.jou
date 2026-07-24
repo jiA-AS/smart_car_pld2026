@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Thu Nov  6 19:24:16 2025
+# Process ID: 17488
+# Current directory: D:/Desktop/SC_DFQ_Pro/100T/57_top_dual_ov5640_lcd/prj/top_dual_ov5640_lcd.runs/synth_1
+# Command line: vivado.exe -log top_dual_ov5640_lcd.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_dual_ov5640_lcd.tcl
+# Log file: D:/Desktop/SC_DFQ_Pro/100T/57_top_dual_ov5640_lcd/prj/top_dual_ov5640_lcd.runs/synth_1/top_dual_ov5640_lcd.vds
+# Journal file: D:/Desktop/SC_DFQ_Pro/100T/57_top_dual_ov5640_lcd/prj/top_dual_ov5640_lcd.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source top_dual_ov5640_lcd.tcl -notrace

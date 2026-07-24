@@ -65,7 +65,6 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7a100tfgg484-2
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
@@ -75,10 +74,10 @@ set rc [catch {
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
   add_files -quiet E:/FPGA/project/smart_car_pld2026/test/_ov5640_lcd/_ov5640_lcd.runs/synth_1/ov5640_lcd.dcp
-  read_ip -quiet e:/FPGA/project/smart_car_pld2026/test/_ov5640_lcd/_ov5640_lcd.srcs/sources_1/ip/rd_fifo_1/rd_fifo.xci
-  read_ip -quiet e:/FPGA/project/smart_car_pld2026/test/_ov5640_lcd/_ov5640_lcd.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0.xci
-  read_ip -quiet e:/FPGA/project/smart_car_pld2026/test/_ov5640_lcd/_ov5640_lcd.srcs/sources_1/ip/wr_fifo_1/wr_fifo.xci
-  read_ip -quiet e:/FPGA/project/smart_car_pld2026/test/_ov5640_lcd/_ov5640_lcd.srcs/sources_1/ip/mig_7series_0/mig_7series_0.xci
+  read_ip -quiet E:/FPGA/project/smart_car_pld2026/test/_ov5640_lcd/_ov5640_lcd.srcs/sources_1/ip/rd_fifo_1/rd_fifo.xci
+  read_ip -quiet E:/FPGA/project/smart_car_pld2026/test/_ov5640_lcd/_ov5640_lcd.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0.xci
+  read_ip -quiet E:/FPGA/project/smart_car_pld2026/test/_ov5640_lcd/_ov5640_lcd.srcs/sources_1/ip/wr_fifo_1/wr_fifo.xci
+  read_ip -quiet E:/FPGA/project/smart_car_pld2026/test/_ov5640_lcd/_ov5640_lcd.srcs/sources_1/ip/mig_7series_0/mig_7series_0.xci
   read_xdc E:/FPGA/project/smart_car_pld2026/test/_ov5640_lcd/_ov5640_lcd.srcs/constrs_1/new/pin.xdc
   link_design -top ov5640_lcd -part xc7a100tfgg484-2
   close_msg_db -file init_design.pb

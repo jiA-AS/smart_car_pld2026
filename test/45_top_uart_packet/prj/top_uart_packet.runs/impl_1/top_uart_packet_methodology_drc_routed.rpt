@@ -1,0 +1,100 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+| Date         : Mon Oct 27 14:29:42 2025
+| Host         : PC20250326UKWZ running 64-bit major release  (build 9200)
+| Command      : report_methodology -file top_uart_packet_methodology_drc_routed.rpt -pb top_uart_packet_methodology_drc_routed.pb -rpx top_uart_packet_methodology_drc_routed.rpx
+| Design       : top_uart_packet
+| Device       : xc7a100tfgg484-2
+| Speed File   : -2
+| Design State : Fully Routed
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 10
++-----------+----------+-------------------------------+------------+
+| Rule      | Severity | Description                   | Violations |
++-----------+----------+-------------------------------+------------+
+| LUTAR-1   | Warning  | LUT drives async reset alert  | 1          |
+| TIMING-18 | Warning  | Missing input or output delay | 9          |
++-----------+----------+-------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell u_packet_decode/breath_led_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_cmd_exe/u_breath_led/breath_led_reg/CLR,
+u_cmd_exe/u_breath_led/cnt_ms_reg[0]/CLR,
+u_cmd_exe/u_breath_led/cnt_ms_reg[1]/CLR,
+u_cmd_exe/u_breath_led/cnt_ms_reg[2]/CLR,
+u_cmd_exe/u_breath_led/cnt_ms_reg[3]/CLR,
+u_cmd_exe/u_breath_led/cnt_ms_reg[4]/CLR,
+u_cmd_exe/u_breath_led/cnt_ms_reg[5]/CLR,
+u_cmd_exe/u_breath_led/cnt_ms_reg[6]/CLR,
+u_cmd_exe/u_breath_led/cnt_ms_reg[7]/CLR,
+u_cmd_exe/u_breath_led/cnt_ms_reg[8]/CLR,
+u_cmd_exe/u_breath_led/cnt_ms_reg[9]/CLR,
+u_cmd_exe/u_breath_led/cnt_s_reg[0]/CLR,
+u_cmd_exe/u_breath_led/cnt_s_reg[1]/CLR,
+u_cmd_exe/u_breath_led/cnt_s_reg[2]/CLR,
+u_cmd_exe/u_breath_led/cnt_s_reg[3]/CLR (the first 15 of 29 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+TIMING-18#1 Warning
+Missing input or output delay  
+An input delay is missing on key[0] relative to clock(s) sys_clk
+Related violations: <none>
+
+TIMING-18#2 Warning
+Missing input or output delay  
+An input delay is missing on key[1] relative to clock(s) sys_clk
+Related violations: <none>
+
+TIMING-18#3 Warning
+Missing input or output delay  
+An input delay is missing on sys_rst_n relative to clock(s) sys_clk
+Related violations: <none>
+
+TIMING-18#4 Warning
+Missing input or output delay  
+An input delay is missing on uart_rxd relative to clock(s) sys_clk
+Related violations: <none>
+
+TIMING-18#5 Warning
+Missing input or output delay  
+An output delay is missing on beep relative to clock(s) sys_clk
+Related violations: <none>
+
+TIMING-18#6 Warning
+Missing input or output delay  
+An output delay is missing on breath_led relative to clock(s) sys_clk
+Related violations: <none>
+
+TIMING-18#7 Warning
+Missing input or output delay  
+An output delay is missing on led[0] relative to clock(s) sys_clk
+Related violations: <none>
+
+TIMING-18#8 Warning
+Missing input or output delay  
+An output delay is missing on led[1] relative to clock(s) sys_clk
+Related violations: <none>
+
+TIMING-18#9 Warning
+Missing input or output delay  
+An output delay is missing on uart_txd relative to clock(s) sys_clk
+Related violations: <none>
+
+

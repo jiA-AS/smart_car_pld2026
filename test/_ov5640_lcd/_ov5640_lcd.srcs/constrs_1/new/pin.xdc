@@ -70,4 +70,5 @@ set_property -dict {PACKAGE_PIN R14 IOSTANDARD LVCMOS33} [get_ports cam_sda]
 
 set_property IOSTANDARD DIFF_SSTL15 [get_ports {ddr3_ck_n[0]}]
 set_property PACKAGE_PIN U7 [get_ports sys_rst_n]
-set_property -dict {PACKAGE_PIN V9 IOSTANDARD LVCMOS15} [get_ports led]
+set_property -dict {PACKAGE_PIN V9 IOSTANDARD LVCMOS15} [get_ports {led[0]}]
+set_property -dict {PACKAGE_PIN Y8 IOSTANDARD LVCMOS15} [get_ports {led[1]}]

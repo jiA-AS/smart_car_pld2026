@@ -2,8 +2,8 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Thu Jul 23 09:26:04 2026
-# Process ID: 60376
+# Start of session at: Thu Jul 23 10:14:01 2026
+# Process ID: 22120
 # Current directory: E:/FPGA/project/smart_car_pld2026/test/_ov5640_lcd/_ov5640_lcd.runs/synth_1
 # Command line: vivado.exe -log ov5640_lcd.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ov5640_lcd.tcl
 # Log file: E:/FPGA/project/smart_car_pld2026/test/_ov5640_lcd/_ov5640_lcd.runs/synth_1/ov5640_lcd.vds

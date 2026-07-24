@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a100tfgg484-2" LaunchTime="1761546484">
+  <File Type="ROUTE-PWR" Name="top_uart_packet_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="top_uart_packet.tcl"/>
+  <File Type="ROUTE-PWR-SUM" Name="top_uart_packet_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="top_uart_packet_reports.tcl"/>
+  <File Type="BITSTR-MSK" Name="top_uart_packet.msk"/>
+  <File Type="ROUTE-CLK" Name="top_uart_packet_clock_utilization_routed.rpt"/>
+  <File Type="RDI-RDI" Name="top_uart_packet.vdi"/>
+  <File Type="BG-BIT" Name="top_uart_packet.bit"/>
+  <File Type="BG-DRC" Name="top_uart_packet.drc"/>
+  <File Type="BG-BGN" Name="top_uart_packet.bgn"/>
+  <File Type="BG-BIN" Name="top_uart_packet.bin"/>
+  <File Type="BITSTR-RBT" Name="top_uart_packet.rbt"/>
+  <File Type="BITSTR-NKY" Name="top_uart_packet.nky"/>
+  <File Type="BITSTR-BMM" Name="top_uart_packet_bd.bmm"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="top_uart_packet_methodology_drc_routed.rpt"/>
+  <File Type="BITSTR-MMI" Name="top_uart_packet.mmi"/>
+  <File Type="BITSTR-SYSDEF" Name="top_uart_packet.sysdef"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="top_uart_packet.ltx"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="OPT-DRC" Name="top_uart_packet_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="top_uart_packet.hwdef"/>
+  <File Type="PLACE-IO" Name="top_uart_packet_io_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="top_uart_packet_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="top_uart_packet_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="top_uart_packet_control_sets_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="top_uart_packet_incremental_reuse_pre_placed.rpt"/>
+  <File Type="ROUTE-DRC" Name="top_uart_packet_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="top_uart_packet_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="top_uart_packet_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="top_uart_packet_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="top_uart_packet_route_status.pb"/>
+  <File Type="ROUTE-DCP" Name="top_uart_packet_routed.dcp"/>
+  <File Type="ROUTE-ERROR-DCP" Name="top_uart_packet_routed_error.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="top_uart_packet_routed_bb.dcp"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="top_uart_packet_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="top_uart_packet_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="top_uart_packet_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-BUS-SKEW" Name="top_uart_packet_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="top_uart_packet_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="top_uart_packet_bus_skew_routed.rpx"/>
+  <File Type="OPT-DCP" Name="top_uart_packet_opt.dcp"/>
+  <File Type="PLACE-DCP" Name="top_uart_packet_placed.dcp"/>
+  <File Type="PWROPT-DCP" Name="top_uart_packet_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="top_uart_packet_postplace_pwropt.dcp"/>
+  <File Type="PHYSOPT-DCP" Name="top_uart_packet_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="top_uart_packet_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="top_uart_packet_postroute_physopt_bb.dcp"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="top_uart_packet_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="top_uart_packet_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="top_uart_packet_methodology_drc_routed.rpx"/>
+  <File Type="PDI-FILE" Name="top_uart_packet.pdi"/>
+  <File Type="RCFI_FILE" Name="top_uart_packet.rcfi"/>
+  <File Type="CFI_FILE" Name="top_uart_packet.cfi"/>
+  <File Type="RNPI_FILE" Name="top_uart_packet.rnpi"/>
+  <File Type="NPI_FILE" Name="top_uart_packet.npi"/>
+  <File Type="RBD_FILE" Name="top_uart_packet.rbd"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/../rtl/berath_led.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/cmd_exe.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/packet_code.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/packet_decode.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/uart_rx.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/uart_tx.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/top_uart_packet.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="top_uart_packet"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/top_uart_packet.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/new/top_uart_packet.xdc"/>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+    <Step Id="write_device_image"/>
+  </Strategy>
+</GenRun>

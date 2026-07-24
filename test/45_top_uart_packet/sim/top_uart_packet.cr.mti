@@ -1,0 +1,50 @@
+D:/Desktop/7020_fpga/top_uart_packet/rtl/cmd_exe.v {1 {vlog -work work -vopt -stats=none D:/Desktop/7020_fpga/top_uart_packet/rtl/cmd_exe.v
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module cmd_exe
+
+Top level modules:
+	cmd_exe
+
+} {} {}} D:/Desktop/7020_fpga/top_uart_packet/rtl/top_uart_packet.v {1 {vlog -work work -vopt -stats=none D:/Desktop/7020_fpga/top_uart_packet/rtl/top_uart_packet.v
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module top_uart_packet
+
+Top level modules:
+	top_uart_packet
+
+} {} {}} D:/Desktop/7020_fpga/top_uart_packet/rtl/uart_rx.v {1 {vlog -work work -vopt -stats=none D:/Desktop/7020_fpga/top_uart_packet/rtl/uart_rx.v
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module uart_rx
+
+Top level modules:
+	uart_rx
+
+} {} {}} D:/Desktop/7020_fpga/top_uart_packet/rtl/berath_led.v {1 {vlog -work work -vopt -stats=none D:/Desktop/7020_fpga/top_uart_packet/rtl/berath_led.v
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module breath_led
+
+Top level modules:
+	breath_led
+
+} {} {}} D:/Desktop/7020_fpga/top_uart_packet/rtl/packet_code.v {1 {vlog -work work -vopt -stats=none D:/Desktop/7020_fpga/top_uart_packet/rtl/packet_code.v
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module packet_code
+
+Top level modules:
+	packet_code
+
+} {} {}} D:/Desktop/7020_fpga/top_uart_packet/rtl/packet_decode.v {1 {vlog -work work -vopt -stats=none D:/Desktop/7020_fpga/top_uart_packet/rtl/packet_decode.v
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module packet_decode
+
+Top level modules:
+	packet_decode
+
+} {} {}} D:/Desktop/7020_fpga/top_uart_packet/rtl/uart_tx.v {1 {vlog -work work -vopt -stats=none D:/Desktop/7020_fpga/top_uart_packet/rtl/uart_tx.v
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module uart_tx
+
+Top level modules:
+	uart_tx
+
+} {} {}}

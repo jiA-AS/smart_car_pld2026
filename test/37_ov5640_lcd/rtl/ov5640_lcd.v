@@ -52,7 +52,7 @@ module ov5640_lcd(
     output                lcd_bl       ,  //LCD 背光控制信号
     output                lcd_rst      ,  //LCD 复位信号
     output                lcd_pclk     ,   //LCD 采样时钟
-    output          led  
+    output      [1:0]     led
     );                                 
                                                                    
 //wire define                          
@@ -84,7 +84,8 @@ assign  rst_n = sys_rst_n & locked;
 
 //系统初始化完成：DDR3初始化完成
 assign  sys_init_done = init_calib_complete;
-assign led = init_calib_complete;   // 亮=DDR3校准成功
+assign  led[0] = init_calib_complete;
+assign  led[1] = cmos_frame_valid;
 //摄像头图像分辨率设置模块
 picture_size u_picture_size (
     .rst_n                 (rst_n              ),
@@ -206,7 +207,5 @@ lcd_rgb_top  u_lcd_rgb_top(
     .pixel_ypos            (                   ),       
     .data_in               (rddata             ),  //rfifo输出数据
     .data_req              (rdata_req          )   //请求数据输入
-    );   
-assign led = init_calib_complete;   // 亮=DDR3校准成功
-   
+    );    
 endmodule

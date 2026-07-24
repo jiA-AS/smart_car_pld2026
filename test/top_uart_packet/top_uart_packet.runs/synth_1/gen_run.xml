@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7a100tfgg484-2" LaunchTime="1784827855">
+  <File Type="PA-TCL" Name="top_uart_packet.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="top_uart_packet_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="top_uart_packet_reports.tcl"/>
+  <File Type="RDS-RDS" Name="top_uart_packet.vds"/>
+  <File Type="RDS-UTIL" Name="top_uart_packet_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="top_uart_packet_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="top_uart_packet.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="top_uart_packet_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="top_uart_packet_timing_summary_synth.pb"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/rtl/berath_led.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../45_top_uart_packet/rtl/berath_led.v"/>
+        <Attr Name="ImportTime" Val="1761544976"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl/cmd_exe.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../45_top_uart_packet/rtl/cmd_exe.v"/>
+        <Attr Name="ImportTime" Val="1761544978"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl/packet_code.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../45_top_uart_packet/rtl/packet_code.v"/>
+        <Attr Name="ImportTime" Val="1761544973"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl/packet_decode.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../45_top_uart_packet/rtl/packet_decode.v"/>
+        <Attr Name="ImportTime" Val="1761544981"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl/uart_rx.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../45_top_uart_packet/rtl/uart_rx.v"/>
+        <Attr Name="ImportTime" Val="1761545013"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl/uart_tx.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../45_top_uart_packet/rtl/uart_tx.v"/>
+        <Attr Name="ImportTime" Val="1761544964"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl/top_uart_packet.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../45_top_uart_packet/rtl/top_uart_packet.v"/>
+        <Attr Name="ImportTime" Val="1761544774"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="top_uart_packet"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/top_uart_packet.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../45_top_uart_packet/prj/top_uart_packet.srcs/constrs_1/new/top_uart_packet.xdc"/>
+        <Attr Name="ImportTime" Val="1717941605"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/new/top_uart_packet.xdc"/>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>

@@ -1,0 +1,13 @@
+0.7
+2020.2
+Nov 18 2020
+09:47:47
+D:/Desktop/7020/uart_packet/prj/top_uart_packet.sim/sim_1/behav/xsim/glbl.v,1605673889,verilog,,,,glbl,,,,,,,,
+D:/Desktop/7020/uart_packet/prj/top_uart_packet.srcs/sim_1/new/tb_top_uart_packet.v,1687253866,verilog,,,,tb_top_uart_packet,,,,,,,,
+D:/Desktop/7020/uart_packet/rtl/berath_led.v,1687172153,verilog,,D:/Desktop/7020/uart_packet/rtl/order_exe.v,,breath_led,,,,,,,,
+D:/Desktop/7020/uart_packet/rtl/order_exe.v,1687228054,verilog,,D:/Desktop/7020/uart_packet/rtl/packet_coding.v,,order_exe,,,,,,,,
+D:/Desktop/7020/uart_packet/rtl/packet_coding.v,1687227897,verilog,,D:/Desktop/7020/uart_packet/rtl/packet_decoding.v,,packet_coding,,,,,,,,
+D:/Desktop/7020/uart_packet/rtl/packet_decoding.v,1687230715,verilog,,D:/Desktop/7020/uart_packet/rtl/top_uart_packet.v,,packet_decoding,,,,,,,,
+D:/Desktop/7020/uart_packet/rtl/top_uart_packet.v,1687253234,verilog,,D:/Desktop/7020/uart_packet/rtl/uart_rx.v,,top_uart_packet,,,,,,,,
+D:/Desktop/7020/uart_packet/rtl/uart_rx.v,1687227981,verilog,,D:/Desktop/7020/uart_packet/rtl/uart_tx.v,,uart_rx,,,,,,,,
+D:/Desktop/7020/uart_packet/rtl/uart_tx.v,1687172591,verilog,,D:/Desktop/7020/uart_packet/prj/top_uart_packet.srcs/sim_1/new/tb_top_uart_packet.v,,uart_tx,,,,,,,,
