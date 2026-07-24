@@ -1,6 +1,0 @@
-{
-    // 推荐的 VSCode 插件（PlatformIO 标准工程自带）
-    "recommendations": [
-        "platformio.platformio-ide"
-    ]
-}

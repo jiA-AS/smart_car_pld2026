@@ -1,3 +1,0 @@
-本目录用于存放工程私有库。
-当前所有依赖（Esp32PcntEncoder、Esp32McpwmMotor）均由 platformio.ini 的
-lib_deps 在首次编译时自动从 GitHub 下载到 .pio/libdeps/，此目录保持为空即可。
