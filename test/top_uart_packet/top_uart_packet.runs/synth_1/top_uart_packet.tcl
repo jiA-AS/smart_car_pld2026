@@ -17,7 +17,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param xicom.use_bs_reader 1
 set_msg_config  -id {Synth 8-4446}  -string {{WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/ALIENTEK/Desktop/N7020/28_top_cymometer/rtl/top_cymometer.v:83]}}  -suppress 
 set_msg_config  -id {Constraints 18-619}  -string {{WARNING: [Constraints 18-619] A clock with name 'sys_clk' already exists, overwriting the previous clock with the same name. [C:/Users/ALIENTEK/Desktop/N7020/28_top_cymometer/prj/top_cymometer.srcs/constrs_1/new/pin.xdc:2]}}  -suppress 
 create_project -in_memory -part xc7a100tfgg484-2
