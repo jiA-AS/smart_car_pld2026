@@ -1,0 +1,204 @@
+/*
+
+Xilinx Vivado v2018.3 (64-bit) [Major: 2018, Minor: 3]
+SW Build: 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build: 2404404 on Fri Dec  7 01:43:56 MST 2018
+
+Process ID (PID): 57388
+License: Customer
+
+Current time: 	Thu Jul 23 23:10:23 CST 2026
+Time zone: 	China Standard Time (Asia/Shanghai)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 24
+
+Screen size: 2560x1600
+Screen resolution (DPI): 192
+Available screens: 1
+Available disk space: 57 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=24
+
+Java version: 	9.0.4 64-bit
+Java home: 	D:/Xilinx/Vivado/2018.3/tps/win64/jre9.0.4
+Java executable location: 	D:/Xilinx/Vivado/2018.3/tps/win64/jre9.0.4/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	sunjiayi
+User home directory: C:/Users/sunjiayi
+User working directory: E:/FPGA/project/smart_car_pld2026/test/45_top_uart_packet/prj
+User country: 	CN
+User language: 	zh
+User locale: 	zh_CN
+
+RDI_BASEROOT: D:/Xilinx/Vivado
+HDI_APPROOT: D:/Xilinx/Vivado/2018.3
+RDI_DATADIR: D:/Xilinx/Vivado/2018.3/data
+RDI_BINDIR: D:/Xilinx/Vivado/2018.3/bin
+
+Vivado preferences file location: C:/Users/sunjiayi/AppData/Roaming/Xilinx/Vivado/2018.3/vivado.xml
+Vivado preferences directory: C:/Users/sunjiayi/AppData/Roaming/Xilinx/Vivado/2018.3/
+Vivado layouts directory: C:/Users/sunjiayi/AppData/Roaming/Xilinx/Vivado/2018.3/layouts
+PlanAhead jar file location: 	D:/Xilinx/Vivado/2018.3/lib/classes/planAhead.jar
+Vivado log file location: 	E:/FPGA/project/smart_car_pld2026/test/45_top_uart_packet/prj/vivado.log
+Vivado journal file location: 	E:/FPGA/project/smart_car_pld2026/test/45_top_uart_packet/prj/vivado.jou
+Engine tmp dir: 	E:/FPGA/project/smart_car_pld2026/test/45_top_uart_packet/prj/.Xil/Vivado-57388-LAPTOP-2K88VM5F
+
+Xilinx Environment Variables
+----------------------------
+XILINX: D:/Xilinx/Vivado/2018.3/ids_lite/ISE
+XILINX_DSP: D:/Xilinx/Vivado/2018.3/ids_lite/ISE
+XILINX_PLANAHEAD: D:/Xilinx/Vivado/2018.3
+XILINX_SDK: D:/Xilinx/SDK/2018.3
+XILINX_VIVADO: D:/Xilinx/Vivado/2018.3
+XILINX_VIVADO_HLS: D:/Xilinx/Vivado/2018.3
+
+
+GUI allocated memory:	154 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 620 MB
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 86 MB (+87348kb) [00:00:03]
+// [Engine Memory]: 620 MB (+498313kb) [00:00:03]
+// HOptionPane Warning: 'This project was created with a future version of Vivado. It will be opened in read-only mode for the protection of unrecognized data. Please use 'File | Save Project As...' if you need to alter a copy of this project. The project may or may not open reliably with this version of Vivado. OK to proceed and open the project? (Future Project Version)'
+// Opening Vivado Project: E:\FPGA\project\smart_car_pld2026\test\45_top_uart_packet\prj\top_uart_packet.xpr. Version: Vivado v2020.2 
+// bx (cp):  Open Project : addNotify
+selectButton("PAResourceOtoP.PABaseTab_THIS_PROJECT_WILL_BE_OPENED_IN_READ_ONLY_OK", "OK"); // JButton (C, I)
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project E:/FPGA/project/smart_car_pld2026/test/45_top_uart_packet/prj/top_uart_packet.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: MSGMGR_REFRESH_MSG
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: RUN_ADD
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project E:/FPGA/project/smart_car_pld2026/test/45_top_uart_packet/prj/top_uart_packet.xpr 
+// Tcl Message: INFO: [Project 1-313] Project file moved from 'D:/Project/FPGA/Project_up/XZ7A100T/45_top_uart_packet/prj' since last save. 
+// Tcl Message: ERROR: [Project 1-208] No val for DA Elab Attr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2018.3/data/ip'. 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 112 MB (+23559kb) [00:00:08]
+// [Engine Memory]: 745 MB (+98953kb) [00:00:08]
+// [GUI Memory]: 125 MB (+7331kb) [00:00:08]
+// [Engine Memory]: 785 MB (+2542kb) [00:00:08]
+// WARNING: HEventQueue.dispatchEvent() is taking  1206 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 787 MB. GUI used memory: 64 MB. Current time: 7/23/26, 11:10:26 PM CST
+// Tcl Message: ERROR: [Common 17-39] 'open_project' failed due to earlier errors. 
+// CommandFailedException: ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'open_project' failed due to earlier errors.  
+dismissDialog("Open Project"); // bx (cp)
+// a (cp): Critical Messages: addNotify
+// y (cp): Project is Read-Only: addNotify
+// Tcl Message: update_compile_order -fileset sources_1 
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (y)
+dismissDialog("Project is Read-Only"); // y (cp)
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f (a)
+dismissDialog("Critical Messages"); // a (cp)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 14, false); // u (Q, cp)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// HOptionPane Warning: 'Project 'top_uart_packet' is read-only. To save your work, use 'File | Save Project As' or click the 'SaveProject As' button. (Read-Only Project)'
+selectButton("PAResourceOtoP.PABaseTab_READ_ONLY_PROJECT_OK", "OK"); // JButton (C, I)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_uart_packet (top_uart_packet.v)]", 1); // B (D, cp)
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // X (q, cp)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_PROJECT, "Open Recent"); // ac (cp)
+selectMenuItem(PAResourceCommand.PACommandNames_SAVE_PROJECT_AS, "Save As..."); // af (cp)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // X (q, cp)
+// Run Command: PAResourceCommand.PACommandNames_SAVE_PROJECT_AS
+// aE (cp): Save Project As: addNotify
+selectButton(PAResourceOtoP.ProjectNameChooser_CHOOSE_PROJECT_LOCATION, (String) null); // q (ak, aE)
+dismissFolderChooser();
+// Elapsed time: 11 seconds
+setText(PAResourceOtoP.ProjectNameChooser_PROJECT_NAME, "top_uart_packet"); // Y (Q, aE)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aE)
+// 'o' command handler elapsed time: 19 seconds
+// TclEventType: PROJECT_RENAME
+dismissDialog("Save Project As"); // aE (cp)
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: save_project_as top_uart_packet E:/FPGA/project/smart_car_pld2026/test/top_uart_packet -force 
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// [Engine Memory]: 830 MB (+6494kb) [00:00:54]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// bx (cp):  Save Project As : addNotify
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: PROJECT_RENAME
+// bx (cp):  Save Constraints : addNotify
+dismissDialog("Save Constraints"); // bx (cp)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: import_files 
+// Tcl Message: INFO: [filemgmt 20-334] All file(s) are already imported in fileset: 'constrs_1' INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'constrs_1' INFO: [filemgmt 20-334] All file(s) are already imported in fileset: 'sim_1' INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sim_1' INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1' 
+// HMemoryUtils.trashcanNow. Engine heap size: 855 MB. GUI used memory: 66 MB. Current time: 7/23/26, 11:11:16 PM CST
+// WARNING: HEventQueue.dispatchEvent() is taking  1164 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 855 MB. GUI used memory: 65 MB. Current time: 7/23/26, 11:41:18 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// HMemoryUtils.trashcanNow. Engine heap size: 855 MB. GUI used memory: 61 MB. Current time: 7/24/26, 12:11:21 AM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// HMemoryUtils.trashcanNow. Engine heap size: 855 MB. GUI used memory: 61 MB. Current time: 7/24/26, 12:41:24 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 855 MB. GUI used memory: 61 MB. Current time: 7/24/26, 1:11:27 AM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 855 MB. GUI used memory: 60 MB. Current time: 7/24/26, 1:41:29 AM CST
+// Elapsed time: 9133 seconds
+closeMainWindow("top_uart_packet - [E:/FPGA/project/smart_car_pld2026/test/top_uart_packet/top_uart_packet.xpr] - Vivado 2018.3"); // cp
+// A (cp): Exit Vivado: addNotify
