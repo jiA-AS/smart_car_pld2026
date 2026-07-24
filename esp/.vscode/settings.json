@@ -32,7 +32,5 @@
         "random": "cpp",
         "chrono": "cpp",
         "algorithm": "cpp"
-    },
-    "cmake.sourceDirectory": "E:/FPGA/project/smart_car_pld2026/鱼香四驱V2固件_PLD2026改造版/fishbot_motion_control_four_driver_v2_PLD2026/extra_packages/fishbot_interfaces",
-    "idf.currentSetup": "d:\\DevEnv\\Espressif\\frameworks\\v6.0.1\\esp-idf"
+    }
 }
