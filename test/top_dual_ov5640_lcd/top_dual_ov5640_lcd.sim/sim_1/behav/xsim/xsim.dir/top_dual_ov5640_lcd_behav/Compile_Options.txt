@@ -1,1 +1,0 @@
--wto "246ca61061e84993add8c4afc55ed704" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "fifo_generator_v13_2_3" -L "unisims_ver" -L "unimacro_ver" -L "secureip" -L "xpm" --snapshot "top_dual_ov5640_lcd_behav" "xil_defaultlib.top_dual_ov5640_lcd" "xil_defaultlib.glbl" -log "elaborate.log" 

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Tue Oct 14 18:04:09 2025
+# Process ID: 15372
+# Current directory: D:/Desktop/SC_DFQ_Pro/100T/21_lcd_rgb_colorbar/prj/lcd_rgb_colorbar.runs/impl_1
+# Command line: vivado.exe -log lcd_rgb_colorbar.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source lcd_rgb_colorbar.tcl -notrace
+# Log file: D:/Desktop/SC_DFQ_Pro/100T/21_lcd_rgb_colorbar/prj/lcd_rgb_colorbar.runs/impl_1/lcd_rgb_colorbar.vdi
+# Journal file: D:/Desktop/SC_DFQ_Pro/100T/21_lcd_rgb_colorbar/prj/lcd_rgb_colorbar.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source lcd_rgb_colorbar.tcl -notrace

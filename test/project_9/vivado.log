@@ -1,0 +1,39 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Sat Jul 25 14:43:20 2026
+# Process ID: 49824
+# Current directory: E:/FPGA/project/smart_car_pld2026/test/project_9
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent49756 E:\FPGA\project\smart_car_pld2026\test\project_9\project_9.xpr
+# Log file: E:/FPGA/project/smart_car_pld2026/test/project_9/vivado.log
+# Journal file: E:/FPGA/project/smart_car_pld2026/test/project_9\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project E:/FPGA/project/smart_car_pld2026/test/project_9/project_9.xpr
+INFO: [Project 1-313] Project file moved from 'E:/Xilinx Project/project_9' since last save.
+CRITICAL WARNING: [Project 1-19] Could not find the file 'F:/new_download/100t/100t/57_top_dual_ov5640_lcd/rtl/lcd_rgb_top/clk_div.v'.
+CRITICAL WARNING: [Project 1-19] Could not find the file 'F:/new_download/100t/100t/57_top_dual_ov5640_lcd/rtl/ov5640_dri/cmos_capture_data.v'.
+CRITICAL WARNING: [Project 1-19] Could not find the file 'F:/new_download/100t/100t/57_top_dual_ov5640_lcd/rtl/ddr3_top/ddr3_fifo_ctrl.v'.
+CRITICAL WARNING: [Project 1-19] Could not find the file 'F:/new_download/100t/100t/57_top_dual_ov5640_lcd/rtl/ddr3_top/ddr3_fifo_ctrl_top.v'.
+CRITICAL WARNING: [Project 1-19] Could not find the file 'F:/new_download/100t/100t/57_top_dual_ov5640_lcd/rtl/ddr3_top/ddr3_rw.v'.
+CRITICAL WARNING: [Project 1-19] Could not find the file 'F:/new_download/100t/100t/57_top_dual_ov5640_lcd/rtl/ddr3_top/ddr3_top.v'.
+CRITICAL WARNING: [Project 1-19] Could not find the file 'F:/new_download/100t/100t/57_top_dual_ov5640_lcd/rtl/ov5640_dri/i2c_dri.v'.
+CRITICAL WARNING: [Project 1-19] Could not find the file 'F:/new_download/100t/100t/57_top_dual_ov5640_lcd/rtl/ov5640_dri/i2c_ov5640_rgb565_cfg.v'.
+CRITICAL WARNING: [Project 1-19] Could not find the file 'F:/new_download/100t/100t/57_top_dual_ov5640_lcd/rtl/lcd_rgb_top/lcd_disply.v'.
+CRITICAL WARNING: [Project 1-19] Could not find the file 'F:/new_download/100t/100t/57_top_dual_ov5640_lcd/rtl/lcd_rgb_top/lcd_driver.v'.
+CRITICAL WARNING: [Project 1-19] Could not find the file 'F:/new_download/100t/100t/57_top_dual_ov5640_lcd/rtl/lcd_rgb_top/lcd_rgb_top.v'.
+CRITICAL WARNING: [Project 1-19] Could not find the file 'F:/new_download/100t/100t/57_top_dual_ov5640_lcd/rtl/ov5640_dri/ov5640_dri.v'.
+CRITICAL WARNING: [Project 1-19] Could not find the file 'F:/new_download/100t/100t/57_top_dual_ov5640_lcd/rtl/picture_size.v'.
+CRITICAL WARNING: [Project 1-19] Could not find the file 'F:/new_download/100t/100t/57_top_dual_ov5640_lcd/rtl/lcd_rgb_top/rd_id.v'.
+CRITICAL WARNING: [Project 1-19] Could not find the file 'F:/new_download/100t/100t/57_top_dual_ov5640_lcd/rtl/top_dual_ov5640_lcd.v'.
+CRITICAL WARNING: [Project 1-19] Could not find the file 'F:/new_download/100t/100t/57_top_dual_ov5640_lcd/prj/top_dual_ov5640_lcd.srcs/constrs_1/new/pin.xdc'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2018.3/data/ip'.
+open_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 862.977 ; gain = 226.426
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Sat Jul 25 14:44:19 2026...

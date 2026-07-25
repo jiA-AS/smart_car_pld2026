@@ -1,0 +1,21 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/7020/uart_packet/rtl/berath_led.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module breath_led
+INFO: [VRFC 10-2458] undeclared symbol sys_rst_n, assumed default net type wire [D:/Desktop/7020/uart_packet/rtl/berath_led.v:43]
+INFO: [VRFC 10-2458] undeclared symbol CNT_2US_MAX, assumed default net type wire [D:/Desktop/7020/uart_packet/rtl/berath_led.v:44]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/7020/uart_packet/rtl/order_exe.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module order_exe
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/7020/uart_packet/rtl/packet_coding.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module packet_coding
+INFO: [VRFC 10-2458] undeclared symbol parse_done_flag, assumed default net type wire [D:/Desktop/7020/uart_packet/rtl/packet_coding.v:55]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/7020/uart_packet/rtl/packet_decoding.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module packet_decoding
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/7020/uart_packet/rtl/top_uart_packet.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_uart_packet
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/7020/uart_packet/rtl/uart_rx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module uart_rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/7020/uart_packet/rtl/uart_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module uart_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/7020/uart_packet/prj/top_uart_packet.srcs/sim_1/new/tb_top_uart_packet.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_top_uart_packet
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/7020/uart_packet/prj/top_uart_packet.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Wed Jul 22 20:33:37 2026
+# Process ID: 68344
+# Current directory: E:/FPGA/doc/【正点原子】正点原子FPGA达芬奇Pro A7开发板资料盘(A盘)/正点原子FPGA达芬奇Pro A7开发板资料（A盘）/4_Source_Code/1_Verilog/100t/100t/19_uart_loopback/prj
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent35744 E:\FPGA\doc\【正点原子】正点原子FPGA达芬奇Pro A7开发板资料盘(A盘)\正点原子FPGA达芬奇Pro A7开发板资料（A盘）\4_Source_Code\1_Verilog\100t\100t\19_uart_loopback\prj\uart_loopback.xpr
+# Log file: E:/FPGA/doc/【正点原子】正点原子FPGA达芬奇Pro A7开发板资料盘(A盘)/正点原子FPGA达芬奇Pro A7开发板资料（A盘）/4_Source_Code/1_Verilog/100t/100t/19_uart_loopback/prj/vivado.log
+# Journal file: E:/FPGA/doc/【正点原子】正点原子FPGA达芬奇Pro A7开发板资料盘(A盘)/正点原子FPGA达芬奇Pro A7开发板资料（A盘）/4_Source_Code/1_Verilog/100t/100t/19_uart_loopback/prj\vivado.jou
+#-----------------------------------------------------------
+start_gui

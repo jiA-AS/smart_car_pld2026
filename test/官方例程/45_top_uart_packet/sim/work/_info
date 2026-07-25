@@ -1,0 +1,204 @@
+m255
+K4
+z2
+!s11f vlog 2020.4 2020.10, Oct 13 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Desktop/7020_fpga/top_uart_packet/sim
+T_opt
+!s110 1689927637
+VE@h3l5i?HeDzbklJ9LFk22
+04 18 4 work tb_top_uart_packet fast 0
+=11-d8bbc14fe651-64ba3fd5-77-19f4
+o-quiet -auto_acc_if_foreign -work work +acc
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2020.4;71
+vbreath_led
+Z2 !s110 1689927632
+!i10b 1
+!s100 G22kfAD_`2iC8:1`QiTPB3
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+ImDJ=JJ4f7G^WfoeFBnD<;1
+R0
+w1689927484
+8D:/Desktop/7020_fpga/top_uart_packet/rtl/berath_led.v
+FD:/Desktop/7020_fpga/top_uart_packet/rtl/berath_led.v
+!i122 72
+L0 19 83
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 OL;L;2020.4;71
+r1
+!s85 0
+31
+Z6 !s108 1689927632.000000
+!s107 D:/Desktop/7020_fpga/top_uart_packet/rtl/berath_led.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Desktop/7020_fpga/top_uart_packet/rtl/berath_led.v|
+!i113 0
+Z7 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+vcmd_exe
+R2
+!i10b 1
+!s100 N:[n@I[3g7HbUjPTHUdj;0
+R3
+Ij<iCR:;?1@S53HU>SCPOc2
+R0
+w1687930630
+8D:/Desktop/7020_fpga/top_uart_packet/rtl/cmd_exe.v
+FD:/Desktop/7020_fpga/top_uart_packet/rtl/cmd_exe.v
+!i122 73
+L0 19 30
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 D:/Desktop/7020_fpga/top_uart_packet/rtl/cmd_exe.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Desktop/7020_fpga/top_uart_packet/rtl/cmd_exe.v|
+!i113 0
+R7
+R1
+vpacket_code
+R2
+!i10b 1
+!s100 <C7c=YQ1T8b:=5jjUHz`L2
+R3
+IOLe3JHVmm6iVeWoaHa94c3
+R0
+w1689927048
+8D:/Desktop/7020_fpga/top_uart_packet/rtl/packet_code.v
+FD:/Desktop/7020_fpga/top_uart_packet/rtl/packet_code.v
+!i122 74
+L0 19 148
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 D:/Desktop/7020_fpga/top_uart_packet/rtl/packet_code.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Desktop/7020_fpga/top_uart_packet/rtl/packet_code.v|
+!i113 0
+R7
+R1
+vpacket_decode
+R2
+!i10b 1
+!s100 el7Y>nUlIzkih=646b?ca0
+R3
+I4HT04EVf_g^5Id[VSJ]c=1
+R0
+w1689925005
+8D:/Desktop/7020_fpga/top_uart_packet/rtl/packet_decode.v
+FD:/Desktop/7020_fpga/top_uart_packet/rtl/packet_decode.v
+!i122 75
+L0 19 243
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 D:/Desktop/7020_fpga/top_uart_packet/rtl/packet_decode.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Desktop/7020_fpga/top_uart_packet/rtl/packet_decode.v|
+!i113 0
+R7
+R1
+vtb_top_uart_packet
+Z8 !s110 1689927633
+!i10b 1
+!s100 05aAHm=jK0llZ<M80MZ_42
+R3
+ISP540cRC[fZdhV1SFAMJL2
+R0
+w1689927627
+8D:/Desktop/7020_fpga/top_uart_packet/sim/tb/tb_uart_packet_top.v
+FD:/Desktop/7020_fpga/top_uart_packet/sim/tb/tb_uart_packet_top.v
+!i122 79
+L0 20 195
+R4
+R5
+r1
+!s85 0
+31
+Z9 !s108 1689927633.000000
+!s107 D:/Desktop/7020_fpga/top_uart_packet/sim/tb/tb_uart_packet_top.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Desktop/7020_fpga/top_uart_packet/sim/tb/tb_uart_packet_top.v|
+!i113 0
+R7
+R1
+vtop_uart_packet
+R2
+!i10b 1
+!s100 I^<g;JWmJ2hn9dM6jCk1Z1
+R3
+IaOFCzXXj?GPd?6zncHo]J2
+R0
+w1688015559
+8D:/Desktop/7020_fpga/top_uart_packet/rtl/top_uart_packet.v
+FD:/Desktop/7020_fpga/top_uart_packet/rtl/top_uart_packet.v
+!i122 76
+L0 19 124
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 D:/Desktop/7020_fpga/top_uart_packet/rtl/top_uart_packet.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Desktop/7020_fpga/top_uart_packet/rtl/top_uart_packet.v|
+!i113 0
+R7
+R1
+vuart_rx
+R8
+!i10b 1
+!s100 Q2gH>hP[lmCVkGG]`A6]40
+R3
+IPMK436@?AcmD2N:g@UPLY2
+R0
+w1687227981
+8D:/Desktop/7020_fpga/top_uart_packet/rtl/uart_rx.v
+FD:/Desktop/7020_fpga/top_uart_packet/rtl/uart_rx.v
+!i122 77
+L0 19 130
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 D:/Desktop/7020_fpga/top_uart_packet/rtl/uart_rx.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Desktop/7020_fpga/top_uart_packet/rtl/uart_rx.v|
+!i113 0
+R7
+R1
+vuart_tx
+R8
+!i10b 1
+!s100 S@SA=LdNZWKd<dWa_DLL01
+R3
+I5i32Q>HBL<cm4ADAGVi:N2
+R0
+w1687172591
+8D:/Desktop/7020_fpga/top_uart_packet/rtl/uart_tx.v
+FD:/Desktop/7020_fpga/top_uart_packet/rtl/uart_tx.v
+!i122 78
+L0 19 98
+R4
+R5
+r1
+!s85 0
+31
+R9
+!s107 D:/Desktop/7020_fpga/top_uart_packet/rtl/uart_tx.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Desktop/7020_fpga/top_uart_packet/rtl/uart_tx.v|
+!i113 0
+R7
+R1

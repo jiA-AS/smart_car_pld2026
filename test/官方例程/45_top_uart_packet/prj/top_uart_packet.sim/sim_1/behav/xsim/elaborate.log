@@ -1,0 +1,36 @@
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto 4da4a5e2ac1e4214bdbd6c59414a16ca --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_top_uart_packet_behav xil_defaultlib.tb_top_uart_packet xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/Desktop/7020/uart_packet/rtl/top_uart_packet.v" Line 19. Module top_uart_packet doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Desktop/7020/uart_packet/rtl/uart_rx.v" Line 19. Module uart_rx_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Desktop/7020/uart_packet/rtl/uart_tx.v" Line 19. Module uart_tx_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Desktop/7020/uart_packet/rtl/packet_decoding.v" Line 19. Module packet_decoding doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Desktop/7020/uart_packet/rtl/packet_coding.v" Line 19. Module packet_coding doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Desktop/7020/uart_packet/rtl/order_exe.v" Line 19. Module order_exe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Desktop/7020/uart_packet/rtl/berath_led.v" Line 19. Module breath_led doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Desktop/7020/uart_packet/rtl/uart_tx.v" Line 19. Module uart_tx_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Desktop/7020/uart_packet/rtl/top_uart_packet.v" Line 19. Module top_uart_packet doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Desktop/7020/uart_packet/rtl/uart_rx.v" Line 19. Module uart_rx_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Desktop/7020/uart_packet/rtl/uart_tx.v" Line 19. Module uart_tx_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Desktop/7020/uart_packet/rtl/packet_decoding.v" Line 19. Module packet_decoding doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Desktop/7020/uart_packet/rtl/packet_coding.v" Line 19. Module packet_coding doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Desktop/7020/uart_packet/rtl/order_exe.v" Line 19. Module order_exe doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Desktop/7020/uart_packet/rtl/berath_led.v" Line 19. Module breath_led doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Desktop/7020/uart_packet/rtl/uart_tx.v" Line 19. Module uart_tx_default doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.uart_rx_default
+Compiling module xil_defaultlib.uart_tx_default
+Compiling module xil_defaultlib.packet_decoding
+Compiling module xil_defaultlib.packet_coding
+Compiling module xil_defaultlib.breath_led
+Compiling module xil_defaultlib.order_exe
+Compiling module xil_defaultlib.top_uart_packet
+Compiling module xil_defaultlib.tb_top_uart_packet
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_top_uart_packet_behav
