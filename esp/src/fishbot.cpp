@@ -200,24 +200,49 @@ void loop_fishbot_control()
     static float out_motor_speed[4];
     static uint8_t index = 0;
     kinematics.update_motor_ticks(micros(), encoders[0].getTicks(), encoders[1].getTicks(), encoders[2].getTicks(), encoders[3].getTicks());
-    // ================= PLD2026 改造：遥控器开环驾驶（替代原 PID 速度环） =================
-    // 说明：编码器读取接口（上面 update_motor_ticks、下方 fpga.send）保持原样不变；
-    //       仅将"PID 闭环调速"替换为"遥控器油门开环直驱"。
+    // ================= PLD2026 改造：遥控器麦轮运动学逆解 + PID 闭环 =================
+    // 协议对齐 dart_mcu：拨杆 1=UP 3=MID 2=DOWN
+    //   右拨杆(s2): UP(1)=保护/停车  MID(3)=遥控模式  DOWN(2)=比赛模式
+    //   左拨杆(s1): UP(1)/MID(3)=安全锁定  DOWN(2)=解臂
     dbus.update();
-    int16_t rc_speed[4] = {0, 0, 0, 0};
-    if (dbus.isOnline() && dbus.data().s1 == 3) // 接收机在线 且 左拨杆在下 = 解臂
+    static float target_motor_speed1, target_motor_speed2, target_motor_speed3, target_motor_speed4;
+    bool rc_online  = dbus.isOnline();
+    bool s2_arm     = (dbus.data().s2 == 2 || dbus.data().s2 == 3); // 右拨杆非 UP = 使能
+    bool s1_unlock  = (dbus.data().s1 == 2);                          // 左拨杆 DOWN = 解臂
+    // 始终计算运动学输入（未解臂时为 0，供 OLED 调试显示）
+    float linear_x  = (rc_online && s2_arm && s1_unlock) ? dbus_map_channel(dbus.data().ch[3], 1000) : 0.0f;
+    float linear_y  = (rc_online && s2_arm && s1_unlock) ? dbus_map_channel(dbus.data().ch[0], 1000) : 0.0f;
+    float angular_z = (rc_online && s2_arm && s1_unlock) ? -dbus_map_channel(dbus.data().ch[2], 5.0f) : 0.0f;
+    if (rc_online && s2_arm && s1_unlock)
     {
-        int16_t throttle = dbus_map_channel(dbus.data().ch[3], 60); // 左摇杆上下 = 油门（±60% 上限）
-        int16_t turn     = dbus_map_channel(dbus.data().ch[2], 60); // 左摇杆左右 = 转向（±60% 上限）
-        int16_t left  = constrain(throttle + turn, -100, 100);
-        int16_t right = constrain(throttle - turn, -100, 100);
-        rc_speed[0] = left;  rc_speed[1] = left;   // 0、1 号电机 = 左侧
-        rc_speed[2] = right; rc_speed[3] = right;  // 2、3 号电机 = 右侧
+        kinematics.kinematic_inverse(linear_x, linear_y, angular_z,
+                                     target_motor_speed1, target_motor_speed2,
+                                     target_motor_speed3, target_motor_speed4);
     }
-    // 接收机失联或未解臂时 rc_speed 保持全 0 = 停车（失控保护）
+    else
+    {
+        // 接收机失联、右拨杆保护、或左拨杆未解臂 -> 停车（失控保护）
+        target_motor_speed1 = 0;
+        target_motor_speed2 = 0;
+        target_motor_speed3 = 0;
+        target_motor_speed4 = 0;
+    }
+    // 更新 PID 控制器目标值
+    pid_controller[0].update_target(target_motor_speed1);
+    pid_controller[1].update_target(target_motor_speed2);
+    pid_controller[2].update_target(target_motor_speed3);
+    pid_controller[3].update_target(target_motor_speed4);
+    // PID 闭环控制各轮速度（与原版 loop_fishbot_control 一致）
     for (index = 0; index < 4; index++)
     {
-        out_motor_speed[index] = (float)rc_speed[index];
+        if (pid_controller[index].target_ == 0)
+        {
+            out_motor_speed[index] = 0;
+        }
+        else
+        {
+            out_motor_speed[index] = pid_controller[index].update(kinematics.motor_speed(index));
+        }
         motor.updateMotorSpeed(index, out_motor_speed[index]);
     }
     // 电量信息：电机速度为零时读取电池电压
@@ -228,6 +253,27 @@ void loop_fishbot_control()
     }
     // 更新系统信息（无ROS版：用本地 millis，原为 rmw_uros_epoch_millis）
     display.updateCurrentTime(millis());
+    // ================= PLD2026 调试：OLED 实时显示遥控器状态 =================
+    {
+        const DbusData &d = dbus.data();
+        display.updateRcDebug(rc_online, s2_arm, s1_unlock,
+                              d.ch[0], d.ch[1], d.ch[2], d.ch[3],
+                              d.s1, d.s2,
+                              linear_x, linear_y, angular_z);
+    }
+    // 串口输出完整摇杆/拨杆调试信息（每 2000ms 一次，减少刷屏）
+    {
+        static uint32_t last_rc_print = 0;
+        if (millis() - last_rc_print > 2000) {
+            last_rc_print = millis();
+            const DbusData &d = dbus.data();
+            Serial.printf("[RC] ch0=%d ch1=%d ch2=%d ch3=%d s1=%d s2=%d online=%d arm=%d unlock=%d | "
+                          "lx=%.0f ly=%.0f az=%.2f t1=%.0f t2=%.0f t3=%.0f t4=%.0f\n",
+                          d.ch[0], d.ch[1], d.ch[2], d.ch[3], d.s1, d.s2, rc_online, s2_arm, s1_unlock,
+                          linear_x, linear_y, angular_z,
+                          target_motor_speed1, target_motor_speed2, target_motor_speed3, target_motor_speed4);
+        }
+    }
     // 刷新显示屏幕
     display.updateDisplay();
     // 处理按钮事件

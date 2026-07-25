@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Fri Jul 24 15:55:14 2026
+# Process ID: 39832
+# Current directory: E:/FPGA/project/smart_car_pld2026/test/top_dual_ov5640_lcd
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent25048 E:\FPGA\project\smart_car_pld2026\test\top_dual_ov5640_lcd\top_dual_ov5640_lcd.xpr
+# Log file: E:/FPGA/project/smart_car_pld2026/test/top_dual_ov5640_lcd/vivado.log
+# Journal file: E:/FPGA/project/smart_car_pld2026/test/top_dual_ov5640_lcd\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project E:/FPGA/project/smart_car_pld2026/test/top_dual_ov5640_lcd/top_dual_ov5640_lcd.xpr
+update_compile_order -fileset sources_1

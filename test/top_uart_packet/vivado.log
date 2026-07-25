@@ -18,11 +18,11 @@ INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2018.3/data/ip'.
 open_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 843.062 ; gain = 197.887
 update_compile_order -fileset sources_1
-reset_run synth_1
-WARNING: [Vivado 12-1017] Problems encountered:
-1. Failed to delete one or more files in run directory E:/FPGA/project/smart_car_pld2026/test/top_uart_packet/top_uart_packet.runs/synth_1
-
-launch_runs synth_1 -jobs 12
+reset_run impl_1
+launch_runs impl_1 -jobs 12
+[Fri Jul 24 15:51:52 2026] Launched impl_1...
+Run output will be captured here: E:/FPGA/project/smart_car_pld2026/test/top_uart_packet/top_uart_packet.runs/impl_1/runme.log
+synth_1 -jobs 12
 [Fri Jul 24 15:35:59 2026] Launched synth_1...
 Run output will be captured here: E:/FPGA/project/smart_car_pld2026/test/top_uart_packet/top_uart_packet.runs/synth_1/runme.log
 open_run synth_1 -name synth_1

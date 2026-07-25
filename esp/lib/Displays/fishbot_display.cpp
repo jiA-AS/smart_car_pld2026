@@ -34,70 +34,52 @@ void FishBotDisplay::updateDisplay()
 {
     if (millis() - last_update_time > update_interval)
     {
-        String timenow = String(hour()) + ":" + twoDigits(minute()) + ":" + twoDigits(second());
         last_update_time = millis();
         _display.clearDisplay();
         _display.setCursor(0, 0);
-        _display.print("    ");
-        _display.println(version_code_);
-        _display.print("mode:");
-        _display.println(mode_);
+        _display.setTextSize(1);
+        _display.setTextColor(SSD1306_WHITE);
+
+        // ==================== PLD2026: 统一 RC 调试页面（不使用 WiFi/UDP） ====================
+        // 行1: 版本 + RC 状态
+        _display.print(version_code_);
+        _display.print(" ");
+        if (!rc_online_)
+            _display.println("RC:LOST");
+        else if (!rc_arm_)
+            _display.println("RC: SAFE");
+        else if (!rc_unlock_)
+            _display.println("RC: LOCK");
+        else
+            _display.println("RC: GO!");
+        // 行2: 拨杆 s1/s2
+        _display.print("S1:");
+        _display.print(rc_s1_ == 1 ? "UP " : (rc_s1_ == 2 ? "DN " : "MID"));
+        _display.print(" S2:");
+        _display.println(rc_s2_ == 1 ? "UP" : (rc_s2_ == 2 ? "DN" : "MID"));
+        // 行3: ch0 ch1 (右摇杆)
+        _display.print("ch0:");
+        _display.print(rc_ch0_);
+        _display.print(" ch1:");
+        _display.println(rc_ch1_);
+        // 行4: ch2 ch3 (左摇杆)
+        _display.print("ch2:");
+        _display.print(rc_ch2_);
+        _display.print(" ch3:");
+        _display.println(rc_ch3_);
+        // 行5: 运动学输入 LX / LY
+        _display.print("LX:");
+        _display.print(rc_lx_, 0);
+        _display.print(" LY:");
+        _display.println(rc_ly_, 0);
+        // 行6: AZ + 电池电压
+        _display.print("AZ:");
+        _display.print(rc_az_, 2);
+        _display.print(" V:");
+        _display.println(battery_info_, 1);
+        // 行7: 运动模式
         _display.print("motion:");
         _display.println(motion_mode_);
-        if (mode_ == "udp_client")
-        {
-            // 连接成功显示当前ip，电压，线速度和角速度
-            if (wifi_status_ == FISHBOT_WIFI_STATUS_OK)
-            {
-                _display.print("time :");
-                _display.println(timenow);
-                _display.print("ip:");
-                _display.println(wifi_ip_);
-                _display.print("voltage :");
-                _display.println(battery_info_);
-                _display.print("linear  :");
-                _display.println(bot_linear_);
-                _display.print("angular :");
-                _display.println(bot_angular_);
-            }
-            // ping 失败，则显示当前ip，服务ip和wifi名称
-            else if (wifi_status_ == FISHBOT_WIFI_STATUS_PING_FAILED || wifi_status_ == FISHBOT_WIFI_STATUS_GOT_IP)
-            {
-                _display.print("wifi:");
-                _display.println(wifi_info_);
-                _display.print("ip:");
-                _display.println(wifi_ip_);
-                _display.print("ssid:");
-                _display.println(wifi_ssid_);
-                _display.print("sip:");
-                _display.println(wifi_server_ip_);
-            }
-            // 找不到wifi，密码错误，则显示wifi名称，密码
-            else
-            {
-                _display.print("wifi:");
-                _display.println(wifi_info_);
-                _display.print("ssid:");
-                _display.println(wifi_ssid_);
-                _display.print("pswd:");
-                _display.println(wifi_pswd_);
-            }
-        }
-        else
-        {
-            _display.print("time :");
-            _display.println(timenow);
-            _display.print("motion:");
-            _display.println(motion_mode_);
-            _display.print("baud :");
-            _display.println(baudrate_);
-            _display.print("voltage :");
-            _display.println(battery_info_);
-            _display.print("linear  :");
-            _display.println(bot_linear_);
-            _display.print("angular :");
-            _display.println(bot_angular_);
-        }
         _display.display();
     }
 }
@@ -171,6 +153,19 @@ void FishBotDisplay::updateBaudRate(uint32_t baudrate)
 void FishBotDisplay::updateMotionMode(String mode)
 {
     motion_mode_ = mode;
+}
+
+void FishBotDisplay::updateRcDebug(bool online, bool arm, bool unlock,
+                                   int16_t ch0, int16_t ch1, int16_t ch2, int16_t ch3,
+                                   uint8_t s1, uint8_t s2,
+                                   float lx, float ly, float az)
+{
+    rc_online_ = online;
+    rc_arm_    = arm;
+    rc_unlock_ = unlock;
+    rc_ch0_ = ch0; rc_ch1_ = ch1; rc_ch2_ = ch2; rc_ch3_ = ch3;
+    rc_s1_  = s1;  rc_s2_  = s2;
+    rc_lx_  = lx;  rc_ly_  = ly;  rc_az_  = az;
 }
 
 void FishBotDisplay::updateStartupInfo()

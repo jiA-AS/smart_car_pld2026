@@ -42,7 +42,7 @@ private:
 
     int64_t current_time;
     uint64_t last_update_time;
-    uint64_t update_interval{1000};
+    uint64_t update_interval{200};   // PLD2026: 提高到 200ms 实时刷 RC 调试
 
     String motion_mode_;
     String wifi_ssid_;
@@ -51,6 +51,14 @@ private:
     String wifi_server_ip_;
     String wifi_info_ = "wait connect";
     fishbot_wifi_status_t wifi_status_ = FISHBOT_WIFI_STATUS_WAIT_CONNECT;
+
+    // PLD2026: 遥控器调试数据
+    bool   rc_online_ = false;
+    bool   rc_arm_    = false;
+    bool   rc_unlock_ = false;
+    int16_t rc_ch0_ = 0, rc_ch1_ = 0, rc_ch2_ = 0, rc_ch3_ = 0;
+    uint8_t rc_s1_ = 0, rc_s2_ = 0;
+    float  rc_lx_ = 0, rc_ly_ = 0, rc_az_ = 0;
 
 public:
     void init();
@@ -71,6 +79,10 @@ public:
     void updateWIFIPSWD(String pswd);
     void updateVersionCode(String version_code);
     void updateMotionMode(String mode);
+    void updateRcDebug(bool online, bool arm, bool unlock,
+                       int16_t ch0, int16_t ch1, int16_t ch2, int16_t ch3,
+                       uint8_t s1, uint8_t s2,
+                       float lx, float ly, float az);
     String twoDigits(int digits);
     FishBotDisplay();
     ~FishBotDisplay() = default;
