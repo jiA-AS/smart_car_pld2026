@@ -36,7 +36,7 @@ module i2c_ov5640_rgb565_cfg
     );
 
 //parameter define
-localparam  REG_NUM = 8'd250  ;       //总共需要配置的寄存器个数
+localparam  REG_NUM = 8'd251  ;       //总共需要配置的寄存器个数
 
 //reg define
 reg   [12:0]   start_init_cnt;        //等待延时计数器
@@ -380,6 +380,8 @@ always @(posedge clk or negedge rst_n) begin
             8'd248: i2c_data <= {16'h3019,8'h02}; //打开闪光灯
             8'd249: i2c_data <= {16'h3019,8'h00}; //关闭闪光灯
             //只读存储器,防止在case中没有列举的情况，之前的寄存器被重复改写
+            8'd250: i2c_data <= {16'h3406,8'h01}; //关自动白平衡AWB（Bit0=1手动）
+          
             default : i2c_data <= {16'h300a,8'h00}; //器件ID高8位
         endcase
     end

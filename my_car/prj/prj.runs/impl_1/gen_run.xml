@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tfgg484-2" LaunchTime="1784983936">
+<GenRun Id="impl_1" LaunchPart="xc7a100tfgg484-2" LaunchTime="1785061734">
+  <File Type="OPT-HWDEF" Name="top_dual_ov5640_lcd.hwdef"/>
+  <File Type="ROUTE-BUS-SKEW" Name="top_dual_ov5640_lcd_bus_skew_routed.rpt"/>
+  <File Type="PA-DCP" Name="top_dual_ov5640_lcd.dcp"/>
   <File Type="BITSTR-BMM" Name="top_dual_ov5640_lcd_bd.bmm"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="top_dual_ov5640_lcd_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="top_dual_ov5640_lcd_timing_summary_init.rpt"/>
@@ -10,7 +13,6 @@
   <File Type="ROUTE-PWR-SUM" Name="top_dual_ov5640_lcd_power_summary_routed.pb"/>
   <File Type="REPORTS-TCL" Name="top_dual_ov5640_lcd_reports.tcl"/>
   <File Type="OPT-DRC" Name="top_dual_ov5640_lcd_drc_opted.rpt"/>
-  <File Type="OPT-HWDEF" Name="top_dual_ov5640_lcd.hwdef"/>
   <File Type="PWROPT-DCP" Name="top_dual_ov5640_lcd_pwropt.dcp"/>
   <File Type="PWROPT-DRC" Name="top_dual_ov5640_lcd_drc_pwropted.rpt"/>
   <File Type="PWROPT-TIMING" Name="top_dual_ov5640_lcd_timing_summary_pwropted.rpt"/>
@@ -22,7 +24,6 @@
   <File Type="PLACE-CTRL" Name="top_dual_ov5640_lcd_control_sets_placed.rpt"/>
   <File Type="PLACE-SIMILARITY" Name="top_dual_ov5640_lcd_incremental_reuse_placed.rpt"/>
   <File Type="PLACE-PRE-SIMILARITY" Name="top_dual_ov5640_lcd_incremental_reuse_pre_placed.rpt"/>
-  <File Type="BG-BGN" Name="top_dual_ov5640_lcd.bgn"/>
   <File Type="PLACE-TIMING" Name="top_dual_ov5640_lcd_timing_summary_placed.rpt"/>
   <File Type="POSTPLACE-PWROPT-DCP" Name="top_dual_ov5640_lcd_postplace_pwropt.dcp"/>
   <File Type="BG-BIN" Name="top_dual_ov5640_lcd.bin"/>
@@ -52,7 +53,6 @@
   <File Type="ROUTE-TIMING-RPX" Name="top_dual_ov5640_lcd_timing_summary_routed.rpx"/>
   <File Type="ROUTE-SIMILARITY" Name="top_dual_ov5640_lcd_incremental_reuse_routed.rpt"/>
   <File Type="ROUTE-CLK" Name="top_dual_ov5640_lcd_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW" Name="top_dual_ov5640_lcd_bus_skew_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW-PB" Name="top_dual_ov5640_lcd_bus_skew_routed.pb"/>
   <File Type="ROUTE-BUS-SKEW-RPX" Name="top_dual_ov5640_lcd_bus_skew_routed.rpx"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="top_dual_ov5640_lcd_postroute_physopt.dcp"/>
@@ -66,6 +66,7 @@
   <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="top_dual_ov5640_lcd_bus_skew_postroute_physopted.rpx"/>
   <File Type="BITSTR-RBT" Name="top_dual_ov5640_lcd.rbt"/>
   <File Type="BITSTR-NKY" Name="top_dual_ov5640_lcd.nky"/>
+  <File Type="BG-BGN" Name="top_dual_ov5640_lcd.bgn"/>
   <File Type="BG-DRC" Name="top_dual_ov5640_lcd.drc"/>
   <File Type="RDI-RDI" Name="top_dual_ov5640_lcd.vdi"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
@@ -121,6 +122,13 @@
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../rtl/ddr3_top/ddr3_top.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/green_detect.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -204,6 +212,13 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PPRDIR/../rtl/tracker_ctrl.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PPRDIR/../rtl/sensor_link/v1_decode.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -249,9 +264,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
-      <Desc>Default settings for Implementation.</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
     <Step Id="init_design"/>
     <Step Id="opt_design"/>
     <Step Id="power_opt_design"/>

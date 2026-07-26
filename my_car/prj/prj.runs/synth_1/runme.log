@@ -14,7 +14,7 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 56568 
+INFO: Helper process launched with PID 50136 
 WARNING: [Synth 8-2611] redeclaration of ansi port wfifo_dout is not allowed [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl_top.v:60]
 WARNING: [Synth 8-2611] redeclaration of ansi port wfifo_rcount_1 is not allowed [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl_top.v:63]
 WARNING: [Synth 8-2611] redeclaration of ansi port wfifo_rcount_2 is not allowed [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl_top.v:64]
@@ -25,11 +25,10 @@ WARNING: [Synth 8-2611] redeclaration of ansi port rfifo_wdata_1 is not allowed 
 WARNING: [Synth 8-2611] redeclaration of ansi port rfifo_wdata_2 is not allowed [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_rw.v:82]
 WARNING: [Synth 8-2611] redeclaration of ansi port rfifo_wren_1 is not allowed [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_rw.v:98]
 WARNING: [Synth 8-2611] redeclaration of ansi port rfifo_wren_2 is not allowed [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_rw.v:99]
-WARNING: [Synth 8-2611] redeclaration of ansi port lcd_de is not allowed [E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v:92]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 508.172 ; gain = 105.203
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.978 . Memory (MB): peak = 509.008 ; gain = 104.809
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'top_dual_ov5640_lcd' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v:18]
+INFO: [Synth 8-6157] synthesizing module 'top_dual_ov5640_lcd' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v:22]
 INFO: [Synth 8-6157] synthesizing module 'picture_size' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/picture_size.v:19]
 INFO: [Synth 8-6155] done synthesizing module 'picture_size' (1#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/picture_size.v:19]
 INFO: [Synth 8-6157] synthesizing module 'ov5640_dri' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ov5640_dri/ov5640_dri.v:19]
@@ -38,7 +37,7 @@ INFO: [Synth 8-6157] synthesizing module 'ov5640_dri' [E:/FPGA/project/smart_car
 	Parameter CLK_FREQ bound to: 27'b010111110101111000010000000 
 	Parameter I2C_FREQ bound to: 18'b111101000010010000 
 INFO: [Synth 8-6157] synthesizing module 'i2c_ov5640_rgb565_cfg' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ov5640_dri/i2c_ov5640_rgb565_cfg.v:19]
-	Parameter REG_NUM bound to: 8'b11111010 
+	Parameter REG_NUM bound to: 8'b11111011 
 INFO: [Synth 8-6155] done synthesizing module 'i2c_ov5640_rgb565_cfg' (2#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ov5640_dri/i2c_ov5640_rgb565_cfg.v:19]
 INFO: [Synth 8-6157] synthesizing module 'i2c_dri' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ov5640_dri/i2c_dri.v:19]
 	Parameter SLAVE_ADDR bound to: 7'b0111100 
@@ -59,8 +58,25 @@ INFO: [Synth 8-6157] synthesizing module 'cmos_capture_data' [E:/FPGA/project/sm
 	Parameter WAIT_FRAME bound to: 4'b1010 
 INFO: [Synth 8-6155] done synthesizing module 'cmos_capture_data' (4#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ov5640_dri/cmos_capture_data.v:18]
 INFO: [Synth 8-6155] done synthesizing module 'ov5640_dri' (5#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ov5640_dri/ov5640_dri.v:19]
-WARNING: [Synth 8-350] instance 'u_ov5640_dri_1' of module 'ov5640_dri' requires 22 connections, but only 21 given [E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v:142]
-WARNING: [Synth 8-350] instance 'u_ov5640_dri_2' of module 'ov5640_dri' requires 22 connections, but only 21 given [E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v:169]
+WARNING: [Synth 8-350] instance 'u_ov5640_dri_1' of module 'ov5640_dri' requires 22 connections, but only 21 given [E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v:155]
+WARNING: [Synth 8-350] instance 'u_ov5640_dri_2' of module 'ov5640_dri' requires 22 connections, but only 21 given [E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v:182]
+INFO: [Synth 8-6157] synthesizing module 'green_detect' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/green_detect.v:18]
+	Parameter H_ACTIVE bound to: 400 - type: integer 
+	Parameter TH_G bound to: 6'b101000 
+	Parameter TH_RB bound to: 5'b01100 
+	Parameter MIN_AREA bound to: 18'b000000000001100100 
+	Parameter IDLE_MAX bound to: 24'b000000000100111000100000 
+	Parameter D_IDLE bound to: 0 - type: integer 
+	Parameter D_RUN_U bound to: 1 - type: integer 
+	Parameter D_RUN_V bound to: 2 - type: integer 
+	Parameter D_LATCH bound to: 3 - type: integer 
+INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/green_detect.v:142]
+WARNING: [Synth 8-5788] Register c_cnt_reg in module green_detect is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/green_detect.v:151]
+WARNING: [Synth 8-5788] Register c_min_x_reg in module green_detect is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/green_detect.v:152]
+WARNING: [Synth 8-5788] Register c_max_x_reg in module green_detect is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/green_detect.v:152]
+WARNING: [Synth 8-5788] Register c_min_y_reg in module green_detect is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/green_detect.v:153]
+WARNING: [Synth 8-5788] Register c_max_y_reg in module green_detect is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/green_detect.v:153]
+INFO: [Synth 8-6155] done synthesizing module 'green_detect' (6#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/green_detect.v:18]
 INFO: [Synth 8-6157] synthesizing module 'ddr3_top' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_top.v:19]
 INFO: [Synth 8-6157] synthesizing module 'ddr3_rw' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_rw.v:19]
 	Parameter IDLE bound to: 7'b0000001 
@@ -70,32 +86,32 @@ INFO: [Synth 8-6157] synthesizing module 'ddr3_rw' [E:/FPGA/project/smart_car_pl
 	Parameter WRITE_2 bound to: 7'b0010000 
 	Parameter READ_2 bound to: 7'b0100000 
 	Parameter READ_WAIT bound to: 7'b1000000 
-INFO: [Synth 8-6155] done synthesizing module 'ddr3_rw' (6#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_rw.v:19]
-INFO: [Synth 8-6157] synthesizing module 'mig_7series_0' [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-59200-LAPTOP-2K88VM5F/realtime/mig_7series_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_0' (7#1) [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-59200-LAPTOP-2K88VM5F/realtime/mig_7series_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'ddr3_rw' (7#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_rw.v:19]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_0' [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-53788-LAPTOP-2K88VM5F/realtime/mig_7series_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_0' (8#1) [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-53788-LAPTOP-2K88VM5F/realtime/mig_7series_0_stub.v:5]
 WARNING: [Synth 8-350] instance 'u_mig_7series_0' of module 'mig_7series_0' requires 40 connections, but only 39 given [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_top.v:143]
 INFO: [Synth 8-6157] synthesizing module 'ddr3_fifo_ctrl_top' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl_top.v:19]
 INFO: [Synth 8-6157] synthesizing module 'ddr3_fifo_ctrl' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl.v:20]
-INFO: [Synth 8-6157] synthesizing module 'rd_fifo' [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-59200-LAPTOP-2K88VM5F/realtime/rd_fifo_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'rd_fifo' (8#1) [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-59200-LAPTOP-2K88VM5F/realtime/rd_fifo_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'rd_fifo' [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-53788-LAPTOP-2K88VM5F/realtime/rd_fifo_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'rd_fifo' (9#1) [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-53788-LAPTOP-2K88VM5F/realtime/rd_fifo_stub.v:6]
 WARNING: [Synth 8-689] width (10) of port connection 'wr_data_count' does not match port width (9) of module 'rd_fifo' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl.v:200]
-INFO: [Synth 8-6157] synthesizing module 'wr_fifo' [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-59200-LAPTOP-2K88VM5F/realtime/wr_fifo_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'wr_fifo' (9#1) [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-59200-LAPTOP-2K88VM5F/realtime/wr_fifo_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'wr_fifo' [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-53788-LAPTOP-2K88VM5F/realtime/wr_fifo_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'wr_fifo' (10#1) [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-53788-LAPTOP-2K88VM5F/realtime/wr_fifo_stub.v:6]
 WARNING: [Synth 8-689] width (10) of port connection 'rd_data_count' does not match port width (9) of module 'wr_fifo' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl.v:215]
-INFO: [Synth 8-6155] done synthesizing module 'ddr3_fifo_ctrl' (10#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl.v:20]
+INFO: [Synth 8-6155] done synthesizing module 'ddr3_fifo_ctrl' (11#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl.v:20]
 WARNING: [Synth 8-689] width (11) of port connection 'wfifo_rcount' does not match port width (10) of module 'ddr3_fifo_ctrl' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl_top.v:106]
 WARNING: [Synth 8-689] width (11) of port connection 'rfifo_wcount' does not match port width (10) of module 'ddr3_fifo_ctrl' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl_top.v:107]
 WARNING: [Synth 8-689] width (11) of port connection 'wfifo_rcount' does not match port width (10) of module 'ddr3_fifo_ctrl' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl_top.v:128]
 WARNING: [Synth 8-689] width (11) of port connection 'rfifo_wcount' does not match port width (10) of module 'ddr3_fifo_ctrl' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl_top.v:129]
-INFO: [Synth 8-6155] done synthesizing module 'ddr3_fifo_ctrl_top' (11#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl_top.v:19]
-INFO: [Synth 8-6155] done synthesizing module 'ddr3_top' (12#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_top.v:19]
-INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-59200-LAPTOP-2K88VM5F/realtime/clk_wiz_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (13#1) [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-59200-LAPTOP-2K88VM5F/realtime/clk_wiz_0_stub.v:5]
-INFO: [Synth 8-6157] synthesizing module 'lcd_rgb_top' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_rgb_top.v:19]
+INFO: [Synth 8-6155] done synthesizing module 'ddr3_fifo_ctrl_top' (12#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl_top.v:19]
+INFO: [Synth 8-6155] done synthesizing module 'ddr3_top' (13#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_top.v:19]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-53788-LAPTOP-2K88VM5F/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (14#1) [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-53788-LAPTOP-2K88VM5F/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'lcd_rgb_top' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_rgb_top.v:23]
 INFO: [Synth 8-6157] synthesizing module 'clk_div' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/clk_div.v:19]
-INFO: [Synth 8-6155] done synthesizing module 'clk_div' (14#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/clk_div.v:19]
+INFO: [Synth 8-6155] done synthesizing module 'clk_div' (15#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/clk_div.v:19]
 INFO: [Synth 8-6157] synthesizing module 'rd_id' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/rd_id.v:19]
-INFO: [Synth 8-6155] done synthesizing module 'rd_id' (15#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/rd_id.v:19]
+INFO: [Synth 8-6155] done synthesizing module 'rd_id' (16#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/rd_id.v:19]
 INFO: [Synth 8-6157] synthesizing module 'lcd_driver' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_driver.v:19]
 	Parameter H_SYNC_4342 bound to: 11'b00000101001 
 	Parameter H_BACK_4342 bound to: 11'b00000000010 
@@ -147,88 +163,94 @@ INFO: [Synth 8-6157] synthesizing module 'lcd_driver' [E:/FPGA/project/smart_car
 	Parameter V_DISP_4384 bound to: 11'b00111100000 
 	Parameter V_FRONT_4384 bound to: 11'b00000001010 
 	Parameter V_TOTAL_4384 bound to: 11'b01000001101 
-INFO: [Synth 8-6155] done synthesizing module 'lcd_driver' (16#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_driver.v:19]
-INFO: [Synth 8-6157] synthesizing module 'lcd_disply' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:19]
+INFO: [Synth 8-6155] done synthesizing module 'lcd_driver' (17#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_driver.v:19]
+INFO: [Synth 8-6157] synthesizing module 'lcd_disply' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:24]
 	Parameter RED bound to: 16'b1111100000000000 
 	Parameter BLUE bound to: 16'b0000000000011111 
 	Parameter BLACK bound to: 16'b0000000000000000 
-WARNING: [Synth 8-6014] Unused sequential element char0_reg[15] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:47]
-WARNING: [Synth 8-6014] Unused sequential element char0_reg[14] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:47]
-WARNING: [Synth 8-6014] Unused sequential element char0_reg[13] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:47]
-WARNING: [Synth 8-6014] Unused sequential element char0_reg[12] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:47]
-WARNING: [Synth 8-6014] Unused sequential element char0_reg[11] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:47]
-WARNING: [Synth 8-6014] Unused sequential element char0_reg[10] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:47]
-WARNING: [Synth 8-6014] Unused sequential element char0_reg[9] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:47]
-WARNING: [Synth 8-6014] Unused sequential element char0_reg[8] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:47]
-WARNING: [Synth 8-6014] Unused sequential element char0_reg[7] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:47]
-WARNING: [Synth 8-6014] Unused sequential element char0_reg[6] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:47]
-WARNING: [Synth 8-6014] Unused sequential element char0_reg[5] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:47]
-WARNING: [Synth 8-6014] Unused sequential element char0_reg[4] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:47]
-WARNING: [Synth 8-6014] Unused sequential element char0_reg[3] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:47]
-WARNING: [Synth 8-6014] Unused sequential element char0_reg[2] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:47]
-WARNING: [Synth 8-6014] Unused sequential element char0_reg[1] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:47]
-WARNING: [Synth 8-6014] Unused sequential element char0_reg[0] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:47]
-WARNING: [Synth 8-6014] Unused sequential element char1_reg[15] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:67]
-WARNING: [Synth 8-6014] Unused sequential element char1_reg[14] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:67]
-WARNING: [Synth 8-6014] Unused sequential element char1_reg[13] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:67]
-WARNING: [Synth 8-6014] Unused sequential element char1_reg[12] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:67]
-WARNING: [Synth 8-6014] Unused sequential element char1_reg[11] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:67]
-WARNING: [Synth 8-6014] Unused sequential element char1_reg[10] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:67]
-WARNING: [Synth 8-6014] Unused sequential element char1_reg[9] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:67]
-WARNING: [Synth 8-6014] Unused sequential element char1_reg[8] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:67]
-WARNING: [Synth 8-6014] Unused sequential element char1_reg[7] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:67]
-WARNING: [Synth 8-6014] Unused sequential element char1_reg[6] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:67]
-WARNING: [Synth 8-6014] Unused sequential element char1_reg[5] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:67]
-WARNING: [Synth 8-6014] Unused sequential element char1_reg[4] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:67]
-WARNING: [Synth 8-6014] Unused sequential element char1_reg[3] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:67]
-WARNING: [Synth 8-6014] Unused sequential element char1_reg[2] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:67]
-WARNING: [Synth 8-6014] Unused sequential element char1_reg[1] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:67]
-WARNING: [Synth 8-6014] Unused sequential element char1_reg[0] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:67]
-INFO: [Synth 8-4471] merging register 'char2_reg[30][127:0]' into 'char2_reg[31][127:0]' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:87]
-INFO: [Synth 8-4471] merging register 'char2_reg[29][127:0]' into 'char2_reg[31][127:0]' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:87]
-INFO: [Synth 8-4471] merging register 'char2_reg[28][127:0]' into 'char2_reg[31][127:0]' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:87]
-INFO: [Synth 8-4471] merging register 'char2_reg[5][127:0]' into 'char2_reg[31][127:0]' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:87]
-INFO: [Synth 8-4471] merging register 'char2_reg[4][127:0]' into 'char2_reg[31][127:0]' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:87]
-INFO: [Synth 8-4471] merging register 'char2_reg[3][127:0]' into 'char2_reg[31][127:0]' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:87]
-INFO: [Synth 8-4471] merging register 'char2_reg[2][127:0]' into 'char2_reg[31][127:0]' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:87]
-INFO: [Synth 8-4471] merging register 'char2_reg[1][127:0]' into 'char2_reg[31][127:0]' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:87]
-INFO: [Synth 8-4471] merging register 'char2_reg[0][127:0]' into 'char2_reg[31][127:0]' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:87]
-INFO: [Synth 8-4471] merging register 'char3_reg[31][127:0]' into 'char2_reg[31][127:0]' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:123]
-INFO: [Synth 8-4471] merging register 'char3_reg[30][127:0]' into 'char2_reg[31][127:0]' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:123]
-INFO: [Synth 8-4471] merging register 'char3_reg[29][127:0]' into 'char2_reg[31][127:0]' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:123]
-INFO: [Synth 8-4471] merging register 'char3_reg[28][127:0]' into 'char2_reg[31][127:0]' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:123]
-INFO: [Synth 8-4471] merging register 'char3_reg[19][127:0]' into 'char2_reg[19][127:0]' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:123]
-INFO: [Synth 8-4471] merging register 'char3_reg[5][127:0]' into 'char2_reg[31][127:0]' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:123]
-INFO: [Synth 8-4471] merging register 'char3_reg[4][127:0]' into 'char2_reg[31][127:0]' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:123]
-INFO: [Synth 8-4471] merging register 'char3_reg[3][127:0]' into 'char2_reg[31][127:0]' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:123]
-INFO: [Synth 8-4471] merging register 'char3_reg[2][127:0]' into 'char2_reg[31][127:0]' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:123]
-INFO: [Synth 8-4471] merging register 'char3_reg[1][127:0]' into 'char2_reg[31][127:0]' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:123]
-INFO: [Synth 8-4471] merging register 'char3_reg[0][127:0]' into 'char2_reg[31][127:0]' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:123]
-WARNING: [Synth 8-6014] Unused sequential element char2_reg[30] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:87]
-WARNING: [Synth 8-6014] Unused sequential element char2_reg[29] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:87]
-WARNING: [Synth 8-6014] Unused sequential element char2_reg[28] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:87]
-WARNING: [Synth 8-6014] Unused sequential element char2_reg[5] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:87]
-WARNING: [Synth 8-6014] Unused sequential element char2_reg[4] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:87]
-WARNING: [Synth 8-6014] Unused sequential element char2_reg[3] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:87]
-WARNING: [Synth 8-6014] Unused sequential element char2_reg[2] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:87]
-WARNING: [Synth 8-6014] Unused sequential element char2_reg[1] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:87]
-WARNING: [Synth 8-6014] Unused sequential element char2_reg[0] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:87]
-WARNING: [Synth 8-6014] Unused sequential element char3_reg[31] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:123]
-WARNING: [Synth 8-6014] Unused sequential element char3_reg[30] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:123]
-WARNING: [Synth 8-6014] Unused sequential element char3_reg[29] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:123]
-WARNING: [Synth 8-6014] Unused sequential element char3_reg[28] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:123]
-WARNING: [Synth 8-6014] Unused sequential element char3_reg[19] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:123]
-WARNING: [Synth 8-6014] Unused sequential element char3_reg[5] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:123]
-WARNING: [Synth 8-6014] Unused sequential element char3_reg[4] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:123]
-WARNING: [Synth 8-6014] Unused sequential element char3_reg[3] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:123]
-WARNING: [Synth 8-6014] Unused sequential element char3_reg[2] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:123]
-WARNING: [Synth 8-6014] Unused sequential element char3_reg[1] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:123]
-WARNING: [Synth 8-6014] Unused sequential element char3_reg[0] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:123]
-WARNING: [Synth 8-3848] Net char3[32] in module/entity lcd_disply does not have driver. [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:39]
-WARNING: [Synth 8-3848] Net char2[32] in module/entity lcd_disply does not have driver. [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:38]
-INFO: [Synth 8-6155] done synthesizing module 'lcd_disply' (17#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:19]
-INFO: [Synth 8-6155] done synthesizing module 'lcd_rgb_top' (18#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_rgb_top.v:19]
-INFO: [Synth 8-6157] synthesizing module 'sensor_link' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/sensor_link.v:14]
+	Parameter BOX_OFF bound to: 11'b00110010000 
+	Parameter BW bound to: 11'b00000000010 
+WARNING: [Synth 8-6014] Unused sequential element char0_reg[15] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:78]
+WARNING: [Synth 8-6014] Unused sequential element char0_reg[14] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:78]
+WARNING: [Synth 8-6014] Unused sequential element char0_reg[13] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:78]
+WARNING: [Synth 8-6014] Unused sequential element char0_reg[12] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:78]
+WARNING: [Synth 8-6014] Unused sequential element char0_reg[11] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:78]
+WARNING: [Synth 8-6014] Unused sequential element char0_reg[10] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:78]
+WARNING: [Synth 8-6014] Unused sequential element char0_reg[9] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:78]
+WARNING: [Synth 8-6014] Unused sequential element char0_reg[8] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:78]
+WARNING: [Synth 8-6014] Unused sequential element char0_reg[7] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:78]
+WARNING: [Synth 8-6014] Unused sequential element char0_reg[6] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:78]
+WARNING: [Synth 8-6014] Unused sequential element char0_reg[5] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:78]
+WARNING: [Synth 8-6014] Unused sequential element char0_reg[4] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:78]
+WARNING: [Synth 8-6014] Unused sequential element char0_reg[3] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:78]
+WARNING: [Synth 8-6014] Unused sequential element char0_reg[2] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:78]
+WARNING: [Synth 8-6014] Unused sequential element char0_reg[1] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:78]
+WARNING: [Synth 8-6014] Unused sequential element char0_reg[0] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:78]
+WARNING: [Synth 8-6014] Unused sequential element char1_reg[15] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:98]
+WARNING: [Synth 8-6014] Unused sequential element char1_reg[14] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:98]
+WARNING: [Synth 8-6014] Unused sequential element char1_reg[13] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:98]
+WARNING: [Synth 8-6014] Unused sequential element char1_reg[12] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:98]
+WARNING: [Synth 8-6014] Unused sequential element char1_reg[11] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:98]
+WARNING: [Synth 8-6014] Unused sequential element char1_reg[10] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:98]
+WARNING: [Synth 8-6014] Unused sequential element char1_reg[9] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:98]
+WARNING: [Synth 8-6014] Unused sequential element char1_reg[8] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:98]
+WARNING: [Synth 8-6014] Unused sequential element char1_reg[7] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:98]
+WARNING: [Synth 8-6014] Unused sequential element char1_reg[6] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:98]
+WARNING: [Synth 8-6014] Unused sequential element char1_reg[5] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:98]
+WARNING: [Synth 8-6014] Unused sequential element char1_reg[4] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:98]
+WARNING: [Synth 8-6014] Unused sequential element char1_reg[3] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:98]
+WARNING: [Synth 8-6014] Unused sequential element char1_reg[2] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:98]
+WARNING: [Synth 8-6014] Unused sequential element char1_reg[1] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:98]
+WARNING: [Synth 8-6014] Unused sequential element char1_reg[0] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:98]
+INFO: [Synth 8-4471] merging register 'char2_reg[30][127:0]' into 'char2_reg[31][127:0]' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:118]
+INFO: [Synth 8-4471] merging register 'char2_reg[29][127:0]' into 'char2_reg[31][127:0]' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:118]
+INFO: [Synth 8-4471] merging register 'char2_reg[28][127:0]' into 'char2_reg[31][127:0]' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:118]
+INFO: [Synth 8-4471] merging register 'char2_reg[5][127:0]' into 'char2_reg[31][127:0]' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:118]
+INFO: [Synth 8-4471] merging register 'char2_reg[4][127:0]' into 'char2_reg[31][127:0]' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:118]
+INFO: [Synth 8-4471] merging register 'char2_reg[3][127:0]' into 'char2_reg[31][127:0]' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:118]
+INFO: [Synth 8-4471] merging register 'char2_reg[2][127:0]' into 'char2_reg[31][127:0]' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:118]
+INFO: [Synth 8-4471] merging register 'char2_reg[1][127:0]' into 'char2_reg[31][127:0]' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:118]
+INFO: [Synth 8-4471] merging register 'char2_reg[0][127:0]' into 'char2_reg[31][127:0]' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:118]
+INFO: [Synth 8-4471] merging register 'char3_reg[31][127:0]' into 'char2_reg[31][127:0]' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:154]
+INFO: [Synth 8-4471] merging register 'char3_reg[30][127:0]' into 'char2_reg[31][127:0]' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:154]
+INFO: [Synth 8-4471] merging register 'char3_reg[29][127:0]' into 'char2_reg[31][127:0]' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:154]
+INFO: [Synth 8-4471] merging register 'char3_reg[28][127:0]' into 'char2_reg[31][127:0]' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:154]
+INFO: [Synth 8-4471] merging register 'char3_reg[19][127:0]' into 'char2_reg[19][127:0]' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:154]
+INFO: [Synth 8-4471] merging register 'char3_reg[13][127:0]' into 'char2_reg[13][127:0]' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:154]
+INFO: [Synth 8-4471] merging register 'char3_reg[12][127:0]' into 'char2_reg[12][127:0]' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:154]
+INFO: [Synth 8-4471] merging register 'char3_reg[5][127:0]' into 'char2_reg[31][127:0]' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:154]
+INFO: [Synth 8-4471] merging register 'char3_reg[4][127:0]' into 'char2_reg[31][127:0]' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:154]
+INFO: [Synth 8-4471] merging register 'char3_reg[3][127:0]' into 'char2_reg[31][127:0]' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:154]
+INFO: [Synth 8-4471] merging register 'char3_reg[2][127:0]' into 'char2_reg[31][127:0]' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:154]
+INFO: [Synth 8-4471] merging register 'char3_reg[1][127:0]' into 'char2_reg[31][127:0]' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:154]
+INFO: [Synth 8-4471] merging register 'char3_reg[0][127:0]' into 'char2_reg[31][127:0]' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:154]
+WARNING: [Synth 8-6014] Unused sequential element char2_reg[30] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:118]
+WARNING: [Synth 8-6014] Unused sequential element char2_reg[29] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:118]
+WARNING: [Synth 8-6014] Unused sequential element char2_reg[28] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:118]
+WARNING: [Synth 8-6014] Unused sequential element char2_reg[5] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:118]
+WARNING: [Synth 8-6014] Unused sequential element char2_reg[4] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:118]
+WARNING: [Synth 8-6014] Unused sequential element char2_reg[3] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:118]
+WARNING: [Synth 8-6014] Unused sequential element char2_reg[2] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:118]
+WARNING: [Synth 8-6014] Unused sequential element char2_reg[1] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:118]
+WARNING: [Synth 8-6014] Unused sequential element char2_reg[0] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:118]
+WARNING: [Synth 8-6014] Unused sequential element char3_reg[31] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:154]
+WARNING: [Synth 8-6014] Unused sequential element char3_reg[30] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:154]
+WARNING: [Synth 8-6014] Unused sequential element char3_reg[29] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:154]
+WARNING: [Synth 8-6014] Unused sequential element char3_reg[28] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:154]
+WARNING: [Synth 8-6014] Unused sequential element char3_reg[19] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:154]
+WARNING: [Synth 8-6014] Unused sequential element char3_reg[13] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:154]
+WARNING: [Synth 8-6014] Unused sequential element char3_reg[12] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:154]
+WARNING: [Synth 8-6014] Unused sequential element char3_reg[5] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:154]
+WARNING: [Synth 8-6014] Unused sequential element char3_reg[4] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:154]
+WARNING: [Synth 8-6014] Unused sequential element char3_reg[3] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:154]
+WARNING: [Synth 8-6014] Unused sequential element char3_reg[2] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:154]
+WARNING: [Synth 8-6014] Unused sequential element char3_reg[1] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:154]
+WARNING: [Synth 8-6014] Unused sequential element char3_reg[0] was removed.  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:154]
+WARNING: [Synth 8-3848] Net char2[32] in module/entity lcd_disply does not have driver. [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:49]
+WARNING: [Synth 8-3848] Net char3[32] in module/entity lcd_disply does not have driver. [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:50]
+INFO: [Synth 8-6155] done synthesizing module 'lcd_disply' (18#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'lcd_rgb_top' (19#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_rgb_top.v:23]
+INFO: [Synth 8-6157] synthesizing module 'sensor_link' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/sensor_link.v:12]
 	Parameter CLK_FREQ bound to: 50000000 - type: integer 
 	Parameter BAUD bound to: 115200 - type: integer 
 INFO: [Synth 8-6157] synthesizing module 'sl_uart_rx' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/sl_uart_rx.v:5]
@@ -239,7 +261,7 @@ INFO: [Synth 8-6157] synthesizing module 'sl_uart_rx' [E:/FPGA/project/smart_car
 	Parameter S_START bound to: 1 - type: integer 
 	Parameter S_DATA bound to: 2 - type: integer 
 	Parameter S_STOP bound to: 3 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'sl_uart_rx' (19#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/sl_uart_rx.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'sl_uart_rx' (20#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/sl_uart_rx.v:5]
 INFO: [Synth 8-6157] synthesizing module 'v1_decode' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:8]
 	Parameter S_H1 bound to: 0 - type: integer 
 	Parameter S_H2 bound to: 1 - type: integer 
@@ -277,7 +299,22 @@ WARNING: [Synth 8-5788] Register rx_buf_reg[27] in module v1_decode is has both 
 WARNING: [Synth 8-5788] Register rx_buf_reg[28] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:73]
 WARNING: [Synth 8-5788] Register rx_buf_reg[29] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:73]
 WARNING: [Synth 8-5788] Register rx_buf_reg[30] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:73]
-INFO: [Synth 8-6155] done synthesizing module 'v1_decode' (20#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'v1_decode' (21#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:8]
+INFO: [Synth 8-6157] synthesizing module 'tracker_ctrl' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/tracker_ctrl.v:16]
+	Parameter U_CENTER bound to: 10'b0011001000 
+	Parameter DEADZONE bound to: 10'b0000001000 
+	Parameter V_MAX bound to: 8'b00101101 
+	Parameter H_REF bound to: 10'b0001111000 
+	Parameter H_ARRIVE bound to: 10'b0010010110 
+	Parameter SEARCH_SPD bound to: 8'b00010110 
+	Parameter LOST_LIM bound to: 8'b00011001 
+	Parameter TICK_MAX bound to: 1000000 - type: integer 
+	Parameter S_TRACK bound to: 2'b00 
+	Parameter S_LOST bound to: 2'b01 
+	Parameter S_SEARCH bound to: 2'b10 
+	Parameter S_ARRIVE bound to: 2'b11 
+INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/tracker_ctrl.v:109]
+INFO: [Synth 8-6155] done synthesizing module 'tracker_ctrl' (22#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/tracker_ctrl.v:16]
 INFO: [Synth 8-6157] synthesizing module 'ctrl_link_tx' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/ctrl_link_tx.v:8]
 	Parameter CLK_FREQ bound to: 50000000 - type: integer 
 	Parameter BAUD bound to: 115200 - type: integer 
@@ -287,7 +324,7 @@ INFO: [Synth 8-6157] synthesizing module 'sl_uart_tx' [E:/FPGA/project/smart_car
 	Parameter CLK_FREQ bound to: 50000000 - type: integer 
 	Parameter BAUD bound to: 115200 - type: integer 
 	Parameter BAUD_DIV bound to: 434 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'sl_uart_tx' (21#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/sl_uart_tx.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'sl_uart_tx' (23#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/sl_uart_tx.v:5]
 WARNING: [Synth 8-5788] Register frame_reg[0] in module ctrl_link_tx is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/ctrl_link_tx.v:69]
 WARNING: [Synth 8-5788] Register frame_reg[1] in module ctrl_link_tx is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/ctrl_link_tx.v:69]
 WARNING: [Synth 8-5788] Register frame_reg[2] in module ctrl_link_tx is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/ctrl_link_tx.v:69]
@@ -297,9 +334,9 @@ WARNING: [Synth 8-5788] Register frame_reg[5] in module ctrl_link_tx is has both
 WARNING: [Synth 8-5788] Register frame_reg[6] in module ctrl_link_tx is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/ctrl_link_tx.v:69]
 WARNING: [Synth 8-5788] Register frame_reg[7] in module ctrl_link_tx is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/ctrl_link_tx.v:69]
 WARNING: [Synth 8-5788] Register frame_reg[8] in module ctrl_link_tx is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/ctrl_link_tx.v:69]
-INFO: [Synth 8-6155] done synthesizing module 'ctrl_link_tx' (22#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/ctrl_link_tx.v:8]
-INFO: [Synth 8-6155] done synthesizing module 'sensor_link' (23#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/sensor_link.v:14]
-INFO: [Synth 8-6155] done synthesizing module 'top_dual_ov5640_lcd' (24#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v:18]
+INFO: [Synth 8-6155] done synthesizing module 'ctrl_link_tx' (24#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/ctrl_link_tx.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'sensor_link' (25#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/sensor_link.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'top_dual_ov5640_lcd' (26#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v:22]
 WARNING: [Synth 8-3331] design lcd_disply has unconnected port sys_rst_n
 WARNING: [Synth 8-3331] design lcd_disply has unconnected port rd_h_pixel[1]
 WARNING: [Synth 8-3331] design lcd_disply has unconnected port rd_h_pixel[0]
@@ -385,6 +422,7 @@ WARNING: [Synth 8-3331] design ddr3_rw has unconnected port app_addr_wr_max[1]
 WARNING: [Synth 8-3331] design ddr3_rw has unconnected port app_addr_wr_max[0]
 WARNING: [Synth 8-3331] design ddr3_rw has unconnected port ddr3_read_valid
 WARNING: [Synth 8-3331] design ddr3_rw has unconnected port ddr3_pingpang_en
+WARNING: [Synth 8-3331] design green_detect has unconnected port frame_vsync
 WARNING: [Synth 8-3331] design i2c_ov5640_rgb565_cfg has unconnected port i2c_data_r[7]
 WARNING: [Synth 8-3331] design i2c_ov5640_rgb565_cfg has unconnected port i2c_data_r[6]
 WARNING: [Synth 8-3331] design i2c_ov5640_rgb565_cfg has unconnected port i2c_data_r[5]
@@ -397,7 +435,7 @@ WARNING: [Synth 8-3331] design i2c_ov5640_rgb565_cfg has unconnected port cmos_h
 WARNING: [Synth 8-3331] design i2c_ov5640_rgb565_cfg has unconnected port cmos_v_pixel[12]
 WARNING: [Synth 8-3331] design i2c_ov5640_rgb565_cfg has unconnected port cmos_v_pixel[11]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 569.684 ; gain = 166.715
+Finished RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 575.984 ; gain = 171.785
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -410,10 +448,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 569.684 ; gain = 166.715
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 575.984 ; gain = 171.785
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 569.684 ; gain = 166.715
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 575.984 ; gain = 171.785
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tfgg484-2
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -443,24 +481,24 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_dual_ov5640_lcd_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Parsing XDC File [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/dont_touch.xdc]
 Finished Parsing XDC File [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/dont_touch.xdc]
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 949.891 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 965.555 ; gain = 0.000
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 949.891 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 965.555 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 949.891 ; gain = 0.000
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 949.891 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 965.555 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 965.555 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 949.891 ; gain = 546.922
+Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 965.555 ; gain = 561.355
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tfgg484-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 949.891 ; gain = 546.922
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 965.555 ; gain = 561.355
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -507,8 +545,8 @@ Applied set_property IO_BUFFER_TYPE = NONE for ddr3_ck_n[0]. (constraint file  e
 Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_ck_n[0]. (constraint file  e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 39).
 Applied set_property IO_BUFFER_TYPE = NONE for ddr3_ck_p[0]. (constraint file  e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 40).
 Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_ck_p[0]. (constraint file  e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 41).
-Applied set_property IO_BUFFER_TYPE = NONE for ddr3_cke[0]. (constraint file  e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 42).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_cke[0]. (constraint file  e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 43).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_cke. (constraint file  e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 42).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_cke. (constraint file  e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 43).
 Applied set_property IO_BUFFER_TYPE = NONE for ddr3_cs_n[0]. (constraint file  e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 44).
 Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_cs_n[0]. (constraint file  e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 45).
 Applied set_property IO_BUFFER_TYPE = NONE for ddr3_dm[0]. (constraint file  e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 46).
@@ -614,7 +652,7 @@ Applied set_property DONT_TOUCH = true for u_ddr3_top/u_mig_7series_0. (constrai
 Applied set_property DONT_TOUCH = true for u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/u_wr_fifo. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/u_wr_fifo. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 949.891 ; gain = 546.922
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 965.555 ; gain = 561.355
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "total_h_pixel" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "total_v_pixel" won't be mapped to RAM because it is too sparse
@@ -655,6 +693,13 @@ INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because addre
 INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'dstate_reg' in module 'green_detect'
+INFO: [Synth 8-5546] ROM "frame_end" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "y" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "dstate" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "dcnt" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "gd_u" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "dstate" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-802] inferred FSM for state register 'state_cnt_reg' in module 'ddr3_rw'
 INFO: [Synth 8-5546] ROM "rfifo_data_en_1" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5544] ROM "state_cnt" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
@@ -712,6 +757,9 @@ INFO: [Synth 8-5546] ROM "byte_cnt" won't be mapped to RAM because it is too spa
 INFO: [Synth 8-5546] ROM "byte_cnt" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5544] ROM "parse_result" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5546] ROM "state" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'tracker_ctrl'
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5546] ROM "txd" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5544] ROM "busy" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "bit_idx" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
@@ -729,6 +777,15 @@ INFO: [Synth 8-5544] ROM "bit_idx" won't be mapped to Block RAM because address 
                  st_stop |                         10000000 |                         10000000
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3898] No Re-encoding of one hot register 'cur_state_reg' in module 'i2c_dri'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  D_IDLE |                               00 |                               00
+                 D_RUN_U |                               01 |                               01
+                 D_RUN_V |                               10 |                               10
+                 D_LATCH |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'dstate_reg' using encoding 'sequential' in module 'green_detect'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -760,8 +817,17 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
                    S_CRC |                               11 |                               11
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'v1_decode'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                S_SEARCH |                               00 |                               10
+                 S_TRACK |                               01 |                               00
+                S_ARRIVE |                               10 |                               11
+                  S_LOST |                               11 |                               01
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'tracker_ctrl'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 949.891 ; gain = 546.922
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 965.555 ; gain = 561.355
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -774,20 +840,24 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
+	   3 Input     32 Bit       Adders := 1     
 	   2 Input     28 Bit       Adders := 4     
 	   2 Input     24 Bit       Adders := 6     
 	   2 Input     16 Bit       Adders := 2     
+	   2 Input     15 Bit       Adders := 1     
 	   3 Input     15 Bit       Adders := 1     
 	   2 Input     13 Bit       Adders := 1     
-	   3 Input     12 Bit       Adders := 2     
-	   2 Input     11 Bit       Adders := 10    
+	   3 Input     12 Bit       Adders := 3     
+	   2 Input     12 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 20    
 	   3 Input     11 Bit       Adders := 2     
 	   4 Input     11 Bit       Adders := 2     
-	   2 Input     10 Bit       Adders := 2     
-	   2 Input      8 Bit       Adders := 4     
+	   2 Input     10 Bit       Adders := 4     
+	   3 Input     10 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 5     
 	   2 Input      7 Bit       Adders := 2     
 	   3 Input      7 Bit       Adders := 1     
-	   2 Input      6 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 2     
 	   2 Input      4 Bit       Adders := 8     
 	   2 Input      3 Bit       Adders := 1     
 	   2 Input      1 Bit       Adders := 1     
@@ -795,42 +865,47 @@ Detailed RTL Component Info :
 	   2 Input      8 Bit         XORs := 54    
 +---Registers : 
 	              256 Bit    Registers := 4     
-	              128 Bit    Registers := 44    
-	               32 Bit    Registers := 4     
+	              128 Bit    Registers := 42    
+	               32 Bit    Registers := 8     
 	               28 Bit    Registers := 5     
-	               24 Bit    Registers := 6     
-	               16 Bit    Registers := 21    
+	               24 Bit    Registers := 7     
+	               18 Bit    Registers := 2     
+	               16 Bit    Registers := 23    
 	               13 Bit    Registers := 2     
 	               11 Bit    Registers := 13    
-	               10 Bit    Registers := 2     
-	                8 Bit    Registers := 56    
+	               10 Bit    Registers := 20    
+	                8 Bit    Registers := 58    
 	                7 Bit    Registers := 2     
-	                6 Bit    Registers := 1     
+	                6 Bit    Registers := 2     
 	                4 Bit    Registers := 8     
 	                3 Bit    Registers := 1     
 	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 77    
+	                1 Bit    Registers := 81    
 +---Muxes : 
 	   2 Input    256 Bit        Muxes := 6     
+	   2 Input     32 Bit        Muxes := 4     
+	   4 Input     32 Bit        Muxes := 3     
 	   8 Input     28 Bit        Muxes := 4     
 	   4 Input     28 Bit        Muxes := 1     
 	   2 Input     28 Bit        Muxes := 1     
 	   8 Input     24 Bit        Muxes := 4     
 	   4 Input     20 Bit        Muxes := 1     
 	   2 Input     20 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 12    
+	   4 Input     18 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 18    
 	  16 Input     16 Bit        Muxes := 2     
-	   4 Input     16 Bit        Muxes := 1     
+	   4 Input     16 Bit        Muxes := 3     
+	   2 Input     15 Bit        Muxes := 1     
 	   6 Input     15 Bit        Muxes := 1     
 	   3 Input     12 Bit        Muxes := 1     
-	   2 Input     12 Bit        Muxes := 1     
+	   2 Input     12 Bit        Muxes := 6     
 	   4 Input     11 Bit        Muxes := 4     
 	   2 Input     11 Bit        Muxes := 9     
-	   4 Input     10 Bit        Muxes := 3     
-	   2 Input     10 Bit        Muxes := 4     
+	   4 Input     10 Bit        Muxes := 7     
+	   2 Input     10 Bit        Muxes := 11    
 	   6 Input     10 Bit        Muxes := 1     
-	   4 Input      8 Bit        Muxes := 5     
-	   2 Input      8 Bit        Muxes := 64    
+	   4 Input      8 Bit        Muxes := 7     
+	   2 Input      8 Bit        Muxes := 65    
 	  22 Input      8 Bit        Muxes := 2     
 	   9 Input      8 Bit        Muxes := 4     
 	  31 Input      7 Bit        Muxes := 2     
@@ -841,25 +916,25 @@ Detailed RTL Component Info :
 	   6 Input      7 Bit        Muxes := 2     
 	   9 Input      7 Bit        Muxes := 2     
 	   8 Input      7 Bit        Muxes := 1     
-	   2 Input      6 Bit        Muxes := 10    
-	   4 Input      6 Bit        Muxes := 2     
+	   2 Input      6 Bit        Muxes := 11    
+	   4 Input      6 Bit        Muxes := 3     
 	   2 Input      4 Bit        Muxes := 16    
 	  17 Input      4 Bit        Muxes := 2     
 	   3 Input      4 Bit        Muxes := 1     
 	   2 Input      3 Bit        Muxes := 1     
 	   6 Input      2 Bit        Muxes := 14    
-	   2 Input      2 Bit        Muxes := 5     
-	   4 Input      2 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 133   
+	   2 Input      2 Bit        Muxes := 9     
+	   4 Input      2 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 150   
 	  31 Input      1 Bit        Muxes := 14    
 	  29 Input      1 Bit        Muxes := 14    
 	  33 Input      1 Bit        Muxes := 12    
 	  22 Input      1 Bit        Muxes := 12    
 	   6 Input      1 Bit        Muxes := 11    
 	   9 Input      1 Bit        Muxes := 26    
+	   4 Input      1 Bit        Muxes := 54    
 	   8 Input      1 Bit        Muxes := 9     
 	   3 Input      1 Bit        Muxes := 2     
-	   4 Input      1 Bit        Muxes := 42    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -939,6 +1014,32 @@ Detailed RTL Component Info :
 +---Muxes : 
 	   2 Input     16 Bit        Muxes := 1     
 	   2 Input      8 Bit        Muxes := 1     
+Module green_detect 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     32 Bit       Adders := 1     
+	   2 Input     15 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 2     
+	   2 Input      6 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 4     
+	               24 Bit    Registers := 1     
+	               18 Bit    Registers := 2     
+	               10 Bit    Registers := 18    
+	                6 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 4     
+	   4 Input     32 Bit        Muxes := 3     
+	   4 Input     18 Bit        Muxes := 1     
+	   2 Input     15 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 7     
+	   4 Input     10 Bit        Muxes := 4     
+	   2 Input      6 Bit        Muxes := 1     
+	   4 Input      6 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 12    
+	   4 Input      1 Bit        Muxes := 9     
 Module ddr3_rw 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -1046,13 +1147,13 @@ Detailed RTL Component Info :
 +---Adders : 
 	   3 Input     15 Bit       Adders := 1     
 	   3 Input     12 Bit       Adders := 1     
-	   2 Input     11 Bit       Adders := 2     
+	   2 Input     11 Bit       Adders := 10    
 	   3 Input      7 Bit       Adders := 1     
 +---Registers : 
-	              128 Bit    Registers := 44    
+	              128 Bit    Registers := 42    
 	               16 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input     16 Bit        Muxes := 4     
+	   2 Input     16 Bit        Muxes := 6     
 Module sl_uart_rx 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -1093,6 +1194,28 @@ Detailed RTL Component Info :
 	   2 Input      2 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 35    
 	   4 Input      1 Bit        Muxes := 38    
+Module tracker_ctrl 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     12 Bit       Adders := 1     
+	   3 Input     12 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 2     
+	   3 Input     10 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 2     
+	                8 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 4     
+	   4 Input     16 Bit        Muxes := 2     
+	   2 Input     12 Bit        Muxes := 5     
+	   2 Input      8 Bit        Muxes := 1     
+	   4 Input      8 Bit        Muxes := 2     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 5     
+	   4 Input      1 Bit        Muxes := 3     
 Module sl_uart_tx 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -1165,13 +1288,9 @@ INFO: [Synth 8-5587] ROM size for "sda_out" is below threshold of ROM address wi
 INFO: [Synth 8-5546] ROM "sda_out" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "sda_dir" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "st_done" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "st_done" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "st_done" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "st_done" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "i2c_data_r" won't be mapped to RAM because it is too sparse
 INFO: [Common 17-14] Message 'Synth 8-5546' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-4471] merging register 'u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/rd_load_d0_reg' into 'u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/rd_load_d0_reg' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl.v:144]
-INFO: [Synth 8-5544] ROM "u_rx/state" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 WARNING: [Synth 8-3917] design top_dual_ov5640_lcd has port cam_rst_n_1 driven by constant 1
 WARNING: [Synth 8-3917] design top_dual_ov5640_lcd has port cam_pwdn_1 driven by constant 0
 WARNING: [Synth 8-3917] design top_dual_ov5640_lcd has port cam_rst_n_2 driven by constant 1
@@ -1179,9 +1298,46 @@ WARNING: [Synth 8-3917] design top_dual_ov5640_lcd has port cam_pwdn_2 driven by
 WARNING: [Synth 8-3331] design lcd_disply has unconnected port sys_rst_n
 WARNING: [Synth 8-3331] design lcd_disply has unconnected port rd_h_pixel[1]
 WARNING: [Synth 8-3331] design lcd_disply has unconnected port rd_h_pixel[0]
-WARNING: [Synth 8-3331] design ddr3_rw has unconnected port wr_clk_2
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3886] merging instance 'u_green_detect/divisor_reg[18]' (FDCE) to 'u_green_detect/divisor_reg[19]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect/divisor_reg[19]' (FDCE) to 'u_green_detect/divisor_reg[20]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect/divisor_reg[20]' (FDCE) to 'u_green_detect/divisor_reg[21]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect/divisor_reg[21]' (FDCE) to 'u_green_detect/divisor_reg[22]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect/divisor_reg[22]' (FDCE) to 'u_green_detect/divisor_reg[23]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect/divisor_reg[23]' (FDCE) to 'u_green_detect/divisor_reg[24]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect/divisor_reg[24]' (FDCE) to 'u_green_detect/divisor_reg[25]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect/divisor_reg[25]' (FDCE) to 'u_green_detect/divisor_reg[26]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect/divisor_reg[26]' (FDCE) to 'u_green_detect/divisor_reg[27]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect/divisor_reg[27]' (FDCE) to 'u_green_detect/divisor_reg[28]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect/divisor_reg[28]' (FDCE) to 'u_green_detect/divisor_reg[29]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect/divisor_reg[29]' (FDCE) to 'u_green_detect/divisor_reg[30]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect/divisor_reg[30]' (FDCE) to 'u_green_detect/divisor_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_green_detect/\divisor_reg[31] )
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_tracker/right_reg[11]' (FDCE) to 'u_sensor_link/u_tracker/right_reg[15]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_tracker/right_reg[12]' (FDCE) to 'u_sensor_link/u_tracker/right_reg[15]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_tracker/right_reg[13]' (FDCE) to 'u_sensor_link/u_tracker/right_reg[15]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_tracker/right_reg[14]' (FDCE) to 'u_sensor_link/u_tracker/right_reg[15]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_tracker/left_reg[11]' (FDCE) to 'u_sensor_link/u_tracker/left_reg[12]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_tracker/left_reg[12]' (FDCE) to 'u_sensor_link/u_tracker/left_reg[13]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_tracker/left_reg[13]' (FDCE) to 'u_sensor_link/u_tracker/left_reg[14]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_tracker/left_reg[14]' (FDCE) to 'u_sensor_link/u_tracker/left_reg[15]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_tracker/mode_reg[1]' (FDCE) to 'u_sensor_link/u_tracker/mode_reg[7]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_tracker/mode_reg[2]' (FDCE) to 'u_sensor_link/u_tracker/mode_reg[7]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_tracker/mode_reg[3]' (FDCE) to 'u_sensor_link/u_tracker/mode_reg[7]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_tracker/mode_reg[4]' (FDCE) to 'u_sensor_link/u_tracker/mode_reg[7]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_tracker/mode_reg[5]' (FDCE) to 'u_sensor_link/u_tracker/mode_reg[7]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_tracker/mode_reg[6]' (FDCE) to 'u_sensor_link/u_tracker/mode_reg[7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sensor_link/\u_tracker/mode_reg[7] )
 INFO: [Synth 8-3886] merging instance 'u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/rd_load_d_reg[0]' (FDC) to 'u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/rd_load_d_reg[0]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect/idle_cnt_reg[22]' (FDCE) to 'u_green_detect/idle_cnt_reg[23]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect/idle_cnt_reg[23]' (FDCE) to 'u_green_detect/idle_cnt_reg[21]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect/idle_cnt_reg[21]' (FDCE) to 'u_green_detect/idle_cnt_reg[20]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect/idle_cnt_reg[20]' (FDCE) to 'u_green_detect/idle_cnt_reg[19]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect/idle_cnt_reg[19]' (FDCE) to 'u_green_detect/idle_cnt_reg[18]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect/idle_cnt_reg[18]' (FDCE) to 'u_green_detect/idle_cnt_reg[17]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect/idle_cnt_reg[17]' (FDCE) to 'u_green_detect/idle_cnt_reg[16]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect/idle_cnt_reg[16]' (FDCE) to 'u_green_detect/idle_cnt_reg[15]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_green_detect/\idle_cnt_reg[15] )
 INFO: [Synth 8-3886] merging instance 'u_lcd_rgb_top/u_lcd_driver/v_total_reg[0]' (FD) to 'u_lcd_rgb_top/u_lcd_driver/v_total_reg[9]'
 INFO: [Synth 8-3886] merging instance 'u_lcd_rgb_top/u_lcd_driver/v_total_reg[1]' (FD) to 'u_lcd_rgb_top/u_lcd_driver/v_total_reg[4]'
 INFO: [Synth 8-3886] merging instance 'u_lcd_rgb_top/u_lcd_driver/v_total_reg[7]' (FD) to 'u_lcd_rgb_top/u_lcd_driver/v_sync_reg[2]'
@@ -1214,177 +1370,143 @@ INFO: [Synth 8-3886] merging instance 'u_picture_size/ddr3_max_addr_reg[27]' (FD
 INFO: [Synth 8-3886] merging instance 'u_picture_size/cmos_v_pixel_reg[1]' (FDC) to 'u_picture_size/cmos_v_pixel_reg[10]'
 INFO: [Synth 8-3886] merging instance 'u_picture_size/cmos_v_pixel_reg[2]' (FDC) to 'u_picture_size/cmos_v_pixel_reg[10]'
 INFO: [Synth 8-3886] merging instance 'u_picture_size/cmos_v_pixel_reg[10]' (FDC) to 'u_picture_size/cmos_h_pixel_reg[1]'
-INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[3][7]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][0]'
-INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[2][7]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][0]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[7][7]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[7][3]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[5][7]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[5][3]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[3][7]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][1]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[2][7]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][1]'
 INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[1][7]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[1][1]'
-INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[0][7]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][0]'
-INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[3][6]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][0]'
-INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[2][6]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][0]'
-INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[1][6]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][0]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[0][7]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][1]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[7][6]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[7][3]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[5][6]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[5][3]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[3][6]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][1]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[2][6]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][1]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[1][6]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][1]'
 INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[0][6]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[1][1]'
-INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[3][5]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][0]'
-INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[2][5]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][0]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[7][5]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[7][3]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[5][5]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[5][3]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[3][5]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][1]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[2][5]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][1]'
 INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[1][5]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[1][1]'
-INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[0][5]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][0]'
-INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[3][4]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][0]'
-INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[2][4]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][0]'
-INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[1][4]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][0]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[0][5]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][1]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[7][4]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[7][3]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[5][4]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[5][3]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[3][4]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][1]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[2][4]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][1]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[1][4]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][1]'
 INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[0][4]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[1][1]'
-INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[3][3]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][0]'
-INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[2][3]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][0]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[3][3]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][1]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[2][3]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][1]'
 INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[1][3]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[1][1]'
-INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[0][3]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][0]'
-INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[3][2]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][0]'
-INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[2][2]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][0]'
-INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[1][2]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][0]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[0][3]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][1]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[3][2]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][1]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[2][2]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][1]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[1][2]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][1]'
 INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[0][2]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[1][1]'
-INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[3][1]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][0]'
-INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[2][1]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[1][1]'
-INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[1][1]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[0][0]'
-INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[0][1]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][0]'
-INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[3][0]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[1][0]'
-INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[2][0]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[1][0]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sensor_link/\u_ctrl_tx/frame_reg[1][0] )
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_sensor_link/\u_ctrl_tx/frame_reg[0][0] )
-INFO: [Synth 8-3886] merging instance 'u_lcd_rgb_top/u_lcd_driver/h_disp_reg[0]' (FD) to 'u_lcd_rgb_top/u_lcd_driver/v_sync_reg[2]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_rgb_top/u_lcd_driver/h_disp_reg[1]' (FD) to 'u_lcd_rgb_top/u_lcd_driver/v_sync_reg[2]'
-INFO: [Synth 8-3886] merging instance 'u_picture_size/cmos_h_pixel_reg[1]' (FDC) to 'u_picture_size/cmos_h_pixel_reg[2]'
-INFO: [Synth 8-3886] merging instance 'u_picture_size/cmos_h_pixel_reg[2]' (FDC) to 'u_picture_size/cmos_h_pixel_reg[3]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_rgb_top/u_lcd_driver/h_back_reg[7]' (FD) to 'u_lcd_rgb_top/u_lcd_driver/h_back_reg[2]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_rgb_top/u_lcd_driver/v_disp_reg[0]' (FD) to 'u_lcd_rgb_top/u_lcd_driver/v_sync_reg[2]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_rgb_top/u_lcd_driver/v_disp_reg[1]' (FD) to 'u_lcd_rgb_top/u_lcd_driver/v_sync_reg[2]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_rgb_top/u_lcd_driver/v_disp_reg[2]' (FD) to 'u_lcd_rgb_top/u_lcd_driver/v_sync_reg[2]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_rgb_top/u_lcd_driver/v_back_reg[4]' (FD) to 'u_lcd_rgb_top/u_lcd_driver/v_back_reg[2]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_rgb_top/u_lcd_driver/v_back_reg[0]' (FD) to 'u_lcd_rgb_top/u_lcd_driver/v_back_reg[5]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_rgb_top/u_lcd_driver/v_sync_reg[2]' (FD) to 'u_lcd_rgb_top/u_lcd_driver/h_disp_reg[4]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_rgb_top/u_lcd_driver/h_sync_reg[0]' (FD) to 'u_lcd_rgb_top/u_lcd_driver/h_sync_reg[5]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_rgb_top/u_lcd_driver/h_back_reg[0]' (FD) to 'u_lcd_rgb_top/u_lcd_driver/h_disp_reg[4]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_rgb_top/u_lcd_driver/h_sync_reg[2]' (FD) to 'u_lcd_rgb_top/u_lcd_driver/h_sync_reg[4]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_rgb_top/u_lcd_driver/h_back_reg[4]' (FD) to 'u_lcd_rgb_top/u_lcd_driver/h_back_reg[6]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_rgb_top/u_lcd_driver/h_back_reg[5]' (FD) to 'u_lcd_rgb_top/u_lcd_driver/h_disp_reg[4]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_rgb_top/u_lcd_driver/h_sync_reg[6]' (FD) to 'u_lcd_rgb_top/u_lcd_driver/h_disp_reg[4]'
-INFO: [Synth 8-3886] merging instance 'u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[23]' (FDC) to 'u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[14]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_ov5640_dri_2/u_i2c_cfg /\i2c_data_reg[14] )
-INFO: [Synth 8-3886] merging instance 'u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[23]' (FDC) to 'u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[14]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_ov5640_dri_1/u_i2c_cfg /\i2c_data_reg[14] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[27][127] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[26][127] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[25][127] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[24][127] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[23][127] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[22][127] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[21][127] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[20][127] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[18][127] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[17][127] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[16][127] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[7][127] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[6][127] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[15][127] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[14][127] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[13][127] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[12][127] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[11][127] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[10][127] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[9][127] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[8][127] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[27][126] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[26][126] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[25][126] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[24][126] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[23][126] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[22][126] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[21][126] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[20][126] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[18][126] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[17][126] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[16][126] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[7][126] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[6][126] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[15][126] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[14][126] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[13][126] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[12][126] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[11][126] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[10][126] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[9][126] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[8][126] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[27][125] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[26][125] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[25][125] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[24][125] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[23][125] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[22][125] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[21][125] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[20][125] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[18][125] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[17][125] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[16][125] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[7][125] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[6][125] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[15][125] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[14][125] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[13][125] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[12][125] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[11][125] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[10][125] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[9][125] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[8][125] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[27][124] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[26][124] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[25][124] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[24][124] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[23][124] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[22][124] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[21][124] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[20][124] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[18][124] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[17][124] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[16][124] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[7][124] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[6][124] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[15][124] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[14][124] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[13][124] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[12][124] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[11][124] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[10][124] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[9][124] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[8][124] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[27][123] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[26][123] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[25][123] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[24][123] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[23][123] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[22][123] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[21][123] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[20][123] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[18][123] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[17][123] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[16][123] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char3_reg[7][123] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[27][127] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[26][127] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[25][127] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[24][127] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[23][127] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[22][127] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[21][127] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[20][127] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[18][127] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[17][127] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[16][127] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[7][127] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[6][127] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[15][127] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[14][127] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[11][127] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[10][127] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[9][127] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[8][127] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[27][126] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[26][126] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[25][126] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[24][126] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[23][126] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[22][126] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[21][126] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[20][126] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[18][126] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[17][126] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[16][126] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[7][126] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[6][126] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[15][126] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[14][126] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[11][126] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[10][126] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[9][126] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[8][126] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[27][125] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[26][125] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[25][125] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[24][125] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[23][125] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[22][125] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[21][125] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[20][125] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[18][125] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[17][125] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[16][125] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[7][125] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[6][125] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[15][125] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[14][125] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[11][125] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[10][125] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[9][125] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[8][125] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[27][124] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[26][124] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[25][124] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[24][124] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[23][124] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[22][124] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[21][124] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[20][124] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[18][124] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[17][124] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[16][124] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[7][124] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[6][124] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[15][124] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[14][124] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[11][124] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[10][124] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[9][124] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[8][124] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[27][123] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[26][123] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[25][123] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[24][123] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[23][123] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[22][123] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[21][123] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[20][123] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[18][123] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[17][123] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[16][123] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[7][123] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[6][123] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[15][123] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[14][123] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[11][123] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_rgb_top/u_lcd_disply/\char2_reg[10][123] )
 INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-3886] merging instance 'u_picture_size/cmos_h_pixel_reg[3]' (FDC) to 'u_picture_size/cmos_h_pixel_reg[4]'
-INFO: [Synth 8-3886] merging instance 'u_picture_size/cmos_h_pixel_reg[4]' (FDC) to 'u_picture_size/cmos_h_pixel_reg[11]'
-INFO: [Synth 8-3886] merging instance 'u_picture_size/cmos_h_pixel_reg[6]' (FDC) to 'u_picture_size/cmos_h_pixel_reg[7]'
-INFO: [Synth 8-3886] merging instance 'u_picture_size/cmos_h_pixel_reg[11]' (FDC) to 'u_picture_size/cmos_h_pixel_reg[12]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_rgb_top/u_lcd_driver/h_disp_reg[2]' (FD) to 'u_lcd_rgb_top/u_lcd_driver/h_disp_reg[4]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_rgb_top/u_lcd_driver/h_disp_reg[3]' (FD) to 'u_lcd_rgb_top/u_lcd_driver/h_disp_reg[4]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_rgb_top/u_lcd_driver/h_disp_reg[6]' (FD) to 'u_lcd_rgb_top/u_lcd_driver/h_disp_reg[7]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_rgb_top/u_rd_id/lcd_id_reg[15]' (FDCE) to 'u_lcd_rgb_top/u_rd_id/lcd_id_reg[11]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_rgb_top/u_rd_id/lcd_id_reg[11]' (FDCE) to 'u_lcd_rgb_top/u_rd_id/lcd_id_reg[10]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_rgb_top/u_rd_id/lcd_id_reg[10]' (FDCE) to 'u_lcd_rgb_top/u_rd_id/lcd_id_reg[5]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_rgb_top/u_rd_id/lcd_id_reg[0]' (FDCE) to 'u_lcd_rgb_top/u_rd_id/lcd_id_reg[5]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_rgb_top/u_rd_id/lcd_id_reg[9]' (FDCE) to 'u_lcd_rgb_top/u_rd_id/lcd_id_reg[8]'
-INFO: [Synth 8-3886] merging instance 'u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/rd_load_d_reg[1]' (FDC) to 'u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/rd_load_d_reg[1]'
-INFO: [Synth 8-3886] merging instance 'u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/rd_load_d_reg[2]' (FDC) to 'u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/rd_load_d_reg[2]'
-INFO: [Synth 8-3886] merging instance 'u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/rd_load_d_reg[3]' (FDC) to 'u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/rd_load_d_reg[3]'
-INFO: [Synth 8-3886] merging instance 'u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/rd_load_d_reg[4]' (FDC) to 'u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/rd_load_d_reg[4]'
-INFO: [Synth 8-3886] merging instance 'u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/rd_load_d_reg[5]' (FDC) to 'u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/rd_load_d_reg[5]'
-INFO: [Synth 8-3886] merging instance 'u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/rd_load_d_reg[6]' (FDC) to 'u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/rd_load_d_reg[6]'
-INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-3332] Sequential element (u_rx/FSM_sequential_state_reg[1]) is unused and will be removed from module sensor_link.
+WARNING: [Synth 8-3332] Sequential element (u_rx/FSM_sequential_state_reg[0]) is unused and will be removed from module sensor_link.
+WARNING: [Synth 8-3332] Sequential element (u_decode/FSM_sequential_state_reg[1]) is unused and will be removed from module sensor_link.
+WARNING: [Synth 8-3332] Sequential element (u_decode/FSM_sequential_state_reg[0]) is unused and will be removed from module sensor_link.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:21 . Memory (MB): peak = 949.891 ; gain = 546.922
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 965.555 ; gain = 561.355
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1423,13 +1545,13 @@ WARNING: [Synth 8-565] redefining clock 'sys_clk'
 WARNING: [Synth 8-565] redefining clock 'cmos_pclk'
 INFO: [Synth 8-5819] Moved 3 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:25 . Memory (MB): peak = 949.891 ; gain = 546.922
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 965.555 ; gain = 561.355
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:27 . Memory (MB): peak = 1027.984 ; gain = 625.016
+Finished Timing Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 1034.363 ; gain = 630.164
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1441,7 +1563,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 1027.984 ; gain = 625.016
+Finished Technology Mapping : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 1034.363 ; gain = 630.164
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1465,7 +1587,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 1027.984 ; gain = 625.016
+Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 1034.363 ; gain = 630.164
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1478,7 +1600,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 1027.984 ; gain = 625.016
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 1034.363 ; gain = 630.164
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1490,25 +1612,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 1027.984 ; gain = 625.016
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1034.363 ; gain = 630.164
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 1027.984 ; gain = 625.016
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1034.363 ; gain = 630.164
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 1027.984 ; gain = 625.016
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1034.363 ; gain = 630.164
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 1027.984 ; gain = 625.016
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1034.363 ; gain = 630.164
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1535,20 +1657,20 @@ Report Cell Usage:
 |5     |wr_fifo       |     1|
 |6     |wr_fifo__2    |     1|
 |7     |BUFG          |     5|
-|8     |CARRY4        |   146|
-|9     |LUT1          |    69|
-|10    |LUT2          |   408|
-|11    |LUT3          |   394|
-|12    |LUT4          |   542|
-|13    |LUT5          |   563|
-|14    |LUT6          |   712|
-|15    |MUXF7         |   134|
-|16    |MUXF8         |     4|
-|17    |FDCE          |  1842|
-|18    |FDPE          |    13|
-|19    |FDRE          |   107|
+|8     |CARRY4        |   228|
+|9     |LUT1          |    83|
+|10    |LUT2          |   633|
+|11    |LUT3          |   468|
+|12    |LUT4          |   674|
+|13    |LUT5          |   640|
+|14    |LUT6          |   799|
+|15    |MUXF7         |   130|
+|16    |MUXF8         |    15|
+|17    |FDCE          |  2120|
+|18    |FDPE          |    33|
+|19    |FDRE          |   100|
 |20    |FDSE          |     5|
-|21    |IBUF          |    24|
+|21    |IBUF          |    23|
 |22    |IOBUF         |     3|
 |23    |OBUF          |    13|
 |24    |OBUFT         |    23|
@@ -1558,55 +1680,55 @@ Report Instance Areas:
 +------+-------------------------+--------------------------+------+
 |      |Instance                 |Module                    |Cells |
 +------+-------------------------+--------------------------+------+
-|1     |top                      |                          |  6430|
+|1     |top                      |                          |  7418|
 |2     |  u_ddr3_top             |ddr3_top                  |  4303|
 |3     |    u_ddr3_fifo_ctrl_top |ddr3_fifo_ctrl_top        |  2314|
-|4     |      u_ddr3_fifo_ctrl_1 |ddr3_fifo_ctrl__xdcDup__1 |  1267|
-|5     |      u_ddr3_fifo_ctrl_2 |ddr3_fifo_ctrl            |  1006|
+|4     |      u_ddr3_fifo_ctrl_1 |ddr3_fifo_ctrl__xdcDup__1 |  1283|
+|5     |      u_ddr3_fifo_ctrl_2 |ddr3_fifo_ctrl            |   990|
 |6     |    u_ddr3_rw            |ddr3_rw                   |  1680|
-|7     |  u_lcd_rgb_top          |lcd_rgb_top               |   657|
-|8     |    u_clk_div            |clk_div                   |     6|
-|9     |    u_lcd_disply         |lcd_disply                |    28|
-|10    |    u_lcd_driver         |lcd_driver                |   557|
-|11    |    u_rd_id              |rd_id                     |    66|
-|12    |  u_ov5640_dri_1         |ov5640_dri                |   437|
-|13    |    u_cmos_capture_data  |cmos_capture_data_1       |    52|
-|14    |    u_i2c_cfg            |i2c_ov5640_rgb565_cfg_2   |   233|
-|15    |    u_i2c_dr             |i2c_dri_3                 |   151|
-|16    |  u_ov5640_dri_2         |ov5640_dri_0              |   436|
-|17    |    u_cmos_capture_data  |cmos_capture_data         |    52|
-|18    |    u_i2c_cfg            |i2c_ov5640_rgb565_cfg     |   233|
-|19    |    u_i2c_dr             |i2c_dri                   |   151|
-|20    |  u_picture_size         |picture_size              |    47|
-|21    |  u_sensor_link          |sensor_link               |   471|
-|22    |    u_ctrl_tx            |ctrl_link_tx              |   230|
-|23    |      u_tx               |sl_uart_tx                |    71|
-|24    |    u_decode             |v1_decode                 |   143|
-|25    |    u_rx                 |sl_uart_rx                |    98|
+|7     |  u_green_detect         |green_detect              |  1057|
+|8     |  u_lcd_rgb_top          |lcd_rgb_top               |   689|
+|9     |    u_clk_div            |clk_div                   |     6|
+|10    |    u_lcd_disply         |lcd_disply                |    20|
+|11    |    u_lcd_driver         |lcd_driver                |   590|
+|12    |    u_rd_id              |rd_id                     |    73|
+|13    |  u_ov5640_dri_1         |ov5640_dri                |   420|
+|14    |    u_cmos_capture_data  |cmos_capture_data_1       |    57|
+|15    |    u_i2c_cfg            |i2c_ov5640_rgb565_cfg_2   |   211|
+|16    |    u_i2c_dr             |i2c_dri_3                 |   151|
+|17    |  u_ov5640_dri_2         |ov5640_dri_0              |   414|
+|18    |    u_cmos_capture_data  |cmos_capture_data         |    52|
+|19    |    u_i2c_cfg            |i2c_ov5640_rgb565_cfg     |   211|
+|20    |    u_i2c_dr             |i2c_dri                   |   151|
+|21    |  u_picture_size         |picture_size              |    45|
+|22    |  u_sensor_link          |sensor_link               |   411|
+|23    |    u_ctrl_tx            |ctrl_link_tx              |   203|
+|24    |      u_tx               |sl_uart_tx                |    71|
+|25    |    u_tracker            |tracker_ctrl              |   208|
 +------+-------------------------+--------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 1027.984 ; gain = 625.016
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1034.363 ; gain = 630.164
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 92 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:25 . Memory (MB): peak = 1027.984 ; gain = 244.809
-Synthesis Optimization Complete : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 1027.984 ; gain = 625.016
+Synthesis finished with 0 errors, 0 critical warnings and 97 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1034.363 ; gain = 240.594
+Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1034.363 ; gain = 630.164
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 287 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 376 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1027.984 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1034.363 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 3 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 3 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-426 Infos, 226 Warnings, 0 Critical Warnings and 0 Errors encountered.
+442 Infos, 236 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:32 . Memory (MB): peak = 1027.984 ; gain = 625.016
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1027.984 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1034.363 ; gain = 630.164
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1034.363 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/top_dual_ov5640_lcd.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_dual_ov5640_lcd_utilization_synth.rpt -pb top_dual_ov5640_lcd_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Jul 25 20:52:55 2026...
+INFO: [Common 17-206] Exiting Vivado at Sun Jul 26 18:28:26 2026...

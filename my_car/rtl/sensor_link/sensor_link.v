@@ -1,25 +1,28 @@
 // ============================================================================
-// sensor_link.v ‚Äî‚Äî ‰º†ÊÑüÂô®ÈìæÈõÜÊàêÊ†∏Ôºà57 Â∑•Á®ãÁßªÊ§çÁâàÔºâ
-// ‰∏ÄÊù°Á∫øËøõÔºàuart_rxdÔºâ„ÄÅ‰∏ÄÊù°Á∫øÂá∫Ôºàuart_txdÔºâ„ÄÅËß£ÂåÖÊï∞ÊçÆÂÖ®ÂØºÂá∫
+// sensor_link.v -- ¥´∏–∆˜¡¥ºØ≥…∫À£®◊∑◊Ÿ∞Ê£©
+// “ªÃıœﬂΩ¯£®uart_rxd£©°¢“ªÃıœﬂ≥ˆ£®uart_txd£©°¢Ω‚∞¸ ˝æ›»´µº≥ˆ
 //
-// ÂÜÖÈÉ®Ôºö
-//   sl_uart_rx   ‚Üí v1_decodeÔºàV1.0 ‰∏äË°åÔºöÁºñÁ†ÅÂô®/IMUÔºå100HzÔºâ
-//   ctrl_link_tx ‚Üí sl_uart_txÔºàV1.1 ‰∏ãË°åÔºöÈÄüÂ∫¶Êåá‰ª§Ôºå50HzÔºâ
+// ƒ⁄≤ø£∫
+//   sl_uart_rx   °˙ v1_decode£®V1.0 …œ––£∫±‡¬Î∆˜/IMU£¨100Hz£©
+//   tracker_ctrl °˙ ctrl_link_tx °˙ sl_uart_tx£®V1.1 œ¬––£∫◊∑◊ŸÀŸ∂»÷∏¡Ó£¨50Hz£©
 //
-// Áé∞Èò∂ÊÆµÔºàÈò∂ÊÆµ1ÂÜíÁÉüÊµãËØïÔºâÔºö‰∏ãË°åÂ∏ß mode=0(ÂÅúËΩ¶)Ôºåleft=enc0‰Ωé16‰ΩçÔºåright=timestamp
-//   ‚Äî‚Äî ‰∏≤Âè£Âä©ÊâãËÉΩÁúãÂà∞ÁªìÊûÑÂåñÊï∞ÊçÆËØÅÊòé"Êî∂+Ëß£+Âèë"ÂÖ®ÈìæÂ∑•‰ΩúÔºõ
-//   ‚Äî‚Äî ESP32 Á´ØÊî∂Âà∞ mode=0 ‰πü‰∏ç‰ºöÂä®ËΩ¶ÔºåÁªùÂØπÂÆâÂÖ®„ÄÇ
-// Èò∂ÊÆµ3Êé•ÂÖ•ËøΩË∏™ÊéßÂà∂Êó∂ÔºöÊää mode/left/right ÊîπÊé• tracker_ctrl ËæìÂá∫Âç≥ÂèØÔºàÂè™Êîπ‰∏âË°åÔºâ„ÄÇ
+// ±æ∞Ê±‰ªØ£∫œ¬––≤ª‘Ÿ «√∞—Ãµ˜ ‘÷µ£¨∏ƒ”… tracker_ctrl  µ ±º∆À„
+//   £®green_detect Ω·π˚¥”∂•≤„æ≠±æƒ£øÈ∂Àø⁄“˝»Î£¨◊ºæ≤Ã¨øÁ”Ú÷±Ω”≤…—˘£©
 // ============================================================================
 module sensor_link #(
     parameter CLK_FREQ = 50_000_000,
     parameter BAUD     = 115200
 )(
-    input  wire               clk,            // 50MHzÔºàÈ°∂Â±ÇÊé• clk_50mÔºâ
-    input  wire               rst_n,          // È°∂Â±ÇÊé• rst_n
-    input  wire               uart_rxd,       // E13ÔºöESP32 -> FPGA
-    output wire               uart_txd,       // D16/D17ÔºöFPGA -> ESP32/PC
-    // Ëß£ÂåÖÂØºÂá∫ÔºàÈò∂ÊÆµ2/3 Áî®ÔºöOSD Êï∞ÊçÆÊ†è„ÄÅpose_coreÔºõÂΩìÂâçÈ°∂Â±ÇÂèØÊÇ¨Á©∫Ôºâ
+    input  wire               clk,            // 50MHz£®∂•≤„Ω” clk_50m£©
+    input  wire               rst_n,          // ∂•≤„Ω” rst_n
+    input  wire               uart_rxd,       // E13£∫ESP32 -> FPGA
+    output wire               uart_txd,       // F14£∫FPGA -> ESP32/PC
+    // ---- ¬Ãµ∆ºÏ≤‚Ω·π˚£®green_detect£¨cam_pclk ”Ú◊ºæ≤Ã¨–≈∫≈£© ----
+    input  wire               gd_found,
+    input  wire       [ 9:0]  gd_u,
+    input  wire       [ 9:0]  gd_min_y,
+    input  wire       [ 9:0]  gd_max_y,
+    // Ω‚∞¸µº≥ˆ£®OSD  ˝æ›¿∏°¢pose_core ”√£ªµ±«∞∂•≤„ø…–¸ø’£©
     output wire       [15:0]  timestamp,
     output wire signed [31:0] enc0,
     output wire signed [31:0] enc1,
@@ -31,11 +34,15 @@ module sensor_link #(
     output wire signed [15:0] acc_x,
     output wire signed [15:0] acc_y,
     output wire signed [15:0] acc_z,
-    output wire               parse_done,     // Â•ΩÂ∏ßÂçïÊãçËÑâÂÜ≤
-    output wire       [ 7:0]  parse_result    // 0x00 Â•Ω / 0xE3 CRCÈîô
+    output wire               parse_done,     // ∫√÷°µ•≈ƒ¬ˆ≥Â
+    output wire       [ 7:0]  parse_result,   // 0x00 ∫√ / 0xE3 CRC¥Ì
+    // ---- ◊∑◊Ÿ÷∏¡Óº‡ ”£®ILA µ˜ ‘”√£¨∂•≤„ø…–¸ø’£© ----
+    output wire       [ 7:0]  trk_mode,
+    output wire       [15:0]  trk_left,
+    output wire       [15:0]  trk_right
 );
 
-// ------------------------- ‰∏äË°åÔºöÊé•Êî∂ + Ëß£ÂåÖ -------------------------
+// ------------------------- …œ––£∫Ω” ’ + Ω‚∞¸ -------------------------
 wire [7:0] rx_data;
 wire       rx_done;
 
@@ -56,14 +63,33 @@ v1_decode u_decode (
     .parse_result(parse_result)
 );
 
-// ------------------------- ‰∏ãË°åÔºöV1.1 Êåá‰ª§Â∏ß -------------------------
-// Èò∂ÊÆµ1ÂÜíÁÉüÔºömode=0 ÂÅúËΩ¶Ôºõleft/right ÂÄüÈÅì‰º† enc0/timestamp ‰æõËßÇÂØü
-// Èò∂ÊÆµ3ËøΩË∏™ÔºöÊîπÊé• tracker_ctrl ÁöÑ mode/target_left/target_right
+// ------------------------- ◊∑◊Ÿøÿ÷∆£∫ ”æı -> ÀŸ∂»÷∏¡Ó -------------------------
+tracker_ctrl #(
+    .U_CENTER   (10'd200),
+    .DEADZONE   (10'd8),
+    .V_MAX      (8'd45),
+    .H_REF      (10'd120),     // ƒø±Íæ‡¿Î∂‘”¶µƒµ∆∏ﬂ£® µ≤‚±Í∂®£©
+    .H_ARRIVE   (10'd150),     // µΩ¥Ô≈–∂®µ∆∏ﬂ
+    .SEARCH_SPD (8'd22),
+    .LOST_LIM   (8'd25)
+) u_tracker (
+    .clk      (clk),
+    .rst_n    (rst_n),
+    .gd_found (gd_found),
+    .gd_u     (gd_u),
+    .gd_min_y (gd_min_y),
+    .gd_max_y (gd_max_y),
+    .mode     (trk_mode),
+    .left     (trk_left),
+    .right    (trk_right)
+);
+
+// ------------------------- œ¬––£∫V1.1 ÷∏¡Ó÷° -------------------------
 ctrl_link_tx #(.CLK_FREQ(CLK_FREQ), .BAUD(BAUD), .SEND_HZ(50)) u_ctrl_tx (
     .clk(clk), .rst_n(rst_n),
-    .mode (8'd0),
-    .left (enc0[15:0]),
-    .right(timestamp),
+    .mode (trk_mode),
+    .left (trk_left),
+    .right(trk_right),
     .txd  (uart_txd)
 );
 

@@ -287,4 +287,41 @@ void loop_fishbot_control()
         for (int i = 0; i < 4; i++) ticks[i] = (int32_t)encoders[i].getTicks();
         fpga.send(ticks); // 内部 10ms 节流，实际发送频率 100Hz
     }
+
+    // ================= PLD2026 改造：FPGA 下行 V1.1 接收 + 看门狗 =================
+    fpga.receive();
+    // 看门狗触发：200ms 无合法下行帧 → 立即停车（安全保护）
+    if (fpga.cmdWatchdog()) {
+        target_motor_speed1 = 0;
+        target_motor_speed2 = 0;
+        target_motor_speed3 = 0;
+        target_motor_speed4 = 0;
+        for (int i = 0; i < 4; i++) {
+            pid_controller[i].update_target(0);
+            motor.updateMotorSpeed(i, 0);
+        }
+        Serial.println("[FPGA] WATCHDOG: 200ms 无下行帧，已停车！");
+    }
+
+    // ================= PLD2026: OLED 通信调试数据更新 =================
+    {
+        static uint32_t last_tx_cnt = 0;
+        static uint32_t last_tx_ms  = 0;
+        uint32_t now = millis();
+        uint32_t tx_interval = 0;
+        if (fpga.txCount() != last_tx_cnt) {
+            if (last_tx_ms != 0) tx_interval = now - last_tx_ms;
+            last_tx_ms  = now;
+            last_tx_cnt = fpga.txCount();
+        }
+        int32_t enc[4];  for (int i=0;i<4;i++) enc[i] = fpga.txEnc(i);
+        int16_t gyro[3]; for (int i=0;i<3;i++) gyro[i] = fpga.txGyro(i);
+        int16_t acc[3];  for (int i=0;i<3;i++) acc[i]  = fpga.txAcc(i);
+        display.updateCommDebug(
+            fpga.txCount(), fpga.rxOkCount(), fpga.rxCrcErr(),
+            fpga.cmdOnline(), tx_interval,
+            enc, gyro, acc,
+            fpga.cmdRaw(), fpga.txRaw()
+        );
+    }
 }

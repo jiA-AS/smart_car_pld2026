@@ -17,6 +17,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7a100tfgg484-2
 
 set_param project.singleFileAddWarning.threshold 0
@@ -38,6 +39,7 @@ read_verilog -library xil_defaultlib {
   E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl_top.v
   E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_rw.v
   E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_top.v
+  E:/FPGA/project/smart_car_pld2026/my_car/rtl/green_detect.v
   E:/FPGA/project/smart_car_pld2026/my_car/rtl/ov5640_dri/i2c_dri.v
   E:/FPGA/project/smart_car_pld2026/my_car/rtl/ov5640_dri/i2c_ov5640_rgb565_cfg.v
   E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v
@@ -49,24 +51,25 @@ read_verilog -library xil_defaultlib {
   E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/sensor_link.v
   E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/sl_uart_rx.v
   E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/sl_uart_tx.v
+  E:/FPGA/project/smart_car_pld2026/my_car/rtl/tracker_ctrl.v
   E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v
   E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v
 }
-read_ip -quiet e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/rd_fifo/rd_fifo.xci
+read_ip -quiet E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/rd_fifo/rd_fifo.xci
 set_property used_in_implementation false [get_files -all e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/rd_fifo/rd_fifo.xdc]
 set_property used_in_implementation false [get_files -all e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/rd_fifo/rd_fifo_clocks.xdc]
 set_property used_in_implementation false [get_files -all e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/rd_fifo/rd_fifo_ooc.xdc]
 
-read_ip -quiet e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+read_ip -quiet E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
 set_property used_in_implementation false [get_files -all e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
 set_property used_in_implementation false [get_files -all e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
 set_property used_in_implementation false [get_files -all e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
 
-read_ip -quiet e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/mig_7series_0/mig_7series_0.xci
+read_ip -quiet E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/mig_7series_0/mig_7series_0.xci
 set_property used_in_implementation false [get_files -all e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/constraints/mig_7series_0.xdc]
 set_property used_in_implementation false [get_files -all e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/mig_7series_0/mig_7series_0/user_design/constraints/mig_7series_0_ooc.xdc]
 
-read_ip -quiet e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/wr_fifo/wr_fifo.xci
+read_ip -quiet E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/wr_fifo/wr_fifo.xci
 set_property used_in_implementation false [get_files -all e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/wr_fifo/wr_fifo.xdc]
 set_property used_in_implementation false [get_files -all e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/wr_fifo/wr_fifo_clocks.xdc]
 set_property used_in_implementation false [get_files -all e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/wr_fifo/wr_fifo_ooc.xdc]

@@ -1,34 +1,31 @@
 /**
  * @file fishbot_display.cpp
- * @author fishros (fishros@foxmail.com)
- * @brief FishBotOLED显示控制类
- * @version V1.0.0
- * @date 2023-01-05
- *
- * @copyright Copyright (c) fishros.com & fishros.org.cn 2023
- *
+ * @brief PLD2026: 纯传感器+通信调试显示
  */
 #include "fishbot_display.h"
+
+static void printHex(Adafruit_SSD1306 &d, uint8_t v) {
+    if (v < 0x10) d.print('0');
+    d.print(v, HEX);
+}
 
 void FishBotDisplay::init()
 {
     Wire.begin(12, 13, 400000UL);
     _display = Adafruit_SSD1306(128, 64, &Wire);
-    _display.begin(SSD1306_SWITCHCAPVCC, 0x3C); // 设置OLED的I2C地址
-    _display.clearDisplay();                    // 清空屏幕
-    _display.setTextSize(1);                    // 设置字体大小
-    _display.setTextColor(SSD1306_WHITE);       // 设置字体颜色
-    _display.setCursor(0, 0);                   // 设置开始显示文字的坐标
+    _display.begin(SSD1306_SWITCHCAPVCC, 0x3C);
+    _display.clearDisplay();
+    _display.setTextSize(1);
+    _display.setTextColor(SSD1306_WHITE);
+    _display.setCursor(0, 0);
     _display.print("    ");
-    _display.println(version_code_); // 输出的字符
+    _display.println(version_code_);
     _display.println("");
     _display.println("syetem starting...");
     _display.display();
 }
 
-FishBotDisplay::FishBotDisplay()
-{
-}
+FishBotDisplay::FishBotDisplay() {}
 
 void FishBotDisplay::updateDisplay()
 {
@@ -40,46 +37,59 @@ void FishBotDisplay::updateDisplay()
         _display.setTextSize(1);
         _display.setTextColor(SSD1306_WHITE);
 
-        // ==================== PLD2026: 统一 RC 调试页面（不使用 WiFi/UDP） ====================
-        // 行1: 版本 + RC 状态
+        // ==================== 纯传感器 + 通信调试 ====================
+
+        // 行1: 版本 + TX计数 + RX在线
         _display.print(version_code_);
-        _display.print(" ");
-        if (!rc_online_)
-            _display.println("RC:LOST");
-        else if (!rc_arm_)
-            _display.println("RC: SAFE");
-        else if (!rc_unlock_)
-            _display.println("RC: LOCK");
+        _display.print(" T:");
+        _display.print(tx_cnt_);
+        _display.print(" R:");
+        if (!rx_on_)
+            _display.println("NO");
         else
-            _display.println("RC: GO!");
-        // 行2: 拨杆 s1/s2
-        _display.print("S1:");
-        _display.print(rc_s1_ == 1 ? "UP " : (rc_s1_ == 2 ? "DN " : "MID"));
-        _display.print(" S2:");
-        _display.println(rc_s2_ == 1 ? "UP" : (rc_s2_ == 2 ? "DN" : "MID"));
-        // 行3: ch0 ch1 (右摇杆)
-        _display.print("ch0:");
-        _display.print(rc_ch0_);
-        _display.print(" ch1:");
-        _display.println(rc_ch1_);
-        // 行4: ch2 ch3 (左摇杆)
-        _display.print("ch2:");
-        _display.print(rc_ch2_);
-        _display.print(" ch3:");
-        _display.println(rc_ch3_);
-        // 行5: 运动学输入 LX / LY
-        _display.print("LX:");
-        _display.print(rc_lx_, 0);
-        _display.print(" LY:");
-        _display.println(rc_ly_, 0);
-        // 行6: AZ + 电池电压
-        _display.print("AZ:");
-        _display.print(rc_az_, 2);
-        _display.print(" V:");
-        _display.println(battery_info_, 1);
-        // 行7: 运动模式
-        _display.print("motion:");
-        _display.println(motion_mode_);
+            _display.println(rx_ok_);
+
+        // 行2: 编码器 enc0 enc1
+        _display.print("E0:");
+        _display.print(enc_[0]);
+        _display.print(" E1:");
+        _display.println(enc_[1]);
+
+        // 行3: 编码器 enc2 enc3
+        _display.print("E2:");
+        _display.print(enc_[2]);
+        _display.print(" E3:");
+        _display.println(enc_[3]);
+
+        // 行4: 陀螺仪 gyro_x gyro_y gyro_z
+        _display.print("GX:");
+        _display.print(gyro_[0]);
+        _display.print(" GY:");
+        _display.print(gyro_[1]);
+        _display.print(" GZ:");
+        _display.println(gyro_[2]);
+
+        // 行5: 加速度 acc_x acc_y acc_z
+        _display.print("AX:");
+        _display.print(acc_[0]);
+        _display.print(" AY:");
+        _display.print(acc_[1]);
+        _display.print(" AZ:");
+        _display.println(acc_[2]);
+
+        // 行6: 上行帧前10字节 (AA 55 版本 timestamp enc0[0..3] enc0[0..1高])
+        for (int i = 0; i < 10; i++) printHex(_display, tx_raw_[i]);
+
+        // 行7: 上行帧第11~18字节 + 发送间隔
+        for (int i = 10; i < 18; i++) printHex(_display, tx_raw_[i]);
+        _display.print(" ");
+        _display.print(tx_interval_);
+        _display.println("ms");
+
+        // 行8: 下行帧完整9字节
+        _display.print("RX:");
+        for (int i = 0; i < 9; i++) printHex(_display, rx_raw_[i]);
+
         _display.display();
     }
 }
@@ -93,80 +103,6 @@ void FishBotDisplay::updateBatteryInfo(float &battery_info)
 {
     battery_info_ = battery_info;
 }
-void FishBotDisplay::updateUltrasoundDist(float &ultrasound_distance)
-{
-    ultrasound_distance_ = ultrasound_distance;
-}
-void FishBotDisplay::updateBotAngular(float &bot_angular)
-{
-    bot_angular_ = bot_angular;
-}
-void FishBotDisplay::updateBotLinear(float &bot_linear)
-{
-    bot_linear_ = bot_linear;
-}
-void FishBotDisplay::updateTransMode(String mode)
-{
-    mode_ = mode;
-}
-void FishBotDisplay::updateWIFIServerIp(String server_ip)
-{
-    wifi_server_ip_ = server_ip;
-}
-void FishBotDisplay::updateWIFIIp(String ip)
-{
-    if (wifi_ip_ != ip)
-    {
-        wifi_ip_ = ip;
-    }
-    // 判断LocalIP 和 Server IP 是否在同一个子网，不在则 WARN
-}
-void FishBotDisplay::updateWIFIInfo(String info, fishbot_wifi_status_t status)
-{
-    if (wifi_info_ != info)
-    {
-        wifi_info_ = info;
-    }
-    wifi_status_ = status;
-}
-void FishBotDisplay::updateCurrentTime(int64_t current_time_)
-{
-    current_time = current_time_;
-}
-String FishBotDisplay::twoDigits(int digits)
-{
-    if (digits < 10)
-    {
-        String i = '0' + String(digits);
-        return i;
-    }
-    else
-    {
-        return String(digits);
-    }
-}
-
-void FishBotDisplay::updateBaudRate(uint32_t baudrate)
-{
-    baudrate_ = baudrate;
-}
-void FishBotDisplay::updateMotionMode(String mode)
-{
-    motion_mode_ = mode;
-}
-
-void FishBotDisplay::updateRcDebug(bool online, bool arm, bool unlock,
-                                   int16_t ch0, int16_t ch1, int16_t ch2, int16_t ch3,
-                                   uint8_t s1, uint8_t s2,
-                                   float lx, float ly, float az)
-{
-    rc_online_ = online;
-    rc_arm_    = arm;
-    rc_unlock_ = unlock;
-    rc_ch0_ = ch0; rc_ch1_ = ch1; rc_ch2_ = ch2; rc_ch3_ = ch3;
-    rc_s1_  = s1;  rc_s2_  = s2;
-    rc_lx_  = lx;  rc_ly_  = ly;  rc_az_  = az;
-}
 
 void FishBotDisplay::updateStartupInfo()
 {
@@ -175,9 +111,7 @@ void FishBotDisplay::updateStartupInfo()
     _display.clearDisplay();
     _display.setCursor(0, 0);
     _display.print("    ");
-    _display.println(version_code_); // 输出的字符
-    _display.print("mode:");
-    _display.println(mode_);
+    _display.println(version_code_);
     _display.print("voltage:");
     _display.println(battery_info_);
     _display.println("");
@@ -185,16 +119,26 @@ void FishBotDisplay::updateStartupInfo()
     _display.display();
 }
 
-void FishBotDisplay::updateDisplayMode(uint8_t display_mode)
+String FishBotDisplay::twoDigits(int digits)
 {
-    display_mode_ = display_mode;
+    if (digits < 10) return "0" + String(digits);
+    return String(digits);
 }
 
-void FishBotDisplay::updateWIFISSID(String ssid)
+void FishBotDisplay::updateCommDebug(uint32_t txCnt, uint32_t rxOk, uint32_t rxErr,
+                                     bool rxOn, uint32_t txInterval,
+                                     const int32_t enc[4],
+                                     const int16_t gyro[3], const int16_t acc[3],
+                                     const uint8_t* rxRaw, const uint8_t* txRaw)
 {
-    wifi_ssid_ = ssid;
-}
-void FishBotDisplay::updateWIFIPSWD(String pswd)
-{
-    wifi_pswd_ = pswd;
+    tx_cnt_ = txCnt;
+    rx_ok_  = rxOk;
+    rx_err_ = rxErr;
+    rx_on_  = rxOn;
+    tx_interval_ = txInterval;
+    memcpy(enc_,  enc,  sizeof(enc_));
+    memcpy(gyro_, gyro, sizeof(gyro_));
+    memcpy(acc_,  acc,  sizeof(acc_));
+    if (rxRaw) memcpy(rx_raw_, rxRaw, 9);
+    if (txRaw) memcpy(tx_raw_, txRaw, PROTO_FRAME_LEN);
 }

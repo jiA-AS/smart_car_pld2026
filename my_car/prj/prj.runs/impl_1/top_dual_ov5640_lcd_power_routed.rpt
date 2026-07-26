@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date             : Sat Jul 25 20:54:45 2026
+| Date             : Sun Jul 26 18:30:18 2026
 | Host             : LAPTOP-2K88VM5F running 64-bit major release  (build 9200)
 | Command          : report_power -file top_dual_ov5640_lcd_power_routed.rpt -pb top_dual_ov5640_lcd_power_summary_routed.pb -rpx top_dual_ov5640_lcd_power_routed.rpx
 | Design           : top_dual_ov5640_lcd
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.264        |
+| Total On-Chip Power (W)  | 1.276        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.158        |
+| Dynamic (W)              | 1.170        |
 | Device Static (W)        | 0.106        |
 | Effective TJA (C/W)      | 2.7          |
 | Max Ambient (C)          | 81.6         |
@@ -53,24 +53,24 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.041 |       35 |       --- |             --- |
-| Slice Logic              |     0.012 |    19974 |       --- |             --- |
-|   LUT as Logic           |     0.011 |     7482 |     63400 |           11.80 |
-|   Register               |    <0.001 |     8415 |    126800 |            6.64 |
-|   CARRY4                 |    <0.001 |      309 |     15850 |            1.95 |
+| Slice Logic              |     0.019 |    20960 |       --- |             --- |
+|   LUT as Logic           |     0.017 |     7895 |     63400 |           12.45 |
+|   CARRY4                 |     0.001 |      391 |     15850 |            2.47 |
+|   Register               |     0.001 |     8706 |    126800 |            6.87 |
 |   LUT as Distributed RAM |    <0.001 |      740 |     19000 |            3.89 |
 |   BUFG                   |    <0.001 |        3 |        32 |            9.38 |
 |   LUT as Shift Register  |    <0.001 |       30 |     19000 |            0.16 |
-|   F7/F8 Muxes            |    <0.001 |      143 |     63400 |            0.23 |
-|   Others                 |     0.000 |      377 |       --- |             --- |
-| Signals                  |     0.022 |    16782 |       --- |             --- |
+|   F7/F8 Muxes            |    <0.001 |      150 |     63400 |            0.24 |
+|   Others                 |     0.000 |      376 |       --- |             --- |
+| Signals                  |     0.027 |    17236 |       --- |             --- |
 | Block RAM                |     0.014 |       16 |       135 |           11.85 |
 | MMCM                     |     0.201 |        2 |         6 |           33.33 |
 | PLL                      |     0.092 |        1 |         6 |           16.67 |
-| I/O                      |     0.521 |      134 |       285 |           47.02 |
+| I/O                      |     0.521 |      133 |       285 |           46.67 |
 | PHASER                   |     0.250 |       26 |       --- |             --- |
 | XADC                     |     0.004 |        1 |       --- |             --- |
 | Static Power             |     0.106 |          |           |                 |
-| Total                    |     1.264 |          |           |                 |
+| Total                    |     1.276 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -80,7 +80,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.179 |       0.161 |      0.017 |
+| Vccint    |       1.000 |     0.190 |       0.173 |      0.017 |
 | Vccaux    |       1.800 |     0.387 |       0.369 |      0.018 |
 | Vcco33    |       3.300 |     0.006 |       0.002 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -181,20 +181,22 @@ Table of Contents
 +---------------------------+-----------+
 | Name                      | Power (W) |
 +---------------------------+-----------+
-| top_dual_ov5640_lcd       |     1.158 |
+| top_dual_ov5640_lcd       |     1.170 |
 |   u_clk_wiz_0             |     0.107 |
 |     inst                  |     0.107 |
-|   u_ddr3_top              |     1.039 |
+|   u_ddr3_top              |     1.038 |
 |     u_ddr3_fifo_ctrl_top  |     0.027 |
 |       u_ddr3_fifo_ctrl_1  |     0.015 |
 |       u_ddr3_fifo_ctrl_2  |     0.012 |
 |     u_ddr3_rw             |     0.005 |
 |     u_mig_7series_0       |     1.007 |
 |       u_mig_7series_0_mig |     1.007 |
+|   u_green_detect          |     0.011 |
 |   u_lcd_rgb_top           |     0.001 |
-|   u_ov5640_dri_1          |     0.001 |
+|   u_ov5640_dri_1          |     0.002 |
 |     u_cmos_capture_data   |     0.001 |
-|   u_sensor_link           |     0.001 |
+|   u_sensor_link           |     0.002 |
+|     u_tracker             |     0.001 |
 +---------------------------+-----------+
 
 

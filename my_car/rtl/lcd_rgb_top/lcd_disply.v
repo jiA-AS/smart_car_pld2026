@@ -10,36 +10,67 @@
 // File name:           lcd_disply
 // Created by:          正点原子
 // Created date:        2025年10月25日10:00:00
-// Version:             V1.0
-// Descriptions:        LCD显示模块
+// Version:             V1.1
+// Descriptions:        LCD显示模块（PLD2026 增加：右屏绿灯识别框叠加）
 //
+//  [PLD2026] 改动说明：
+//   1) 端口表新增 5 个输入：box_found / box_min_x / box_max_x / box_min_y / box_max_y
+//      （来自 green_detect，摄像头1坐标系 0~399，模块内加 X_OFFSET 换算到右屏）
+//   2) 显示逻辑最后加框色覆盖：边框像素强制红色，优先级最高
+//   其余原子原有逻辑（双字模标签、图像透传）一字未动
 //----------------------------------------------------------------------------------------
 //****************************************************************************************//
 
 module lcd_disply(
     input              lcd_clk,      //lcd模块驱动时钟
     input              sys_rst_n,    //复位信号
-    //RGB LCD接口                             
+    //RGB LCD接口
     input      [10:0]  pixel_xpos,   //像素点横坐标
-    input      [10:0]  pixel_ypos,   //像素点纵坐标 
+    input      [10:0]  pixel_ypos,   //像素点纵坐标
     input      [15:0]  rd_data,      //图像像素值
-    input      [12:0]  rd_h_pixel,   //摄像头输出的水平方向分辨率 
-    output reg [15:0]  pixel_data    //像素点数据,
-    ); 
+    input      [12:0]  rd_h_pixel,   //摄像头输出的水平方向分辨率
+    output reg [15:0]  pixel_data,   //像素点数据
+    // ---- [PLD2026] 识别框叠加（右屏 = 摄像头1） ----
+    input              box_found,    //本帧发现绿灯
+    input      [ 9:0]  box_min_x,    //包围盒（相机1坐标系）
+    input      [ 9:0]  box_max_x,
+    input      [ 9:0]  box_min_y,
+    input      [ 9:0]  box_max_y
+    );
 
 //颜色定义
-localparam RED    = 16'b11111_000000_00000;     //字符颜色
+localparam RED    = 16'b11111_000000_00000;     //字符颜色 / 识别框颜色
 localparam BLUE   = 16'b00000_000000_11111;     //字符区域背景色
-localparam BLACK  = 16'b00000_000000_00000;     //屏幕背景色  
+localparam BLACK  = 16'b00000_000000_00000;     //屏幕背景色
 
-//reg define                                    
+//reg define
 reg  [63:0]  char0[15:0];                       //字符数组0
 reg  [63:0]  char1[15:0];                       //字符数组1
 reg  [127:0] char2[32:0];                       //字符数组2
 reg  [127:0] char3[32:0];                       //字符数组3
 
 //*****************************************************
-//**                    main code                      
+//** [PLD2026] 识别框边框判断（纯组合逻辑）
+//**  相机1坐标(0~399) + X_OFFSET(400) = 右半屏坐标(400~799)
+//**  边框总宽 2*BW+1 = 5 像素
+//*****************************************************
+localparam BOX_OFF = 11'd400;                   //右屏起始x = rd_h_pixel/2
+localparam BW      = 11'd2;                     //边框半宽
+
+wire [10:0] bx0 = {1'b0, box_min_x} + BOX_OFF;
+wire [10:0] bx1 = {1'b0, box_max_x} + BOX_OFF;
+wire [10:0] by0 = {1'b0, box_min_y};
+wire [10:0] by1 = {1'b0, box_max_y};
+
+wire in_outer = (pixel_xpos >= bx0 - BW) && (pixel_xpos <= bx1 + BW)
+             && (pixel_ypos >= by0 - BW) && (pixel_ypos <= by1 + BW);
+wire in_inner = (pixel_xpos >= bx0 + BW) && (pixel_xpos <= bx1 - BW)
+             && (pixel_ypos >= by0 + BW) && (pixel_ypos <= by1 - BW);
+
+wire box_on = box_found && in_outer && !in_inner;
+
+//*****************************************************
+//**                    main code
 //*****************************************************
 
 //给字符数组0的赋值：OV5640 0 (16*64)
@@ -74,7 +105,7 @@ always @(posedge lcd_clk) begin
     char1[7]  <= 64'h8224785C24420002      ;
     char1[8]  <= 64'h8224446224420004      ;
     char1[9]  <= 64'h8228024244420008      ;
-    char1[10] <= 64'h822802427F420010      ;    
+    char1[10] <= 64'h822802427F420010      ;
     char1[11] <= 64'h8218424204420020      ;
     char1[12] <= 64'h4410442204240042      ;
     char1[13] <= 64'h3810381C1F18007E      ;
@@ -83,7 +114,7 @@ always @(posedge lcd_clk) begin
 end
 
 //给字符数组2的赋值: OV5640 0 (32*128)
-always @(posedge lcd_clk) begin                
+always @(posedge lcd_clk) begin
     char2[0]  <= 128'h00000000000000000000000000000000;
     char2[1]  <= 128'h00000000000000000000000000000000;
     char2[2]  <= 128'h00000000000000000000000000000000;
@@ -119,7 +150,7 @@ always @(posedge lcd_clk) begin
 end
 
 //给字符数组3的赋值: OV5640 1 (32*128)
-always @(posedge lcd_clk) begin                
+always @(posedge lcd_clk) begin
     char3[0]  <= 128'h00000000000000000000000000000000;
     char3[1]  <= 128'h00000000000000000000000000000000;
     char3[2]  <= 128'h00000000000000000000000000000000;
@@ -132,8 +163,8 @@ always @(posedge lcd_clk) begin
     char3[9]  <= 128'h100818081000081800E018180000200C;
     char3[10] <= 128'h300C180810001800016018180000200C;
     char3[11] <= 128'h300C0C1010001000016018080000300C;
-    char3[12] <= 128'h60040C10100010000260300C0000300C;
-    char3[13] <= 128'h60060C10100030000460300C0000000C;
+    char3[12] <= 128'h60040C10100010000260300C00000180;
+    char3[13] <= 128'h60060C10100030000460300C00000180;
     char3[14] <= 128'h60060C1013E033E00460300C00000018;
     char3[15] <= 128'h60060C20143036300860300C00000018;
     char3[16] <= 128'h60060620181838180860300C00000030;
@@ -154,31 +185,35 @@ always @(posedge lcd_clk) begin
     char3[31] <= 128'h00000000000000000000000000000000;
 end
 
-//显示逻辑判断
-always@(posedge lcd_clk) begin  
+//显示逻辑判断（[PLD2026] 末尾加识别框覆盖，优先级最高）
+always@(posedge lcd_clk) begin
     if(pixel_ypos >= 11'd0 && pixel_ypos < 11'd33)begin
-        //判断像素坐标是否在左半边屏幕中间 
-        if(pixel_xpos < (rd_h_pixel[12:2]+11'd64) 
+        //判断像素坐标是否在左半边屏幕中间
+        if(pixel_xpos < (rd_h_pixel[12:2]+11'd64)
         && pixel_xpos >= (rd_h_pixel[12:2]-11'd64) )begin
-            //读取字模OV5640 1 (32*128)
+            //读取字模OV5640 0 (32*128)
             if(char2[pixel_ypos][11'd127-(pixel_xpos-rd_h_pixel[12:2]+11'd64)])
-                pixel_data = BLUE; //字模数组中的“1”显示蓝色
-            else                   //字模数组中的“0”显示图像像素值
+                pixel_data = BLUE; //字模数组中的"1"显示蓝色
+            else                   //字模数组中的"0"显示图像像素值
                 pixel_data = rd_data;
         end    //判断像素坐标是否在右半边屏幕中间
         else if(pixel_xpos < (rd_h_pixel[12:2]*3+11'd64)
         && pixel_xpos >= (rd_h_pixel[12:2]*3-11'd64))begin
-            //读取字模OV5640 2 (32*128) 
+            //读取字模OV5640 1 (32*128)
             if(char3[pixel_ypos][11'd63-pixel_xpos+(rd_h_pixel[12:2])*3])
-                pixel_data = BLUE;  //字模数组中的“1”显示蓝色
-            else                    //字模数组中的“0”显示图像像素值 
-                pixel_data = rd_data; 
+                pixel_data = BLUE;  //字模数组中的"1"显示蓝色
+            else                    //字模数组中的"0"显示图像像素值
+                pixel_data = rd_data;
         end
         else            //纵坐标位于字符区域内的字符两边区域显示黑色
             pixel_data = rd_data;
-    end       
-    else                //所有屏幕纵坐标位于字符区域外时显示像素值 
+    end
+    else                //所有屏幕纵坐标位于字符区域外时显示像素值
         pixel_data = rd_data;
+
+    // ---- [PLD2026] 识别框覆盖：落在边框上的像素强制红色，优先级最高 ----
+    if(box_on)
+        pixel_data = RED;
 end
 
 endmodule

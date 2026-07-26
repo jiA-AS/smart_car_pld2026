@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date                      : Sat Jul 25 20:53:58 2026
+| Date                      : Sun Jul 26 18:29:40 2026
 | Host                      : LAPTOP-2K88VM5F running 64-bit major release  (build 9200)
 | Command                   : report_io -file top_dual_ov5640_lcd_io_placed.rpt
 | Design                    : top_dual_ov5640_lcd
@@ -413,7 +413,7 @@ Table of Contents
 | T2         |               | High Range | VCCO_34                      | VCCO          |             |      34 |            |      |                     |                      |    1.50 |            |           |          |          |                  |              |                   |              |
 | T3         |               | High Range | IO_0_34                      | User IO       |             |      34 |            |      |                     |                      |         |            |           |          |          |                  |              |                   |              |
 | T4         |               | High Range | IO_L13N_T2_MRCC_34           | User IO       |             |      34 |            |      |                     |                      |         |            |           |          |          |                  |              |                   |              |
-| T5         | ddr3_cke[0]   | High Range | IO_L14P_T2_SRCC_34           | OUTPUT        | SSTL15      |      34 |            | FAST |                     |            FP_VTT_50 |         | FIXED      |           |          |          | NONE             |              |                   |              |
+| T5         | ddr3_cke      | High Range | IO_L14P_T2_SRCC_34           | OUTPUT        | SSTL15      |      34 |            | FAST |                     |            FP_VTT_50 |         | FIXED      |           |          |          | NONE             |              |                   |              |
 | T6         |               | High Range | IO_L17N_T2_34                | User IO       |             |      34 |            |      |                     |                      |         |            |           |          |          |                  |              |                   |              |
 | T7         |               |            | GND                          | GND           |             |         |            |      |                     |                      |     0.0 |            |           |          |          |                  |              |                   |              |
 | T8         |               |            | VCCINT                       | VCCINT        |             |         |            |      |                     |                      |         |            |           |          |          |                  |              |                   |              |
