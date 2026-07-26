@@ -1,7 +1,7 @@
 /**
  * @file fishbot_display.h
  * @author fishros (fishros@foxmail.com)
- * @brief FishBot显示类定义 (PLD2026: 纯传感器+通信调试)
+ * @brief FishBot显示类定义 (PLD2026: s1拨杆切换显示页面)
  */
 #ifndef __FISHBOT_DISPLAY_H__
 #define __FISHBOT_DISPLAY_H__
@@ -34,6 +34,12 @@ private:
     uint64_t last_update_time;
     uint64_t update_interval{200};
 
+    // 遥控器 / 状态机 (s1 拨杆切换显示页面)
+    uint8_t  s1_pos_       = 3;  // 默认中位
+    bool     rc_online_    = false;
+    String   mode_name_    = "???";
+    float    target_speed_[4] = {0}; // 四轮目标速度
+
     // 编码器
     int32_t enc_[4] = {0};
     // IMU
@@ -58,7 +64,8 @@ public:
     void updateRcDebug(bool online, bool arm, bool unlock,
                        int16_t ch0, int16_t ch1, int16_t ch2, int16_t ch3,
                        uint8_t s1, uint8_t s2,
-                       float lx, float ly, float az) { (void)online; (void)arm; (void)unlock; (void)ch0; (void)ch1; (void)ch2; (void)ch3; (void)s1; (void)s2; (void)lx; (void)ly; (void)az; }
+                       float lx, float ly, float az);
+    void updateStateMachine(const String &modeName, const float targetSpeed[4]);
     void updateCommDebug(uint32_t txCnt, uint32_t rxOk, uint32_t rxErr,
                          bool rxOn, uint32_t txInterval,
                          const int32_t enc[4],

@@ -200,32 +200,66 @@ void loop_fishbot_control()
     static float out_motor_speed[4];
     static uint8_t index = 0;
     kinematics.update_motor_ticks(micros(), encoders[0].getTicks(), encoders[1].getTicks(), encoders[2].getTicks(), encoders[3].getTicks());
-    // ================= PLD2026 改造：遥控器麦轮运动学逆解 + PID 闭环 =================
-    // 协议对齐 dart_mcu：拨杆 1=UP 3=MID 2=DOWN
-    //   右拨杆(s2): UP(1)=保护/停车  MID(3)=遥控模式  DOWN(2)=比赛模式
-    //   左拨杆(s1): UP(1)/MID(3)=安全锁定  DOWN(2)=解臂
+    // ================= PLD2026 三模式仲裁 =================
+    // s2(右拨杆): UP(1)=Protect停车  MID(3)=Remote遥控  DOWN(2)=Match比赛/跟随
+    // Remote 模式下 s1 任意位置均可用摇杆控制小车运动
+    // Match 模式下执行 FPGA V1.1 下行指令（视觉追踪）
     dbus.update();
+    fpga.receive();  // 提前接收，确保 Match 模式使用最新下行帧
     static float target_motor_speed1, target_motor_speed2, target_motor_speed3, target_motor_speed4;
+    static float linear_x, linear_y, angular_z;
     bool rc_online  = dbus.isOnline();
-    bool s2_arm     = (dbus.data().s2 == 2 || dbus.data().s2 == 3); // 右拨杆非 UP = 使能
-    bool s1_unlock  = (dbus.data().s1 == 2);                          // 左拨杆 DOWN = 解臂
-    // 始终计算运动学输入（未解臂时为 0，供 OLED 调试显示）
-    float linear_x  = (rc_online && s2_arm && s1_unlock) ? dbus_map_channel(dbus.data().ch[3], 1000) : 0.0f;
-    float linear_y  = (rc_online && s2_arm && s1_unlock) ? dbus_map_channel(dbus.data().ch[0], 1000) : 0.0f;
-    float angular_z = (rc_online && s2_arm && s1_unlock) ? -dbus_map_channel(dbus.data().ch[2], 5.0f) : 0.0f;
-    if (rc_online && s2_arm && s1_unlock)
-    {
+    uint8_t s2 = dbus.data().s2;
+    uint8_t s1 = dbus.data().s1;
+    const char *mode_name = "???";
+    bool s2_arm    = (s2 == 2 || s2 == 3);   // 非 Protect = 使能
+    bool s1_unlock = (s2 == 2 || s2 == 3);   // Remote 或 Match 即活跃
+
+    if (!rc_online) {
+        // 遥控器失联 → 停车
+        mode_name = "NO_RC";
+        linear_x = linear_y = angular_z = 0;
+        target_motor_speed1 = target_motor_speed2 = target_motor_speed3 = target_motor_speed4 = 0;
+    }
+    else if (s2 == 1) {
+        // Protect: 停车保护（最高优先级）
+        mode_name = "PROTECT";
+        linear_x = linear_y = angular_z = 0;
+        target_motor_speed1 = target_motor_speed2 = target_motor_speed3 = target_motor_speed4 = 0;
+    }
+    else if (s2 == 3) {
+        // Remote: 遥控驾驶，s1 任意位置均可操作
+        mode_name = "REMOTE";
+        linear_x  = dbus_map_channel(dbus.data().ch[3], 1000);
+        linear_y  = dbus_map_channel(dbus.data().ch[0], 1000);
+        angular_z = -dbus_map_channel(dbus.data().ch[2], 5.0f);
         kinematics.kinematic_inverse(linear_x, linear_y, angular_z,
                                      target_motor_speed1, target_motor_speed2,
                                      target_motor_speed3, target_motor_speed4);
     }
-    else
-    {
-        // 接收机失联、右拨杆保护、或左拨杆未解臂 -> 停车（失控保护）
-        target_motor_speed1 = 0;
-        target_motor_speed2 = 0;
-        target_motor_speed3 = 0;
-        target_motor_speed4 = 0;
+    else if (s2 == 2) {
+        // Match: 执行 FPGA V1.1 视觉追踪指令
+        mode_name = "MATCH";
+        linear_x = linear_y = angular_z = 0;
+        if (fpga.cmdMode() == 0) {
+            // FPGA 指令停车
+            target_motor_speed1 = target_motor_speed2 = target_motor_speed3 = target_motor_speed4 = 0;
+        } else {
+            // 速度控制：左/右差速 → 四轮麦轮（左侧 MOTOR1+2，右侧 MOTOR3+4）
+            // FPGA left/right 范围 -100~+100，缩放 x10 匹配 PID 目标量级
+            float left_spd  = fpga.cmdLeft()  * 10.0f;
+            float right_spd = fpga.cmdRight() * 10.0f;
+            target_motor_speed1 = left_spd;
+            target_motor_speed2 = left_spd;
+            target_motor_speed3 = right_spd;
+            target_motor_speed4 = right_spd;
+        }
+    }
+    else {
+        // 未知拨杆位置 → 停车
+        mode_name = "UNKNOWN";
+        linear_x = linear_y = angular_z = 0;
+        target_motor_speed1 = target_motor_speed2 = target_motor_speed3 = target_motor_speed4 = 0;
     }
     // 更新 PID 控制器目标值
     pid_controller[0].update_target(target_motor_speed1);
@@ -253,7 +287,7 @@ void loop_fishbot_control()
     }
     // 更新系统信息（无ROS版：用本地 millis，原为 rmw_uros_epoch_millis）
     display.updateCurrentTime(millis());
-    // ================= PLD2026 调试：OLED 实时显示遥控器状态 =================
+    // ================= PLD2026 调试：OLED 实时显示遥控器状态（s1 切换显示页面） =================
     {
         const DbusData &d = dbus.data();
         display.updateRcDebug(rc_online, s2_arm, s1_unlock,
@@ -261,17 +295,25 @@ void loop_fishbot_control()
                               d.s1, d.s2,
                               linear_x, linear_y, angular_z);
     }
+    // 更新 OLED 状态机 + 四轮目标速度（配合 s1 拨杆切换显示）
+    {
+        float spd[4] = {target_motor_speed1, target_motor_speed2,
+                        target_motor_speed3, target_motor_speed4};
+        display.updateStateMachine(mode_name, spd);
+    }
     // 串口输出完整摇杆/拨杆调试信息（每 2000ms 一次，减少刷屏）
     {
         static uint32_t last_rc_print = 0;
         if (millis() - last_rc_print > 2000) {
             last_rc_print = millis();
             const DbusData &d = dbus.data();
-            Serial.printf("[RC] ch0=%d ch1=%d ch2=%d ch3=%d s1=%d s2=%d online=%d arm=%d unlock=%d | "
-                          "lx=%.0f ly=%.0f az=%.2f t1=%.0f t2=%.0f t3=%.0f t4=%.0f\n",
-                          d.ch[0], d.ch[1], d.ch[2], d.ch[3], d.s1, d.s2, rc_online, s2_arm, s1_unlock,
+            Serial.printf("[RC] ch0=%d ch1=%d ch2=%d ch3=%d s1=%d s2=%d mode=%s online=%d | "
+                          "lx=%.0f ly=%.0f az=%.2f t1=%.0f t2=%.0f t3=%.0f t4=%.0f | "
+                          "fpga_mode=%d L=%d R=%d\n",
+                          d.ch[0], d.ch[1], d.ch[2], d.ch[3], d.s1, d.s2, mode_name, rc_online,
                           linear_x, linear_y, angular_z,
-                          target_motor_speed1, target_motor_speed2, target_motor_speed3, target_motor_speed4);
+                          target_motor_speed1, target_motor_speed2, target_motor_speed3, target_motor_speed4,
+                          fpga.cmdMode(), fpga.cmdLeft(), fpga.cmdRight());
         }
     }
     // 刷新显示屏幕
@@ -288,9 +330,7 @@ void loop_fishbot_control()
         fpga.send(ticks); // 内部 10ms 节流，实际发送频率 100Hz
     }
 
-    // ================= PLD2026 改造：FPGA 下行 V1.1 接收 + 看门狗 =================
-    fpga.receive();
-    // 看门狗触发：200ms 无合法下行帧 → 立即停车（安全保护）
+    // ================= PLD2026: FPGA 看门狗（200ms 无合法下行帧 → 强制停车） =================
     if (fpga.cmdWatchdog()) {
         target_motor_speed1 = 0;
         target_motor_speed2 = 0;
