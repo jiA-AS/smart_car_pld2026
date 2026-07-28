@@ -58,9 +58,9 @@ module lcd_rgb_top(
     input   [ 9:0]  box2_max_y,
     input   [ 9:0]  c2_u,
     input   [ 9:0]  c2_v,
-    // ---- [PLD2026 V2] 双目距离（50M 域） ----
+    // ---- [PLD2026 V2] 目标距离（50M 域） ----
     input   [15:0]  dist_mm,
-    input           dist_valid,
+    input   [ 1:0]  dist_src,       // 0=无效 1=单目 2=双目
     // ---- [PLD2026 V2] 传感器原始值（50M 域，OSD 数据栏） ----
     input   [31:0]  enc0,
     input   [31:0]  enc1,
@@ -151,9 +151,8 @@ lcd_driver u_lcd_driver(
 );
 
 //*****************************************************
-//**  [PLD2026 V2] AR 叠加层：cam2绿框/双质心十字/位置标注/
-//**  双目距离(中央偏下)/编码器陀螺仪数据栏(中央偏上)/目标丢失
-//**  组合输出零额外延迟，与 lcd_disply 输出同拍对齐
+//**  [PLD2026 V2] AR 叠加层（osd_overlay）：cam2绿框/双质心十字/
+//**  位置标注/模式+距离(中央偏下)/编码器陀螺仪数据栏(中央偏上)/目标丢失
 //*****************************************************
 osd_overlay u_osd_overlay(
     .lcd_clk          (lcd_clk),
@@ -174,7 +173,7 @@ osd_overlay u_osd_overlay(
     .b2_miny_async    (box2_min_y),
     .b2_maxy_async    (box2_max_y),
     .dist_mm_async    (dist_mm),
-    .dist_valid_async (dist_valid),
+    .dist_src_async   (dist_src),
     .enc0             (enc0),
     .enc1             (enc1),
     .enc2             (enc2),

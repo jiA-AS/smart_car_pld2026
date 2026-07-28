@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date                      : Tue Jul 28 23:15:02 2026
+| Date                      : Wed Jul 29 00:57:21 2026
 | Host                      : LAPTOP-2K88VM5F running 64-bit major release  (build 9200)
 | Command                   : report_io -file top_dual_ov5640_lcd_io_placed.rpt
 | Design                    : top_dual_ov5640_lcd

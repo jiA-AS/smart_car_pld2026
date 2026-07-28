@@ -93,3 +93,696 @@ Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // TclEventType: PROJECT_DASHBOARD_GADGET_NEW
 // TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
 // TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 115 MB (+10121kb) [00:00:07]
+// [Engine Memory]: 769 MB (+137143kb) [00:00:07]
+// [Engine Memory]: 810 MB (+3100kb) [00:00:08]
+// [GUI Memory]: 130 MB (+9824kb) [00:00:08]
+// [Engine Memory]: 854 MB (+2902kb) [00:00:08]
+// WARNING: HEventQueue.dispatchEvent() is taking  1812 ms.
+// Tcl Message: open_project E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2018.3/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,009 MB. GUI used memory: 76 MB. Current time: 7/28/26, 10:47:56 PM CST
+// Project name: prj; location: E:/FPGA/project/smart_car_pld2026/my_car/prj; part: xc7a100tfgg484-2
+// [Engine Memory]: 1,082 MB (+194925kb) [00:00:10]
+dismissDialog("Open Project"); // bx (cp)
+// [Engine Memory]: 1,151 MB (+15315kb) [00:00:12]
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 225 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v)]", 1); // B (D, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v), u_lcd_rgb_top : lcd_rgb_top (lcd_rgb_top.v)]", 8, true); // B (D, cp) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v), u_lcd_rgb_top : lcd_rgb_top (lcd_rgb_top.v), u_clk_div : clk_div (clk_div.v)]", 9, false, false, false, false, false, true); // B (D, cp) - Double Click
+selectCodeEditor("lcd_rgb_top.v", 249, 307); // cl (w, cp)
+typeControlKey((HResource) null, "lcd_rgb_top.v", 'v'); // cl (w, cp)
+// Elapsed time: 10 seconds
+selectCodeEditor("lcd_rgb_top.v", 417, 251); // cl (w, cp)
+// Elapsed time: 20 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v)]", 1, true); // B (D, cp) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v)]", 1, true, false, false, false, false, true); // B (D, cp) - Double Click - Node
+selectCodeEditor("top_dual_ov5640_lcd.v", 250, 286); // cl (w, cp)
+typeControlKey((HResource) null, "top_dual_ov5640_lcd.v", 'v'); // cl (w, cp)
+selectCodeEditor("top_dual_ov5640_lcd.v", 570, 232); // cl (w, cp)
+// Elapsed time: 15 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v)]", 1); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v), u_sensor_link : sensor_link (sensor_link.v)]", 13); // B (D, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v), u_sensor_link : sensor_link (sensor_link.v), u_tracker : tracker_ctrl (tracker_ctrl.v)]", 16, false); // B (D, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v), u_sensor_link : sensor_link (sensor_link.v), u_tracker : tracker_ctrl (tracker_ctrl.v)]", 16, false, false, false, false, false, true); // B (D, cp) - Double Click
+selectCodeEditor("tracker_ctrl.v", 245, 328); // cl (w, cp)
+typeControlKey((HResource) null, "tracker_ctrl.v", 'v'); // cl (w, cp)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,175 MB. GUI used memory: 126 MB. Current time: 7/28/26, 10:52:54 PM CST
+selectCodeEditor("tracker_ctrl.v", 316, 197); // cl (w, cp)
+selectCodeEditor("tracker_ctrl.v", 148, 294); // cl (w, cp)
+// Elapsed time: 80 seconds
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // B (f, cp)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// c (cp): Add Sources: addNotify
+selectButton("NEXT", "Next >"); // JButton (j, c)
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files"); // a (C, c)
+// Elapsed time: 12 seconds
+String[] filenames31467 = {"E:/FPGA/project/smart_car_pld2026/my_car/rtl/green_detect.v", "E:/FPGA/project/smart_car_pld2026/my_car/rtl/osd_font.v", "E:/FPGA/project/smart_car_pld2026/my_car/rtl/osd_overlay.v", "E:/FPGA/project/smart_car_pld2026/my_car/rtl/picture_size.v", "E:/FPGA/project/smart_car_pld2026/my_car/rtl/stereo_dist.v", "E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v", "E:/FPGA/project/smart_car_pld2026/my_car/rtl/tracker_ctrl.v"};
+setFileChooser(filenames31467);
+selectButton("FINISH", "Finish"); // JButton (j, c)
+// 'h' command handler elapsed time: 19 seconds
+dismissDialog("Add Sources"); // c (cp)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files -norecurse {E:/FPGA/project/smart_car_pld2026/my_car/rtl/osd_overlay.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/green_detect.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/stereo_dist.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/osd_font.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/picture_size.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/tracker_ctrl.v} 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 16 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, osd_overlay (osd_overlay.v)]", 18); // B (D, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, stereo_dist (stereo_dist.v)]", 20, false); // B (D, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, osd_overlay (osd_overlay.v)]", 18, true); // B (D, cp) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, osd_overlay (osd_overlay.v), u_osd_font : osd_font (osd_font.v)]", 19, false); // B (D, cp)
+// [GUI Memory]: 141 MB (+3852kb) [00:07:23]
+// Elapsed time: 13 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, osd_overlay (osd_overlay.v)]", 18, true); // B (D, cp) - Node
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // u (Q, cp)
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // af (al, cp)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// al (cp): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a (al)
+// bx (cp):  Save Constraints : addNotify
+// TclEventType: DG_GRAPH_STALE
+// e (cp):  Run Simulation : addNotify
+dismissDialog("Save Project"); // al (cp)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: launch_simulation 
+// Tcl Message: INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator... 
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: INFO: [Vivado 12-5682] Launching behavioral simulation in 'E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.sim/sim_1/behav/xsim' INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs INFO: [SIM-utils-51] Simulation object is 'sim_1' 
+// TclEventType: LOAD_FEATURE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// Tcl Message: INFO: [USF-XSim-7] Finding pre-compiled libraries... INFO: [USF-XSim-11] File 'D:/Xilinx/Vivado/2018.3/data/xsim/xsim.ini' copied to run dir:'E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.sim/sim_1/behav/xsim' INFO: [SIM-utils-54] Inspecting design source files for 'top_dual_ov5640_lcd' in fileset 'sim_1'... 
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// Tcl Message: INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.sim/sim_1/behav/xsim' 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,199 MB. GUI used memory: 82 MB. Current time: 7/28/26, 10:55:30 PM CST
+// TclEventType: LAUNCH_SIM_LOG
+// Tcl Message: run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:12 . Memory (MB): peak = 1264.418 ; gain = 0.000 
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '11' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.sim/sim_1/behav/xsim' 
+// Tcl Message: Vivado Simulator 2018.3 Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved. Running: D:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 90cd3ee7bb314f9c9041c02b75cdbebc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L fifo_generator_v13_2_3 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot top_dual_ov5640_lcd_behav xil_defaultlib.top_dual_ov5640_lcd xil_defaultlib.glbl -log elaborate.log  Using 2 slave threads. Starting static elaboration 
+// Tcl Message: Completed simulation data flow analysis 
+// Tcl Message: Compiling module xil_defaultlib.mig_7series_v4_2_ddr_phy_rdlvl(n... Compiling module xil_defaultlib.mig_7series_v4_2_ddr_phy_prbs_rd... 
+// Tcl Message: Compiling module xil_defaultlib.lcd_rgb_top Compiling module xil_defaultlib.sl_uart_rx_default Compiling module xil_defaultlib.v1_decode Compiling module xil_defaultlib.tracker_ctrl Compiling module xil_defaultlib.sl_uart_tx_default Compiling module xil_defaultlib.ctrl_link_tx_default Compiling module xil_defaultlib.sensor_link Compiling module xil_defaultlib.top_dual_ov5640_lcd Compiling module xil_defaultlib.glbl 
+// Tcl Message: Built simulation snapshot top_dual_ov5640_lcd_behav  ****** Webtalk v2018.3 (64-bit)   **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018   **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018     ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.  source E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.sim/sim_1/behav/xsim/xsim.dir/top_dual_ov5640_lcd_behav/webtalk/xsim_webtalk.tcl -notrace 
+// TclEventType: LAUNCH_SIM
+// TclEventType: LOAD_FEATURE
+// Tcl Message: INFO: [Common 17-206] Exiting Webtalk at Tue Jul 28 22:56:03 2026... 
+// Tcl Message: run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:24 . Memory (MB): peak = 1264.418 ; gain = 0.000 
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '24' seconds INFO: [USF-XSim-4] XSim::Simulate design INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.sim/sim_1/behav/xsim' INFO: [USF-XSim-98] *** Running xsim 
+// Tcl Message:    with args "top_dual_ov5640_lcd_behav -key {Behavioral:sim_1:Functional:top_dual_ov5640_lcd} -tclbatch {top_dual_ov5640_lcd.tcl} -log {simulate.log}" 
+// Tcl Message: INFO: [USF-XSim-8] Loading simulator feature 
+// Tcl Message: Vivado Simulator 2018.3 
+// TclEventType: SIMULATION_CREATE_SIMULATION_OBJECT
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// Tcl Message: Time resolution is 1 fs 
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// Elapsed time: 41 seconds
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// [GUI Memory]: 148 MB (+756kb) [00:08:20]
+// Waveform: addNotify
+// TclEventType: WAVEFORM_MODEL_EVENT
+// Tcl Message: source top_dual_ov5640_lcd.tcl 
+// Tcl Message: # set curr_wave [current_wave_config] # if { [string length $curr_wave] == 0 } { #   if { [llength [get_objects]] > 0} { #     add_wave / #     set_property needs_save false [current_wave_config] #   } else { #      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console." #   } # } 
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,199 MB. GUI used memory: 92 MB. Current time: 7/28/26, 10:56:07 PM CST
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: # run 1000ns 
+// Tcl Message: INFO: [USF-XSim-96] XSim completed. Design snapshot 'top_dual_ov5640_lcd_behav' loaded. INFO: [USF-XSim-97] XSim simulation ran for 1000ns 
+// Tcl Message: launch_simulation: Time (s): cpu = 00:00:10 ; elapsed = 00:00:43 . Memory (MB): peak = 1264.418 ; gain = 3.793 
+// 'd' command handler elapsed time: 44 seconds
+dismissDialog("Run Simulation"); // e (cp)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// Elapsed time: 28 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 14, false); // u (Q, cp)
+expandTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis]", 4); // u (Q, cp)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// A (cp): Run Synthesis: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (A)
+// bx (cp):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+dismissDialog("Run Synthesis"); // A (cp)
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// f (cp): Launch Runs: addNotify
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,199 MB. GUI used memory: 86 MB. Current time: 7/28/26, 10:56:39 PM CST
+// bx (cp):  Starting Design Runs : addNotify
+dismissDialog("Launch Runs"); // f (cp)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs synth_1 -jobs 12 
+// Tcl Message: INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/rd_fifo/rd_fifo.xci' is already up-to-date 
+// Tcl Message: [Tue Jul 28 22:56:39 2026] Launched synth_1... Run output will be captured here: E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/runme.log 
+// 'k' command handler elapsed time: 3 seconds
+dismissDialog("Starting Design Runs"); // bx (cp)
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: RUN_COMPLETED
+// HMemoryUtils.trashcanNow. Engine heap size: 1,199 MB. GUI used memory: 86 MB. Current time: 7/28/26, 10:58:17 PM CST
+// ah (cp): Synthesis Completed: addNotify
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// Elapsed time: 108 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (ah)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// f (cp): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// bx (cp):  Starting Design Runs : addNotify
+dismissDialog("Launch Runs"); // f (cp)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -jobs 12 
+// Tcl Message: INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/rd_fifo/rd_fifo.xci' is already up-to-date 
+// Tcl Message: [Tue Jul 28 22:58:29 2026] Launched impl_1... Run output will be captured here: E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/impl_1/runme.log 
+dismissDialog("Starting Design Runs"); // bx (cp)
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,199 MB. GUI used memory: 87 MB. Current time: 7/28/26, 10:58:30 PM CST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,199 MB. GUI used memory: 87 MB. Current time: 7/28/26, 10:58:37 PM CST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,199 MB. GUI used memory: 87 MB. Current time: 7/28/26, 10:58:37 PM CST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,199 MB. GUI used memory: 87 MB. Current time: 7/28/26, 10:58:37 PM CST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,199 MB. GUI used memory: 87 MB. Current time: 7/28/26, 10:58:38 PM CST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,199 MB. GUI used memory: 87 MB. Current time: 7/28/26, 10:58:38 PM CST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,199 MB. GUI used memory: 87 MB. Current time: 7/28/26, 10:58:38 PM CST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,199 MB. GUI used memory: 87 MB. Current time: 7/28/26, 10:58:38 PM CST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,199 MB. GUI used memory: 87 MB. Current time: 7/28/26, 10:58:39 PM CST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,199 MB. GUI used memory: 87 MB. Current time: 7/28/26, 10:58:39 PM CST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,199 MB. GUI used memory: 87 MB. Current time: 7/28/26, 10:58:39 PM CST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,199 MB. GUI used memory: 87 MB. Current time: 7/28/26, 10:58:39 PM CST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,199 MB. GUI used memory: 87 MB. Current time: 7/28/26, 10:58:40 PM CST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,199 MB. GUI used memory: 87 MB. Current time: 7/28/26, 10:58:41 PM CST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,199 MB. GUI used memory: 87 MB. Current time: 7/28/26, 10:58:41 PM CST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,199 MB. GUI used memory: 87 MB. Current time: 7/28/26, 10:58:41 PM CST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,199 MB. GUI used memory: 87 MB. Current time: 7/28/26, 10:58:41 PM CST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,199 MB. GUI used memory: 87 MB. Current time: 7/28/26, 10:58:41 PM CST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,199 MB. GUI used memory: 87 MB. Current time: 7/28/26, 10:58:41 PM CST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,199 MB. GUI used memory: 87 MB. Current time: 7/28/26, 10:58:41 PM CST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,199 MB. GUI used memory: 87 MB. Current time: 7/28/26, 10:58:42 PM CST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,199 MB. GUI used memory: 87 MB. Current time: 7/28/26, 10:58:42 PM CST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,199 MB. GUI used memory: 87 MB. Current time: 7/28/26, 10:58:42 PM CST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,199 MB. GUI used memory: 87 MB. Current time: 7/28/26, 10:58:42 PM CST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,199 MB. GUI used memory: 87 MB. Current time: 7/28/26, 10:58:42 PM CST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,199 MB. GUI used memory: 87 MB. Current time: 7/28/26, 10:58:42 PM CST
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: FILE_SET_CHANGE
+// ah (cp): Implementation Completed: addNotify
+// Elapsed time: 320 seconds
+dismissDialog("Implementation Completed"); // ah (cp)
+selectTab((HResource) null, (HResource) null, "Sources", 1); // aI (aF, cp)
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // B (f, cp)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// c (cp): Add Sources: addNotify
+selectButton("NEXT", "Next >"); // JButton (j, c)
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files"); // a (C, c)
+dismissFileChooser();
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_DIRECTORIES, "Add Directories"); // a (C, c)
+setFolderChooser("E:/FPGA/project/smart_car_pld2026/my_car/rtl");
+selectCheckBox(PAResourceQtoS.SrcChooserPanel_SCAN_AND_ADD_RTL_INCLUDE_FILES_INTO, "Scan and add RTL include files into project", true); // g (bm, c): TRUE
+selectButton("FINISH", "Finish"); // JButton (j, c)
+// 'h' command handler elapsed time: 21 seconds
+dismissDialog("Add Sources"); // c (cp)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// bx (cp):  Add Sources  : addNotify
+dismissDialog("Add Sources"); // bx (cp)
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,199 MB. GUI used memory: 88 MB. Current time: 7/28/26, 11:04:18 PM CST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 10 seconds
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v)]", 2); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v)]", 2); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v), u_ov5640_dri_1 : ov5640_dri (ov5640_dri.v)]", 4); // B (D, cp)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v), u_ov5640_dri_1 : ov5640_dri (ov5640_dri.v)]", 4); // B (D, cp)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v), u_sensor_link : sensor_link (sensor_link.v)]", 17); // B (D, cp)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v), u_lcd_rgb_top : lcd_rgb_top (lcd_rgb_top.v)]", 11); // B (D, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v), u_green_detect_2 : green_detect (green_detect.v)]", 7, false); // B (D, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v), u_green_detect_2 : green_detect (green_detect.v)]", 7, false); // B (D, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v), u_green_detect_2 : green_detect (green_detect.v)]", 7, false, false, false, false, false, true); // B (D, cp) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v), u_green_detect : green_detect (green_detect.v)]", 6, false); // B (D, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v), u_green_detect : green_detect (green_detect.v)]", 6, false, false, false, false, false, true); // B (D, cp) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v), u_green_detect_2 : green_detect (green_detect.v)]", 7, false); // B (D, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v), u_green_detect_2 : green_detect (green_detect.v)]", 7, false, false, false, false, false, true); // B (D, cp) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v), u_green_detect : green_detect (green_detect.v)]", 6, false); // B (D, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v), u_green_detect : green_detect (green_detect.v)]", 6, false, false, false, false, false, true); // B (D, cp) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v), u_green_detect_2 : green_detect (green_detect.v)]", 7, false); // B (D, cp)
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+// aE (cp): Remove Sources: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aE)
+dismissDialog("Remove Sources"); // aE (cp)
+// Tcl Message: export_ip_user_files -of_objects  [get_files E:/FPGA/project/smart_car_pld2026/my_car/rtl/vision/green_detect.v] -no_script -reset -force -quiet 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: remove_files  E:/FPGA/project/smart_car_pld2026/my_car/rtl/vision/green_detect.v 
+// Elapsed time: 67 seconds
+closeMainWindow("prj - [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.xpr] - Vivado 2018.3"); // cp
+// A (cp): Exit Vivado: addNotify
+dismissDialog("Exit Vivado"); // A (cp)
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "IP Sources", 1); // i (N, cp)
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "Hierarchy", 0); // i (N, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Non-module Files]", 1); // B (D, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Non-module Files]", 1, true, false, false, false, true, false); // B (D, cp) - Popup Trigger - Node
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // ac (al, cp)
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // ac (al, cp)
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // ac (al, cp)
+selectMenuItem(PAResourceQtoS.SrcMenu_REFRESH_HIERARCHY, "Refresh Hierarchy"); // af (al, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Non-module Files, green_detect.v]", 2, false); // B (D, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Non-module Files, green_detect.v]", 2, false, false, false, false, true, false); // B (D, cp) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // af (al, Popup.HeavyWeightWindow)
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+// aE (cp): Remove Sources: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aE)
+dismissDialog("Remove Sources"); // aE (cp)
+// Tcl Message: export_ip_user_files -of_objects  [get_files E:/FPGA/project/smart_car_pld2026/my_car/rtl/green_detect.v] -no_script -reset -force -quiet 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: remove_files  E:/FPGA/project/smart_car_pld2026/my_car/rtl/green_detect.v 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Non-module Files, osd_font.v]", 3, false, false, false, false, true, false); // B (D, cp) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // af (al, Popup.HeavyWeightWindow)
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+// aE (cp): Remove Sources: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aE)
+dismissDialog("Remove Sources"); // aE (cp)
+// Tcl Message: export_ip_user_files -of_objects  [get_files E:/FPGA/project/smart_car_pld2026/my_car/rtl/osd_font.v] -no_script -reset -force -quiet 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: remove_files  E:/FPGA/project/smart_car_pld2026/my_car/rtl/osd_font.v 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Non-module Files, green_detect.v]", 2, false, false, false, false, true, false); // B (D, cp) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // af (al, Popup.HeavyWeightWindow)
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+// aE (cp): Remove Sources: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aE)
+dismissDialog("Remove Sources"); // aE (cp)
+// Tcl Message: remove_files  E:/FPGA/project/smart_car_pld2026/my_car/rtl/green_detect.v 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v), u_green_detect : xil_defaultlib.green_detect]", 9, false, false, false, false, true, false); // B (D, cp) - Popup Trigger
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // ac (al, cp)
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // ac (al, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v), u_stereo_dist : stereo_dist (stereo_dist.v)]", 11, false); // B (D, cp)
+selectTab((HResource) null, (String) null, (HResource) null, "Sources", 1, true, false); // aI (aF, cp) - Popup Trigger
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v), u_ov5640_dri_1 : ov5640_dri (ov5640_dri.v)]", 7, true, false, false, false, true, false); // B (D, cp) - Popup Trigger - Node
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // ac (al, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // ac (al, Popup.HeavyWeightWindow)
+// Elapsed time: 61 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Non-module Files, osd_overlay.v]", 2, false, false, false, false, true, false); // B (D, cp) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // af (al, Popup.HeavyWeightWindow)
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+// aE (cp): Remove Sources: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aE)
+dismissDialog("Remove Sources"); // aE (cp)
+// Tcl Message: export_ip_user_files -of_objects  [get_files E:/FPGA/project/smart_car_pld2026/my_car/rtl/osd_overlay.v] -no_script -reset -force -quiet 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: remove_files  E:/FPGA/project/smart_car_pld2026/my_car/rtl/osd_overlay.v 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Non-module Files, osd_overlay.v]", 2, false, false, false, false, true, false); // B (D, cp) - Popup Trigger
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Non-module Files, stereo_dist.v]", 3, false); // B (D, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Non-module Files, stereo_dist.v]", 3, false, false, false, false, true, false); // B (D, cp) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // af (al, Popup.HeavyWeightWindow)
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+// aE (cp): Remove Sources: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aE)
+dismissDialog("Remove Sources"); // aE (cp)
+// Tcl Message: export_ip_user_files -of_objects  [get_files E:/FPGA/project/smart_car_pld2026/my_car/rtl/stereo_dist.v] -no_script -reset -force -quiet 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: remove_files  E:/FPGA/project/smart_car_pld2026/my_car/rtl/stereo_dist.v 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Non-module Files, tracker_ctrl.v]", 4, false, false, false, false, true, false); // B (D, cp) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // af (al, Popup.HeavyWeightWindow)
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+// aE (cp): Remove Sources: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aE)
+dismissDialog("Remove Sources"); // aE (cp)
+// Tcl Message: export_ip_user_files -of_objects  [get_files E:/FPGA/project/smart_car_pld2026/my_car/rtl/tracker_ctrl.v] -no_script -reset -force -quiet 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: remove_files  E:/FPGA/project/smart_car_pld2026/my_car/rtl/tracker_ctrl.v 
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // B (f, cp)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// c (cp): Add Sources: addNotify
+selectButton("NEXT", "Next >"); // JButton (j, c)
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files"); // a (C, c)
+// Elapsed time: 15 seconds
+String[] filenames16706 = {"E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v", "E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_overlay.v"};
+setFileChooser(filenames16706);
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_OR_CREATE_SOURCE_FILE, "Add"); // B (f, c)
+selectMenuItem(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files..."); // af (al, c)
+setFileChooser("E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/tracker_ctrl.v");
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files"); // a (C, c)
+String[] filenames29306 = {"E:/FPGA/project/smart_car_pld2026/my_car/rtl/vision/green_detect.v", "E:/FPGA/project/smart_car_pld2026/my_car/rtl/vision/stereo_dist.v"};
+setFileChooser(filenames29306);
+selectCheckBox(PAResourceQtoS.SrcChooserPanel_SCAN_AND_ADD_RTL_INCLUDE_FILES_INTO, "Scan and add RTL include files into project", false); // g (bm, c): FALSE
+selectButton("FINISH", "Finish"); // JButton (j, c)
+// 'h' command handler elapsed time: 42 seconds
+dismissDialog("Add Sources"); // c (cp)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files -norecurse {E:/FPGA/project/smart_car_pld2026/my_car/rtl/vision/green_detect.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/tracker_ctrl.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/vision/stereo_dist.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_overlay.v} 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v)]", 1); // B (D, cp)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources]", 0); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources]", 0); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v)]", 1); // B (D, cp)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // u (Q, cp)
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // af (al, cp)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// bx (cp):  Close : addNotify
+selectButton("PAResourceQtoS.SimulationRun_SIMULATION_ALREADY_RUNNING_DO_YOU_Yes", "Yes"); // JButton (C, I)
+// TclEventType: WAVEFORM_CLOSE_WCFG
+// TclEventType: SIMULATION_CLOSE_SIMULATION
+// Tcl Message: close_sim 
+// Tcl Message: INFO: [Simtcl 6-16] Simulation closed 
+// e (cp):  Run Simulation : addNotify
+// TclEventType: LAUNCH_SIM
+dismissDialog("Close"); // bx (cp)
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// Tcl Message: launch_simulation 
+// Tcl Message: INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator... INFO: [Vivado 12-5682] Launching behavioral simulation in 'E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.sim/sim_1/behav/xsim' INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs INFO: [SIM-utils-51] Simulation object is 'sim_1' INFO: [USF-XSim-7] Finding pre-compiled libraries... INFO: [USF-XSim-11] File 'D:/Xilinx/Vivado/2018.3/data/xsim/xsim.ini' copied to run dir:'E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.sim/sim_1/behav/xsim' INFO: [SIM-utils-54] Inspecting design source files for 'top_dual_ov5640_lcd' in fileset 'sim_1'... 
+// TclEventType: PACKAGER_UNLOAD_CORE
+// Tcl Message: INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.sim/sim_1/behav/xsim' 
+// TclEventType: LAUNCH_SIM_LOG
+// Tcl Message: run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:12 . Memory (MB): peak = 1264.418 ; gain = 0.000 
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '12' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.sim/sim_1/behav/xsim' 
+// Tcl Message: Vivado Simulator 2018.3 Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved. Running: D:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 90cd3ee7bb314f9c9041c02b75cdbebc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L fifo_generator_v13_2_3 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot top_dual_ov5640_lcd_behav xil_defaultlib.top_dual_ov5640_lcd xil_defaultlib.glbl -log elaborate.log  Using 2 slave threads. Starting static elaboration 
+// Tcl Message: Completed simulation data flow analysis 
+// TclEventType: LAUNCH_SIM
+// Tcl Message: Compiling module xil_defaultlib.lcd_rgb_top Compiling module xil_defaultlib.sl_uart_rx_default Compiling module xil_defaultlib.v1_decode Compiling module xil_defaultlib.tracker_ctrl Compiling module xil_defaultlib.sl_uart_tx_default Compiling module xil_defaultlib.ctrl_link_tx_default Compiling module xil_defaultlib.sensor_link Compiling module xil_defaultlib.top_dual_ov5640_lcd Compiling module xil_defaultlib.glbl Built simulation snapshot top_dual_ov5640_lcd_behav 
+// Tcl Message: run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:16 . Memory (MB): peak = 1264.418 ; gain = 0.000 
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '16' seconds INFO: [USF-XSim-4] XSim::Simulate design INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.sim/sim_1/behav/xsim' INFO: [USF-XSim-98] *** Running xsim 
+// Tcl Message:    with args "top_dual_ov5640_lcd_behav -key {Behavioral:sim_1:Functional:top_dual_ov5640_lcd} -tclbatch {top_dual_ov5640_lcd.tcl} -log {simulate.log}" 
+// Tcl Message: INFO: [USF-XSim-8] Loading simulator feature 
+// Tcl Message: Vivado Simulator 2018.3 
+// TclEventType: SIMULATION_CREATE_SIMULATION_OBJECT
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// Elapsed time: 30 seconds
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// Waveform: addNotify
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,199 MB. GUI used memory: 100 MB. Current time: 7/28/26, 11:09:53 PM CST
+// TclEventType: WAVEFORM_MODEL_EVENT
+// Tcl Message: Time resolution is 1 fs 
+// Tcl Message: source top_dual_ov5640_lcd.tcl 
+// TclEventType: WAVEFORM_MODEL_EVENT
+// Tcl Message: # set curr_wave [current_wave_config] # if { [string length $curr_wave] == 0 } { #   if { [llength [get_objects]] > 0} { #     add_wave / #     set_property needs_save false [current_wave_config] #   } else { #      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console." #   } # } 
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: # run 1000ns 
+// Tcl Message: INFO: [USF-XSim-96] XSim completed. Design snapshot 'top_dual_ov5640_lcd_behav' loaded. INFO: [USF-XSim-97] XSim simulation ran for 1000ns 
+// Tcl Message: launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:31 . Memory (MB): peak = 1264.418 ; gain = 0.000 
+// 'd' command handler elapsed time: 35 seconds
+dismissDialog("Run Simulation"); // e (cp)
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// Elapsed time: 12 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Run Implementation]", 17, false); // u (Q, cp)
+expandTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis]", 4); // u (Q, cp)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// A (cp): Synthesis is Out-of-date: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// [GUI Memory]: 157 MB (+774kb) [00:22:22]
+// bx (cp):  Resetting Runs : addNotify
+dismissDialog("Synthesis is Out-of-date"); // A (cp)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// f (cp): Launch Runs: addNotify
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,199 MB. GUI used memory: 95 MB. Current time: 7/28/26, 11:10:08 PM CST
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// bx (cp):  Starting Design Runs : addNotify
+dismissDialog("Launch Runs"); // f (cp)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -jobs 12 
+// Tcl Message: INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/rd_fifo/rd_fifo.xci' is already up-to-date 
+// Tcl Message: [Tue Jul 28 23:10:09 2026] Launched synth_1... Run output will be captured here: E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/runme.log [Tue Jul 28 23:10:09 2026] Launched impl_1... Run output will be captured here: E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/impl_1/runme.log 
+dismissDialog("Starting Design Runs"); // bx (cp)
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 227 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Run Implementation]", 17, false); // u (Q, cp)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// bx (cp):  Resetting Runs : addNotify
+selectButton("PAResourceQtoS.RunRun_TASK_ALREADY_RUNNING_WOULD_YOU_LIKE_OK", "OK"); // JButton (C, I)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run impl_1 
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// f (cp): Launch Runs: addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 1,199 MB. GUI used memory: 96 MB. Current time: 7/28/26, 11:14:01 PM CST
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// bx (cp):  Starting Design Runs : addNotify
+dismissDialog("Launch Runs"); // f (cp)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -jobs 12 
+// Tcl Message: INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/rd_fifo/rd_fifo.xci' is already up-to-date 
+// Tcl Message: [Tue Jul 28 23:14:02 2026] Launched impl_1... Run output will be captured here: E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/impl_1/runme.log 
+// 'c' command handler elapsed time: 5 seconds
+dismissDialog("Starting Design Runs"); // bx (cp)
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,199 MB. GUI used memory: 96 MB. Current time: 7/28/26, 11:14:04 PM CST
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// ah (cp): Implementation Completed: addNotify
+// Elapsed time: 190 seconds
+selectRadioButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "Generate Bitstream"); // a (Q, ah)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (ah)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// f (cp): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// TclEventType: RUN_LAUNCH
+dismissDialog("Launch Runs"); // f (cp)
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 12 
+// Tcl Message: INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/rd_fifo/rd_fifo.xci' is already up-to-date 
+// Tcl Message: [Tue Jul 28 23:17:14 2026] Launched impl_1... Run output will be captured here: E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/impl_1/runme.log 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,199 MB. GUI used memory: 101 MB. Current time: 7/28/26, 11:17:16 PM CST
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: RUN_COMPLETED
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// ah (cp): Bitstream Generation Completed: addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 1,199 MB. GUI used memory: 97 MB. Current time: 7/28/26, 11:17:55 PM CST
+// Elapsed time: 42 seconds
+selectRadioButton(PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER, "Open Hardware Manager"); // a (Q, ah)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (ah)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// Tcl Command: 'load_features labtools'
+// TclEventType: LOAD_FEATURE
+// bx (cp):  Open Hardware Manager : addNotify
+// TclEventType: HW_SESSION_OPEN
+// Tcl Message: open_hw 
+dismissDialog("Open Hardware Manager"); // bx (cp)
+// Elapsed time: 81 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Open Hardware Manager, Open Target]", 22, false); // u (Q, cp)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HW_TARGET
+selectMenuItem(PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, "Auto Connect"); // af (al, Popup.HeavyWeightWindow)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// Run Command: PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET
+// Tcl Message: connect_hw_server 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 
+// bx (cp):  Auto Connect : addNotify
+// Tcl Message: INFO: [Labtools 27-2222] Launching hw_server... 
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: INFO: [Labtools 27-2221] Launch Output:  ****** Xilinx hw_server v2018.3   **** Build date : Dec  7 2018-00:40:27     ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.   
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// WARNING: HEventQueue.dispatchEvent() is taking  1321 ms.
+// Tcl Message: open_hw_target 
+// Tcl Message: INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210512180081 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,007 MB. GUI used memory: 97 MB. Current time: 7/28/26, 11:19:25 PM CST
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/impl_1/top_dual_ov5640_lcd.bit} [get_hw_devices xc7a100t_0] 
+// Tcl Message: current_hw_device [get_hw_devices xc7a100t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// [Engine Memory]: 2,012 MB (+842187kb) [00:31:40]
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-2302] Device xc7a100t (JTAG device index = 0) is programmed with a design that has 1 IBERT core(s). 
+dismissDialog("Auto Connect"); // bx (cp)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Open Hardware Manager, Program Device]", 23, false); // u (Q, cp)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+selectMenuItem((HResource) null, "xc7a100t_0"); // af (al, cp)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bC (cp): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a (bC)
+// bx (cp):  Program Device : addNotify
+// TclEventType: HW_DEVICE_CHANGE
+dismissDialog("Program Device"); // bC (cp)
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a100t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/impl_1/top_dual_ov5640_lcd.bit} [get_hw_devices xc7a100t_0] 
+// TclEventType: HW_OBJECT_DELETE
+// TclEventType: HW_DEVICE_UPDATE
+// Tcl Message: program_hw_devices [get_hw_devices xc7a100t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+// 'I' command handler elapsed time: 5 seconds
+dismissDialog("Program Device"); // bx (cp)
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_SYSMON_DELETE
+// TclEventType: HW_TARGET_UPDATE
+// TclEventType: DEBUG_PROBE_DELETE
+// Tcl Message: ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210512180081 
+// n (cp): Close Hardware Target: addNotify
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_SERVER_UPDATE

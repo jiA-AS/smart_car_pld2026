@@ -1,90 +1,85 @@
-# my_car OSD + 追踪升级说明（PLD2026）
+# my_car 升级说明 V2：三模式追踪 + 单位化显示 + ESP32 对齐
 
-基于仓库最新代码（commit `2a5dddd`，含 `green_detect.v` / `tracker_ctrl.v` / 右屏识别框版 `lcd_disply.v`）实现两点需求：
-
-1. **屏幕标注**：识别框旁显示该相机内目标位置坐标；中央偏下显示双目距离（mm）；中央偏上显示编码器/陀螺仪原始数据。
-2. **丢失停车**：识别不到目标时不再原地转圈，立即静止停车，屏幕正中央显示红色"目标丢失"。
+覆盖四点：① ESP32 左右反修复；② 单目/双目/未识别三模式；③ 协议单位与可调参数约定；④ OLED/LCD 带单位人性化显示。
 
 ---
 
-## 一、文件清单
+## 一、ESP32 左右反的根因与修复（ESP32/fishbot.cpp，替换 esp/src/）
 
-### 新增（放入 `my_car/rtl/`，并在 Vivado 里 Add Sources）
-| 文件 | 作用 |
-|---|---|
-| `新增文件/stereo_dist.v` | 双目视差测距：`dist = F_PIX × BASELINE_MM / |u_cam2 − u_cam1|`，自由运行顺序除法器 |
-| `新增文件/osd_overlay.v` | AR 叠加层：cam2 绿框、双质心红十字、框旁 `(u,v)` 坐标、距离行、数据栏、"目标丢失" |
-| `新增文件/osd_font.v` | 字符点阵 ROM（8×16 ASCII + 16×16 中文：编码器/陀螺仪/距离/目标丢失） |
+**根因**：Match 分支原来直接写电机：
+```cpp
+// 原代码（错误）：左侧 = motor0+1，右侧 = motor2+3
+target_motor_speed1 = left_spd;   // motor0
+target_motor_speed2 = left_spd;   // motor1 ← 运动学里这是右轮！
+```
+而 `Kinematics::kinematic_inverse`（Remote 模式在用的同一套）的约定是 **motor0/2=左侧，motor1/3=右侧**（差速与麦轮正解公式一致：w₁、w₃ 带左轮符号）。左右各有一个轮子拿错指令，转向当然不对。
 
-### 替换（覆盖同名文件）
-| 文件 | 位置 | 改动 |
+**修复**：Match 分支不再直接写电机，改成和 Remote 一样走运动学逆解，左右映射天然一致：
+```cpp
+float l = fpga.cmdLeft() * 0.01f, r = fpga.cmdRight() * 0.01f;   // % → -1~1
+linear_x  = (l + r) * 0.5f * MATCH_LINEAR_MAX_MMS;  // mm/s
+angular_z = (r - l) * 0.5f * MATCH_YAW_MAX_RADS;    // rad/s（左轮快→右转→负）
+kinematics.kinematic_inverse(linear_x, 0, angular_z, ...4个电机);
+```
+文件顶部新增两个可调常数 `MATCH_LINEAR_MAX_MMS`（默认 600mm/s）、`MATCH_YAW_MAX_RADS`（默认 3.0），先保守后调。
+
+**OLED 人性化**：`mode_name` 带跟随子状态直接显示：`MATCH:DUAL`（双目对接）/ `MATCH:MONO`（单目跟随）/ `MATCH:LOST`（未识别停车），走原有的 `updateStateMachine`，不用动显示类。
+
+---
+
+## 二、三模式识别与控制（FPGA，自动化体现在 MATCH）
+
+| 识别情况 | tracker 状态 | V1.1 mode | 行为 |
+|---|---|---|---|
+| 未识别（双目都无） | S_STOP | **0** | 静止停车（不转圈），LCD 中央红字"目标丢失" |
+| 单目识别（仅一路） | S_MONO | **1** | 低速跟随（`MONO_V`），方位加偏移补偿 `MONO_OFFS`（仅右路看到→目标实际更偏右） |
+| 双目识别 | S_MATCH | **2** | 自动对接：距离环用双目测距 `dist_mm`，到 `DIST_ARRIVE` mm 自动停车 |
+
+- 距离来源优先级：`stereo_dist` 双目视差（`dist_src=2`）> 单目尺寸法（`dist_src=1`，`Z = F_PIX × H_LIGHT_MM / 灯高`）> 无效。
+- **`H_LIGHT_MM` 是给你留的光源尺寸参数**——光源实际高度定了直接填，单目测距即刻生效；双目都在但视差太小（远处）时也自动用它兜底。
+- ESP32 端 `fpga.cmdMode()` 就能拿到 0/1/2，OLED 已据此显示子状态。
+
+---
+
+## 三、协议单位与可调参数约定（V1.2 补充，建议写进协议文档）
+
+| 量 | 单位 | 说明 |
 |---|---|---|
-| `替换文件/tracker_ctrl.v` | `my_car/rtl/tracker_ctrl.v` | **丢失→停车**：删除 S_LOST/S_SEARCH 转圈，丢失当拍 `mode=0, left=right=0`；上电默认停车。端口与参数不变，`sensor_link` 不用动（`SEARCH_SPD/LOST_LIM` 参数保留但弃用） |
-| `替换文件/lcd_rgb_top.v` | `my_car/rtl/lcd_rgb_top/lcd_rgb_top.v` | 新增端口（cam1 质心、cam2 检测、距离、编码器/陀螺仪）；例化 `osd_overlay` 串在 `lcd_disply` 之后 |
-| `替换文件/top_dual_ov5640_lcd.v` | `my_car/rtl/top_dual_ov5640_lcd.v` | 例化第二路 `green_detect`（cam_pclk_2）、`stereo_dist`；双目融合后送 tracker；`sensor_link` 解包数据接入 LCD |
+| left/right | **%**（-100~+100，int16 补码） | 100% = `MATCH_LINEAR_MAX_MMS` mm/s |
+| mode | 枚举 | 0=停车 1=单目跟随 2=双目对接 |
+| 编码器 enc0~3 | **cnt**（int32 累计脉冲） | LCD 带符号十进制显示 |
+| 陀螺仪 | **dps**（°/s） | 原始 LSB ÷ `GYRO_LSB_PER_DPS`（MPU6050@±250dps=131；LSM6DS3≈114） |
+| 距离 | **mm**（0~9999） | dist_src 区分单/双目来源 |
 
-### 不用动
-`green_detect.v`（两路复用同一模块）、`sensor_link` 全部文件、`lcd_disply.v`（右屏红框保持）、其余原子原文件。
-
----
-
-## 二、数据流
-
-```
-cam1 ─ green_detect(已有) ─┐ gd_found/gd_u/...      ┌─→ 双目融合(any_found,u_comb) ─→ sensor_link
-cam2 ─ green_detect(新增) ─┘                        │    (tracker_ctrl: 丢失停车)
-        │ u_cam1, u_cam2 ──→ stereo_dist(新增) ── dist_mm ─┐
-ESP32 ─ sensor_link ── enc0~3, gyro ──────────────────────┤
-                                                          ▼
-                              lcd_rgb_top: lcd_driver → lcd_disply(右屏红框)
-                                                       → osd_overlay(新增) → LCD
-```
-
-- **双目融合**：任一相机看到目标即追踪，质心取平均；丢失（两个都看不到）→ tracker 停车 + OSD 显示"目标丢失"。
-- **坐标系**：检测在相机坐标（0~399），cam1=右半屏（+400 映射）、cam2=左半屏（原样），均由 OSD 内部换算。
+**FPGA 可调参数集中处**：
+- `stereo_dist`：`F_PIX`、`BASELINE_MM`、`MIN_DISP`、`H_LIGHT_MM`（光源尺寸）、`H_MIN_PIX`
+- `tracker_ctrl`（在 sensor_link 例化处调）：`V_MAX`、`MONO_V`、`MONO_OFFS`、`DIST_ARRIVE`、`KD_NUM`、`H_REF`/`H_ARRIVE`（退化路径）
+- ESP32：`MATCH_LINEAR_MAX_MMS`、`MATCH_YAW_MAX_RADS`
 
 ---
 
-## 三、屏幕布局（800×480，分辨率自适应）
+## 四、FPGA 文件清单
 
-```
-        ┌──────────────────────────────────────┐
-        │      编码器 E0:XXXXXXXX ... E3:XXXXXXXX │ ← 中央偏上 (v/8)
-        │      陀螺仪 GX:XXXX GY:XXXX GZ:XXXX     │
-        │                                       │
-        │  ┌─┐uuu,vvv              ┌─┐uuu,vvv   │ ← cam2绿框+坐标 / cam1红框+坐标
-        │  └─┘(左屏cam2)           └─┘(右屏cam1)│    质心处红十字
-        │            目 标 丢 失                 │ ← 丢失时正中央红色
-        │                                       │
-        │           距离:1234mm                  │ ← 中央偏下 (3/4 高度)
-        └──────────────────────────────────────┘
-```
-
----
-
-## 四、必须标定的参数
-
-| 参数 | 位置 | 标定方法 |
+| 文件 | 位置 | 说明 |
 |---|---|---|
-| `BASELINE_MM` | 顶层 `u_stereo_dist` | 尺子量两镜头**中心距**（mm），直接填 |
-| `F_PIX` | 顶层 `u_stereo_dist` | 绿灯放正前方已知距离 Z0（如 500mm），看屏显 D，则 `F_new = F_old × Z0 / D` |
-| `TH_G / TH_RB` | 两个 `green_detect` | 现场光照调绿色阈值（`gd_cnt` 可接 ILA 观察） |
-| `H_REF / H_ARRIVE` | `sensor_link` 内 tracker | 包围盒高度标定（原有流程，不变） |
+| `FPGA/新增/vision/stereo_dist.v` | `rtl/vision/` | 双目+单目双模式测距 |
+| `FPGA/新增/lcd_rgb_top/osd/osd_overlay.v` | `rtl/lcd_rgb_top/osd/` | AR 叠加层 V2 |
+| `FPGA/新增/lcd_rgb_top/osd/osd_font.v` | 同上 | 字库（+未识别/单目跟踪/双目对接 汉字） |
+| `FPGA/替换/sensor_link/tracker_ctrl.v` | `rtl/sensor_link/` | 三模式控制器（移入 sensor_link 文件夹，层次对齐） |
+| `FPGA/替换/sensor_link/sensor_link.v` | 同上 | 透传 f1/f2/距离 |
+| `FPGA/替换/lcd_rgb_top/lcd_rgb_top.v` | `rtl/lcd_rgb_top/` | 新端口 + 例化 osd |
+| `FPGA/替换/top_dual_ov5640_lcd.v` | `rtl/` | 第二路检测 + 测距 + 连线 |
+| `ESP32/fishbot.cpp` | `esp/src/` | Match 修复 + OLED 子状态 |
 
-**注意**：双目测距只在**两个相机都看到目标**时有效（否则显示 `距离:----mm`），所以两个镜头要尽量平行、朝向一致，视场重叠区才测得准。
+**LCD 布局**：中央偏上 = `编码器 E0:+00012345 … cnt` / `陀螺仪 GX:-250 … dps`；识别框旁 = `uuu,vvvpx`；中央偏下 = `双目对接:1234mm`（绿）/ `单目跟踪:1234mm`（黄）；丢失 = 中央红字"目标丢失"。
 
 ---
 
-## 五、验证清单
+## 五、标定与验证
 
-1. Vivado 添加 3 个新源文件，替换 3 个旧文件，重新综合 → 生成比特流；
-2. 上电无目标：车静止，屏幕中央红字"目标丢失"，数据栏编码器/陀螺仪十六进制刷新；
-3. 绿灯入视野：双屏出现识别框+红十字+坐标，"目标丢失"消失，中央偏下显示距离；拿尺核对 300/500/800mm 三点，按第四节标定 `F_PIX`；
-4. 遮挡绿灯：车立即停（不转圈），"目标丢失"出现；
-5. 若距离恒为 `----`：检查两相机是否都框到目标（MIN_AREA 是否过大）、视差是否 < MIN_DISP=6（目标太远时正常）。
+1. `BASELINE_MM` 量两镜头中心距；`F_PIX` 用已知距离反推（`F_new = F_old × 真实距离 / 显示距离`）；
+2. 光源尺寸定后填 `H_LIGHT_MM`，再校 `MONO_OFFS`（单目时的方位偏差）；
+3. 上车先验证 ESP 修复：目标偏右 → 车应右转；不对就只可能是电机接线/极性，调 `MATCH_YAW_MAX_RADS` 符号；
+4. 三模式切换验证：遮挡双目→"目标丢失"+停车；只露一目→`MATCH:MONO` 低速跟随；双目→`MATCH:DUAL` 自动接近到 300mm 停车。
 
-## 六、技术备注
-
-- `osd_overlay` 输出为**组合逻辑**（坐标打 1 拍与 `lcd_disply` 输出对齐），像素链零额外延迟，画面不会右移；若时序不通过，可把输出和 `pixel_in` 各打 1 拍，代价是整画面右移 1px。
-- 所有跨时钟信号（检测结果、传感器值）在 OSD/测距模块内做了 2 级触发器同步；这些都是帧级准静态信号，安全。
-- 字库用 unifont 点阵生成，要加字（如"加速度"）告诉我即可重新生成。
+**注意**：Vivado 添加 3 个新文件（Add Sources，别勾 Copy）；tracker_ctrl.v 若从根目录挪进 sensor_link/，先把旧条目 Remove File from Project 再按新路径添加。

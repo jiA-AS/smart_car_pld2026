@@ -136,9 +136,11 @@ wire  [9:0]  gd2_min_y                 ;
 wire  [9:0]  gd2_max_y                 ;
 wire  [17:0] gd2_cnt                   ;
 
-// ---- [PLD2026 V2] 双目距离（50M 域） ----
+// ---- [PLD2026 V2] 目标距离（50M 域） ----
 wire  [15:0] dist_mm                   ;  //距离 mm（无效为 0）
-wire         dist_valid                ;  //距离有效
+wire  [ 1:0] dist_src                  ;  //0=无效 1=单目 2=双目
+wire  [ 9:0] box_h1                    ;  //cam1 包围盒高度
+wire  [ 9:0] box_h2                    ;  //cam2 包围盒高度
 
 // ---- [PLD2026 V2] 传感器链解包数据（OSD 数据栏用） ----
 wire  [31:0] sl_enc0                   ;  //编码器0~3 累计脉冲
@@ -158,6 +160,8 @@ wire  [9:0] u_comb    = (gd_found && gd2_found)
 // 包围盒高度：优先 cam1，cam1 看不到用 cam2
 wire  [9:0] miny_comb = gd_found ? gd_min_y : gd2_min_y;
 wire  [9:0] maxy_comb = gd_found ? gd_max_y : gd2_max_y;
+assign box_h1 = gd_max_y  - gd_min_y;
+assign box_h2 = gd2_max_y - gd2_min_y;
 
 //*****************************************************
 //**                    main code
@@ -287,22 +291,26 @@ green_detect #(
 );
 
 //*****************************************************
-//**  [PLD2026 V2] 双目视差测距：dist = F_PIX*BASELINE/|u2-u1|
-//**  F_PIX 需标定、BASELINE_MM 实测两镜头中心距（见说明文档）
+//**  [PLD2026 V2] 目标测距：双目视差优先，单目尺寸法兜底
+//**  F_PIX/BASELINE_MM 需标定；H_LIGHT_MM 待光源实际尺寸确定后填
 //*****************************************************
 stereo_dist #(
     .F_PIX       (16'd450),
     .BASELINE_MM (16'd100),
-    .MIN_DISP    (10'd6)
+    .MIN_DISP    (10'd6),
+    .H_LIGHT_MM  (16'd100),
+    .H_MIN_PIX   (10'd8)
 ) u_stereo_dist (
     .clk        (clk_50m),
     .rst_n      (rst_n),
     .f1_async   (gd_found),
     .u1_async   (gd_u),
+    .h1_async   (box_h1),
     .f2_async   (gd2_found),
     .u2_async   (gd2_u),
+    .h2_async   (box_h2),
     .dist_mm    (dist_mm),
-    .dist_valid (dist_valid)
+    .dist_src   (dist_src)
 );
 
 //DDR3顶层模块
@@ -408,9 +416,9 @@ lcd_rgb_top  u_lcd_rgb_top(
     .box2_max_y            (gd2_max_y),
     .c2_u                  (gd2_u),
     .c2_v                  (gd2_v),
-    // ---- [PLD2026 V2] 双目距离 ----
+    // ---- [PLD2026 V2] 目标距离 ----
     .dist_mm               (dist_mm),
-    .dist_valid            (dist_valid),
+    .dist_src              (dist_src),
     // ---- [PLD2026 V2] 传感器原始值（OSD 数据栏） ----
     .enc0                  (sl_enc0),
     .enc1                  (sl_enc1),
@@ -433,6 +441,10 @@ sensor_link#(
     .rst_n        (rst_n),
     .uart_rxd     (uart_rxd),
     .uart_txd     (uart_txd),
+    .f1           (gd_found),
+    .f2           (gd2_found),
+    .dist_mm      (dist_mm),
+    .dist_src     (dist_src),
     .timestamp    (),
     .enc0         (sl_enc0),
     .enc1         (sl_enc1),
@@ -446,7 +458,7 @@ sensor_link#(
     .acc_z        (),
     .parse_done   (),
     .parse_result (),
-    // [PLD2026 V2] 追踪输入改为双目融合值（任一相机看到即追踪）
+    // [PLD2026 V2] 追踪输入为双目融合值（任一相机看到即追踪）
      .gd_found     (any_found),
     .gd_u         (u_comb),
     .gd_min_y     (miny_comb),

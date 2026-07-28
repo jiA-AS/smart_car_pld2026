@@ -210,4 +210,4 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "E:/FPGA/project/smart_car_pld2026/m
 INFO: [VRFC 10-311] analyzing module v1_decode
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module top_dual_ov5640_lcd
-INFO: [VRFC 10-2458] undeclared symbol rd_vsync, assumed default net type wire [E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v:353]
+INFO: [VRFC 10-2458] undeclared symbol rd_vsync, assumed default net type wire [E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v:361]

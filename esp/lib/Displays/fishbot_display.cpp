@@ -83,7 +83,7 @@ void FishBotDisplay::updateDisplay()
             _display.print(tx_interval_);
             _display.println("ms");
 
-            // 行7~8: 编码器 enc0~enc3 (确认电机真实转动)
+            // 行7~8: 编码器 enc0~enc3 (单位 cnt)
             _display.print("E0:");
             _display.print(enc_[0]);
             _display.print(" E1:");
@@ -91,7 +91,8 @@ void FishBotDisplay::updateDisplay()
             _display.print("E2:");
             _display.print(enc_[2]);
             _display.print(" E3:");
-            _display.println(enc_[3]);
+            _display.print(enc_[3]);
+            _display.println(" cnt");
         }
         else if (s1_pos_ == 3) {
             // ============ 左拨中：显示发送数据 (ESP32 → FPGA) ============
@@ -107,33 +108,37 @@ void FishBotDisplay::updateDisplay()
             else
                 _display.println(rx_ok_);
 
-            // 行2: 编码器 enc0 enc1
+            // 行2: 编码器 enc0 enc1 (单位 cnt)
             _display.print("E0:");
             _display.print(enc_[0]);
             _display.print(" E1:");
-            _display.println(enc_[1]);
+            _display.print(enc_[1]);
+            _display.println(" cnt");
 
-            // 行3: 编码器 enc2 enc3
+            // 行3: 编码器 enc2 enc3 (单位 cnt)
             _display.print("E2:");
             _display.print(enc_[2]);
             _display.print(" E3:");
-            _display.println(enc_[3]);
+            _display.print(enc_[3]);
+            _display.println(" cnt");
 
-            // 行4: 陀螺仪 gyro_x gyro_y gyro_z
+            // 行4: 陀螺仪 gyro_x gyro_y gyro_z (单位 dps)
             _display.print("GX:");
             _display.print(gyro_[0]);
             _display.print(" GY:");
             _display.print(gyro_[1]);
             _display.print(" GZ:");
-            _display.println(gyro_[2]);
+            _display.print(gyro_[2]);
+            _display.println(" dps");
 
-            // 行5: 加速度 acc_x acc_y acc_z
+            // 行5: 加速度 acc_x acc_y acc_z (单位 g)
             _display.print("AX:");
             _display.print(acc_[0]);
             _display.print(" AY:");
             _display.print(acc_[1]);
             _display.print(" AZ:");
-            _display.println(acc_[2]);
+            _display.print(acc_[2]);
+            _display.println(" g");
 
             // 行6: 上行帧前10字节 (AA 55 版本 timestamp enc0[0..3] enc0[0..1高])
             for (int i = 0; i < 10; i++) printHex(_display, tx_raw_[i]);
@@ -161,17 +166,20 @@ void FishBotDisplay::updateDisplay()
             _display.print("E0:");
             _display.print(enc_[0]);
             _display.print(" E1:");
-            _display.println(enc_[1]);
+            _display.print(enc_[1]);
+            _display.println(" cnt");
             _display.print("E2:");
             _display.print(enc_[2]);
             _display.print(" E3:");
-            _display.println(enc_[3]);
+            _display.print(enc_[3]);
+            _display.println(" cnt");
             _display.print("GX:");
             _display.print(gyro_[0]);
             _display.print(" GY:");
             _display.print(gyro_[1]);
             _display.print(" GZ:");
-            _display.println(gyro_[2]);
+            _display.print(gyro_[2]);
+            _display.println(" dps");
             _display.print("RX:");
             for (int i = 0; i < 9; i++) printHex(_display, rx_raw_[i]);
         }

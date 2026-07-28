@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date             : Tue Jul 28 23:16:59 2026
+| Date             : Wed Jul 29 00:59:50 2026
 | Host             : LAPTOP-2K88VM5F running 64-bit major release  (build 9200)
 | Command          : report_power -file top_dual_ov5640_lcd_power_routed.rpt -pb top_dual_ov5640_lcd_power_summary_routed.pb -rpx top_dual_ov5640_lcd_power_routed.rpx
 | Design           : top_dual_ov5640_lcd
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.282        |
+| Total On-Chip Power (W)  | 1.430        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.176        |
+| Dynamic (W)              | 1.324        |
 | Device Static (W)        | 0.106        |
 | Effective TJA (C/W)      | 2.7          |
-| Max Ambient (C)          | 81.6         |
-| Junction Temperature (C) | 28.4         |
+| Max Ambient (C)          | 81.2         |
+| Junction Temperature (C) | 28.8         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,25 +52,26 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.045 |       35 |       --- |             --- |
-| Slice Logic              |     0.020 |    25238 |       --- |             --- |
-|   LUT as Logic           |     0.017 |     9800 |     63400 |           15.46 |
-|   CARRY4                 |     0.001 |      625 |     15850 |            3.94 |
-|   Register               |     0.001 |    10237 |    126800 |            8.07 |
+| Clocks                   |     0.047 |       35 |       --- |             --- |
+| Slice Logic              |     0.096 |    43417 |       --- |             --- |
+|   LUT as Logic           |     0.088 |    22823 |     63400 |           36.00 |
+|   CARRY4                 |     0.007 |     2968 |     15850 |           18.73 |
+|   Register               |     0.001 |    10312 |    126800 |            8.13 |
 |   LUT as Distributed RAM |    <0.001 |      740 |     19000 |            3.89 |
 |   BUFG                   |    <0.001 |        3 |        32 |            9.38 |
 |   LUT as Shift Register  |    <0.001 |       30 |     19000 |            0.16 |
-|   F7/F8 Muxes            |    <0.001 |      188 |     63400 |            0.30 |
-|   Others                 |     0.000 |      388 |       --- |             --- |
-| Signals                  |     0.028 |    20467 |       --- |             --- |
+|   F7/F8 Muxes            |    <0.001 |      231 |     63400 |            0.36 |
+|   Others                 |     0.000 |      400 |       --- |             --- |
+| Signals                  |     0.097 |    35709 |       --- |             --- |
 | Block RAM                |     0.014 |       16 |       135 |           11.85 |
 | MMCM                     |     0.201 |        2 |         6 |           33.33 |
 | PLL                      |     0.092 |        1 |         6 |           16.67 |
-| I/O                      |     0.521 |      134 |       285 |           47.02 |
+| DSPs                     |    <0.001 |        1 |       240 |            0.42 |
+| I/O                      |     0.522 |      134 |       285 |           47.02 |
 | PHASER                   |     0.250 |       26 |       --- |             --- |
 | XADC                     |     0.004 |        1 |       --- |             --- |
 | Static Power             |     0.106 |          |           |                 |
-| Total                    |     1.282 |          |           |                 |
+| Total                    |     1.430 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -80,7 +81,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.197 |       0.179 |      0.017 |
+| Vccint    |       1.000 |     0.345 |       0.327 |      0.018 |
 | Vccaux    |       1.800 |     0.387 |       0.369 |      0.018 |
 | Vcco33    |       3.300 |     0.006 |       0.002 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -181,24 +182,26 @@ Table of Contents
 +---------------------------+-----------+
 | Name                      | Power (W) |
 +---------------------------+-----------+
-| top_dual_ov5640_lcd       |     1.176 |
+| top_dual_ov5640_lcd       |     1.324 |
 |   u_clk_wiz_0             |     0.107 |
 |     inst                  |     0.107 |
-|   u_ddr3_top              |     1.037 |
-|     u_ddr3_fifo_ctrl_top  |     0.026 |
-|       u_ddr3_fifo_ctrl_1  |     0.014 |
-|       u_ddr3_fifo_ctrl_2  |     0.012 |
+|   u_ddr3_top              |     1.039 |
+|     u_ddr3_fifo_ctrl_top  |     0.028 |
+|       u_ddr3_fifo_ctrl_1  |     0.015 |
+|       u_ddr3_fifo_ctrl_2  |     0.013 |
 |     u_ddr3_rw             |     0.004 |
 |     u_mig_7series_0       |     1.007 |
 |       u_mig_7series_0_mig |     1.007 |
 |   u_green_detect          |     0.010 |
-|   u_lcd_rgb_top           |     0.006 |
-|     u_osd_overlay         |     0.004 |
+|   u_green_detect_2        |     0.001 |
+|   u_lcd_rgb_top           |     0.077 |
+|     u_osd_overlay         |     0.076 |
 |   u_ov5640_dri_1          |     0.002 |
 |     u_cmos_capture_data   |     0.001 |
-|   u_sensor_link           |     0.003 |
+|   u_sensor_link           |     0.005 |
 |     u_decode              |     0.002 |
-|   u_stereo_dist           |     0.001 |
+|     u_tracker             |     0.002 |
+|   u_stereo_dist           |     0.002 |
 +---------------------------+-----------+
 
 
