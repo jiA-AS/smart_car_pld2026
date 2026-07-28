@@ -1,0 +1,347 @@
+/*
+
+Xilinx Vivado v2018.3 (64-bit) [Major: 2018, Minor: 3]
+SW Build: 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build: 2404404 on Fri Dec  7 01:43:56 MST 2018
+
+Process ID (PID): 3800
+License: Customer
+
+Current time: 	Sun Jul 26 20:15:02 CST 2026
+Time zone: 	China Standard Time (Asia/Shanghai)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 24
+
+Screen size: 2560x1600
+Screen resolution (DPI): 192
+Available screens: 1
+Available disk space: 41 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=24
+
+Java version: 	9.0.4 64-bit
+Java home: 	D:/Xilinx/Vivado/2018.3/tps/win64/jre9.0.4
+Java executable location: 	D:/Xilinx/Vivado/2018.3/tps/win64/jre9.0.4/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	sunjiayi
+User home directory: C:/Users/sunjiayi
+User working directory: E:/FPGA/project/smart_car_pld2026/my_car/prj
+User country: 	CN
+User language: 	zh
+User locale: 	zh_CN
+
+RDI_BASEROOT: D:/Xilinx/Vivado
+HDI_APPROOT: D:/Xilinx/Vivado/2018.3
+RDI_DATADIR: D:/Xilinx/Vivado/2018.3/data
+RDI_BINDIR: D:/Xilinx/Vivado/2018.3/bin
+
+Vivado preferences file location: C:/Users/sunjiayi/AppData/Roaming/Xilinx/Vivado/2018.3/vivado.xml
+Vivado preferences directory: C:/Users/sunjiayi/AppData/Roaming/Xilinx/Vivado/2018.3/
+Vivado layouts directory: C:/Users/sunjiayi/AppData/Roaming/Xilinx/Vivado/2018.3/layouts
+PlanAhead jar file location: 	D:/Xilinx/Vivado/2018.3/lib/classes/planAhead.jar
+Vivado log file location: 	E:/FPGA/project/smart_car_pld2026/my_car/prj/vivado.log
+Vivado journal file location: 	E:/FPGA/project/smart_car_pld2026/my_car/prj/vivado.jou
+Engine tmp dir: 	E:/FPGA/project/smart_car_pld2026/my_car/prj/.Xil/Vivado-3800-LAPTOP-2K88VM5F
+
+Xilinx Environment Variables
+----------------------------
+XILINX: D:/Xilinx/Vivado/2018.3/ids_lite/ISE
+XILINX_DSP: D:/Xilinx/Vivado/2018.3/ids_lite/ISE
+XILINX_PLANAHEAD: D:/Xilinx/Vivado/2018.3
+XILINX_SDK: D:/Xilinx/SDK/2018.3
+XILINX_VIVADO: D:/Xilinx/Vivado/2018.3
+XILINX_VIVADO_HLS: D:/Xilinx/Vivado/2018.3
+
+
+GUI allocated memory:	130 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 680 MB
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 85 MB (+86762kb) [00:00:05]
+// [Engine Memory]: 586 MB (+463378kb) [00:00:05]
+// Opening Vivado Project: E:\FPGA\project\smart_car_pld2026\my_car\prj\prj.xpr. Version: Vivado v2018.3 
+// bx (cp):  Open Project : addNotify
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 702 MB. GUI used memory: 60 MB. Current time: 7/26/26, 8:15:04 PM CST
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 767 MB (+159047kb) [00:00:12]
+// [GUI Memory]: 91 MB (+1473kb) [00:00:12]
+// [GUI Memory]: 108 MB (+13565kb) [00:00:12]
+// [GUI Memory]: 123 MB (+10024kb) [00:00:13]
+// [Engine Memory]: 818 MB (+13139kb) [00:00:13]
+// WARNING: HEventQueue.dispatchEvent() is taking  1872 ms.
+// Tcl Message: open_project E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2018.3/data/ip'. 
+// Tcl Message: open_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 881.168 ; gain = 252.855 
+// Project name: prj; location: E:/FPGA/project/smart_car_pld2026/my_car/prj; part: xc7a100tfgg484-2
+// [Engine Memory]: 1,219 MB (+377512kb) [00:00:14]
+// [GUI Memory]: 132 MB (+2409kb) [00:00:14]
+dismissDialog("Open Project"); // bx (cp)
+// Tcl Message: update_compile_order -fileset sources_1 
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v)]", 1); // B (D, cp)
+// [GUI Memory]: 141 MB (+2491kb) [00:00:23]
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v), u_sensor_link : sensor_link (sensor_link.v)]", 9); // B (D, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v), u_sensor_link : sensor_link (sensor_link.v), u_ctrl_tx : ctrl_link_tx (ctrl_link_tx.v)]", 13, true); // B (D, cp) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v), u_sensor_link : sensor_link (sensor_link.v), u_ctrl_tx : ctrl_link_tx (ctrl_link_tx.v)]", 13, true, false, false, false, false, true); // B (D, cp) - Double Click - Node
+// Elapsed time: 56 seconds
+selectCodeEditor("ctrl_link_tx.v", 725, 188); // cl (w, cp)
+selectCodeEditor("ctrl_link_tx.v", 1017, 217); // cl (w, cp)
+// [Engine Memory]: 1,284 MB (+4291kb) [00:01:28]
+selectCodeEditor("ctrl_link_tx.v", 412, 322); // cl (w, cp)
+selectCodeEditor("ctrl_link_tx.v", 814, 230); // cl (w, cp)
+selectCodeEditor("ctrl_link_tx.v", 870, 552); // cl (w, cp)
+selectCodeEditor("ctrl_link_tx.v", 1003, 530); // cl (w, cp)
+selectCodeEditor("ctrl_link_tx.v", 427, 72); // cl (w, cp)
+selectCodeEditor("ctrl_link_tx.v", 849, 521); // cl (w, cp)
+selectCodeEditor("ctrl_link_tx.v", 829, 454); // cl (w, cp)
+// Elapsed time: 12 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v), u_sensor_link : sensor_link (sensor_link.v), u_ctrl_tx : ctrl_link_tx (ctrl_link_tx.v), u_tx : sl_uart_tx (sl_uart_tx.v)]", 14, false); // B (D, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v), u_sensor_link : sensor_link (sensor_link.v), u_ctrl_tx : ctrl_link_tx (ctrl_link_tx.v), u_tx : sl_uart_tx (sl_uart_tx.v)]", 14, false, false, false, false, false, true); // B (D, cp) - Double Click
+selectCodeEditor("sl_uart_tx.v", 1000, 110); // cl (w, cp)
+// Elapsed time: 11 seconds
+selectCodeEditor("sl_uart_tx.v", 10, 61); // cl (w, cp)
+selectCodeEditor("sl_uart_tx.v", 2, 63); // cl (w, cp)
+selectCodeEditor("sl_uart_tx.v", 821, 452); // cl (w, cp)
+selectCodeEditor("sl_uart_tx.v", 696, 561); // cl (w, cp)
+selectCodeEditor("sl_uart_tx.v", 777, 452); // cl (w, cp)
+selectCodeEditor("sl_uart_tx.v", 675, 442); // cl (w, cp)
+selectCodeEditor("sl_uart_tx.v", 774, 326); // cl (w, cp)
+selectCodeEditor("sl_uart_tx.v", 456, 208); // cl (w, cp)
+selectCodeEditor("sl_uart_tx.v", 502, 368); // cl (w, cp)
+typeControlKey((HResource) null, "sl_uart_tx.v", 'c'); // cl (w, cp)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,284 MB. GUI used memory: 78 MB. Current time: 7/26/26, 8:45:07 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,284 MB. GUI used memory: 73 MB. Current time: 7/26/26, 9:15:10 PM CST
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 44254480 ms. Increasing delay to 3000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  44256971 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 1,284 MB. GUI used memory: 72 MB. Current time: 7/27/26, 9:57:55 AM CST
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 3242 ms. Increasing delay to 9726 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 1,284 MB. GUI used memory: 58 MB. Current time: 7/27/26, 10:27:57 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,284 MB. GUI used memory: 58 MB. Current time: 7/27/26, 10:58:00 AM CST
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 4768 ms. Increasing delay to 4000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1700 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 14882 ms. Increasing delay to 44646 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 11291 ms. Increasing delay to 5000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  2454 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 4768 ms. Increasing delay to 6000 ms.
+// WARNING: HSwingWorker (Monitor File Timestamp Swing Worker) is taking 2963 ms to process. Increasing delay to 2000 ms.
+// WARNING: HSwingWorker (Monitor File Timestamp Swing Worker) is taking 7135 ms to process. Increasing delay to 2000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  2328 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 4754 ms. Increasing delay to 7000 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 5337 ms. Increasing delay to 8000 ms.
+// WARNING: HSwingWorker (Monitor File Timestamp Swing Worker) is taking 2525 ms to process. Increasing delay to 3000 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 4864 ms. Increasing delay to 9000 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 7124 ms. Increasing delay to 10000 ms.
+// WARNING: HSwingWorker (Monitor File Timestamp Swing Worker) is taking 1679 ms to process. Increasing delay to 3000 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 5968 ms. Increasing delay to 10000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1215 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 7128 ms. Increasing delay to 10000 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 7132 ms. Increasing delay to 10000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  2258 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1948 ms.
+// WARNING: HSwingWorker (Monitor File Timestamp Swing Worker) is taking 2672 ms to process. Increasing delay to 4000 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 11694 ms. Increasing delay to 10000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1772 ms.
+// WARNING: HSwingWorker (Monitor File Timestamp Swing Worker) is taking 2626 ms to process. Increasing delay to 5000 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 5004 ms. Increasing delay to 10000 ms.
+// WARNING: HSwingWorker (Monitor File Timestamp Swing Worker) is taking 2379 ms to process. Increasing delay to 4000 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 5992 ms. Increasing delay to 10000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1964 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 5844 ms. Increasing delay to 10000 ms.
+// WARNING: HSwingWorker (Monitor File Timestamp Swing Worker) is taking 2378 ms to process. Increasing delay to 5000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  2184 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1758 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 7154 ms. Increasing delay to 10000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1681 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1703 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 5519 ms. Increasing delay to 10000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  3943 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 7505 ms. Increasing delay to 10000 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 7194 ms. Increasing delay to 10000 ms.
+// WARNING: HSwingWorker (Monitor File Timestamp Swing Worker) is taking 3141 ms to process. Increasing delay to 6000 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 1,284 MB. GUI used memory: 58 MB. Current time: 7/27/26, 11:28:17 AM CST
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 5347 ms. Increasing delay to 10000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  2377 ms.
+// WARNING: HSwingWorker (Monitor File Timestamp Swing Worker) is taking 4473 ms to process. Increasing delay to 6000 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 7178 ms. Increasing delay to 10000 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 7151 ms. Increasing delay to 10000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  2516 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 8090 ms. Increasing delay to 10000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  2374 ms.
+// WARNING: HSwingWorker (Monitor File Timestamp Swing Worker) is taking 5278 ms to process. Increasing delay to 7000 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 7200 ms. Increasing delay to 10000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  2234 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  2470 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 7805 ms. Increasing delay to 10000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1341 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  3895 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  2223 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 947101 ms. Increasing delay to 10000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  2272 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 956664 ms. Increasing delay to 2869992 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 6017 ms. Increasing delay to 10000 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 7455 ms. Increasing delay to 10000 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 7129 ms. Increasing delay to 10000 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 1,284 MB. GUI used memory: 58 MB. Current time: 7/27/26, 11:58:06 AM CST
+// Elapsed time: 57151 seconds
+selectCodeEditor("sl_uart_tx.v", 466, 229); // cl (w, cp)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v)]", 1); // B (D, cp)
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "IP Sources", 1); // i (N, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, clk_wiz_0]", 1); // B (D, cp)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, clk_wiz_0]", 1); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, mig_7series_0]", 2); // B (D, cp)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, mig_7series_0]", 2); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, mig_7series_0]", 2); // B (D, cp)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, mig_7series_0]", 2); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, rd_fifo]", 3); // B (D, cp)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, rd_fifo]", 3); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, wr_fifo]", 4); // B (D, cp)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, wr_fifo]", 4); // B (D, cp)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP]", 0); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP]", 0); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, clk_wiz_0]", 1); // B (D, cp)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, clk_wiz_0]", 1); // B (D, cp)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP]", 0); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP]", 0); // B (D, cp)
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "Hierarchy", 0); // i (N, cp)
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "IP Sources", 1); // i (N, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, clk_wiz_0]", 1); // B (D, cp)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, clk_wiz_0]", 1); // B (D, cp)
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "Hierarchy", 0); // i (N, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v)]", 1); // B (D, cp)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v)]", 1); // B (D, cp)
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "IP Sources", 1); // i (N, cp)
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "Libraries", 2); // i (N, cp)
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "IP Sources", 1); // i (N, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, wr_fifo]", 4); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, wr_fifo, Instantiation Template]", 5); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, wr_fifo, Synthesis]", 8); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, wr_fifo, Simulation]", 14); // B (D, cp)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, wr_fifo]", 4); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, rd_fifo]", 3); // B (D, cp)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, rd_fifo]", 3); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, mig_7series_0]", 2); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, wr_fifo]", 13); // B (D, cp)
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "Hierarchy", 0); // i (N, cp)
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "IP Sources", 1); // i (N, cp)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, mig_7series_0]", 2); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, clk_wiz_0]", 1); // B (D, cp)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, clk_wiz_0]", 1); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, rd_fifo]", 3); // B (D, cp)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, rd_fifo]", 3); // B (D, cp)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, wr_fifo]", 4); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, clk_wiz_0]", 1); // B (D, cp)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, clk_wiz_0]", 1); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, mig_7series_0]", 2); // B (D, cp)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, mig_7series_0]", 2); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, rd_fifo]", 3); // B (D, cp)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, rd_fifo]", 3); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, wr_fifo]", 4); // B (D, cp)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, wr_fifo]", 4); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, clk_wiz_0]", 1); // B (D, cp)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, clk_wiz_0]", 1); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, mig_7series_0]", 2); // B (D, cp)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, mig_7series_0]", 2); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, rd_fifo]", 3); // B (D, cp)
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "Hierarchy", 0); // i (N, cp)
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "IP Sources", 1); // i (N, cp)
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "Hierarchy", 0); // i (N, cp)
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "IP Sources", 1); // i (N, cp)
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "Hierarchy", 0); // i (N, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v)]", 1); // B (D, cp)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v)]", 1); // B (D, cp)
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "IP Sources", 1); // i (N, cp)
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "Hierarchy", 0); // i (N, cp)
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "IP Sources", 1); // i (N, cp)
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "Hierarchy", 0); // i (N, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v)]", 1); // B (D, cp)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v)]", 1); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v)]", 1); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v), u_ov5640_dri_1 : ov5640_dri (ov5640_dri.v)]", 3); // B (D, cp)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v), u_ov5640_dri_1 : ov5640_dri (ov5640_dri.v)]", 3); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v), u_ov5640_dri_2 : ov5640_dri (ov5640_dri.v)]", 4); // B (D, cp)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v), u_ov5640_dri_2 : ov5640_dri (ov5640_dri.v)]", 4); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v), u_ov5640_dri_1 : ov5640_dri (ov5640_dri.v)]", 3); // B (D, cp)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v), u_ov5640_dri_1 : ov5640_dri (ov5640_dri.v)]", 3); // B (D, cp)
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "IP Sources", 1); // i (N, cp)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, rd_fifo]", 3); // B (D, cp)
+selectCodeEditor("sl_uart_tx.v", 174, 236); // cl (w, cp)
+// Elapsed time: 15 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, wr_fifo]", 4); // B (D, cp)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, wr_fifo]", 4); // B (D, cp)
+// Elapsed time: 25 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, clk_wiz_0]", 1); // B (D, cp)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, clk_wiz_0]", 1); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, mig_7series_0]", 2); // B (D, cp)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, mig_7series_0]", 2); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, rd_fifo]", 3); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, wr_fifo]", 13); // B (D, cp)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, rd_fifo]", 3); // B (D, cp)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, IP, wr_fifo]", 4); // B (D, cp)
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "Hierarchy", 0); // i (N, cp)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v)]", 1); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Configuration Files]", 2); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v)]", 1); // B (D, cp)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v)]", 1); // B (D, cp)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Configuration Files]", 2); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v)]", 1); // B (D, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v), u_sensor_link : sensor_link (sensor_link.v)]", 9, true); // B (D, cp) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v), u_lcd_rgb_top : lcd_rgb_top (lcd_rgb_top.v)]", 8, true); // B (D, cp) - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v), u_lcd_rgb_top : lcd_rgb_top (lcd_rgb_top.v)]", 8); // B (D, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v)]", 1, true); // B (D, cp) - Node
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_dual_ov5640_lcd (top_dual_ov5640_lcd.v)]", 1); // B (D, cp)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,284 MB. GUI used memory: 74 MB. Current time: 7/27/26, 12:28:08 PM CST
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 14 ms. Decreasing delay to 2014 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 1075 ms. Increasing delay to 3225 ms.
+// WARNING: HSwingWorker (Monitor File Timestamp Swing Worker) is taking 2441 ms to process. Increasing delay to 2000 ms.
+// WARNING: HSwingWorker (Monitor File Timestamp Swing Worker) is taking 2300 ms to process. Increasing delay to 3000 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 18127 ms. Increasing delay to 54381 ms.
+// WARNING: HSwingWorker (Monitor File Timestamp Swing Worker) is taking 1510 ms to process. Increasing delay to 4000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1461 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 19222 ms. Increasing delay to 10000 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 5070 ms. Increasing delay to 10000 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 6531 ms. Increasing delay to 10000 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 13 ms. Decreasing delay to 2013 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 4012 ms. Increasing delay to 12036 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 13 ms. Decreasing delay to 2013 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 1,284 MB. GUI used memory: 74 MB. Current time: 7/27/26, 12:58:13 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,284 MB. GUI used memory: 74 MB. Current time: 7/27/26, 1:28:16 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,284 MB. GUI used memory: 73 MB. Current time: 7/27/26, 1:58:19 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,284 MB. GUI used memory: 74 MB. Current time: 7/27/26, 2:28:21 PM CST
+// WARNING: HEventQueue.dispatchEvent() is taking  4151553 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 1,284 MB. GUI used memory: 73 MB. Current time: 7/27/26, 3:47:53 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,284 MB. GUI used memory: 58 MB. Current time: 7/27/26, 4:17:55 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,284 MB. GUI used memory: 59 MB. Current time: 7/27/26, 4:47:58 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,284 MB. GUI used memory: 59 MB. Current time: 7/27/26, 5:18:01 PM CST
