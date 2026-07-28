@@ -1,0 +1,63 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Tue Jul 28 22:47:43 2026
+# Process ID: 46100
+# Current directory: E:/FPGA/project/smart_car_pld2026/my_car/prj
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent47304 E:\FPGA\project\smart_car_pld2026\my_car\prj\prj.xpr
+# Log file: E:/FPGA/project/smart_car_pld2026/my_car/prj/vivado.log
+# Journal file: E:/FPGA/project/smart_car_pld2026/my_car/prj\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.xpr
+update_compile_order -fileset sources_1
+add_files -norecurse {E:/FPGA/project/smart_car_pld2026/my_car/rtl/osd_overlay.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/green_detect.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/stereo_dist.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/osd_font.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/picture_size.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/tracker_ctrl.v}
+update_compile_order -fileset sources_1
+launch_simulation
+source top_dual_ov5640_lcd.tcl
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 12
+wait_on_run synth_1
+launch_runs impl_1 -jobs 12
+wait_on_run impl_1
+add_files -scan_for_includes {E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/sensor_link.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/vision/stereo_dist.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_overlay.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/picture_size.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_rgb_top.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/sl_uart_rx.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/ov5640_dri/i2c_ov5640_rgb565_cfg.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/sl_uart_tx.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/ov5640_dri/cmos_capture_data.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_rw.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_driver.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/vision/green_detect.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/tracker_ctrl.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_top.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/ov5640_dri/i2c_dri.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl_top.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/ctrl_link_tx.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/rd_id.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/clk_div.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/ov5640_dri/ov5640_dri.v}
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files E:/FPGA/project/smart_car_pld2026/my_car/rtl/vision/green_detect.v] -no_script -reset -force -quiet
+remove_files  E:/FPGA/project/smart_car_pld2026/my_car/rtl/vision/green_detect.v
+export_ip_user_files -of_objects  [get_files E:/FPGA/project/smart_car_pld2026/my_car/rtl/green_detect.v] -no_script -reset -force -quiet
+remove_files  E:/FPGA/project/smart_car_pld2026/my_car/rtl/green_detect.v
+export_ip_user_files -of_objects  [get_files E:/FPGA/project/smart_car_pld2026/my_car/rtl/osd_font.v] -no_script -reset -force -quiet
+remove_files  E:/FPGA/project/smart_car_pld2026/my_car/rtl/osd_font.v
+remove_files  E:/FPGA/project/smart_car_pld2026/my_car/rtl/green_detect.v
+export_ip_user_files -of_objects  [get_files E:/FPGA/project/smart_car_pld2026/my_car/rtl/osd_overlay.v] -no_script -reset -force -quiet
+remove_files  E:/FPGA/project/smart_car_pld2026/my_car/rtl/osd_overlay.v
+export_ip_user_files -of_objects  [get_files E:/FPGA/project/smart_car_pld2026/my_car/rtl/stereo_dist.v] -no_script -reset -force -quiet
+remove_files  E:/FPGA/project/smart_car_pld2026/my_car/rtl/stereo_dist.v
+export_ip_user_files -of_objects  [get_files E:/FPGA/project/smart_car_pld2026/my_car/rtl/tracker_ctrl.v] -no_script -reset -force -quiet
+remove_files  E:/FPGA/project/smart_car_pld2026/my_car/rtl/tracker_ctrl.v
+add_files -norecurse {E:/FPGA/project/smart_car_pld2026/my_car/rtl/vision/green_detect.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/tracker_ctrl.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/vision/stereo_dist.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_overlay.v}
+update_compile_order -fileset sources_1
+close_sim
+launch_simulation
+source top_dual_ov5640_lcd.tcl
+reset_run synth_1
+launch_runs impl_1 -jobs 12
+wait_on_run impl_1
+reset_run impl_1
+launch_runs impl_1 -jobs 12
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+wait_on_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/impl_1/top_dual_ov5640_lcd.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/impl_1/top_dual_ov5640_lcd.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]

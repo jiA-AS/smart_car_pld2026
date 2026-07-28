@@ -3,12 +3,12 @@ Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
 Running: D:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 90cd3ee7bb314f9c9041c02b75cdbebc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L fifo_generator_v13_2_3 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot top_dual_ov5640_lcd_behav xil_defaultlib.top_dual_ov5640_lcd xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
-WARNING: [VRFC 10-3091] actual bit length 12 differs from formal bit length 13 for port 'cmos_h_pixel' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v:169]
-WARNING: [VRFC 10-3091] actual bit length 12 differs from formal bit length 13 for port 'cmos_h_pixel' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v:196]
-WARNING: [VRFC 10-3091] actual bit length 26 differs from formal bit length 28 for port 'app_addr_rd_max' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v:238]
-WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 8 for port 'rd_bust_len' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v:239]
-WARNING: [VRFC 10-3091] actual bit length 26 differs from formal bit length 28 for port 'app_addr_wr_max' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v:241]
-WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 8 for port 'wr_bust_len' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v:242]
+WARNING: [VRFC 10-3091] actual bit length 12 differs from formal bit length 13 for port 'cmos_h_pixel' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v:202]
+WARNING: [VRFC 10-3091] actual bit length 12 differs from formal bit length 13 for port 'cmos_h_pixel' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v:229]
+WARNING: [VRFC 10-3091] actual bit length 26 differs from formal bit length 28 for port 'app_addr_rd_max' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v:314]
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 8 for port 'rd_bust_len' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v:315]
+WARNING: [VRFC 10-3091] actual bit length 26 differs from formal bit length 28 for port 'app_addr_wr_max' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v:317]
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 8 for port 'wr_bust_len' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v:318]
 WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'app_sr_req' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_top.v:174]
 WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'app_ref_req' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_top.v:175]
 WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'app_zq_req' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_top.v:176]
@@ -21,7 +21,7 @@ WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 9 fo
 WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 9 for port 'rd_data_count' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl.v:215]
 WARNING: [VRFC 10-3091] actual bit length 11 differs from formal bit length 10 for port 'wfifo_rcount' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl_top.v:128]
 WARNING: [VRFC 10-3091] actual bit length 11 differs from formal bit length 10 for port 'rfifo_wcount' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl_top.v:129]
-WARNING: [VRFC 10-3091] actual bit length 11 differs from formal bit length 13 for port 'rd_h_pixel' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_rgb_top.v:120]
+WARNING: [VRFC 10-3091] actual bit length 11 differs from formal bit length 13 for port 'rd_h_pixel' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_rgb_top.v:143]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
@@ -32,6 +32,7 @@ Compiling module xil_defaultlib.i2c_dri(SLAVE_ADDR=7'b0111100,CL...
 Compiling module xil_defaultlib.cmos_capture_data
 Compiling module xil_defaultlib.ov5640_dri
 Compiling module xil_defaultlib.green_detect(TH_G=6'b101000,TH_R...
+Compiling module xil_defaultlib.stereo_dist_default
 Compiling module xil_defaultlib.ddr3_rw
 Compiling module unisims_ver.IDELAYCTRL_default
 Compiling module xil_defaultlib.mig_7series_v4_2_iodelay_ctrl(IO...
@@ -163,6 +164,8 @@ Compiling module xil_defaultlib.clk_div
 Compiling module xil_defaultlib.rd_id
 Compiling module xil_defaultlib.lcd_driver
 Compiling module xil_defaultlib.lcd_disply
+Compiling module xil_defaultlib.osd_font
+Compiling module xil_defaultlib.osd_overlay
 Compiling module xil_defaultlib.lcd_rgb_top
 Compiling module xil_defaultlib.sl_uart_rx_default
 Compiling module xil_defaultlib.v1_decode

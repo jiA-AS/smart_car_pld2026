@@ -46,13 +46,36 @@ module lcd_rgb_top(
     input   [ 9:0]  box_min_x,      //包围盒四角
     input   [ 9:0]  box_max_x,
     input   [ 9:0]  box_min_y,
-    input   [ 9:0]  box_max_y
+    input   [ 9:0]  box_max_y,
+    // ---- [PLD2026 V2] cam1 质心（右屏，相机坐标，cam_pclk_1 域） ----
+    input   [ 9:0]  c1_u,
+    input   [ 9:0]  c1_v,
+    // ---- [PLD2026 V2] cam2 检测（左屏，相机坐标，cam_pclk_2 域） ----
+    input           box2_found,
+    input   [ 9:0]  box2_min_x,
+    input   [ 9:0]  box2_max_x,
+    input   [ 9:0]  box2_min_y,
+    input   [ 9:0]  box2_max_y,
+    input   [ 9:0]  c2_u,
+    input   [ 9:0]  c2_v,
+    // ---- [PLD2026 V2] 双目距离（50M 域） ----
+    input   [15:0]  dist_mm,
+    input           dist_valid,
+    // ---- [PLD2026 V2] 传感器原始值（50M 域，OSD 数据栏） ----
+    input   [31:0]  enc0,
+    input   [31:0]  enc1,
+    input   [31:0]  enc2,
+    input   [31:0]  enc3,
+    input   [15:0]  gyro_x,
+    input   [15:0]  gyro_y,
+    input   [15:0]  gyro_z
     );
 
 //wire define
 wire [15:0]  lcd_rgb_565;           //输出的16位lcd数据
 wire [23:0]  lcd_rgb_o ;            //LCD 输出颜色数据
 wire [23:0]  lcd_rgb_i ;            //LCD 输入颜色数据
+wire [15:0]  disply_data;           //lcd_disply 输出（标题+右屏红框叠加后）
 
 //*****************************************************
 //**                    main code
@@ -118,13 +141,48 @@ lcd_driver u_lcd_driver(
     .pixel_ypos       (pixel_ypos),                //像素点纵坐标
     .rd_data          (data_in),                   //图像数据
     .rd_h_pixel       (h_disp),                    //图像水平像素大小
-    .pixel_data       (lcd_rgb_565),               //像素点数据
+    .pixel_data       (disply_data),               //像素点数据
     // ---- [PLD2026] 识别框透传 ----
     .box_found        (box_found),
     .box_min_x        (box_min_x),
     .box_max_x        (box_max_x),
     .box_min_y        (box_min_y),
     .box_max_y        (box_max_y)
+);
+
+//*****************************************************
+//**  [PLD2026 V2] AR 叠加层：cam2绿框/双质心十字/位置标注/
+//**  双目距离(中央偏下)/编码器陀螺仪数据栏(中央偏上)/目标丢失
+//**  组合输出零额外延迟，与 lcd_disply 输出同拍对齐
+//*****************************************************
+osd_overlay u_osd_overlay(
+    .lcd_clk          (lcd_clk),
+    .rst_n            (sys_rst_n & sys_init_done),
+    .pixel_xpos       (pixel_xpos),
+    .pixel_ypos       (pixel_ypos),
+    .pixel_in         (disply_data),
+    .h_pixel          ({2'b00, h_disp}),
+    .v_pixel          ({2'b00, v_disp}),
+    .f1_async         (box_found),
+    .c1u_async        (c1_u),
+    .c1v_async        (c1_v),
+    .f2_async         (box2_found),
+    .c2u_async        (c2_u),
+    .c2v_async        (c2_v),
+    .b2_minx_async    (box2_min_x),
+    .b2_maxx_async    (box2_max_x),
+    .b2_miny_async    (box2_min_y),
+    .b2_maxy_async    (box2_max_y),
+    .dist_mm_async    (dist_mm),
+    .dist_valid_async (dist_valid),
+    .enc0             (enc0),
+    .enc1             (enc1),
+    .enc2             (enc2),
+    .enc3             (enc3),
+    .gyro_x           (gyro_x),
+    .gyro_y           (gyro_y),
+    .gyro_z           (gyro_z),
+    .pixel_out        (lcd_rgb_565)
 );
 
 endmodule

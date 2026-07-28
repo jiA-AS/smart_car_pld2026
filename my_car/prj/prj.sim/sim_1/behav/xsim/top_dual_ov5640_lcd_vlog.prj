@@ -78,19 +78,22 @@ verilog xil_defaultlib  --include "../../../../prj.srcs/sources_1/ip/clk_wiz_0" 
 "../../../../../rtl/ddr3_top/ddr3_fifo_ctrl_top.v" \
 "../../../../../rtl/ddr3_top/ddr3_rw.v" \
 "../../../../../rtl/ddr3_top/ddr3_top.v" \
-"../../../../../rtl/green_detect.v" \
+"../../../../../rtl/vision/green_detect.v" \
 "../../../../../rtl/ov5640_dri/i2c_dri.v" \
 "../../../../../rtl/ov5640_dri/i2c_ov5640_rgb565_cfg.v" \
 "../../../../../rtl/lcd_rgb_top/lcd_disply.v" \
 "../../../../../rtl/lcd_rgb_top/lcd_driver.v" \
 "../../../../../rtl/lcd_rgb_top/lcd_rgb_top.v" \
+"../../../../../rtl/lcd_rgb_top/osd/osd_font.v" \
+"../../../../../rtl/lcd_rgb_top/osd/osd_overlay.v" \
 "../../../../../rtl/ov5640_dri/ov5640_dri.v" \
 "../../../../../rtl/picture_size.v" \
 "../../../../../rtl/lcd_rgb_top/rd_id.v" \
 "../../../../../rtl/sensor_link/sensor_link.v" \
 "../../../../../rtl/sensor_link/sl_uart_rx.v" \
 "../../../../../rtl/sensor_link/sl_uart_tx.v" \
-"../../../../../rtl/tracker_ctrl.v" \
+"../../../../../rtl/vision/stereo_dist.v" \
+"../../../../../rtl/sensor_link/tracker_ctrl.v" \
 "../../../../../rtl/sensor_link/v1_decode.v" \
 "../../../../../rtl/top_dual_ov5640_lcd.v" \
 

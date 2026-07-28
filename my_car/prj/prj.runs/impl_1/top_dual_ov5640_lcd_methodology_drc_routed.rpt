@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Sun Jul 26 18:30:15 2026
+| Date         : Tue Jul 28 23:16:55 2026
 | Host         : LAPTOP-2K88VM5F running 64-bit major release  (build 9200)
 | Command      : report_methodology -file top_dual_ov5640_lcd_methodology_drc_routed.rpt -pb top_dual_ov5640_lcd_methodology_drc_routed.pb -rpx top_dual_ov5640_lcd_methodology_drc_routed.rpx
 | Design       : top_dual_ov5640_lcd
@@ -20,20 +20,20 @@ Table of Contents
 1. REPORT SUMMARY
 -----------------
             Netlist: netlist
-          Floorplan: checkpoint_top_dual_ov5640_lcd
+          Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 1049
+             Violations found: 1083
 +-----------+----------+--------------------------------------------------------+------------+
 | Rule      | Severity | Description                                            | Violations |
 +-----------+----------+--------------------------------------------------------+------------+
-| LUTAR-1   | Warning  | LUT drives async reset alert                           | 14         |
+| LUTAR-1   | Warning  | LUT drives async reset alert                           | 25         |
 | PDRC-190  | Warning  | Suboptimally placed synchronized register chain        | 16         |
-| TIMING-6  | Warning  | No common primary clock between related clocks         | 2          |
-| TIMING-7  | Warning  | No common node between related clocks                  | 2          |
+| TIMING-6  | Warning  | No common primary clock between related clocks         | 3          |
+| TIMING-7  | Warning  | No common node between related clocks                  | 3          |
 | TIMING-14 | Warning  | LUT on the clock tree                                  | 3          |
-| TIMING-17 | Warning  | Non-clocked sequential cell                            | 939        |
-| TIMING-18 | Warning  | Missing input or output delay                          | 37         |
+| TIMING-17 | Warning  | Non-clocked sequential cell                            | 959        |
+| TIMING-18 | Warning  | Missing input or output delay                          | 38         |
 | XDCB-5    | Warning  | Runtime inefficient way to find pin objects            | 1          |
 | XDCC-1    | Warning  | Scoped Clock constraint overwritten with the same name | 1          |
 | XDCC-4    | Warning  | User Clock constraint overwritten with the same name   | 1          |
@@ -45,32 +45,32 @@ Table of Contents
 -----------------
 LUTAR-1#1 Warning
 LUT drives async reset alert  
-LUT cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/i[3]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_lcd_driver/data_req_0_reg/CLR, u_lcd_rgb_top/u_lcd_driver/data_req_reg/CLR, u_lcd_rgb_top/u_lcd_driver/h_cnt_reg[0]/CLR, u_lcd_rgb_top/u_lcd_driver/h_cnt_reg[10]/CLR, u_lcd_rgb_top/u_lcd_driver/h_cnt_reg[1]/CLR, u_lcd_rgb_top/u_lcd_driver/h_cnt_reg[2]/CLR, u_lcd_rgb_top/u_lcd_driver/h_cnt_reg[3]/CLR, u_lcd_rgb_top/u_lcd_driver/h_cnt_reg[4]/CLR, u_lcd_rgb_top/u_lcd_driver/h_cnt_reg[5]/CLR, u_lcd_rgb_top/u_lcd_driver/h_cnt_reg[6]/CLR, u_lcd_rgb_top/u_lcd_driver/h_cnt_reg[7]/CLR, u_lcd_rgb_top/u_lcd_driver/h_cnt_reg[8]/CLR, u_lcd_rgb_top/u_lcd_driver/h_cnt_reg[9]/CLR, u_lcd_rgb_top/u_lcd_driver/pixel_xpos_reg[0]/CLR, u_lcd_rgb_top/u_lcd_driver/pixel_xpos_reg[10]/CLR (the first 15 of 138 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/i[3]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ddr3_top/u_ddr3_fifo_ctrl_top/rd_cnt_reg[0]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/rd_cnt_reg[10]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/rd_cnt_reg[11]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/rd_cnt_reg[12]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/rd_cnt_reg[1]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/rd_cnt_reg[2]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/rd_cnt_reg[3]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/rd_cnt_reg[4]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/rd_cnt_reg[5]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/rd_cnt_reg[6]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/rd_cnt_reg[7]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/rd_cnt_reg[8]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/rd_cnt_reg[9]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/i_reg[0]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/i_reg[1]/CLR (the first 15 of 133 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#2 Warning
 LUT drives async reset alert  
-LUT cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wr_load_d0_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/byte_cnt_reg[0]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/byte_cnt_reg[1]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/byte_cnt_reg[2]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/byte_cnt_reg[3]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wfifo_rst_h_reg/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wfifo_wren_reg/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wr_load_d0_reg/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wr_load_d_reg[0]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wr_load_d_reg[10]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wr_load_d_reg[11]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wr_load_d_reg[12]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wr_load_d_reg[13]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wr_load_d_reg[14]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wr_load_d_reg[15]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wr_load_d_reg[1]/CLR (the first 15 of 46 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t[244]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wfifo_rst_h_reg/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wr_load_d0_reg/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wr_load_d_reg[0]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wr_load_d_reg[10]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wr_load_d_reg[11]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wr_load_d_reg[12]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wr_load_d_reg[13]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wr_load_d_reg[14]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wr_load_d_reg[15]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wr_load_d_reg[1]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wr_load_d_reg[2]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wr_load_d_reg[3]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wr_load_d_reg[4]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wr_load_d_reg[5]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wr_load_d_reg[6]/CLR (the first 15 of 98 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#3 Warning
 LUT drives async reset alert  
-LUT cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t[247]_i_1__0, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[0]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[100]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[101]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[102]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[103]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[112]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[113]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[114]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[115]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[116]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[117]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[118]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[119]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[128]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[129]/CLR (the first 15 of 128 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t[255]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ov5640_dri_1/u_cmos_capture_data/byte_flag_d0_reg/CLR, u_ov5640_dri_1/u_cmos_capture_data/byte_flag_reg/CLR, u_ov5640_dri_1/u_cmos_capture_data/cam_data_d0_reg[0]/CLR, u_ov5640_dri_1/u_cmos_capture_data/cam_data_d0_reg[1]/CLR, u_ov5640_dri_1/u_cmos_capture_data/cam_data_d0_reg[2]/CLR, u_ov5640_dri_1/u_cmos_capture_data/cam_data_d0_reg[3]/CLR, u_ov5640_dri_1/u_cmos_capture_data/cam_data_d0_reg[4]/CLR, u_ov5640_dri_1/u_cmos_capture_data/cam_data_d0_reg[5]/CLR, u_ov5640_dri_1/u_cmos_capture_data/cam_data_d0_reg[6]/CLR, u_ov5640_dri_1/u_cmos_capture_data/cam_data_d0_reg[7]/CLR, u_ov5640_dri_1/u_cmos_capture_data/cam_vsync_d0_reg/CLR, u_ov5640_dri_1/u_cmos_capture_data/cam_vsync_d1_reg/CLR, u_ov5640_dri_1/u_cmos_capture_data/cmos_data_t_reg[0]/CLR, u_ov5640_dri_1/u_cmos_capture_data/cmos_data_t_reg[10]/CLR, u_ov5640_dri_1/u_cmos_capture_data/cmos_data_t_reg[11]/CLR (the first 15 of 169 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#4 Warning
 LUT drives async reset alert  
-LUT cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t[255]_i_2__0, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[104]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[105]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[106]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[107]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[108]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[109]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[10]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[110]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[111]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[11]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[120]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[121]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[122]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[123]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[124]/CLR (the first 15 of 128 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t[247]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ov5640_dri_2/u_cmos_capture_data/byte_flag_d0_reg/CLR, u_ov5640_dri_2/u_cmos_capture_data/byte_flag_reg/CLR, u_ov5640_dri_2/u_cmos_capture_data/cam_data_d0_reg[0]/CLR, u_ov5640_dri_2/u_cmos_capture_data/cam_data_d0_reg[1]/CLR, u_ov5640_dri_2/u_cmos_capture_data/cam_data_d0_reg[2]/CLR, u_ov5640_dri_2/u_cmos_capture_data/cam_data_d0_reg[3]/CLR, u_ov5640_dri_2/u_cmos_capture_data/cam_data_d0_reg[4]/CLR, u_ov5640_dri_2/u_cmos_capture_data/cam_data_d0_reg[5]/CLR, u_ov5640_dri_2/u_cmos_capture_data/cam_data_d0_reg[6]/CLR, u_ov5640_dri_2/u_cmos_capture_data/cam_data_d0_reg[7]/CLR, u_ov5640_dri_2/u_cmos_capture_data/cam_vsync_d0_reg/CLR, u_ov5640_dri_2/u_cmos_capture_data/cam_vsync_d1_reg/CLR, u_ov5640_dri_2/u_cmos_capture_data/cmos_data_t_reg[0]/CLR, u_ov5640_dri_2/u_cmos_capture_data/cmos_data_t_reg[10]/CLR, u_ov5640_dri_2/u_cmos_capture_data/cmos_data_t_reg[11]/CLR (the first 15 of 98 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#5 Warning
 LUT drives async reset alert  
-LUT cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t[247]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[0]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[100]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[101]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[102]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[103]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[112]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[113]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[114]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[115]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[116]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[117]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[118]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[119]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[128]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[129]/CLR (the first 15 of 128 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t[249]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[100]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[104]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[112]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[113]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[114]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[115]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[116]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[120]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[128]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[129]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[130]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[131]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[132]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[136]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[137]/CLR (the first 15 of 98 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#6 Warning
 LUT drives async reset alert  
-LUT cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t[255]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[104]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[105]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[106]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[107]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[108]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[109]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[10]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[110]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[111]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[11]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[120]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[121]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[122]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[123]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[124]/CLR (the first 15 of 128 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t[255]_i_2__0, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/byte_cnt_reg[0]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[105]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[106]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[107]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[108]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[109]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[110]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[111]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[121]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[122]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[123]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[124]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[125]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[126]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[127]/CLR (the first 15 of 98 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#7 Warning
@@ -80,117 +80,172 @@ Related violations: <none>
 
 LUTAR-1#8 Warning
 LUT drives async reset alert  
-LUT cell u_green_detect/FSM_sequential_dstate[1]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_green_detect/FSM_sequential_dstate_reg[0]/CLR, u_green_detect/FSM_sequential_dstate_reg[1]/CLR, u_green_detect/dcnt_reg[0]/CLR, u_green_detect/dcnt_reg[1]/CLR, u_green_detect/dcnt_reg[2]/CLR, u_green_detect/dcnt_reg[3]/CLR, u_green_detect/dcnt_reg[4]/CLR, u_green_detect/dcnt_reg[5]/CLR, u_green_detect/dividend_reg[0]/CLR, u_green_detect/dividend_reg[10]/CLR, u_green_detect/dividend_reg[11]/CLR, u_green_detect/dividend_reg[12]/CLR, u_green_detect/dividend_reg[13]/CLR, u_green_detect/dividend_reg[14]/CLR, u_green_detect/dividend_reg[15]/CLR (the first 15 of 124 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_green_detect/FSM_sequential_dstate[1]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_green_detect/FSM_sequential_dstate_reg[0]/CLR, u_green_detect/FSM_sequential_dstate_reg[1]/CLR, u_green_detect/dcnt_reg[0]/CLR, u_green_detect/dcnt_reg[1]/CLR, u_green_detect/dcnt_reg[2]/CLR, u_green_detect/dcnt_reg[3]/CLR, u_green_detect/dcnt_reg[4]/CLR, u_green_detect/dcnt_reg[5]/CLR, u_green_detect/dividend_reg[0]/CLR, u_green_detect/dividend_reg[10]/CLR, u_green_detect/dividend_reg[11]/CLR, u_green_detect/dividend_reg[12]/CLR, u_green_detect/dividend_reg[13]/CLR, u_green_detect/dividend_reg[14]/CLR, u_green_detect/dividend_reg[15]/CLR (the first 15 of 121 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#9 Warning
 LUT drives async reset alert  
-LUT cell u_green_detect/cmos_h_pixel[7]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_picture_size/cmos_h_pixel_reg[10]/CLR, u_picture_size/cmos_h_pixel_reg[5]/CLR, u_picture_size/cmos_h_pixel_reg[7]/CLR, u_picture_size/cmos_h_pixel_reg[8]/CLR, u_picture_size/cmos_h_pixel_reg[9]/CLR, u_picture_size/cmos_v_pixel_reg[3]/CLR, u_picture_size/cmos_v_pixel_reg[4]/CLR, u_picture_size/cmos_v_pixel_reg[5]/CLR, u_picture_size/cmos_v_pixel_reg[6]/CLR, u_sensor_link/u_tracker/FSM_sequential_state_reg[0]/CLR, u_sensor_link/u_tracker/FSM_sequential_state_reg[1]/CLR, u_sensor_link/u_tracker/last_dir_reg/CLR, u_sensor_link/u_tracker/lost_cnt_reg[0]/CLR, u_sensor_link/u_tracker/lost_cnt_reg[1]/CLR, u_sensor_link/u_tracker/lost_cnt_reg[2]/CLR (the first 15 of 124 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_green_detect/gd_min_x[9]_i_3, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_stereo_dist/dist_mm_reg[0]/CLR, u_stereo_dist/dist_mm_reg[10]/CLR, u_stereo_dist/dist_mm_reg[11]/CLR, u_stereo_dist/dist_mm_reg[12]/CLR, u_stereo_dist/dist_mm_reg[13]/CLR, u_stereo_dist/dist_mm_reg[1]/CLR, u_stereo_dist/dist_mm_reg[2]/CLR, u_stereo_dist/dist_mm_reg[3]/CLR, u_stereo_dist/dist_mm_reg[4]/CLR, u_stereo_dist/dist_mm_reg[5]/CLR, u_stereo_dist/dist_mm_reg[6]/CLR, u_stereo_dist/dist_mm_reg[7]/CLR, u_stereo_dist/dist_mm_reg[8]/CLR, u_stereo_dist/dist_mm_reg[9]/CLR, u_sensor_link/u_decode/enc0_reg[15]/CLR (the first 15 of 121 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#10 Warning
 LUT drives async reset alert  
-LUT cell u_green_detect/idle_cnt[14]_i_3, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_green_detect/cnt_reg[0]/CLR, u_green_detect/cnt_reg[10]/CLR, u_green_detect/cnt_reg[11]/CLR, u_green_detect/cnt_reg[12]/CLR, u_green_detect/cnt_reg[13]/CLR, u_green_detect/cnt_reg[14]/CLR, u_green_detect/cnt_reg[15]/CLR, u_green_detect/cnt_reg[16]/CLR, u_green_detect/cnt_reg[17]/CLR, u_green_detect/cnt_reg[1]/CLR, u_green_detect/cnt_reg[2]/CLR, u_green_detect/cnt_reg[3]/CLR, u_green_detect/cnt_reg[4]/CLR, u_green_detect/cnt_reg[5]/CLR, u_green_detect/cnt_reg[6]/CLR (the first 15 of 124 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_green_detect/idle_cnt[14]_i_3, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_green_detect/cnt_reg[0]/CLR, u_green_detect/cnt_reg[10]/CLR, u_green_detect/cnt_reg[11]/CLR, u_green_detect/cnt_reg[12]/CLR, u_green_detect/cnt_reg[13]/CLR, u_green_detect/cnt_reg[14]/CLR, u_green_detect/cnt_reg[15]/CLR, u_green_detect/cnt_reg[16]/CLR, u_green_detect/cnt_reg[17]/CLR, u_green_detect/cnt_reg[1]/CLR, u_green_detect/cnt_reg[2]/CLR, u_green_detect/cnt_reg[3]/CLR, u_green_detect/cnt_reg[4]/CLR, u_green_detect/cnt_reg[5]/CLR, u_green_detect/cnt_reg[6]/CLR (the first 15 of 121 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#11 Warning
 LUT drives async reset alert  
-LUT cell u_ov5640_dri_1/cam_vsync_d0_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ov5640_dri_2/u_cmos_capture_data/byte_flag_d0_reg/CLR, u_ov5640_dri_2/u_cmos_capture_data/byte_flag_reg/CLR, u_ov5640_dri_2/u_cmos_capture_data/cam_data_d0_reg[0]/CLR, u_ov5640_dri_2/u_cmos_capture_data/cam_data_d0_reg[1]/CLR, u_ov5640_dri_2/u_cmos_capture_data/cam_data_d0_reg[2]/CLR, u_ov5640_dri_2/u_cmos_capture_data/cam_data_d0_reg[3]/CLR, u_ov5640_dri_2/u_cmos_capture_data/cam_data_d0_reg[4]/CLR, u_ov5640_dri_2/u_cmos_capture_data/cam_data_d0_reg[5]/CLR, u_ov5640_dri_2/u_cmos_capture_data/cam_data_d0_reg[6]/CLR, u_ov5640_dri_2/u_cmos_capture_data/cam_data_d0_reg[7]/CLR, u_ov5640_dri_2/u_cmos_capture_data/cam_vsync_d0_reg/CLR, u_ov5640_dri_2/u_cmos_capture_data/cam_vsync_d1_reg/CLR, u_ov5640_dri_2/u_cmos_capture_data/cmos_data_t_reg[0]/CLR, u_ov5640_dri_2/u_cmos_capture_data/cmos_data_t_reg[10]/CLR, u_ov5640_dri_2/u_cmos_capture_data/cmos_data_t_reg[11]/CLR (the first 15 of 66 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_green_detect_2/FSM_sequential_dstate[1]_i_2__0, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_green_detect_2/FSM_sequential_dstate_reg[0]/CLR, u_green_detect_2/FSM_sequential_dstate_reg[1]/CLR, u_green_detect_2/dcnt_reg[0]/CLR, u_green_detect_2/dcnt_reg[1]/CLR, u_green_detect_2/dcnt_reg[2]/CLR, u_green_detect_2/dcnt_reg[3]/CLR, u_green_detect_2/dcnt_reg[4]/CLR, u_green_detect_2/dcnt_reg[5]/CLR, u_green_detect_2/dividend_reg[10]/CLR, u_green_detect_2/dividend_reg[11]/CLR, u_green_detect_2/dividend_reg[12]/CLR, u_green_detect_2/dividend_reg[13]/CLR, u_green_detect_2/dividend_reg[14]/CLR, u_green_detect_2/dividend_reg[15]/CLR, u_green_detect_2/dividend_reg[16]/CLR (the first 15 of 121 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#12 Warning
 LUT drives async reset alert  
-LUT cell u_ov5640_dri_1/u_i2c_dr/i2c_exec_i_3, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_green_detect/dividend_reg[31]/CLR, u_green_detect/divisor_reg[1]/CLR, u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[0]/CLR, u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[10]/CLR, u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[11]/CLR, u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[12]/CLR, u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[13]/CLR, u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[15]/CLR, u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[16]/CLR, u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[17]/CLR, u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[18]/CLR, u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[19]/CLR, u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[1]/CLR, u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[20]/CLR, u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[21]/CLR (the first 15 of 101 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_green_detect_2/idle_cnt[14]_i_3__0, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_picture_size/cmos_v_pixel_reg[3]/CLR, u_stereo_dist/dist_valid_reg/CLR, u_stereo_dist/rem_reg[27]/CLR, u_stereo_dist/rem_reg[28]/CLR, u_stereo_dist/rem_reg[29]/CLR, u_stereo_dist/rem_reg[30]/CLR, u_green_detect_2/cnt_reg[0]/CLR, u_green_detect_2/cnt_reg[10]/CLR, u_green_detect_2/cnt_reg[11]/CLR, u_green_detect_2/cnt_reg[12]/CLR, u_green_detect_2/cnt_reg[13]/CLR, u_green_detect_2/cnt_reg[14]/CLR, u_green_detect_2/cnt_reg[15]/CLR, u_green_detect_2/cnt_reg[16]/CLR, u_green_detect_2/cnt_reg[17]/CLR (the first 15 of 121 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#13 Warning
 LUT drives async reset alert  
-LUT cell u_ov5640_dri_2/u_i2c_dr/i2c_exec_i_3__0, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[0]/CLR, u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[10]/CLR, u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[11]/CLR, u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[12]/CLR, u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[13]/CLR, u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[15]/CLR, u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[16]/CLR, u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[17]/CLR, u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[18]/CLR, u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[19]/CLR, u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[1]/CLR, u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[20]/CLR, u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[21]/CLR, u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[22]/CLR, u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[2]/CLR (the first 15 of 99 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_green_detect_2/quotient[9]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_green_detect/gd_u_reg[0]/CLR, u_green_detect/gd_u_reg[1]/CLR, u_green_detect/gd_u_reg[2]/CLR, u_green_detect/gd_u_reg[3]/CLR, u_green_detect/gd_u_reg[4]/CLR, u_green_detect/gd_u_reg[5]/CLR, u_green_detect/gd_u_reg[6]/CLR, u_green_detect/gd_u_reg[7]/CLR, u_green_detect/gd_u_reg[8]/CLR, u_green_detect/gd_u_reg[9]/CLR, u_green_detect/gd_v_reg[0]/CLR, u_green_detect/quo_u_reg[0]/CLR, u_green_detect/quo_u_reg[1]/CLR, u_green_detect/quo_u_reg[2]/CLR, u_green_detect/quo_u_reg[3]/CLR (the first 15 of 121 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#14 Warning
 LUT drives async reset alert  
-LUT cell u_sensor_link/u_ctrl_tx/u_tx/mode[0]_i_3, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_sensor_link/u_tracker/left_reg[0]/CLR, u_sensor_link/u_tracker/left_reg[10]/CLR, u_sensor_link/u_tracker/left_reg[15]/CLR, u_sensor_link/u_tracker/left_reg[1]/CLR, u_sensor_link/u_tracker/left_reg[2]/CLR, u_sensor_link/u_tracker/left_reg[3]/CLR, u_sensor_link/u_tracker/left_reg[4]/CLR, u_sensor_link/u_tracker/left_reg[5]/CLR, u_sensor_link/u_tracker/left_reg[6]/CLR, u_sensor_link/u_tracker/left_reg[7]/CLR, u_sensor_link/u_tracker/left_reg[8]/CLR, u_sensor_link/u_tracker/left_reg[9]/CLR, u_sensor_link/u_tracker/mode_reg[0]/CLR, u_sensor_link/u_tracker/right_reg[0]/CLR, u_sensor_link/u_tracker/right_reg[10]/CLR (the first 15 of 101 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_lcd_rgb_top/b2Ya[9]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_osd_overlay/b2Ya_reg[0]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Ya_reg[1]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Ya_reg[2]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Ya_reg[3]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Ya_reg[4]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Ya_reg[5]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Ya_reg[6]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Ya_reg[7]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Ya_reg[8]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Ya_reg[9]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Yb_reg[0]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Yb_reg[1]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Yb_reg[2]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Yb_reg[3]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Yb_reg[4]/CLR (the first 15 of 89 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#15 Warning
+LUT drives async reset alert  
+LUT cell u_lcd_rgb_top/b2xa[9]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_osd_overlay/b2xa_reg[0]/CLR, u_lcd_rgb_top/u_osd_overlay/b2xa_reg[1]/CLR, u_lcd_rgb_top/u_osd_overlay/b2xa_reg[2]/CLR, u_lcd_rgb_top/u_osd_overlay/b2xa_reg[3]/CLR, u_lcd_rgb_top/u_osd_overlay/b2xa_reg[4]/CLR, u_lcd_rgb_top/u_osd_overlay/b2xa_reg[5]/CLR, u_lcd_rgb_top/u_osd_overlay/b2xa_reg[6]/CLR, u_lcd_rgb_top/u_osd_overlay/b2xa_reg[7]/CLR, u_lcd_rgb_top/u_osd_overlay/b2xa_reg[8]/CLR, u_lcd_rgb_top/u_osd_overlay/b2xa_reg[9]/CLR, u_lcd_rgb_top/u_osd_overlay/b2xb_reg[0]/CLR, u_lcd_rgb_top/u_osd_overlay/b2xb_reg[1]/CLR, u_lcd_rgb_top/u_osd_overlay/b2xb_reg[2]/CLR, u_lcd_rgb_top/u_osd_overlay/b2xb_reg[3]/CLR, u_lcd_rgb_top/u_osd_overlay/b2xb_reg[4]/CLR (the first 15 of 108 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#16 Warning
+LUT drives async reset alert  
+LUT cell u_lcd_rgb_top/e0a[31]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_osd_overlay/e0a_reg[0]/CLR, u_lcd_rgb_top/u_osd_overlay/e0a_reg[10]/CLR, u_lcd_rgb_top/u_osd_overlay/e0a_reg[11]/CLR, u_lcd_rgb_top/u_osd_overlay/e0a_reg[12]/CLR, u_lcd_rgb_top/u_osd_overlay/e0a_reg[13]/CLR, u_lcd_rgb_top/u_osd_overlay/e0a_reg[14]/CLR, u_lcd_rgb_top/u_osd_overlay/e0a_reg[15]/CLR, u_lcd_rgb_top/u_osd_overlay/e0a_reg[16]/CLR, u_lcd_rgb_top/u_osd_overlay/e0a_reg[17]/CLR, u_lcd_rgb_top/u_osd_overlay/e0a_reg[18]/CLR, u_lcd_rgb_top/u_osd_overlay/e0a_reg[19]/CLR, u_lcd_rgb_top/u_osd_overlay/e0a_reg[1]/CLR, u_lcd_rgb_top/u_osd_overlay/e0a_reg[20]/CLR, u_lcd_rgb_top/u_osd_overlay/e0a_reg[21]/CLR, u_lcd_rgb_top/u_osd_overlay/e0a_reg[22]/CLR (the first 15 of 128 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#17 Warning
+LUT drives async reset alert  
+LUT cell u_lcd_rgb_top/e2a[31]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_osd_overlay/e2a_reg[0]/CLR, u_lcd_rgb_top/u_osd_overlay/e2a_reg[10]/CLR, u_lcd_rgb_top/u_osd_overlay/e2a_reg[11]/CLR, u_lcd_rgb_top/u_osd_overlay/e2a_reg[12]/CLR, u_lcd_rgb_top/u_osd_overlay/e2a_reg[13]/CLR, u_lcd_rgb_top/u_osd_overlay/e2a_reg[14]/CLR, u_lcd_rgb_top/u_osd_overlay/e2a_reg[15]/CLR, u_lcd_rgb_top/u_osd_overlay/e2a_reg[16]/CLR, u_lcd_rgb_top/u_osd_overlay/e2a_reg[17]/CLR, u_lcd_rgb_top/u_osd_overlay/e2a_reg[18]/CLR, u_lcd_rgb_top/u_osd_overlay/e2a_reg[19]/CLR, u_lcd_rgb_top/u_osd_overlay/e2a_reg[1]/CLR, u_lcd_rgb_top/u_osd_overlay/e2a_reg[20]/CLR, u_lcd_rgb_top/u_osd_overlay/e2a_reg[21]/CLR, u_lcd_rgb_top/u_osd_overlay/e2a_reg[22]/CLR (the first 15 of 128 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#18 Warning
+LUT drives async reset alert  
+LUT cell u_lcd_rgb_top/gxa[15]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_osd_overlay/gxa_reg[0]/CLR, u_lcd_rgb_top/u_osd_overlay/gxa_reg[10]/CLR, u_lcd_rgb_top/u_osd_overlay/gxa_reg[11]/CLR, u_lcd_rgb_top/u_osd_overlay/gxa_reg[12]/CLR, u_lcd_rgb_top/u_osd_overlay/gxa_reg[13]/CLR, u_lcd_rgb_top/u_osd_overlay/gxa_reg[14]/CLR, u_lcd_rgb_top/u_osd_overlay/gxa_reg[15]/CLR, u_lcd_rgb_top/u_osd_overlay/gxa_reg[1]/CLR, u_lcd_rgb_top/u_osd_overlay/gxa_reg[2]/CLR, u_lcd_rgb_top/u_osd_overlay/gxa_reg[3]/CLR, u_lcd_rgb_top/u_osd_overlay/gxa_reg[4]/CLR, u_lcd_rgb_top/u_osd_overlay/gxa_reg[5]/CLR, u_lcd_rgb_top/u_osd_overlay/gxa_reg[6]/CLR, u_lcd_rgb_top/u_osd_overlay/gxa_reg[7]/CLR, u_lcd_rgb_top/u_osd_overlay/gxa_reg[8]/CLR (the first 15 of 96 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#19 Warning
+LUT drives async reset alert  
+LUT cell u_lcd_rgb_top/y_d1[5]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_lcd_driver/pixel_xpos_reg[10]/CLR, u_lcd_rgb_top/u_lcd_driver/pixel_xpos_reg[8]/CLR, u_lcd_rgb_top/u_lcd_driver/pixel_xpos_reg[9]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Xa_reg[0]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Xa_reg[1]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Xa_reg[2]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Xa_reg[3]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Xa_reg[4]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Xa_reg[5]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Xa_reg[6]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Xa_reg[7]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Xa_reg[8]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Xa_reg[9]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Xb_reg[0]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Xb_reg[1]/CLR (the first 15 of 87 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#20 Warning
+LUT drives async reset alert  
+LUT cell u_ov5640_dri_1/u_i2c_dr/i2c_exec_i_3__0, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[0]/CLR, u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[10]/CLR, u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[11]/CLR, u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[12]/CLR, u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[13]/CLR, u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[15]/CLR, u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[16]/CLR, u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[17]/CLR, u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[18]/CLR, u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[19]/CLR, u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[1]/CLR, u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[20]/CLR, u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[21]/CLR, u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[22]/CLR, u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[2]/CLR (the first 15 of 99 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#21 Warning
+LUT drives async reset alert  
+LUT cell u_ov5640_dri_2/u_i2c_dr/i2c_exec_i_3, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[0]/CLR, u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[10]/CLR, u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[11]/CLR, u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[12]/CLR, u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[13]/CLR, u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[15]/CLR, u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[16]/CLR, u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[17]/CLR, u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[18]/CLR, u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[19]/CLR, u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[1]/CLR, u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[20]/CLR, u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[21]/CLR, u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[22]/CLR, u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[2]/CLR (the first 15 of 99 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#22 Warning
+LUT drives async reset alert  
+LUT cell u_sensor_link/u_ctrl_tx/u_tx/FSM_sequential_state[1]_i_2__1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_sensor_link/u_tracker/FSM_sequential_state_reg[0]/CLR, u_sensor_link/u_tracker/FSM_sequential_state_reg[1]/CLR, u_sensor_link/u_tracker/left_reg[0]/CLR, u_sensor_link/u_tracker/left_reg[10]/CLR, u_sensor_link/u_tracker/left_reg[15]/CLR, u_sensor_link/u_tracker/left_reg[1]/CLR, u_sensor_link/u_tracker/left_reg[2]/CLR, u_sensor_link/u_tracker/left_reg[3]/CLR, u_sensor_link/u_tracker/left_reg[4]/CLR, u_sensor_link/u_tracker/left_reg[5]/CLR, u_sensor_link/u_tracker/left_reg[6]/CLR, u_sensor_link/u_tracker/left_reg[7]/CLR, u_sensor_link/u_tracker/left_reg[8]/CLR, u_sensor_link/u_tracker/left_reg[9]/CLR, u_sensor_link/u_tracker/mode_reg[0]/CLR (the first 15 of 125 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#23 Warning
+LUT drives async reset alert  
+LUT cell u_sensor_link/u_decode/div_4_cnt_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_picture_size/cmos_h_pixel_reg[10]/CLR, u_picture_size/cmos_h_pixel_reg[5]/CLR, u_picture_size/cmos_h_pixel_reg[7]/CLR, u_picture_size/cmos_h_pixel_reg[8]/CLR, u_picture_size/cmos_h_pixel_reg[9]/CLR, u_picture_size/cmos_v_pixel_reg[4]/CLR, u_picture_size/cmos_v_pixel_reg[5]/CLR, u_picture_size/cmos_v_pixel_reg[6]/CLR, u_lcd_rgb_top/u_clk_div/clk_12_5m_reg/CLR, u_lcd_rgb_top/u_clk_div/clk_25m_reg/CLR, u_lcd_rgb_top/u_clk_div/div_4_cnt_reg/CLR, u_lcd_rgb_top/u_rd_id/lcd_id_reg[12]/CLR, u_lcd_rgb_top/u_rd_id/lcd_id_reg[13]/CLR, u_lcd_rgb_top/u_rd_id/lcd_id_reg[14]/CLR, u_lcd_rgb_top/u_rd_id/lcd_id_reg[1]/CLR (the first 15 of 121 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#24 Warning
+LUT drives async reset alert  
+LUT cell u_sensor_link/u_decode/enc0[30]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_sensor_link/u_decode/enc0_reg[10]/CLR, u_sensor_link/u_decode/enc0_reg[11]/CLR, u_sensor_link/u_decode/enc0_reg[12]/CLR, u_sensor_link/u_decode/enc0_reg[13]/CLR, u_sensor_link/u_decode/enc0_reg[14]/CLR, u_sensor_link/u_decode/enc0_reg[17]/CLR, u_sensor_link/u_decode/enc0_reg[18]/CLR, u_sensor_link/u_decode/enc0_reg[19]/CLR, u_sensor_link/u_decode/enc0_reg[1]/CLR, u_sensor_link/u_decode/enc0_reg[20]/CLR, u_sensor_link/u_decode/enc0_reg[21]/CLR, u_sensor_link/u_decode/enc0_reg[22]/CLR, u_sensor_link/u_decode/enc0_reg[26]/CLR, u_sensor_link/u_decode/enc0_reg[27]/CLR, u_sensor_link/u_decode/enc0_reg[28]/CLR (the first 15 of 121 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#25 Warning
+LUT drives async reset alert  
+LUT cell u_stereo_dist/dvs[9]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_green_detect/dividend_reg[31]/CLR, u_green_detect/divisor_reg[0]/CLR, u_green_detect/divisor_reg[1]/CLR, u_green_detect/divisor_reg[2]/CLR, u_green_detect/divisor_reg[3]/CLR, u_green_detect/divisor_reg[6]/CLR, u_green_detect/divisor_reg[7]/CLR, u_green_detect/rem_reg[0]/CLR, u_green_detect/rem_reg[1]/CLR, u_green_detect/rem_reg[2]/CLR, u_green_detect/rem_reg[5]/CLR, u_green_detect/rem_reg[6]/CLR, u_stereo_dist/dcnt_reg[0]/CLR, u_stereo_dist/dcnt_reg[1]/CLR, u_stereo_dist/dcnt_reg[2]/CLR (the first 15 of 121 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 PDRC-190#1 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/u_rd_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d2_reg in site SLICE_X51Y108 is part of a synchronized register chain that is suboptimally placed as the load FDSE cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/u_rd_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d3_reg is not placed in the same (SLICE) site.
+The FDRE cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/u_rd_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d2_reg in site SLICE_X53Y100 is part of a synchronized register chain that is suboptimally placed as the load FDSE cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/u_rd_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d3_reg is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#2 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/u_wr_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d2_reg in site SLICE_X37Y133 is part of a synchronized register chain that is suboptimally placed as the load FDSE cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/u_wr_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d3_reg is not placed in the same (SLICE) site.
+The FDRE cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/u_wr_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d2_reg in site SLICE_X59Y129 is part of a synchronized register chain that is suboptimally placed as the load FDSE cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/u_wr_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d3_reg is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#3 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/u_rd_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d2_reg in site SLICE_X52Y111 is part of a synchronized register chain that is suboptimally placed as the load FDSE cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/u_rd_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d3_reg is not placed in the same (SLICE) site.
+The FDRE cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/u_rd_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d2_reg in site SLICE_X38Y107 is part of a synchronized register chain that is suboptimally placed as the load FDSE cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/u_rd_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d3_reg is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#4 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/u_wr_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d2_reg in site SLICE_X37Y131 is part of a synchronized register chain that is suboptimally placed as the load FDSE cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/u_wr_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d3_reg is not placed in the same (SLICE) site.
+The FDRE cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/u_wr_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d2_reg in site SLICE_X56Y116 is part of a synchronized register chain that is suboptimally placed as the load FDSE cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/u_wr_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d3_reg is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#5 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[0] in site SLICE_X28Y126 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[0] is not placed in the same (SLICE) site.
+The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[0] in site SLICE_X31Y117 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[0] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#6 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[10] in site SLICE_X33Y127 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[10] is not placed in the same (SLICE) site.
+The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[10] in site SLICE_X34Y117 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[10] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#7 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[11] in site SLICE_X32Y126 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[11] is not placed in the same (SLICE) site.
+The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[11] in site SLICE_X32Y121 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[11] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#8 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[1] in site SLICE_X31Y124 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[1] is not placed in the same (SLICE) site.
+The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[1] in site SLICE_X35Y121 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[1] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#9 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[2] in site SLICE_X31Y127 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[2] is not placed in the same (SLICE) site.
+The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[2] in site SLICE_X29Y120 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[2] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#10 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[3] in site SLICE_X32Y128 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[3] is not placed in the same (SLICE) site.
+The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[3] in site SLICE_X34Y121 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[3] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#11 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[4] in site SLICE_X31Y129 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[4] is not placed in the same (SLICE) site.
+The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[4] in site SLICE_X31Y119 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[4] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#12 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[5] in site SLICE_X30Y127 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[5] is not placed in the same (SLICE) site.
+The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[5] in site SLICE_X30Y118 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[5] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#13 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[6] in site SLICE_X29Y124 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[6] is not placed in the same (SLICE) site.
+The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[6] in site SLICE_X32Y118 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[6] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#14 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[7] in site SLICE_X29Y128 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[7] is not placed in the same (SLICE) site.
+The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[7] in site SLICE_X33Y117 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[7] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#15 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[8] in site SLICE_X29Y126 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[8] is not placed in the same (SLICE) site.
+The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[8] in site SLICE_X34Y119 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[8] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#16 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[9] in site SLICE_X30Y125 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[9] is not placed in the same (SLICE) site.
+The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[9] in site SLICE_X29Y118 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[9] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 TIMING-6#1 Warning
@@ -199,6 +254,11 @@ The clocks clk_pll_i and cmos_pclk are related (timed together) but they have no
 Related violations: <none>
 
 TIMING-6#2 Warning
+No common primary clock between related clocks  
+The clocks cmos_pclk and clk_out2_clk_wiz_0 are related (timed together) but they have no common primary clock. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks cmos_pclk] -to [get_clocks clk_out2_clk_wiz_0]
+Related violations: <none>
+
+TIMING-6#3 Warning
 No common primary clock between related clocks  
 The clocks cmos_pclk and clk_pll_i are related (timed together) but they have no common primary clock. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks cmos_pclk] -to [get_clocks clk_pll_i]
 Related violations: <none>
@@ -209,6 +269,11 @@ The clocks clk_pll_i and cmos_pclk are related (timed together) but they have no
 Related violations: <none>
 
 TIMING-7#2 Warning
+No common node between related clocks  
+The clocks cmos_pclk and clk_out2_clk_wiz_0 are related (timed together) but they have no common node. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks cmos_pclk] -to [get_clocks clk_out2_clk_wiz_0]
+Related violations: <none>
+
+TIMING-7#3 Warning
 No common node between related clocks  
 The clocks cmos_pclk and clk_pll_i are related (timed together) but they have no common node. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks cmos_pclk] -to [get_clocks clk_pll_i]
 Related violations: <none>
@@ -225,7 +290,7 @@ Related violations: <none>
 
 TIMING-14#3 Warning
 LUT on the clock tree  
-The LUT u_lcd_rgb_top/u_rd_id/lcd_pclk_OBUF_BUFG_inst_i_6 has been found on the clock tree. Run opt_design to optimize the clock trees, then re-run report_methodology. If LUT(s) are still present in the clock trees, modify the RTL or the synthesis options accordingly to move the clock gating logic to dedicated clock enable resources. Keep in mind that post-opt_design database cannot be used for pin-planning tasks
+The LUT u_lcd_rgb_top/u_rd_id/lcd_pclk_OBUF_BUFG_inst_i_5 has been found on the clock tree. Run opt_design to optimize the clock trees, then re-run report_methodology. If LUT(s) are still present in the clock trees, modify the RTL or the synthesis options accordingly to move the clock gating logic to dedicated clock enable resources. Keep in mind that post-opt_design database cannot be used for pin-planning tasks
 Related violations: <none>
 
 TIMING-17#1 Warning
@@ -2930,1995 +2995,2095 @@ Related violations: <none>
 
 TIMING-17#541 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/idle_cnt_reg[0]/C is not reached by a timing clock
+The clock pin u_green_detect/gd_v_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#542 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/idle_cnt_reg[10]/C is not reached by a timing clock
+The clock pin u_green_detect/gd_v_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#543 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/idle_cnt_reg[11]/C is not reached by a timing clock
+The clock pin u_green_detect/gd_v_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#544 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/idle_cnt_reg[12]/C is not reached by a timing clock
+The clock pin u_green_detect/gd_v_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#545 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/idle_cnt_reg[13]/C is not reached by a timing clock
+The clock pin u_green_detect/gd_v_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#546 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/idle_cnt_reg[14]/C is not reached by a timing clock
+The clock pin u_green_detect/gd_v_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#547 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/idle_cnt_reg[1]/C is not reached by a timing clock
+The clock pin u_green_detect/gd_v_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#548 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/idle_cnt_reg[2]/C is not reached by a timing clock
+The clock pin u_green_detect/gd_v_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#549 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/idle_cnt_reg[3]/C is not reached by a timing clock
+The clock pin u_green_detect/gd_v_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#550 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/idle_cnt_reg[4]/C is not reached by a timing clock
+The clock pin u_green_detect/gd_v_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#551 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/idle_cnt_reg[5]/C is not reached by a timing clock
+The clock pin u_green_detect/idle_cnt_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#552 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/idle_cnt_reg[6]/C is not reached by a timing clock
+The clock pin u_green_detect/idle_cnt_reg[10]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#553 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/idle_cnt_reg[7]/C is not reached by a timing clock
+The clock pin u_green_detect/idle_cnt_reg[11]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#554 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/idle_cnt_reg[8]/C is not reached by a timing clock
+The clock pin u_green_detect/idle_cnt_reg[12]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#555 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/idle_cnt_reg[9]/C is not reached by a timing clock
+The clock pin u_green_detect/idle_cnt_reg[13]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#556 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/max_x_reg[0]/C is not reached by a timing clock
+The clock pin u_green_detect/idle_cnt_reg[14]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#557 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/max_x_reg[1]/C is not reached by a timing clock
+The clock pin u_green_detect/idle_cnt_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#558 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/max_x_reg[2]/C is not reached by a timing clock
+The clock pin u_green_detect/idle_cnt_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#559 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/max_x_reg[3]/C is not reached by a timing clock
+The clock pin u_green_detect/idle_cnt_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#560 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/max_x_reg[4]/C is not reached by a timing clock
+The clock pin u_green_detect/idle_cnt_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#561 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/max_x_reg[5]/C is not reached by a timing clock
+The clock pin u_green_detect/idle_cnt_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#562 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/max_x_reg[6]/C is not reached by a timing clock
+The clock pin u_green_detect/idle_cnt_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#563 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/max_x_reg[7]/C is not reached by a timing clock
+The clock pin u_green_detect/idle_cnt_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#564 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/max_x_reg[8]/C is not reached by a timing clock
+The clock pin u_green_detect/idle_cnt_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#565 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/max_x_reg[9]/C is not reached by a timing clock
+The clock pin u_green_detect/idle_cnt_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#566 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/max_y_reg[0]/C is not reached by a timing clock
+The clock pin u_green_detect/max_x_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#567 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/max_y_reg[1]/C is not reached by a timing clock
+The clock pin u_green_detect/max_x_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#568 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/max_y_reg[2]/C is not reached by a timing clock
+The clock pin u_green_detect/max_x_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#569 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/max_y_reg[3]/C is not reached by a timing clock
+The clock pin u_green_detect/max_x_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#570 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/max_y_reg[4]/C is not reached by a timing clock
+The clock pin u_green_detect/max_x_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#571 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/max_y_reg[5]/C is not reached by a timing clock
+The clock pin u_green_detect/max_x_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#572 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/max_y_reg[6]/C is not reached by a timing clock
+The clock pin u_green_detect/max_x_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#573 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/max_y_reg[7]/C is not reached by a timing clock
+The clock pin u_green_detect/max_x_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#574 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/max_y_reg[8]/C is not reached by a timing clock
+The clock pin u_green_detect/max_x_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#575 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/max_y_reg[9]/C is not reached by a timing clock
+The clock pin u_green_detect/max_x_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#576 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/min_x_reg[0]/C is not reached by a timing clock
+The clock pin u_green_detect/max_y_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#577 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/min_x_reg[1]/C is not reached by a timing clock
+The clock pin u_green_detect/max_y_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#578 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/min_x_reg[2]/C is not reached by a timing clock
+The clock pin u_green_detect/max_y_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#579 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/min_x_reg[3]/C is not reached by a timing clock
+The clock pin u_green_detect/max_y_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#580 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/min_x_reg[4]/C is not reached by a timing clock
+The clock pin u_green_detect/max_y_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#581 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/min_x_reg[5]/C is not reached by a timing clock
+The clock pin u_green_detect/max_y_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#582 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/min_x_reg[6]/C is not reached by a timing clock
+The clock pin u_green_detect/max_y_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#583 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/min_x_reg[7]/C is not reached by a timing clock
+The clock pin u_green_detect/max_y_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#584 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/min_x_reg[8]/C is not reached by a timing clock
+The clock pin u_green_detect/max_y_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#585 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/min_x_reg[9]/C is not reached by a timing clock
+The clock pin u_green_detect/max_y_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#586 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/min_y_reg[0]/C is not reached by a timing clock
+The clock pin u_green_detect/min_x_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#587 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/min_y_reg[1]/C is not reached by a timing clock
+The clock pin u_green_detect/min_x_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#588 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/min_y_reg[2]/C is not reached by a timing clock
+The clock pin u_green_detect/min_x_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#589 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/min_y_reg[3]/C is not reached by a timing clock
+The clock pin u_green_detect/min_x_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#590 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/min_y_reg[4]/C is not reached by a timing clock
+The clock pin u_green_detect/min_x_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#591 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/min_y_reg[5]/C is not reached by a timing clock
+The clock pin u_green_detect/min_x_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#592 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/min_y_reg[6]/C is not reached by a timing clock
+The clock pin u_green_detect/min_x_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#593 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/min_y_reg[7]/C is not reached by a timing clock
+The clock pin u_green_detect/min_x_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#594 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/min_y_reg[8]/C is not reached by a timing clock
+The clock pin u_green_detect/min_x_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#595 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/min_y_reg[9]/C is not reached by a timing clock
+The clock pin u_green_detect/min_x_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#596 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/quo_u_reg[0]/C is not reached by a timing clock
+The clock pin u_green_detect/min_y_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#597 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/quo_u_reg[1]/C is not reached by a timing clock
+The clock pin u_green_detect/min_y_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#598 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/quo_u_reg[2]/C is not reached by a timing clock
+The clock pin u_green_detect/min_y_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#599 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/quo_u_reg[3]/C is not reached by a timing clock
+The clock pin u_green_detect/min_y_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#600 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/quo_u_reg[4]/C is not reached by a timing clock
+The clock pin u_green_detect/min_y_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#601 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/quo_u_reg[5]/C is not reached by a timing clock
+The clock pin u_green_detect/min_y_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#602 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/quo_u_reg[6]/C is not reached by a timing clock
+The clock pin u_green_detect/min_y_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#603 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/quo_u_reg[7]/C is not reached by a timing clock
+The clock pin u_green_detect/min_y_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#604 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/quo_u_reg[8]/C is not reached by a timing clock
+The clock pin u_green_detect/min_y_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#605 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/quo_u_reg[9]/C is not reached by a timing clock
+The clock pin u_green_detect/min_y_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#606 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/quotient_reg[0]/C is not reached by a timing clock
+The clock pin u_green_detect/quo_u_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#607 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/quotient_reg[1]/C is not reached by a timing clock
+The clock pin u_green_detect/quo_u_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#608 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/quotient_reg[2]/C is not reached by a timing clock
+The clock pin u_green_detect/quo_u_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#609 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/quotient_reg[3]/C is not reached by a timing clock
+The clock pin u_green_detect/quo_u_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#610 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/quotient_reg[4]/C is not reached by a timing clock
+The clock pin u_green_detect/quo_u_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#611 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/quotient_reg[5]/C is not reached by a timing clock
+The clock pin u_green_detect/quo_u_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#612 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/quotient_reg[6]/C is not reached by a timing clock
+The clock pin u_green_detect/quo_u_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#613 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/quotient_reg[7]/C is not reached by a timing clock
+The clock pin u_green_detect/quo_u_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#614 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/quotient_reg[8]/C is not reached by a timing clock
+The clock pin u_green_detect/quo_u_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#615 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/quotient_reg[9]/C is not reached by a timing clock
+The clock pin u_green_detect/quo_u_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#616 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/rem_reg[0]/C is not reached by a timing clock
+The clock pin u_green_detect/quo_v_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#617 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/rem_reg[10]/C is not reached by a timing clock
+The clock pin u_green_detect/quo_v_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#618 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/rem_reg[11]/C is not reached by a timing clock
+The clock pin u_green_detect/quo_v_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#619 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/rem_reg[12]/C is not reached by a timing clock
+The clock pin u_green_detect/quo_v_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#620 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/rem_reg[13]/C is not reached by a timing clock
+The clock pin u_green_detect/quo_v_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#621 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/rem_reg[14]/C is not reached by a timing clock
+The clock pin u_green_detect/quo_v_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#622 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/rem_reg[15]/C is not reached by a timing clock
+The clock pin u_green_detect/quo_v_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#623 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/rem_reg[16]/C is not reached by a timing clock
+The clock pin u_green_detect/quo_v_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#624 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/rem_reg[17]/C is not reached by a timing clock
+The clock pin u_green_detect/quo_v_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#625 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/rem_reg[18]/C is not reached by a timing clock
+The clock pin u_green_detect/quo_v_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#626 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/rem_reg[19]/C is not reached by a timing clock
+The clock pin u_green_detect/quotient_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#627 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/rem_reg[1]/C is not reached by a timing clock
+The clock pin u_green_detect/quotient_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#628 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/rem_reg[20]/C is not reached by a timing clock
+The clock pin u_green_detect/quotient_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#629 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/rem_reg[21]/C is not reached by a timing clock
+The clock pin u_green_detect/quotient_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#630 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/rem_reg[22]/C is not reached by a timing clock
+The clock pin u_green_detect/quotient_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#631 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/rem_reg[23]/C is not reached by a timing clock
+The clock pin u_green_detect/quotient_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#632 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/rem_reg[24]/C is not reached by a timing clock
+The clock pin u_green_detect/quotient_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#633 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/rem_reg[25]/C is not reached by a timing clock
+The clock pin u_green_detect/quotient_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#634 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/rem_reg[26]/C is not reached by a timing clock
+The clock pin u_green_detect/quotient_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#635 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/rem_reg[27]/C is not reached by a timing clock
+The clock pin u_green_detect/quotient_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#636 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/rem_reg[28]/C is not reached by a timing clock
+The clock pin u_green_detect/rem_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#637 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/rem_reg[29]/C is not reached by a timing clock
+The clock pin u_green_detect/rem_reg[10]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#638 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/rem_reg[2]/C is not reached by a timing clock
+The clock pin u_green_detect/rem_reg[11]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#639 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/rem_reg[30]/C is not reached by a timing clock
+The clock pin u_green_detect/rem_reg[12]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#640 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/rem_reg[3]/C is not reached by a timing clock
+The clock pin u_green_detect/rem_reg[13]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#641 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/rem_reg[4]/C is not reached by a timing clock
+The clock pin u_green_detect/rem_reg[14]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#642 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/rem_reg[5]/C is not reached by a timing clock
+The clock pin u_green_detect/rem_reg[15]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#643 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/rem_reg[6]/C is not reached by a timing clock
+The clock pin u_green_detect/rem_reg[16]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#644 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/rem_reg[7]/C is not reached by a timing clock
+The clock pin u_green_detect/rem_reg[17]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#645 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/rem_reg[8]/C is not reached by a timing clock
+The clock pin u_green_detect/rem_reg[18]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#646 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/rem_reg[9]/C is not reached by a timing clock
+The clock pin u_green_detect/rem_reg[19]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#647 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_x_reg[0]/C is not reached by a timing clock
+The clock pin u_green_detect/rem_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#648 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_x_reg[10]/C is not reached by a timing clock
+The clock pin u_green_detect/rem_reg[20]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#649 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_x_reg[11]/C is not reached by a timing clock
+The clock pin u_green_detect/rem_reg[21]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#650 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_x_reg[12]/C is not reached by a timing clock
+The clock pin u_green_detect/rem_reg[22]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#651 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_x_reg[13]/C is not reached by a timing clock
+The clock pin u_green_detect/rem_reg[23]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#652 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_x_reg[14]/C is not reached by a timing clock
+The clock pin u_green_detect/rem_reg[24]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#653 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_x_reg[15]/C is not reached by a timing clock
+The clock pin u_green_detect/rem_reg[25]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#654 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_x_reg[16]/C is not reached by a timing clock
+The clock pin u_green_detect/rem_reg[26]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#655 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_x_reg[17]/C is not reached by a timing clock
+The clock pin u_green_detect/rem_reg[27]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#656 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_x_reg[18]/C is not reached by a timing clock
+The clock pin u_green_detect/rem_reg[28]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#657 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_x_reg[19]/C is not reached by a timing clock
+The clock pin u_green_detect/rem_reg[29]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#658 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_x_reg[1]/C is not reached by a timing clock
+The clock pin u_green_detect/rem_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#659 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_x_reg[20]/C is not reached by a timing clock
+The clock pin u_green_detect/rem_reg[30]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#660 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_x_reg[21]/C is not reached by a timing clock
+The clock pin u_green_detect/rem_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#661 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_x_reg[22]/C is not reached by a timing clock
+The clock pin u_green_detect/rem_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#662 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_x_reg[23]/C is not reached by a timing clock
+The clock pin u_green_detect/rem_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#663 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_x_reg[24]/C is not reached by a timing clock
+The clock pin u_green_detect/rem_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#664 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_x_reg[25]/C is not reached by a timing clock
+The clock pin u_green_detect/rem_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#665 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_x_reg[26]/C is not reached by a timing clock
+The clock pin u_green_detect/rem_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#666 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_x_reg[27]/C is not reached by a timing clock
+The clock pin u_green_detect/rem_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#667 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_x_reg[28]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_x_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#668 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_x_reg[29]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_x_reg[10]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#669 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_x_reg[2]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_x_reg[11]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#670 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_x_reg[30]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_x_reg[12]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#671 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_x_reg[31]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_x_reg[13]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#672 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_x_reg[3]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_x_reg[14]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#673 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_x_reg[4]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_x_reg[15]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#674 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_x_reg[5]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_x_reg[16]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#675 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_x_reg[6]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_x_reg[17]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#676 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_x_reg[7]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_x_reg[18]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#677 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_x_reg[8]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_x_reg[19]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#678 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_x_reg[9]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_x_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#679 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_y_reg[0]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_x_reg[20]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#680 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_y_reg[10]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_x_reg[21]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#681 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_y_reg[11]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_x_reg[22]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#682 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_y_reg[12]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_x_reg[23]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#683 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_y_reg[13]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_x_reg[24]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#684 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_y_reg[14]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_x_reg[25]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#685 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_y_reg[15]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_x_reg[26]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#686 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_y_reg[16]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_x_reg[27]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#687 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_y_reg[17]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_x_reg[28]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#688 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_y_reg[18]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_x_reg[29]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#689 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_y_reg[19]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_x_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#690 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_y_reg[1]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_x_reg[30]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#691 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_y_reg[20]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_x_reg[31]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#692 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_y_reg[21]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_x_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#693 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_y_reg[22]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_x_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#694 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_y_reg[23]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_x_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#695 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_y_reg[24]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_x_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#696 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_y_reg[25]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_x_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#697 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_y_reg[26]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_x_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#698 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_y_reg[27]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_x_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#699 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_y_reg[28]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_y_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#700 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_y_reg[29]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_y_reg[10]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#701 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_y_reg[2]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_y_reg[11]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#702 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_y_reg[30]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_y_reg[12]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#703 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_y_reg[31]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_y_reg[13]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#704 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_y_reg[3]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_y_reg[14]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#705 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_y_reg[4]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_y_reg[15]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#706 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_y_reg[5]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_y_reg[16]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#707 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_y_reg[6]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_y_reg[17]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#708 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_y_reg[7]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_y_reg[18]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#709 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_y_reg[8]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_y_reg[19]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#710 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/sum_y_reg[9]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_y_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#711 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/x_reg[0]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_y_reg[20]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#712 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/x_reg[1]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_y_reg[21]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#713 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/x_reg[2]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_y_reg[22]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#714 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/x_reg[3]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_y_reg[23]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#715 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/x_reg[4]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_y_reg[24]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#716 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/x_reg[5]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_y_reg[25]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#717 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/x_reg[6]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_y_reg[26]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#718 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/x_reg[7]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_y_reg[27]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#719 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/x_reg[8]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_y_reg[28]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#720 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/x_reg[9]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_y_reg[29]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#721 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/y_reg[0]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_y_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#722 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/y_reg[1]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_y_reg[30]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#723 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/y_reg[2]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_y_reg[31]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#724 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/y_reg[3]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_y_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#725 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/y_reg[4]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_y_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#726 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/y_reg[5]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_y_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#727 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/y_reg[6]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_y_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#728 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/y_reg[7]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_y_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#729 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/y_reg[8]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_y_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#730 Warning
 Non-clocked sequential cell  
-The clock pin u_green_detect/y_reg[9]/C is not reached by a timing clock
+The clock pin u_green_detect/sum_y_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#731 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_cmos_capture_data/byte_flag_d0_reg/C is not reached by a timing clock
+The clock pin u_green_detect/x_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#732 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_cmos_capture_data/byte_flag_reg/C is not reached by a timing clock
+The clock pin u_green_detect/x_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#733 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_cmos_capture_data/cam_data_d0_reg[0]/C is not reached by a timing clock
+The clock pin u_green_detect/x_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#734 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_cmos_capture_data/cam_data_d0_reg[1]/C is not reached by a timing clock
+The clock pin u_green_detect/x_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#735 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_cmos_capture_data/cam_data_d0_reg[2]/C is not reached by a timing clock
+The clock pin u_green_detect/x_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#736 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_cmos_capture_data/cam_data_d0_reg[3]/C is not reached by a timing clock
+The clock pin u_green_detect/x_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#737 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_cmos_capture_data/cam_data_d0_reg[4]/C is not reached by a timing clock
+The clock pin u_green_detect/x_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#738 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_cmos_capture_data/cam_data_d0_reg[5]/C is not reached by a timing clock
+The clock pin u_green_detect/x_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#739 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_cmos_capture_data/cam_data_d0_reg[6]/C is not reached by a timing clock
+The clock pin u_green_detect/x_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#740 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_cmos_capture_data/cam_data_d0_reg[7]/C is not reached by a timing clock
+The clock pin u_green_detect/x_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#741 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_cmos_capture_data/cam_vsync_d0_reg/C is not reached by a timing clock
+The clock pin u_green_detect/y_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#742 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_cmos_capture_data/cam_vsync_d1_reg/C is not reached by a timing clock
+The clock pin u_green_detect/y_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#743 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_cmos_capture_data/cmos_data_t_reg[0]/C is not reached by a timing clock
+The clock pin u_green_detect/y_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#744 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_cmos_capture_data/cmos_data_t_reg[10]/C is not reached by a timing clock
+The clock pin u_green_detect/y_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#745 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_cmos_capture_data/cmos_data_t_reg[11]/C is not reached by a timing clock
+The clock pin u_green_detect/y_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#746 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_cmos_capture_data/cmos_data_t_reg[12]/C is not reached by a timing clock
+The clock pin u_green_detect/y_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#747 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_cmos_capture_data/cmos_data_t_reg[13]/C is not reached by a timing clock
+The clock pin u_green_detect/y_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#748 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_cmos_capture_data/cmos_data_t_reg[14]/C is not reached by a timing clock
+The clock pin u_green_detect/y_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#749 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_cmos_capture_data/cmos_data_t_reg[15]/C is not reached by a timing clock
+The clock pin u_green_detect/y_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#750 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_cmos_capture_data/cmos_data_t_reg[1]/C is not reached by a timing clock
+The clock pin u_green_detect/y_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#751 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_cmos_capture_data/cmos_data_t_reg[2]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_cmos_capture_data/byte_flag_d0_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#752 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_cmos_capture_data/cmos_data_t_reg[3]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_cmos_capture_data/byte_flag_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#753 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_cmos_capture_data/cmos_data_t_reg[4]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_cmos_capture_data/cam_data_d0_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#754 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_cmos_capture_data/cmos_data_t_reg[5]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_cmos_capture_data/cam_data_d0_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#755 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_cmos_capture_data/cmos_data_t_reg[6]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_cmos_capture_data/cam_data_d0_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#756 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_cmos_capture_data/cmos_data_t_reg[7]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_cmos_capture_data/cam_data_d0_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#757 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_cmos_capture_data/cmos_data_t_reg[8]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_cmos_capture_data/cam_data_d0_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#758 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_cmos_capture_data/cmos_data_t_reg[9]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_cmos_capture_data/cam_data_d0_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#759 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_cmos_capture_data/cmos_ps_cnt_reg[0]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_cmos_capture_data/cam_data_d0_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#760 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_cmos_capture_data/cmos_ps_cnt_reg[1]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_cmos_capture_data/cam_data_d0_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#761 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_cmos_capture_data/cmos_ps_cnt_reg[2]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_cmos_capture_data/cam_vsync_d0_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#762 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_cmos_capture_data/cmos_ps_cnt_reg[3]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_cmos_capture_data/cam_vsync_d1_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#763 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_cmos_capture_data/frame_val_flag_reg/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_cmos_capture_data/cmos_data_t_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#764 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[0]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_cmos_capture_data/cmos_data_t_reg[10]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#765 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[10]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_cmos_capture_data/cmos_data_t_reg[11]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#766 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[11]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_cmos_capture_data/cmos_data_t_reg[12]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#767 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[12]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_cmos_capture_data/cmos_data_t_reg[13]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#768 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[13]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_cmos_capture_data/cmos_data_t_reg[14]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#769 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[15]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_cmos_capture_data/cmos_data_t_reg[15]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#770 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[16]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_cmos_capture_data/cmos_data_t_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#771 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[17]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_cmos_capture_data/cmos_data_t_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#772 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[18]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_cmos_capture_data/cmos_data_t_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#773 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[19]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_cmos_capture_data/cmos_data_t_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#774 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[1]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_cmos_capture_data/cmos_data_t_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#775 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[20]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_cmos_capture_data/cmos_data_t_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#776 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[21]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_cmos_capture_data/cmos_data_t_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#777 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[22]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_cmos_capture_data/cmos_data_t_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#778 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[2]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_cmos_capture_data/cmos_data_t_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#779 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[3]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_cmos_capture_data/cmos_ps_cnt_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#780 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[4]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_cmos_capture_data/cmos_ps_cnt_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#781 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[5]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_cmos_capture_data/cmos_ps_cnt_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#782 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[6]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_cmos_capture_data/cmos_ps_cnt_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#783 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[7]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_cmos_capture_data/frame_val_flag_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#784 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[8]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#785 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[9]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[10]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#786 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_exec_reg/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[11]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#787 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_rh_wl_reg/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[12]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#788 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_cfg/init_reg_cnt_reg[0]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[13]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#789 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_cfg/init_reg_cnt_reg[1]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[15]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#790 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_cfg/init_reg_cnt_reg[2]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[16]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#791 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_cfg/init_reg_cnt_reg[3]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[17]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#792 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_cfg/init_reg_cnt_reg[4]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[18]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#793 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_cfg/init_reg_cnt_reg[5]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[19]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#794 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_cfg/init_reg_cnt_reg[6]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#795 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_cfg/init_reg_cnt_reg[7]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[20]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#796 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_cfg/start_init_cnt_reg[0]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[21]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#797 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_cfg/start_init_cnt_reg[10]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[22]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#798 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_cfg/start_init_cnt_reg[11]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#799 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_cfg/start_init_cnt_reg[12]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#800 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_cfg/start_init_cnt_reg[1]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#801 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_cfg/start_init_cnt_reg[2]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#802 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_cfg/start_init_cnt_reg[3]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#803 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_cfg/start_init_cnt_reg[4]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#804 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_cfg/start_init_cnt_reg[5]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#805 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_cfg/start_init_cnt_reg[6]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#806 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_cfg/start_init_cnt_reg[7]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_exec_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#807 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_cfg/start_init_cnt_reg[8]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_cfg/i2c_rh_wl_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#808 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_cfg/start_init_cnt_reg[9]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_cfg/init_reg_cnt_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#809 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_dr/addr_t_reg[0]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_cfg/init_reg_cnt_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#810 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_dr/addr_t_reg[10]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_cfg/init_reg_cnt_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#811 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_dr/addr_t_reg[11]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_cfg/init_reg_cnt_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#812 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_dr/addr_t_reg[12]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_cfg/init_reg_cnt_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#813 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_dr/addr_t_reg[13]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_cfg/init_reg_cnt_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#814 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_dr/addr_t_reg[14]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_cfg/init_reg_cnt_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#815 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_dr/addr_t_reg[1]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_cfg/init_reg_cnt_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#816 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_dr/addr_t_reg[2]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_cfg/start_init_cnt_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#817 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_dr/addr_t_reg[3]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_cfg/start_init_cnt_reg[10]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#818 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_dr/addr_t_reg[4]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_cfg/start_init_cnt_reg[11]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#819 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_dr/addr_t_reg[5]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_cfg/start_init_cnt_reg[12]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#820 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_dr/addr_t_reg[7]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_cfg/start_init_cnt_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#821 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_dr/addr_t_reg[8]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_cfg/start_init_cnt_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#822 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_dr/addr_t_reg[9]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_cfg/start_init_cnt_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#823 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_dr/cnt_reg[0]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_cfg/start_init_cnt_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#824 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_dr/cnt_reg[1]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_cfg/start_init_cnt_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#825 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_dr/cnt_reg[2]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_cfg/start_init_cnt_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#826 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_dr/cnt_reg[3]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_cfg/start_init_cnt_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#827 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_dr/cnt_reg[4]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_cfg/start_init_cnt_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#828 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_dr/cnt_reg[5]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_cfg/start_init_cnt_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#829 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_dr/cnt_reg[6]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_dr/addr_t_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#830 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_dr/cur_state_reg[0]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_dr/addr_t_reg[10]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#831 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_dr/cur_state_reg[1]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_dr/addr_t_reg[11]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#832 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_dr/cur_state_reg[2]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_dr/addr_t_reg[12]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#833 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_dr/cur_state_reg[3]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_dr/addr_t_reg[13]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#834 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_dr/cur_state_reg[4]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_dr/addr_t_reg[14]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#835 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_dr/cur_state_reg[5]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_dr/addr_t_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#836 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_dr/cur_state_reg[6]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_dr/addr_t_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#837 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_dr/cur_state_reg[7]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_dr/addr_t_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#838 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_dr/data_wr_t_reg[0]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_dr/addr_t_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#839 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_dr/data_wr_t_reg[1]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_dr/addr_t_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#840 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_dr/data_wr_t_reg[2]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_dr/addr_t_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#841 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_dr/data_wr_t_reg[3]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_dr/addr_t_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#842 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_dr/data_wr_t_reg[4]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_dr/addr_t_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#843 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_dr/data_wr_t_reg[5]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_dr/cnt_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#844 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_dr/data_wr_t_reg[6]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_dr/cnt_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#845 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_dr/data_wr_t_reg[7]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_dr/cnt_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#846 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_dr/i2c_done_reg/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_dr/cnt_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#847 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_dr/scl_reg/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_dr/cnt_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#848 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_dr/sda_dir_reg/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_dr/cnt_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#849 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_dr/sda_out_reg/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_dr/cnt_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#850 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_dr/st_done_reg/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_dr/cur_state_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#851 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_1/u_i2c_dr/wr_flag_reg/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_dr/cur_state_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#852 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[0]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_dr/cur_state_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#853 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[10]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_dr/cur_state_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#854 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[11]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_dr/cur_state_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#855 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[12]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_dr/cur_state_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#856 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[13]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_dr/cur_state_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#857 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[15]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_dr/cur_state_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#858 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[16]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_dr/data_wr_t_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#859 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[17]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_dr/data_wr_t_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#860 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[18]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_dr/data_wr_t_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#861 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[19]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_dr/data_wr_t_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#862 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[1]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_dr/data_wr_t_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#863 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[20]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_dr/data_wr_t_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#864 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[21]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_dr/data_wr_t_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#865 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[22]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_dr/data_wr_t_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#866 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[2]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_dr/i2c_done_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#867 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[3]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_dr/scl_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#868 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[4]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_dr/sda_dir_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#869 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[5]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_dr/sda_out_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#870 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[6]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_dr/st_done_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#871 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[7]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_1/u_i2c_dr/wr_flag_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#872 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[8]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#873 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[9]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[10]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#874 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_exec_reg/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[11]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#875 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_rh_wl_reg/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[12]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#876 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_cfg/init_reg_cnt_reg[0]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[13]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#877 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_cfg/init_reg_cnt_reg[1]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[15]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#878 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_cfg/init_reg_cnt_reg[2]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[16]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#879 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_cfg/init_reg_cnt_reg[3]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[17]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#880 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_cfg/init_reg_cnt_reg[4]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[18]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#881 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_cfg/init_reg_cnt_reg[5]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[19]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#882 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_cfg/init_reg_cnt_reg[6]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#883 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_cfg/init_reg_cnt_reg[7]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[20]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#884 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_cfg/start_init_cnt_reg[0]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[21]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#885 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_cfg/start_init_cnt_reg[10]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[22]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#886 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_cfg/start_init_cnt_reg[11]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#887 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_cfg/start_init_cnt_reg[12]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#888 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_cfg/start_init_cnt_reg[1]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#889 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_cfg/start_init_cnt_reg[2]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#890 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_cfg/start_init_cnt_reg[3]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#891 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_cfg/start_init_cnt_reg[4]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#892 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_cfg/start_init_cnt_reg[5]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#893 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_cfg/start_init_cnt_reg[6]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#894 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_cfg/start_init_cnt_reg[7]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_exec_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#895 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_cfg/start_init_cnt_reg[8]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_cfg/i2c_rh_wl_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#896 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_cfg/start_init_cnt_reg[9]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_cfg/init_reg_cnt_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#897 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_dr/addr_t_reg[0]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_cfg/init_reg_cnt_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#898 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_dr/addr_t_reg[10]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_cfg/init_reg_cnt_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#899 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_dr/addr_t_reg[11]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_cfg/init_reg_cnt_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#900 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_dr/addr_t_reg[12]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_cfg/init_reg_cnt_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#901 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_dr/addr_t_reg[13]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_cfg/init_reg_cnt_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#902 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_dr/addr_t_reg[14]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_cfg/init_reg_cnt_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#903 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_dr/addr_t_reg[1]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_cfg/init_reg_cnt_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#904 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_dr/addr_t_reg[2]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_cfg/start_init_cnt_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#905 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_dr/addr_t_reg[3]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_cfg/start_init_cnt_reg[10]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#906 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_dr/addr_t_reg[4]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_cfg/start_init_cnt_reg[11]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#907 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_dr/addr_t_reg[5]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_cfg/start_init_cnt_reg[12]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#908 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_dr/addr_t_reg[7]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_cfg/start_init_cnt_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#909 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_dr/addr_t_reg[8]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_cfg/start_init_cnt_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#910 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_dr/addr_t_reg[9]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_cfg/start_init_cnt_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#911 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_dr/cnt_reg[0]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_cfg/start_init_cnt_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#912 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_dr/cnt_reg[1]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_cfg/start_init_cnt_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#913 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_dr/cnt_reg[2]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_cfg/start_init_cnt_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#914 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_dr/cnt_reg[3]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_cfg/start_init_cnt_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#915 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_dr/cnt_reg[4]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_cfg/start_init_cnt_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#916 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_dr/cnt_reg[5]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_cfg/start_init_cnt_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#917 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_dr/cnt_reg[6]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_dr/addr_t_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#918 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_dr/cur_state_reg[0]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_dr/addr_t_reg[10]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#919 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_dr/cur_state_reg[1]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_dr/addr_t_reg[11]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#920 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_dr/cur_state_reg[2]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_dr/addr_t_reg[12]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#921 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_dr/cur_state_reg[3]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_dr/addr_t_reg[13]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#922 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_dr/cur_state_reg[4]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_dr/addr_t_reg[14]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#923 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_dr/cur_state_reg[5]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_dr/addr_t_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#924 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_dr/cur_state_reg[6]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_dr/addr_t_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#925 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_dr/cur_state_reg[7]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_dr/addr_t_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#926 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_dr/data_wr_t_reg[0]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_dr/addr_t_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#927 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_dr/data_wr_t_reg[1]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_dr/addr_t_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#928 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_dr/data_wr_t_reg[2]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_dr/addr_t_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#929 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_dr/data_wr_t_reg[3]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_dr/addr_t_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#930 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_dr/data_wr_t_reg[4]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_dr/addr_t_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#931 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_dr/data_wr_t_reg[5]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_dr/cnt_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#932 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_dr/data_wr_t_reg[6]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_dr/cnt_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#933 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_dr/data_wr_t_reg[7]/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_dr/cnt_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#934 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_dr/i2c_done_reg/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_dr/cnt_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#935 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_dr/scl_reg/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_dr/cnt_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#936 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_dr/sda_dir_reg/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_dr/cnt_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#937 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_dr/sda_out_reg/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_dr/cnt_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#938 Warning
 Non-clocked sequential cell  
-The clock pin u_ov5640_dri_2/u_i2c_dr/st_done_reg/C is not reached by a timing clock
+The clock pin u_ov5640_dri_2/u_i2c_dr/cur_state_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#939 Warning
+Non-clocked sequential cell  
+The clock pin u_ov5640_dri_2/u_i2c_dr/cur_state_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#940 Warning
+Non-clocked sequential cell  
+The clock pin u_ov5640_dri_2/u_i2c_dr/cur_state_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#941 Warning
+Non-clocked sequential cell  
+The clock pin u_ov5640_dri_2/u_i2c_dr/cur_state_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#942 Warning
+Non-clocked sequential cell  
+The clock pin u_ov5640_dri_2/u_i2c_dr/cur_state_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#943 Warning
+Non-clocked sequential cell  
+The clock pin u_ov5640_dri_2/u_i2c_dr/cur_state_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#944 Warning
+Non-clocked sequential cell  
+The clock pin u_ov5640_dri_2/u_i2c_dr/cur_state_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#945 Warning
+Non-clocked sequential cell  
+The clock pin u_ov5640_dri_2/u_i2c_dr/cur_state_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#946 Warning
+Non-clocked sequential cell  
+The clock pin u_ov5640_dri_2/u_i2c_dr/data_wr_t_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#947 Warning
+Non-clocked sequential cell  
+The clock pin u_ov5640_dri_2/u_i2c_dr/data_wr_t_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#948 Warning
+Non-clocked sequential cell  
+The clock pin u_ov5640_dri_2/u_i2c_dr/data_wr_t_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#949 Warning
+Non-clocked sequential cell  
+The clock pin u_ov5640_dri_2/u_i2c_dr/data_wr_t_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#950 Warning
+Non-clocked sequential cell  
+The clock pin u_ov5640_dri_2/u_i2c_dr/data_wr_t_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#951 Warning
+Non-clocked sequential cell  
+The clock pin u_ov5640_dri_2/u_i2c_dr/data_wr_t_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#952 Warning
+Non-clocked sequential cell  
+The clock pin u_ov5640_dri_2/u_i2c_dr/data_wr_t_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#953 Warning
+Non-clocked sequential cell  
+The clock pin u_ov5640_dri_2/u_i2c_dr/data_wr_t_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#954 Warning
+Non-clocked sequential cell  
+The clock pin u_ov5640_dri_2/u_i2c_dr/i2c_done_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#955 Warning
+Non-clocked sequential cell  
+The clock pin u_ov5640_dri_2/u_i2c_dr/scl_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#956 Warning
+Non-clocked sequential cell  
+The clock pin u_ov5640_dri_2/u_i2c_dr/sda_dir_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#957 Warning
+Non-clocked sequential cell  
+The clock pin u_ov5640_dri_2/u_i2c_dr/sda_out_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#958 Warning
+Non-clocked sequential cell  
+The clock pin u_ov5640_dri_2/u_i2c_dr/st_done_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#959 Warning
 Non-clocked sequential cell  
 The clock pin u_ov5640_dri_2/u_i2c_dr/wr_flag_reg/C is not reached by a timing clock
 Related violations: <none>
@@ -5100,10 +5265,15 @@ Related violations: <none>
 
 TIMING-18#36 Warning
 Missing input or output delay  
-An output delay is missing on lcd_de relative to clock(s) sys_clk
+An input delay is missing on uart_rxd relative to clock(s) sys_clk
 Related violations: <none>
 
 TIMING-18#37 Warning
+Missing input or output delay  
+An output delay is missing on lcd_de relative to clock(s) sys_clk
+Related violations: <none>
+
+TIMING-18#38 Warning
 Missing input or output delay  
 An output delay is missing on uart_txd relative to clock(s) sys_clk
 Related violations: <none>

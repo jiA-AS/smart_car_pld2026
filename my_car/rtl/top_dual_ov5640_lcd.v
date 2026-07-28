@@ -126,6 +126,39 @@ wire  [9:0]  gd_min_y                  ;
 wire  [9:0]  gd_max_y                  ;
 wire  [17:0] gd_cnt                    ;  //绿色像素总数（调阈值用）
 
+// ---- [PLD2026 V2] 摄像头2（左半屏）检测结果 ----
+wire         gd2_found                 ;
+wire  [9:0]  gd2_u                     ;
+wire  [9:0]  gd2_v                     ;
+wire  [9:0]  gd2_min_x                 ;
+wire  [9:0]  gd2_max_x                 ;
+wire  [9:0]  gd2_min_y                 ;
+wire  [9:0]  gd2_max_y                 ;
+wire  [17:0] gd2_cnt                   ;
+
+// ---- [PLD2026 V2] 双目距离（50M 域） ----
+wire  [15:0] dist_mm                   ;  //距离 mm（无效为 0）
+wire         dist_valid                ;  //距离有效
+
+// ---- [PLD2026 V2] 传感器链解包数据（OSD 数据栏用） ----
+wire  [31:0] sl_enc0                   ;  //编码器0~3 累计脉冲
+wire  [31:0] sl_enc1                   ;
+wire  [31:0] sl_enc2                   ;
+wire  [31:0] sl_enc3                   ;
+wire  [15:0] sl_gyro_x                 ;  //陀螺仪原始值
+wire  [15:0] sl_gyro_y                 ;
+wire  [15:0] sl_gyro_z                 ;
+
+// ---- [PLD2026 V2] 双目融合后的追踪输入（送 sensor_link/tracker） ----
+wire        any_found = gd_found | gd2_found;
+// 双目都看到取平均，单目看到用单目（相机坐标 0~399）
+wire  [9:0] u_comb    = (gd_found && gd2_found)
+                        ? ((gd_u + gd2_u) >> 1)
+                        : (gd_found ? gd_u : gd2_u);
+// 包围盒高度：优先 cam1，cam1 看不到用 cam2
+wire  [9:0] miny_comb = gd_found ? gd_min_y : gd2_min_y;
+wire  [9:0] maxy_comb = gd_found ? gd_max_y : gd2_max_y;
+
 //*****************************************************
 //**                    main code
 //*****************************************************
@@ -229,6 +262,49 @@ green_detect #(
     .gd_cnt       (gd_cnt)
 );
 
+//*****************************************************
+//**  [PLD2026 V2] 绿灯识别（摄像头2采集流 = 左半屏）
+//*****************************************************
+green_detect #(
+    .H_ACTIVE (400),
+    .TH_G     (6'd40),
+    .TH_RB    (5'd12),
+    .MIN_AREA (18'd100)
+) u_green_detect_2 (
+    .clk          (cam_pclk_2),
+    .rst_n        (rst_n),
+    .frame_vsync  (cmos_frame_vsync_2),
+    .frame_valid  (cmos_frame_valid_2),
+    .frame_data   (wr_data_2),
+    .gd_found     (gd2_found),
+    .gd_u         (gd2_u),
+    .gd_v         (gd2_v),
+    .gd_min_x     (gd2_min_x),
+    .gd_max_x     (gd2_max_x),
+    .gd_min_y     (gd2_min_y),
+    .gd_max_y     (gd2_max_y),
+    .gd_cnt       (gd2_cnt)
+);
+
+//*****************************************************
+//**  [PLD2026 V2] 双目视差测距：dist = F_PIX*BASELINE/|u2-u1|
+//**  F_PIX 需标定、BASELINE_MM 实测两镜头中心距（见说明文档）
+//*****************************************************
+stereo_dist #(
+    .F_PIX       (16'd450),
+    .BASELINE_MM (16'd100),
+    .MIN_DISP    (10'd6)
+) u_stereo_dist (
+    .clk        (clk_50m),
+    .rst_n      (rst_n),
+    .f1_async   (gd_found),
+    .u1_async   (gd_u),
+    .f2_async   (gd2_found),
+    .u2_async   (gd2_u),
+    .dist_mm    (dist_mm),
+    .dist_valid (dist_valid)
+);
+
 //DDR3顶层模块
 ddr3_top u_ddr3_top (
     .rst_n                 (rst_n),                 //复位,低有效
@@ -320,7 +396,29 @@ lcd_rgb_top  u_lcd_rgb_top(
     .box_min_x             (gd_min_x),
     .box_max_x             (gd_max_x),
     .box_min_y             (gd_min_y),
-    .box_max_y             (gd_max_y)
+    .box_max_y             (gd_max_y),
+    // ---- [PLD2026 V2] cam1 质心（右屏） ----
+    .c1_u                  (gd_u),
+    .c1_v                  (gd_v),
+    // ---- [PLD2026 V2] cam2 检测（左屏） ----
+    .box2_found            (gd2_found),
+    .box2_min_x            (gd2_min_x),
+    .box2_max_x            (gd2_max_x),
+    .box2_min_y            (gd2_min_y),
+    .box2_max_y            (gd2_max_y),
+    .c2_u                  (gd2_u),
+    .c2_v                  (gd2_v),
+    // ---- [PLD2026 V2] 双目距离 ----
+    .dist_mm               (dist_mm),
+    .dist_valid            (dist_valid),
+    // ---- [PLD2026 V2] 传感器原始值（OSD 数据栏） ----
+    .enc0                  (sl_enc0),
+    .enc1                  (sl_enc1),
+    .enc2                  (sl_enc2),
+    .enc3                  (sl_enc3),
+    .gyro_x                (sl_gyro_x),
+    .gyro_y                (sl_gyro_y),
+    .gyro_z                (sl_gyro_z)
     );
 
 //*****************************************************
@@ -336,22 +434,23 @@ sensor_link#(
     .uart_rxd     (uart_rxd),
     .uart_txd     (uart_txd),
     .timestamp    (),
-    .enc0         (),
-    .enc1         (),
-    .enc2         (),
-    .enc3         (),
-    .gyro_x       (),
-    .gyro_y       (),
-    .gyro_z       (),
+    .enc0         (sl_enc0),
+    .enc1         (sl_enc1),
+    .enc2         (sl_enc2),
+    .enc3         (sl_enc3),
+    .gyro_x       (sl_gyro_x),
+    .gyro_y       (sl_gyro_y),
+    .gyro_z       (sl_gyro_z),
     .acc_x        (),
     .acc_y        (),
     .acc_z        (),
     .parse_done   (),
     .parse_result (),
-     .gd_found     (gd_found),
-    .gd_u         (gd_u),
-    .gd_min_y     (gd_min_y),
-    .gd_max_y     (gd_max_y),
+    // [PLD2026 V2] 追踪输入改为双目融合值（任一相机看到即追踪）
+     .gd_found     (any_found),
+    .gd_u         (u_comb),
+    .gd_min_y     (miny_comb),
+    .gd_max_y     (maxy_comb),
      .trk_mode     (),
     .trk_left     (),
     .trk_right    ()

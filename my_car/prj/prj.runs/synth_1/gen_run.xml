@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tfgg484-2" LaunchTime="1785061673">
+<GenRun Id="synth_1" LaunchPart="xc7a100tfgg484-2" LaunchTime="1785251409">
   <File Type="PA-TCL" Name="top_dual_ov5640_lcd.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="top_dual_ov5640_lcd_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="top_dual_ov5640_lcd_reports.tcl"/>
@@ -67,7 +67,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../rtl/green_detect.v">
+    <File Path="$PPRDIR/../rtl/vision/green_detect.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -103,6 +103,20 @@
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../rtl/lcd_rgb_top/lcd_rgb_top.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/lcd_rgb_top/osd/osd_font.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/lcd_rgb_top/osd/osd_overlay.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -151,7 +165,14 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../rtl/tracker_ctrl.v">
+    <File Path="$PPRDIR/../rtl/vision/stereo_dist.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/sensor_link/tracker_ctrl.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
