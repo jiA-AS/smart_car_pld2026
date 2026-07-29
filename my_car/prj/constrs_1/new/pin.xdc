@@ -85,7 +85,7 @@ set_property -dict {PACKAGE_PIN C14 IOSTANDARD LVCMOS33 IOB TRUE} [get_ports {ca
 set_property -dict {PACKAGE_PIN E13 IOSTANDARD LVCMOS33} [get_ports uart_rxd]
 set_property -dict {PACKAGE_PIN F14 IOSTANDARD LVCMOS33} [get_ports uart_txd]
 
-
+set_property -dict {PACKAGE_PIN T6 IOSTANDARD LVCMOS15} [get_ports key_mode]
 
 
 

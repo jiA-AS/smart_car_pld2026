@@ -72,3 +72,12 @@ launch_runs synth_1 -jobs 12
 wait_on_run synth_1
 launch_runs impl_1 -jobs 12
 wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/impl_1/top_dual_ov5640_lcd.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+add_files -norecurse {E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/atan_lut.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/sincos_lut.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/sensor_calc.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/attitude_cf.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/vision/ttc_warn.v E:/FPGA/project/smart_car_pld2026/my_car/rtl/mode_switch.v}
+update_compile_order -fileset sources_1
