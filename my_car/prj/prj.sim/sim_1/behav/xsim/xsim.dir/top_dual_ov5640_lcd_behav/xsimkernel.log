@@ -1,4 +1,0 @@
-Running: xsim.dir/top_dual_ov5640_lcd_behav/xsimk.exe -simmode gui -wdb top_dual_ov5640_lcd_behav.wdb -simrunnum 0 -socket 59650
-Design successfully loaded
-Design Loading Memory Usage: 94784 KB (Peak: 94784 KB)
-Design Loading CPU Usage: 203 ms

@@ -12,12 +12,32 @@
 start_gui
 open_project E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.xpr
 update_compile_order -fileset sources_1
-reset_run synth_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/impl_1/top_dual_ov5640_lcd.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/impl_1/top_dual_ov5640_lcd.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+ty PROGRAM.FILE {E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/impl_1/top_dual_ov5640_lcd.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+disconnect_hw_server localhost:3121
+connect_hw_server
+open_hw_target
+write_cfgmem  -format mcs -size 16 -interface SPIx4 -loadbit {up 0x00000000 "E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/impl_1/top_dual_ov5640_lcd.bit" } -checksum -force -disablebitswap -file "E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/impl_1/E.mcs"
+close_sim
 launch_simulation
 source top_dual_ov5640_lcd.tcl
+reset_run synth_1
 launch_runs synth_1 -jobs 12
 wait_on_run synth_1
 launch_runs impl_1 -jobs 12
 wait_on_run impl_1
 launch_runs impl_1 -to_step write_bitstream -jobs 12
 wait_on_run impl_1
+write_cfgmem  -format mcs -size 16 -interface SPIx4 -loadbit {up 0x00000000 "E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/impl_1/top_dual_ov5640_lcd.bit" } -checksum -force -disablebitswap -file "E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/impl_1/my_car"
