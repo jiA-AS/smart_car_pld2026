@@ -155,6 +155,8 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "E:/FPGA/project/smart_car_pld2026/m
 INFO: [VRFC 10-311] analyzing module cmos_capture_data
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/ctrl_link_tx.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module ctrl_link_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/dash_osd.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dash_osd
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module ddr3_fifo_ctrl
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl_top.v" into library xil_defaultlib

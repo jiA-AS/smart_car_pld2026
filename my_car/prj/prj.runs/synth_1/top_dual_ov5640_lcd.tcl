@@ -17,7 +17,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7a100tfgg484-2
 
 set_param project.singleFileAddWarning.threshold 0
@@ -32,9 +31,12 @@ set_property target_language Verilog [current_project]
 set_property ip_output_repo e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
+  E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/atan_lut.v
+  E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/attitude_cf.v
   E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/clk_div.v
   E:/FPGA/project/smart_car_pld2026/my_car/rtl/ov5640_dri/cmos_capture_data.v
   E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/ctrl_link_tx.v
+  E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/dash_osd.v
   E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl.v
   E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl_top.v
   E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_rw.v
@@ -45,16 +47,20 @@ read_verilog -library xil_defaultlib {
   E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_disply.v
   E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_driver.v
   E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_rgb_top.v
+  E:/FPGA/project/smart_car_pld2026/my_car/rtl/mode_switch.v
   E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v
   E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_overlay.v
   E:/FPGA/project/smart_car_pld2026/my_car/rtl/ov5640_dri/ov5640_dri.v
   E:/FPGA/project/smart_car_pld2026/my_car/rtl/picture_size.v
   E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/rd_id.v
+  E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/sensor_calc.v
   E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/sensor_link.v
+  E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/sincos_lut.v
   E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/sl_uart_rx.v
   E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/sl_uart_tx.v
   E:/FPGA/project/smart_car_pld2026/my_car/rtl/vision/stereo_dist.v
   E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/tracker_ctrl.v
+  E:/FPGA/project/smart_car_pld2026/my_car/rtl/vision/ttc_warn.v
   E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v
   E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v
 }

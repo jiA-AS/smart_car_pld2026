@@ -1,55 +1,55 @@
 // ============================================================================
-// attitude_cf.v â€”â€” äº’è¡¥æ»¤æ³¢å§¿æ€è§£ç®—ï¼ˆpitch/rollï¼Œèµ›é“ä¸‰åŸºç¡€è¦æ±‚2ï¼‰
+// attitude_cf.v -- »¥²¹ÂË²¨×ËÌ¬½âËã£¨pitch/roll£¬ÈüµÀÈý»ù´¡ÒªÇó2£©
 //
-// åŽŸç†ï¼šé™€èžºä»ªç§¯åˆ†ï¼ˆé«˜é¢‘å“åº”å¥½ï¼‰+ åŠ é€Ÿåº¦è®¡é‡åŠ›åˆ†é‡è§£ç®—ï¼ˆä½Žé¢‘æ— æ¼‚ç§»ï¼‰ï¼Œ
-//       ä¸€é˜¶äº’è¡¥æ»¤æ³¢èžåˆï¼š  Î¸ = (Î¸ + Ï‰Â·dt)Â·Î± + Î¸_accÂ·(1-Î±)
+// Ô­Àí£ºÍÓÂÝÒÇ»ý·Ö£¨¸ßÆµÏìÓ¦ºÃ£©+ ¼ÓËÙ¶È¼ÆÖØÁ¦·ÖÁ¿½âËã£¨µÍÆµÎÞÆ¯ÒÆ£©£¬
+//       Ò»½×»¥²¹ÂË²¨ÈÚºÏ£º  ¦È = (¦È + ¦Ø¡¤dt)¡¤¦Á + ¦È_acc¡¤(1-¦Á)
 //
-// èŠ‚æ‹ï¼šparse_doneï¼ˆV1.0 ä¸Šè¡Œå¸§ 100Hzï¼Œdt=10msï¼‰
-// ä¸Šç”µè‡ªæ ¡å‡†ï¼šå‰ 256 ä¸ªèŠ‚æ‹ï¼ˆ2.56sï¼‰ç´¯åŠ  gyro_x/gyro_y æ±‚é›¶åï¼Œ
-//             â˜… ä¸Šç”µåŽçº¦ 2.6 ç§’å†…å°è½¦å¿…é¡»ä¿æŒé™æ­¢ â˜…
+// ½ÚÅÄ£ºparse_done£¨V1.0 ÉÏÐÐÖ¡ 100Hz£¬dt=10ms£©
+// ÉÏµç×ÔÐ£×¼£ºÇ° 256 ¸ö½ÚÅÄ£¨2.56s£©ÀÛ¼Ó gyro_x/gyro_y ÇóÁãÆ«£¬
+//             ¡ï ÉÏµçºóÔ¼ 2.6 ÃëÄÚÐ¡³µ±ØÐë±£³Ö¾²Ö¹ ¡ï
 //
-// åŠ é€Ÿåº¦è§’åº¦ï¼špitch_acc = atan2(-acc_x, acc_z)ï¼Œroll_acc = atan2(acc_y, acc_z)
-//   æ¯”å€¼ |num|Ã—256/den ç”±æ—¶åˆ†å¤ç”¨é¡ºåºé™¤æ³•å™¨è®¡ç®—ï¼ˆå„ 24 æ‹ï¼‰ï¼Œatan æŸ¥ atan_lut
-//   ï¼ˆæ¯”å€¼é¥±å’Œåˆ° 4.0ï¼Œå¯¹åº” Â±75.96Â°ï¼›åˆ†æ¯ az<256 æ—¶é’³ä½ 256 é˜²é™¤é›¶ï¼‰
+// ¼ÓËÙ¶È½Ç¶È£ºpitch_acc = atan2(-acc_x, acc_z)£¬roll_acc = atan2(acc_y, acc_z)
+//   ±ÈÖµ |num|¡Á256/den ÓÉÊ±·Ö¸´ÓÃË³Ðò³ý·¨Æ÷¼ÆËã£¨¸÷ 24 ÅÄ£©£¬atan ²é atan_lut
+//   £¨±ÈÖµ±¥ºÍµ½ 4.0£¬¶ÔÓ¦ ¡À75.96¡ã£»·ÖÄ¸ az<256 Ê±Ç¯Î» 256 ·À³ýÁã£©
 //
-// é™€èžºç§¯åˆ†ï¼šÎ”Î¸(0.01Â°)/tick = (gyro - bias) Ã— GYRO_MULT >>> 16ï¼ˆå››èˆäº”å…¥ï¼‰
-//   GYRO_MULT = round(2^16 / GYRO_LSB_PER_DPS)ï¼Œæ•°å€¼ä¸Š â‰ˆ gyro/LSB [cdeg/tick]
-//   ï¼ˆå› ä¸º 1 dps Ã— 10ms = 0.01Â° = 1 cdegï¼‰
+// ÍÓÂÝ»ý·Ö£º¦¤¦È(0.01¡ã)/tick = (gyro - bias) ¡Á GYRO_MULT >>> 16£¨ËÄÉáÎåÈë£©
+//   GYRO_MULT = round(2^16 / GYRO_LSB_PER_DPS)£¬ÊýÖµÉÏ ¡Ö gyro/LSB [cdeg/tick]
+//   £¨ÒòÎª 1 dps ¡Á 10ms = 0.01¡ã = 1 cdeg£©
 //
-// è½´å‘çº¦å®šï¼ˆMPU æ°´å¹³å®‰è£…ï¼Œx å‰ / y å·¦ / z ä¸Šï¼‰ï¼š
-//   pitch ç»• y è½´ï¼ˆgyro_yï¼‰ï¼Œroll ç»• x è½´ï¼ˆgyro_xï¼‰ï¼›
-//   å®žè½¦è‹¥æ–¹å‘ç›¸åï¼Œæ”¹ INV_P / INV_R å‚æ•°å³å¯ï¼Œä¸ç”¨æ”¹ä»£ç ã€‚
+// ÖáÏòÔ¼¶¨£¨MPU Ë®Æ½°²×°£¬x Ç° / y ×ó / z ÉÏ£©£º
+//   pitch ÈÆ y Öá£¨gyro_y£©£¬roll ÈÆ x Öá£¨gyro_x£©£»
+//   Êµ³µÈô·½ÏòÏà·´£¬¸Ä INV_P / INV_R ²ÎÊý¼´¿É£¬²»ÓÃ¸Ä´úÂë¡£
 //
-// æ—¶åºï¼štick â†’ S_Pï¼ˆ24æ‹é™¤æ³•ï¼‰â†’ S_Rï¼ˆ24æ‹ï¼‰â†’ S_F1ï¼ˆæŸ¥pitchçš„atanï¼‰
-//       â†’ S_F2ï¼ˆæŸ¥rollçš„atanå¹¶é”å­˜æ»¤æ³¢ç»“æžœï¼‰â†’ S_IDLEï¼Œå…¨ç¨‹ <1.1us@50M
+// Ê±Ðò£ºtick ¡ú S_P£¨24ÅÄ³ý·¨£©¡ú S_R£¨24ÅÄ£©¡ú S_F1£¨²épitchµÄatan£©
+//       ¡ú S_F2£¨²érollµÄatan²¢Ëø´æÂË²¨½á¹û£©¡ú S_IDLE£¬È«³Ì <1.1us@50M
 //
-// è¾“å‡ºï¼špitch_cdeg / roll_cdegï¼Œå•ä½ 0.01Â°ï¼Œæœ‰ç¬¦å·ï¼ˆÂ±7596 = Â±75.96Â° é¥±å’Œï¼‰
+// Êä³ö£ºpitch_cdeg / roll_cdeg£¬µ¥Î» 0.01¡ã£¬ÓÐ·ûºÅ£¨¡À7596 = ¡À75.96¡ã ±¥ºÍ£©
 // ============================================================================
 module attitude_cf #(
-    parameter [15:0] GYRO_LSB_PER_DPS = 16'd131,  // MPU6050@Â±250dps=131ï¼›LSM6DS3â‰ˆ114
-    parameter [10:0] ALPHA_N          = 11'd1004, // äº’è¡¥ç³»æ•° Î±Ã—1024ï¼ˆ0.98â†’Ï„â‰ˆ0.5s@100Hzï¼‰
-    parameter        INV_P            = 1'b0,     // 1 = pitch å–åï¼ˆå®‰è£…æ–¹å‘åäº†ç”¨ï¼‰
-    parameter        INV_R            = 1'b0      // 1 = roll å–å
+    parameter [15:0] GYRO_LSB_PER_DPS = 16'd131,  // MPU6050@¡À250dps=131£»LSM6DS3¡Ö114
+    parameter [10:0] ALPHA_N          = 11'd1004, // »¥²¹ÏµÊý ¦Á¡Á1024£¨0.98¡ú¦Ó¡Ö0.5s@100Hz£©
+    parameter        INV_P            = 1'b0,     // 1 = pitch È¡·´£¨°²×°·½Ïò·´ÁËÓÃ£©
+    parameter        INV_R            = 1'b0      // 1 = roll È¡·´
 )(
-    input  wire               clk,         // 50MHzï¼ˆclk_50mï¼‰
+    input  wire               clk,         // 50MHz£¨clk_50m£©
     input  wire               rst_n,
-    input  wire               tick,        // parse_doneï¼Œ100Hz å•æ‹è„‰å†²
+    input  wire               tick,        // parse_done£¬100Hz µ¥ÅÄÂö³å
     input  wire signed [15:0] gyro_x,
     input  wire signed [15:0] gyro_y,
     input  wire signed [15:0] acc_x,
     input  wire signed [15:0] acc_y,
     input  wire signed [15:0] acc_z,
-    output reg  signed [15:0] pitch_cdeg,  // ä¿¯ä»°è§’ï¼Œ0.01Â°
-    output reg  signed [15:0] roll_cdeg,   // æ¨ªæ»šè§’ï¼Œ0.01Â°
-    output reg                cal_done     // é›¶åæ ¡å‡†å®Œæˆï¼ˆä¸Šç”µçº¦ 2.56s åŽç½® 1ï¼‰
+    output reg  signed [15:0] pitch_cdeg,  // ¸©Ñö½Ç£¬0.01¡ã
+    output reg  signed [15:0] roll_cdeg,   // ºá¹ö½Ç£¬0.01¡ã
+    output reg                cal_done     // ÁãÆ«Ð£×¼Íê³É£¨ÉÏµçÔ¼ 2.56s ºóÖÃ 1£©
 );
 
-// round(2^16/LSB) = (2^16 + LSB/2)/LSBï¼šLSB=131â†’500ï¼ŒLSB=114â†’575
+// round(2^16/LSB) = (2^16 + LSB/2)/LSB£ºLSB=131¡ú500£¬LSB=114¡ú575
 localparam [15:0] GYRO_MULT = (17'd65536 + {2'b00, GYRO_LSB_PER_DPS[15:1]})
                               / GYRO_LSB_PER_DPS;
 localparam [8:0]  CAL_TICKS = 9'd256;               // 2.56s @100Hz
 
-// ------------------------- ä¸Šç”µé›¶åæ ¡å‡† -------------------------
+// ------------------------- ÉÏµçÁãÆ«Ð£×¼ -------------------------
 reg [8:0]         cal_cnt;
 reg signed [31:0] sum_gx, sum_gy;
 reg signed [15:0] bias_x, bias_y;
@@ -63,7 +63,7 @@ always @(posedge clk or negedge rst_n) begin
     end
     else if (tick && !cal_done) begin
         if (cal_cnt == CAL_TICKS - 9'd1) begin
-            bias_x   <= sum_gx >>> 9;               // sum/256ï¼ˆç®—æœ¯å³ç§»ï¼‰
+            bias_x   <= sum_gx >>> 9;               // sum/256£¨ËãÊõÓÒÒÆ£©
             bias_y   <= sum_gy >>> 9;
             cal_done <= 1'b1;
         end
@@ -75,43 +75,43 @@ always @(posedge clk or negedge rst_n) begin
     end
 end
 
-// ------------------------- é™¤æ³•å™¨è¾“å…¥å‡†å¤‡ -------------------------
+// ------------------------- ³ý·¨Æ÷ÊäÈë×¼±¸ -------------------------
 wire [15:0] az_abs = acc_z[15] ? (~acc_z + 16'd1) : acc_z;
 wire [15:0] ax_abs = acc_x[15] ? (~acc_x + 16'd1) : acc_x;
 wire [15:0] ay_abs = acc_y[15] ? (~acc_y + 16'd1) : acc_y;
 wire [14:0] den    = (az_abs < 16'd256) ? 15'd256 : az_abs[14:0];
 
-// ------------------------- é™€èžºå¢žé‡ï¼ˆcdeg/tickï¼Œå››èˆäº”å…¥ï¼‰ -------------------------
+// ------------------------- ÍÓÂÝÔöÁ¿£¨cdeg/tick£¬ËÄÉáÎåÈë£© -------------------------
 wire signed [16:0] gx_d = {gyro_x[15], gyro_x} - {bias_x[15], bias_x};
 wire signed [16:0] gy_d = {gyro_y[15], gyro_y} - {bias_y[15], bias_y};
 wire signed [33:0] gx_m = gx_d * $signed({1'b0, GYRO_MULT});
 wire signed [33:0] gy_m = gy_d * $signed({1'b0, GYRO_MULT});
-wire signed [15:0] dth_x = (gx_m + 34'sd32768) >>> 16;   // roll å¢žé‡
-wire signed [15:0] dth_y = (gy_m + 34'sd32768) >>> 16;   // pitch å¢žé‡
+wire signed [15:0] dth_x = (gx_m + 34'sd32768) >>> 16;   // roll ÔöÁ¿
+wire signed [15:0] dth_y = (gy_m + 34'sd32768) >>> 16;   // pitch ÔöÁ¿
 
-// ------------------------- æ—¶åˆ†å¤ç”¨é¡ºåºé™¤æ³•å™¨ + atan æŸ¥è¡¨ -------------------------
+// ------------------------- Ê±·Ö¸´ÓÃË³Ðò³ý·¨Æ÷ + atan ²é±í -------------------------
 localparam S_IDLE = 3'd0, S_P = 3'd1, S_R = 3'd2, S_F1 = 3'd3, S_F2 = 3'd4;
 reg [ 2:0]  state;
-reg [23:0]  dvd;                    // è¢«é™¤æ•°ï¼ˆ|num|Ã—256ï¼Œâ‰¤2^23ï¼‰
+reg [23:0]  dvd;                    // ±»³ýÊý£¨|num|¡Á256£¬¡Ü2^23£©
 reg [14:0]  dvs, quo;
 reg [15:0]  rem;
 reg [ 4:0]  dcnt;
-reg [10:0]  ratio_p, ratio_r;       // æ¯”å€¼Ã—256ï¼Œé¥±å’Œ 1024
-reg         sign_p,  sign_r;        // è§’åº¦ç¬¦å·
+reg [10:0]  ratio_p, ratio_r;       // ±ÈÖµ¡Á256£¬±¥ºÍ 1024
+reg         sign_p,  sign_r;        // ½Ç¶È·ûºÅ
 
 wire [16:0] rem_shift = {rem[14:0], dvd[23]};
 wire        ge        = (rem_shift >= {2'b00, dvs});
 
-// atan LUTï¼ˆç»„åˆ ROMï¼‰ï¼šS_F1 æŸ¥ pitchï¼ŒS_F2 æŸ¥ roll
+// atan LUT£¨×éºÏ ROM£©£ºS_F1 ²é pitch£¬S_F2 ²é roll
 wire [10:0] lut_idx = (state == S_F2) ? ratio_r : ratio_p;
 wire [12:0] lut_val;
 atan_lut u_atan_lut(.idx(lut_idx), .val(lut_val));
 
-reg  signed [15:0] acc_p_cdeg;      // S_F1 é”å­˜çš„ pitch åŠ é€Ÿåº¦è§’
+reg  signed [15:0] acc_p_cdeg;      // S_F1 Ëø´æµÄ pitch ¼ÓËÙ¶È½Ç
 wire signed [15:0] acc_r_cdeg = sign_r ? -$signed({3'b000, lut_val})
                                        :  $signed({3'b000, lut_val});
 
-// ------------------------- äº’è¡¥æ»¤æ³¢ä¹˜åŠ ï¼ˆç»„åˆï¼ŒS_F2 æ‹é”å­˜ï¼‰ -------------------------
+// ------------------------- »¥²¹ÂË²¨³Ë¼Ó£¨×éºÏ£¬S_F2 ÅÄËø´æ£© -------------------------
 wire signed [16:0]  pitch_int = {pitch_cdeg[15], pitch_cdeg} + {dth_y[15], dth_y};
 wire signed [16:0]  roll_int  = {roll_cdeg[15],  roll_cdeg} + {dth_x[15], dth_x};
 wire signed [10:0]  alpha_s   = $signed({1'b0, ALPHA_N});          // +1004
@@ -121,7 +121,7 @@ wire signed [31:0]  pitch_f   = (pitch_int * alpha_s
 wire signed [31:0]  roll_f    = (roll_int  * alpha_s
                                + {{5{acc_r_cdeg[15]}}, acc_r_cdeg} * beta_s) >>> 10;
 
-// ------------------------- ä¸»çŠ¶æ€æœº -------------------------
+// ------------------------- Ö÷×´Ì¬»ú -------------------------
 always @(posedge clk or negedge rst_n) begin
     if (!rst_n) begin
         state   <= S_IDLE;
@@ -133,17 +133,17 @@ always @(posedge clk or negedge rst_n) begin
     end
     else begin
         case (state)
-        // ---- ç­‰ 100Hz èŠ‚æ‹ï¼Œå¯åŠ¨ pitch æ¯”å€¼é™¤æ³• ----
+        // ---- µÈ 100Hz ½ÚÅÄ£¬Æô¶¯ pitch ±ÈÖµ³ý·¨ ----
         S_IDLE: begin
             if (tick) begin
-                dvd    <= {ax_abs[14:0], 8'd0};   // |acc_x|Ã—256
+                dvd    <= {ax_abs[14:0], 8'd0};   // |acc_x|¡Á256
                 dvs    <= den;
                 quo    <= 15'd0;  rem <= 16'd0;  dcnt <= 5'd0;
-                sign_p <= acc_x[15];              // atan2(-ax,az)ï¼šax>0 â†’ pitch ä¸ºè´Ÿ
+                sign_p <= acc_x[15];              // atan2(-ax,az)£ºax>0 ¡ú pitch Îª¸º
                 state  <= S_P;
             end
         end
-        // ---- pitch æ¯”å€¼ï¼š24 æ‹ç§»ä½é™¤æ³• ----
+        // ---- pitch ±ÈÖµ£º24 ÅÄÒÆÎ»³ý·¨ ----
         S_P: begin
             dvd <= {dvd[22:0], 1'b0};
             if (ge) begin
@@ -156,15 +156,15 @@ always @(posedge clk or negedge rst_n) begin
             end
             if (dcnt == 5'd23) begin
                 ratio_p <= (|quo[14:10]) ? 11'd1024
-                           : {quo[9:0], ge};        // >1024 é¥±å’Œï¼›æœ«æ‹å•†ä½=ge
-                dvd     <= {ay_abs[14:0], 8'd0};   // æŽ¥ç€ç®— roll
+                           : {quo[9:0], ge};        // >1024 ±¥ºÍ£»Ä©ÅÄÉÌÎ»=ge
+                dvd     <= {ay_abs[14:0], 8'd0};   // ½Ó×ÅËã roll
                 quo     <= 15'd0;  rem <= 16'd0;  dcnt <= 5'd0;
-                sign_r  <= acc_y[15];              // atan2(ay,az)ï¼šay>0 â†’ roll ä¸ºæ­£
+                sign_r  <= acc_y[15];              // atan2(ay,az)£ºay>0 ¡ú roll ÎªÕý
                 state   <= S_R;
             end
             else dcnt <= dcnt + 5'd1;
         end
-        // ---- roll æ¯”å€¼ ----
+        // ---- roll ±ÈÖµ ----
         S_R: begin
             dvd <= {dvd[22:0], 1'b0};
             if (ge) begin
@@ -181,13 +181,13 @@ always @(posedge clk or negedge rst_n) begin
             end
             else dcnt <= dcnt + 5'd1;
         end
-        // ---- S_F1ï¼šæŸ¥ pitch çš„ atan å¹¶é”å­˜ï¼ˆlut_idx=ratio_pï¼‰ ----
+        // ---- S_F1£º²é pitch µÄ atan ²¢Ëø´æ£¨lut_idx=ratio_p£© ----
         S_F1: begin
             acc_p_cdeg <= sign_p ? -$signed({3'b000, lut_val})
                                  :  $signed({3'b000, lut_val});
             state      <= S_F2;
         end
-        // ---- S_F2ï¼šæŸ¥ roll çš„ atanï¼ˆlut_idx=ratio_rï¼‰ï¼Œé”å­˜æ»¤æ³¢ç»“æžœ ----
+        // ---- S_F2£º²é roll µÄ atan£¨lut_idx=ratio_r£©£¬Ëø´æÂË²¨½á¹û ----
         S_F2: begin
             pitch_cdeg <= INV_P ? -pitch_f[15:0] : pitch_f[15:0];
             roll_cdeg  <= INV_R ? -roll_f[15:0]  : roll_f[15:0];

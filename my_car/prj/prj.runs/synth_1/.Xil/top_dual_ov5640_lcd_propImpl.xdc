@@ -131,3 +131,5 @@ set_property src_info {type:XDC file:1 line:85 export:INPUT save:INPUT read:READ
 set_property -dict {PACKAGE_PIN E13 IOSTANDARD LVCMOS33} [get_ports uart_rxd]
 set_property src_info {type:XDC file:1 line:86 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict {PACKAGE_PIN F14 IOSTANDARD LVCMOS33} [get_ports uart_txd]
+set_property src_info {type:XDC file:1 line:88 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict {PACKAGE_PIN T6 IOSTANDARD LVCMOS15} [get_ports key_mode]

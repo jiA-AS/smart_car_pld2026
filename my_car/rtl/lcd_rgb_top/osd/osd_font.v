@@ -1,11 +1,11 @@
 // ============================================================================
-// osd_font.v â€”â€” OSD å­—ç¬¦ç‚¹é˜µ ROMï¼ˆunifont ç‚¹é˜µç”Ÿæˆï¼ŒV3ï¼‰
-//   ch  : ASCII ç ï¼ˆ8x16ï¼Œå  bits[7:0]ï¼Œbit7=æœ€å·¦åƒç´ ï¼‰
-//   8'h80~8'hA2 ä¸­æ–‡ï¼ˆ16x16ï¼Œbit15=æœ€å·¦åƒç´ ï¼‰ï¼š
-//   80ç¼– 81ç  82å™¨ 83é™€ 84èº 85ä»ª 86è· 87ç¦» 88ç›® 89æ ‡ 8Aä¸¢ 8Bå¤±
-//   8Cæœª 8Dè¯† 8Eåˆ« 8Få• 90è·Ÿ 91è¸ª 92åŒ 93å¯¹ 94æ¥ 95æ³¨ 96æ„ 97é€Ÿ
-//   98åº¦ 99å§¿ 9Aæ€ 9Bè½¨ 9Cè¿¹ 9Då¤œ 9Eé—´ 9Fè°ƒ A0è¯• A1æ­£ A2å¸¸
-//   row : å­—å†…è¡Œå· 0~15
+// osd_font.v -- OSD ×Ö·ûµãÕó ROM£¨unifont µãÕóÉú³É£¬V3£©
+//   ch  : ASCII Âë£¨8x16£¬Õ¼ bits[7:0]£¬bit7=×î×óÏñËØ£©
+//   8'h80~8'hA2 ÖĞÎÄ£¨16x16£¬bit15=×î×óÏñËØ£©£º
+//   80±à 81Âë 82Æ÷ 83ÍÓ 84Âİ 85ÒÇ 86¾à 87Àë 88Ä¿ 89±ê 8A¶ª 8BÊ§
+//   8CÎ´ 8DÊ¶ 8E±ğ 8Fµ¥ 90¸ú 91×Ù 92Ë« 93¶Ô 94½Ó 95×¢ 96Òâ 97ËÙ
+//   98¶È 99×Ë 9AÌ¬ 9B¹ì 9C¼£ 9DÒ¹ 9E¼ä 9Fµ÷ A0ÊÔ A1Õı A2³£
+//   row : ×ÖÄÚĞĞºÅ 0~15
 // ============================================================================
 module osd_font(
     input  wire [ 7:0] ch,
@@ -1526,7 +1526,7 @@ always @(*) begin
                 default: bits = 16'h0000;
             endcase
         end
-        8'h80: begin  // ç¼–
+        8'h80: begin  // ±à
             case (row)
                 4'd0: bits = 16'h1080;
                 4'd1: bits = 16'h1040;
@@ -1547,7 +1547,7 @@ always @(*) begin
                 default: bits = 16'h0000;
             endcase
         end
-        8'h81: begin  // ç 
+        8'h81: begin  // Âë
             case (row)
                 4'd0: bits = 16'h0000;
                 4'd1: bits = 16'h01F8;
@@ -1568,7 +1568,7 @@ always @(*) begin
                 default: bits = 16'h0000;
             endcase
         end
-        8'h82: begin  // å™¨
+        8'h82: begin  // Æ÷
             case (row)
                 4'd0: bits = 16'h0000;
                 4'd1: bits = 16'h3E7C;
@@ -1589,7 +1589,7 @@ always @(*) begin
                 default: bits = 16'h0000;
             endcase
         end
-        8'h83: begin  // é™€
+        8'h83: begin  // ÍÓ
             case (row)
                 4'd0: bits = 16'h0040;
                 4'd1: bits = 16'h7C20;
@@ -1610,7 +1610,7 @@ always @(*) begin
                 default: bits = 16'h0000;
             endcase
         end
-        8'h84: begin  // èº
+        8'h84: begin  // Âİ
             case (row)
                 4'd0: bits = 16'h1000;
                 4'd1: bits = 16'h11FC;
@@ -1631,7 +1631,7 @@ always @(*) begin
                 default: bits = 16'h0000;
             endcase
         end
-        8'h85: begin  // ä»ª
+        8'h85: begin  // ÒÇ
             case (row)
                 4'd0: bits = 16'h0880;
                 4'd1: bits = 16'h0848;
@@ -1652,7 +1652,7 @@ always @(*) begin
                 default: bits = 16'h0000;
             endcase
         end
-        8'h86: begin  // è·
+        8'h86: begin  // ¾à
             case (row)
                 4'd0: bits = 16'h0000;
                 4'd1: bits = 16'h7DFE;
@@ -1673,7 +1673,7 @@ always @(*) begin
                 default: bits = 16'h0000;
             endcase
         end
-        8'h87: begin  // ç¦»
+        8'h87: begin  // Àë
             case (row)
                 4'd0: bits = 16'h0200;
                 4'd1: bits = 16'h0100;
@@ -1694,7 +1694,7 @@ always @(*) begin
                 default: bits = 16'h0000;
             endcase
         end
-        8'h88: begin  // ç›®
+        8'h88: begin  // Ä¿
             case (row)
                 4'd0: bits = 16'h0000;
                 4'd1: bits = 16'h3FF8;
@@ -1715,7 +1715,7 @@ always @(*) begin
                 default: bits = 16'h0000;
             endcase
         end
-        8'h89: begin  // æ ‡
+        8'h89: begin  // ±ê
             case (row)
                 4'd0: bits = 16'h1000;
                 4'd1: bits = 16'h11FC;
@@ -1736,7 +1736,7 @@ always @(*) begin
                 default: bits = 16'h0000;
             endcase
         end
-        8'h8A: begin  // ä¸¢
+        8'h8A: begin  // ¶ª
             case (row)
                 4'd0: bits = 16'h0010;
                 4'd1: bits = 16'h00F8;
@@ -1757,7 +1757,7 @@ always @(*) begin
                 default: bits = 16'h0000;
             endcase
         end
-        8'h8B: begin  // å¤±
+        8'h8B: begin  // Ê§
             case (row)
                 4'd0: bits = 16'h0100;
                 4'd1: bits = 16'h1100;
@@ -1778,7 +1778,7 @@ always @(*) begin
                 default: bits = 16'h0000;
             endcase
         end
-        8'h8C: begin  // æœª
+        8'h8C: begin  // Î´
             case (row)
                 4'd0: bits = 16'h0100;
                 4'd1: bits = 16'h0100;
@@ -1799,7 +1799,7 @@ always @(*) begin
                 default: bits = 16'h0000;
             endcase
         end
-        8'h8D: begin  // è¯†
+        8'h8D: begin  // Ê¶
             case (row)
                 4'd0: bits = 16'h0000;
                 4'd1: bits = 16'h2000;
@@ -1820,7 +1820,7 @@ always @(*) begin
                 default: bits = 16'h0000;
             endcase
         end
-        8'h8E: begin  // åˆ«
+        8'h8E: begin  // ±ğ
             case (row)
                 4'd0: bits = 16'h0004;
                 4'd1: bits = 16'h7F04;
@@ -1841,7 +1841,7 @@ always @(*) begin
                 default: bits = 16'h0000;
             endcase
         end
-        8'h8F: begin  // å•
+        8'h8F: begin  // µ¥
             case (row)
                 4'd0: bits = 16'h1010;
                 4'd1: bits = 16'h0820;
@@ -1862,7 +1862,7 @@ always @(*) begin
                 default: bits = 16'h0000;
             endcase
         end
-        8'h90: begin  // è·Ÿ
+        8'h90: begin  // ¸ú
             case (row)
                 4'd0: bits = 16'h0000;
                 4'd1: bits = 16'h7DF8;
@@ -1883,7 +1883,7 @@ always @(*) begin
                 default: bits = 16'h0000;
             endcase
         end
-        8'h91: begin  // è¸ª
+        8'h91: begin  // ×Ù
             case (row)
                 4'd0: bits = 16'h0040;
                 4'd1: bits = 16'h7820;
@@ -1904,7 +1904,7 @@ always @(*) begin
                 default: bits = 16'h0000;
             endcase
         end
-        8'h92: begin  // åŒ
+        8'h92: begin  // Ë«
             case (row)
                 4'd0: bits = 16'h0000;
                 4'd1: bits = 16'h0000;
@@ -1925,7 +1925,7 @@ always @(*) begin
                 default: bits = 16'h0000;
             endcase
         end
-        8'h93: begin  // å¯¹
+        8'h93: begin  // ¶Ô
             case (row)
                 4'd0: bits = 16'h0010;
                 4'd1: bits = 16'h0010;
@@ -1946,7 +1946,7 @@ always @(*) begin
                 default: bits = 16'h0000;
             endcase
         end
-        8'h94: begin  // æ¥
+        8'h94: begin  // ½Ó
             case (row)
                 4'd0: bits = 16'h1080;
                 4'd1: bits = 16'h1040;
@@ -1967,7 +1967,7 @@ always @(*) begin
                 default: bits = 16'h0000;
             endcase
         end
-        8'h95: begin  // æ³¨
+        8'h95: begin  // ×¢
             case (row)
                 4'd0: bits = 16'h0080;
                 4'd1: bits = 16'h2040;
@@ -1988,7 +1988,7 @@ always @(*) begin
                 default: bits = 16'h0000;
             endcase
         end
-        8'h96: begin  // æ„
+        8'h96: begin  // Òâ
             case (row)
                 4'd0: bits = 16'h0100;
                 4'd1: bits = 16'h3FF8;
@@ -2009,7 +2009,7 @@ always @(*) begin
                 default: bits = 16'h0000;
             endcase
         end
-        8'h97: begin  // é€Ÿ
+        8'h97: begin  // ËÙ
             case (row)
                 4'd0: bits = 16'h0040;
                 4'd1: bits = 16'h2040;
@@ -2030,7 +2030,7 @@ always @(*) begin
                 default: bits = 16'h0000;
             endcase
         end
-        8'h98: begin  // åº¦
+        8'h98: begin  // ¶È
             case (row)
                 4'd0: bits = 16'h0100;
                 4'd1: bits = 16'h0080;
@@ -2051,7 +2051,7 @@ always @(*) begin
                 default: bits = 16'h0000;
             endcase
         end
-        8'h99: begin  // å§¿
+        8'h99: begin  // ×Ë
             case (row)
                 4'd0: bits = 16'h4080;
                 4'd1: bits = 16'h2080;
@@ -2072,7 +2072,7 @@ always @(*) begin
                 default: bits = 16'h0000;
             endcase
         end
-        8'h9A: begin  // æ€
+        8'h9A: begin  // Ì¬
             case (row)
                 4'd0: bits = 16'h0100;
                 4'd1: bits = 16'h0100;
@@ -2093,7 +2093,7 @@ always @(*) begin
                 default: bits = 16'h0000;
             endcase
         end
-        8'h9B: begin  // è½¨
+        8'h9B: begin  // ¹ì
             case (row)
                 4'd0: bits = 16'h2080;
                 4'd1: bits = 16'h2080;
@@ -2114,7 +2114,7 @@ always @(*) begin
                 default: bits = 16'h0000;
             endcase
         end
-        8'h9C: begin  // è¿¹
+        8'h9C: begin  // ¼£
             case (row)
                 4'd0: bits = 16'h0040;
                 4'd1: bits = 16'h2020;
@@ -2135,7 +2135,7 @@ always @(*) begin
                 default: bits = 16'h0000;
             endcase
         end
-        8'h9D: begin  // å¤œ
+        8'h9D: begin  // Ò¹
             case (row)
                 4'd0: bits = 16'h0200;
                 4'd1: bits = 16'h0100;
@@ -2156,7 +2156,7 @@ always @(*) begin
                 default: bits = 16'h0000;
             endcase
         end
-        8'h9E: begin  // é—´
+        8'h9E: begin  // ¼ä
             case (row)
                 4'd0: bits = 16'h2000;
                 4'd1: bits = 16'h13FC;
@@ -2177,7 +2177,7 @@ always @(*) begin
                 default: bits = 16'h0000;
             endcase
         end
-        8'h9F: begin  // è°ƒ
+        8'h9F: begin  // µ÷
             case (row)
                 4'd0: bits = 16'h0000;
                 4'd1: bits = 16'h47FC;
@@ -2198,7 +2198,7 @@ always @(*) begin
                 default: bits = 16'h0000;
             endcase
         end
-        8'hA0: begin  // è¯•
+        8'hA0: begin  // ÊÔ
             case (row)
                 4'd0: bits = 16'h0028;
                 4'd1: bits = 16'h2024;
@@ -2219,7 +2219,7 @@ always @(*) begin
                 default: bits = 16'h0000;
             endcase
         end
-        8'hA1: begin  // æ­£
+        8'hA1: begin  // Õı
             case (row)
                 4'd0: bits = 16'h0000;
                 4'd1: bits = 16'h7FFC;
@@ -2240,7 +2240,7 @@ always @(*) begin
                 default: bits = 16'h0000;
             endcase
         end
-        8'hA2: begin  // å¸¸
+        8'hA2: begin  // ³£
             case (row)
                 4'd0: bits = 16'h0100;
                 4'd1: bits = 16'h1110;

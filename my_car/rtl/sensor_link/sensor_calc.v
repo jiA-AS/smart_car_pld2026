@@ -1,59 +1,59 @@
 // ============================================================================
-// sensor_calc.v â€”â€” è½®å¼é‡Œç¨‹è®¡ + èˆªå‘ç§¯åˆ†ï¼ˆèµ›é“ä¸‰åŸºç¡€è¦æ±‚1/4ï¼šé€Ÿåº¦ã€ä½ç½®ã€èˆªå‘ï¼‰
+// sensor_calc.v -- ÂÖÊ½Àï³Ì¼Æ + º½Ïò»ı·Ö£¨ÈüµÀÈı»ù´¡ÒªÇó1/4£ºËÙ¶È¡¢Î»ÖÃ¡¢º½Ïò£©
 //
-// èŠ‚æ‹ï¼šparse_doneï¼ˆV1.0 ä¸Šè¡Œå¸§ 100Hzï¼Œdt=10msï¼‰
+// ½ÚÅÄ£ºparse_done£¨V1.0 ÉÏĞĞÖ¡ 100Hz£¬dt=10ms£©
 //
-// â˜… å®šç‚¹çº¦å®šï¼šä½ç§»å†…éƒ¨å•ä½ mmÃ—1024ï¼ˆé¿å… 10ms å°ä½ç§»è¢«æ•´ mm æˆªæ–­ä¸¢å¤±ï¼‰ï¼Œ
-//   ä½ç½®ç´¯åŠ å™¨ 40bit signedï¼ˆÂ±5.4Ã—10^8 mmï¼‰ï¼Œè¾“å‡ºæ¥å£ä¸€å¾‹æ¢ç®—å› mmã€‚
+// ¡ï ¶¨µãÔ¼¶¨£ºÎ»ÒÆÄÚ²¿µ¥Î» mm¡Á1024£¨±ÜÃâ 10ms Ğ¡Î»ÒÆ±»Õû mm ½Ø¶Ï¶ªÊ§£©£¬
+//   Î»ÖÃÀÛ¼ÓÆ÷ 40bit signed£¨¡À5.4¡Á10^8 mm£©£¬Êä³ö½Ó¿ÚÒ»ÂÉ»»Ëã»Ø mm¡£
 //
-// è½®é€Ÿ/è½¦é€Ÿï¼š
-//   d_i    = enc_i - enc_i_prev                     ï¼ˆ10ms è„‰å†²å¢é‡ï¼Œæœ‰ç¬¦å·ï¼‰
-//   mm_i   = d_i Ã— MM_PER_CNT_X1024                 ï¼ˆä½ç§»ï¼ŒmmÃ—1024ï¼‰
-//   spd_i  = (mm_i Ã— 25) >>> 8                      ï¼ˆÃ—100/1024 â†’ mm/sï¼‰
-//   fwd    = (mm0+mm1+mm2+mm3) >>> 2                ï¼ˆå››è½®å¹³å‡ï¼ŒmmÃ—1024ï¼‰
-//   fwd_speed = (fwd Ã— 25) >>> 8                    ï¼ˆmm/sï¼‰
+// ÂÖËÙ/³µËÙ£º
+//   d_i    = enc_i - enc_i_prev                     £¨10ms Âö³åÔöÁ¿£¬ÓĞ·ûºÅ£©
+//   mm_i   = d_i ¡Á MM_PER_CNT_X1024                 £¨Î»ÒÆ£¬mm¡Á1024£©
+//   spd_i  = (mm_i ¡Á 25) >>> 8                      £¨¡Á100/1024 ¡ú mm/s£©
+//   fwd    = (mm0+mm1+mm2+mm3) >>> 2                £¨ËÄÂÖÆ½¾ù£¬mm¡Á1024£©
+//   fwd_speed = (fwd ¡Á 25) >>> 8                    £¨mm/s£©
 //
-// èˆªå‘ï¼ˆé™€èº z ç§¯åˆ†ï¼Œä¸Šç”µ 2.56s é™æ­¢è‡ªæ ¡å‡†é›¶åï¼‰ï¼š
-//   delta_z = (gyro_z - bias) Ã— GYRO_MULT >>> 16    ï¼ˆcdeg/tickï¼Œå››èˆäº”å…¥ï¼‰
-//   theta_idxï¼š0~359ï¼ˆåº¦ï¼‰ï¼Œå¢é‡å¼ç»´æŠ¤ï¼Œæ— é™¤æ³•
-//   ang_rate = delta_z Ã— 100                        ï¼ˆè§’é€Ÿåº¦ï¼Œ0.01Â°/sï¼‰
+// º½Ïò£¨ÍÓÂİ z »ı·Ö£¬ÉÏµç 2.56s ¾²Ö¹×ÔĞ£×¼ÁãÆ«£©£º
+//   delta_z = (gyro_z - bias) ¡Á GYRO_MULT >>> 16    £¨cdeg/tick£¬ËÄÉáÎåÈë£©
+//   theta_idx£º0~359£¨¶È£©£¬ÔöÁ¿Ê½Î¬»¤£¬ÎŞ³ı·¨
+//   ang_rate = delta_z ¡Á 100                        £¨½ÇËÙ¶È£¬0.01¡ã/s£©
 //
-// ä½ç½®ï¼ˆèˆªä½æ¨ç®—ï¼Œå†…éƒ¨ mmÃ—1024ï¼‰ï¼š
-//   pos_x1024 += fwd Ã— cos(theta) >>> 15  ï¼ˆcos/sin æŸ¥ sincos_lutï¼ŒQ15ï¼‰
-//   pos_x = pos_x1024 >>> 10                          ï¼ˆè¾“å‡º mmï¼Œä¸Šç”µåŸç‚¹ï¼‰
+// Î»ÖÃ£¨º½Î»ÍÆËã£¬ÄÚ²¿ mm¡Á1024£©£º
+//   pos_x1024 += fwd ¡Á cos(theta) >>> 15  £¨cos/sin ²é sincos_lut£¬Q15£©
+//   pos_x = pos_x1024 >>> 10                          £¨Êä³ö mm£¬ÉÏµçÔ­µã£©
 //
-// è½¨è¿¹æŠ½ç¨€ï¼šæ¯ TRK_DECIM(20) æ‹è¾“å‡º trk_wr å•æ‹ + trk_x/trk_yï¼ˆmmï¼Œé¥±å’Œï¼‰
+// ¹ì¼£³éÏ¡£ºÃ¿ TRK_DECIM(20) ÅÄÊä³ö trk_wr µ¥ÅÄ + trk_x/trk_y£¨mm£¬±¥ºÍ£©
 //
-// â˜… æ ‡å®šï¼šMM_PER_CNT_X1024 = å®æµ‹æ¯«ç±³æ•° / ç¼–ç å™¨å¢é‡ Ã— 1024ã€‚
-//   æ–¹æ³•ï¼šç›´çº¿æ¨è½¦ 1000mmï¼Œè¯» enc å¢é‡ Dï¼Œåˆ™å‚æ•° = 1000Ã—1024/Dã€‚
-//   é»˜è®¤ 102ï¼ˆâ‰ˆ0.1mm/è„‰å†²ï¼‰ä»…ä¸ºå ä½ï¼Œå¿…é¡»å®æµ‹ï¼
+// ¡ï ±ê¶¨£ºMM_PER_CNT_X1024 = Êµ²âºÁÃ×Êı / ±àÂëÆ÷ÔöÁ¿ ¡Á 1024¡£
+//   ·½·¨£ºÖ±ÏßÍÆ³µ 1000mm£¬¶Á enc ÔöÁ¿ D£¬Ôò²ÎÊı = 1000¡Á1024/D¡£
+//   Ä¬ÈÏ 102£¨¡Ö0.1mm/Âö³å£©½öÎªÕ¼Î»£¬±ØĞëÊµ²â£¡
 // ============================================================================
 module sensor_calc #(
-    parameter [15:0] MM_PER_CNT_X1024   = 16'd102,  // mm/è„‰å†² Ã—1024 â˜…æ ‡å®šâ˜…
-    parameter [15:0] GYRO_LSB_PER_DPS   = 16'd131,  // MPU6050@Â±250dps=131ï¼›LSM6DS3â‰ˆ114
-    parameter [ 5:0] TRK_DECIM          = 6'd20     // è½¨è¿¹æŠ½ç¨€ï¼ˆ20Ã—10ms=200msï¼Œ5Hzï¼‰
+    parameter [15:0] MM_PER_CNT_X1024   = 16'd102,  // mm/Âö³å ¡Á1024 ¡ï±ê¶¨¡ï
+    parameter [15:0] GYRO_LSB_PER_DPS   = 16'd131,  // MPU6050@¡À250dps=131£»LSM6DS3¡Ö114
+    parameter [ 5:0] TRK_DECIM          = 6'd20     // ¹ì¼£³éÏ¡£¨20¡Á10ms=200ms£¬5Hz£©
 )(
-    input  wire               clk,        // 50MHzï¼ˆclk_50mï¼‰
+    input  wire               clk,        // 50MHz£¨clk_50m£©
     input  wire               rst_n,
-    input  wire               tick,       // parse_doneï¼Œ100Hz å•æ‹è„‰å†²
+    input  wire               tick,       // parse_done£¬100Hz µ¥ÅÄÂö³å
     input  wire signed [31:0] enc0,
     input  wire signed [31:0] enc1,
     input  wire signed [31:0] enc2,
     input  wire signed [31:0] enc3,
     input  wire signed [15:0] gyro_z,
-    // ---- è½¦è¾†çŠ¶æ€ï¼ˆ50M åŸŸï¼Œå‡†é™æ€ï¼ŒOSD/å…¶ä»–æ¨¡å—ç›´æ¥é‡‡æ ·ï¼‰ ----
-    output reg  signed [15:0] spd0,       // å››è½®è½®é€Ÿ mm/s
+    // ---- ³µÁ¾×´Ì¬£¨50M Óò£¬×¼¾²Ì¬£¬OSD/ÆäËûÄ£¿éÖ±½Ó²ÉÑù£© ----
+    output reg  signed [15:0] spd0,       // ËÄÂÖÂÖËÙ mm/s
     output reg  signed [15:0] spd1,
     output reg  signed [15:0] spd2,
     output reg  signed [15:0] spd3,
-    output reg  signed [15:0] fwd_speed,  // è½¦é€Ÿ mm/s
-    output reg  signed [15:0] ang_rate,   // è§’é€Ÿåº¦ 0.01Â°/s
-    output wire signed [31:0] pos_x,      // ä½ç½® mmï¼ˆä¸Šç”µåŸç‚¹ï¼‰
+    output reg  signed [15:0] fwd_speed,  // ³µËÙ mm/s
+    output reg  signed [15:0] ang_rate,   // ½ÇËÙ¶È 0.01¡ã/s
+    output wire signed [31:0] pos_x,      // Î»ÖÃ mm£¨ÉÏµçÔ­µã£©
     output wire signed [31:0] pos_y,
-    output reg        [ 8:0]  theta_idx,  // èˆªå‘ 0~359ï¼ˆåº¦ï¼Œ0=ä¸Šç”µæœå‘ï¼‰
-    // ---- è½¨è¿¹ç‚¹ï¼ˆ5Hzï¼Œé€ dash_osdï¼ŒåŒ 50M åŸŸå•æ‹è„‰å†²ï¼‰ ----
+    output reg        [ 8:0]  theta_idx,  // º½Ïò 0~359£¨¶È£¬0=ÉÏµç³¯Ïò£©
+    // ---- ¹ì¼£µã£¨5Hz£¬ËÍ dash_osd£¬Í¬ 50M Óòµ¥ÅÄÂö³å£© ----
     output reg                trk_wr,
-    output reg  signed [15:0] trk_x,      // mmï¼Œé¥±å’Œ Â±32767
+    output reg  signed [15:0] trk_x,      // mm£¬±¥ºÍ ¡À32767
     output reg  signed [15:0] trk_y
 );
 
@@ -62,7 +62,7 @@ localparam [15:0] GYRO_MULT = (17'd65536 + {2'b00, GYRO_LSB_PER_DPS[15:1]})
                               / GYRO_LSB_PER_DPS;
 localparam [8:0]  CAL_TICKS = 9'd256;
 
-// ------------------------- ç¼–ç å™¨å·®åˆ† -------------------------
+// ------------------------- ±àÂëÆ÷²î·Ö -------------------------
 reg signed [31:0] enc0_p, enc1_p, enc2_p, enc3_p;
 always @(posedge clk or negedge rst_n) begin
     if (!rst_n) begin
@@ -78,14 +78,14 @@ wire signed [31:0] d1 = enc1 - enc1_p;
 wire signed [31:0] d2 = enc2 - enc2_p;
 wire signed [31:0] d3 = enc3 - enc3_p;
 
-// ------------------------- ä½ç§»ï¼ˆmmÃ—1024ï¼‰ä¸é€Ÿåº¦ï¼ˆmm/sï¼‰ -------------------------
+// ------------------------- Î»ÒÆ£¨mm¡Á1024£©ÓëËÙ¶È£¨mm/s£© -------------------------
 wire signed [31:0] mm0 = d0 * $signed({1'b0, MM_PER_CNT_X1024});
 wire signed [31:0] mm1 = d1 * $signed({1'b0, MM_PER_CNT_X1024});
 wire signed [31:0] mm2 = d2 * $signed({1'b0, MM_PER_CNT_X1024});
 wire signed [31:0] mm3 = d3 * $signed({1'b0, MM_PER_CNT_X1024});
-wire signed [31:0] fwd = (mm0 + mm1 + mm2 + mm3) >>> 2;   // mmÃ—1024
+wire signed [31:0] fwd = (mm0 + mm1 + mm2 + mm3) >>> 2;   // mm¡Á1024
 
-// é¥±å’Œå‡½æ•°ï¼šè¿”å› 16bit è¡¥ç ï¼ˆèµ‹ç»™ signed ä¿¡å·ä½¿ç”¨ï¼Œbit pattern ä¸€è‡´ï¼‰
+// ±¥ºÍº¯Êı£º·µ»Ø 16bit ²¹Âë£¨¸³¸ø signed ĞÅºÅÊ¹ÓÃ£¬bit pattern Ò»ÖÂ£©
 function [15:0] sat16;
     input signed [31:0] v;
     begin
@@ -95,7 +95,7 @@ function [15:0] sat16;
     end
 endfunction
 
-// ------------------------- é™€èº z é›¶åæ ¡å‡† -------------------------
+// ------------------------- ÍÓÂİ z ÁãÆ«Ğ£×¼ -------------------------
 reg [8:0]         cal_cnt;
 reg signed [31:0] sum_gz;
 reg signed [15:0] bias_z;
@@ -113,25 +113,25 @@ always @(posedge clk or negedge rst_n) begin
     end
 end
 
-// ------------------------- èˆªå‘å¢é‡ï¼ˆcdeg/tickï¼‰ -------------------------
+// ------------------------- º½ÏòÔöÁ¿£¨cdeg/tick£© -------------------------
 wire signed [16:0] gz_d    = {gyro_z[15], gyro_z} - {bias_z[15], bias_z};
 wire signed [33:0] gz_m    = gz_d * $signed({1'b0, GYRO_MULT});
 wire signed [15:0] delta_z = (gz_m + 34'sd32768) >>> 16;
 
-// ------------------------- sin/cos æŸ¥è¡¨ï¼ˆç»„åˆï¼‰ -------------------------
+// ------------------------- sin/cos ²é±í£¨×éºÏ£© -------------------------
 wire signed [15:0] sin_q15, cos_q15;
 sincos_lut u_sincos_lut(.idx(theta_idx), .sin_q15(sin_q15), .cos_q15(cos_q15));
 
-// ------------------------- ä½ç½®å¢é‡ï¼ˆmmÃ—1024ï¼‰ä¸ç´¯åŠ å™¨ -------------------------
+// ------------------------- Î»ÖÃÔöÁ¿£¨mm¡Á1024£©ÓëÀÛ¼ÓÆ÷ -------------------------
 wire signed [47:0] dx1024 = (fwd * cos_q15) >>> 15;
 wire signed [47:0] dy1024 = (fwd * sin_q15) >>> 15;
 reg  signed [39:0] pos_x1024, pos_y1024;
 
-assign pos_x = pos_x1024 >>> 10;          // è¾“å‡º mm
+assign pos_x = pos_x1024 >>> 10;          // Êä³ö mm
 assign pos_y = pos_y1024 >>> 10;
 
-// ------------------------- ä¸»æ—¶åº -------------------------
-reg signed [15:0] frac_cdeg;   // èˆªå‘å°æ•°ç´¯åŠ ï¼ˆÂ±99 cdegï¼‰
+// ------------------------- Ö÷Ê±Ğò -------------------------
+reg signed [15:0] frac_cdeg;   // º½ÏòĞ¡ÊıÀÛ¼Ó£¨¡À99 cdeg£©
 reg [5:0]         decim_cnt;
 
 always @(posedge clk or negedge rst_n) begin
@@ -144,20 +144,20 @@ always @(posedge clk or negedge rst_n) begin
         trk_wr <= 1'b0;  trk_x <= 16'sd0;  trk_y <= 16'sd0;
     end
     else begin
-        trk_wr <= 1'b0;                          // é»˜è®¤æ¸…é›¶ï¼ˆå•æ‹è„‰å†²ï¼‰
+        trk_wr <= 1'b0;                          // Ä¬ÈÏÇåÁã£¨µ¥ÅÄÂö³å£©
         if (tick) begin
-            // ---- è½®é€Ÿ/è½¦é€Ÿ/è§’é€Ÿåº¦ï¼ˆÃ—25>>>8 = Ã—100/1024ï¼‰ ----
+            // ---- ÂÖËÙ/³µËÙ/½ÇËÙ¶È£¨¡Á25>>>8 = ¡Á100/1024£© ----
             spd0      <= sat16((mm0 * 32'sd25) >>> 8);
             spd1      <= sat16((mm1 * 32'sd25) >>> 8);
             spd2      <= sat16((mm2 * 32'sd25) >>> 8);
             spd3      <= sat16((mm3 * 32'sd25) >>> 8);
             fwd_speed <= sat16((fwd * 32'sd25) >>> 8);
             ang_rate  <= sat16({{16{delta_z[15]}}, delta_z} * 32'sd100);
-            // ---- ä½ç½®ï¼ˆmmÃ—1024 ç´¯åŠ ï¼‰ ----
+            // ---- Î»ÖÃ£¨mm¡Á1024 ÀÛ¼Ó£© ----
             pos_x1024 <= pos_x1024 + dx1024[39:0];
             pos_y1024 <= pos_y1024 + dy1024[39:0];
-            // ---- èˆªå‘ï¼šå°æ•°ç´¯åŠ ï¼Œæ¯æ»¡ Â±100cdeg è°ƒæ•´ 1Â°ï¼ˆæ®‹ä½™ä¸ä¸¢ï¼‰ ----
-            if (cal_cnt >= CAL_TICKS) begin      // æ ¡å‡†å®Œæˆåæ‰ç§¯åˆ†
+            // ---- º½Ïò£ºĞ¡ÊıÀÛ¼Ó£¬Ã¿Âú ¡À100cdeg µ÷Õû 1¡ã£¨²ĞÓà²»¶ª£© ----
+            if (cal_cnt >= CAL_TICKS) begin      // Ğ£×¼Íê³Éºó²Å»ı·Ö
                 if (frac_cdeg + delta_z >= 16'sd100) begin
                     frac_cdeg <= frac_cdeg + delta_z - 16'sd100;
                     theta_idx <= (theta_idx == 9'd359) ? 9'd0 : theta_idx + 9'd1;
@@ -169,7 +169,7 @@ always @(posedge clk or negedge rst_n) begin
                 else
                     frac_cdeg <= frac_cdeg + delta_z;
             end
-            // ---- è½¨è¿¹æŠ½ç¨€ï¼ˆ5Hzï¼‰ ----
+            // ---- ¹ì¼£³éÏ¡£¨5Hz£© ----
             if (decim_cnt == TRK_DECIM - 6'd1) begin
                 decim_cnt <= 6'd0;
                 trk_wr    <= 1'b1;

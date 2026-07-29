@@ -1,0 +1,129 @@
+/*
+
+Xilinx Vivado v2018.3 (64-bit) [Major: 2018, Minor: 3]
+SW Build: 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build: 2404404 on Fri Dec  7 01:43:56 MST 2018
+
+Process ID (PID): 23004
+License: Customer
+
+Current time: 	Wed Jul 29 09:48:11 CST 2026
+Time zone: 	China Standard Time (Asia/Shanghai)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 24
+
+Screen size: 2560x1600
+Screen resolution (DPI): 192
+Available screens: 1
+Available disk space: 39 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=24
+
+Java version: 	9.0.4 64-bit
+Java home: 	D:/Xilinx/Vivado/2018.3/tps/win64/jre9.0.4
+Java executable location: 	D:/Xilinx/Vivado/2018.3/tps/win64/jre9.0.4/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	sunjiayi
+User home directory: C:/Users/sunjiayi
+User working directory: E:/FPGA/project/smart_car_pld2026/my_car/prj
+User country: 	CN
+User language: 	zh
+User locale: 	zh_CN
+
+RDI_BASEROOT: D:/Xilinx/Vivado
+HDI_APPROOT: D:/Xilinx/Vivado/2018.3
+RDI_DATADIR: D:/Xilinx/Vivado/2018.3/data
+RDI_BINDIR: D:/Xilinx/Vivado/2018.3/bin
+
+Vivado preferences file location: C:/Users/sunjiayi/AppData/Roaming/Xilinx/Vivado/2018.3/vivado.xml
+Vivado preferences directory: C:/Users/sunjiayi/AppData/Roaming/Xilinx/Vivado/2018.3/
+Vivado layouts directory: C:/Users/sunjiayi/AppData/Roaming/Xilinx/Vivado/2018.3/layouts
+PlanAhead jar file location: 	D:/Xilinx/Vivado/2018.3/lib/classes/planAhead.jar
+Vivado log file location: 	E:/FPGA/project/smart_car_pld2026/my_car/prj/vivado.log
+Vivado journal file location: 	E:/FPGA/project/smart_car_pld2026/my_car/prj/vivado.jou
+Engine tmp dir: 	E:/FPGA/project/smart_car_pld2026/my_car/prj/.Xil/Vivado-23004-LAPTOP-2K88VM5F
+
+Xilinx Environment Variables
+----------------------------
+XILINX: D:/Xilinx/Vivado/2018.3/ids_lite/ISE
+XILINX_DSP: D:/Xilinx/Vivado/2018.3/ids_lite/ISE
+XILINX_PLANAHEAD: D:/Xilinx/Vivado/2018.3
+XILINX_SDK: D:/Xilinx/SDK/2018.3
+XILINX_VIVADO: D:/Xilinx/Vivado/2018.3
+XILINX_VIVADO_HLS: D:/Xilinx/Vivado/2018.3
+
+
+GUI allocated memory:	129 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 714 MB
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// TclEventType: PROJECT_OPEN_DIALOG
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 79 MB (+80448kb) [00:00:05]
+// [Engine Memory]: 589 MB (+466381kb) [00:00:05]
+// Opening Vivado Project: E:\FPGA\project\smart_car_pld2026\my_car\prj\prj.xpr. Version: Vivado v2018.3 
+// bx (cp):  Open Project : addNotify
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 95 MB (+12736kb) [00:00:09]
+// [Engine Memory]: 770 MB (+159016kb) [00:00:09]
+// [GUI Memory]: 123 MB (+24179kb) [00:00:09]
+// [Engine Memory]: 813 MB (+4079kb) [00:00:10]
+// WARNING: HEventQueue.dispatchEvent() is taking  1679 ms.
+// Tcl Message: open_project E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2018.3/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 828 MB. GUI used memory: 70 MB. Current time: 7/29/26, 9:48:14 AM CST
+// Tcl Message: open_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 859.812 ; gain = 228.418 
+// Project name: prj; location: E:/FPGA/project/smart_car_pld2026/my_car/prj; part: xc7a100tfgg484-2
+dismissDialog("Open Project"); // bx (cp)
+// [Engine Memory]: 865 MB (+12540kb) [00:00:12]
+// Tcl Message: update_compile_order -fileset sources_1 
+// [GUI Memory]: 132 MB (+3180kb) [00:00:17]
+// WARNING: HEventQueue.dispatchEvent() is taking  2385 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  4826 ms.
+// WARNING: HTimer (StateMonitor Timer) is taking 808ms to process. Increasing delay to 4000 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 8003 ms. Increasing delay to 3000 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 10144 ms. Increasing delay to 30432 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  2326 ms.
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking 1733ms to process. Increasing delay to 2000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1943 ms.
+// WARNING: HTimer (FileMgr Design Graph Update Timer) is taking 1550ms to process. Increasing delay to 3000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1550 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1004 ms.
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking 774ms to process. Increasing delay to 3000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1002 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1010 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1204 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 21 ms. Decreasing delay to 2021 ms.
