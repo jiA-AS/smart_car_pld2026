@@ -1,0 +1,45 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Wed Jul 29 19:50:50 2026
+# Process ID: 51128
+# Current directory: E:/FPGA/project/smart_car_pld2026/my_car/prj
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent21060 E:\FPGA\project\smart_car_pld2026\my_car\prj\prj.xpr
+# Log file: E:/FPGA/project/smart_car_pld2026/my_car/prj/vivado.log
+# Journal file: E:/FPGA/project/smart_car_pld2026/my_car/prj\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.xpruupdate_compile_order -fileset sources_1
+generate_target all [get_files E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci]
+export_ip_user_files -of_objects [get_files E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci] -directory E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.ip_user_files/sim_scripts -ip_user_files_dir E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.ip_user_files -ipstatic_source_dir E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.ip_user_files/ipstatic -lib_map_path [list {modelsim=E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.cache/compile_simlib/modelsim} {questa=E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.cache/compile_simlib/questa} {riviera=E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.cache/compile_simlib/riviera} {activehdl=E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+generate_target all [get_files E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/wr_fifo/wr_fifo.xci]
+export_ip_user_files -of_objects [get_files E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/wr_fifo/wr_fifo.xci] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/wr_fifo/wr_fifo.xci] -directory E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.ip_user_files/sim_scripts -ip_user_files_dir E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.ip_user_files -ipstatic_source_dir E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.ip_user_files/ipstatic -lib_map_path [list {modelsim=E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.cache/compile_simlib/modelsim} {questa=E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.cache/compile_simlib/questa} {riviera=E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.cache/compile_simlib/riviera} {activehdl=E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+generate_target all [get_files E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/rd_fifo/rd_fifo.xci]
+export_ip_user_files -of_objects [get_files E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/rd_fifo/rd_fifo.xci] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/rd_fifo/rd_fifo.xci] -directory E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.ip_user_files/sim_scripts -ip_user_files_dir E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.ip_user_files -ipstatic_source_dir E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.ip_user_files/ipstatic -lib_map_path [list {modelsim=E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.cache/compile_simlib/modelsim} {questa=E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.cache/compile_simlib/questa} {riviera=E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.cache/compile_simlib/riviera} {activehdl=E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+create_fileset -blockset rd_fifo
+set_property top rd_fifo [get_fileset rd_fifo]
+move_files -fileset [get_fileset rd_fifo] [get_files -of_objects [get_fileset sources_1] E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/rd_fifo/rd_fifo.xci]
+generate_target all [get_files E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/mig_7series_0/mig_7series_0.xci]
+export_ip_user_files -of_objects [get_files E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/mig_7series_0/mig_7series_0.xci] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/mig_7series_0/mig_7series_0.xci] -directory E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.ip_user_files/sim_scripts -ip_user_files_dir E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.ip_user_files -ipstatic_source_dir E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.ip_user_files/ipstatic -lib_map_path [list {modelsim=E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.cache/compile_simlib/modelsim} {questa=E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.cache/compile_simlib/questa} {riviera=E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.cache/compile_simlib/riviera} {activehdl=E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+launch_run {clk_wiz_0_synth_1 wr_fifo_synth_1 rd_fifo_synth_1 mig_7series_0_synth_1}
+wait_on_run clk_wiz_0_synth_1
+
+wait_on_run clk_wiz_0_synth_1
+wait_on_run wr_fifo_synth_1
+
+wait_on_run clk_wiz_0_synth_1
+wait_on_run wr_fifo_synth_1
+wait_on_run rd_fifo_synth_1
+
+wait_on_run clk_wiz_0_synth_1
+wait_on_run wr_fifo_synth_1
+wait_on_run rd_fifo_synth_1
+wait_on_run mig_7series_0_synth_1
+
+launch_simulation
+source top_dual_ov5640_lcd.tcl

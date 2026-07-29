@@ -1,0 +1,28 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Wed Jul 29 12:21:12 2026
+# Process ID: 47740
+# Current directory: E:/FPGA/project/smart_car_pld2026/my_car/prj
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent44788 E:\FPGA\project\smart_car_pld2026\my_car\prj\prj.xpr
+# Log file: E:/FPGA/project/smart_car_pld2026/my_car/prj/vivado.log
+# Journal file: E:/FPGA/project/smart_car_pld2026/my_car/prj\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2018.3/data/ip'.
+update_compile_order -fileset sources_1
+reset
+ambiguous command name "reset": reset_attribute reset_drc reset_drc_check reset_methodology reset_metreset_project
+reset
+ambiguous command name "reset": reset_attribute reset_drc reset_drc_check reset_methodology reset_methodology_check reset_msg_config reset_msg_count reset_operating_conditions reset_param reset_project reset_property reset_runs reset_simulation reset_ssn reset_switching_activity reset_target reset_timing reset_ucf
+reset_runs all
+WARNING: [Vivado 12-821] No runs matched 'all'
+ERROR: [Common 17-162] Invalid option value specified for '-runs'.
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Jul 29 12:24:43 2026...

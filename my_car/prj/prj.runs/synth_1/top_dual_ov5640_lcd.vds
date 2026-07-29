@@ -2,8 +2,8 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Wed Jul 29 10:29:38 2026
-# Process ID: 11220
+# Start of session at: Wed Jul 29 21:09:43 2026
+# Process ID: 8392
 # Current directory: E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1
 # Command line: vivado.exe -log top_dual_ov5640_lcd.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_dual_ov5640_lcd.tcl
 # Log file: E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/top_dual_ov5640_lcd.vds
@@ -15,7 +15,7 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 40784 
+INFO: Helper process launched with PID 41204 
 WARNING: [Synth 8-2611] redeclaration of ansi port wfifo_dout is not allowed [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl_top.v:60]
 WARNING: [Synth 8-2611] redeclaration of ansi port wfifo_rcount_1 is not allowed [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl_top.v:63]
 WARNING: [Synth 8-2611] redeclaration of ansi port wfifo_rcount_2 is not allowed [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl_top.v:64]
@@ -27,9 +27,9 @@ WARNING: [Synth 8-2611] redeclaration of ansi port rfifo_wdata_2 is not allowed 
 WARNING: [Synth 8-2611] redeclaration of ansi port rfifo_wren_1 is not allowed [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_rw.v:98]
 WARNING: [Synth 8-2611] redeclaration of ansi port rfifo_wren_2 is not allowed [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_rw.v:99]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 508.520 ; gain = 106.832
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 508.777 ; gain = 106.121
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'top_dual_ov5640_lcd' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v:25]
+INFO: [Synth 8-6157] synthesizing module 'top_dual_ov5640_lcd' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v:26]
 INFO: [Synth 8-6157] synthesizing module 'picture_size' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/picture_size.v:19]
 INFO: [Synth 8-6155] done synthesizing module 'picture_size' (1#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/picture_size.v:19]
 INFO: [Synth 8-6157] synthesizing module 'ov5640_dri' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ov5640_dri/ov5640_dri.v:19]
@@ -59,8 +59,8 @@ INFO: [Synth 8-6157] synthesizing module 'cmos_capture_data' [E:/FPGA/project/sm
 	Parameter WAIT_FRAME bound to: 4'b1010 
 INFO: [Synth 8-6155] done synthesizing module 'cmos_capture_data' (4#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ov5640_dri/cmos_capture_data.v:18]
 INFO: [Synth 8-6155] done synthesizing module 'ov5640_dri' (5#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ov5640_dri/ov5640_dri.v:19]
-WARNING: [Synth 8-350] instance 'u_ov5640_dri_1' of module 'ov5640_dri' requires 22 connections, but only 21 given [E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v:222]
-WARNING: [Synth 8-350] instance 'u_ov5640_dri_2' of module 'ov5640_dri' requires 22 connections, but only 21 given [E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v:249]
+WARNING: [Synth 8-350] instance 'u_ov5640_dri_1' of module 'ov5640_dri' requires 22 connections, but only 21 given [E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v:224]
+WARNING: [Synth 8-350] instance 'u_ov5640_dri_2' of module 'ov5640_dri' requires 22 connections, but only 21 given [E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v:251]
 INFO: [Synth 8-6157] synthesizing module 'green_detect' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/vision/green_detect.v:21]
 	Parameter H_ACTIVE bound to: 400 - type: integer 
 	Parameter TH_G bound to: 6'b101000 
@@ -101,8 +101,9 @@ INFO: [Synth 8-6157] synthesizing module 'attitude_cf' [E:/FPGA/project/smart_ca
 	Parameter S_R bound to: 3'b010 
 	Parameter S_F1 bound to: 3'b011 
 	Parameter S_F2 bound to: 3'b100 
-INFO: [Synth 8-6157] synthesizing module 'atan_lut' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/atan_lut.v:7]
-INFO: [Synth 8-6155] done synthesizing module 'atan_lut' (8#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/atan_lut.v:7]
+INFO: [Synth 8-6157] synthesizing module 'atan_lut' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/atan_lut.v:9]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed" *) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/atan_lut.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'atan_lut' (8#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/atan_lut.v:9]
 INFO: [Synth 8-6155] done synthesizing module 'attitude_cf' (9#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/attitude_cf.v:28]
 INFO: [Synth 8-6157] synthesizing module 'sensor_calc' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/sensor_calc.v:31]
 	Parameter MM_PER_CNT_X1024 bound to: 16'b0000000001100110 
@@ -111,6 +112,8 @@ INFO: [Synth 8-6157] synthesizing module 'sensor_calc' [E:/FPGA/project/smart_ca
 	Parameter GYRO_MULT bound to: 16'b0000000111110100 
 	Parameter CAL_TICKS bound to: 9'b100000000 
 INFO: [Synth 8-6157] synthesizing module 'sincos_lut' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/sincos_lut.v:7]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed" *) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/sincos_lut.v:12]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed" *) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/sincos_lut.v:13]
 INFO: [Synth 8-6155] done synthesizing module 'sincos_lut' (10#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/sincos_lut.v:7]
 INFO: [Synth 8-6155] done synthesizing module 'sensor_calc' (11#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/sensor_calc.v:31]
 INFO: [Synth 8-6157] synthesizing module 'ttc_warn' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/vision/ttc_warn.v:18]
@@ -121,13 +124,14 @@ INFO: [Synth 8-6157] synthesizing module 'ttc_warn' [E:/FPGA/project/smart_car_p
 	Parameter D_IDLE bound to: 1'b0 
 	Parameter D_RUN bound to: 1'b1 
 INFO: [Synth 8-6155] done synthesizing module 'ttc_warn' (12#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/vision/ttc_warn.v:18]
-INFO: [Synth 8-6157] synthesizing module 'mode_switch' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/mode_switch.v:14]
+INFO: [Synth 8-6157] synthesizing module 'mode_switch' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/mode_switch.v:18]
 	Parameter DEB_CNT bound to: 20'b11110100001001000000 
+	Parameter RC_TIMEOUT bound to: 25'b1011111010111100001000000 
 	Parameter NORM_TH_G bound to: 6'b101000 
 	Parameter NORM_TH_RB bound to: 5'b01100 
 	Parameter NIGHT_TH_G bound to: 6'b011100 
 	Parameter NIGHT_TH_RB bound to: 5'b10010 
-INFO: [Synth 8-6155] done synthesizing module 'mode_switch' (13#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/mode_switch.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'mode_switch' (13#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/mode_switch.v:18]
 INFO: [Synth 8-6157] synthesizing module 'ddr3_top' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_top.v:19]
 INFO: [Synth 8-6157] synthesizing module 'ddr3_rw' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_rw.v:19]
 	Parameter IDLE bound to: 7'b0000001 
@@ -138,16 +142,16 @@ INFO: [Synth 8-6157] synthesizing module 'ddr3_rw' [E:/FPGA/project/smart_car_pl
 	Parameter READ_2 bound to: 7'b0100000 
 	Parameter READ_WAIT bound to: 7'b1000000 
 INFO: [Synth 8-6155] done synthesizing module 'ddr3_rw' (14#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_rw.v:19]
-INFO: [Synth 8-6157] synthesizing module 'mig_7series_0' [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-11220-LAPTOP-2K88VM5F/realtime/mig_7series_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_0' (15#1) [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-11220-LAPTOP-2K88VM5F/realtime/mig_7series_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_0' [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-8392-LAPTOP-2K88VM5F/realtime/mig_7series_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_0' (15#1) [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-8392-LAPTOP-2K88VM5F/realtime/mig_7series_0_stub.v:5]
 WARNING: [Synth 8-350] instance 'u_mig_7series_0' of module 'mig_7series_0' requires 40 connections, but only 39 given [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_top.v:143]
 INFO: [Synth 8-6157] synthesizing module 'ddr3_fifo_ctrl_top' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl_top.v:19]
 INFO: [Synth 8-6157] synthesizing module 'ddr3_fifo_ctrl' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl.v:20]
-INFO: [Synth 8-6157] synthesizing module 'rd_fifo' [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-11220-LAPTOP-2K88VM5F/realtime/rd_fifo_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'rd_fifo' (16#1) [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-11220-LAPTOP-2K88VM5F/realtime/rd_fifo_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'rd_fifo' [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-8392-LAPTOP-2K88VM5F/realtime/rd_fifo_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'rd_fifo' (16#1) [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-8392-LAPTOP-2K88VM5F/realtime/rd_fifo_stub.v:6]
 WARNING: [Synth 8-689] width (10) of port connection 'wr_data_count' does not match port width (9) of module 'rd_fifo' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl.v:200]
-INFO: [Synth 8-6157] synthesizing module 'wr_fifo' [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-11220-LAPTOP-2K88VM5F/realtime/wr_fifo_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'wr_fifo' (17#1) [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-11220-LAPTOP-2K88VM5F/realtime/wr_fifo_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'wr_fifo' [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-8392-LAPTOP-2K88VM5F/realtime/wr_fifo_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'wr_fifo' (17#1) [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-8392-LAPTOP-2K88VM5F/realtime/wr_fifo_stub.v:6]
 WARNING: [Synth 8-689] width (10) of port connection 'rd_data_count' does not match port width (9) of module 'wr_fifo' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl.v:215]
 INFO: [Synth 8-6155] done synthesizing module 'ddr3_fifo_ctrl' (18#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl.v:20]
 WARNING: [Synth 8-689] width (11) of port connection 'wfifo_rcount' does not match port width (10) of module 'ddr3_fifo_ctrl' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl_top.v:106]
@@ -156,8 +160,8 @@ WARNING: [Synth 8-689] width (11) of port connection 'wfifo_rcount' does not mat
 WARNING: [Synth 8-689] width (11) of port connection 'rfifo_wcount' does not match port width (10) of module 'ddr3_fifo_ctrl' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl_top.v:129]
 INFO: [Synth 8-6155] done synthesizing module 'ddr3_fifo_ctrl_top' (19#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl_top.v:19]
 INFO: [Synth 8-6155] done synthesizing module 'ddr3_top' (20#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_top.v:19]
-INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-11220-LAPTOP-2K88VM5F/realtime/clk_wiz_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (21#1) [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-11220-LAPTOP-2K88VM5F/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-8392-LAPTOP-2K88VM5F/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (21#1) [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-8392-LAPTOP-2K88VM5F/realtime/clk_wiz_0_stub.v:5]
 INFO: [Synth 8-6157] synthesizing module 'lcd_rgb_top' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_rgb_top.v:25]
 INFO: [Synth 8-6157] synthesizing module 'clk_div' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/clk_div.v:19]
 INFO: [Synth 8-6155] done synthesizing module 'clk_div' (22#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/clk_div.v:19]
@@ -315,108 +319,9 @@ INFO: [Synth 8-6157] synthesizing module 'osd_overlay' [E:/FPGA/project/smart_ca
 	Parameter LT_W bound to: 13'b0000001110000 
 	Parameter LOST_W bound to: 13'b0000001011000 
 	Parameter LG_W bound to: 13'b0000010011000 
-INFO: [Synth 8-6157] synthesizing module 'osd_font' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:10]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:18]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:39]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:60]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:81]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:102]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:123]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:144]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:165]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:186]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:207]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:228]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:249]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:270]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:291]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:312]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:333]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:354]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:375]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:396]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:417]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:438]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:459]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:480]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:501]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:522]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:543]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:564]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:585]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:606]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:627]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:648]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:669]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:690]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:711]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:732]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:753]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:774]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:795]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:816]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:837]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:858]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:879]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:900]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:921]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:942]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:963]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:984]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1005]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1026]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1047]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1068]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1089]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1110]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1131]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1152]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1173]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1194]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1215]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1236]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1257]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1278]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1299]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1320]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1341]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1362]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1383]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1404]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1425]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1446]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1467]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1488]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1509]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1530]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1551]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1572]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1593]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1614]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1635]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1656]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1677]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1698]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1719]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1740]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1761]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1782]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1803]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1824]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1845]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1866]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1887]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1908]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1929]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1950]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1971]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:1992]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:2013]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:2034]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:2055]
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:2076]
-INFO: [Common 17-14] Message 'Synth 8-226' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-6155] done synthesizing module 'osd_font' (26#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:10]
+INFO: [Synth 8-6157] synthesizing module 'osd_font' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:13]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed" *) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:136]
+INFO: [Synth 8-6155] done synthesizing module 'osd_font' (26#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_font.v:13]
 INFO: [Synth 8-6155] done synthesizing module 'osd_overlay' (27#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_overlay.v:22]
 INFO: [Synth 8-6157] synthesizing module 'dash_osd' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/dash_osd.v:22]
 	Parameter TRK_SHIFT bound to: 5'b00110 
@@ -427,7 +332,7 @@ INFO: [Synth 8-6157] synthesizing module 'dash_osd' [E:/FPGA/project/smart_car_p
 	Parameter GRAY bound to: 16'b1000010000010000 
 INFO: [Synth 8-6155] done synthesizing module 'dash_osd' (28#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/dash_osd.v:22]
 INFO: [Synth 8-6155] done synthesizing module 'lcd_rgb_top' (29#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_rgb_top.v:25]
-INFO: [Synth 8-6157] synthesizing module 'sensor_link' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/sensor_link.v:16]
+INFO: [Synth 8-6157] synthesizing module 'sensor_link' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/sensor_link.v:18]
 	Parameter CLK_FREQ bound to: 50000000 - type: integer 
 	Parameter BAUD bound to: 115200 - type: integer 
 INFO: [Synth 8-6157] synthesizing module 'sl_uart_rx' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/sl_uart_rx.v:5]
@@ -439,43 +344,45 @@ INFO: [Synth 8-6157] synthesizing module 'sl_uart_rx' [E:/FPGA/project/smart_car
 	Parameter S_DATA bound to: 2 - type: integer 
 	Parameter S_STOP bound to: 3 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'sl_uart_rx' (30#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/sl_uart_rx.v:5]
-INFO: [Synth 8-6157] synthesizing module 'v1_decode' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:8]
+INFO: [Synth 8-6157] synthesizing module 'v1_decode' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:10]
 	Parameter S_H1 bound to: 0 - type: integer 
 	Parameter S_H2 bound to: 1 - type: integer 
 	Parameter S_DATA bound to: 2 - type: integer 
 	Parameter S_CRC bound to: 3 - type: integer 
-WARNING: [Synth 8-5788] Register rx_buf_reg[0] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:73]
-WARNING: [Synth 8-5788] Register rx_buf_reg[1] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:73]
-WARNING: [Synth 8-5788] Register rx_buf_reg[2] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:73]
-WARNING: [Synth 8-5788] Register rx_buf_reg[3] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:73]
-WARNING: [Synth 8-5788] Register rx_buf_reg[4] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:73]
-WARNING: [Synth 8-5788] Register rx_buf_reg[5] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:73]
-WARNING: [Synth 8-5788] Register rx_buf_reg[6] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:73]
-WARNING: [Synth 8-5788] Register rx_buf_reg[7] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:73]
-WARNING: [Synth 8-5788] Register rx_buf_reg[8] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:73]
-WARNING: [Synth 8-5788] Register rx_buf_reg[9] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:73]
-WARNING: [Synth 8-5788] Register rx_buf_reg[10] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:73]
-WARNING: [Synth 8-5788] Register rx_buf_reg[11] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:73]
-WARNING: [Synth 8-5788] Register rx_buf_reg[12] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:73]
-WARNING: [Synth 8-5788] Register rx_buf_reg[13] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:73]
-WARNING: [Synth 8-5788] Register rx_buf_reg[14] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:73]
-WARNING: [Synth 8-5788] Register rx_buf_reg[15] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:73]
-WARNING: [Synth 8-5788] Register rx_buf_reg[16] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:73]
-WARNING: [Synth 8-5788] Register rx_buf_reg[17] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:73]
-WARNING: [Synth 8-5788] Register rx_buf_reg[18] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:73]
-WARNING: [Synth 8-5788] Register rx_buf_reg[19] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:73]
-WARNING: [Synth 8-5788] Register rx_buf_reg[20] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:73]
-WARNING: [Synth 8-5788] Register rx_buf_reg[21] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:73]
-WARNING: [Synth 8-5788] Register rx_buf_reg[22] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:73]
-WARNING: [Synth 8-5788] Register rx_buf_reg[23] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:73]
-WARNING: [Synth 8-5788] Register rx_buf_reg[24] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:73]
-WARNING: [Synth 8-5788] Register rx_buf_reg[25] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:73]
-WARNING: [Synth 8-5788] Register rx_buf_reg[26] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:73]
-WARNING: [Synth 8-5788] Register rx_buf_reg[27] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:73]
-WARNING: [Synth 8-5788] Register rx_buf_reg[28] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:73]
-WARNING: [Synth 8-5788] Register rx_buf_reg[29] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:73]
-WARNING: [Synth 8-5788] Register rx_buf_reg[30] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:73]
-INFO: [Synth 8-6155] done synthesizing module 'v1_decode' (31#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:8]
+INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:62]
+WARNING: [Synth 8-5788] Register rx_buf_reg[0] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:74]
+WARNING: [Synth 8-5788] Register rx_buf_reg[1] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:74]
+WARNING: [Synth 8-5788] Register rx_buf_reg[2] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:74]
+WARNING: [Synth 8-5788] Register rx_buf_reg[3] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:74]
+WARNING: [Synth 8-5788] Register rx_buf_reg[4] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:74]
+WARNING: [Synth 8-5788] Register rx_buf_reg[5] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:74]
+WARNING: [Synth 8-5788] Register rx_buf_reg[6] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:74]
+WARNING: [Synth 8-5788] Register rx_buf_reg[7] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:74]
+WARNING: [Synth 8-5788] Register rx_buf_reg[8] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:74]
+WARNING: [Synth 8-5788] Register rx_buf_reg[9] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:74]
+WARNING: [Synth 8-5788] Register rx_buf_reg[10] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:74]
+WARNING: [Synth 8-5788] Register rx_buf_reg[11] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:74]
+WARNING: [Synth 8-5788] Register rx_buf_reg[12] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:74]
+WARNING: [Synth 8-5788] Register rx_buf_reg[13] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:74]
+WARNING: [Synth 8-5788] Register rx_buf_reg[14] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:74]
+WARNING: [Synth 8-5788] Register rx_buf_reg[15] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:74]
+WARNING: [Synth 8-5788] Register rx_buf_reg[16] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:74]
+WARNING: [Synth 8-5788] Register rx_buf_reg[17] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:74]
+WARNING: [Synth 8-5788] Register rx_buf_reg[18] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:74]
+WARNING: [Synth 8-5788] Register rx_buf_reg[19] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:74]
+WARNING: [Synth 8-5788] Register rx_buf_reg[20] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:74]
+WARNING: [Synth 8-5788] Register rx_buf_reg[21] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:74]
+WARNING: [Synth 8-5788] Register rx_buf_reg[22] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:74]
+WARNING: [Synth 8-5788] Register rx_buf_reg[23] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:74]
+WARNING: [Synth 8-5788] Register rx_buf_reg[24] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:74]
+WARNING: [Synth 8-5788] Register rx_buf_reg[25] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:74]
+WARNING: [Synth 8-5788] Register rx_buf_reg[26] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:74]
+WARNING: [Synth 8-5788] Register rx_buf_reg[27] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:74]
+WARNING: [Synth 8-5788] Register rx_buf_reg[28] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:74]
+WARNING: [Synth 8-5788] Register rx_buf_reg[29] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:74]
+WARNING: [Synth 8-5788] Register rx_buf_reg[30] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:74]
+WARNING: [Synth 8-5788] Register rx_buf_reg[31] in module v1_decode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:74]
+INFO: [Synth 8-6155] done synthesizing module 'v1_decode' (31#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v:10]
 INFO: [Synth 8-6157] synthesizing module 'tracker_ctrl' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/tracker_ctrl.v:23]
 	Parameter U_CENTER bound to: 10'b0011001000 
 	Parameter DEADZONE bound to: 10'b0000001000 
@@ -491,6 +398,7 @@ INFO: [Synth 8-6157] synthesizing module 'tracker_ctrl' [E:/FPGA/project/smart_c
 	Parameter S_MONO bound to: 2'b01 
 	Parameter S_MATCH bound to: 2'b10 
 	Parameter S_ARRIVE bound to: 2'b11 
+INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/tracker_ctrl.v:150]
 INFO: [Synth 8-6155] done synthesizing module 'tracker_ctrl' (32#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/tracker_ctrl.v:23]
 INFO: [Synth 8-6157] synthesizing module 'ctrl_link_tx' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/ctrl_link_tx.v:8]
 	Parameter CLK_FREQ bound to: 50000000 - type: integer 
@@ -512,8 +420,8 @@ WARNING: [Synth 8-5788] Register frame_reg[6] in module ctrl_link_tx is has both
 WARNING: [Synth 8-5788] Register frame_reg[7] in module ctrl_link_tx is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/ctrl_link_tx.v:69]
 WARNING: [Synth 8-5788] Register frame_reg[8] in module ctrl_link_tx is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/ctrl_link_tx.v:69]
 INFO: [Synth 8-6155] done synthesizing module 'ctrl_link_tx' (34#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/ctrl_link_tx.v:8]
-INFO: [Synth 8-6155] done synthesizing module 'sensor_link' (35#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/sensor_link.v:16]
-INFO: [Synth 8-6155] done synthesizing module 'top_dual_ov5640_lcd' (36#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'sensor_link' (35#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/sensor_link.v:18]
+INFO: [Synth 8-6155] done synthesizing module 'top_dual_ov5640_lcd' (36#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v:26]
 WARNING: [Synth 8-3331] design dash_osd has unconnected port h_pixel[12]
 WARNING: [Synth 8-3331] design dash_osd has unconnected port h_pixel[11]
 WARNING: [Synth 8-3331] design dash_osd has unconnected port v_pixel[12]
@@ -616,7 +524,7 @@ WARNING: [Synth 8-3331] design i2c_ov5640_rgb565_cfg has unconnected port cmos_h
 WARNING: [Synth 8-3331] design i2c_ov5640_rgb565_cfg has unconnected port cmos_v_pixel[12]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 637.051 ; gain = 235.363
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 619.023 ; gain = 216.367
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -629,20 +537,16 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 637.051 ; gain = 235.363
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 619.023 ; gain = 216.367
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 637.051 ; gain = 235.363
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 619.023 ; gain = 216.367
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tfgg484-2
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/rd_fifo/rd_fifo/wr_fifo_in_context.xdc] for cell 'u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/u_rd_fifo'
-Finished Parsing XDC File [e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/rd_fifo/rd_fifo/wr_fifo_in_context.xdc] for cell 'u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/u_rd_fifo'
-Parsing XDC File [e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/rd_fifo/rd_fifo/wr_fifo_in_context.xdc] for cell 'u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/u_rd_fifo'
-Finished Parsing XDC File [e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/rd_fifo/rd_fifo/wr_fifo_in_context.xdc] for cell 'u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/u_rd_fifo'
 Parsing XDC File [e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'u_clk_wiz_0'
 Finished Parsing XDC File [e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'u_clk_wiz_0'
 Parsing XDC File [e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc] for cell 'u_ddr3_top/u_mig_7series_0'
@@ -651,6 +555,10 @@ Parsing XDC File [e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_
 Finished Parsing XDC File [e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/wr_fifo/wr_fifo/wr_fifo_in_context.xdc] for cell 'u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/u_wr_fifo'
 Parsing XDC File [e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/wr_fifo/wr_fifo/wr_fifo_in_context.xdc] for cell 'u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/u_wr_fifo'
 Finished Parsing XDC File [e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/wr_fifo/wr_fifo/wr_fifo_in_context.xdc] for cell 'u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/u_wr_fifo'
+Parsing XDC File [e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/rd_fifo/rd_fifo/wr_fifo_in_context.xdc] for cell 'u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/u_rd_fifo'
+Finished Parsing XDC File [e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/rd_fifo/rd_fifo/wr_fifo_in_context.xdc] for cell 'u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/u_rd_fifo'
+Parsing XDC File [e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/rd_fifo/rd_fifo/wr_fifo_in_context.xdc] for cell 'u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/u_rd_fifo'
+Finished Parsing XDC File [e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/rd_fifo/rd_fifo/wr_fifo_in_context.xdc] for cell 'u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/u_rd_fifo'
 Parsing XDC File [E:/FPGA/project/smart_car_pld2026/my_car/prj/constrs_1/new/pin.xdc]
 WARNING: [Constraints 18-619] A clock with name 'sys_clk' already exists, overwriting the previous clock with the same name. [E:/FPGA/project/smart_car_pld2026/my_car/prj/constrs_1/new/pin.xdc:2]
 WARNING: [Vivado 12-507] No nets matched 'cam_pclk_1_IBUF'. [E:/FPGA/project/smart_car_pld2026/my_car/prj/constrs_1/new/pin.xdc:53]
@@ -660,26 +568,24 @@ Finished Parsing XDC File [E:/FPGA/project/smart_car_pld2026/my_car/prj/constrs_
 WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [E:/FPGA/project/smart_car_pld2026/my_car/prj/constrs_1/new/pin.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/top_dual_ov5640_lcd_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [E:/FPGA/project/smart_car_pld2026/my_car/prj/constrs_1/new/pin.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_dual_ov5640_lcd_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_dual_ov5640_lcd_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Parsing XDC File [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/dont_touch.xdc]
-Finished Parsing XDC File [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/dont_touch.xdc]
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1049.098 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1029.355 ; gain = 0.000
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1049.098 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1029.355 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1049.098 ; gain = 0.000
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.026 . Memory (MB): peak = 1049.098 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1029.355 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1029.355 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 1049.098 ; gain = 647.410
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1029.355 ; gain = 626.699
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tfgg484-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 1049.098 ; gain = 647.410
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1029.355 ; gain = 626.699
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -826,14 +732,14 @@ Applied set_property IO_BUFFER_TYPE = NONE for ddr3_reset_n. (constraint file  e
 Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_reset_n. (constraint file  e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 139).
 Applied set_property IO_BUFFER_TYPE = NONE for ddr3_we_n. (constraint file  e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 140).
 Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_we_n. (constraint file  e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 141).
-Applied set_property DONT_TOUCH = true for u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/u_rd_fifo. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/u_rd_fifo. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for u_clk_wiz_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for u_ddr3_top/u_mig_7series_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/u_wr_fifo. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/u_wr_fifo. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/u_rd_fifo. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/u_rd_fifo. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 1049.098 ; gain = 647.410
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1029.355 ; gain = 626.699
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "total_h_pixel" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "total_v_pixel" won't be mapped to RAM because it is too sparse
@@ -884,12 +790,15 @@ INFO: [Synth 8-5544] ROM "dstate" won't be mapped to Block RAM because address s
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [E:/FPGA/project/smart_car_pld2026/my_car/rtl/vision/stereo_dist.v:55]
 INFO: [Synth 8-5546] ROM "dstate" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "dcnt" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5542] Attribute ram_style/rom_style = distributed specified for ROM  "rom". This will be implemented in logic
 INFO: [Synth 8-5546] ROM "sum_gx" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "bias_x" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "cal_done" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "state" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "dcnt" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'attitude_cf'
+INFO: [Synth 8-5542] Attribute ram_style/rom_style = distributed specified for ROM  "sin_rom". This will be implemented in logic
+INFO: [Synth 8-5542] Attribute ram_style/rom_style = distributed specified for ROM  "cos_rom". This will be implemented in logic
 INFO: [Synth 8-5546] ROM "sum_gz" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "bias_z" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "trk_wr" won't be mapped to RAM because it is too sparse
@@ -912,6 +821,7 @@ INFO: [Synth 8-5546] ROM "v_sync" won't be mapped to RAM because it is too spars
 INFO: [Synth 8-5546] ROM "v_back" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "v_disp" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "v_total" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5542] Attribute ram_style/rom_style = distributed specified for ROM  "rom". This will be implemented in logic
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_overlay.v:608]
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_overlay.v:607]
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/osd/osd_overlay.v:606]
@@ -936,14 +846,74 @@ INFO: [Synth 8-5544] ROM "ch0" won't be mapped to Block RAM because address size
 INFO: [Synth 8-5544] ROM "ch0" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "ch0" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "ch0" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "lab_ch0" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "lab_ch0" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "frame_color" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "lab_idx0" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "lab_idx0" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gbits" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gbits" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gbits" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gbits" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat120" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat1200" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat1210" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat1220" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat1230" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat1240" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat1250" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat1260" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat1270" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat1280" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat1290" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12100" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12110" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12120" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12130" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12140" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12150" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12160" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12170" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12180" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12190" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12200" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12210" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12220" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12230" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12240" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12250" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12260" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12270" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12280" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12290" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12300" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12310" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12320" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12330" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12340" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12350" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12360" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12370" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12380" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12390" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12400" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12410" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12420" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12430" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12440" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12450" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12460" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12470" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12480" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12490" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12500" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12510" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12520" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12530" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12540" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12550" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Common 17-14] Message 'Synth 8-5544' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'sl_uart_rx'
 INFO: [Synth 8-5546] ROM "state" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5546] ROM "state" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5544] ROM "cnt" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'v1_decode'
 INFO: [Synth 8-5546] ROM "rx_buf_reg[0]" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "rx_buf_reg[1]" won't be mapped to RAM because it is too sparse
@@ -976,14 +946,12 @@ INFO: [Synth 8-5546] ROM "rx_buf_reg[27]" won't be mapped to RAM because it is t
 INFO: [Synth 8-5546] ROM "rx_buf_reg[28]" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "rx_buf_reg[29]" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "rx_buf_reg[30]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "rx_buf_reg[31]" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "state" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "byte_cnt" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "byte_cnt" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5544] ROM "parse_result" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5546] ROM "state" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "txd" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5544] ROM "busy" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "bit_idx" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -1049,7 +1017,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'v1_decode'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:19 . Memory (MB): peak = 1049.098 ; gain = 647.410
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1029.355 ; gain = 626.699
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1061,19 +1029,12 @@ Report RTL Partitions:
 |3     |osd_overlay__GB2          |           1|      6917|
 |4     |osd_overlay__GB3          |           1|      7663|
 |5     |osd_overlay__GB4          |           1|      7663|
-|6     |osd_overlay__GB5          |           1|     28873|
-|7     |osd_overlay__GB6          |           1|     10668|
-|8     |dash_osd__GB0             |           1|     21696|
-|9     |dash_osd__GB1             |           1|      6864|
-|10    |dash_osd__GB2             |           1|      8256|
-|11    |dash_osd__GB3             |           1|     16136|
-|12    |dash_osd__GB4             |           1|     19529|
-|13    |dash_osd__GB5             |           1|     10034|
-|14    |dash_osd__GB6             |           1|     14594|
-|15    |lcd_rgb_top__GC0          |           1|     14874|
-|16    |top_dual_ov5640_lcd__GCB0 |           1|     19138|
-|17    |top_dual_ov5640_lcd__GCB1 |           1|     18696|
-|18    |top_dual_ov5640_lcd__GCB2 |           1|     16970|
+|6     |osd_overlay__GB5          |           1|     30032|
+|7     |dash_osd__GB0             |           1|     16940|
+|8     |dash_osd__GB1             |           1|     13797|
+|9     |lcd_rgb_top__GC0          |           1|     14874|
+|10    |top_dual_ov5640_lcd__GCB0 |           1|     28998|
+|11    |top_dual_ov5640_lcd__GCB1 |           1|     26030|
 +------+--------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -1082,8 +1043,8 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input     40 Bit       Adders := 2     
 	   3 Input     33 Bit       Adders := 1     
-	   2 Input     32 Bit       Adders := 68    
-	   3 Input     32 Bit       Adders := 134   
+	   2 Input     32 Bit       Adders := 36    
+	   3 Input     32 Bit       Adders := 70    
 	   4 Input     32 Bit       Adders := 1     
 	   2 Input     28 Bit       Adders := 4     
 	   2 Input     24 Bit       Adders := 6     
@@ -1125,19 +1086,19 @@ Detailed RTL Component Info :
 	               20 Bit    Registers := 1     
 	               18 Bit    Registers := 8     
 	               17 Bit    Registers := 1     
-	               16 Bit    Registers := 201   
+	               16 Bit    Registers := 137   
 	               15 Bit    Registers := 2     
 	               13 Bit    Registers := 2     
 	               11 Bit    Registers := 19    
 	               10 Bit    Registers := 62    
 	                9 Bit    Registers := 5     
-	                8 Bit    Registers := 61    
+	                8 Bit    Registers := 62    
 	                7 Bit    Registers := 2     
 	                6 Bit    Registers := 5     
 	                5 Bit    Registers := 2     
 	                4 Bit    Registers := 8     
 	                3 Bit    Registers := 2     
-	                2 Bit    Registers := 12    
+	                2 Bit    Registers := 16    
 	                1 Bit    Registers := 100   
 +---Multipliers : 
 	                16x32  Multipliers := 2     
@@ -1148,7 +1109,7 @@ Detailed RTL Component Info :
 +---Muxes : 
 	   2 Input    256 Bit        Muxes := 6     
 	   2 Input     33 Bit        Muxes := 2     
-	   2 Input     32 Bit        Muxes := 22    
+	   2 Input     32 Bit        Muxes := 18    
 	   4 Input     32 Bit        Muxes := 6     
 	   8 Input     28 Bit        Muxes := 4     
 	   4 Input     28 Bit        Muxes := 1     
@@ -1161,33 +1122,29 @@ Detailed RTL Component Info :
 	   4 Input     18 Bit        Muxes := 2     
 	   2 Input     18 Bit        Muxes := 1     
 	   2 Input     17 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 73    
-	   3 Input     16 Bit        Muxes := 6     
-	  16 Input     16 Bit        Muxes := 6     
-	 108 Input     16 Bit        Muxes := 2     
+	   2 Input     16 Bit        Muxes := 74    
+	   3 Input     16 Bit        Muxes := 7     
 	   5 Input     16 Bit        Muxes := 2     
+	  19 Input     16 Bit        Muxes := 1     
 	   4 Input     16 Bit        Muxes := 3     
-	  16 Input     15 Bit        Muxes := 2     
+	  16 Input     16 Bit        Muxes := 2     
 	   6 Input     15 Bit        Muxes := 1     
 	   2 Input     15 Bit        Muxes := 6     
 	   5 Input     15 Bit        Muxes := 1     
-	  16 Input     14 Bit        Muxes := 2     
-	   2 Input     12 Bit        Muxes := 261   
-	   3 Input     12 Bit        Muxes := 1     
-	   2 Input     11 Bit        Muxes := 24    
+	   2 Input     12 Bit        Muxes := 69    
+	   3 Input     12 Bit        Muxes := 65    
+	   2 Input     11 Bit        Muxes := 25    
 	   4 Input     11 Bit        Muxes := 4     
 	   4 Input     10 Bit        Muxes := 11    
 	   2 Input     10 Bit        Muxes := 28    
 	   6 Input     10 Bit        Muxes := 1     
-	   2 Input      9 Bit        Muxes := 3     
+	   2 Input      9 Bit        Muxes := 4     
 	   2 Input      8 Bit        Muxes := 75    
 	   8 Input      8 Bit        Muxes := 1     
-	   5 Input      8 Bit        Muxes := 1     
 	   4 Input      8 Bit        Muxes := 5     
 	  22 Input      8 Bit        Muxes := 2     
 	   9 Input      8 Bit        Muxes := 4     
-	   2 Input      7 Bit        Muxes := 29    
-	  16 Input      7 Bit        Muxes := 120   
+	   2 Input      7 Bit        Muxes := 30    
 	   8 Input      7 Bit        Muxes := 1     
 	  31 Input      7 Bit        Muxes := 2     
 	  29 Input      7 Bit        Muxes := 2     
@@ -1196,27 +1153,25 @@ Detailed RTL Component Info :
 	   6 Input      7 Bit        Muxes := 2     
 	   9 Input      7 Bit        Muxes := 2     
 	   2 Input      6 Bit        Muxes := 29    
-	  16 Input      6 Bit        Muxes := 12    
 	   4 Input      6 Bit        Muxes := 4     
-	  16 Input      5 Bit        Muxes := 8     
 	   2 Input      5 Bit        Muxes := 3     
 	   5 Input      5 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 46    
+	   2 Input      4 Bit        Muxes := 44    
 	   3 Input      4 Bit        Muxes := 1     
 	  17 Input      4 Bit        Muxes := 2     
-	   2 Input      3 Bit        Muxes := 3     
 	   5 Input      3 Bit        Muxes := 1     
-	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 3     
+	   3 Input      2 Bit        Muxes := 2     
 	   6 Input      2 Bit        Muxes := 15    
 	   4 Input      2 Bit        Muxes := 4     
-	   2 Input      2 Bit        Muxes := 13    
+	   2 Input      2 Bit        Muxes := 15    
 	   5 Input      2 Bit        Muxes := 1     
 	   8 Input      1 Bit        Muxes := 10    
-	   2 Input      1 Bit        Muxes := 202   
+	   2 Input      1 Bit        Muxes := 204   
 	   6 Input      1 Bit        Muxes := 11    
-	   4 Input      1 Bit        Muxes := 62    
-	   3 Input      1 Bit        Muxes := 3     
+	   4 Input      1 Bit        Muxes := 63    
 	   5 Input      1 Bit        Muxes := 10    
+	   3 Input      1 Bit        Muxes := 3     
 	  31 Input      1 Bit        Muxes := 14    
 	  29 Input      1 Bit        Muxes := 14    
 	  33 Input      1 Bit        Muxes := 12    
@@ -1232,20 +1187,14 @@ Hierarchical RTL Component report
 Module top_dual_ov5640_lcd 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     10 Bit       Adders := 1     
 	   3 Input     10 Bit       Adders := 2     
+	   2 Input     10 Bit       Adders := 1     
 +---Muxes : 
 	   2 Input     10 Bit        Muxes := 4     
-Module osd_font__1 
+Module osd_font 
 Detailed RTL Component Info : 
 +---Muxes : 
-	  16 Input     16 Bit        Muxes := 2     
-	 108 Input     16 Bit        Muxes := 1     
-	  16 Input     15 Bit        Muxes := 1     
-	  16 Input     14 Bit        Muxes := 1     
-	  16 Input      7 Bit        Muxes := 60    
-	  16 Input      6 Bit        Muxes := 6     
-	  16 Input      5 Bit        Muxes := 4     
+	   2 Input      7 Bit        Muxes := 1     
 Module osd_overlay 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -1281,37 +1230,31 @@ Detailed RTL Component Info :
 	   3 Input      2 Bit        Muxes := 1     
 	   8 Input      1 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 7     
-Module osd_font 
-Detailed RTL Component Info : 
-+---Muxes : 
-	  16 Input     16 Bit        Muxes := 2     
-	 108 Input     16 Bit        Muxes := 1     
-	  16 Input     15 Bit        Muxes := 1     
-	  16 Input     14 Bit        Muxes := 1     
-	  16 Input      7 Bit        Muxes := 60    
-	  16 Input      6 Bit        Muxes := 6     
-	  16 Input      5 Bit        Muxes := 4     
 Module dash_osd 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     32 Bit       Adders := 64    
-	   3 Input     32 Bit       Adders := 128   
+	   3 Input     32 Bit       Adders := 64    
+	   2 Input     32 Bit       Adders := 32    
 	   3 Input     12 Bit       Adders := 5     
-	   2 Input     11 Bit       Adders := 22    
 	   3 Input     11 Bit       Adders := 6     
+	   2 Input     11 Bit       Adders := 22    
 	   2 Input     10 Bit       Adders := 1     
 +---Registers : 
 	               32 Bit    Registers := 4     
-	               16 Bit    Registers := 133   
+	               16 Bit    Registers := 69    
 	               11 Bit    Registers := 2     
 	                9 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
 +---Multipliers : 
 	                 9x32  Multipliers := 2     
 +---Muxes : 
-	   2 Input     32 Bit        Muxes := 4     
-	   2 Input     12 Bit        Muxes := 260   
-	   5 Input      8 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 4     
+	  19 Input     16 Bit        Muxes := 1     
+	   3 Input     16 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input     12 Bit        Muxes := 68    
+	   3 Input     12 Bit        Muxes := 64    
+	   2 Input      4 Bit        Muxes := 2     
+	   3 Input      2 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 1     
 Module clk_div 
 Detailed RTL Component Info : 
@@ -1416,20 +1359,67 @@ Detailed RTL Component Info :
 	   4 Input      2 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 12    
 	   4 Input      1 Bit        Muxes := 9     
-Module mode_switch 
+Module stereo_dist 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     20 Bit       Adders := 1     
-	   2 Input      2 Bit       Adders := 1     
+	   3 Input     33 Bit       Adders := 1     
+	   3 Input     10 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
 +---Registers : 
-	               20 Bit    Registers := 1     
-	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 4     
+	               33 Bit    Registers := 1     
+	               32 Bit    Registers := 3     
+	               16 Bit    Registers := 1     
+	               10 Bit    Registers := 8     
+	                6 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 5     
 +---Muxes : 
-	   2 Input     20 Bit        Muxes := 2     
+	   2 Input     33 Bit        Muxes := 2     
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input     16 Bit        Muxes := 2     
+	   2 Input     10 Bit        Muxes := 6     
 	   2 Input      6 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 10    
+Module atan_lut 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     11 Bit        Muxes := 1     
+Module attitude_cf 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     17 Bit       Adders := 2     
+	   2 Input     17 Bit       Adders := 2     
+	   2 Input     16 Bit       Adders := 2     
+	   3 Input     16 Bit       Adders := 1     
+	   2 Input     15 Bit       Adders := 2     
+	   2 Input      9 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
++---Registers : 
+	               24 Bit    Registers := 1     
+	               16 Bit    Registers := 6     
+	               15 Bit    Registers := 2     
+	               11 Bit    Registers := 2     
+	                9 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input     24 Bit        Muxes := 1     
+	   5 Input     24 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 5     
+	   5 Input     16 Bit        Muxes := 1     
+	   2 Input     15 Bit        Muxes := 4     
+	   5 Input     15 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 2     
 	   2 Input      5 Bit        Muxes := 1     
-	   2 Input      2 Bit        Muxes := 1     
+	   5 Input      5 Bit        Muxes := 1     
+	   5 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+	   5 Input      1 Bit        Muxes := 10    
+Module sincos_lut 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      9 Bit        Muxes := 1     
 Module sensor_calc 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -1480,37 +1470,103 @@ Detailed RTL Component Info :
 	   2 Input      2 Bit        Muxes := 1     
 	   3 Input      1 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 8     
-Module attitude_cf 
+Module sl_uart_rx 
 Detailed RTL Component Info : 
 +---Adders : 
-	   3 Input     17 Bit       Adders := 2     
-	   2 Input     17 Bit       Adders := 2     
-	   2 Input     16 Bit       Adders := 2     
-	   3 Input     16 Bit       Adders := 1     
-	   2 Input     15 Bit       Adders := 2     
-	   2 Input      9 Bit       Adders := 1     
-	   2 Input      5 Bit       Adders := 1     
+	   2 Input     16 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
 +---Registers : 
-	               24 Bit    Registers := 1     
-	               16 Bit    Registers := 6     
-	               15 Bit    Registers := 2     
-	               11 Bit    Registers := 2     
-	                9 Bit    Registers := 1     
-	                5 Bit    Registers := 1     
-	                1 Bit    Registers := 3     
+	               16 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input     24 Bit        Muxes := 1     
-	   5 Input     24 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 5     
-	   5 Input     16 Bit        Muxes := 1     
-	   2 Input     15 Bit        Muxes := 4     
-	   5 Input     15 Bit        Muxes := 1     
-	   2 Input     11 Bit        Muxes := 2     
-	   2 Input      5 Bit        Muxes := 1     
-	   5 Input      5 Bit        Muxes := 1     
-	   5 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 5     
-	   5 Input      1 Bit        Muxes := 10    
+	   2 Input     16 Bit        Muxes := 2     
+	   4 Input     16 Bit        Muxes := 1     
+	   4 Input      8 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+	   4 Input      1 Bit        Muxes := 3     
+Module v1_decode 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      6 Bit       Adders := 1     
++---XORs : 
+	   2 Input      8 Bit         XORs := 9     
++---Registers : 
+	               32 Bit    Registers := 4     
+	               16 Bit    Registers := 7     
+	                8 Bit    Registers := 34    
+	                6 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 9     
+	   4 Input      8 Bit        Muxes := 1     
+	   4 Input      6 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 36    
+	   4 Input      1 Bit        Muxes := 39    
+Module tracker_ctrl 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     17 Bit       Adders := 1     
+	   2 Input     16 Bit       Adders := 3     
+	   3 Input     16 Bit       Adders := 1     
+	   2 Input     13 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 2     
+	   3 Input     10 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	               16 Bit    Registers := 2     
+	                8 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 15    
+	   4 Input     16 Bit        Muxes := 2     
+	   3 Input     16 Bit        Muxes := 4     
+	   2 Input      7 Bit        Muxes := 2     
+	   5 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 4     
+	   6 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 9     
+	   4 Input      1 Bit        Muxes := 2     
+Module sl_uart_tx 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 7     
+Module ctrl_link_tx 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---XORs : 
+	   2 Input      8 Bit         XORs := 45    
++---Registers : 
+	                8 Bit    Registers := 10    
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 40    
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
 Module ddr3_rw 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -1574,124 +1630,21 @@ Detailed RTL Component Info :
 +---Muxes : 
 	   2 Input    256 Bit        Muxes := 1     
 	   2 Input     16 Bit        Muxes := 1     
-Module sl_uart_rx 
+Module mode_switch 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     16 Bit       Adders := 1     
-	   2 Input      3 Bit       Adders := 1     
+	   2 Input     20 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 1     
 +---Registers : 
-	               16 Bit    Registers := 1     
-	                8 Bit    Registers := 1     
-	                3 Bit    Registers := 1     
-	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input     16 Bit        Muxes := 2     
-	   4 Input     16 Bit        Muxes := 1     
-	   4 Input      8 Bit        Muxes := 1     
-	   2 Input      3 Bit        Muxes := 1     
-	   4 Input      2 Bit        Muxes := 1     
-	   2 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 4     
-	   4 Input      1 Bit        Muxes := 3     
-Module v1_decode 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      6 Bit       Adders := 1     
-+---XORs : 
-	   2 Input      8 Bit         XORs := 9     
-+---Registers : 
-	               32 Bit    Registers := 4     
-	               16 Bit    Registers := 7     
-	                8 Bit    Registers := 33    
-	                6 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input      8 Bit        Muxes := 9     
-	   4 Input      8 Bit        Muxes := 1     
-	   4 Input      6 Bit        Muxes := 1     
-	   4 Input      2 Bit        Muxes := 1     
-	   2 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 35    
-	   4 Input      1 Bit        Muxes := 38    
-Module tracker_ctrl 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     17 Bit       Adders := 1     
-	   2 Input     16 Bit       Adders := 3     
-	   3 Input     16 Bit       Adders := 1     
-	   2 Input     13 Bit       Adders := 1     
-	   2 Input     11 Bit       Adders := 2     
-	   3 Input     10 Bit       Adders := 1     
-+---XORs : 
-	   2 Input      1 Bit         XORs := 1     
-+---Registers : 
-	               16 Bit    Registers := 2     
-	                8 Bit    Registers := 1     
-	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input     18 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 15    
-	   4 Input     16 Bit        Muxes := 2     
-	   3 Input     16 Bit        Muxes := 4     
-	   2 Input      7 Bit        Muxes := 2     
-	   5 Input      2 Bit        Muxes := 1     
-	   2 Input      2 Bit        Muxes := 4     
-	   6 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 9     
-	   4 Input      1 Bit        Muxes := 2     
-Module sl_uart_tx 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     16 Bit       Adders := 1     
-	   2 Input      4 Bit       Adders := 1     
-+---Registers : 
-	               16 Bit    Registers := 1     
-	                8 Bit    Registers := 1     
-	                4 Bit    Registers := 1     
-	                1 Bit    Registers := 2     
-+---Muxes : 
-	   2 Input     16 Bit        Muxes := 2     
-	   2 Input      4 Bit        Muxes := 1     
-	   4 Input      1 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 7     
-Module ctrl_link_tx 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      4 Bit       Adders := 1     
-+---XORs : 
-	   2 Input      8 Bit         XORs := 45    
-+---Registers : 
-	                8 Bit    Registers := 10    
-	                4 Bit    Registers := 1     
-	                1 Bit    Registers := 2     
-+---Muxes : 
-	   2 Input      8 Bit        Muxes := 40    
-	   2 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 2     
-Module stereo_dist 
-Detailed RTL Component Info : 
-+---Adders : 
-	   3 Input     33 Bit       Adders := 1     
-	   3 Input     10 Bit       Adders := 1     
-	   2 Input      6 Bit       Adders := 1     
-+---Registers : 
-	               33 Bit    Registers := 1     
-	               32 Bit    Registers := 3     
-	               16 Bit    Registers := 1     
-	               10 Bit    Registers := 8     
-	                6 Bit    Registers := 1     
+	               20 Bit    Registers := 1     
 	                2 Bit    Registers := 2     
-	                1 Bit    Registers := 5     
+	                1 Bit    Registers := 4     
 +---Muxes : 
-	   2 Input     33 Bit        Muxes := 2     
-	   2 Input     32 Bit        Muxes := 2     
-	   2 Input     16 Bit        Muxes := 2     
-	   2 Input     10 Bit        Muxes := 6     
+	   2 Input     20 Bit        Muxes := 2     
 	   2 Input      6 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 10    
+	   2 Input      1 Bit        Muxes := 1     
 Module i2c_ov5640_rgb565_cfg__1 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -1834,7 +1787,6 @@ INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5544] ROM "warn_color" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5546] ROM "u_lcd_driver/h_back" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "u_lcd_driver/h_sync" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "u_lcd_driver/h_total" won't be mapped to RAM because it is too sparse
@@ -1933,62 +1885,25 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_dis
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_disply/\char2_reg[21][123] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_disply/\char2_reg[20][123] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_disply/\char2_reg[18][123] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_disply/\char2_reg[17][123] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_disply/\char2_reg[16][123] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_disply/\char2_reg[7][123] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_disply/\char2_reg[6][123] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_disply/\char2_reg[15][123] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_disply/\char2_reg[14][123] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_disply/\char2_reg[11][123] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_disply/\char2_reg[10][123] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_lcd_disply/\char2_reg[9][123] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_lcd_disply/\char2_reg[8][123] )
 INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-3886] merging instance 'u_lcd_driver/v_total_reg[0]' (FD) to 'u_lcd_driver/v_total_reg[9]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_driver/v_total_reg[1]' (FD) to 'u_lcd_driver/v_total_reg[4]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_driver/v_total_reg[7]' (FD) to 'u_lcd_driver/v_sync_reg[2]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_driver/h_total_reg[0]' (FD) to 'u_lcd_driver/h_total_reg[2]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_driver/h_total_reg[1]' (FD) to 'u_lcd_driver/v_sync_reg[2]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_driver/h_total_reg[2]' (FD) to 'u_lcd_driver/h_total_reg[3]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_driver/h_total_reg[3]' (FD) to 'u_lcd_driver/h_total_reg[9]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_driver/h_total_reg[4]' (FD) to 'u_lcd_driver/v_sync_reg[2]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_driver/v_back_reg[5]' (FD) to 'u_lcd_driver/v_back_reg[0]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_driver/v_back_reg[4]' (FD) to 'u_lcd_driver/v_back_reg[2]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_driver/v_sync_reg[2]' (FD) to 'u_lcd_driver/h_disp_reg[4]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_driver/h_sync_reg[0]' (FD) to 'u_lcd_driver/h_sync_reg[5]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_driver/h_back_reg[0]' (FD) to 'u_lcd_driver/h_disp_reg[4]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_driver/h_sync_reg[2]' (FD) to 'u_lcd_driver/h_sync_reg[4]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_driver/h_back_reg[2]' (FD) to 'u_lcd_driver/h_back_reg[7]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_driver/h_back_reg[4]' (FD) to 'u_lcd_driver/h_back_reg[6]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_driver/h_back_reg[5]' (FD) to 'u_lcd_driver/h_disp_reg[4]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_driver/h_sync_reg[6]' (FD) to 'u_lcd_driver/h_disp_reg[4]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_driver/v_disp_reg[0]' (FD) to 'u_lcd_driver/h_disp_reg[4]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_driver/v_disp_reg[1]' (FD) to 'u_lcd_driver/h_disp_reg[4]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_driver/v_disp_reg[2]' (FD) to 'u_lcd_driver/h_disp_reg[4]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_driver/h_disp_reg[0]' (FD) to 'u_lcd_driver/h_disp_reg[4]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_driver/h_disp_reg[1]' (FD) to 'u_lcd_driver/h_disp_reg[4]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_driver/h_disp_reg[2]' (FD) to 'u_lcd_driver/h_disp_reg[4]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_driver/h_disp_reg[3]' (FD) to 'u_lcd_driver/h_disp_reg[4]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_driver/h_disp_reg[6]' (FD) to 'u_lcd_driver/h_disp_reg[7]'
-INFO: [Synth 8-3886] merging instance 'u_rd_id/lcd_id_reg[15]' (FDCE) to 'u_rd_id/lcd_id_reg[11]'
-INFO: [Synth 8-3886] merging instance 'u_rd_id/lcd_id_reg[11]' (FDCE) to 'u_rd_id/lcd_id_reg[10]'
-INFO: [Synth 8-3886] merging instance 'u_rd_id/lcd_id_reg[10]' (FDCE) to 'u_rd_id/lcd_id_reg[5]'
-INFO: [Synth 8-3886] merging instance 'u_rd_id/lcd_id_reg[0]' (FDCE) to 'u_rd_id/lcd_id_reg[5]'
-INFO: [Synth 8-3886] merging instance 'u_rd_id/lcd_id_reg[9]' (FDCE) to 'u_rd_id/lcd_id_reg[8]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_driver/v_total_reg[2]' (FD) to 'u_lcd_driver/v_disp_reg[8]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_driver/v_total_reg[5]' (FD) to 'u_lcd_driver/h_total_reg[8]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_driver/v_total_reg[6]' (FD) to 'u_lcd_driver/h_total_reg[6]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_driver/v_total_reg[8]' (FD) to 'u_lcd_driver/v_back_reg[1]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_driver/v_total_reg[9]' (FD) to 'u_lcd_driver/h_total_reg[10]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_driver/h_total_reg[5]' (FD) to 'u_lcd_driver/h_back_reg[6]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_driver/h_total_reg[6]' (FD) to 'u_lcd_driver/v_back_reg[2]'
-INFO: [Synth 8-3886] merging instance 'u_lcd_driver/h_total_reg[7]' (FD) to 'u_lcd_driver/v_back_reg[3]'
-INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-5546] ROM "dcnt" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "frame_end" won't be mapped to RAM because it is too sparse
 INFO: [Common 17-14] Message 'Synth 8-5546' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-5544] ROM "th_g" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "th_rb" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+DSP Report: Generating DSP dth_y0, operation Mode is: (C:0x8000)+A*(B:0x1f4).
+DSP Report: operator dth_y0 is absorbed into DSP dth_y0.
+DSP Report: operator gy_m is absorbed into DSP dth_y0.
+DSP Report: Generating DSP pitch_f1, operation Mode is: A*(B:0x3ec).
+DSP Report: operator pitch_f1 is absorbed into DSP pitch_f1.
+DSP Report: Generating DSP pitch_f0, operation Mode is: C+A*(B:0x14).
+DSP Report: operator pitch_f0 is absorbed into DSP pitch_f0.
+DSP Report: operator pitch_f1 is absorbed into DSP pitch_f0.
+DSP Report: Generating DSP dth_x0, operation Mode is: (C:0x8000)+A*(B:0x1f4).
+DSP Report: operator dth_x0 is absorbed into DSP dth_x0.
+DSP Report: operator gx_m is absorbed into DSP dth_x0.
+DSP Report: Generating DSP roll_f1, operation Mode is: A*(B:0x3ec).
+DSP Report: operator roll_f1 is absorbed into DSP roll_f1.
+DSP Report: Generating DSP roll_f0, operation Mode is: C+A*(B:0x14).
+DSP Report: operator roll_f0 is absorbed into DSP roll_f0.
+DSP Report: operator roll_f1 is absorbed into DSP roll_f0.
 INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 2 [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/sensor_calc.v:126]
 INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 2 [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/sensor_calc.v:127]
 DSP Report: Generating DSP delta_z0, operation Mode is: (C:0x8000)+A*(B:0x1f4).
@@ -2006,80 +1921,17 @@ DSP Report: operator dy10240 is absorbed into DSP dy10240.
 DSP Report: Generating DSP dy10240, operation Mode is: (PCIN>>17)+A*B.
 DSP Report: operator dy10240 is absorbed into DSP dy10240.
 DSP Report: operator dy10240 is absorbed into DSP dy10240.
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_ttc_warn/dvd_reg[0] )
-INFO: [Synth 8-3886] merging instance 'u_green_detect_2/divisor_reg[18]' (FDCE) to 'u_green_detect_2/divisor_reg[19]'
-INFO: [Synth 8-3886] merging instance 'u_green_detect_2/divisor_reg[19]' (FDCE) to 'u_green_detect_2/divisor_reg[20]'
-INFO: [Synth 8-3886] merging instance 'u_green_detect_2/divisor_reg[20]' (FDCE) to 'u_green_detect_2/divisor_reg[21]'
-INFO: [Synth 8-3886] merging instance 'u_green_detect_2/divisor_reg[21]' (FDCE) to 'u_green_detect_2/divisor_reg[22]'
-INFO: [Synth 8-3886] merging instance 'u_green_detect_2/divisor_reg[22]' (FDCE) to 'u_green_detect_2/divisor_reg[23]'
-INFO: [Synth 8-3886] merging instance 'u_green_detect_2/divisor_reg[23]' (FDCE) to 'u_green_detect_2/divisor_reg[24]'
-INFO: [Synth 8-3886] merging instance 'u_green_detect_2/divisor_reg[24]' (FDCE) to 'u_green_detect_2/divisor_reg[25]'
-INFO: [Synth 8-3886] merging instance 'u_green_detect_2/divisor_reg[25]' (FDCE) to 'u_green_detect_2/divisor_reg[26]'
-INFO: [Synth 8-3886] merging instance 'u_green_detect_2/divisor_reg[26]' (FDCE) to 'u_green_detect_2/divisor_reg[27]'
-INFO: [Synth 8-3886] merging instance 'u_green_detect_2/divisor_reg[27]' (FDCE) to 'u_green_detect_2/divisor_reg[28]'
-INFO: [Synth 8-3886] merging instance 'u_green_detect_2/divisor_reg[28]' (FDCE) to 'u_green_detect_2/divisor_reg[29]'
-INFO: [Synth 8-3886] merging instance 'u_green_detect_2/divisor_reg[29]' (FDCE) to 'u_green_detect_2/divisor_reg[30]'
-INFO: [Synth 8-3886] merging instance 'u_green_detect_2/divisor_reg[30]' (FDCE) to 'u_green_detect_2/divisor_reg[31]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_green_detect_2/divisor_reg[31] )
-INFO: [Synth 8-3886] merging instance 'u_green_detect/divisor_reg[18]' (FDCE) to 'u_green_detect/divisor_reg[19]'
-INFO: [Synth 8-3886] merging instance 'u_green_detect/divisor_reg[19]' (FDCE) to 'u_green_detect/divisor_reg[20]'
-INFO: [Synth 8-3886] merging instance 'u_green_detect/divisor_reg[20]' (FDCE) to 'u_green_detect/divisor_reg[21]'
-INFO: [Synth 8-3886] merging instance 'u_green_detect/divisor_reg[21]' (FDCE) to 'u_green_detect/divisor_reg[22]'
-INFO: [Synth 8-3886] merging instance 'u_green_detect/divisor_reg[22]' (FDCE) to 'u_green_detect/divisor_reg[23]'
-INFO: [Synth 8-3886] merging instance 'u_green_detect/divisor_reg[23]' (FDCE) to 'u_green_detect/divisor_reg[24]'
-INFO: [Synth 8-3886] merging instance 'u_green_detect/divisor_reg[24]' (FDCE) to 'u_green_detect/divisor_reg[25]'
-INFO: [Synth 8-3886] merging instance 'u_green_detect/divisor_reg[25]' (FDCE) to 'u_green_detect/divisor_reg[26]'
-INFO: [Synth 8-3886] merging instance 'u_green_detect/divisor_reg[26]' (FDCE) to 'u_green_detect/divisor_reg[27]'
-INFO: [Synth 8-3886] merging instance 'u_green_detect/divisor_reg[27]' (FDCE) to 'u_green_detect/divisor_reg[28]'
-INFO: [Synth 8-3886] merging instance 'u_green_detect/divisor_reg[28]' (FDCE) to 'u_green_detect/divisor_reg[29]'
-INFO: [Synth 8-3886] merging instance 'u_green_detect/divisor_reg[29]' (FDCE) to 'u_green_detect/divisor_reg[30]'
-INFO: [Synth 8-3886] merging instance 'u_green_detect/divisor_reg[30]' (FDCE) to 'u_green_detect/divisor_reg[31]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_green_detect/divisor_reg[31] )
-INFO: [Synth 8-3886] merging instance 'u_green_detect/idle_cnt_reg[22]' (FDCE) to 'u_green_detect/idle_cnt_reg[23]'
-INFO: [Synth 8-3886] merging instance 'u_green_detect/idle_cnt_reg[23]' (FDCE) to 'u_green_detect/idle_cnt_reg[21]'
-INFO: [Synth 8-3886] merging instance 'u_green_detect/idle_cnt_reg[21]' (FDCE) to 'u_green_detect/idle_cnt_reg[20]'
-INFO: [Synth 8-3886] merging instance 'u_green_detect/idle_cnt_reg[20]' (FDCE) to 'u_green_detect/idle_cnt_reg[19]'
-INFO: [Synth 8-3886] merging instance 'u_green_detect/idle_cnt_reg[19]' (FDCE) to 'u_green_detect/idle_cnt_reg[18]'
-INFO: [Synth 8-3886] merging instance 'u_green_detect/idle_cnt_reg[18]' (FDCE) to 'u_green_detect/idle_cnt_reg[17]'
-INFO: [Synth 8-3886] merging instance 'u_green_detect/idle_cnt_reg[17]' (FDCE) to 'u_green_detect/idle_cnt_reg[16]'
-INFO: [Synth 8-3886] merging instance 'u_green_detect/idle_cnt_reg[16]' (FDCE) to 'u_green_detect/idle_cnt_reg[15]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_green_detect/idle_cnt_reg[15] )
-INFO: [Synth 8-3886] merging instance 'u_green_detect_2/idle_cnt_reg[22]' (FDCE) to 'u_green_detect_2/idle_cnt_reg[23]'
-INFO: [Synth 8-3886] merging instance 'u_green_detect_2/idle_cnt_reg[23]' (FDCE) to 'u_green_detect_2/idle_cnt_reg[21]'
-INFO: [Synth 8-3886] merging instance 'u_green_detect_2/idle_cnt_reg[21]' (FDCE) to 'u_green_detect_2/idle_cnt_reg[20]'
-INFO: [Synth 8-3886] merging instance 'u_green_detect_2/idle_cnt_reg[20]' (FDCE) to 'u_green_detect_2/idle_cnt_reg[19]'
-INFO: [Synth 8-3886] merging instance 'u_green_detect_2/idle_cnt_reg[19]' (FDCE) to 'u_green_detect_2/idle_cnt_reg[18]'
-INFO: [Synth 8-3886] merging instance 'u_green_detect_2/idle_cnt_reg[18]' (FDCE) to 'u_green_detect_2/idle_cnt_reg[17]'
-INFO: [Synth 8-3886] merging instance 'u_green_detect_2/idle_cnt_reg[17]' (FDCE) to 'u_green_detect_2/idle_cnt_reg[16]'
-INFO: [Synth 8-3886] merging instance 'u_green_detect_2/idle_cnt_reg[16]' (FDCE) to 'u_green_detect_2/idle_cnt_reg[15]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_green_detect_2/idle_cnt_reg[15] )
-INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-3886] merging instance 'u_ttc_warn/cs_d2_reg[0]' (FDCE) to 'u_ttc_warn/cs_d1_reg[0]'
-DSP Report: Generating DSP dth_y0, operation Mode is: (C:0x8000)+A*(B:0x1f4).
-DSP Report: operator dth_y0 is absorbed into DSP dth_y0.
-DSP Report: operator gy_m is absorbed into DSP dth_y0.
-DSP Report: Generating DSP pitch_f1, operation Mode is: A*(B:0x3ec).
-DSP Report: operator pitch_f1 is absorbed into DSP pitch_f1.
-DSP Report: Generating DSP pitch_f0, operation Mode is: C+A*(B:0x14).
-DSP Report: operator pitch_f0 is absorbed into DSP pitch_f0.
-DSP Report: operator pitch_f1 is absorbed into DSP pitch_f0.
-DSP Report: Generating DSP dth_x0, operation Mode is: (C:0x8000)+A*(B:0x1f4).
-DSP Report: operator dth_x0 is absorbed into DSP dth_x0.
-DSP Report: operator gx_m is absorbed into DSP dth_x0.
-DSP Report: Generating DSP roll_f1, operation Mode is: A*(B:0x3ec).
-DSP Report: operator roll_f1 is absorbed into DSP roll_f1.
-DSP Report: Generating DSP roll_f0, operation Mode is: C+A*(B:0x14).
-DSP Report: operator roll_f0 is absorbed into DSP roll_f0.
-DSP Report: operator roll_f1 is absorbed into DSP roll_f0.
-INFO: [Synth 8-4471] merging register 'u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/rd_load_d0_reg' into 'u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/rd_load_d0_reg' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl.v:144]
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 DSP Report: Generating DSP base_d0, operation Mode is: A*(B:0x66).
 DSP Report: operator base_d0 is absorbed into DSP base_d0.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_stereo_dist/\dvd_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_attitude_cf/\dvd_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_ttc_warn/\dvd_reg[0] )
 INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_tracker/mode_reg[2]' (FDCE) to 'u_sensor_link/u_tracker/mode_reg[7]'
 INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_tracker/mode_reg[3]' (FDCE) to 'u_sensor_link/u_tracker/mode_reg[7]'
 INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_tracker/mode_reg[4]' (FDCE) to 'u_sensor_link/u_tracker/mode_reg[7]'
 INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_tracker/mode_reg[5]' (FDCE) to 'u_sensor_link/u_tracker/mode_reg[7]'
 INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_tracker/mode_reg[6]' (FDCE) to 'u_sensor_link/u_tracker/mode_reg[7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sensor_link/\u_tracker/mode_reg[7] )
 INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[3][7]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][2]'
 INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[2][7]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][2]'
 INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[1][7]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[1][1]'
@@ -2093,18 +1945,113 @@ INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[2][5]' 
 INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[1][5]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[1][1]'
 INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[0][5]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][2]'
 INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[3][4]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][2]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[2][4]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][2]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[1][4]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][2]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[0][4]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[1][1]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[3][3]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][2]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[2][3]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][2]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[1][3]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[1][1]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[0][3]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[3][2]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[3][2]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[1][0]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[2][2]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[1][0]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[1][2]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[1][0]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[0][2]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[1][1]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[2][1]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[1][1]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[1][1]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[0][0]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[0][1]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[1][0]'
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/u_ctrl_tx/frame_reg[2][0]' (FDE) to 'u_sensor_link/u_ctrl_tx/frame_reg[1][0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sensor_link/\u_ctrl_tx/frame_reg[1][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_sensor_link/\u_ctrl_tx/frame_reg[0][0] )
+INFO: [Synth 8-3886] merging instance 'u_attitude_cf/acc_p_cdeg_reg[13]' (FDCE) to 'u_attitude_cf/acc_p_cdeg_reg[14]'
+INFO: [Synth 8-3886] merging instance 'u_attitude_cf/acc_p_cdeg_reg[14]' (FDCE) to 'u_attitude_cf/acc_p_cdeg_reg[15]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect_2/divisor_reg[18]' (FDCE) to 'u_green_detect_2/divisor_reg[19]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect_2/divisor_reg[19]' (FDCE) to 'u_green_detect_2/divisor_reg[20]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect_2/divisor_reg[20]' (FDCE) to 'u_green_detect_2/divisor_reg[21]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect_2/divisor_reg[21]' (FDCE) to 'u_green_detect_2/divisor_reg[22]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect_2/divisor_reg[22]' (FDCE) to 'u_green_detect_2/divisor_reg[23]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect_2/divisor_reg[23]' (FDCE) to 'u_green_detect_2/divisor_reg[24]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect_2/divisor_reg[24]' (FDCE) to 'u_green_detect_2/divisor_reg[25]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect_2/divisor_reg[25]' (FDCE) to 'u_green_detect_2/divisor_reg[26]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect_2/divisor_reg[26]' (FDCE) to 'u_green_detect_2/divisor_reg[27]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect_2/divisor_reg[27]' (FDCE) to 'u_green_detect_2/divisor_reg[28]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect_2/divisor_reg[28]' (FDCE) to 'u_green_detect_2/divisor_reg[29]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect_2/divisor_reg[29]' (FDCE) to 'u_green_detect_2/divisor_reg[30]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect_2/divisor_reg[30]' (FDCE) to 'u_green_detect_2/divisor_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_green_detect_2/\divisor_reg[31] )
+INFO: [Synth 8-3886] merging instance 'u_green_detect/divisor_reg[18]' (FDCE) to 'u_green_detect/divisor_reg[19]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect/divisor_reg[19]' (FDCE) to 'u_green_detect/divisor_reg[20]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect/divisor_reg[20]' (FDCE) to 'u_green_detect/divisor_reg[21]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect/divisor_reg[21]' (FDCE) to 'u_green_detect/divisor_reg[22]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect/divisor_reg[22]' (FDCE) to 'u_green_detect/divisor_reg[23]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect/divisor_reg[23]' (FDCE) to 'u_green_detect/divisor_reg[24]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect/divisor_reg[24]' (FDCE) to 'u_green_detect/divisor_reg[25]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect/divisor_reg[25]' (FDCE) to 'u_green_detect/divisor_reg[26]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect/divisor_reg[26]' (FDCE) to 'u_green_detect/divisor_reg[27]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect/divisor_reg[27]' (FDCE) to 'u_green_detect/divisor_reg[28]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect/divisor_reg[28]' (FDCE) to 'u_green_detect/divisor_reg[29]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect/divisor_reg[29]' (FDCE) to 'u_green_detect/divisor_reg[30]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect/divisor_reg[30]' (FDCE) to 'u_green_detect/divisor_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_green_detect/\divisor_reg[31] )
+INFO: [Synth 8-3886] merging instance 'u_green_detect/idle_cnt_reg[22]' (FDCE) to 'u_green_detect/idle_cnt_reg[23]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect/idle_cnt_reg[23]' (FDCE) to 'u_green_detect/idle_cnt_reg[21]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect/idle_cnt_reg[21]' (FDCE) to 'u_green_detect/idle_cnt_reg[20]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect/idle_cnt_reg[20]' (FDCE) to 'u_green_detect/idle_cnt_reg[19]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect/idle_cnt_reg[19]' (FDCE) to 'u_green_detect/idle_cnt_reg[18]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect/idle_cnt_reg[18]' (FDCE) to 'u_green_detect/idle_cnt_reg[17]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect/idle_cnt_reg[17]' (FDCE) to 'u_green_detect/idle_cnt_reg[16]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect/idle_cnt_reg[16]' (FDCE) to 'u_green_detect/idle_cnt_reg[15]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_green_detect/\idle_cnt_reg[15] )
+INFO: [Synth 8-3886] merging instance 'u_green_detect_2/idle_cnt_reg[22]' (FDCE) to 'u_green_detect_2/idle_cnt_reg[23]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect_2/idle_cnt_reg[23]' (FDCE) to 'u_green_detect_2/idle_cnt_reg[21]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect_2/idle_cnt_reg[21]' (FDCE) to 'u_green_detect_2/idle_cnt_reg[20]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect_2/idle_cnt_reg[20]' (FDCE) to 'u_green_detect_2/idle_cnt_reg[19]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect_2/idle_cnt_reg[19]' (FDCE) to 'u_green_detect_2/idle_cnt_reg[18]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect_2/idle_cnt_reg[18]' (FDCE) to 'u_green_detect_2/idle_cnt_reg[17]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect_2/idle_cnt_reg[17]' (FDCE) to 'u_green_detect_2/idle_cnt_reg[16]'
+INFO: [Synth 8-3886] merging instance 'u_green_detect_2/idle_cnt_reg[16]' (FDCE) to 'u_green_detect_2/idle_cnt_reg[15]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_green_detect_2/\idle_cnt_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_ttc_warn/\cs_d1_reg[0] )
+INFO: [Synth 8-3886] merging instance 'u_ttc_warn/cs_d2_reg[0]' (FDCE) to 'u_ttc_warn/cs_d1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'u_stereo_dist/dvs_reg[30]' (FDCE) to 'u_stereo_dist/dvs_reg[31]'
+INFO: [Synth 8-3886] merging instance 'u_stereo_dist/dvs_reg[31]' (FDCE) to 'u_stereo_dist/dvs_reg[29]'
+INFO: [Synth 8-3886] merging instance 'u_stereo_dist/dvs_reg[29]' (FDCE) to 'u_stereo_dist/dvs_reg[28]'
+INFO: [Synth 8-3886] merging instance 'u_stereo_dist/dvs_reg[28]' (FDCE) to 'u_stereo_dist/dvs_reg[27]'
+INFO: [Synth 8-3886] merging instance 'u_stereo_dist/dvs_reg[27]' (FDCE) to 'u_stereo_dist/dvs_reg[26]'
+INFO: [Synth 8-3886] merging instance 'u_stereo_dist/dvs_reg[26]' (FDCE) to 'u_stereo_dist/dvs_reg[25]'
+INFO: [Synth 8-3886] merging instance 'u_stereo_dist/dvs_reg[25]' (FDCE) to 'u_stereo_dist/dvs_reg[24]'
+INFO: [Synth 8-3886] merging instance 'u_stereo_dist/dvs_reg[24]' (FDCE) to 'u_stereo_dist/dvs_reg[23]'
+INFO: [Synth 8-3886] merging instance 'u_stereo_dist/dvs_reg[23]' (FDCE) to 'u_stereo_dist/dvs_reg[22]'
+INFO: [Synth 8-3886] merging instance 'u_stereo_dist/dvs_reg[22]' (FDCE) to 'u_stereo_dist/dvs_reg[21]'
+INFO: [Synth 8-3886] merging instance 'u_stereo_dist/dvs_reg[21]' (FDCE) to 'u_stereo_dist/dvs_reg[20]'
+INFO: [Synth 8-3886] merging instance 'u_stereo_dist/dvs_reg[20]' (FDCE) to 'u_stereo_dist/dvs_reg[19]'
+INFO: [Synth 8-3886] merging instance 'u_stereo_dist/dvs_reg[19]' (FDCE) to 'u_stereo_dist/dvs_reg[18]'
+INFO: [Synth 8-3886] merging instance 'u_stereo_dist/dvs_reg[18]' (FDCE) to 'u_stereo_dist/dvs_reg[17]'
+INFO: [Synth 8-3886] merging instance 'u_stereo_dist/dvs_reg[17]' (FDCE) to 'u_stereo_dist/dvs_reg[16]'
+INFO: [Synth 8-3886] merging instance 'u_stereo_dist/dvs_reg[16]' (FDCE) to 'u_stereo_dist/dvs_reg[15]'
+INFO: [Synth 8-3886] merging instance 'u_stereo_dist/dvs_reg[15]' (FDCE) to 'u_stereo_dist/dvs_reg[14]'
+INFO: [Synth 8-3886] merging instance 'u_stereo_dist/dvs_reg[14]' (FDCE) to 'u_stereo_dist/dvs_reg[13]'
+INFO: [Synth 8-3886] merging instance 'u_stereo_dist/dvs_reg[13]' (FDCE) to 'u_stereo_dist/dvs_reg[12]'
+INFO: [Synth 8-3886] merging instance 'u_stereo_dist/dvs_reg[12]' (FDCE) to 'u_stereo_dist/dvs_reg[11]'
+INFO: [Synth 8-3886] merging instance 'u_stereo_dist/dvs_reg[11]' (FDCE) to 'u_stereo_dist/dvs_reg[10]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_stereo_dist/\dvs_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_ttc_warn/\cs_d1_reg[0] )
+INFO: [Synth 8-3886] merging instance 'u_sensor_link/i_12/u_tracker/tick_cnt_reg[27]' (FDC) to 'u_sensor_link/i_12/u_tracker/tick_cnt_reg[21]'
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sensor_link/i_12/\u_tracker/tick_cnt_reg[22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_stereo_dist/\dist_mm_reg[15] )
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-4471] merging register 'u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/rd_load_d0_reg' into 'u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/rd_load_d0_reg' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl.v:144]
 INFO: [Synth 8-5587] ROM size for "scl" is below threshold of ROM address width. It will be mapped to LUTs
 INFO: [Synth 8-5587] ROM size for "sda_out" is below threshold of ROM address width. It will be mapped to LUTs
 INFO: [Synth 8-5587] ROM size for "scl" is below threshold of ROM address width. It will be mapped to LUTs
 INFO: [Synth 8-5587] ROM size for "sda_out" is below threshold of ROM address width. It will be mapped to LUTs
-WARNING: [Synth 8-3917] design top_dual_ov5640_lcd__GCB2 has port cam_rst_n_2 driven by constant 1
-WARNING: [Synth 8-3917] design top_dual_ov5640_lcd__GCB2 has port cam_pwdn_2 driven by constant 0
-WARNING: [Synth 8-3917] design top_dual_ov5640_lcd__GCB2 has port cam_rst_n_1 driven by constant 1
-WARNING: [Synth 8-3917] design top_dual_ov5640_lcd__GCB2 has port cam_pwdn_1 driven by constant 0
-INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-3917] design top_dual_ov5640_lcd__GCB1 has port cam_rst_n_2 driven by constant 1
+WARNING: [Synth 8-3917] design top_dual_ov5640_lcd__GCB1 has port cam_pwdn_2 driven by constant 0
+WARNING: [Synth 8-3917] design top_dual_ov5640_lcd__GCB1 has port cam_rst_n_1 driven by constant 1
+WARNING: [Synth 8-3917] design top_dual_ov5640_lcd__GCB1 has port cam_pwdn_1 driven by constant 0
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:53 ; elapsed = 00:01:06 . Memory (MB): peak = 1098.031 ; gain = 696.344
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:41 ; elapsed = 00:00:52 . Memory (MB): peak = 1072.125 ; gain = 669.469
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -2116,9 +2063,11 @@ ROM:
 +------------+------------+---------------+----------------+
 |i2c_dri     | scl        | 128x1         | LUT            | 
 |i2c_dri     | sda_out    | 128x1         | LUT            | 
-|atan_lut    | val        | 2048x13       | LUT            | 
-|sincos_lut  | sin_q15    | 512x16        | LUT            | 
-|sincos_lut  | cos_q15    | 512x16        | LUT            | 
+|atan_lut    | p_0_out    | 2048x13       | LUT            | 
+|sincos_lut  | p_0_out    | 512x16        | LUT            | 
+|sincos_lut  | p_0_out    | 512x16        | LUT            | 
+|osd_font    | idx        | 256x7         | LUT            | 
+|osd_font    | p_0_out    | 2048x16       | LUT            | 
 +------------+------------+---------------+----------------+
 
 
@@ -2126,17 +2075,17 @@ DSP: Preliminary Mapping  Report (see note below)
 +-------------+------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 |Module Name  | DSP Mapping            | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
 +-------------+------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|attitude_cf  | (C:0x8000)+A*(B:0x1f4) | 17     | 10     | 17     | -      | 26     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|attitude_cf  | A*(B:0x3ec)            | 17     | 10     | -      | -      | 27     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|attitude_cf  | C+A*(B:0x14)           | 21     | 5      | 26     | -      | 26     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|attitude_cf  | (C:0x8000)+A*(B:0x1f4) | 17     | 10     | 17     | -      | 26     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|attitude_cf  | A*(B:0x3ec)            | 17     | 10     | -      | -      | 27     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|attitude_cf  | C+A*(B:0x14)           | 21     | 5      | 26     | -      | 26     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
 |sensor_calc  | (C:0x8000)+A*(B:0x1f4) | 17     | 10     | 17     | -      | 26     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
 |sensor_calc  | A*B                    | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |sensor_calc  | (PCIN>>17)+A*B         | 16     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |sensor_calc  | A*B                    | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |sensor_calc  | (PCIN>>17)+A*B         | 16     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|attitude_cf  | (C:0x8000)+A*(B:0x1f4) | 17     | 10     | 17     | -      | 26     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
-|attitude_cf  | A*(B:0x3ec)            | 17     | 10     | -      | -      | 27     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|attitude_cf  | C+A*(B:0x14)           | 21     | 5      | 26     | -      | 26     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
-|attitude_cf  | (C:0x8000)+A*(B:0x1f4) | 17     | 10     | 17     | -      | 26     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
-|attitude_cf  | A*(B:0x3ec)            | 17     | 10     | -      | -      | 27     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|attitude_cf  | C+A*(B:0x14)           | 21     | 5      | 26     | -      | 26     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
 |tracker_ctrl | A*(B:0x66)             | 17     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 +-------------+------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
@@ -2155,19 +2104,12 @@ Report RTL Partitions:
 |3     |osd_overlay__GB2          |           1|      3639|
 |4     |osd_overlay__GB3          |           1|      6198|
 |5     |osd_overlay__GB4          |           1|      6198|
-|6     |osd_overlay__GB5          |           1|     13304|
-|7     |osd_overlay__GB6          |           1|      2502|
-|8     |dash_osd__GB0             |           1|      6352|
-|9     |dash_osd__GB1             |           1|      2060|
-|10    |dash_osd__GB2             |           1|      2472|
-|11    |dash_osd__GB3             |           1|      4868|
-|12    |dash_osd__GB4             |           1|      5981|
-|13    |dash_osd__GB5             |           1|      3006|
-|14    |dash_osd__GB6             |           1|      3472|
-|15    |lcd_rgb_top__GC0          |           1|      2026|
-|16    |top_dual_ov5640_lcd__GCB0 |           1|      8724|
-|17    |top_dual_ov5640_lcd__GCB1 |           1|      9960|
-|18    |top_dual_ov5640_lcd__GCB2 |           1|      3446|
+|6     |osd_overlay__GB5          |           1|     15294|
+|7     |dash_osd__GB0             |           1|      6389|
+|8     |dash_osd__GB1             |           1|      5473|
+|9     |lcd_rgb_top__GC0          |           1|      2026|
+|10    |top_dual_ov5640_lcd__GCB0 |           1|     14078|
+|11    |top_dual_ov5640_lcd__GCB1 |           1|      8277|
 +------+--------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
@@ -2179,38 +2121,352 @@ WARNING: [Synth 8-565] redefining clock 'sys_clk'
 WARNING: [Synth 8-565] redefining clock 'cmos_pclk'
 INFO: [Synth 8-5819] Moved 3 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:00 ; elapsed = 00:01:14 . Memory (MB): peak = 1098.031 ; gain = 696.344
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:47 ; elapsed = 00:00:57 . Memory (MB): peak = 1072.125 ; gain = 669.469
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
-info: optimization accepted worst group hill climbing move (-16082.0/oG.CP 55.0ps)
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:04:56 ; elapsed = 00:05:16 . Memory (MB): peak = 1974.742 ; gain = 1573.055
+Finished Timing Optimization : Time (s): cpu = 00:04:43 ; elapsed = 00:05:11 . Memory (MB): peak = 1908.586 ; gain = 1505.930
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+------+---------------------------------------+------------+----------+
-|      |RTL Partition                          |Replication |Instances |
-+------+---------------------------------------+------------+----------+
-|1     |dash_osd__GB0                          |           1|      6352|
-|2     |dash_osd__GB1                          |           1|      2060|
-|3     |dash_osd__GB2                          |           1|      2472|
-|4     |dash_osd__GB3                          |           1|      4864|
-|5     |dash_osd__GB4                          |           1|      5973|
-|6     |dash_osd__GB5                          |           1|      3000|
-|7     |lcd_rgb_top__GC0                       |           1|      2008|
-|8     |top_dual_ov5640_lcd__GCB0              |           1|      8694|
-|9     |top_dual_ov5640_lcd__GCB1              |           1|      9914|
-|10    |top_dual_ov5640_lcd__GCB2              |           1|      3415|
-|11    |top_dual_ov5640_lcd_GT3                |           1|      5912|
-|12    |top_dual_ov5640_lcd_GT3__1             |           1|         2|
-|13    |top_dual_ov5640_lcd_GT2                |           1|      2951|
-|14    |top_dual_ov5640_lcd_GT0                |           1|      9860|
-|15    |top_dual_ov5640_lcd_GT1                |           1|      2674|
-|16    |top_dual_ov5640_lcd_GT2__1             |           1|     42128|
-|17    |datapath__1355_top_dual_ov5640_lcd__GD |           1|      1551|
-+------+---------------------------------------+------------+----------+
++------+-------------------------------------+------------+----------+
+|      |RTL Partition                        |Replication |Instances |
++------+-------------------------------------+------------+----------+
+|1     |dash_osd__GB0                        |           1|      6375|
+|2     |lcd_rgb_top__GC0                     |           1|      2008|
+|3     |top_dual_ov5640_lcd__GCB0            |           1|     14056|
+|4     |top_dual_ov5640_lcd__GCB1            |           1|      8271|
+|5     |top_dual_ov5640_lcd_GT3              |           1|      5912|
+|6     |top_dual_ov5640_lcd_GT4              |           1|      4521|
+|7     |top_dual_ov5640_lcd_GT0__2           |           1|       589|
+|8     |top_dual_ov5640_lcd_GT2              |           1|        20|
+|9     |top_dual_ov5640_lcd_GT0              |           1|     10681|
+|10    |top_dual_ov5640_lcd_GT1              |           1|       176|
+|11    |top_dual_ov5640_lcd_GT2__1           |           1|     41488|
+|12    |datapath__10_top_dual_ov5640_lcd__GD |           1|      1551|
++------+-------------------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/attitude_cf.v:115]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/attitude_cf.v:116]
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2325  -from DI[3] -to CO[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3386  -from DI[3] -to CO[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2325  -from DI[2] -to CO[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3386  -from DI[2] -to CO[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2325  -from DI[1] -to CO[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3386  -from DI[1] -to CO[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2325  -from DI[2] -to O[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3386  -from DI[2] -to O[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2325  -from DI[1] -to O[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3386  -from DI[1] -to O[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2325  -from DI[0] -to CO[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3386  -from DI[0] -to CO[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2325  -from DI[1] -to O[2]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3386  -from DI[1] -to O[2]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2325  -from DI[0] -to O[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3386  -from DI[0] -to O[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2324  -from DI[3] -to CO[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3385  -from DI[3] -to CO[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2325  -from DI[0] -to O[2]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3386  -from DI[0] -to O[2]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2320  -from I1 -to O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2324  -from DI[0] -to CO[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2319  -from I0 -to O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3381  -from I1 -to O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3385  -from DI[0] -to CO[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3380  -from I0 -to O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2325  -from DI[0] -to O[1]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3386  -from DI[0] -to O[1]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2324  -from DI[0] -to O[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3385  -from DI[0] -to O[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2323  -from DI[3] -to CO[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2318  -from I0 -to O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3384  -from DI[3] -to CO[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3379  -from I0 -to O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2324  -from DI[0] -to O[2]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3385  -from DI[0] -to O[2]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2323  -from DI[2] -to CO[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2317  -from I0 -to O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3384  -from DI[2] -to CO[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3378  -from I0 -to O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2324  -from DI[0] -to O[1]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3385  -from DI[0] -to O[1]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2323  -from DI[2] -to O[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3384  -from DI[2] -to O[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2323  -from DI[1] -to CO[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2316  -from I0 -to O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3384  -from DI[1] -to CO[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3377  -from I0 -to O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2323  -from DI[0] -to CO[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2315  -from I0 -to O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3384  -from DI[0] -to CO[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3376  -from I0 -to O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2323  -from DI[1] -to O[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3384  -from DI[1] -to O[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2323  -from DI[0] -to O[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3384  -from DI[0] -to O[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2323  -from DI[1] -to O[2]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3384  -from DI[1] -to O[2]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2323  -from DI[0] -to O[2]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2322  -from DI[3] -to CO[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2314  -from I0 -to O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3384  -from DI[0] -to O[2]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3383  -from DI[3] -to CO[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3375  -from I0 -to O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2323  -from DI[0] -to O[1]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2322  -from DI[2] -to CO[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2313  -from I0 -to O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3384  -from DI[0] -to O[1]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3383  -from DI[2] -to CO[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3374  -from I0 -to O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2322  -from DI[1] -to CO[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2312  -from I0 -to O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3383  -from DI[1] -to CO[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3373  -from I0 -to O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2322  -from DI[2] -to O[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3383  -from DI[2] -to O[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2322  -from DI[1] -to O[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3383  -from DI[1] -to O[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2322  -from DI[0] -to CO[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2311  -from I0 -to O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3383  -from DI[0] -to CO[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3372  -from I0 -to O'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2322  -from DI[1] -to O[2]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3383  -from DI[1] -to O[2]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2322  -from DI[0] -to O[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3383  -from DI[0] -to O[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2322  -from DI[0] -to O[2]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2322  -from DI[0] -to O[1]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2325  -from S[3] -to CO[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3383  -from DI[0] -to O[2]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3383  -from DI[0] -to O[1]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3386  -from S[3] -to CO[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2325  -from S[2] -to CO[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3386  -from S[2] -to CO[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2325  -from S[3] -to O[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3386  -from S[3] -to O[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2325  -from S[2] -to O[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3386  -from S[2] -to O[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_2325  -from S[1] -to CO[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_0/\u_attitude_cf/i_3386  -from S[1] -to CO[3]'
+INFO: [Common 17-14] Message 'Synth 8-326' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-326' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/attitude_cf.v:120]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [E:/FPGA/project/smart_car_pld2026/my_car/rtl/vision/stereo_dist.v:85]
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:04:48 ; elapsed = 00:05:24 . Memory (MB): peak = 1908.586 ; gain = 1505.930
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+-------------------------------------+------------+----------+
+|      |RTL Partition                        |Replication |Instances |
++------+-------------------------------------+------------+----------+
+|1     |dash_osd__GB0                        |           1|      4385|
+|2     |lcd_rgb_top__GC0                     |           1|       811|
+|3     |top_dual_ov5640_lcd__GCB0            |           1|      7402|
+|4     |top_dual_ov5640_lcd__GCB1            |           1|      5402|
+|5     |top_dual_ov5640_lcd_GT3              |           1|      1850|
+|6     |top_dual_ov5640_lcd_GT4              |           1|      1364|
+|7     |top_dual_ov5640_lcd_GT0__2           |           1|       588|
+|8     |top_dual_ov5640_lcd_GT2              |           1|        20|
+|9     |top_dual_ov5640_lcd_GT0              |           1|      4525|
+|10    |top_dual_ov5640_lcd_GT1              |           1|       176|
+|11    |top_dual_ov5640_lcd_GT2__1           |           1|     15136|
+|12    |datapath__10_top_dual_ov5640_lcd__GD |           1|       389|
++------+-------------------------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/attitude_cf.v:120]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [E:/FPGA/project/smart_car_pld2026/my_car/rtl/vision/stereo_dist.v:85]
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:04:50 ; elapsed = 00:05:27 . Memory (MB): peak = 1908.586 ; gain = 1505.930
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:04:51 ; elapsed = 00:05:28 . Memory (MB): peak = 1908.586 ; gain = 1505.930
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:04:53 ; elapsed = 00:05:30 . Memory (MB): peak = 1908.586 ; gain = 1505.930
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:04:53 ; elapsed = 00:05:30 . Memory (MB): peak = 1908.586 ; gain = 1505.930
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:04:54 ; elapsed = 00:05:31 . Memory (MB): peak = 1908.586 ; gain = 1505.930
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:04:54 ; elapsed = 00:05:31 . Memory (MB): peak = 1908.586 ; gain = 1505.930
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++--------------------+--------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name         | RTL Name                 | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++--------------------+--------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|top_dual_ov5640_lcd | u_ttc_warn/dh_reg[9][13] | 10     | 14    | YES          | NO                 | YES               | 14     | 0       | 
++--------------------+--------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |clk_wiz_0     |         1|
+|2     |mig_7series_0 |         1|
+|3     |rd_fifo       |         2|
+|4     |wr_fifo       |         2|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+--------------+------+
+|      |Cell          |Count |
++------+--------------+------+
+|1     |clk_wiz_0     |     1|
+|2     |mig_7series_0 |     1|
+|3     |rd_fifo       |     1|
+|4     |rd_fifo__2    |     1|
+|5     |wr_fifo       |     1|
+|6     |wr_fifo__2    |     1|
+|7     |BUFG          |     5|
+|8     |CARRY4        |  4358|
+|9     |DSP48E1       |     3|
+|10    |DSP48E1_1     |     7|
+|11    |DSP48E1_2     |     2|
+|12    |LUT1          |  1784|
+|13    |LUT2          |  7714|
+|14    |LUT3          |  4939|
+|15    |LUT4          |  6567|
+|16    |LUT5          |  3140|
+|17    |LUT6          |  7170|
+|18    |MUXF7         |   349|
+|19    |MUXF8         |    66|
+|20    |SRL16E        |    14|
+|21    |FDCE          |  5636|
+|22    |FDPE          |    78|
+|23    |FDRE          |   442|
+|24    |FDSE          |     5|
+|25    |IBUF          |    25|
+|26    |IOBUF         |     3|
+|27    |OBUF          |    13|
+|28    |OBUFT         |    23|
++------+--------------+------+
+
+Report Instance Areas: 
++------+-------------------------+--------------------------+------+
+|      |Instance                 |Module                    |Cells |
++------+-------------------------+--------------------------+------+
+|1     |top                      |                          | 43766|
+|2     |  u_attitude_cf          |attitude_cf               |  1026|
+|3     |  u_ddr3_top             |ddr3_top                  |  4324|
+|4     |    u_ddr3_fifo_ctrl_top |ddr3_fifo_ctrl_top        |  2312|
+|5     |      u_ddr3_fifo_ctrl_1 |ddr3_fifo_ctrl__xdcDup__1 |  1264|
+|6     |      u_ddr3_fifo_ctrl_2 |ddr3_fifo_ctrl            |  1021|
+|7     |    u_ddr3_rw            |ddr3_rw                   |  1682|
+|8     |  u_green_detect         |green_detect              |  1154|
+|9     |  u_green_detect_2       |green_detect_0            |   942|
+|10    |  u_lcd_rgb_top          |lcd_rgb_top               | 28336|
+|11    |    u_clk_div            |clk_div                   |     6|
+|12    |    u_dash_osd           |dash_osd                  |  8730|
+|13    |    u_lcd_disply         |lcd_disply                |    20|
+|14    |    u_lcd_driver         |lcd_driver                |   883|
+|15    |    u_osd_overlay        |osd_overlay               | 18595|
+|16    |      u_osd_font         |osd_font                  |   339|
+|17    |    u_rd_id              |rd_id                     |   102|
+|18    |  u_mode_switch          |mode_switch               |   129|
+|19    |  u_ov5640_dri_1         |ov5640_dri                |   443|
+|20    |    u_cmos_capture_data  |cmos_capture_data_2       |    78|
+|21    |    u_i2c_cfg            |i2c_ov5640_rgb565_cfg_3   |   212|
+|22    |    u_i2c_dr             |i2c_dri_4                 |   153|
+|23    |  u_ov5640_dri_2         |ov5640_dri_1              |   444|
+|24    |    u_cmos_capture_data  |cmos_capture_data         |    78|
+|25    |    u_i2c_cfg            |i2c_ov5640_rgb565_cfg     |   212|
+|26    |    u_i2c_dr             |i2c_dri                   |   153|
+|27    |  u_picture_size         |picture_size              |    51|
+|28    |  u_sensor_calc          |sensor_calc               |  1374|
+|29    |    u_sincos_lut         |sincos_lut                |   265|
+|30    |  u_sensor_link          |sensor_link               |  1775|
+|31    |    u_ctrl_tx            |ctrl_link_tx              |   213|
+|32    |      u_tx               |sl_uart_tx                |    71|
+|33    |    u_decode             |v1_decode                 |  1013|
+|34    |    u_rx                 |sl_uart_rx                |    94|
+|35    |    u_tracker            |tracker_ctrl              |   455|
+|36    |  u_stereo_dist          |stereo_dist               |   519|
+|37    |  u_ttc_warn             |ttc_warn                  |   475|
++------+-------------------------+--------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:04:54 ; elapsed = 00:05:31 . Memory (MB): peak = 1908.586 ; gain = 1505.930
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 199 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:04:48 ; elapsed = 00:05:27 . Memory (MB): peak = 1908.586 ; gain = 1095.598
+Synthesis Optimization Complete : Time (s): cpu = 00:04:54 ; elapsed = 00:05:31 . Memory (MB): peak = 1908.586 ; gain = 1505.930
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 4788 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1908.586 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 3 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 3 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+567 Infos, 338 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:04:58 ; elapsed = 00:05:36 . Memory (MB): peak = 1908.586 ; gain = 1505.930
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1908.586 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/top_dual_ov5640_lcd.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file top_dual_ov5640_lcd_utilization_synth.rpt -pb top_dual_ov5640_lcd_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Jul 29 21:15:26 2026...

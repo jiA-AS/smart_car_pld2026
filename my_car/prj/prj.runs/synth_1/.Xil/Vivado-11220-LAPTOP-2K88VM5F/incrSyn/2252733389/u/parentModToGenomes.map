@@ -1,4 +1,0 @@
-top_dual_ov5640_lcd: dash_osd__GB0, top_dual_ov5640_lcd__GCB0, osd_overlay__GB5, dash_osd__GB2, osd_overlay__GB0, top_dual_ov5640_lcd__GCB2, dash_osd__GB5, top_dual_ov5640_lcd__GCB1, lcd_rgb_top__GC0, osd_overlay__GB6, dash_osd__GB4, dash_osd__GB1, osd_overlay__GB4, osd_overlay__GB3, osd_overlay__GB2, dash_osd__GB6, osd_overlay__GB1, dash_osd__GB3, 
-lcd_rgb_top: dash_osd__GB1, osd_overlay__GB0, dash_osd__GB4, osd_overlay__GB5, osd_overlay__GB6, dash_osd__GB3, osd_overlay__GB2, dash_osd__GB6, dash_osd__GB5, osd_overlay__GB3, dash_osd__GB0, lcd_rgb_top__GC0, osd_overlay__GB4, dash_osd__GB2, osd_overlay__GB1, 
-dash_osd: dash_osd__GB6, dash_osd__GB5, dash_osd__GB4, dash_osd__GB3, dash_osd__GB2, dash_osd__GB1, dash_osd__GB0, 
-osd_overlay: osd_overlay__GB6, osd_overlay__GB5, osd_overlay__GB4, osd_overlay__GB3, osd_overlay__GB2, osd_overlay__GB1, osd_overlay__GB0, 

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Wed Jul 29 19:52:57 2026
+# Process ID: 9124
+# Current directory: E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/rd_fifo_synth_1
+# Command line: vivado.exe -log rd_fifo.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source rd_fifo.tcl
+# Log file: E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/rd_fifo_synth_1/rd_fifo.vds
+# Journal file: E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/rd_fifo_synth_1\vivado.jou
+#-----------------------------------------------------------
+source rd_fifo.tcl -notrace

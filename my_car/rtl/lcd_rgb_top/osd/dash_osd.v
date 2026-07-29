@@ -1,23 +1,23 @@
 // ============================================================================
-// dash_osd.v -- 车辆状态图形化仪表盘（赛道三基础要求4 + 数字孪生扩展）
+// dash_osd.v -- 车辆状态图形化仪表盘 V3.1（赛道三基础要求4 + 数字孪生扩展）
+//
+// V3.1 瘦身（应对 Vivado 2018.3 技术映射 TclStackFree 崩溃）：
+//   1) 轨迹 FIFO 64→32 点（并行比较器减半，显示 6.4s 历史）
+//   2) 移除 osd_font 例化（2080 项巨型 case）--"轨迹/姿态"4 字直接
+//      内嵌 64 项小 ROM
+//   3) 饱和函数 sat12 由 2 个 32bit 比较改为 20bit 高位检测
+// 功能与接口和 V3 完全一致，直接替换即可。
 //
 // 串在 osd_overlay 之后（lcd_clk 域）：坐标与 pixel_in 各打 1 拍对齐，
-// 叠加判决全组合输出（再引入 1 拍视频延迟，合计 2 拍，无感知）。
+// 叠加判决全组合输出（视频链合计 2 拍延迟，无感知）。
 //
-// 右下角仪表盘窗口（200×136，分辨率自适应锚定右下角）：
-//   ┌─────────────────────────┬────────┐
-//   │ 轨迹                     │  姿态   │
-//   │  俯视轨迹区 128×128      │ P 条   │   姿态条：±45° 满量程，
-//   │  ·64 点轨迹 FIFO（绿点） │ R 条   │   中心为零，左负右正
-//   │  ·小车图标 + 8方向航向线 │ 48×10  │
-//   └─────────────────────────┴────────┘
-//   轨迹映射：车上电位置为原点，车固定显示在窗口中心，
-//   世界坐标 → 屏幕：sx = (x - cur_x)>>6（64mm/像素，±64px ≈ ±4m），
-//   y 轴向上为正（屏幕向下为负）。
+// 右下角仪表盘窗口（200×136）：左 128×128 俯视轨迹区（32 点 FIFO 绿点
+// + 小车图标 + 8 方向航向线），右 56 宽姿态条区（pitch/roll 各 ±45°
+// 满量程 ±24px，中心为零）。世界→屏幕：sx=(x-cur_x)>>6（64mm/px）。
 //
 // 跨时钟说明：轨迹 FIFO 与 pos 在 sys_clk(50M) 域，lcd_clk 域 2 级同步
-//   采样 cur_x/cur_y；FIFO 内容为 5Hz 准静态点，直接异步采样（单个像素
-//   偶发亚稳无感知，工程可接受）。
+//   采样 cur_x/cur_y；FIFO 为 5Hz 准静态点，直接异步采样（单像素偶发
+//   亚稳无感知，工程可接受）。
 // ============================================================================
 module dash_osd #(
     parameter [4:0] TRK_SHIFT = 5'd6     // 轨迹比例：mm>>6 = 像素（64mm/px）
@@ -40,9 +40,13 @@ module dash_osd #(
     input  wire               trk_wr,
     input  wire signed [15:0] trk_x,      // mm，±32767
     input  wire signed [15:0] trk_y,
+    // ---- [V3.2] 显示模式（sys_clk 域准静态，内部同步到 lcd_clk） ----
+    input  wire        [ 1:0] disp_mode,  // 0=视角 1=轨迹 2=调试
     output wire        [15:0] pixel_out
 );
 
+// [V3.2] 新增 disp_mode 端口：轨迹档（==1）时窗外画面压暗一半、窗框青色高亮，
+//        配合遥控左拨杆 s1 中档实现"轨迹视角分屏"。
 // ------------------------- 颜色 -------------------------
 localparam GREEN  = 16'h07E0;
 localparam WHITE  = 16'hFFFF;
@@ -50,19 +54,19 @@ localparam CYAN   = 16'h07FF;
 localparam YELLOW = 16'hFFE0;
 localparam GRAY   = 16'h8410;
 
-// ------------------------- 轨迹 FIFO（sys_clk 域，64 点） -------------------------
-reg signed [15:0] fifo_x [0:63];
-reg signed [15:0] fifo_y [0:63];
+// ------------------------- 轨迹 FIFO（sys_clk 域，32 点） -------------------------
+reg signed [15:0] fifo_x [0:31];
+reg signed [15:0] fifo_y [0:31];
 integer k;
 always @(posedge sys_clk or negedge rst_n) begin
     if (!rst_n) begin
-        for (k = 0; k < 64; k = k + 1) begin
+        for (k = 0; k < 32; k = k + 1) begin
             fifo_x[k] <= 16'sd0;  fifo_y[k] <= 16'sd0;
         end
     end
     else if (trk_wr) begin
         fifo_x[0] <= trk_x;  fifo_y[0] <= trk_y;
-        for (k = 1; k < 64; k = k + 1) begin
+        for (k = 1; k < 32; k = k + 1) begin
             fifo_x[k] <= fifo_x[k-1];  fifo_y[k] <= fifo_y[k-1];
         end
     end
@@ -97,7 +101,6 @@ always @(posedge lcd_clk or negedge rst_n) begin
 end
 
 // ------------------------- 窗口几何（右下角锚定） -------------------------
-// 总宽 200 = 128(轨迹) + 8(间隔) + 56(姿态条) + 8(右边距)
 wire [10:0] WIN_W  = 11'd200;
 wire [10:0] WIN_H  = 11'd136;
 wire [10:0] X0     = h_pixel[10:0] - WIN_W - 11'd8;
@@ -110,26 +113,25 @@ wire [10:0] y_rel  = y_d - Y0;
 wire        in_win = (x_d >= X0) && (x_d < X0 + WIN_W)
                   && (y_d >= Y0) && (y_d < Y0 + WIN_H);
 
-// ------------------------- 轨迹命中（64 点并行比较） -------------------------
+// ------------------------- 轨迹命中（32 点并行比较） -------------------------
 wire signed [11:0] px_rel = $signed({1'b0, x_d}) - $signed({1'b0, TRK_CX});
 wire signed [11:0] py_rel = $signed({1'b0, y_d}) - $signed({1'b0, TRK_CY});
 wire        in_trk = (x_rel < 11'd128) && (y_rel >= 11'd4) && (y_rel < 11'd132);
 
-// 每点屏幕坐标（饱和 ±2047，防截断假命中）
-// 饱和函数：返回 12bit 补码（赋给 signed 信号使用，bit pattern 一致）
+// [V3.1] 轻量饱和：高 20 位全零（非负小值）或全一（负小值）判界
 function [11:0] sat12;
     input signed [31:0] v;
     begin
-        if (v > 32'sd2047)       sat12 = 12'h7FF;
-        else if (v < -32'sd2048) sat12 = 12'h800;
-        else                     sat12 = v[11:0];
+        if (v[31:12] == 20'h00000)      sat12 = v[11:0];        // 0 ~ +2047
+        else if (&v[31:12])             sat12 = v[11:0];        // -2048 ~ -1
+        else                            sat12 = v[31] ? 12'h800 : 12'h7FF;
     end
 endfunction
 
-wire [63:0] trk_hit;
+wire [31:0] trk_hit;
 genvar gi;
 generate
-    for (gi = 0; gi < 64; gi = gi + 1) begin : G_HIT
+    for (gi = 0; gi < 32; gi = gi + 1) begin : G_HIT
         wire signed [31:0] dwx = {{16{fifo_x[gi][15]}}, fifo_x[gi]} - px_b;
         wire signed [31:0] dwy = {{16{fifo_y[gi][15]}}, fifo_y[gi]} - py_b;
         wire signed [11:0] sx  = sat12(dwx >>> TRK_SHIFT);
@@ -165,10 +167,10 @@ wire on_head = in_head && (
 // len_px = cdeg × 24 / 4500 ≈ (cdeg × 349) >> 16，饱和 ±24
 wire signed [31:0] p_len32 = ({{16{pch_b[15]}}, pch_b} * 32'sd349) >>> 16;
 wire signed [31:0] r_len32 = ({{16{rol_b[15]}}, rol_b} * 32'sd349) >>> 16;
-wire signed [11:0] p_len = sat12(p_len32 > 32'sd24 ? 32'sd24 :
-                                 (p_len32 < -32'sd24 ? -32'sd24 : p_len32));
-wire signed [11:0] r_len = sat12(r_len32 > 32'sd24 ? 32'sd24 :
-                                 (r_len32 < -32'sd24 ? -32'sd24 : r_len32));
+wire signed [11:0] p_len = (p_len32 > 32'sd24) ? 12'sd24 :
+                           ((p_len32 < -32'sd24) ? -12'sd24 : p_len32[11:0]);
+wire signed [11:0] r_len = (r_len32 > 32'sd24) ? 12'sd24 :
+                           ((r_len32 < -32'sd24) ? -12'sd24 : r_len32[11:0]);
 
 // 条几何：中心 x = ATT_X+28，pitch 条 y ∈ [Y0+40, Y0+50)，roll 条 y ∈ [Y0+80, Y0+90)
 wire [10:0] BAR_CX  = ATT_X + 11'd28;
@@ -193,7 +195,7 @@ wire on_rfill = in_rbar && !on_rfrm
              && ((r_len > 12'sd0) && (bx > 12'sd0) && (bx <= r_len)
               || (r_len < 12'sd0) && (bx < 12'sd0) && (bx >= r_len));
 
-// ------------------------- 中文标签（osd_font 组合查表） -------------------------
+// ------------------------- [V3.1] 内嵌标签字库（仅 轨迹/姿态 4 字） -------------------------
 // "轨迹" @(X0+4, Y0+4)；"姿态" @(ATT_X+12, Y0+8)
 wire [10:0] l1x = x_d - (X0 + 11'd4);    // "轨迹" 标签区相对坐标
 wire [10:0] l1y = y_d - (Y0 + 11'd4);
@@ -202,32 +204,86 @@ wire [10:0] l2y = y_d - (Y0 + 11'd8);
 wire        in_lab1 = (l1x < 11'd32) && (l1y < 11'd16);
 wire        in_lab2 = (l2x < 11'd32) && (l2y < 11'd16);
 
-reg        lab_en;
-reg [ 7:0] lab_ch;
-reg [ 3:0] lab_row, lab_col;
+wire        lab_en  = in_lab1 || in_lab2;
+wire [ 1:0] lab_idx = in_lab1 ? ((l1x < 11'd16) ? 2'd0 : 2'd1)   // 轨 迹
+                              : ((l2x < 11'd16) ? 2'd2 : 2'd3);  // 姿 态
+wire [ 3:0] lab_row = in_lab1 ? l1y[3:0] : l2y[3:0];
+wire [10:0] lab_lx  = in_lab1 ? l1x : l2x;
+wire [ 3:0] lab_col = (lab_lx < 11'd16) ? lab_lx[3:0] : (lab_lx - 11'd16);
+
+// 4 字 × 16 行点阵（unifont，与 osd_font.v 同图源）
+reg [15:0] gbits;
 always @(*) begin
-    lab_en = 1'b0;  lab_ch = 8'h20;  lab_row = 4'd0;  lab_col = 4'd0;
-    if (in_lab1) begin                              // 轨 迹
-        lab_en  = 1'b1;
-        lab_ch  = (l1x < 11'd16) ? 8'h9B : 8'h9C;
-        lab_row = l1y[3:0];
-        lab_col = (l1x < 11'd16) ? l1x[3:0] : (l1x - 11'd16);
+    case (lab_idx)
+    2'd0: begin  // 轨
+        case (lab_row)
+            4'd0: gbits = 16'h2080;  4'd1: gbits = 16'h2080;
+            4'd2: gbits = 16'h2080;  4'd3: gbits = 16'hFC80;
+            4'd4: gbits = 16'h43F0;  4'd5: gbits = 16'h5090;
+            4'd6: gbits = 16'h9090;  4'd7: gbits = 16'hFC90;
+            4'd8: gbits = 16'h1090;  4'd9: gbits = 16'h1090;
+            4'd10: gbits = 16'h1C90; 4'd11: gbits = 16'hF092;
+            4'd12: gbits = 16'h5112; 4'd13: gbits = 16'h1112;
+            4'd14: gbits = 16'h120E; 4'd15: gbits = 16'h1400;
+        endcase
     end
-    else if (in_lab2) begin                         // 姿 态
-        lab_en  = 1'b1;
-        lab_ch  = (l2x < 11'd16) ? 8'h99 : 8'h9A;
-        lab_row = l2y[3:0];
-        lab_col = (l2x < 11'd16) ? l2x[3:0] : (l2x - 11'd16);
+    2'd1: begin  // 迹
+        case (lab_row)
+            4'd0: gbits = 16'h0040;  4'd1: gbits = 16'h2020;
+            4'd2: gbits = 16'h1020;  4'd3: gbits = 16'h17FE;
+            4'd4: gbits = 16'h0090;  4'd5: gbits = 16'h0090;
+            4'd6: gbits = 16'hF294;  4'd7: gbits = 16'h1292;
+            4'd8: gbits = 16'h1492;  4'd9: gbits = 16'h1110;
+            4'd10: gbits = 16'h1110; 4'd11: gbits = 16'h1250;
+            4'd12: gbits = 16'h1420; 4'd13: gbits = 16'h2800;
+            4'd14: gbits = 16'h47FE; 4'd15: gbits = 16'h0000;
+        endcase
     end
+    2'd2: begin  // 姿
+        case (lab_row)
+            4'd0: gbits = 16'h4080;  4'd1: gbits = 16'h2080;
+            4'd2: gbits = 16'h09FC;  4'd3: gbits = 16'h1204;
+            4'd4: gbits = 16'h2448;  4'd5: gbits = 16'hE040;
+            4'd6: gbits = 16'h20A0;  4'd7: gbits = 16'h2318;
+            4'd8: gbits = 16'h2C06;  4'd9: gbits = 16'h0400;
+            4'd10: gbits = 16'hFFFE; 4'd11: gbits = 16'h0820;
+            4'd12: gbits = 16'h1C40; 4'd13: gbits = 16'h0380;
+            4'd14: gbits = 16'h0C70; 4'd15: gbits = 16'h7008;
+        endcase
+    end
+    default: begin  // 态
+        case (lab_row)
+            4'd0: gbits = 16'h0100;  4'd1: gbits = 16'h0100;
+            4'd2: gbits = 16'h7FFC;  4'd3: gbits = 16'h0100;
+            4'd4: gbits = 16'h0280;  4'd5: gbits = 16'h0440;
+            4'd6: gbits = 16'h0A20;  4'd7: gbits = 16'h3118;
+            4'd8: gbits = 16'hC006;  4'd9: gbits = 16'h0100;
+            4'd10: gbits = 16'h0888; 4'd11: gbits = 16'h4884;
+            4'd12: gbits = 16'h4812; 4'd13: gbits = 16'h4812;
+            4'd14: gbits = 16'h87F0; 4'd15: gbits = 16'h0000;
+        endcase
+    end
+    endcase
 end
-wire [15:0] lab_bits;
-osd_font u_dash_font(.ch(lab_ch), .row(lab_row), .bits(lab_bits));
-wire lab_pix = lab_en && lab_bits[4'd15 - lab_col[3:0]];
+wire lab_pix = lab_en && gbits[4'd15 - lab_col];
 
 // ------------------------- 边框与分隔线 -------------------------
 wire on_frame = in_win && ((x_d == X0) || (x_d == X0 + WIN_W - 11'd1)
                         || (y_d == Y0) || (y_d == Y0 + WIN_H - 11'd1));
 wire on_sep   = in_win && (x_d == X0 + 11'd132);
+
+// ------------------------- [V3.2] 轨迹档突出：模式同步 + 窗外压暗 -------------------------
+// disp_mode 来自 sys_clk 域（准静态），2 级同步到 lcd_clk 域
+reg [1:0] dm_a, dm_b;
+always @(posedge lcd_clk or negedge rst_n) begin
+    if (!rst_n) begin dm_a <= 2'd0; dm_b <= 2'd0; end
+    else        begin dm_a <= disp_mode; dm_b <= dm_a; end
+end
+wire track_mode = (dm_b == 2'd1);
+// RGB565 各通道 >>1 压暗（R[15:11] G[10:5] B[4:0]）
+wire [15:0] pin_dim = {1'b0, pin_d[15:12], 1'b0, pin_d[10:6], 1'b0, pin_d[4:1]};
+wire [15:0] pin_sel = (track_mode && !in_win) ? pin_dim : pin_d;
+wire [15:0] frame_color = track_mode ? CYAN : WHITE;
 
 // ------------------------- 叠加输出（组合） -------------------------
 assign pixel_out =
@@ -242,7 +298,7 @@ assign pixel_out =
        on_pfrm   ? WHITE  :
        on_rfrm   ? WHITE  :
        on_sep    ? GRAY   :
-       on_frame  ? WHITE  :
-                   pin_d;
+       on_frame  ? frame_color :
+                   pin_sel;
 
 endmodule

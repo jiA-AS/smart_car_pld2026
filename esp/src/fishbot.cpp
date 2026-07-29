@@ -13,11 +13,16 @@
  *   保留：电机/编码器/IMU 驱动、运动学对象、屏幕显示、按键、电池检测、
  * [V3] 新增：ESP 端互补滤波姿态解算（pitch/roll，与 FPGA attitude_cf 同算法），
  *   通过 display.updateAttitude() 送 OLED 姿态页（s1 拨杆下档位），单位 deg。
+ * [V4] 新增：遥控器左拨杆 s1 三档同时切换 FPGA 屏与 ESP 屏（双屏联动）：
+ *   s1上=视角档(0) / s1中=轨迹档(1) / s1下=调试档(2)，
+ *   模式字节随 V1.2 上行帧（35 字节，版本 0x03）100Hz 发往 FPGA；
+ *   OLED 页同步切换（上=接收页 / 中=姿态页 / 下=发送页）。
+ *   遥控器失联时强制回视角档(0)，FPGA 端 0.5s 无帧自动退回 KEY0 按键模式。
  *         $command 串口控制台（loop_fishbot_console）、PLD2026 遥控与 FPGA 链路。
  */
 #include "fishbot.h"
 #include "dbus.h"      // PLD2026: DT7/DR16 遥控器接收（DBus 协议）
-#include "fpga_link.h" // PLD2026: ESP32 -> FPGA 传感器帧发送（V1.0 协议）
+#include "fpga_link.h" // PLD2026: ESP32 -> FPGA 传感器帧发送（V1.2 协议）
 
 DbusReceiver dbus; // PLD2026: 遥控器接收机对象
 FpgaLink     fpga; // PLD2026: 通向 FPGA 的传感器帧发送对象
@@ -336,13 +341,21 @@ void loop_fishbot_control()
     // 处理按钮事件
     button.tick();
     imu.update();
-    // ================= PLD2026 改造：向 FPGA 发送传感器帧（100Hz） =================
+    // ================= PLD2026 改造：向 FPGA 发送传感器帧（100Hz，V1.2 35字节） =================
     // 编码器累计计数沿用官方 encoders 对象（读取方式不变）；
     // IMU 原始值由 imu_raw 库通过同一 I2C 总线只读获取（不改动官方 imu 驱动）。
+    // [V4] disp_mode：左拨杆 s1 → 显示模式（上=0视角 中=1轨迹 下=2调试），
+    //      遥控器失联时强制 0（视角档）；FPGA 端用它切换 LCD 显示与识别阈值。
     {
+        uint8_t disp_mode = DISP_MODE_VIEW;
+        if (rc_online) {
+            if      (s1 == 1) disp_mode = DISP_MODE_VIEW;   // s1 上
+            else if (s1 == 3) disp_mode = DISP_MODE_TRACK;  // s1 中
+            else if (s1 == 2) disp_mode = DISP_MODE_DEBUG;  // s1 下
+        }
         int32_t ticks[4];
         for (int i = 0; i < 4; i++) ticks[i] = (int32_t)encoders[i].getTicks();
-        fpga.send(ticks); // 内部 10ms 节流，实际发送频率 100Hz
+        fpga.send(ticks, disp_mode); // 内部 10ms 节流，实际发送频率 100Hz
     }
 
     // ================= PLD2026: FPGA 看门狗（200ms 无合法下行帧 → 强制停车） =================

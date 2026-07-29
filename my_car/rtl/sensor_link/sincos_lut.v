@@ -1,378 +1,379 @@
-// ============================================================================
-// sincos_lut.v -- 正弦/余弦查找表（组合 ROM，Python 生成）
-//   idx : 角度 0~359（度）
-//   sin_q15 / cos_q15 : Q15 有符号定点（±32767 ≈ ±1.0）
-//   里程计用：x += fwd×cos>>15; y += fwd×sin>>15（1° 分辨率误差 <0.01%）
-// ============================================================================
+//============================================================================
+// sincos_lut.v - 正弦/余弦查找表（initial 数组 ROM 版）
+// 输入：idx = 角度 0~359°；输出：Q15 有符号（±32767 ≈ ±1.0）
+// ★ 写法说明：原为 360 项巨型 case，改为 initial 数组 + 组合读出，
+//   接口与时序完全不变（idx>359 钳到 359，调用方本就保证 0~359）。
+//============================================================================
 module sincos_lut(
     input  wire [ 8:0] idx,
-    output reg  signed [15:0] sin_q15,
-    output reg  signed [15:0] cos_q15
+    output wire signed [15:0] sin_q15,
+    output wire signed [15:0] cos_q15
 );
-always @(*) begin
-    case (idx)
-        9'd0: begin sin_q15 = 16'sd0; cos_q15 = 16'sd32767; end
-        9'd1: begin sin_q15 = 16'sd572; cos_q15 = 16'sd32762; end
-        9'd2: begin sin_q15 = 16'sd1144; cos_q15 = 16'sd32747; end
-        9'd3: begin sin_q15 = 16'sd1715; cos_q15 = 16'sd32722; end
-        9'd4: begin sin_q15 = 16'sd2286; cos_q15 = 16'sd32687; end
-        9'd5: begin sin_q15 = 16'sd2856; cos_q15 = 16'sd32642; end
-        9'd6: begin sin_q15 = 16'sd3425; cos_q15 = 16'sd32587; end
-        9'd7: begin sin_q15 = 16'sd3993; cos_q15 = 16'sd32523; end
-        9'd8: begin sin_q15 = 16'sd4560; cos_q15 = 16'sd32448; end
-        9'd9: begin sin_q15 = 16'sd5126; cos_q15 = 16'sd32364; end
-        9'd10: begin sin_q15 = 16'sd5690; cos_q15 = 16'sd32269; end
-        9'd11: begin sin_q15 = 16'sd6252; cos_q15 = 16'sd32165; end
-        9'd12: begin sin_q15 = 16'sd6813; cos_q15 = 16'sd32051; end
-        9'd13: begin sin_q15 = 16'sd7371; cos_q15 = 16'sd31927; end
-        9'd14: begin sin_q15 = 16'sd7927; cos_q15 = 16'sd31794; end
-        9'd15: begin sin_q15 = 16'sd8481; cos_q15 = 16'sd31650; end
-        9'd16: begin sin_q15 = 16'sd9032; cos_q15 = 16'sd31498; end
-        9'd17: begin sin_q15 = 16'sd9580; cos_q15 = 16'sd31335; end
-        9'd18: begin sin_q15 = 16'sd10126; cos_q15 = 16'sd31163; end
-        9'd19: begin sin_q15 = 16'sd10668; cos_q15 = 16'sd30982; end
-        9'd20: begin sin_q15 = 16'sd11207; cos_q15 = 16'sd30791; end
-        9'd21: begin sin_q15 = 16'sd11743; cos_q15 = 16'sd30591; end
-        9'd22: begin sin_q15 = 16'sd12275; cos_q15 = 16'sd30381; end
-        9'd23: begin sin_q15 = 16'sd12803; cos_q15 = 16'sd30162; end
-        9'd24: begin sin_q15 = 16'sd13328; cos_q15 = 16'sd29934; end
-        9'd25: begin sin_q15 = 16'sd13848; cos_q15 = 16'sd29697; end
-        9'd26: begin sin_q15 = 16'sd14364; cos_q15 = 16'sd29451; end
-        9'd27: begin sin_q15 = 16'sd14876; cos_q15 = 16'sd29196; end
-        9'd28: begin sin_q15 = 16'sd15383; cos_q15 = 16'sd28932; end
-        9'd29: begin sin_q15 = 16'sd15886; cos_q15 = 16'sd28659; end
-        9'd30: begin sin_q15 = 16'sd16383; cos_q15 = 16'sd28377; end
-        9'd31: begin sin_q15 = 16'sd16876; cos_q15 = 16'sd28087; end
-        9'd32: begin sin_q15 = 16'sd17364; cos_q15 = 16'sd27788; end
-        9'd33: begin sin_q15 = 16'sd17846; cos_q15 = 16'sd27481; end
-        9'd34: begin sin_q15 = 16'sd18323; cos_q15 = 16'sd27165; end
-        9'd35: begin sin_q15 = 16'sd18794; cos_q15 = 16'sd26841; end
-        9'd36: begin sin_q15 = 16'sd19260; cos_q15 = 16'sd26509; end
-        9'd37: begin sin_q15 = 16'sd19720; cos_q15 = 16'sd26169; end
-        9'd38: begin sin_q15 = 16'sd20173; cos_q15 = 16'sd25821; end
-        9'd39: begin sin_q15 = 16'sd20621; cos_q15 = 16'sd25465; end
-        9'd40: begin sin_q15 = 16'sd21062; cos_q15 = 16'sd25101; end
-        9'd41: begin sin_q15 = 16'sd21497; cos_q15 = 16'sd24730; end
-        9'd42: begin sin_q15 = 16'sd21925; cos_q15 = 16'sd24351; end
-        9'd43: begin sin_q15 = 16'sd22347; cos_q15 = 16'sd23964; end
-        9'd44: begin sin_q15 = 16'sd22762; cos_q15 = 16'sd23571; end
-        9'd45: begin sin_q15 = 16'sd23170; cos_q15 = 16'sd23170; end
-        9'd46: begin sin_q15 = 16'sd23571; cos_q15 = 16'sd22762; end
-        9'd47: begin sin_q15 = 16'sd23964; cos_q15 = 16'sd22347; end
-        9'd48: begin sin_q15 = 16'sd24351; cos_q15 = 16'sd21925; end
-        9'd49: begin sin_q15 = 16'sd24730; cos_q15 = 16'sd21497; end
-        9'd50: begin sin_q15 = 16'sd25101; cos_q15 = 16'sd21062; end
-        9'd51: begin sin_q15 = 16'sd25465; cos_q15 = 16'sd20621; end
-        9'd52: begin sin_q15 = 16'sd25821; cos_q15 = 16'sd20173; end
-        9'd53: begin sin_q15 = 16'sd26169; cos_q15 = 16'sd19720; end
-        9'd54: begin sin_q15 = 16'sd26509; cos_q15 = 16'sd19260; end
-        9'd55: begin sin_q15 = 16'sd26841; cos_q15 = 16'sd18794; end
-        9'd56: begin sin_q15 = 16'sd27165; cos_q15 = 16'sd18323; end
-        9'd57: begin sin_q15 = 16'sd27481; cos_q15 = 16'sd17846; end
-        9'd58: begin sin_q15 = 16'sd27788; cos_q15 = 16'sd17364; end
-        9'd59: begin sin_q15 = 16'sd28087; cos_q15 = 16'sd16876; end
-        9'd60: begin sin_q15 = 16'sd28377; cos_q15 = 16'sd16384; end
-        9'd61: begin sin_q15 = 16'sd28659; cos_q15 = 16'sd15886; end
-        9'd62: begin sin_q15 = 16'sd28932; cos_q15 = 16'sd15383; end
-        9'd63: begin sin_q15 = 16'sd29196; cos_q15 = 16'sd14876; end
-        9'd64: begin sin_q15 = 16'sd29451; cos_q15 = 16'sd14364; end
-        9'd65: begin sin_q15 = 16'sd29697; cos_q15 = 16'sd13848; end
-        9'd66: begin sin_q15 = 16'sd29934; cos_q15 = 16'sd13328; end
-        9'd67: begin sin_q15 = 16'sd30162; cos_q15 = 16'sd12803; end
-        9'd68: begin sin_q15 = 16'sd30381; cos_q15 = 16'sd12275; end
-        9'd69: begin sin_q15 = 16'sd30591; cos_q15 = 16'sd11743; end
-        9'd70: begin sin_q15 = 16'sd30791; cos_q15 = 16'sd11207; end
-        9'd71: begin sin_q15 = 16'sd30982; cos_q15 = 16'sd10668; end
-        9'd72: begin sin_q15 = 16'sd31163; cos_q15 = 16'sd10126; end
-        9'd73: begin sin_q15 = 16'sd31335; cos_q15 = 16'sd9580; end
-        9'd74: begin sin_q15 = 16'sd31498; cos_q15 = 16'sd9032; end
-        9'd75: begin sin_q15 = 16'sd31650; cos_q15 = 16'sd8481; end
-        9'd76: begin sin_q15 = 16'sd31794; cos_q15 = 16'sd7927; end
-        9'd77: begin sin_q15 = 16'sd31927; cos_q15 = 16'sd7371; end
-        9'd78: begin sin_q15 = 16'sd32051; cos_q15 = 16'sd6813; end
-        9'd79: begin sin_q15 = 16'sd32165; cos_q15 = 16'sd6252; end
-        9'd80: begin sin_q15 = 16'sd32269; cos_q15 = 16'sd5690; end
-        9'd81: begin sin_q15 = 16'sd32364; cos_q15 = 16'sd5126; end
-        9'd82: begin sin_q15 = 16'sd32448; cos_q15 = 16'sd4560; end
-        9'd83: begin sin_q15 = 16'sd32523; cos_q15 = 16'sd3993; end
-        9'd84: begin sin_q15 = 16'sd32587; cos_q15 = 16'sd3425; end
-        9'd85: begin sin_q15 = 16'sd32642; cos_q15 = 16'sd2856; end
-        9'd86: begin sin_q15 = 16'sd32687; cos_q15 = 16'sd2286; end
-        9'd87: begin sin_q15 = 16'sd32722; cos_q15 = 16'sd1715; end
-        9'd88: begin sin_q15 = 16'sd32747; cos_q15 = 16'sd1144; end
-        9'd89: begin sin_q15 = 16'sd32762; cos_q15 = 16'sd572; end
-        9'd90: begin sin_q15 = 16'sd32767; cos_q15 = 16'sd0; end
-        9'd91: begin sin_q15 = 16'sd32762; cos_q15 = -16'sd572; end
-        9'd92: begin sin_q15 = 16'sd32747; cos_q15 = -16'sd1144; end
-        9'd93: begin sin_q15 = 16'sd32722; cos_q15 = -16'sd1715; end
-        9'd94: begin sin_q15 = 16'sd32687; cos_q15 = -16'sd2286; end
-        9'd95: begin sin_q15 = 16'sd32642; cos_q15 = -16'sd2856; end
-        9'd96: begin sin_q15 = 16'sd32587; cos_q15 = -16'sd3425; end
-        9'd97: begin sin_q15 = 16'sd32523; cos_q15 = -16'sd3993; end
-        9'd98: begin sin_q15 = 16'sd32448; cos_q15 = -16'sd4560; end
-        9'd99: begin sin_q15 = 16'sd32364; cos_q15 = -16'sd5126; end
-        9'd100: begin sin_q15 = 16'sd32269; cos_q15 = -16'sd5690; end
-        9'd101: begin sin_q15 = 16'sd32165; cos_q15 = -16'sd6252; end
-        9'd102: begin sin_q15 = 16'sd32051; cos_q15 = -16'sd6813; end
-        9'd103: begin sin_q15 = 16'sd31927; cos_q15 = -16'sd7371; end
-        9'd104: begin sin_q15 = 16'sd31794; cos_q15 = -16'sd7927; end
-        9'd105: begin sin_q15 = 16'sd31650; cos_q15 = -16'sd8481; end
-        9'd106: begin sin_q15 = 16'sd31498; cos_q15 = -16'sd9032; end
-        9'd107: begin sin_q15 = 16'sd31335; cos_q15 = -16'sd9580; end
-        9'd108: begin sin_q15 = 16'sd31163; cos_q15 = -16'sd10126; end
-        9'd109: begin sin_q15 = 16'sd30982; cos_q15 = -16'sd10668; end
-        9'd110: begin sin_q15 = 16'sd30791; cos_q15 = -16'sd11207; end
-        9'd111: begin sin_q15 = 16'sd30591; cos_q15 = -16'sd11743; end
-        9'd112: begin sin_q15 = 16'sd30381; cos_q15 = -16'sd12275; end
-        9'd113: begin sin_q15 = 16'sd30162; cos_q15 = -16'sd12803; end
-        9'd114: begin sin_q15 = 16'sd29934; cos_q15 = -16'sd13328; end
-        9'd115: begin sin_q15 = 16'sd29697; cos_q15 = -16'sd13848; end
-        9'd116: begin sin_q15 = 16'sd29451; cos_q15 = -16'sd14364; end
-        9'd117: begin sin_q15 = 16'sd29196; cos_q15 = -16'sd14876; end
-        9'd118: begin sin_q15 = 16'sd28932; cos_q15 = -16'sd15383; end
-        9'd119: begin sin_q15 = 16'sd28659; cos_q15 = -16'sd15886; end
-        9'd120: begin sin_q15 = 16'sd28377; cos_q15 = -16'sd16383; end
-        9'd121: begin sin_q15 = 16'sd28087; cos_q15 = -16'sd16876; end
-        9'd122: begin sin_q15 = 16'sd27788; cos_q15 = -16'sd17364; end
-        9'd123: begin sin_q15 = 16'sd27481; cos_q15 = -16'sd17846; end
-        9'd124: begin sin_q15 = 16'sd27165; cos_q15 = -16'sd18323; end
-        9'd125: begin sin_q15 = 16'sd26841; cos_q15 = -16'sd18794; end
-        9'd126: begin sin_q15 = 16'sd26509; cos_q15 = -16'sd19260; end
-        9'd127: begin sin_q15 = 16'sd26169; cos_q15 = -16'sd19720; end
-        9'd128: begin sin_q15 = 16'sd25821; cos_q15 = -16'sd20173; end
-        9'd129: begin sin_q15 = 16'sd25465; cos_q15 = -16'sd20621; end
-        9'd130: begin sin_q15 = 16'sd25101; cos_q15 = -16'sd21062; end
-        9'd131: begin sin_q15 = 16'sd24730; cos_q15 = -16'sd21497; end
-        9'd132: begin sin_q15 = 16'sd24351; cos_q15 = -16'sd21925; end
-        9'd133: begin sin_q15 = 16'sd23964; cos_q15 = -16'sd22347; end
-        9'd134: begin sin_q15 = 16'sd23571; cos_q15 = -16'sd22762; end
-        9'd135: begin sin_q15 = 16'sd23170; cos_q15 = -16'sd23170; end
-        9'd136: begin sin_q15 = 16'sd22762; cos_q15 = -16'sd23571; end
-        9'd137: begin sin_q15 = 16'sd22347; cos_q15 = -16'sd23964; end
-        9'd138: begin sin_q15 = 16'sd21925; cos_q15 = -16'sd24351; end
-        9'd139: begin sin_q15 = 16'sd21497; cos_q15 = -16'sd24730; end
-        9'd140: begin sin_q15 = 16'sd21062; cos_q15 = -16'sd25101; end
-        9'd141: begin sin_q15 = 16'sd20621; cos_q15 = -16'sd25465; end
-        9'd142: begin sin_q15 = 16'sd20173; cos_q15 = -16'sd25821; end
-        9'd143: begin sin_q15 = 16'sd19720; cos_q15 = -16'sd26169; end
-        9'd144: begin sin_q15 = 16'sd19260; cos_q15 = -16'sd26509; end
-        9'd145: begin sin_q15 = 16'sd18794; cos_q15 = -16'sd26841; end
-        9'd146: begin sin_q15 = 16'sd18323; cos_q15 = -16'sd27165; end
-        9'd147: begin sin_q15 = 16'sd17846; cos_q15 = -16'sd27481; end
-        9'd148: begin sin_q15 = 16'sd17364; cos_q15 = -16'sd27788; end
-        9'd149: begin sin_q15 = 16'sd16876; cos_q15 = -16'sd28087; end
-        9'd150: begin sin_q15 = 16'sd16383; cos_q15 = -16'sd28377; end
-        9'd151: begin sin_q15 = 16'sd15886; cos_q15 = -16'sd28659; end
-        9'd152: begin sin_q15 = 16'sd15383; cos_q15 = -16'sd28932; end
-        9'd153: begin sin_q15 = 16'sd14876; cos_q15 = -16'sd29196; end
-        9'd154: begin sin_q15 = 16'sd14364; cos_q15 = -16'sd29451; end
-        9'd155: begin sin_q15 = 16'sd13848; cos_q15 = -16'sd29697; end
-        9'd156: begin sin_q15 = 16'sd13328; cos_q15 = -16'sd29934; end
-        9'd157: begin sin_q15 = 16'sd12803; cos_q15 = -16'sd30162; end
-        9'd158: begin sin_q15 = 16'sd12275; cos_q15 = -16'sd30381; end
-        9'd159: begin sin_q15 = 16'sd11743; cos_q15 = -16'sd30591; end
-        9'd160: begin sin_q15 = 16'sd11207; cos_q15 = -16'sd30791; end
-        9'd161: begin sin_q15 = 16'sd10668; cos_q15 = -16'sd30982; end
-        9'd162: begin sin_q15 = 16'sd10126; cos_q15 = -16'sd31163; end
-        9'd163: begin sin_q15 = 16'sd9580; cos_q15 = -16'sd31335; end
-        9'd164: begin sin_q15 = 16'sd9032; cos_q15 = -16'sd31498; end
-        9'd165: begin sin_q15 = 16'sd8481; cos_q15 = -16'sd31650; end
-        9'd166: begin sin_q15 = 16'sd7927; cos_q15 = -16'sd31794; end
-        9'd167: begin sin_q15 = 16'sd7371; cos_q15 = -16'sd31927; end
-        9'd168: begin sin_q15 = 16'sd6813; cos_q15 = -16'sd32051; end
-        9'd169: begin sin_q15 = 16'sd6252; cos_q15 = -16'sd32165; end
-        9'd170: begin sin_q15 = 16'sd5690; cos_q15 = -16'sd32269; end
-        9'd171: begin sin_q15 = 16'sd5126; cos_q15 = -16'sd32364; end
-        9'd172: begin sin_q15 = 16'sd4560; cos_q15 = -16'sd32448; end
-        9'd173: begin sin_q15 = 16'sd3993; cos_q15 = -16'sd32523; end
-        9'd174: begin sin_q15 = 16'sd3425; cos_q15 = -16'sd32587; end
-        9'd175: begin sin_q15 = 16'sd2856; cos_q15 = -16'sd32642; end
-        9'd176: begin sin_q15 = 16'sd2286; cos_q15 = -16'sd32687; end
-        9'd177: begin sin_q15 = 16'sd1715; cos_q15 = -16'sd32722; end
-        9'd178: begin sin_q15 = 16'sd1144; cos_q15 = -16'sd32747; end
-        9'd179: begin sin_q15 = 16'sd572; cos_q15 = -16'sd32762; end
-        9'd180: begin sin_q15 = 16'sd0; cos_q15 = -16'sd32767; end
-        9'd181: begin sin_q15 = -16'sd572; cos_q15 = -16'sd32762; end
-        9'd182: begin sin_q15 = -16'sd1144; cos_q15 = -16'sd32747; end
-        9'd183: begin sin_q15 = -16'sd1715; cos_q15 = -16'sd32722; end
-        9'd184: begin sin_q15 = -16'sd2286; cos_q15 = -16'sd32687; end
-        9'd185: begin sin_q15 = -16'sd2856; cos_q15 = -16'sd32642; end
-        9'd186: begin sin_q15 = -16'sd3425; cos_q15 = -16'sd32587; end
-        9'd187: begin sin_q15 = -16'sd3993; cos_q15 = -16'sd32523; end
-        9'd188: begin sin_q15 = -16'sd4560; cos_q15 = -16'sd32448; end
-        9'd189: begin sin_q15 = -16'sd5126; cos_q15 = -16'sd32364; end
-        9'd190: begin sin_q15 = -16'sd5690; cos_q15 = -16'sd32269; end
-        9'd191: begin sin_q15 = -16'sd6252; cos_q15 = -16'sd32165; end
-        9'd192: begin sin_q15 = -16'sd6813; cos_q15 = -16'sd32051; end
-        9'd193: begin sin_q15 = -16'sd7371; cos_q15 = -16'sd31927; end
-        9'd194: begin sin_q15 = -16'sd7927; cos_q15 = -16'sd31794; end
-        9'd195: begin sin_q15 = -16'sd8481; cos_q15 = -16'sd31650; end
-        9'd196: begin sin_q15 = -16'sd9032; cos_q15 = -16'sd31498; end
-        9'd197: begin sin_q15 = -16'sd9580; cos_q15 = -16'sd31335; end
-        9'd198: begin sin_q15 = -16'sd10126; cos_q15 = -16'sd31163; end
-        9'd199: begin sin_q15 = -16'sd10668; cos_q15 = -16'sd30982; end
-        9'd200: begin sin_q15 = -16'sd11207; cos_q15 = -16'sd30791; end
-        9'd201: begin sin_q15 = -16'sd11743; cos_q15 = -16'sd30591; end
-        9'd202: begin sin_q15 = -16'sd12275; cos_q15 = -16'sd30381; end
-        9'd203: begin sin_q15 = -16'sd12803; cos_q15 = -16'sd30162; end
-        9'd204: begin sin_q15 = -16'sd13328; cos_q15 = -16'sd29934; end
-        9'd205: begin sin_q15 = -16'sd13848; cos_q15 = -16'sd29697; end
-        9'd206: begin sin_q15 = -16'sd14364; cos_q15 = -16'sd29451; end
-        9'd207: begin sin_q15 = -16'sd14876; cos_q15 = -16'sd29196; end
-        9'd208: begin sin_q15 = -16'sd15383; cos_q15 = -16'sd28932; end
-        9'd209: begin sin_q15 = -16'sd15886; cos_q15 = -16'sd28659; end
-        9'd210: begin sin_q15 = -16'sd16384; cos_q15 = -16'sd28377; end
-        9'd211: begin sin_q15 = -16'sd16876; cos_q15 = -16'sd28087; end
-        9'd212: begin sin_q15 = -16'sd17364; cos_q15 = -16'sd27788; end
-        9'd213: begin sin_q15 = -16'sd17846; cos_q15 = -16'sd27481; end
-        9'd214: begin sin_q15 = -16'sd18323; cos_q15 = -16'sd27165; end
-        9'd215: begin sin_q15 = -16'sd18794; cos_q15 = -16'sd26841; end
-        9'd216: begin sin_q15 = -16'sd19260; cos_q15 = -16'sd26509; end
-        9'd217: begin sin_q15 = -16'sd19720; cos_q15 = -16'sd26169; end
-        9'd218: begin sin_q15 = -16'sd20173; cos_q15 = -16'sd25821; end
-        9'd219: begin sin_q15 = -16'sd20621; cos_q15 = -16'sd25465; end
-        9'd220: begin sin_q15 = -16'sd21062; cos_q15 = -16'sd25101; end
-        9'd221: begin sin_q15 = -16'sd21497; cos_q15 = -16'sd24730; end
-        9'd222: begin sin_q15 = -16'sd21925; cos_q15 = -16'sd24351; end
-        9'd223: begin sin_q15 = -16'sd22347; cos_q15 = -16'sd23964; end
-        9'd224: begin sin_q15 = -16'sd22762; cos_q15 = -16'sd23571; end
-        9'd225: begin sin_q15 = -16'sd23170; cos_q15 = -16'sd23170; end
-        9'd226: begin sin_q15 = -16'sd23571; cos_q15 = -16'sd22762; end
-        9'd227: begin sin_q15 = -16'sd23964; cos_q15 = -16'sd22347; end
-        9'd228: begin sin_q15 = -16'sd24351; cos_q15 = -16'sd21925; end
-        9'd229: begin sin_q15 = -16'sd24730; cos_q15 = -16'sd21497; end
-        9'd230: begin sin_q15 = -16'sd25101; cos_q15 = -16'sd21062; end
-        9'd231: begin sin_q15 = -16'sd25465; cos_q15 = -16'sd20621; end
-        9'd232: begin sin_q15 = -16'sd25821; cos_q15 = -16'sd20173; end
-        9'd233: begin sin_q15 = -16'sd26169; cos_q15 = -16'sd19720; end
-        9'd234: begin sin_q15 = -16'sd26509; cos_q15 = -16'sd19260; end
-        9'd235: begin sin_q15 = -16'sd26841; cos_q15 = -16'sd18794; end
-        9'd236: begin sin_q15 = -16'sd27165; cos_q15 = -16'sd18323; end
-        9'd237: begin sin_q15 = -16'sd27481; cos_q15 = -16'sd17846; end
-        9'd238: begin sin_q15 = -16'sd27788; cos_q15 = -16'sd17364; end
-        9'd239: begin sin_q15 = -16'sd28087; cos_q15 = -16'sd16876; end
-        9'd240: begin sin_q15 = -16'sd28377; cos_q15 = -16'sd16384; end
-        9'd241: begin sin_q15 = -16'sd28659; cos_q15 = -16'sd15886; end
-        9'd242: begin sin_q15 = -16'sd28932; cos_q15 = -16'sd15383; end
-        9'd243: begin sin_q15 = -16'sd29196; cos_q15 = -16'sd14876; end
-        9'd244: begin sin_q15 = -16'sd29451; cos_q15 = -16'sd14364; end
-        9'd245: begin sin_q15 = -16'sd29697; cos_q15 = -16'sd13848; end
-        9'd246: begin sin_q15 = -16'sd29934; cos_q15 = -16'sd13328; end
-        9'd247: begin sin_q15 = -16'sd30162; cos_q15 = -16'sd12803; end
-        9'd248: begin sin_q15 = -16'sd30381; cos_q15 = -16'sd12275; end
-        9'd249: begin sin_q15 = -16'sd30591; cos_q15 = -16'sd11743; end
-        9'd250: begin sin_q15 = -16'sd30791; cos_q15 = -16'sd11207; end
-        9'd251: begin sin_q15 = -16'sd30982; cos_q15 = -16'sd10668; end
-        9'd252: begin sin_q15 = -16'sd31163; cos_q15 = -16'sd10126; end
-        9'd253: begin sin_q15 = -16'sd31335; cos_q15 = -16'sd9580; end
-        9'd254: begin sin_q15 = -16'sd31498; cos_q15 = -16'sd9032; end
-        9'd255: begin sin_q15 = -16'sd31650; cos_q15 = -16'sd8481; end
-        9'd256: begin sin_q15 = -16'sd31794; cos_q15 = -16'sd7927; end
-        9'd257: begin sin_q15 = -16'sd31927; cos_q15 = -16'sd7371; end
-        9'd258: begin sin_q15 = -16'sd32051; cos_q15 = -16'sd6813; end
-        9'd259: begin sin_q15 = -16'sd32165; cos_q15 = -16'sd6252; end
-        9'd260: begin sin_q15 = -16'sd32269; cos_q15 = -16'sd5690; end
-        9'd261: begin sin_q15 = -16'sd32364; cos_q15 = -16'sd5126; end
-        9'd262: begin sin_q15 = -16'sd32448; cos_q15 = -16'sd4560; end
-        9'd263: begin sin_q15 = -16'sd32523; cos_q15 = -16'sd3993; end
-        9'd264: begin sin_q15 = -16'sd32587; cos_q15 = -16'sd3425; end
-        9'd265: begin sin_q15 = -16'sd32642; cos_q15 = -16'sd2856; end
-        9'd266: begin sin_q15 = -16'sd32687; cos_q15 = -16'sd2286; end
-        9'd267: begin sin_q15 = -16'sd32722; cos_q15 = -16'sd1715; end
-        9'd268: begin sin_q15 = -16'sd32747; cos_q15 = -16'sd1144; end
-        9'd269: begin sin_q15 = -16'sd32762; cos_q15 = -16'sd572; end
-        9'd270: begin sin_q15 = -16'sd32767; cos_q15 = 16'sd0; end
-        9'd271: begin sin_q15 = -16'sd32762; cos_q15 = 16'sd572; end
-        9'd272: begin sin_q15 = -16'sd32747; cos_q15 = 16'sd1144; end
-        9'd273: begin sin_q15 = -16'sd32722; cos_q15 = 16'sd1715; end
-        9'd274: begin sin_q15 = -16'sd32687; cos_q15 = 16'sd2286; end
-        9'd275: begin sin_q15 = -16'sd32642; cos_q15 = 16'sd2856; end
-        9'd276: begin sin_q15 = -16'sd32587; cos_q15 = 16'sd3425; end
-        9'd277: begin sin_q15 = -16'sd32523; cos_q15 = 16'sd3993; end
-        9'd278: begin sin_q15 = -16'sd32448; cos_q15 = 16'sd4560; end
-        9'd279: begin sin_q15 = -16'sd32364; cos_q15 = 16'sd5126; end
-        9'd280: begin sin_q15 = -16'sd32269; cos_q15 = 16'sd5690; end
-        9'd281: begin sin_q15 = -16'sd32165; cos_q15 = 16'sd6252; end
-        9'd282: begin sin_q15 = -16'sd32051; cos_q15 = 16'sd6813; end
-        9'd283: begin sin_q15 = -16'sd31927; cos_q15 = 16'sd7371; end
-        9'd284: begin sin_q15 = -16'sd31794; cos_q15 = 16'sd7927; end
-        9'd285: begin sin_q15 = -16'sd31650; cos_q15 = 16'sd8481; end
-        9'd286: begin sin_q15 = -16'sd31498; cos_q15 = 16'sd9032; end
-        9'd287: begin sin_q15 = -16'sd31335; cos_q15 = 16'sd9580; end
-        9'd288: begin sin_q15 = -16'sd31163; cos_q15 = 16'sd10126; end
-        9'd289: begin sin_q15 = -16'sd30982; cos_q15 = 16'sd10668; end
-        9'd290: begin sin_q15 = -16'sd30791; cos_q15 = 16'sd11207; end
-        9'd291: begin sin_q15 = -16'sd30591; cos_q15 = 16'sd11743; end
-        9'd292: begin sin_q15 = -16'sd30381; cos_q15 = 16'sd12275; end
-        9'd293: begin sin_q15 = -16'sd30162; cos_q15 = 16'sd12803; end
-        9'd294: begin sin_q15 = -16'sd29934; cos_q15 = 16'sd13328; end
-        9'd295: begin sin_q15 = -16'sd29697; cos_q15 = 16'sd13848; end
-        9'd296: begin sin_q15 = -16'sd29451; cos_q15 = 16'sd14364; end
-        9'd297: begin sin_q15 = -16'sd29196; cos_q15 = 16'sd14876; end
-        9'd298: begin sin_q15 = -16'sd28932; cos_q15 = 16'sd15383; end
-        9'd299: begin sin_q15 = -16'sd28659; cos_q15 = 16'sd15886; end
-        9'd300: begin sin_q15 = -16'sd28377; cos_q15 = 16'sd16384; end
-        9'd301: begin sin_q15 = -16'sd28087; cos_q15 = 16'sd16876; end
-        9'd302: begin sin_q15 = -16'sd27788; cos_q15 = 16'sd17364; end
-        9'd303: begin sin_q15 = -16'sd27481; cos_q15 = 16'sd17846; end
-        9'd304: begin sin_q15 = -16'sd27165; cos_q15 = 16'sd18323; end
-        9'd305: begin sin_q15 = -16'sd26841; cos_q15 = 16'sd18794; end
-        9'd306: begin sin_q15 = -16'sd26509; cos_q15 = 16'sd19260; end
-        9'd307: begin sin_q15 = -16'sd26169; cos_q15 = 16'sd19720; end
-        9'd308: begin sin_q15 = -16'sd25821; cos_q15 = 16'sd20173; end
-        9'd309: begin sin_q15 = -16'sd25465; cos_q15 = 16'sd20621; end
-        9'd310: begin sin_q15 = -16'sd25101; cos_q15 = 16'sd21062; end
-        9'd311: begin sin_q15 = -16'sd24730; cos_q15 = 16'sd21497; end
-        9'd312: begin sin_q15 = -16'sd24351; cos_q15 = 16'sd21925; end
-        9'd313: begin sin_q15 = -16'sd23964; cos_q15 = 16'sd22347; end
-        9'd314: begin sin_q15 = -16'sd23571; cos_q15 = 16'sd22762; end
-        9'd315: begin sin_q15 = -16'sd23170; cos_q15 = 16'sd23170; end
-        9'd316: begin sin_q15 = -16'sd22762; cos_q15 = 16'sd23571; end
-        9'd317: begin sin_q15 = -16'sd22347; cos_q15 = 16'sd23964; end
-        9'd318: begin sin_q15 = -16'sd21925; cos_q15 = 16'sd24351; end
-        9'd319: begin sin_q15 = -16'sd21497; cos_q15 = 16'sd24730; end
-        9'd320: begin sin_q15 = -16'sd21062; cos_q15 = 16'sd25101; end
-        9'd321: begin sin_q15 = -16'sd20621; cos_q15 = 16'sd25465; end
-        9'd322: begin sin_q15 = -16'sd20173; cos_q15 = 16'sd25821; end
-        9'd323: begin sin_q15 = -16'sd19720; cos_q15 = 16'sd26169; end
-        9'd324: begin sin_q15 = -16'sd19260; cos_q15 = 16'sd26509; end
-        9'd325: begin sin_q15 = -16'sd18794; cos_q15 = 16'sd26841; end
-        9'd326: begin sin_q15 = -16'sd18323; cos_q15 = 16'sd27165; end
-        9'd327: begin sin_q15 = -16'sd17846; cos_q15 = 16'sd27481; end
-        9'd328: begin sin_q15 = -16'sd17364; cos_q15 = 16'sd27788; end
-        9'd329: begin sin_q15 = -16'sd16876; cos_q15 = 16'sd28087; end
-        9'd330: begin sin_q15 = -16'sd16384; cos_q15 = 16'sd28377; end
-        9'd331: begin sin_q15 = -16'sd15886; cos_q15 = 16'sd28659; end
-        9'd332: begin sin_q15 = -16'sd15383; cos_q15 = 16'sd28932; end
-        9'd333: begin sin_q15 = -16'sd14876; cos_q15 = 16'sd29196; end
-        9'd334: begin sin_q15 = -16'sd14364; cos_q15 = 16'sd29451; end
-        9'd335: begin sin_q15 = -16'sd13848; cos_q15 = 16'sd29697; end
-        9'd336: begin sin_q15 = -16'sd13328; cos_q15 = 16'sd29934; end
-        9'd337: begin sin_q15 = -16'sd12803; cos_q15 = 16'sd30162; end
-        9'd338: begin sin_q15 = -16'sd12275; cos_q15 = 16'sd30381; end
-        9'd339: begin sin_q15 = -16'sd11743; cos_q15 = 16'sd30591; end
-        9'd340: begin sin_q15 = -16'sd11207; cos_q15 = 16'sd30791; end
-        9'd341: begin sin_q15 = -16'sd10668; cos_q15 = 16'sd30982; end
-        9'd342: begin sin_q15 = -16'sd10126; cos_q15 = 16'sd31163; end
-        9'd343: begin sin_q15 = -16'sd9580; cos_q15 = 16'sd31335; end
-        9'd344: begin sin_q15 = -16'sd9032; cos_q15 = 16'sd31498; end
-        9'd345: begin sin_q15 = -16'sd8481; cos_q15 = 16'sd31650; end
-        9'd346: begin sin_q15 = -16'sd7927; cos_q15 = 16'sd31794; end
-        9'd347: begin sin_q15 = -16'sd7371; cos_q15 = 16'sd31927; end
-        9'd348: begin sin_q15 = -16'sd6813; cos_q15 = 16'sd32051; end
-        9'd349: begin sin_q15 = -16'sd6252; cos_q15 = 16'sd32165; end
-        9'd350: begin sin_q15 = -16'sd5690; cos_q15 = 16'sd32269; end
-        9'd351: begin sin_q15 = -16'sd5126; cos_q15 = 16'sd32364; end
-        9'd352: begin sin_q15 = -16'sd4560; cos_q15 = 16'sd32448; end
-        9'd353: begin sin_q15 = -16'sd3993; cos_q15 = 16'sd32523; end
-        9'd354: begin sin_q15 = -16'sd3425; cos_q15 = 16'sd32587; end
-        9'd355: begin sin_q15 = -16'sd2856; cos_q15 = 16'sd32642; end
-        9'd356: begin sin_q15 = -16'sd2286; cos_q15 = 16'sd32687; end
-        9'd357: begin sin_q15 = -16'sd1715; cos_q15 = 16'sd32722; end
-        9'd358: begin sin_q15 = -16'sd1144; cos_q15 = 16'sd32747; end
-        9'd359: begin sin_q15 = -16'sd572; cos_q15 = 16'sd32762; end
-        default: begin sin_q15 = 16'sd0; cos_q15 = 16'sd32767; end
-    endcase
+(* rom_style = "distributed" *) reg signed [15:0] sin_rom [0:359];
+(* rom_style = "distributed" *) reg signed [15:0] cos_rom [0:359];
+initial begin
+    sin_rom[  0] = 16'sd0;  cos_rom[  0] = 16'sd32767;
+    sin_rom[  1] = 16'sd572;  cos_rom[  1] = 16'sd32762;
+    sin_rom[  2] = 16'sd1144;  cos_rom[  2] = 16'sd32747;
+    sin_rom[  3] = 16'sd1715;  cos_rom[  3] = 16'sd32722;
+    sin_rom[  4] = 16'sd2286;  cos_rom[  4] = 16'sd32687;
+    sin_rom[  5] = 16'sd2856;  cos_rom[  5] = 16'sd32642;
+    sin_rom[  6] = 16'sd3425;  cos_rom[  6] = 16'sd32587;
+    sin_rom[  7] = 16'sd3993;  cos_rom[  7] = 16'sd32523;
+    sin_rom[  8] = 16'sd4560;  cos_rom[  8] = 16'sd32448;
+    sin_rom[  9] = 16'sd5126;  cos_rom[  9] = 16'sd32364;
+    sin_rom[ 10] = 16'sd5690;  cos_rom[ 10] = 16'sd32269;
+    sin_rom[ 11] = 16'sd6252;  cos_rom[ 11] = 16'sd32165;
+    sin_rom[ 12] = 16'sd6813;  cos_rom[ 12] = 16'sd32051;
+    sin_rom[ 13] = 16'sd7371;  cos_rom[ 13] = 16'sd31927;
+    sin_rom[ 14] = 16'sd7927;  cos_rom[ 14] = 16'sd31794;
+    sin_rom[ 15] = 16'sd8481;  cos_rom[ 15] = 16'sd31650;
+    sin_rom[ 16] = 16'sd9032;  cos_rom[ 16] = 16'sd31498;
+    sin_rom[ 17] = 16'sd9580;  cos_rom[ 17] = 16'sd31335;
+    sin_rom[ 18] = 16'sd10126;  cos_rom[ 18] = 16'sd31163;
+    sin_rom[ 19] = 16'sd10668;  cos_rom[ 19] = 16'sd30982;
+    sin_rom[ 20] = 16'sd11207;  cos_rom[ 20] = 16'sd30791;
+    sin_rom[ 21] = 16'sd11743;  cos_rom[ 21] = 16'sd30591;
+    sin_rom[ 22] = 16'sd12275;  cos_rom[ 22] = 16'sd30381;
+    sin_rom[ 23] = 16'sd12803;  cos_rom[ 23] = 16'sd30162;
+    sin_rom[ 24] = 16'sd13328;  cos_rom[ 24] = 16'sd29934;
+    sin_rom[ 25] = 16'sd13848;  cos_rom[ 25] = 16'sd29697;
+    sin_rom[ 26] = 16'sd14364;  cos_rom[ 26] = 16'sd29451;
+    sin_rom[ 27] = 16'sd14876;  cos_rom[ 27] = 16'sd29196;
+    sin_rom[ 28] = 16'sd15383;  cos_rom[ 28] = 16'sd28932;
+    sin_rom[ 29] = 16'sd15886;  cos_rom[ 29] = 16'sd28659;
+    sin_rom[ 30] = 16'sd16383;  cos_rom[ 30] = 16'sd28377;
+    sin_rom[ 31] = 16'sd16876;  cos_rom[ 31] = 16'sd28087;
+    sin_rom[ 32] = 16'sd17364;  cos_rom[ 32] = 16'sd27788;
+    sin_rom[ 33] = 16'sd17846;  cos_rom[ 33] = 16'sd27481;
+    sin_rom[ 34] = 16'sd18323;  cos_rom[ 34] = 16'sd27165;
+    sin_rom[ 35] = 16'sd18794;  cos_rom[ 35] = 16'sd26841;
+    sin_rom[ 36] = 16'sd19260;  cos_rom[ 36] = 16'sd26509;
+    sin_rom[ 37] = 16'sd19720;  cos_rom[ 37] = 16'sd26169;
+    sin_rom[ 38] = 16'sd20173;  cos_rom[ 38] = 16'sd25821;
+    sin_rom[ 39] = 16'sd20621;  cos_rom[ 39] = 16'sd25465;
+    sin_rom[ 40] = 16'sd21062;  cos_rom[ 40] = 16'sd25101;
+    sin_rom[ 41] = 16'sd21497;  cos_rom[ 41] = 16'sd24730;
+    sin_rom[ 42] = 16'sd21925;  cos_rom[ 42] = 16'sd24351;
+    sin_rom[ 43] = 16'sd22347;  cos_rom[ 43] = 16'sd23964;
+    sin_rom[ 44] = 16'sd22762;  cos_rom[ 44] = 16'sd23571;
+    sin_rom[ 45] = 16'sd23170;  cos_rom[ 45] = 16'sd23170;
+    sin_rom[ 46] = 16'sd23571;  cos_rom[ 46] = 16'sd22762;
+    sin_rom[ 47] = 16'sd23964;  cos_rom[ 47] = 16'sd22347;
+    sin_rom[ 48] = 16'sd24351;  cos_rom[ 48] = 16'sd21925;
+    sin_rom[ 49] = 16'sd24730;  cos_rom[ 49] = 16'sd21497;
+    sin_rom[ 50] = 16'sd25101;  cos_rom[ 50] = 16'sd21062;
+    sin_rom[ 51] = 16'sd25465;  cos_rom[ 51] = 16'sd20621;
+    sin_rom[ 52] = 16'sd25821;  cos_rom[ 52] = 16'sd20173;
+    sin_rom[ 53] = 16'sd26169;  cos_rom[ 53] = 16'sd19720;
+    sin_rom[ 54] = 16'sd26509;  cos_rom[ 54] = 16'sd19260;
+    sin_rom[ 55] = 16'sd26841;  cos_rom[ 55] = 16'sd18794;
+    sin_rom[ 56] = 16'sd27165;  cos_rom[ 56] = 16'sd18323;
+    sin_rom[ 57] = 16'sd27481;  cos_rom[ 57] = 16'sd17846;
+    sin_rom[ 58] = 16'sd27788;  cos_rom[ 58] = 16'sd17364;
+    sin_rom[ 59] = 16'sd28087;  cos_rom[ 59] = 16'sd16876;
+    sin_rom[ 60] = 16'sd28377;  cos_rom[ 60] = 16'sd16384;
+    sin_rom[ 61] = 16'sd28659;  cos_rom[ 61] = 16'sd15886;
+    sin_rom[ 62] = 16'sd28932;  cos_rom[ 62] = 16'sd15383;
+    sin_rom[ 63] = 16'sd29196;  cos_rom[ 63] = 16'sd14876;
+    sin_rom[ 64] = 16'sd29451;  cos_rom[ 64] = 16'sd14364;
+    sin_rom[ 65] = 16'sd29697;  cos_rom[ 65] = 16'sd13848;
+    sin_rom[ 66] = 16'sd29934;  cos_rom[ 66] = 16'sd13328;
+    sin_rom[ 67] = 16'sd30162;  cos_rom[ 67] = 16'sd12803;
+    sin_rom[ 68] = 16'sd30381;  cos_rom[ 68] = 16'sd12275;
+    sin_rom[ 69] = 16'sd30591;  cos_rom[ 69] = 16'sd11743;
+    sin_rom[ 70] = 16'sd30791;  cos_rom[ 70] = 16'sd11207;
+    sin_rom[ 71] = 16'sd30982;  cos_rom[ 71] = 16'sd10668;
+    sin_rom[ 72] = 16'sd31163;  cos_rom[ 72] = 16'sd10126;
+    sin_rom[ 73] = 16'sd31335;  cos_rom[ 73] = 16'sd9580;
+    sin_rom[ 74] = 16'sd31498;  cos_rom[ 74] = 16'sd9032;
+    sin_rom[ 75] = 16'sd31650;  cos_rom[ 75] = 16'sd8481;
+    sin_rom[ 76] = 16'sd31794;  cos_rom[ 76] = 16'sd7927;
+    sin_rom[ 77] = 16'sd31927;  cos_rom[ 77] = 16'sd7371;
+    sin_rom[ 78] = 16'sd32051;  cos_rom[ 78] = 16'sd6813;
+    sin_rom[ 79] = 16'sd32165;  cos_rom[ 79] = 16'sd6252;
+    sin_rom[ 80] = 16'sd32269;  cos_rom[ 80] = 16'sd5690;
+    sin_rom[ 81] = 16'sd32364;  cos_rom[ 81] = 16'sd5126;
+    sin_rom[ 82] = 16'sd32448;  cos_rom[ 82] = 16'sd4560;
+    sin_rom[ 83] = 16'sd32523;  cos_rom[ 83] = 16'sd3993;
+    sin_rom[ 84] = 16'sd32587;  cos_rom[ 84] = 16'sd3425;
+    sin_rom[ 85] = 16'sd32642;  cos_rom[ 85] = 16'sd2856;
+    sin_rom[ 86] = 16'sd32687;  cos_rom[ 86] = 16'sd2286;
+    sin_rom[ 87] = 16'sd32722;  cos_rom[ 87] = 16'sd1715;
+    sin_rom[ 88] = 16'sd32747;  cos_rom[ 88] = 16'sd1144;
+    sin_rom[ 89] = 16'sd32762;  cos_rom[ 89] = 16'sd572;
+    sin_rom[ 90] = 16'sd32767;  cos_rom[ 90] = 16'sd0;
+    sin_rom[ 91] = 16'sd32762;  cos_rom[ 91] = -16'sd572;
+    sin_rom[ 92] = 16'sd32747;  cos_rom[ 92] = -16'sd1144;
+    sin_rom[ 93] = 16'sd32722;  cos_rom[ 93] = -16'sd1715;
+    sin_rom[ 94] = 16'sd32687;  cos_rom[ 94] = -16'sd2286;
+    sin_rom[ 95] = 16'sd32642;  cos_rom[ 95] = -16'sd2856;
+    sin_rom[ 96] = 16'sd32587;  cos_rom[ 96] = -16'sd3425;
+    sin_rom[ 97] = 16'sd32523;  cos_rom[ 97] = -16'sd3993;
+    sin_rom[ 98] = 16'sd32448;  cos_rom[ 98] = -16'sd4560;
+    sin_rom[ 99] = 16'sd32364;  cos_rom[ 99] = -16'sd5126;
+    sin_rom[100] = 16'sd32269;  cos_rom[100] = -16'sd5690;
+    sin_rom[101] = 16'sd32165;  cos_rom[101] = -16'sd6252;
+    sin_rom[102] = 16'sd32051;  cos_rom[102] = -16'sd6813;
+    sin_rom[103] = 16'sd31927;  cos_rom[103] = -16'sd7371;
+    sin_rom[104] = 16'sd31794;  cos_rom[104] = -16'sd7927;
+    sin_rom[105] = 16'sd31650;  cos_rom[105] = -16'sd8481;
+    sin_rom[106] = 16'sd31498;  cos_rom[106] = -16'sd9032;
+    sin_rom[107] = 16'sd31335;  cos_rom[107] = -16'sd9580;
+    sin_rom[108] = 16'sd31163;  cos_rom[108] = -16'sd10126;
+    sin_rom[109] = 16'sd30982;  cos_rom[109] = -16'sd10668;
+    sin_rom[110] = 16'sd30791;  cos_rom[110] = -16'sd11207;
+    sin_rom[111] = 16'sd30591;  cos_rom[111] = -16'sd11743;
+    sin_rom[112] = 16'sd30381;  cos_rom[112] = -16'sd12275;
+    sin_rom[113] = 16'sd30162;  cos_rom[113] = -16'sd12803;
+    sin_rom[114] = 16'sd29934;  cos_rom[114] = -16'sd13328;
+    sin_rom[115] = 16'sd29697;  cos_rom[115] = -16'sd13848;
+    sin_rom[116] = 16'sd29451;  cos_rom[116] = -16'sd14364;
+    sin_rom[117] = 16'sd29196;  cos_rom[117] = -16'sd14876;
+    sin_rom[118] = 16'sd28932;  cos_rom[118] = -16'sd15383;
+    sin_rom[119] = 16'sd28659;  cos_rom[119] = -16'sd15886;
+    sin_rom[120] = 16'sd28377;  cos_rom[120] = -16'sd16383;
+    sin_rom[121] = 16'sd28087;  cos_rom[121] = -16'sd16876;
+    sin_rom[122] = 16'sd27788;  cos_rom[122] = -16'sd17364;
+    sin_rom[123] = 16'sd27481;  cos_rom[123] = -16'sd17846;
+    sin_rom[124] = 16'sd27165;  cos_rom[124] = -16'sd18323;
+    sin_rom[125] = 16'sd26841;  cos_rom[125] = -16'sd18794;
+    sin_rom[126] = 16'sd26509;  cos_rom[126] = -16'sd19260;
+    sin_rom[127] = 16'sd26169;  cos_rom[127] = -16'sd19720;
+    sin_rom[128] = 16'sd25821;  cos_rom[128] = -16'sd20173;
+    sin_rom[129] = 16'sd25465;  cos_rom[129] = -16'sd20621;
+    sin_rom[130] = 16'sd25101;  cos_rom[130] = -16'sd21062;
+    sin_rom[131] = 16'sd24730;  cos_rom[131] = -16'sd21497;
+    sin_rom[132] = 16'sd24351;  cos_rom[132] = -16'sd21925;
+    sin_rom[133] = 16'sd23964;  cos_rom[133] = -16'sd22347;
+    sin_rom[134] = 16'sd23571;  cos_rom[134] = -16'sd22762;
+    sin_rom[135] = 16'sd23170;  cos_rom[135] = -16'sd23170;
+    sin_rom[136] = 16'sd22762;  cos_rom[136] = -16'sd23571;
+    sin_rom[137] = 16'sd22347;  cos_rom[137] = -16'sd23964;
+    sin_rom[138] = 16'sd21925;  cos_rom[138] = -16'sd24351;
+    sin_rom[139] = 16'sd21497;  cos_rom[139] = -16'sd24730;
+    sin_rom[140] = 16'sd21062;  cos_rom[140] = -16'sd25101;
+    sin_rom[141] = 16'sd20621;  cos_rom[141] = -16'sd25465;
+    sin_rom[142] = 16'sd20173;  cos_rom[142] = -16'sd25821;
+    sin_rom[143] = 16'sd19720;  cos_rom[143] = -16'sd26169;
+    sin_rom[144] = 16'sd19260;  cos_rom[144] = -16'sd26509;
+    sin_rom[145] = 16'sd18794;  cos_rom[145] = -16'sd26841;
+    sin_rom[146] = 16'sd18323;  cos_rom[146] = -16'sd27165;
+    sin_rom[147] = 16'sd17846;  cos_rom[147] = -16'sd27481;
+    sin_rom[148] = 16'sd17364;  cos_rom[148] = -16'sd27788;
+    sin_rom[149] = 16'sd16876;  cos_rom[149] = -16'sd28087;
+    sin_rom[150] = 16'sd16383;  cos_rom[150] = -16'sd28377;
+    sin_rom[151] = 16'sd15886;  cos_rom[151] = -16'sd28659;
+    sin_rom[152] = 16'sd15383;  cos_rom[152] = -16'sd28932;
+    sin_rom[153] = 16'sd14876;  cos_rom[153] = -16'sd29196;
+    sin_rom[154] = 16'sd14364;  cos_rom[154] = -16'sd29451;
+    sin_rom[155] = 16'sd13848;  cos_rom[155] = -16'sd29697;
+    sin_rom[156] = 16'sd13328;  cos_rom[156] = -16'sd29934;
+    sin_rom[157] = 16'sd12803;  cos_rom[157] = -16'sd30162;
+    sin_rom[158] = 16'sd12275;  cos_rom[158] = -16'sd30381;
+    sin_rom[159] = 16'sd11743;  cos_rom[159] = -16'sd30591;
+    sin_rom[160] = 16'sd11207;  cos_rom[160] = -16'sd30791;
+    sin_rom[161] = 16'sd10668;  cos_rom[161] = -16'sd30982;
+    sin_rom[162] = 16'sd10126;  cos_rom[162] = -16'sd31163;
+    sin_rom[163] = 16'sd9580;  cos_rom[163] = -16'sd31335;
+    sin_rom[164] = 16'sd9032;  cos_rom[164] = -16'sd31498;
+    sin_rom[165] = 16'sd8481;  cos_rom[165] = -16'sd31650;
+    sin_rom[166] = 16'sd7927;  cos_rom[166] = -16'sd31794;
+    sin_rom[167] = 16'sd7371;  cos_rom[167] = -16'sd31927;
+    sin_rom[168] = 16'sd6813;  cos_rom[168] = -16'sd32051;
+    sin_rom[169] = 16'sd6252;  cos_rom[169] = -16'sd32165;
+    sin_rom[170] = 16'sd5690;  cos_rom[170] = -16'sd32269;
+    sin_rom[171] = 16'sd5126;  cos_rom[171] = -16'sd32364;
+    sin_rom[172] = 16'sd4560;  cos_rom[172] = -16'sd32448;
+    sin_rom[173] = 16'sd3993;  cos_rom[173] = -16'sd32523;
+    sin_rom[174] = 16'sd3425;  cos_rom[174] = -16'sd32587;
+    sin_rom[175] = 16'sd2856;  cos_rom[175] = -16'sd32642;
+    sin_rom[176] = 16'sd2286;  cos_rom[176] = -16'sd32687;
+    sin_rom[177] = 16'sd1715;  cos_rom[177] = -16'sd32722;
+    sin_rom[178] = 16'sd1144;  cos_rom[178] = -16'sd32747;
+    sin_rom[179] = 16'sd572;  cos_rom[179] = -16'sd32762;
+    sin_rom[180] = 16'sd0;  cos_rom[180] = -16'sd32767;
+    sin_rom[181] = -16'sd572;  cos_rom[181] = -16'sd32762;
+    sin_rom[182] = -16'sd1144;  cos_rom[182] = -16'sd32747;
+    sin_rom[183] = -16'sd1715;  cos_rom[183] = -16'sd32722;
+    sin_rom[184] = -16'sd2286;  cos_rom[184] = -16'sd32687;
+    sin_rom[185] = -16'sd2856;  cos_rom[185] = -16'sd32642;
+    sin_rom[186] = -16'sd3425;  cos_rom[186] = -16'sd32587;
+    sin_rom[187] = -16'sd3993;  cos_rom[187] = -16'sd32523;
+    sin_rom[188] = -16'sd4560;  cos_rom[188] = -16'sd32448;
+    sin_rom[189] = -16'sd5126;  cos_rom[189] = -16'sd32364;
+    sin_rom[190] = -16'sd5690;  cos_rom[190] = -16'sd32269;
+    sin_rom[191] = -16'sd6252;  cos_rom[191] = -16'sd32165;
+    sin_rom[192] = -16'sd6813;  cos_rom[192] = -16'sd32051;
+    sin_rom[193] = -16'sd7371;  cos_rom[193] = -16'sd31927;
+    sin_rom[194] = -16'sd7927;  cos_rom[194] = -16'sd31794;
+    sin_rom[195] = -16'sd8481;  cos_rom[195] = -16'sd31650;
+    sin_rom[196] = -16'sd9032;  cos_rom[196] = -16'sd31498;
+    sin_rom[197] = -16'sd9580;  cos_rom[197] = -16'sd31335;
+    sin_rom[198] = -16'sd10126;  cos_rom[198] = -16'sd31163;
+    sin_rom[199] = -16'sd10668;  cos_rom[199] = -16'sd30982;
+    sin_rom[200] = -16'sd11207;  cos_rom[200] = -16'sd30791;
+    sin_rom[201] = -16'sd11743;  cos_rom[201] = -16'sd30591;
+    sin_rom[202] = -16'sd12275;  cos_rom[202] = -16'sd30381;
+    sin_rom[203] = -16'sd12803;  cos_rom[203] = -16'sd30162;
+    sin_rom[204] = -16'sd13328;  cos_rom[204] = -16'sd29934;
+    sin_rom[205] = -16'sd13848;  cos_rom[205] = -16'sd29697;
+    sin_rom[206] = -16'sd14364;  cos_rom[206] = -16'sd29451;
+    sin_rom[207] = -16'sd14876;  cos_rom[207] = -16'sd29196;
+    sin_rom[208] = -16'sd15383;  cos_rom[208] = -16'sd28932;
+    sin_rom[209] = -16'sd15886;  cos_rom[209] = -16'sd28659;
+    sin_rom[210] = -16'sd16384;  cos_rom[210] = -16'sd28377;
+    sin_rom[211] = -16'sd16876;  cos_rom[211] = -16'sd28087;
+    sin_rom[212] = -16'sd17364;  cos_rom[212] = -16'sd27788;
+    sin_rom[213] = -16'sd17846;  cos_rom[213] = -16'sd27481;
+    sin_rom[214] = -16'sd18323;  cos_rom[214] = -16'sd27165;
+    sin_rom[215] = -16'sd18794;  cos_rom[215] = -16'sd26841;
+    sin_rom[216] = -16'sd19260;  cos_rom[216] = -16'sd26509;
+    sin_rom[217] = -16'sd19720;  cos_rom[217] = -16'sd26169;
+    sin_rom[218] = -16'sd20173;  cos_rom[218] = -16'sd25821;
+    sin_rom[219] = -16'sd20621;  cos_rom[219] = -16'sd25465;
+    sin_rom[220] = -16'sd21062;  cos_rom[220] = -16'sd25101;
+    sin_rom[221] = -16'sd21497;  cos_rom[221] = -16'sd24730;
+    sin_rom[222] = -16'sd21925;  cos_rom[222] = -16'sd24351;
+    sin_rom[223] = -16'sd22347;  cos_rom[223] = -16'sd23964;
+    sin_rom[224] = -16'sd22762;  cos_rom[224] = -16'sd23571;
+    sin_rom[225] = -16'sd23170;  cos_rom[225] = -16'sd23170;
+    sin_rom[226] = -16'sd23571;  cos_rom[226] = -16'sd22762;
+    sin_rom[227] = -16'sd23964;  cos_rom[227] = -16'sd22347;
+    sin_rom[228] = -16'sd24351;  cos_rom[228] = -16'sd21925;
+    sin_rom[229] = -16'sd24730;  cos_rom[229] = -16'sd21497;
+    sin_rom[230] = -16'sd25101;  cos_rom[230] = -16'sd21062;
+    sin_rom[231] = -16'sd25465;  cos_rom[231] = -16'sd20621;
+    sin_rom[232] = -16'sd25821;  cos_rom[232] = -16'sd20173;
+    sin_rom[233] = -16'sd26169;  cos_rom[233] = -16'sd19720;
+    sin_rom[234] = -16'sd26509;  cos_rom[234] = -16'sd19260;
+    sin_rom[235] = -16'sd26841;  cos_rom[235] = -16'sd18794;
+    sin_rom[236] = -16'sd27165;  cos_rom[236] = -16'sd18323;
+    sin_rom[237] = -16'sd27481;  cos_rom[237] = -16'sd17846;
+    sin_rom[238] = -16'sd27788;  cos_rom[238] = -16'sd17364;
+    sin_rom[239] = -16'sd28087;  cos_rom[239] = -16'sd16876;
+    sin_rom[240] = -16'sd28377;  cos_rom[240] = -16'sd16384;
+    sin_rom[241] = -16'sd28659;  cos_rom[241] = -16'sd15886;
+    sin_rom[242] = -16'sd28932;  cos_rom[242] = -16'sd15383;
+    sin_rom[243] = -16'sd29196;  cos_rom[243] = -16'sd14876;
+    sin_rom[244] = -16'sd29451;  cos_rom[244] = -16'sd14364;
+    sin_rom[245] = -16'sd29697;  cos_rom[245] = -16'sd13848;
+    sin_rom[246] = -16'sd29934;  cos_rom[246] = -16'sd13328;
+    sin_rom[247] = -16'sd30162;  cos_rom[247] = -16'sd12803;
+    sin_rom[248] = -16'sd30381;  cos_rom[248] = -16'sd12275;
+    sin_rom[249] = -16'sd30591;  cos_rom[249] = -16'sd11743;
+    sin_rom[250] = -16'sd30791;  cos_rom[250] = -16'sd11207;
+    sin_rom[251] = -16'sd30982;  cos_rom[251] = -16'sd10668;
+    sin_rom[252] = -16'sd31163;  cos_rom[252] = -16'sd10126;
+    sin_rom[253] = -16'sd31335;  cos_rom[253] = -16'sd9580;
+    sin_rom[254] = -16'sd31498;  cos_rom[254] = -16'sd9032;
+    sin_rom[255] = -16'sd31650;  cos_rom[255] = -16'sd8481;
+    sin_rom[256] = -16'sd31794;  cos_rom[256] = -16'sd7927;
+    sin_rom[257] = -16'sd31927;  cos_rom[257] = -16'sd7371;
+    sin_rom[258] = -16'sd32051;  cos_rom[258] = -16'sd6813;
+    sin_rom[259] = -16'sd32165;  cos_rom[259] = -16'sd6252;
+    sin_rom[260] = -16'sd32269;  cos_rom[260] = -16'sd5690;
+    sin_rom[261] = -16'sd32364;  cos_rom[261] = -16'sd5126;
+    sin_rom[262] = -16'sd32448;  cos_rom[262] = -16'sd4560;
+    sin_rom[263] = -16'sd32523;  cos_rom[263] = -16'sd3993;
+    sin_rom[264] = -16'sd32587;  cos_rom[264] = -16'sd3425;
+    sin_rom[265] = -16'sd32642;  cos_rom[265] = -16'sd2856;
+    sin_rom[266] = -16'sd32687;  cos_rom[266] = -16'sd2286;
+    sin_rom[267] = -16'sd32722;  cos_rom[267] = -16'sd1715;
+    sin_rom[268] = -16'sd32747;  cos_rom[268] = -16'sd1144;
+    sin_rom[269] = -16'sd32762;  cos_rom[269] = -16'sd572;
+    sin_rom[270] = -16'sd32767;  cos_rom[270] = 16'sd0;
+    sin_rom[271] = -16'sd32762;  cos_rom[271] = 16'sd572;
+    sin_rom[272] = -16'sd32747;  cos_rom[272] = 16'sd1144;
+    sin_rom[273] = -16'sd32722;  cos_rom[273] = 16'sd1715;
+    sin_rom[274] = -16'sd32687;  cos_rom[274] = 16'sd2286;
+    sin_rom[275] = -16'sd32642;  cos_rom[275] = 16'sd2856;
+    sin_rom[276] = -16'sd32587;  cos_rom[276] = 16'sd3425;
+    sin_rom[277] = -16'sd32523;  cos_rom[277] = 16'sd3993;
+    sin_rom[278] = -16'sd32448;  cos_rom[278] = 16'sd4560;
+    sin_rom[279] = -16'sd32364;  cos_rom[279] = 16'sd5126;
+    sin_rom[280] = -16'sd32269;  cos_rom[280] = 16'sd5690;
+    sin_rom[281] = -16'sd32165;  cos_rom[281] = 16'sd6252;
+    sin_rom[282] = -16'sd32051;  cos_rom[282] = 16'sd6813;
+    sin_rom[283] = -16'sd31927;  cos_rom[283] = 16'sd7371;
+    sin_rom[284] = -16'sd31794;  cos_rom[284] = 16'sd7927;
+    sin_rom[285] = -16'sd31650;  cos_rom[285] = 16'sd8481;
+    sin_rom[286] = -16'sd31498;  cos_rom[286] = 16'sd9032;
+    sin_rom[287] = -16'sd31335;  cos_rom[287] = 16'sd9580;
+    sin_rom[288] = -16'sd31163;  cos_rom[288] = 16'sd10126;
+    sin_rom[289] = -16'sd30982;  cos_rom[289] = 16'sd10668;
+    sin_rom[290] = -16'sd30791;  cos_rom[290] = 16'sd11207;
+    sin_rom[291] = -16'sd30591;  cos_rom[291] = 16'sd11743;
+    sin_rom[292] = -16'sd30381;  cos_rom[292] = 16'sd12275;
+    sin_rom[293] = -16'sd30162;  cos_rom[293] = 16'sd12803;
+    sin_rom[294] = -16'sd29934;  cos_rom[294] = 16'sd13328;
+    sin_rom[295] = -16'sd29697;  cos_rom[295] = 16'sd13848;
+    sin_rom[296] = -16'sd29451;  cos_rom[296] = 16'sd14364;
+    sin_rom[297] = -16'sd29196;  cos_rom[297] = 16'sd14876;
+    sin_rom[298] = -16'sd28932;  cos_rom[298] = 16'sd15383;
+    sin_rom[299] = -16'sd28659;  cos_rom[299] = 16'sd15886;
+    sin_rom[300] = -16'sd28377;  cos_rom[300] = 16'sd16384;
+    sin_rom[301] = -16'sd28087;  cos_rom[301] = 16'sd16876;
+    sin_rom[302] = -16'sd27788;  cos_rom[302] = 16'sd17364;
+    sin_rom[303] = -16'sd27481;  cos_rom[303] = 16'sd17846;
+    sin_rom[304] = -16'sd27165;  cos_rom[304] = 16'sd18323;
+    sin_rom[305] = -16'sd26841;  cos_rom[305] = 16'sd18794;
+    sin_rom[306] = -16'sd26509;  cos_rom[306] = 16'sd19260;
+    sin_rom[307] = -16'sd26169;  cos_rom[307] = 16'sd19720;
+    sin_rom[308] = -16'sd25821;  cos_rom[308] = 16'sd20173;
+    sin_rom[309] = -16'sd25465;  cos_rom[309] = 16'sd20621;
+    sin_rom[310] = -16'sd25101;  cos_rom[310] = 16'sd21062;
+    sin_rom[311] = -16'sd24730;  cos_rom[311] = 16'sd21497;
+    sin_rom[312] = -16'sd24351;  cos_rom[312] = 16'sd21925;
+    sin_rom[313] = -16'sd23964;  cos_rom[313] = 16'sd22347;
+    sin_rom[314] = -16'sd23571;  cos_rom[314] = 16'sd22762;
+    sin_rom[315] = -16'sd23170;  cos_rom[315] = 16'sd23170;
+    sin_rom[316] = -16'sd22762;  cos_rom[316] = 16'sd23571;
+    sin_rom[317] = -16'sd22347;  cos_rom[317] = 16'sd23964;
+    sin_rom[318] = -16'sd21925;  cos_rom[318] = 16'sd24351;
+    sin_rom[319] = -16'sd21497;  cos_rom[319] = 16'sd24730;
+    sin_rom[320] = -16'sd21062;  cos_rom[320] = 16'sd25101;
+    sin_rom[321] = -16'sd20621;  cos_rom[321] = 16'sd25465;
+    sin_rom[322] = -16'sd20173;  cos_rom[322] = 16'sd25821;
+    sin_rom[323] = -16'sd19720;  cos_rom[323] = 16'sd26169;
+    sin_rom[324] = -16'sd19260;  cos_rom[324] = 16'sd26509;
+    sin_rom[325] = -16'sd18794;  cos_rom[325] = 16'sd26841;
+    sin_rom[326] = -16'sd18323;  cos_rom[326] = 16'sd27165;
+    sin_rom[327] = -16'sd17846;  cos_rom[327] = 16'sd27481;
+    sin_rom[328] = -16'sd17364;  cos_rom[328] = 16'sd27788;
+    sin_rom[329] = -16'sd16876;  cos_rom[329] = 16'sd28087;
+    sin_rom[330] = -16'sd16384;  cos_rom[330] = 16'sd28377;
+    sin_rom[331] = -16'sd15886;  cos_rom[331] = 16'sd28659;
+    sin_rom[332] = -16'sd15383;  cos_rom[332] = 16'sd28932;
+    sin_rom[333] = -16'sd14876;  cos_rom[333] = 16'sd29196;
+    sin_rom[334] = -16'sd14364;  cos_rom[334] = 16'sd29451;
+    sin_rom[335] = -16'sd13848;  cos_rom[335] = 16'sd29697;
+    sin_rom[336] = -16'sd13328;  cos_rom[336] = 16'sd29934;
+    sin_rom[337] = -16'sd12803;  cos_rom[337] = 16'sd30162;
+    sin_rom[338] = -16'sd12275;  cos_rom[338] = 16'sd30381;
+    sin_rom[339] = -16'sd11743;  cos_rom[339] = 16'sd30591;
+    sin_rom[340] = -16'sd11207;  cos_rom[340] = 16'sd30791;
+    sin_rom[341] = -16'sd10668;  cos_rom[341] = 16'sd30982;
+    sin_rom[342] = -16'sd10126;  cos_rom[342] = 16'sd31163;
+    sin_rom[343] = -16'sd9580;  cos_rom[343] = 16'sd31335;
+    sin_rom[344] = -16'sd9032;  cos_rom[344] = 16'sd31498;
+    sin_rom[345] = -16'sd8481;  cos_rom[345] = 16'sd31650;
+    sin_rom[346] = -16'sd7927;  cos_rom[346] = 16'sd31794;
+    sin_rom[347] = -16'sd7371;  cos_rom[347] = 16'sd31927;
+    sin_rom[348] = -16'sd6813;  cos_rom[348] = 16'sd32051;
+    sin_rom[349] = -16'sd6252;  cos_rom[349] = 16'sd32165;
+    sin_rom[350] = -16'sd5690;  cos_rom[350] = 16'sd32269;
+    sin_rom[351] = -16'sd5126;  cos_rom[351] = 16'sd32364;
+    sin_rom[352] = -16'sd4560;  cos_rom[352] = 16'sd32448;
+    sin_rom[353] = -16'sd3993;  cos_rom[353] = 16'sd32523;
+    sin_rom[354] = -16'sd3425;  cos_rom[354] = 16'sd32587;
+    sin_rom[355] = -16'sd2856;  cos_rom[355] = 16'sd32642;
+    sin_rom[356] = -16'sd2286;  cos_rom[356] = 16'sd32687;
+    sin_rom[357] = -16'sd1715;  cos_rom[357] = 16'sd32722;
+    sin_rom[358] = -16'sd1144;  cos_rom[358] = 16'sd32747;
+    sin_rom[359] = -16'sd572;  cos_rom[359] = 16'sd32762;
 end
+wire [8:0] aidx = (idx > 9'd359) ? 9'd359 : idx;
+assign sin_q15 = sin_rom[aidx];
+assign cos_q15 = cos_rom[aidx];
 endmodule
-

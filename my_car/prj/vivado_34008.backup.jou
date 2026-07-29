@@ -1,0 +1,16 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Wed Jul 29 20:15:34 2026
+# Process ID: 34008
+# Current directory: E:/FPGA/project/smart_car_pld2026/my_car/prj
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent12228 E:\FPGA\project\smart_car_pld2026\my_car\prj\prj.xpr
+# Log file: E:/FPGA/project/smart_car_pld2026/my_car/prj/vivado.log
+# Journal file: E:/FPGA/project/smart_car_pld2026/my_car/prj\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.xpr
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 12
+wait_on_run synth_1

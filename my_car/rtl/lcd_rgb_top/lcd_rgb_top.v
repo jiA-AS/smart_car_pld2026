@@ -1,58 +1,58 @@
 //****************************************Copyright (c)***********************************//
-//åŸå­å“¥åœ¨çº¿æ•™å­¦å¹³å°ï¼šwww.yuanzige.com
-//æŠ€æœ¯æ”¯æŒï¼šhttp://www.openedv.com/forum.php
-//æ·˜å®åº—é“ºï¼šhttps://zhengdianyuanzi.tmall.com
-//å…³æ³¨å¾®ä¿¡å…¬ä¼—å¹³å°å¾®ä¿¡å·ï¼š"æ­£ç‚¹åŸå­"ï¼Œå…è´¹è·å–ZYNQ & FPGA & STM32 & LINUXèµ„æ–™ã€‚
-//ç‰ˆæƒæ‰€æœ‰ï¼Œç›—ç‰ˆå¿…ç©¶ã€‚
-//Copyright(C) æ­£ç‚¹åŸå­ 2023-2033
+//Ô­×Ó¸çÔÚÏß½ÌÑ§Æ½Ì¨£ºwww.yuanzige.com
+//¼¼ÊõÖ§³Ö£ºhttp://www.openedv.com/forum.php
+//ÌÔ±¦µêÆÌ£ºhttps://zhengdianyuanzi.tmall.com
+//¹Ø×¢Î¢ĞÅ¹«ÖÚÆ½Ì¨Î¢ĞÅºÅ£º"ÕıµãÔ­×Ó"£¬Ãâ·Ñ»ñÈ¡ZYNQ & FPGA & STM32 & LINUX×ÊÁÏ¡£
+//°æÈ¨ËùÓĞ£¬µÁ°æ±Ø¾¿¡£
+//Copyright(C) ÕıµãÔ­×Ó 2023-2033
 //All rights reserved
 //----------------------------------------------------------------------------------------
 // File name:           lcd_rgb_top
-// Created by:          æ­£ç‚¹åŸå­
-// Created date:        2025å¹´10æœˆ25æ—¥10:10:00
+// Created by:          ÕıµãÔ­×Ó
+// Created date:        2025Äê10ÔÂ25ÈÕ10:10:00
 // Version:             V1.3
-// Descriptions:        LCDé¡¶å±‚æ¨¡å—ï¼ˆPLD2026 èµ›é“ä¸‰ï¼šOSD V3 + ä»ªè¡¨ç›˜ dash_osdï¼‰
+// Descriptions:        LCD¶¥²ãÄ£¿é£¨PLD2026 ÈüµÀÈı£ºOSD V3 + ÒÇ±íÅÌ dash_osd£©
 //
-//  [PLD2026 V3] æ”¹åŠ¨è¯´æ˜ï¼š
-//   1) osd_overlay å‡çº§ V3ï¼šå§¿æ€/é€Ÿåº¦è¡Œã€TTCé¢„è­¦ã€è°ƒè¯•/å¤œé—´æ¨¡å¼æ ‡ç­¾
-//   2) osd_overlay ä¹‹åä¸²è” dash_osdï¼ˆå³ä¸‹è§’ä¿¯è§†å›¾è½¨è¿¹+å§¿æ€ä»ªè¡¨ï¼‰ï¼Œ
-//      è§†é¢‘é“¾æ€»å»¶è¿Ÿ 2 æ‹ï¼ˆæ— æ„ŸçŸ¥ï¼‰
-//   3) ç«¯å£è¡¨æ–°å¢ï¼šå§¿æ€/é€Ÿåº¦/ä½ç½®/èˆªå‘/è½¨è¿¹ç‚¹/TTCé¢„è­¦/æ˜¾ç¤ºæ¨¡å¼/è°ƒè¯•è®¡æ•°
-//   å…¶ä½™åŸå­åŸæœ‰é€»è¾‘ä¸€å­—æœªåŠ¨
+//  [PLD2026 V3] ¸Ä¶¯ËµÃ÷£º
+//   1) osd_overlay Éı¼¶ V3£º×ËÌ¬/ËÙ¶ÈĞĞ¡¢TTCÔ¤¾¯¡¢µ÷ÊÔ/Ò¹¼äÄ£Ê½±êÇ©
+//   2) osd_overlay Ö®ºó´®Áª dash_osd£¨ÓÒÏÂ½Ç¸©ÊÓÍ¼¹ì¼£+×ËÌ¬ÒÇ±í£©£¬
+//      ÊÓÆµÁ´×ÜÑÓ³Ù 2 ÅÄ£¨ÎŞ¸ĞÖª£©
+//   3) ¶Ë¿Ú±íĞÂÔö£º×ËÌ¬/ËÙ¶È/Î»ÖÃ/º½Ïò/¹ì¼£µã/TTCÔ¤¾¯/ÏÔÊ¾Ä£Ê½/µ÷ÊÔ¼ÆÊı
+//   ÆäÓàÔ­×ÓÔ­ÓĞÂß¼­Ò»×ÖÎ´¶¯
 //----------------------------------------------------------------------------------------
 //****************************************************************************************//
 
 module lcd_rgb_top(
-    input           sys_clk      ,  //ç³»ç»Ÿæ—¶é’Ÿï¼ˆ50Mï¼Œdash_osd è½¨è¿¹å†™æ—¶é’ŸåŸŸï¼‰
-    input           sys_rst_n,      //å¤ä½ä¿¡å·
+    input           sys_clk      ,  //ÏµÍ³Ê±ÖÓ£¨50M£¬dash_osd ¹ì¼£Ğ´Ê±ÖÓÓò£©
+    input           sys_rst_n,      //¸´Î»ĞÅºÅ
     input           sys_init_done,
-    //lcdæ¥å£
-    output          lcd_clk,        //LCDé©±åŠ¨æ—¶é’Ÿ
-    output          lcd_hs,         //LCDè¡ŒåŒæ­¥ä¿¡å·
-    output          lcd_vs,         //LCDåœºåŒæ­¥ä¿¡å·
-    output          lcd_de,         //LCDæ•°æ®è¾“å…¥ä½¿èƒ½
-    inout  [23:0]   lcd_rgb,        //LCDRGBé¢œè‰²æ•°æ®
-    output          lcd_bl,         //LCDèƒŒå…‰æ§åˆ¶ä¿¡å·
-    output          lcd_rst,        //LCDå¤ä½ä¿¡å·
-    output          lcd_pclk,       //LCDé‡‡æ ·æ—¶é’Ÿ
-    output  [15:0]  lcd_id,         //LCDå±ID
-    output          out_vsync,      //LCDåœºä¿¡å·
-    output  [10:0]  pixel_xpos,     //åƒç´ ç‚¹æ¨ªåæ ‡
-    output  [10:0]  pixel_ypos,     //åƒç´ ç‚¹çºµåæ ‡
-    output  [10:0]  h_disp,         //LCDå±æ°´å¹³åˆ†è¾¨ç‡
-    output  [10:0]  v_disp,         //LCDå±å‚ç›´åˆ†è¾¨ç‡
-    input   [15:0]  data_in,        //æ•°æ®è¾“å…¥
-    output          data_req,       //è¯·æ±‚åƒç´ ç‚¹é¢œè‰²æ•°æ®è¾“å…¥
-    // ---- [PLD2026] è¯†åˆ«æ¡†ï¼ˆå³å± = æ‘„åƒå¤´1ï¼Œç›¸æœºåæ ‡ç³» 0~399ï¼‰ ----
-    input           box_found,      //æœ¬å¸§å‘ç°ç»¿ç¯
-    input   [ 9:0]  box_min_x,      //åŒ…å›´ç›’å››è§’
+    //lcd½Ó¿Ú
+    output          lcd_clk,        //LCDÇı¶¯Ê±ÖÓ
+    output          lcd_hs,         //LCDĞĞÍ¬²½ĞÅºÅ
+    output          lcd_vs,         //LCD³¡Í¬²½ĞÅºÅ
+    output          lcd_de,         //LCDÊı¾İÊäÈëÊ¹ÄÜ
+    inout  [23:0]   lcd_rgb,        //LCDRGBÑÕÉ«Êı¾İ
+    output          lcd_bl,         //LCD±³¹â¿ØÖÆĞÅºÅ
+    output          lcd_rst,        //LCD¸´Î»ĞÅºÅ
+    output          lcd_pclk,       //LCD²ÉÑùÊ±ÖÓ
+    output  [15:0]  lcd_id,         //LCDÆÁID
+    output          out_vsync,      //LCD³¡ĞÅºÅ
+    output  [10:0]  pixel_xpos,     //ÏñËØµãºá×ø±ê
+    output  [10:0]  pixel_ypos,     //ÏñËØµã×İ×ø±ê
+    output  [10:0]  h_disp,         //LCDÆÁË®Æ½·Ö±æÂÊ
+    output  [10:0]  v_disp,         //LCDÆÁ´¹Ö±·Ö±æÂÊ
+    input   [15:0]  data_in,        //Êı¾İÊäÈë
+    output          data_req,       //ÇëÇóÏñËØµãÑÕÉ«Êı¾İÊäÈë
+    // ---- [PLD2026] Ê¶±ğ¿ò£¨ÓÒÆÁ = ÉãÏñÍ·1£¬Ïà»ú×ø±êÏµ 0~399£© ----
+    input           box_found,      //±¾Ö¡·¢ÏÖÂÌµÆ
+    input   [ 9:0]  box_min_x,      //°üÎ§ºĞËÄ½Ç
     input   [ 9:0]  box_max_x,
     input   [ 9:0]  box_min_y,
     input   [ 9:0]  box_max_y,
-    // ---- [PLD2026 V2] cam1 è´¨å¿ƒï¼ˆå³å±ï¼Œç›¸æœºåæ ‡ï¼Œcam_pclk_1 åŸŸï¼‰ ----
+    // ---- [PLD2026 V2] cam1 ÖÊĞÄ£¨ÓÒÆÁ£¬Ïà»ú×ø±ê£¬cam_pclk_1 Óò£© ----
     input   [ 9:0]  c1_u,
     input   [ 9:0]  c1_v,
-    // ---- [PLD2026 V2] cam2 æ£€æµ‹ï¼ˆå·¦å±ï¼Œç›¸æœºåæ ‡ï¼Œcam_pclk_2 åŸŸï¼‰ ----
+    // ---- [PLD2026 V2] cam2 ¼ì²â£¨×óÆÁ£¬Ïà»ú×ø±ê£¬cam_pclk_2 Óò£© ----
     input           box2_found,
     input   [ 9:0]  box2_min_x,
     input   [ 9:0]  box2_max_x,
@@ -60,10 +60,10 @@ module lcd_rgb_top(
     input   [ 9:0]  box2_max_y,
     input   [ 9:0]  c2_u,
     input   [ 9:0]  c2_v,
-    // ---- [PLD2026 V2] ç›®æ ‡è·ç¦»ï¼ˆ50M åŸŸï¼‰ ----
+    // ---- [PLD2026 V2] Ä¿±ê¾àÀë£¨50M Óò£© ----
     input   [15:0]  dist_mm,
-    input   [ 1:0]  dist_src,       // 0=æ— æ•ˆ 1=å•ç›® 2=åŒç›®
-    // ---- [PLD2026 V2] ä¼ æ„Ÿå™¨åŸå§‹å€¼ï¼ˆ50M åŸŸï¼ŒOSD æ•°æ®æ ï¼‰ ----
+    input   [ 1:0]  dist_src,       // 0=ÎŞĞ§ 1=µ¥Ä¿ 2=Ë«Ä¿
+    // ---- [PLD2026 V2] ´«¸ĞÆ÷Ô­Ê¼Öµ£¨50M Óò£¬OSD Êı¾İÀ¸£© ----
     input   [31:0]  enc0,
     input   [31:0]  enc1,
     input   [31:0]  enc2,
@@ -71,42 +71,42 @@ module lcd_rgb_top(
     input   [15:0]  gyro_x,
     input   [15:0]  gyro_y,
     input   [15:0]  gyro_z,
-    // ---- [PLD2026 V3] å§¿æ€/é€Ÿåº¦ï¼ˆ50M åŸŸï¼‰ ----
-    input   signed [15:0]  pitch_cdeg,   // 0.01Â°ï¼ˆattitude_cfï¼‰
+    // ---- [PLD2026 V3] ×ËÌ¬/ËÙ¶È£¨50M Óò£© ----
+    input   signed [15:0]  pitch_cdeg,   // 0.01¡ã£¨attitude_cf£©
     input   signed [15:0]  roll_cdeg,
-    input   signed [15:0]  fwd_speed,    // mm/sï¼ˆsensor_calcï¼‰
-    // ---- [PLD2026 V3] ä½ç½®/èˆªå‘/è½¨è¿¹ç‚¹ï¼ˆ50M åŸŸï¼Œdash_osd ç”¨ï¼‰ ----
+    input   signed [15:0]  fwd_speed,    // mm/s£¨sensor_calc£©
+    // ---- [PLD2026 V3] Î»ÖÃ/º½Ïò/¹ì¼£µã£¨50M Óò£¬dash_osd ÓÃ£© ----
     input   signed [31:0]  pos_x,        // mm
     input   signed [31:0]  pos_y,
-    input   [ 8:0]  theta_idx,           // èˆªå‘ 0~359Â°
-    input           trk_wr,              // è½¨è¿¹ç‚¹å†™è„‰å†²ï¼ˆ5Hzï¼‰
+    input   [ 8:0]  theta_idx,           // º½Ïò 0~359¡ã
+    input           trk_wr,              // ¹ì¼£µãĞ´Âö³å£¨5Hz£©
     input   signed [15:0]  trk_x,        // mm
     input   signed [15:0]  trk_y,
-    // ---- [PLD2026 V3] TTC é¢„è­¦ï¼ˆ50M åŸŸï¼‰ ----
-    input   [ 1:0]  warn_level,          // 0=æ­£å¸¸ 1=é»„è­¦ 2=çº¢è­¦
+    // ---- [PLD2026 V3] TTC Ô¤¾¯£¨50M Óò£© ----
+    input   [ 1:0]  warn_level,          // 0=Õı³£ 1=»Æ¾¯ 2=ºì¾¯
     input   [ 7:0]  ttc_ds,              // TTC 0.1s
-    // ---- [PLD2026 V3] æ˜¾ç¤ºæ¨¡å¼ä¸è°ƒè¯•è®¡æ•° ----
-    input   [ 1:0]  disp_mode,           // 0=æ­£å¸¸ 1=è°ƒè¯• 2=å¤œé—´
-    input   [17:0]  gd_cnt1,             // cam1 ç»¿è‰²åƒç´ è®¡æ•°ï¼ˆè°ƒè¯•æ˜¾ç¤ºï¼‰
+    // ---- [PLD2026 V3] ÏÔÊ¾Ä£Ê½Óëµ÷ÊÔ¼ÆÊı ----
+    input   [ 1:0]  disp_mode,           // 0=Õı³£ 1=µ÷ÊÔ 2=Ò¹¼ä
+    input   [17:0]  gd_cnt1,             // cam1 ÂÌÉ«ÏñËØ¼ÆÊı£¨µ÷ÊÔÏÔÊ¾£©
     input   [17:0]  gd_cnt2
     );
 
 //wire define
-wire [15:0]  lcd_rgb_565;           //è¾“å‡ºçš„16ä½lcdæ•°æ®
-wire [23:0]  lcd_rgb_o ;            //LCD è¾“å‡ºé¢œè‰²æ•°æ®
-wire [23:0]  lcd_rgb_i ;            //LCD è¾“å…¥é¢œè‰²æ•°æ®
-wire [15:0]  disply_data;           //lcd_disply è¾“å‡ºï¼ˆæ ‡é¢˜+å³å±çº¢æ¡†å åŠ åï¼‰
-wire [15:0]  osd_data;              //osd_overlay è¾“å‡ºï¼ˆV3 AR å åŠ åï¼‰
+wire [15:0]  lcd_rgb_565;           //Êä³öµÄ16Î»lcdÊı¾İ
+wire [23:0]  lcd_rgb_o ;            //LCD Êä³öÑÕÉ«Êı¾İ
+wire [23:0]  lcd_rgb_i ;            //LCD ÊäÈëÑÕÉ«Êı¾İ
+wire [15:0]  disply_data;           //lcd_disply Êä³ö£¨±êÌâ+ÓÒÆÁºì¿òµş¼Óºó£©
+wire [15:0]  osd_data;              //osd_overlay Êä³ö£¨V3 AR µş¼Óºó£©
 
 //*****************************************************
 //**                    main code
 //*****************************************************
 
-//å°†æ‘„åƒå¤´16bitæ•°æ®è½¬æ¢ä¸º24bitçš„lcdæ•°æ®
+//½«ÉãÏñÍ·16bitÊı¾İ×ª»»Îª24bitµÄlcdÊı¾İ
 assign lcd_rgb_o = {lcd_rgb_565[15:11],3'b000,lcd_rgb_565[10:5],2'b00,
                     lcd_rgb_565[4:0],3'b000};
 
-//åƒç´ æ•°æ®æ–¹å‘åˆ‡æ¢
+//ÏñËØÊı¾İ·½ÏòÇĞ»»
 assign lcd_rgb = lcd_de ? lcd_rgb_o : {24{1'bz}};
 assign lcd_rgb_i = lcd_rgb;
 
@@ -114,7 +114,7 @@ assign lcd_rgb_i = lcd_rgb;
 //**                    main code
 //*****************************************************
 
-//æ—¶é’Ÿåˆ†é¢‘æ¨¡å—
+//Ê±ÖÓ·ÖÆµÄ£¿é
 clk_div u_clk_div(
     .clk                    (sys_clk  ),
     .rst_n                  (sys_rst_n),
@@ -122,7 +122,7 @@ clk_div u_clk_div(
     .lcd_pclk               (lcd_clk  )
     );
 
-//è¯»LCD IDæ¨¡å—
+//¶ÁLCD IDÄ£¿é
 rd_id u_rd_id(
     .clk                    (sys_clk  ),
     .rst_n                  (sys_rst_n),
@@ -130,7 +130,7 @@ rd_id u_rd_id(
     .lcd_id                 (lcd_id   )
     );
 
-//lcdé©±åŠ¨æ¨¡å—
+//lcdÇı¶¯Ä£¿é
 lcd_driver u_lcd_driver(
     .lcd_clk        (lcd_clk),
     .rst_n          (sys_rst_n & sys_init_done),
@@ -155,15 +155,15 @@ lcd_driver u_lcd_driver(
 
  lcd_disply u_lcd_disply(
 
-    .lcd_clk          (lcd_clk),                   //lcdæ¨¡å—é©±åŠ¨æ—¶é’Ÿ
-    .sys_rst_n        (sys_rst_n & sys_init_done), //å¤ä½ä¿¡å·
-    //RGB LCDæ¥å£
-    .pixel_xpos       (pixel_xpos),                //åƒç´ ç‚¹æ¨ªåæ ‡
-    .pixel_ypos       (pixel_ypos),                //åƒç´ ç‚¹çºµåæ ‡
-    .rd_data          (data_in),                   //å›¾åƒæ•°æ®
-    .rd_h_pixel       (h_disp),                    //å›¾åƒæ°´å¹³åƒç´ å¤§å°
-    .pixel_data       (disply_data),               //åƒç´ ç‚¹æ•°æ®
-    // ---- [PLD2026] è¯†åˆ«æ¡†é€ä¼  ----
+    .lcd_clk          (lcd_clk),                   //lcdÄ£¿éÇı¶¯Ê±ÖÓ
+    .sys_rst_n        (sys_rst_n & sys_init_done), //¸´Î»ĞÅºÅ
+    //RGB LCD½Ó¿Ú
+    .pixel_xpos       (pixel_xpos),                //ÏñËØµãºá×ø±ê
+    .pixel_ypos       (pixel_ypos),                //ÏñËØµã×İ×ø±ê
+    .rd_data          (data_in),                   //Í¼ÏñÊı¾İ
+    .rd_h_pixel       (h_disp),                    //Í¼ÏñË®Æ½ÏñËØ´óĞ¡
+    .pixel_data       (disply_data),               //ÏñËØµãÊı¾İ
+    // ---- [PLD2026] Ê¶±ğ¿òÍ¸´« ----
     .box_found        (box_found),
     .box_min_x        (box_min_x),
     .box_max_x        (box_max_x),
@@ -172,8 +172,8 @@ lcd_driver u_lcd_driver(
 );
 
 //*****************************************************
-//**  [PLD2026 V3] AR å åŠ å±‚ï¼ˆosd_overlay V3ï¼‰ï¼šcam2æ¡†(é¢„è­¦å˜è‰²)/åŒè´¨å¿ƒåå­—/
-//**  ä½ç½®æ ‡æ³¨/æ¨¡å¼+è·ç¦»/ç¼–ç å™¨é™€èºä»ª/å§¿æ€/é€Ÿåº¦/TTCé¢„è­¦è¡Œ/ç›®æ ‡ä¸¢å¤±/æ¨¡å¼æ ‡ç­¾
+//**  [PLD2026 V3] AR µş¼Ó²ã£¨osd_overlay V3£©£ºcam2¿ò(Ô¤¾¯±äÉ«)/Ë«ÖÊĞÄÊ®×Ö/
+//**  Î»ÖÃ±ê×¢/Ä£Ê½+¾àÀë/±àÂëÆ÷ÍÓÂİÒÇ/×ËÌ¬/ËÙ¶È/TTCÔ¤¾¯ĞĞ/Ä¿±ê¶ªÊ§/Ä£Ê½±êÇ©
 //*****************************************************
 osd_overlay u_osd_overlay(
     .lcd_clk          (lcd_clk),
@@ -215,8 +215,8 @@ osd_overlay u_osd_overlay(
 );
 
 //*****************************************************
-//**  [PLD2026 V3] è½¦è¾†çŠ¶æ€ä»ªè¡¨ç›˜ï¼ˆdash_osdï¼‰ï¼šå³ä¸‹è§’ä¿¯è§†å›¾è½¨è¿¹
-//**  ï¼ˆ64ç‚¹ FIFO + å°è½¦å›¾æ ‡ + 8æ–¹å‘èˆªå‘çº¿ï¼‰+ pitch/roll å§¿æ€æ¡
+//**  [PLD2026 V3] ³µÁ¾×´Ì¬ÒÇ±íÅÌ£¨dash_osd£©£ºÓÒÏÂ½Ç¸©ÊÓÍ¼¹ì¼£
+//**  £¨64µã FIFO + Ğ¡³µÍ¼±ê + 8·½Ïòº½ÏòÏß£©+ pitch/roll ×ËÌ¬Ìõ
 //*****************************************************
 dash_osd u_dash_osd(
     .lcd_clk          (lcd_clk),
@@ -235,6 +235,7 @@ dash_osd u_dash_osd(
     .trk_wr           (trk_wr),
     .trk_x            (trk_x),
     .trk_y            (trk_y),
+    .disp_mode        (disp_mode),   // [V3.2] ¹ì¼£µµ´°ÍâÑ¹°µ+´°¿ò¸ßÁÁ
     .pixel_out        (lcd_rgb_565)
 );
 

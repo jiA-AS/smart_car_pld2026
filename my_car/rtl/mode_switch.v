@@ -1,35 +1,43 @@
 // ============================================================================
-// mode_switch.v â€”â€” æŒ‰é”®æ˜¾ç¤º/è¯†åˆ«æ¨¡å¼åˆ‡æ¢ï¼ˆèµ›é“ä¸‰ï¼šäººæœºäº¤äº’ï¼‰
+// mode_switch.v -- ÏÔÊ¾/Ê¶±ğÄ£Ê½ÇĞ»» V2£¨Ò£¿ØÓÅÏÈ + KEY0 ¶µµ×£©
 //
-// åŠŸèƒ½ï¼šæ¿è½½æŒ‰é”®ï¼ˆä½æœ‰æ•ˆï¼‰çŸ­æŒ‰å¾ªç¯åˆ‡æ¢ä¸‰ç§æ¨¡å¼ï¼š
-//   0 = æ­£å¸¸æ¨¡å¼ï¼šæ ‡å‡†è¯†åˆ«é˜ˆå€¼ + æ ‡å‡† OSD
-//   1 = è°ƒè¯•æ¨¡å¼ï¼šOSD å·¦ä¸Šè§’å¢æ˜¾ä¸¤è·¯ç»¿è‰²åƒç´ è®¡æ•° G1/G2ï¼ˆè°ƒé˜ˆå€¼ä¾æ®ï¼‰
-//   2 = å¤œé—´æ¨¡å¼ï¼šç»¿è‰²é˜ˆå€¼é™æ¡£ï¼ˆå¼±å…‰/å¤œé—´æ¼”ç¤ºï¼‰ï¼ŒOSD å³ä¸Šè§’æ˜¾ç¤º"å¤œé—´"
+// Ä£Ê½ÓïÒå£¨Óë ESP ¶Ë V1.2 Ğ­Òé¡¢OLED Ò³Í¬²½£©£º
+//   0 = ÊÓ½Çµµ£º±ê×¼Ê¶±ğãĞÖµ + È« HUD£¨Ë«Ä¿»­ÃæÎªÖ÷£©
+//   1 = ¹ì¼£µµ£º±ê×¼ãĞÖµ + ¹ì¼£ÒÇ±íÅÌÍ»³ö£¨dash_osd ´°ÍâÑ¹°µ£©
+//   2 = µ÷ÊÔµµ£ºÒ¹¼äãĞÖµ½µµµ£¨Èõ¹â·Å¿í£©+ OSD µ÷ÊÔĞĞ G1/G2 + "Ò¹¼ä"±êÇ©
 //
-// æ¶ˆæŠ–ï¼š20ms åŒå‘æ¶ˆæŠ–ï¼ˆ50MHz Ã— 1_000_000ï¼‰ï¼Œç¡®è®¤åçš„ä¸‹é™æ²¿è®¡ä¸€æ¬¡æŒ‰é”®ã€‚
+// V2 ¸Ä¶¯£ºÄ£Ê½Ô´´Ó"½ö KEY0"¸ÄÎªË«Ô´ÖÙ²Ã--
+//   Ò£¿ØÓÅÏÈ£ºrc_tick£¨sl_parse_done£¬100Hz£©Çı¶¯µÄ 0.5s ¿´ÃÅ¹·£¬ÆÚ¼ä
+//             disp_mode Ö±½ÓÈ¡ rc_mode£¨Ò£¿ØÆ÷×ó²¦¸Ë s1£¬ESP ÉÏĞĞÖ¡½âÎö£©£»
+//   KEY0 ¶µµ×£º³¬¹ı 0.5s ÎŞºÃÖ¡£¨Î´½Ó ESP/µ÷Ì¨Ê±£©×Ô¶¯ÍË»Ø°åÔØ°´¼üÑ­»·¡£
+//   Ò£¿Ø»Ö¸´ÔÚÏßÊ±Á¢¿ÌÇĞ»ØÒ£¿ØµµÎ»£¨ÎŞĞè°´¼ü£©¡£
 //
-// è¾“å‡ºé˜ˆå€¼ç›´æ¥é©±åŠ¨ green_detect çš„ th_g/th_rb è¿è¡Œæ—¶ç«¯å£ï¼ˆV3 èµ·é˜ˆå€¼
-// ä¸å†æ˜¯ç¼–è¯‘æœŸ parameterï¼Œå¯åœ¨çº¿åˆ‡æ¢ï¼‰ã€‚
+// Ïû¶¶£º20ms Ë«ÏòÏû¶¶£¨50MHz ¡Á 1_000_000£©£¬È·ÈÏºóµÄÏÂ½µÑØ¼ÆÒ»´Î°´¼ü¡£
+// Êä³öãĞÖµÖ±½ÓÇı¶¯ green_detect µÄ th_g/th_rb ÔËĞĞÊ±¶Ë¿Ú¡£
 // ============================================================================
 module mode_switch #(
-    parameter [19:0] DEB_CNT      = 20'd1_000_000, // æ¶ˆæŠ–è®¡æ•°ï¼ˆ20ms@50Mï¼‰
-    parameter [ 5:0] NORM_TH_G    = 6'd40,         // æ­£å¸¸/è°ƒè¯•æ¡£ï¼šç»¿ä¸‹é™
-    parameter [ 4:0] NORM_TH_RB   = 5'd12,         //           çº¢è“ä¸Šé™
-    parameter [ 5:0] NIGHT_TH_G   = 6'd28,         // å¤œé—´æ¡£ï¼šæ”¾å®½ç»¿ä¸‹é™
-    parameter [ 4:0] NIGHT_TH_RB  = 5'd18          //          æ”¾å®½çº¢è“ä¸Šé™
+    parameter [19:0] DEB_CNT      = 20'd1_000_000, // Ïû¶¶¼ÆÊı£¨20ms@50M£©
+    parameter [24:0] RC_TIMEOUT   = 25'd25_000_000,// Ò£¿ØÄ£Ê½³¬Ê±£¨0.5s@50M£©
+    parameter [ 5:0] NORM_TH_G    = 6'd40,         // ÊÓ½Ç/¹ì¼£µµ£ºÂÌÏÂÏŞ
+    parameter [ 4:0] NORM_TH_RB   = 5'd12,         //              ºìÀ¶ÉÏÏŞ
+    parameter [ 5:0] NIGHT_TH_G   = 6'd28,         // µ÷ÊÔµµ£º·Å¿íÂÌÏÂÏŞ
+    parameter [ 4:0] NIGHT_TH_RB  = 5'd18          //         ·Å¿íºìÀ¶ÉÏÏŞ
 )(
-    input  wire       clk,        // 50MHzï¼ˆclk_50mï¼‰
+    input  wire       clk,        // 50MHz£¨clk_50m£©
     input  wire       rst_n,
-    input  wire       key_n,      // æŒ‰é”®è¾“å…¥ï¼Œä½æœ‰æ•ˆï¼ˆéœ€ä¸Šæ‹‰ï¼Œè§ XDC è¯´æ˜ï¼‰
-    output reg  [1:0] disp_mode,  // 0=æ­£å¸¸ 1=è°ƒè¯• 2=å¤œé—´
-    output reg  [5:0] th_g,       // å½“å‰ç»¿åˆ†é‡ä¸‹é™ï¼ˆé€ green_detectï¼‰
-    output reg  [4:0] th_rb       // å½“å‰çº¢/è“åˆ†é‡ä¸Šé™ï¼ˆé€ green_detectï¼‰
+    input  wire       key_n,      // °åÔØ°´¼ü KEY0£¬µÍÓĞĞ§£¨ĞèÉÏÀ­£¬¼û XDC ËµÃ÷£©
+    input  wire       rc_tick,    // ÉÏĞĞºÃÖ¡Âö³å£¨sl_parse_done£¬100Hz£©
+    input  wire [1:0] rc_mode,    // Ò£¿ØÏÔÊ¾Ä£Ê½£¨v1_decode V1.2 ½â³ö£©
+    output reg  [1:0] disp_mode,  // 0=ÊÓ½Ç 1=¹ì¼£ 2=µ÷ÊÔ
+    output wire       rc_active,  // 1=µ±Ç°Ä£Ê½À´×ÔÒ£¿Ø£¨µ÷ÊÔÓÃ£¬¿ÉĞü¿Õ£©
+    output reg  [5:0] th_g,       // µ±Ç°ÂÌ·ÖÁ¿ÏÂÏŞ£¨ËÍ green_detect£©
+    output reg  [4:0] th_rb       // µ±Ç°ºì/À¶·ÖÁ¿ÉÏÏŞ£¨ËÍ green_detect£©
 );
 
-// ------------------------- åŒæ­¥ + æ¶ˆæŠ– -------------------------
-reg key_m, key_s;                      // 2 çº§åŒæ­¥ï¼ˆæŒ‰é”®å¼‚æ­¥è¾“å…¥ï¼‰
+// ------------------------- °´¼ü£ºÍ¬²½ + Ïû¶¶ -------------------------
+reg key_m, key_s;                      // 2 ¼¶Í¬²½£¨°´¼üÒì²½ÊäÈë£©
 reg [19:0] deb_cnt;
-reg        key_stable;                 // æ¶ˆæŠ–åç¨³å®šç”µå¹³
+reg        key_stable;                 // Ïû¶¶ºóÎÈ¶¨µçÆ½
 
 always @(posedge clk or negedge rst_n) begin
     if (!rst_n) begin
@@ -40,7 +48,7 @@ always @(posedge clk or negedge rst_n) begin
         key_m <= key_n;  key_s <= key_m;
         if (key_s != key_stable) begin
             if (deb_cnt >= DEB_CNT - 20'd1) begin
-                key_stable <= key_s;   // ç¨³å®š 20ms æ‰ç¡®è®¤
+                key_stable <= key_s;   // ÎÈ¶¨ 20ms ²ÅÈ·ÈÏ
                 deb_cnt    <= 20'd0;
             end
             else deb_cnt <= deb_cnt + 20'd1;
@@ -49,21 +57,40 @@ always @(posedge clk or negedge rst_n) begin
     end
 end
 
-// ------------------------- ä¸‹é™æ²¿æ£€æµ‹ â†’ æ¨¡å¼å¾ªç¯ -------------------------
-reg key_d1;
+// ------------------------- KEY0 ±¾µØÄ£Ê½£¨¶µµ×ÓÃ£© -------------------------
+reg       key_d1;
+reg [1:0] key_mode;
+
 always @(posedge clk or negedge rst_n) begin
     if (!rst_n) begin
-        key_d1    <= 1'b1;
-        disp_mode <= 2'd0;
+        key_d1   <= 1'b1;
+        key_mode <= 2'd0;
     end
     else begin
         key_d1 <= key_stable;
-        if (key_d1 && !key_stable)     // ç¡®è®¤æŒ‰ä¸‹
-            disp_mode <= (disp_mode == 2'd2) ? 2'd0 : disp_mode + 2'd1;
+        if (key_d1 && !key_stable)     // È·ÈÏ°´ÏÂ
+            key_mode <= (key_mode == 2'd2) ? 2'd0 : key_mode + 2'd1;
     end
 end
 
-// ------------------------- æ¨¡å¼ â†’ é˜ˆå€¼ -------------------------
+// ------------------------- Ò£¿Ø¿´ÃÅ¹·£º0.5s ÎŞºÃÖ¡ ¡ú ÍË»Ø KEY0 -------------------------
+reg [24:0] rc_cnt;
+
+always @(posedge clk or negedge rst_n) begin
+    if (!rst_n)        rc_cnt <= RC_TIMEOUT;      // ÉÏµçÄ¬ÈÏ"Ò£¿Ø²»ÔÚÏß"¡ú KEY0
+    else if (rc_tick)  rc_cnt <= 25'd0;
+    else if (rc_cnt < RC_TIMEOUT) rc_cnt <= rc_cnt + 25'd1;
+end
+
+assign rc_active = (rc_cnt < RC_TIMEOUT);
+
+// ------------------------- Ä£Ê½ÖÙ²Ã£ºÒ£¿ØÓÅÏÈ -------------------------
+always @(posedge clk or negedge rst_n) begin
+    if (!rst_n) disp_mode <= 2'd0;
+    else        disp_mode <= rc_active ? rc_mode : key_mode;
+end
+
+// ------------------------- Ä£Ê½ ¡ú ãĞÖµ -------------------------
 always @(*) begin
     case (disp_mode)
         2'd2:    begin th_g = NIGHT_TH_G;  th_rb = NIGHT_TH_RB;  end

@@ -64,11 +64,6 @@ read_verilog -library xil_defaultlib {
   E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/v1_decode.v
   E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v
 }
-read_ip -quiet E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/rd_fifo/rd_fifo.xci
-set_property used_in_implementation false [get_files -all e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/rd_fifo/rd_fifo.xdc]
-set_property used_in_implementation false [get_files -all e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/rd_fifo/rd_fifo_clocks.xdc]
-set_property used_in_implementation false [get_files -all e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/rd_fifo/rd_fifo_ooc.xdc]
-
 read_ip -quiet E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
 set_property used_in_implementation false [get_files -all e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
 set_property used_in_implementation false [get_files -all e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
@@ -83,6 +78,11 @@ set_property used_in_implementation false [get_files -all e:/FPGA/project/smart_
 set_property used_in_implementation false [get_files -all e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/wr_fifo/wr_fifo_clocks.xdc]
 set_property used_in_implementation false [get_files -all e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/wr_fifo/wr_fifo_ooc.xdc]
 
+read_ip -quiet E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/rd_fifo/rd_fifo.xci
+set_property used_in_implementation false [get_files -all e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/rd_fifo/rd_fifo.xdc]
+set_property used_in_implementation false [get_files -all e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/rd_fifo/rd_fifo_clocks.xdc]
+set_property used_in_implementation false [get_files -all e:/FPGA/project/smart_car_pld2026/my_car/prj/prj.srcs/sources_1/ip/rd_fifo/rd_fifo_ooc.xdc]
+
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
 # design are intentionally left as such for best results. Dcp files will be
@@ -94,8 +94,6 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 read_xdc E:/FPGA/project/smart_car_pld2026/my_car/prj/constrs_1/new/pin.xdc
 set_property used_in_implementation false [get_files E:/FPGA/project/smart_car_pld2026/my_car/prj/constrs_1/new/pin.xdc]
 
-read_xdc dont_touch.xdc
-set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
 

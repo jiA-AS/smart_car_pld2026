@@ -1,2 +1,0 @@
-s         lcd_clk       box_found       4240 -2147483648 -2147483648       4240
-t         lcd_clk u_lcd_rgb_top/u_osd_overlay/f1b       2540 -2147483648 -2147483648       2540
