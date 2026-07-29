@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Wed Jul 29 23:05:15 2026
+| Date         : Thu Jul 30 02:10:30 2026
 | Host         : LAPTOP-2K88VM5F running 64-bit major release  (build 9200)
 | Command      : report_methodology -file top_dual_ov5640_lcd_methodology_drc_routed.rpt -pb top_dual_ov5640_lcd_methodology_drc_routed.pb -rpx top_dual_ov5640_lcd_methodology_drc_routed.rpx
 | Design       : top_dual_ov5640_lcd
@@ -23,18 +23,18 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 1175
+             Violations found: 1223
 +-----------+----------+--------------------------------------------------------+------------+
 | Rule      | Severity | Description                                            | Violations |
 +-----------+----------+--------------------------------------------------------+------------+
-| DPIR-1    | Warning  | Asynchronous driver check                              | 22         |
-| LUTAR-1   | Warning  | LUT drives async reset alert                           | 32         |
+| DPIR-1    | Warning  | Asynchronous driver check                              | 70         |
+| LUTAR-1   | Warning  | LUT drives async reset alert                           | 36         |
 | PDRC-190  | Warning  | Suboptimally placed synchronized register chain        | 16         |
 | SYNTH-13  | Warning  | combinational multiplier                               | 4          |
 | TIMING-6  | Warning  | No common primary clock between related clocks         | 4          |
 | TIMING-7  | Warning  | No common node between related clocks                  | 4          |
 | TIMING-14 | Warning  | LUT on the clock tree                                  | 3          |
-| TIMING-16 | Warning  | Large setup violation                                  | 20         |
+| TIMING-16 | Warning  | Large setup violation                                  | 16         |
 | TIMING-17 | Warning  | Non-clocked sequential cell                            | 995        |
 | TIMING-18 | Warning  | Missing input or output delay                          | 39         |
 | XDCB-5    | Warning  | Runtime inefficient way to find pin objects            | 1          |
@@ -153,247 +153,507 @@ Related violations: <none>
 
 DPIR-1#22 Warning
 Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[0] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#23 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[10] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#24 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[11] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#25 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[12] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#26 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[13] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#27 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[14] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#28 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[15] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#29 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[16] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#30 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[17] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#31 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[18] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#32 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[19] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#33 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[1] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#34 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[20] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#35 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[21] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#36 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[22] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#37 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[23] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#38 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[24] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#39 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[25] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#40 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[26] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#41 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[27] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#42 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[28] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#43 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[29] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#44 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[2] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#45 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[30] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#46 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[31] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#47 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[32] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#48 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[33] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#49 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[34] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#50 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[35] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#51 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[36] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#52 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[37] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#53 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[38] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#54 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[39] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#55 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[3] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#56 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[40] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#57 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[41] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#58 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[42] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#59 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[43] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#60 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[44] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#61 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[45] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#62 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[46] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#63 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[47] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#64 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[4] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#65 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[5] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#66 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[6] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#67 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[7] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#68 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[8] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#69 Warning
+Asynchronous driver check  
+DSP u_sensor_calc/ang_sum input pin u_sensor_calc/ang_sum/C[9] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#70 Warning
+Asynchronous driver check  
 DSP u_sensor_link/u_tracker/base_d0 input pin u_sensor_link/u_tracker/base_d0/A[0] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
 Related violations: <none>
 
 LUTAR-1#1 Warning
 LUT drives async reset alert  
-LUT cell u_ddr3_top/c2va[9]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_osd_overlay/b2Ya_reg[0]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Ya_reg[1]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Ya_reg[2]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Ya_reg[3]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Ya_reg[4]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Ya_reg[5]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Ya_reg[6]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Ya_reg[7]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Ya_reg[8]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Ya_reg[9]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Yb_reg[0]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Yb_reg[1]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Yb_reg[2]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Yb_reg[3]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Yb_reg[4]/CLR (the first 15 of 91 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_attitude_cf/FSM_sequential_state[2]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) pch_a_reg[10]_i_2/CLR, rol_a_reg[8]_i_3/CLR, u_attitude_cf/FSM_sequential_state_reg[0]/CLR, u_attitude_cf/FSM_sequential_state_reg[1]/CLR, u_attitude_cf/FSM_sequential_state_reg[2]/CLR, u_attitude_cf/bias_qy_reg[0]/CLR, u_attitude_cf/bias_qy_reg[10]/CLR, u_attitude_cf/bias_qy_reg[11]/CLR, u_attitude_cf/bias_qy_reg[12]/CLR, u_attitude_cf/bias_qy_reg[13]/CLR, u_attitude_cf/bias_qy_reg[14]/CLR, u_attitude_cf/bias_qy_reg[15]/CLR, u_attitude_cf/bias_qy_reg[16]/CLR, u_attitude_cf/bias_qy_reg[17]/CLR, u_attitude_cf/bias_qy_reg[18]/CLR (the first 15 of 87 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#2 Warning
 LUT drives async reset alert  
-LUT cell u_ddr3_top/data_req_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_lcd_driver/data_req_0_reg/CLR, u_lcd_rgb_top/u_lcd_driver/data_req_reg/CLR, u_lcd_rgb_top/u_lcd_driver/h_cnt_reg[0]/CLR, u_lcd_rgb_top/u_lcd_driver/h_cnt_reg[10]/CLR, u_lcd_rgb_top/u_lcd_driver/h_cnt_reg[1]/CLR, u_lcd_rgb_top/u_lcd_driver/h_cnt_reg[2]/CLR, u_lcd_rgb_top/u_lcd_driver/h_cnt_reg[3]/CLR, u_lcd_rgb_top/u_lcd_driver/h_cnt_reg[4]/CLR, u_lcd_rgb_top/u_lcd_driver/h_cnt_reg[5]/CLR, u_lcd_rgb_top/u_lcd_driver/h_cnt_reg[6]/CLR, u_lcd_rgb_top/u_lcd_driver/h_cnt_reg[7]/CLR, u_lcd_rgb_top/u_lcd_driver/h_cnt_reg[8]/CLR, u_lcd_rgb_top/u_lcd_driver/h_cnt_reg[9]/CLR, u_lcd_rgb_top/u_lcd_driver/pixel_xpos_reg[0]/CLR, u_lcd_rgb_top/u_lcd_driver/pixel_xpos_reg[10]/CLR (the first 15 of 68 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_attitude_cf/quo[14]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_attitude_cf/acc_p_cdeg_reg[0]/CLR, u_attitude_cf/acc_p_cdeg_reg[10]/CLR, u_attitude_cf/acc_p_cdeg_reg[11]/CLR, u_attitude_cf/acc_p_cdeg_reg[12]/CLR, u_attitude_cf/acc_p_cdeg_reg[15]/CLR, u_attitude_cf/acc_p_cdeg_reg[1]/CLR, u_attitude_cf/acc_p_cdeg_reg[2]/CLR, u_attitude_cf/acc_p_cdeg_reg[3]/CLR, u_attitude_cf/acc_p_cdeg_reg[4]/CLR, u_attitude_cf/acc_p_cdeg_reg[5]/CLR, u_attitude_cf/acc_p_cdeg_reg[6]/CLR, u_attitude_cf/acc_p_cdeg_reg[7]/CLR, u_attitude_cf/acc_p_cdeg_reg[8]/CLR, u_attitude_cf/acc_p_cdeg_reg[9]/CLR, u_attitude_cf/bias_qx_reg[10]/CLR (the first 15 of 87 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#3 Warning
 LUT drives async reset alert  
-LUT cell u_ddr3_top/e0a[31]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_osd_overlay/e0a_reg[0]/CLR, u_lcd_rgb_top/u_osd_overlay/e0a_reg[10]/CLR, u_lcd_rgb_top/u_osd_overlay/e0a_reg[11]/CLR, u_lcd_rgb_top/u_osd_overlay/e0a_reg[12]/CLR, u_lcd_rgb_top/u_osd_overlay/e0a_reg[13]/CLR, u_lcd_rgb_top/u_osd_overlay/e0a_reg[14]/CLR, u_lcd_rgb_top/u_osd_overlay/e0a_reg[15]/CLR, u_lcd_rgb_top/u_osd_overlay/e0a_reg[16]/CLR, u_lcd_rgb_top/u_osd_overlay/e0a_reg[17]/CLR, u_lcd_rgb_top/u_osd_overlay/e0a_reg[18]/CLR, u_lcd_rgb_top/u_osd_overlay/e0a_reg[19]/CLR, u_lcd_rgb_top/u_osd_overlay/e0a_reg[1]/CLR, u_lcd_rgb_top/u_osd_overlay/e0a_reg[20]/CLR, u_lcd_rgb_top/u_osd_overlay/e0a_reg[21]/CLR, u_lcd_rgb_top/u_osd_overlay/e0a_reg[22]/CLR (the first 15 of 66 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_attitude_cf/ratio_p[9]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_attitude_cf/bias_qx_reg[0]/CLR, u_attitude_cf/bias_qx_reg[1]/CLR, u_attitude_cf/bias_qx_reg[2]/CLR, u_attitude_cf/bias_qx_reg[3]/CLR, u_attitude_cf/bias_qz_reg[0]/CLR, u_attitude_cf/bias_qz_reg[1]/CLR, u_attitude_cf/ratio_p_reg[0]/CLR, u_attitude_cf/ratio_p_reg[3]/CLR, u_attitude_cf/ratio_p_reg[4]/CLR, u_attitude_cf/ratio_p_reg[5]/CLR, u_attitude_cf/ratio_p_reg[6]/CLR, u_attitude_cf/ratio_p_reg[7]/CLR, u_attitude_cf/ratio_p_reg[8]/CLR, u_attitude_cf/ratio_p_reg[9]/CLR, u_attitude_cf/ratio_r_reg[0]/CLR (the first 15 of 87 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#4 Warning
 LUT drives async reset alert  
-LUT cell u_ddr3_top/e1b[31]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_osd_overlay/e1a_reg[0]/CLR, u_lcd_rgb_top/u_osd_overlay/e1a_reg[10]/CLR, u_lcd_rgb_top/u_osd_overlay/e1a_reg[11]/CLR, u_lcd_rgb_top/u_osd_overlay/e1a_reg[12]/CLR, u_lcd_rgb_top/u_osd_overlay/e1a_reg[13]/CLR, u_lcd_rgb_top/u_osd_overlay/e1a_reg[14]/CLR, u_lcd_rgb_top/u_osd_overlay/e1a_reg[15]/CLR, u_lcd_rgb_top/u_osd_overlay/e1a_reg[16]/CLR, u_lcd_rgb_top/u_osd_overlay/e1a_reg[17]/CLR, u_lcd_rgb_top/u_osd_overlay/e1a_reg[18]/CLR, u_lcd_rgb_top/u_osd_overlay/e1a_reg[19]/CLR, u_lcd_rgb_top/u_osd_overlay/e1a_reg[1]/CLR, u_lcd_rgb_top/u_osd_overlay/e1a_reg[20]/CLR, u_lcd_rgb_top/u_osd_overlay/e1a_reg[21]/CLR, u_lcd_rgb_top/u_osd_overlay/e1a_reg[22]/CLR (the first 15 of 65 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_ddr3_top/c2va[9]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_osd_overlay/b2Ya_reg[0]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Ya_reg[1]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Ya_reg[2]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Ya_reg[3]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Ya_reg[4]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Ya_reg[5]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Ya_reg[6]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Ya_reg[7]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Ya_reg[8]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Ya_reg[9]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Yb_reg[0]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Yb_reg[1]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Yb_reg[2]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Yb_reg[3]/CLR, u_lcd_rgb_top/u_osd_overlay/b2Yb_reg[4]/CLR (the first 15 of 91 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#5 Warning
 LUT drives async reset alert  
-LUT cell u_ddr3_top/e2b[31]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_osd_overlay/e2a_reg[0]/CLR, u_lcd_rgb_top/u_osd_overlay/e2a_reg[10]/CLR, u_lcd_rgb_top/u_osd_overlay/e2a_reg[11]/CLR, u_lcd_rgb_top/u_osd_overlay/e2a_reg[12]/CLR, u_lcd_rgb_top/u_osd_overlay/e2a_reg[13]/CLR, u_lcd_rgb_top/u_osd_overlay/e2a_reg[14]/CLR, u_lcd_rgb_top/u_osd_overlay/e2a_reg[15]/CLR, u_lcd_rgb_top/u_osd_overlay/e2a_reg[16]/CLR, u_lcd_rgb_top/u_osd_overlay/e2a_reg[17]/CLR, u_lcd_rgb_top/u_osd_overlay/e2a_reg[18]/CLR, u_lcd_rgb_top/u_osd_overlay/e2a_reg[19]/CLR, u_lcd_rgb_top/u_osd_overlay/e2a_reg[1]/CLR, u_lcd_rgb_top/u_osd_overlay/e2a_reg[20]/CLR, u_lcd_rgb_top/u_osd_overlay/e2a_reg[21]/CLR, u_lcd_rgb_top/u_osd_overlay/e2a_reg[22]/CLR (the first 15 of 68 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_ddr3_top/e0a[31]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_osd_overlay/e0a_reg[0]/CLR, u_lcd_rgb_top/u_osd_overlay/e0a_reg[10]/CLR, u_lcd_rgb_top/u_osd_overlay/e0a_reg[11]/CLR, u_lcd_rgb_top/u_osd_overlay/e0a_reg[12]/CLR, u_lcd_rgb_top/u_osd_overlay/e0a_reg[13]/CLR, u_lcd_rgb_top/u_osd_overlay/e0a_reg[14]/CLR, u_lcd_rgb_top/u_osd_overlay/e0a_reg[15]/CLR, u_lcd_rgb_top/u_osd_overlay/e0a_reg[16]/CLR, u_lcd_rgb_top/u_osd_overlay/e0a_reg[17]/CLR, u_lcd_rgb_top/u_osd_overlay/e0a_reg[18]/CLR, u_lcd_rgb_top/u_osd_overlay/e0a_reg[19]/CLR, u_lcd_rgb_top/u_osd_overlay/e0a_reg[1]/CLR, u_lcd_rgb_top/u_osd_overlay/e0a_reg[20]/CLR, u_lcd_rgb_top/u_osd_overlay/e0a_reg[21]/CLR, u_lcd_rgb_top/u_osd_overlay/e0a_reg[22]/CLR (the first 15 of 66 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#6 Warning
 LUT drives async reset alert  
-LUT cell u_ddr3_top/e3b[31]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_osd_overlay/e3a_reg[0]/CLR, u_lcd_rgb_top/u_osd_overlay/e3a_reg[10]/CLR, u_lcd_rgb_top/u_osd_overlay/e3a_reg[11]/CLR, u_lcd_rgb_top/u_osd_overlay/e3a_reg[12]/CLR, u_lcd_rgb_top/u_osd_overlay/e3a_reg[13]/CLR, u_lcd_rgb_top/u_osd_overlay/e3a_reg[14]/CLR, u_lcd_rgb_top/u_osd_overlay/e3a_reg[15]/CLR, u_lcd_rgb_top/u_osd_overlay/e3a_reg[16]/CLR, u_lcd_rgb_top/u_osd_overlay/e3a_reg[17]/CLR, u_lcd_rgb_top/u_osd_overlay/e3a_reg[18]/CLR, u_lcd_rgb_top/u_osd_overlay/e3a_reg[19]/CLR, u_lcd_rgb_top/u_osd_overlay/e3a_reg[1]/CLR, u_lcd_rgb_top/u_osd_overlay/e3a_reg[20]/CLR, u_lcd_rgb_top/u_osd_overlay/e3a_reg[21]/CLR, u_lcd_rgb_top/u_osd_overlay/e3a_reg[22]/CLR (the first 15 of 64 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_ddr3_top/e1b[31]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_osd_overlay/e1a_reg[0]/CLR, u_lcd_rgb_top/u_osd_overlay/e1a_reg[10]/CLR, u_lcd_rgb_top/u_osd_overlay/e1a_reg[11]/CLR, u_lcd_rgb_top/u_osd_overlay/e1a_reg[12]/CLR, u_lcd_rgb_top/u_osd_overlay/e1a_reg[13]/CLR, u_lcd_rgb_top/u_osd_overlay/e1a_reg[14]/CLR, u_lcd_rgb_top/u_osd_overlay/e1a_reg[15]/CLR, u_lcd_rgb_top/u_osd_overlay/e1a_reg[16]/CLR, u_lcd_rgb_top/u_osd_overlay/e1a_reg[17]/CLR, u_lcd_rgb_top/u_osd_overlay/e1a_reg[18]/CLR, u_lcd_rgb_top/u_osd_overlay/e1a_reg[19]/CLR, u_lcd_rgb_top/u_osd_overlay/e1a_reg[1]/CLR, u_lcd_rgb_top/u_osd_overlay/e1a_reg[20]/CLR, u_lcd_rgb_top/u_osd_overlay/e1a_reg[21]/CLR, u_lcd_rgb_top/u_osd_overlay/e1a_reg[22]/CLR (the first 15 of 65 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#7 Warning
 LUT drives async reset alert  
-LUT cell u_ddr3_top/fifo_x[1][15]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_dash_osd/dm_a_reg[0]/CLR, u_lcd_rgb_top/u_dash_osd/dm_a_reg[1]/CLR, u_lcd_rgb_top/u_dash_osd/dm_b_reg[0]/CLR, u_lcd_rgb_top/u_dash_osd/dm_b_reg[1]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[0][0]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[0][10]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[0][11]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[0][12]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[0][13]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[0][14]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[0][15]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[0][1]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[0][2]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[0][3]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[0][4]/CLR (the first 15 of 117 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_ddr3_top/e2b[31]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_osd_overlay/e2a_reg[0]/CLR, u_lcd_rgb_top/u_osd_overlay/e2a_reg[10]/CLR, u_lcd_rgb_top/u_osd_overlay/e2a_reg[11]/CLR, u_lcd_rgb_top/u_osd_overlay/e2a_reg[12]/CLR, u_lcd_rgb_top/u_osd_overlay/e2a_reg[13]/CLR, u_lcd_rgb_top/u_osd_overlay/e2a_reg[14]/CLR, u_lcd_rgb_top/u_osd_overlay/e2a_reg[15]/CLR, u_lcd_rgb_top/u_osd_overlay/e2a_reg[16]/CLR, u_lcd_rgb_top/u_osd_overlay/e2a_reg[17]/CLR, u_lcd_rgb_top/u_osd_overlay/e2a_reg[18]/CLR, u_lcd_rgb_top/u_osd_overlay/e2a_reg[19]/CLR, u_lcd_rgb_top/u_osd_overlay/e2a_reg[1]/CLR, u_lcd_rgb_top/u_osd_overlay/e2a_reg[20]/CLR, u_lcd_rgb_top/u_osd_overlay/e2a_reg[21]/CLR, u_lcd_rgb_top/u_osd_overlay/e2a_reg[22]/CLR (the first 15 of 68 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#8 Warning
 LUT drives async reset alert  
-LUT cell u_ddr3_top/fifo_x[2][14]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_osd_overlay/dmm_a_reg[10]/CLR, u_lcd_rgb_top/u_osd_overlay/dmm_a_reg[11]/CLR, u_lcd_rgb_top/u_osd_overlay/dmm_a_reg[12]/CLR, u_lcd_rgb_top/u_osd_overlay/dmm_a_reg[13]/CLR, u_lcd_rgb_top/u_osd_overlay/dmm_a_reg[2]/CLR, u_lcd_rgb_top/u_osd_overlay/dmm_a_reg[3]/CLR, u_lcd_rgb_top/u_osd_overlay/dmm_a_reg[4]/CLR, u_lcd_rgb_top/u_osd_overlay/dmm_a_reg[5]/CLR, u_lcd_rgb_top/u_osd_overlay/dmm_a_reg[6]/CLR, u_lcd_rgb_top/u_osd_overlay/dmm_a_reg[7]/CLR, u_lcd_rgb_top/u_osd_overlay/dmm_a_reg[8]/CLR, u_lcd_rgb_top/u_osd_overlay/dmm_a_reg[9]/CLR, u_lcd_rgb_top/u_osd_overlay/dmm_b_reg[10]/CLR, u_lcd_rgb_top/u_osd_overlay/dmm_b_reg[11]/CLR, u_lcd_rgb_top/u_osd_overlay/dmm_b_reg[12]/CLR (the first 15 of 117 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_ddr3_top/e3b[31]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_osd_overlay/e3a_reg[0]/CLR, u_lcd_rgb_top/u_osd_overlay/e3a_reg[10]/CLR, u_lcd_rgb_top/u_osd_overlay/e3a_reg[11]/CLR, u_lcd_rgb_top/u_osd_overlay/e3a_reg[12]/CLR, u_lcd_rgb_top/u_osd_overlay/e3a_reg[13]/CLR, u_lcd_rgb_top/u_osd_overlay/e3a_reg[14]/CLR, u_lcd_rgb_top/u_osd_overlay/e3a_reg[15]/CLR, u_lcd_rgb_top/u_osd_overlay/e3a_reg[16]/CLR, u_lcd_rgb_top/u_osd_overlay/e3a_reg[17]/CLR, u_lcd_rgb_top/u_osd_overlay/e3a_reg[18]/CLR, u_lcd_rgb_top/u_osd_overlay/e3a_reg[19]/CLR, u_lcd_rgb_top/u_osd_overlay/e3a_reg[1]/CLR, u_lcd_rgb_top/u_osd_overlay/e3a_reg[20]/CLR, u_lcd_rgb_top/u_osd_overlay/e3a_reg[21]/CLR, u_lcd_rgb_top/u_osd_overlay/e3a_reg[22]/CLR (the first 15 of 64 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#9 Warning
 LUT drives async reset alert  
-LUT cell u_ddr3_top/fifo_x[2][7]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_dash_osd/fifo_x_reg[2][0]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[2][1]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[2][2]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[2][3]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[2][4]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[2][5]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[2][6]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[2][7]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[3][0]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[3][4]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[3][5]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[3][6]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[3][7]/CLR, u_lcd_rgb_top/u_dash_osd/pin_d_reg[11]/CLR, u_lcd_rgb_top/u_dash_osd/pin_d_reg[12]/CLR (the first 15 of 117 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_ddr3_top/fifo_x[1][15]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_dash_osd/dm_a_reg[0]/CLR, u_lcd_rgb_top/u_dash_osd/dm_a_reg[1]/CLR, u_lcd_rgb_top/u_dash_osd/dm_b_reg[0]/CLR, u_lcd_rgb_top/u_dash_osd/dm_b_reg[1]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[0][0]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[0][10]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[0][11]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[0][12]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[0][13]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[0][14]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[0][15]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[0][1]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[0][2]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[0][3]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[0][4]/CLR (the first 15 of 117 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#10 Warning
 LUT drives async reset alert  
-LUT cell u_ddr3_top/fifo_x[3][3]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_dash_osd/fifo_x_reg[10][0]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[10][1]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[10][2]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[10][3]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[10][4]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[10][5]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[10][6]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[10][7]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[11][0]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[11][10]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[11][11]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[11][1]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[11][2]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[11][3]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[11][4]/CLR (the first 15 of 117 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_ddr3_top/fifo_x[2][14]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_osd_overlay/dmm_a_reg[10]/CLR, u_lcd_rgb_top/u_osd_overlay/dmm_a_reg[11]/CLR, u_lcd_rgb_top/u_osd_overlay/dmm_a_reg[12]/CLR, u_lcd_rgb_top/u_osd_overlay/dmm_a_reg[13]/CLR, u_lcd_rgb_top/u_osd_overlay/dmm_a_reg[2]/CLR, u_lcd_rgb_top/u_osd_overlay/dmm_a_reg[3]/CLR, u_lcd_rgb_top/u_osd_overlay/dmm_a_reg[4]/CLR, u_lcd_rgb_top/u_osd_overlay/dmm_a_reg[5]/CLR, u_lcd_rgb_top/u_osd_overlay/dmm_a_reg[6]/CLR, u_lcd_rgb_top/u_osd_overlay/dmm_a_reg[7]/CLR, u_lcd_rgb_top/u_osd_overlay/dmm_a_reg[8]/CLR, u_lcd_rgb_top/u_osd_overlay/dmm_a_reg[9]/CLR, u_lcd_rgb_top/u_osd_overlay/dmm_b_reg[10]/CLR, u_lcd_rgb_top/u_osd_overlay/dmm_b_reg[11]/CLR, u_lcd_rgb_top/u_osd_overlay/dmm_b_reg[12]/CLR (the first 15 of 117 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#11 Warning
 LUT drives async reset alert  
-LUT cell u_ddr3_top/fifo_y[1][14]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_dash_osd/fifo_y_reg[10][15]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[11][15]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[12][15]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[13][15]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[14][15]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[15][15]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[16][15]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[17][15]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[18][15]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[19][15]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[1][13]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[1][14]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[20][15]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[21][15]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[22][15]/CLR (the first 15 of 100 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_ddr3_top/fifo_x[2][7]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_dash_osd/fifo_x_reg[2][0]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[2][1]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[2][2]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[2][3]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[2][4]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[2][5]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[2][6]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[2][7]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[3][0]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[3][4]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[3][5]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[3][6]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[3][7]/CLR, u_lcd_rgb_top/u_dash_osd/pin_d_reg[11]/CLR, u_lcd_rgb_top/u_dash_osd/pin_d_reg[12]/CLR (the first 15 of 117 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#12 Warning
 LUT drives async reset alert  
-LUT cell u_ddr3_top/fifo_y[25][7]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_osd_overlay/dmm_a_reg[0]/CLR, u_lcd_rgb_top/u_osd_overlay/dmm_a_reg[1]/CLR, u_lcd_rgb_top/u_osd_overlay/dmm_b_reg[0]/CLR, u_lcd_rgb_top/u_osd_overlay/dmm_b_reg[1]/CLR, u_lcd_rgb_top/u_osd_overlay/dmm_b_reg[2]/CLR, u_lcd_rgb_top/u_osd_overlay/spd_a_reg[0]/CLR, u_lcd_rgb_top/u_osd_overlay/spd_a_reg[10]/CLR, u_lcd_rgb_top/u_osd_overlay/spd_a_reg[11]/CLR, u_lcd_rgb_top/u_osd_overlay/spd_a_reg[12]/CLR, u_lcd_rgb_top/u_osd_overlay/spd_a_reg[13]/CLR, u_lcd_rgb_top/u_osd_overlay/spd_a_reg[14]/CLR, u_lcd_rgb_top/u_osd_overlay/spd_a_reg[15]/CLR, u_lcd_rgb_top/u_osd_overlay/spd_a_reg[1]/CLR, u_lcd_rgb_top/u_osd_overlay/spd_a_reg[2]/CLR, u_lcd_rgb_top/u_osd_overlay/spd_a_reg[3]/CLR (the first 15 of 68 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_ddr3_top/fifo_x[3][3]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_dash_osd/fifo_x_reg[10][0]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[10][1]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[10][2]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[10][3]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[10][4]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[10][5]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[10][6]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[10][7]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[11][0]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[11][10]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[11][11]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[11][1]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[11][2]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[11][3]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[11][4]/CLR (the first 15 of 117 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#13 Warning
 LUT drives async reset alert  
-LUT cell u_ddr3_top/fifo_y[2][7]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_dash_osd/fifo_y_reg[10][0]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[24][1]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[24][2]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[24][3]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[24][4]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[24][5]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[24][6]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[24][7]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[25][1]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[25][2]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[25][3]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[25][4]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[25][5]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[26][1]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[26][2]/CLR (the first 15 of 90 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_ddr3_top/fifo_y[1][14]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_dash_osd/fifo_y_reg[10][15]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[11][15]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[12][15]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[13][15]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[14][15]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[15][15]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[16][15]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[17][15]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[18][15]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[19][15]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[1][13]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[1][14]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[20][15]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[21][15]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[22][15]/CLR (the first 15 of 100 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#14 Warning
 LUT drives async reset alert  
-LUT cell u_ddr3_top/gxa[15]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_osd_overlay/gxa_reg[0]/CLR, u_lcd_rgb_top/u_osd_overlay/gxa_reg[10]/CLR, u_lcd_rgb_top/u_osd_overlay/gxa_reg[11]/CLR, u_lcd_rgb_top/u_osd_overlay/gxa_reg[12]/CLR, u_lcd_rgb_top/u_osd_overlay/gxa_reg[13]/CLR, u_lcd_rgb_top/u_osd_overlay/gxa_reg[14]/CLR, u_lcd_rgb_top/u_osd_overlay/gxa_reg[15]/CLR, u_lcd_rgb_top/u_osd_overlay/gxa_reg[1]/CLR, u_lcd_rgb_top/u_osd_overlay/gxa_reg[2]/CLR, u_lcd_rgb_top/u_osd_overlay/gxa_reg[3]/CLR, u_lcd_rgb_top/u_osd_overlay/gxa_reg[4]/CLR, u_lcd_rgb_top/u_osd_overlay/gxa_reg[5]/CLR, u_lcd_rgb_top/u_osd_overlay/gxa_reg[6]/CLR, u_lcd_rgb_top/u_osd_overlay/gxa_reg[7]/CLR, u_lcd_rgb_top/u_osd_overlay/gxa_reg[8]/CLR (the first 15 of 96 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_ddr3_top/fifo_y[25][7]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_osd_overlay/dmm_a_reg[0]/CLR, u_lcd_rgb_top/u_osd_overlay/dmm_a_reg[1]/CLR, u_lcd_rgb_top/u_osd_overlay/dmm_b_reg[0]/CLR, u_lcd_rgb_top/u_osd_overlay/dmm_b_reg[1]/CLR, u_lcd_rgb_top/u_osd_overlay/dmm_b_reg[2]/CLR, u_lcd_rgb_top/u_osd_overlay/spd_a_reg[0]/CLR, u_lcd_rgb_top/u_osd_overlay/spd_a_reg[10]/CLR, u_lcd_rgb_top/u_osd_overlay/spd_a_reg[11]/CLR, u_lcd_rgb_top/u_osd_overlay/spd_a_reg[12]/CLR, u_lcd_rgb_top/u_osd_overlay/spd_a_reg[13]/CLR, u_lcd_rgb_top/u_osd_overlay/spd_a_reg[14]/CLR, u_lcd_rgb_top/u_osd_overlay/spd_a_reg[15]/CLR, u_lcd_rgb_top/u_osd_overlay/spd_a_reg[1]/CLR, u_lcd_rgb_top/u_osd_overlay/spd_a_reg[2]/CLR, u_lcd_rgb_top/u_osd_overlay/spd_a_reg[3]/CLR (the first 15 of 68 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#15 Warning
 LUT drives async reset alert  
-LUT cell u_ddr3_top/px_a[31]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_osd_overlay/blink_cnt_reg[0]/CLR, u_lcd_rgb_top/u_osd_overlay/blink_cnt_reg[10]/CLR, u_lcd_rgb_top/u_osd_overlay/blink_cnt_reg[11]/CLR, u_lcd_rgb_top/u_osd_overlay/blink_cnt_reg[12]/CLR, u_lcd_rgb_top/u_osd_overlay/blink_cnt_reg[13]/CLR, u_lcd_rgb_top/u_osd_overlay/blink_cnt_reg[14]/CLR, u_lcd_rgb_top/u_osd_overlay/blink_cnt_reg[15]/CLR, u_lcd_rgb_top/u_osd_overlay/blink_cnt_reg[16]/CLR, u_lcd_rgb_top/u_osd_overlay/blink_cnt_reg[17]/CLR, u_lcd_rgb_top/u_osd_overlay/blink_cnt_reg[18]/CLR, u_lcd_rgb_top/u_osd_overlay/blink_cnt_reg[19]/CLR, u_lcd_rgb_top/u_osd_overlay/blink_cnt_reg[1]/CLR, u_lcd_rgb_top/u_osd_overlay/blink_cnt_reg[20]/CLR, u_lcd_rgb_top/u_osd_overlay/blink_cnt_reg[21]/CLR, u_lcd_rgb_top/u_osd_overlay/blink_cnt_reg[22]/CLR (the first 15 of 117 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_ddr3_top/fifo_y[2][7]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_dash_osd/fifo_y_reg[10][0]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[24][1]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[24][2]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[24][3]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[24][4]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[24][5]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[24][6]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[24][7]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[25][1]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[25][2]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[25][3]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[25][4]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[25][5]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[26][1]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[26][2]/CLR (the first 15 of 90 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#16 Warning
 LUT drives async reset alert  
-LUT cell u_ddr3_top/px_a[3]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_dash_osd/fifo_x_reg[13][1]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[13][2]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[13][3]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[14][1]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[14][2]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[14][3]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[15][1]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[15][2]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[15][3]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[15][4]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[15][5]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[15][6]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[15][7]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[16][0]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[16][1]/CLR (the first 15 of 117 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_ddr3_top/gxa[15]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_osd_overlay/gxa_reg[0]/CLR, u_lcd_rgb_top/u_osd_overlay/gxa_reg[10]/CLR, u_lcd_rgb_top/u_osd_overlay/gxa_reg[11]/CLR, u_lcd_rgb_top/u_osd_overlay/gxa_reg[12]/CLR, u_lcd_rgb_top/u_osd_overlay/gxa_reg[13]/CLR, u_lcd_rgb_top/u_osd_overlay/gxa_reg[14]/CLR, u_lcd_rgb_top/u_osd_overlay/gxa_reg[15]/CLR, u_lcd_rgb_top/u_osd_overlay/gxa_reg[1]/CLR, u_lcd_rgb_top/u_osd_overlay/gxa_reg[2]/CLR, u_lcd_rgb_top/u_osd_overlay/gxa_reg[3]/CLR, u_lcd_rgb_top/u_osd_overlay/gxa_reg[4]/CLR, u_lcd_rgb_top/u_osd_overlay/gxa_reg[5]/CLR, u_lcd_rgb_top/u_osd_overlay/gxa_reg[6]/CLR, u_lcd_rgb_top/u_osd_overlay/gxa_reg[7]/CLR, u_lcd_rgb_top/u_osd_overlay/gxa_reg[8]/CLR (the first 15 of 96 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#17 Warning
 LUT drives async reset alert  
-LUT cell u_ddr3_top/px_a[7]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_dash_osd/fifo_x_reg[10][10]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[10][11]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[10][8]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[10][9]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[13][4]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[13][5]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[13][6]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[13][7]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[14][4]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[14][5]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[14][6]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[14][7]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[15][10]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[15][11]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[15][8]/CLR (the first 15 of 117 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_ddr3_top/px_a[31]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_osd_overlay/blink_cnt_reg[0]/CLR, u_lcd_rgb_top/u_osd_overlay/blink_cnt_reg[10]/CLR, u_lcd_rgb_top/u_osd_overlay/blink_cnt_reg[11]/CLR, u_lcd_rgb_top/u_osd_overlay/blink_cnt_reg[12]/CLR, u_lcd_rgb_top/u_osd_overlay/blink_cnt_reg[13]/CLR, u_lcd_rgb_top/u_osd_overlay/blink_cnt_reg[14]/CLR, u_lcd_rgb_top/u_osd_overlay/blink_cnt_reg[15]/CLR, u_lcd_rgb_top/u_osd_overlay/blink_cnt_reg[16]/CLR, u_lcd_rgb_top/u_osd_overlay/blink_cnt_reg[17]/CLR, u_lcd_rgb_top/u_osd_overlay/blink_cnt_reg[18]/CLR, u_lcd_rgb_top/u_osd_overlay/blink_cnt_reg[19]/CLR, u_lcd_rgb_top/u_osd_overlay/blink_cnt_reg[1]/CLR, u_lcd_rgb_top/u_osd_overlay/blink_cnt_reg[20]/CLR, u_lcd_rgb_top/u_osd_overlay/blink_cnt_reg[21]/CLR, u_lcd_rgb_top/u_osd_overlay/blink_cnt_reg[22]/CLR (the first 15 of 117 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#18 Warning
 LUT drives async reset alert  
-LUT cell u_ddr3_top/py_a[2]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_dash_osd/fifo_y_reg[0][0]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[0][1]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[0][2]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[0][3]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[0][4]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[0][5]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[0][6]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[0][7]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[10][1]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[10][2]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[10][3]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[11][0]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[11][1]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[11][2]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[11][3]/CLR (the first 15 of 90 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_ddr3_top/px_a[3]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_dash_osd/fifo_x_reg[13][1]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[13][2]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[13][3]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[14][1]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[14][2]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[14][3]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[15][1]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[15][2]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[15][3]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[15][4]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[15][5]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[15][6]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[15][7]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[16][0]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[16][1]/CLR (the first 15 of 117 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#19 Warning
 LUT drives async reset alert  
-LUT cell u_ddr3_top/py_a[31]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_dash_osd/fifo_y_reg[10][12]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[10][13]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[10][14]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[11][12]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[11][13]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[11][14]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[12][12]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[12][13]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[12][14]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[13][12]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[13][13]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[13][14]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[14][12]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[14][13]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[14][14]/CLR (the first 15 of 100 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_ddr3_top/px_a[7]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_dash_osd/fifo_x_reg[10][10]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[10][11]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[10][8]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[10][9]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[13][4]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[13][5]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[13][6]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[13][7]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[14][4]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[14][5]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[14][6]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[14][7]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[15][10]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[15][11]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_x_reg[15][8]/CLR (the first 15 of 117 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#20 Warning
 LUT drives async reset alert  
-LUT cell u_ddr3_top/py_a[7]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_dash_osd/fifo_y_reg[10][4]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[10][5]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[10][6]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[10][7]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[11][4]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[11][5]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[11][6]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[11][7]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[12][4]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[12][5]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[12][6]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[12][7]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[13][4]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[13][5]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[13][6]/CLR (the first 15 of 90 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_ddr3_top/py_a[2]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_dash_osd/fifo_y_reg[0][0]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[0][1]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[0][2]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[0][3]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[0][4]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[0][5]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[0][6]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[0][7]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[10][1]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[10][2]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[10][3]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[11][0]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[11][1]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[11][2]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[11][3]/CLR (the first 15 of 90 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#21 Warning
 LUT drives async reset alert  
-LUT cell u_ddr3_top/py_a[9]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_dash_osd/fifo_y_reg[0][10]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[0][11]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[0][12]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[0][13]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[0][14]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[0][15]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[0][8]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[0][9]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[10][10]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[10][11]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[10][8]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[10][9]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[11][10]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[11][11]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[11][8]/CLR (the first 15 of 100 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_ddr3_top/py_a[31]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_dash_osd/fifo_y_reg[10][12]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[10][13]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[10][14]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[11][12]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[11][13]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[11][14]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[12][12]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[12][13]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[12][14]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[13][12]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[13][13]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[13][14]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[14][12]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[14][13]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[14][14]/CLR (the first 15 of 100 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#22 Warning
 LUT drives async reset alert  
-LUT cell u_ddr3_top/rol_a[8]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_dash_osd/pch_a_reg[0]/CLR, u_lcd_rgb_top/u_dash_osd/pch_a_reg[10]/CLR, u_lcd_rgb_top/u_dash_osd/pch_a_reg[11]/CLR, u_lcd_rgb_top/u_dash_osd/pch_a_reg[12]/CLR, u_lcd_rgb_top/u_dash_osd/pch_a_reg[13]/CLR, u_lcd_rgb_top/u_dash_osd/pch_a_reg[14]/CLR, u_lcd_rgb_top/u_dash_osd/pch_a_reg[15]/CLR, u_lcd_rgb_top/u_dash_osd/pch_a_reg[1]/CLR, u_lcd_rgb_top/u_dash_osd/pch_a_reg[2]/CLR, u_lcd_rgb_top/u_dash_osd/pch_a_reg[3]/CLR, u_lcd_rgb_top/u_dash_osd/pch_a_reg[4]/CLR, u_lcd_rgb_top/u_dash_osd/pch_a_reg[5]/CLR, u_lcd_rgb_top/u_dash_osd/pch_a_reg[6]/CLR, u_lcd_rgb_top/u_dash_osd/pch_a_reg[7]/CLR, u_lcd_rgb_top/u_dash_osd/pch_a_reg[8]/CLR (the first 15 of 64 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_ddr3_top/py_a[7]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_dash_osd/fifo_y_reg[10][4]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[10][5]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[10][6]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[10][7]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[11][4]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[11][5]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[11][6]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[11][7]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[12][4]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[12][5]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[12][6]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[12][7]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[13][4]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[13][5]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[13][6]/CLR (the first 15 of 90 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#23 Warning
 LUT drives async reset alert  
-LUT cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/i[3]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ddr3_top/u_ddr3_fifo_ctrl_top/rd_cnt_reg[0]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/rd_cnt_reg[10]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/rd_cnt_reg[11]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/rd_cnt_reg[12]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/rd_cnt_reg[1]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/rd_cnt_reg[2]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/rd_cnt_reg[3]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/rd_cnt_reg[4]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/rd_cnt_reg[5]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/rd_cnt_reg[6]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/rd_cnt_reg[7]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/rd_cnt_reg[8]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/rd_cnt_reg[9]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/i_reg[0]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/i_reg[1]/CLR (the first 15 of 138 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_ddr3_top/py_a[9]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_dash_osd/fifo_y_reg[0][10]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[0][11]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[0][12]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[0][13]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[0][14]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[0][15]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[0][8]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[0][9]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[10][10]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[10][11]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[10][8]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[10][9]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[11][10]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[11][11]/CLR, u_lcd_rgb_top/u_dash_osd/fifo_y_reg[11][8]/CLR (the first 15 of 100 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#24 Warning
 LUT drives async reset alert  
-LUT cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t[245]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[110]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[111]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[126]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[127]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[142]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[143]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[14]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[158]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[159]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[15]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[174]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[175]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[190]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[191]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[206]/CLR (the first 15 of 133 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_ddr3_top/rol_a[8]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_dash_osd/pch_a_reg[0]/CLR, u_lcd_rgb_top/u_dash_osd/pch_a_reg[10]/CLR, u_lcd_rgb_top/u_dash_osd/pch_a_reg[11]/CLR, u_lcd_rgb_top/u_dash_osd/pch_a_reg[12]/CLR, u_lcd_rgb_top/u_dash_osd/pch_a_reg[13]/CLR, u_lcd_rgb_top/u_dash_osd/pch_a_reg[14]/CLR, u_lcd_rgb_top/u_dash_osd/pch_a_reg[15]/CLR, u_lcd_rgb_top/u_dash_osd/pch_a_reg[1]/CLR, u_lcd_rgb_top/u_dash_osd/pch_a_reg[2]/CLR, u_lcd_rgb_top/u_dash_osd/pch_a_reg[3]/CLR, u_lcd_rgb_top/u_dash_osd/pch_a_reg[4]/CLR, u_lcd_rgb_top/u_dash_osd/pch_a_reg[5]/CLR, u_lcd_rgb_top/u_dash_osd/pch_a_reg[6]/CLR, u_lcd_rgb_top/u_dash_osd/pch_a_reg[7]/CLR, u_lcd_rgb_top/u_dash_osd/pch_a_reg[8]/CLR (the first 15 of 64 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#25 Warning
 LUT drives async reset alert  
-LUT cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t[253]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[102]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[103]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[104]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[105]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[106]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[107]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[108]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[109]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[10]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[118]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[119]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[11]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[120]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[121]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[122]/CLR (the first 15 of 128 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wr_load_d0_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/byte_cnt_reg[0]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/byte_cnt_reg[1]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/byte_cnt_reg[2]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/byte_cnt_reg[3]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wfifo_wren_reg/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/byte_cnt_reg[0]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/byte_cnt_reg[1]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/byte_cnt_reg[2]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/byte_cnt_reg[3]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wfifo_rst_h_reg/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wfifo_wren_reg/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wr_load_d0_reg/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wr_load_d_reg[0]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wr_load_d_reg[10]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wr_load_d_reg[11]/CLR (the first 15 of 44 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#26 Warning
 LUT drives async reset alert  
-LUT cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t[245]_i_1__0, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/byte_cnt_reg[0]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/byte_cnt_reg[1]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/byte_cnt_reg[2]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/byte_cnt_reg[3]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wfifo_wren_reg/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[0]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[100]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[101]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[112]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[113]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[114]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[115]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[116]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[117]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[128]/CLR (the first 15 of 101 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t[246]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wfifo_rst_h_reg/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wr_load_d0_reg/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wr_load_d_reg[0]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wr_load_d_reg[10]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wr_load_d_reg[11]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wr_load_d_reg[12]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wr_load_d_reg[13]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wr_load_d_reg[14]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wr_load_d_reg[15]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wr_load_d_reg[1]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wr_load_d_reg[2]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wr_load_d_reg[3]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wr_load_d_reg[4]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wr_load_d_reg[5]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wr_load_d_reg[6]/CLR (the first 15 of 130 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#27 Warning
 LUT drives async reset alert  
-LUT cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t[253]_i_1__0, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[102]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[103]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[104]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[105]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[106]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[107]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[108]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[109]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[10]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[118]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[119]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[11]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[120]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[121]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[122]/CLR (the first 15 of 128 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t[254]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[103]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[104]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[105]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[106]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[107]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[108]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[109]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[10]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[110]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[119]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[11]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[120]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[121]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[122]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/wrdata_t_reg[123]/CLR (the first 15 of 128 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#28 Warning
 LUT drives async reset alert  
-LUT cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/u_iodelay_ctrl/rstdiv2_sync_r[11]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r1_reg_rep/PRE, u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r1_reg_rep__0/PRE, u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r1_reg_rep__1/PRE, u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r1_reg_rep__10/PRE, u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r1_reg_rep__11/PRE, u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r1_reg_rep__12/PRE, u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r1_reg_rep__13/PRE, u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r1_reg_rep__14/PRE, u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r1_reg_rep__15/PRE, u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r1_reg_rep__17/PRE, u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r1_reg_rep__18/PRE, u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r1_reg_rep__19/PRE, u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r1_reg_rep__2/PRE, u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r1_reg_rep__20/PRE, u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r1_reg_rep__21/PRE (the first 15 of 35 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/data_req_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_lcd_rgb_top/u_lcd_driver/data_req_0_reg/CLR, u_lcd_rgb_top/u_lcd_driver/data_req_reg/CLR, u_lcd_rgb_top/u_lcd_driver/h_cnt_reg[0]/CLR, u_lcd_rgb_top/u_lcd_driver/h_cnt_reg[10]/CLR, u_lcd_rgb_top/u_lcd_driver/h_cnt_reg[1]/CLR, u_lcd_rgb_top/u_lcd_driver/h_cnt_reg[2]/CLR, u_lcd_rgb_top/u_lcd_driver/h_cnt_reg[3]/CLR, u_lcd_rgb_top/u_lcd_driver/h_cnt_reg[4]/CLR, u_lcd_rgb_top/u_lcd_driver/h_cnt_reg[5]/CLR, u_lcd_rgb_top/u_lcd_driver/h_cnt_reg[6]/CLR, u_lcd_rgb_top/u_lcd_driver/h_cnt_reg[7]/CLR, u_lcd_rgb_top/u_lcd_driver/h_cnt_reg[8]/CLR, u_lcd_rgb_top/u_lcd_driver/h_cnt_reg[9]/CLR, u_lcd_rgb_top/u_lcd_driver/pixel_xpos_reg[0]/CLR, u_lcd_rgb_top/u_lcd_driver/pixel_xpos_reg[10]/CLR (the first 15 of 138 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#29 Warning
 LUT drives async reset alert  
-LUT cell u_mode_switch/key_m_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_mode_switch/deb_cnt_reg[0]/CLR, u_mode_switch/deb_cnt_reg[10]/CLR, u_mode_switch/deb_cnt_reg[11]/CLR, u_mode_switch/deb_cnt_reg[12]/CLR, u_mode_switch/deb_cnt_reg[13]/CLR, u_mode_switch/deb_cnt_reg[14]/CLR, u_mode_switch/deb_cnt_reg[15]/CLR, u_mode_switch/deb_cnt_reg[16]/CLR, u_mode_switch/deb_cnt_reg[17]/CLR, u_mode_switch/deb_cnt_reg[18]/CLR, u_mode_switch/deb_cnt_reg[19]/CLR, u_mode_switch/deb_cnt_reg[1]/CLR, u_mode_switch/deb_cnt_reg[2]/CLR, u_mode_switch/deb_cnt_reg[3]/CLR, u_mode_switch/deb_cnt_reg[4]/CLR (the first 15 of 53 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t[247]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[0]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[100]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[101]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[102]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[103]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[112]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[113]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[114]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[115]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[116]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[117]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[118]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[119]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[128]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[129]/CLR (the first 15 of 128 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#30 Warning
 LUT drives async reset alert  
-LUT cell u_ov5640_dri_1/u_i2c_dr/i2c_exec_i_3, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[0]/CLR, u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[10]/CLR, u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[11]/CLR, u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[12]/CLR, u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[13]/CLR, u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[15]/CLR, u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[16]/CLR, u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[17]/CLR, u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[18]/CLR, u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[19]/CLR, u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[1]/CLR, u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[20]/CLR, u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[21]/CLR, u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[22]/CLR, u_ov5640_dri_1/u_i2c_cfg/i2c_data_reg[2]/CLR (the first 15 of 99 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t[255]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[104]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[105]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[106]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[107]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[108]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[109]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[10]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[110]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[111]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[11]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[120]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[121]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[122]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[123]/CLR, u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/wrdata_t_reg[124]/CLR (the first 15 of 128 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#31 Warning
 LUT drives async reset alert  
-LUT cell u_ov5640_dri_2/cam_vsync_d0_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ov5640_dri_1/u_cmos_capture_data/byte_flag_d0_reg/CLR, u_ov5640_dri_1/u_cmos_capture_data/byte_flag_reg/CLR, u_ov5640_dri_1/u_cmos_capture_data/cam_data_d0_reg[0]/CLR, u_ov5640_dri_1/u_cmos_capture_data/cam_data_d0_reg[1]/CLR, u_ov5640_dri_1/u_cmos_capture_data/cam_data_d0_reg[2]/CLR, u_ov5640_dri_1/u_cmos_capture_data/cam_data_d0_reg[3]/CLR, u_ov5640_dri_1/u_cmos_capture_data/cam_data_d0_reg[4]/CLR, u_ov5640_dri_1/u_cmos_capture_data/cam_data_d0_reg[5]/CLR, u_ov5640_dri_1/u_cmos_capture_data/cam_data_d0_reg[6]/CLR, u_ov5640_dri_1/u_cmos_capture_data/cam_data_d0_reg[7]/CLR, u_ov5640_dri_1/u_cmos_capture_data/cam_vsync_d0_reg/CLR, u_ov5640_dri_1/u_cmos_capture_data/cam_vsync_d1_reg/CLR, u_ov5640_dri_1/u_cmos_capture_data/cmos_data_t_reg[0]/CLR, u_ov5640_dri_1/u_cmos_capture_data/cmos_data_t_reg[10]/CLR, u_ov5640_dri_1/u_cmos_capture_data/cmos_data_t_reg[11]/CLR (the first 15 of 66 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/u_iodelay_ctrl/rstdiv2_sync_r[11]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r1_reg_rep/PRE, u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r1_reg_rep__0/PRE, u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r1_reg_rep__1/PRE, u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r1_reg_rep__10/PRE, u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r1_reg_rep__11/PRE, u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r1_reg_rep__12/PRE, u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r1_reg_rep__13/PRE, u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r1_reg_rep__14/PRE, u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r1_reg_rep__15/PRE, u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r1_reg_rep__17/PRE, u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r1_reg_rep__18/PRE, u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r1_reg_rep__19/PRE, u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r1_reg_rep__2/PRE, u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r1_reg_rep__20/PRE, u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r1_reg_rep__21/PRE (the first 15 of 35 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#32 Warning
 LUT drives async reset alert  
-LUT cell u_ov5640_dri_2/u_i2c_dr/i2c_exec_i_3__0, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_picture_size/cmos_h_pixel_reg[10]/CLR, u_picture_size/cmos_h_pixel_reg[5]/CLR, u_picture_size/cmos_h_pixel_reg[7]/CLR, u_picture_size/cmos_h_pixel_reg[8]/CLR, u_picture_size/cmos_h_pixel_reg[9]/CLR, u_picture_size/cmos_v_pixel_reg[3]/CLR, u_picture_size/cmos_v_pixel_reg[4]/CLR, u_picture_size/cmos_v_pixel_reg[5]/CLR, u_picture_size/cmos_v_pixel_reg[6]/CLR, u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[0]/CLR, u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[10]/CLR, u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[11]/CLR, u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[12]/CLR, u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[13]/CLR, u_ov5640_dri_2/u_i2c_cfg/i2c_data_reg[15]/CLR (the first 15 of 108 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_green_detect/FSM_sequential_dstate[1]_i_2__0, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_green_detect/FSM_sequential_dstate_reg[0]/CLR, u_green_detect/FSM_sequential_dstate_reg[1]/CLR, u_green_detect/cnt_reg[16]/CLR, u_green_detect/cnt_reg[17]/CLR, u_green_detect/dcnt_reg[0]/CLR, u_green_detect/dcnt_reg[1]/CLR, u_green_detect/dcnt_reg[2]/CLR, u_green_detect/dcnt_reg[3]/CLR, u_green_detect/dcnt_reg[4]/CLR, u_green_detect/dcnt_reg[5]/CLR, u_green_detect/dividend_reg[0]/CLR, u_green_detect/dividend_reg[1]/CLR, u_green_detect/dividend_reg[2]/CLR, u_green_detect/dividend_reg[3]/CLR, u_green_detect/dividend_reg[4]/CLR (the first 15 of 117 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#33 Warning
+LUT drives async reset alert  
+LUT cell u_green_detect/dvs[14]_i_3, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_attitude_cf/bias_qz_reg[2]/CLR, u_attitude_cf/bias_qz_reg[3]/CLR, u_attitude_cf/dvd_reg[10]/CLR, u_attitude_cf/dvd_reg[11]/CLR, u_attitude_cf/dvd_reg[12]/CLR, u_attitude_cf/dvd_reg[13]/CLR, u_attitude_cf/dvd_reg[14]/CLR, u_attitude_cf/dvd_reg[15]/CLR, u_attitude_cf/dvd_reg[16]/CLR, u_attitude_cf/dvd_reg[17]/CLR, u_attitude_cf/dvd_reg[18]/CLR, u_attitude_cf/dvd_reg[19]/CLR, u_attitude_cf/dvd_reg[20]/CLR, u_attitude_cf/dvd_reg[21]/CLR, u_attitude_cf/dvd_reg[22]/CLR (the first 15 of 106 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#34 Warning
+LUT drives async reset alert  
+LUT cell u_green_detect/idle_cnt[14]_i_3, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_mode_switch/deb_cnt_reg[0]/CLR, u_mode_switch/deb_cnt_reg[10]/CLR, u_mode_switch/deb_cnt_reg[11]/CLR, u_mode_switch/deb_cnt_reg[12]/CLR, u_mode_switch/deb_cnt_reg[13]/CLR, u_mode_switch/deb_cnt_reg[14]/CLR, u_mode_switch/deb_cnt_reg[15]/CLR, u_mode_switch/deb_cnt_reg[16]/CLR, u_mode_switch/deb_cnt_reg[17]/CLR, u_mode_switch/deb_cnt_reg[18]/CLR, u_mode_switch/deb_cnt_reg[19]/CLR, u_mode_switch/deb_cnt_reg[1]/CLR, u_mode_switch/deb_cnt_reg[2]/CLR, u_mode_switch/deb_cnt_reg[3]/CLR, u_mode_switch/deb_cnt_reg[4]/CLR (the first 15 of 117 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#35 Warning
+LUT drives async reset alert  
+LUT cell u_green_detect/idle_cnt[4]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_mode_switch/rc_cnt_reg[0]/CLR, u_mode_switch/rc_cnt_reg[10]/CLR, u_mode_switch/rc_cnt_reg[15]/CLR, u_mode_switch/rc_cnt_reg[17]/CLR, u_mode_switch/rc_cnt_reg[1]/CLR, u_mode_switch/rc_cnt_reg[23]/CLR, u_mode_switch/rc_cnt_reg[2]/CLR, u_mode_switch/rc_cnt_reg[3]/CLR, u_mode_switch/rc_cnt_reg[4]/CLR, u_mode_switch/rc_cnt_reg[5]/CLR, u_mode_switch/rc_cnt_reg[7]/CLR, u_mode_switch/rc_cnt_reg[8]/CLR, u_mode_switch/rc_cnt_reg[9]/CLR, u_mode_switch/rc_cnt_reg[11]/PRE, u_mode_switch/rc_cnt_reg[12]/PRE (the first 15 of 117 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#36 Warning
+LUT drives async reset alert  
+LUT cell u_ov5640_dri_2/cam_vsync_d0_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_ov5640_dri_1/u_cmos_capture_data/byte_flag_d0_reg/CLR, u_ov5640_dri_1/u_cmos_capture_data/byte_flag_reg/CLR, u_ov5640_dri_1/u_cmos_capture_data/cam_data_d0_reg[0]/CLR, u_ov5640_dri_1/u_cmos_capture_data/cam_data_d0_reg[1]/CLR, u_ov5640_dri_1/u_cmos_capture_data/cam_data_d0_reg[2]/CLR, u_ov5640_dri_1/u_cmos_capture_data/cam_data_d0_reg[3]/CLR, u_ov5640_dri_1/u_cmos_capture_data/cam_data_d0_reg[4]/CLR, u_ov5640_dri_1/u_cmos_capture_data/cam_data_d0_reg[5]/CLR, u_ov5640_dri_1/u_cmos_capture_data/cam_data_d0_reg[6]/CLR, u_ov5640_dri_1/u_cmos_capture_data/cam_data_d0_reg[7]/CLR, u_ov5640_dri_1/u_cmos_capture_data/cam_vsync_d0_reg/CLR, u_ov5640_dri_1/u_cmos_capture_data/cam_vsync_d1_reg/CLR, u_ov5640_dri_1/u_cmos_capture_data/cmos_data_t_reg[0]/CLR, u_ov5640_dri_1/u_cmos_capture_data/cmos_data_t_reg[10]/CLR, u_ov5640_dri_1/u_cmos_capture_data/cmos_data_t_reg[11]/CLR (the first 15 of 66 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 PDRC-190#1 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/u_rd_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d2_reg in site SLICE_X11Y142 is part of a synchronized register chain that is suboptimally placed as the load FDSE cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/u_rd_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d3_reg is not placed in the same (SLICE) site.
+The FDRE cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/u_rd_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d2_reg in site SLICE_X76Y102 is part of a synchronized register chain that is suboptimally placed as the load FDSE cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/u_rd_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d3_reg is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#2 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/u_wr_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d2_reg in site SLICE_X30Y182 is part of a synchronized register chain that is suboptimally placed as the load FDSE cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/u_wr_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d3_reg is not placed in the same (SLICE) site.
+The FDRE cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/u_wr_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d2_reg in site SLICE_X76Y198 is part of a synchronized register chain that is suboptimally placed as the load FDSE cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/u_wr_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d3_reg is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#3 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/u_rd_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d2_reg in site SLICE_X11Y134 is part of a synchronized register chain that is suboptimally placed as the load FDSE cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/u_rd_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d3_reg is not placed in the same (SLICE) site.
+The FDRE cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/u_rd_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d2_reg in site SLICE_X61Y116 is part of a synchronized register chain that is suboptimally placed as the load FDSE cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/u_rd_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d3_reg is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#4 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/u_wr_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d2_reg in site SLICE_X36Y178 is part of a synchronized register chain that is suboptimally placed as the load FDSE cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/u_wr_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d3_reg is not placed in the same (SLICE) site.
+The FDRE cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/u_wr_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d2_reg in site SLICE_X74Y193 is part of a synchronized register chain that is suboptimally placed as the load FDSE cell u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/u_wr_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d3_reg is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#5 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[0] in site SLICE_X2Y131 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[0] is not placed in the same (SLICE) site.
+The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[0] in site SLICE_X27Y150 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[0] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#6 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[10] in site SLICE_X3Y131 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[10] is not placed in the same (SLICE) site.
+The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[10] in site SLICE_X24Y150 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[10] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#7 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[11] in site SLICE_X5Y130 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[11] is not placed in the same (SLICE) site.
+The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[11] in site SLICE_X29Y146 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[11] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#8 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[1] in site SLICE_X1Y131 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[1] is not placed in the same (SLICE) site.
+The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[1] in site SLICE_X27Y153 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[1] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#9 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[2] in site SLICE_X3Y128 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[2] is not placed in the same (SLICE) site.
+The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[2] in site SLICE_X31Y151 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[2] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#10 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[3] in site SLICE_X4Y128 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[3] is not placed in the same (SLICE) site.
+The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[3] in site SLICE_X29Y149 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[3] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#11 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[4] in site SLICE_X2Y129 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[4] is not placed in the same (SLICE) site.
+The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[4] in site SLICE_X22Y150 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[4] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#12 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[5] in site SLICE_X1Y129 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[5] is not placed in the same (SLICE) site.
+The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[5] in site SLICE_X26Y152 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[5] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#13 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[6] in site SLICE_X4Y130 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[6] is not placed in the same (SLICE) site.
+The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[6] in site SLICE_X28Y148 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[6] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#14 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[7] in site SLICE_X5Y132 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[7] is not placed in the same (SLICE) site.
+The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[7] in site SLICE_X25Y150 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[7] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#15 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[8] in site SLICE_X6Y130 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[8] is not placed in the same (SLICE) site.
+The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[8] in site SLICE_X21Y150 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[8] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#16 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[9] in site SLICE_X4Y132 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[9] is not placed in the same (SLICE) site.
+The FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r5_reg[9] in site SLICE_X25Y153 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell u_ddr3_top/u_mig_7series_0/u_mig_7series_0_mig/temp_mon_enabled.u_tempmon/device_temp_r_reg[9] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 SYNTH-13#1 Warning
@@ -473,102 +733,82 @@ Related violations: <none>
 
 TIMING-16#1 Warning
 Large setup violation  
-There is a large setup violation of -1.038 ns between u_sensor_link/u_decode/enc2_reg[5]/C (clocked by clk_out2_clk_wiz_0) and u_sensor_calc/trk_x_reg[1]/D (clocked by clk_out2_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -16.303 ns between u_lcd_rgb_top/u_osd_overlay/e3b_reg[0]/C (clocked by clk_out2_clk_wiz_0) and u_lcd_rgb_top/u_dash_osd/pin_d_reg[5]/D (clocked by clk_out2_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#2 Warning
 Large setup violation  
-There is a large setup violation of -1.056 ns between u_sensor_link/u_decode/enc2_reg[5]/C (clocked by clk_out2_clk_wiz_0) and u_sensor_calc/trk_x_reg[14]/D (clocked by clk_out2_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -16.362 ns between u_lcd_rgb_top/u_osd_overlay/e3b_reg[0]/C (clocked by clk_out2_clk_wiz_0) and u_lcd_rgb_top/u_dash_osd/pin_d_reg[1]/D (clocked by clk_out2_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#3 Warning
 Large setup violation  
-There is a large setup violation of -1.089 ns between u_sensor_link/u_decode/enc2_reg[5]/C (clocked by clk_out2_clk_wiz_0) and u_sensor_calc/trk_x_reg[9]/D (clocked by clk_out2_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -16.365 ns between u_lcd_rgb_top/u_osd_overlay/e3b_reg[0]/C (clocked by clk_out2_clk_wiz_0) and u_lcd_rgb_top/u_dash_osd/pin_d_reg[6]/D (clocked by clk_out2_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#4 Warning
 Large setup violation  
-There is a large setup violation of -1.106 ns between u_sensor_link/u_decode/enc2_reg[5]/C (clocked by clk_out2_clk_wiz_0) and u_sensor_calc/trk_x_reg[7]/D (clocked by clk_out2_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -16.409 ns between u_lcd_rgb_top/u_osd_overlay/e3b_reg[0]/C (clocked by clk_out2_clk_wiz_0) and u_lcd_rgb_top/u_dash_osd/pin_d_reg[9]/D (clocked by clk_out2_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#5 Warning
 Large setup violation  
-There is a large setup violation of -17.338 ns between u_lcd_rgb_top/u_osd_overlay/e2b_reg[0]/C (clocked by clk_out2_clk_wiz_0) and u_lcd_rgb_top/u_dash_osd/pin_d_reg[0]/D (clocked by clk_out2_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -16.411 ns between u_lcd_rgb_top/u_osd_overlay/e3b_reg[0]/C (clocked by clk_out2_clk_wiz_0) and u_lcd_rgb_top/u_dash_osd/pin_d_reg[4]/D (clocked by clk_out2_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#6 Warning
 Large setup violation  
-There is a large setup violation of -17.341 ns between u_lcd_rgb_top/u_osd_overlay/e2b_reg[0]/C (clocked by clk_out2_clk_wiz_0) and u_lcd_rgb_top/u_dash_osd/pin_d_reg[8]/D (clocked by clk_out2_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -16.413 ns between u_lcd_rgb_top/u_osd_overlay/e3b_reg[0]/C (clocked by clk_out2_clk_wiz_0) and u_lcd_rgb_top/u_dash_osd/pin_d_reg[0]/D (clocked by clk_out2_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#7 Warning
 Large setup violation  
-There is a large setup violation of -17.355 ns between u_lcd_rgb_top/u_osd_overlay/e2b_reg[0]/C (clocked by clk_out2_clk_wiz_0) and u_lcd_rgb_top/u_dash_osd/pin_d_reg[13]/D (clocked by clk_out2_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -16.421 ns between u_lcd_rgb_top/u_osd_overlay/e3b_reg[0]/C (clocked by clk_out2_clk_wiz_0) and u_lcd_rgb_top/u_dash_osd/pin_d_reg[8]/D (clocked by clk_out2_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#8 Warning
 Large setup violation  
-There is a large setup violation of -17.392 ns between u_lcd_rgb_top/u_osd_overlay/e2b_reg[0]/C (clocked by clk_out2_clk_wiz_0) and u_lcd_rgb_top/u_dash_osd/pin_d_reg[11]/D (clocked by clk_out2_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -16.422 ns between u_lcd_rgb_top/u_osd_overlay/e3b_reg[0]/C (clocked by clk_out2_clk_wiz_0) and u_lcd_rgb_top/u_dash_osd/pin_d_reg[15]/D (clocked by clk_out2_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#9 Warning
 Large setup violation  
-There is a large setup violation of -17.404 ns between u_lcd_rgb_top/u_osd_overlay/e2b_reg[0]/C (clocked by clk_out2_clk_wiz_0) and u_lcd_rgb_top/u_dash_osd/pin_d_reg[10]/D (clocked by clk_out2_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -16.437 ns between u_lcd_rgb_top/u_osd_overlay/e3b_reg[0]/C (clocked by clk_out2_clk_wiz_0) and u_lcd_rgb_top/u_dash_osd/pin_d_reg[11]/D (clocked by clk_out2_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#10 Warning
 Large setup violation  
-There is a large setup violation of -17.421 ns between u_lcd_rgb_top/u_osd_overlay/e2b_reg[0]/C (clocked by clk_out2_clk_wiz_0) and u_lcd_rgb_top/u_dash_osd/pin_d_reg[5]/D (clocked by clk_out2_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -16.448 ns between u_lcd_rgb_top/u_osd_overlay/e3b_reg[0]/C (clocked by clk_out2_clk_wiz_0) and u_lcd_rgb_top/u_dash_osd/pin_d_reg[3]/D (clocked by clk_out2_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#11 Warning
 Large setup violation  
-There is a large setup violation of -17.445 ns between u_lcd_rgb_top/u_osd_overlay/e2b_reg[0]/C (clocked by clk_out2_clk_wiz_0) and u_lcd_rgb_top/u_dash_osd/pin_d_reg[12]/D (clocked by clk_out2_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -16.460 ns between u_lcd_rgb_top/u_osd_overlay/e3b_reg[0]/C (clocked by clk_out2_clk_wiz_0) and u_lcd_rgb_top/u_dash_osd/pin_d_reg[2]/D (clocked by clk_out2_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#12 Warning
 Large setup violation  
-There is a large setup violation of -17.454 ns between u_lcd_rgb_top/u_osd_overlay/e2b_reg[0]/C (clocked by clk_out2_clk_wiz_0) and u_lcd_rgb_top/u_dash_osd/pin_d_reg[4]/D (clocked by clk_out2_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -16.462 ns between u_lcd_rgb_top/u_osd_overlay/e3b_reg[0]/C (clocked by clk_out2_clk_wiz_0) and u_lcd_rgb_top/u_dash_osd/pin_d_reg[12]/D (clocked by clk_out2_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#13 Warning
 Large setup violation  
-There is a large setup violation of -17.454 ns between u_lcd_rgb_top/u_osd_overlay/e2b_reg[0]/C (clocked by clk_out2_clk_wiz_0) and u_lcd_rgb_top/u_dash_osd/pin_d_reg[7]/D (clocked by clk_out2_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -16.462 ns between u_lcd_rgb_top/u_osd_overlay/e3b_reg[0]/C (clocked by clk_out2_clk_wiz_0) and u_lcd_rgb_top/u_dash_osd/pin_d_reg[7]/D (clocked by clk_out2_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#14 Warning
 Large setup violation  
-There is a large setup violation of -17.457 ns between u_lcd_rgb_top/u_osd_overlay/e2b_reg[0]/C (clocked by clk_out2_clk_wiz_0) and u_lcd_rgb_top/u_dash_osd/pin_d_reg[3]/D (clocked by clk_out2_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -16.469 ns between u_lcd_rgb_top/u_osd_overlay/e3b_reg[0]/C (clocked by clk_out2_clk_wiz_0) and u_lcd_rgb_top/u_dash_osd/pin_d_reg[10]/D (clocked by clk_out2_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#15 Warning
 Large setup violation  
-There is a large setup violation of -17.475 ns between u_lcd_rgb_top/u_osd_overlay/e2b_reg[0]/C (clocked by clk_out2_clk_wiz_0) and u_lcd_rgb_top/u_dash_osd/pin_d_reg[6]/D (clocked by clk_out2_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -16.480 ns between u_lcd_rgb_top/u_osd_overlay/e3b_reg[0]/C (clocked by clk_out2_clk_wiz_0) and u_lcd_rgb_top/u_dash_osd/pin_d_reg[14]/D (clocked by clk_out2_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#16 Warning
 Large setup violation  
-There is a large setup violation of -17.476 ns between u_lcd_rgb_top/u_osd_overlay/e2b_reg[0]/C (clocked by clk_out2_clk_wiz_0) and u_lcd_rgb_top/u_dash_osd/pin_d_reg[2]/D (clocked by clk_out2_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#17 Warning
-Large setup violation  
-There is a large setup violation of -17.508 ns between u_lcd_rgb_top/u_osd_overlay/e2b_reg[0]/C (clocked by clk_out2_clk_wiz_0) and u_lcd_rgb_top/u_dash_osd/pin_d_reg[9]/D (clocked by clk_out2_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#18 Warning
-Large setup violation  
-There is a large setup violation of -17.531 ns between u_lcd_rgb_top/u_osd_overlay/e2b_reg[0]/C (clocked by clk_out2_clk_wiz_0) and u_lcd_rgb_top/u_dash_osd/pin_d_reg[14]/D (clocked by clk_out2_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#19 Warning
-Large setup violation  
-There is a large setup violation of -17.543 ns between u_lcd_rgb_top/u_osd_overlay/e2b_reg[0]/C (clocked by clk_out2_clk_wiz_0) and u_lcd_rgb_top/u_dash_osd/pin_d_reg[1]/D (clocked by clk_out2_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#20 Warning
-Large setup violation  
-There is a large setup violation of -17.555 ns between u_lcd_rgb_top/u_osd_overlay/e2b_reg[0]/C (clocked by clk_out2_clk_wiz_0) and u_lcd_rgb_top/u_dash_osd/pin_d_reg[15]/D (clocked by clk_out2_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -16.536 ns between u_lcd_rgb_top/u_osd_overlay/e3b_reg[0]/C (clocked by clk_out2_clk_wiz_0) and u_lcd_rgb_top/u_dash_osd/pin_d_reg[13]/D (clocked by clk_out2_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-17#1 Warning

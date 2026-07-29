@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tfgg484-2" LaunchTime="1785336428">
+<GenRun Id="synth_1" LaunchPart="xc7a100tfgg484-2" LaunchTime="1785347218">
   <File Type="PA-TCL" Name="top_dual_ov5640_lcd.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="top_dual_ov5640_lcd_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="top_dual_ov5640_lcd_reports.tcl"/>

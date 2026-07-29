@@ -56,6 +56,7 @@ module osd_overlay #(
     // ---- [V3] ×ËÌ¬/ËÙ¶È£¨50M Óò£© ----
     input  wire signed [15:0] pitch_cdeg, // 0.01¡ã£¨attitude_cf£©
     input  wire signed [15:0] roll_cdeg,
+    input  wire signed [15:0] yaw_cdeg,
     input  wire signed [15:0] fwd_speed,  // mm/s£¨sensor_calc£©
     // ---- [V3] TTC Ô¤¾¯£¨50M Óò£© ----
     input  wire [ 1:0] warn_level,        // 0=Õý³£ 1=»Æ¾¯ 2=ºì¾¯

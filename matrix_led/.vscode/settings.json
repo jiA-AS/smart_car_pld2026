@@ -1,0 +1,20 @@
+{
+    // 彻底禁用 CMake 插件（ESP-IDF 使用 tasks.json 编译）
+    "cmake.configureOnOpen": false,
+    "cmake.automaticReconfigure": false,
+    "cmake.buildBeforeRun": false,
+    "cmake.ignoreCMakeListsMissing": true,
+    "cmake.showOptionsOnOpen": false,
+
+    // 文件排除
+    "files.exclude": {
+        "build/": true
+    },
+
+    // C/C++ IntelliSense 配置（使用 compile_commands.json）
+    "C_Cpp.default.compileCommands": "${workspaceFolder}/build/compile_commands.json",
+    "C_Cpp.default.intelliSenseMode": "gcc-arm",
+    "C_Cpp.default.compilerPath": "D:/DevEnv/Espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/xtensa-esp32s3-elf-gcc.exe",
+    "C_Cpp.default.cStandard": "c17",
+    "C_Cpp.default.cppStandard": "c++17"
+}

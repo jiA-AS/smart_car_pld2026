@@ -26,7 +26,7 @@ static volatile int mode = 0;   // 0关 1红 2绿 3蓝 4白 5彩虹
 static void matrix_fill(uint8_t r, uint8_t g, uint8_t b)
 {
     for (int i = 0; i < NUM_LEDS; i++)
-        led_strip_set_pixel(strip, i, r, g, b);
+        led_strip_set_pixel(strip, i, g, r, b);  // 交换 R 和 G（实际灯珠是 RGB 顺序，库是 GRB）
     led_strip_refresh(strip);
 }
 
@@ -119,9 +119,9 @@ static void wifi_init_softap(void)
             .ssid = "ESP32S3-Matrix",
             .ssid_len = strlen("ESP32S3-Matrix"),
             .password = "12345678",
-            .channel = 1,
+            .channel = 6,               // 改信道 6，兼容性更好
             .max_connection = 4,
-            .authmode = WIFI_AUTH_WPA_WPA2_PSK,
+            .authmode = WIFI_AUTH_WPA2_PSK,  // 改 WPA2 纯模式，兼容性更好
         },
     };
     ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_AP));
@@ -132,7 +132,16 @@ static void wifi_init_softap(void)
 
 void app_main(void)
 {
-    ESP_ERROR_CHECK(nvs_flash_init());
+    /* 初始化 NVS（第一次烧录可能需要擦除重试） */
+    esp_err_t ret = nvs_flash_init();
+    if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
+        ESP_LOGW(TAG, "NVS 需要擦除，正在擦除...");
+        ESP_ERROR_CHECK(nvs_flash_erase());
+        ret = nvs_flash_init();
+    }
+    ESP_ERROR_CHECK(ret);
+
+    ESP_LOGI(TAG, "系统启动，WiFi 热点: ESP32S3-Matrix / 12345678");
 
     /* WS2812 初始化（RMT 后端） */
     led_strip_config_t strip_config = {

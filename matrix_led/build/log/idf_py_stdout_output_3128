@@ -1,0 +1,69 @@
+[1/5] cmd.exe /C "cd /D E:\FPGA\project\smart_car_pld2026\matrix_led\build\esp-idf\esptool_py && D:\DevEnv\Espressif\python_env\idf5.1_py3.11_env\Scripts\python.exe D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/partition_table/check_sizes.py --offset 0x8000 partition --type app E:/FPGA/project/smart_car_pld2026/matrix_led/build/partition_table/partition-table.bin E:/FPGA/project/smart_car_pld2026/matrix_led/build/matrix_led.bin"
+matrix_led.bin binary size 0xc64b0 bytes. Smallest app partition is 0x100000 bytes. 0x39b50 bytes (23%) free.
+[2/5] Performing build step for 'bootloader'
+[1/1] cmd.exe /C "cd /D E:\FPGA\project\smart_car_pld2026\matrix_led\build\bootloader\esp-idf\esptool_py && D:\DevEnv\Espressif\python_env\idf5.1_py3.11_env\Scripts\python.exe D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 E:/FPGA/project/smart_car_pld2026/matrix_led/build/bootloader/bootloader.bin"
+Bootloader binary size 0x51c0 bytes. 0x2e40 bytes (36%) free.
+[2/3] cmd.exe /C "cd /D D:\DevEnv\Espressif\frameworks\esp-idf-v5.1.2\components\esptool_py && D:\DevEnv\Espressif\tools\cmake\3.24.0\bin\cmake.exe -D IDF_PATH=D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2 -D SERIAL_TOOL=D:/DevEnv/Espressif/python_env/idf5.1_py3.11_env/Scripts/python.exe;;D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/esptool_py/esptool/esptool.py;--chip;esp32s3 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D WORKING_DIRECTORY=E:/FPGA/project/smart_car_pld2026/matrix_led/build -P D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/esptool_py/run_serial_tool.cmake"
+esptool.py --chip esp32s3 -p COM8 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 80m --flash_size 2MB 0x0 bootloader/bootloader.bin 0x10000 matrix_led.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.7.0
+Serial port COM8
+Connecting...
+Chip is ESP32-S3 (QFN56) (revision v0.2)
+Features: WiFi, BLE, Embedded Flash 4MB (XMC), Embedded PSRAM 2MB (AP_3v3)
+Crystal is 40MHz
+MAC: a0:f2:62:eb:2b:b8
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00000000 to 0x00005fff...
+Flash will be erased from 0x00010000 to 0x000d6fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Compressed 20928 bytes to 13297...
+Writing at 0x00000000... (100 %)
+Wrote 20928 bytes (13297 compressed) at 0x00000000 in 0.2 seconds (effective 722.8 kbit/s)...
+Hash of data verified.
+Compressed 812208 bytes to 515458...
+Writing at 0x00010000... (3 %)
+Writing at 0x0001cda5... (6 %)
+Writing at 0x0002715b... (9 %)
+Writing at 0x0002bbfe... (12 %)
+Writing at 0x0003427b... (15 %)
+Writing at 0x0003c347... (18 %)
+Writing at 0x000424ee... (21 %)
+Writing at 0x00048742... (25 %)
+Writing at 0x0004ea88... (28 %)
+Writing at 0x00054938... (31 %)
+Writing at 0x0005a650... (34 %)
+Writing at 0x00060240... (37 %)
+Writing at 0x0006514c... (40 %)
+Writing at 0x0006a3b9... (43 %)
+Writing at 0x0006f277... (46 %)
+Writing at 0x0007463a... (50 %)
+Writing at 0x00079968... (53 %)
+Writing at 0x0007f19c... (56 %)
+Writing at 0x00084dda... (59 %)
+Writing at 0x0008a27d... (62 %)
+Writing at 0x0008fa68... (65 %)
+Writing at 0x0009541d... (68 %)
+Writing at 0x0009aa87... (71 %)
+Writing at 0x000a045d... (75 %)
+Writing at 0x000a6153... (78 %)
+Writing at 0x000ac956... (81 %)
+Writing at 0x000b20dc... (84 %)
+Writing at 0x000b7603... (87 %)
+Writing at 0x000c0240... (90 %)
+Writing at 0x000c838e... (93 %)
+Writing at 0x000cdf92... (96 %)
+Writing at 0x000d3766... (100 %)
+Wrote 812208 bytes (515458 compressed) at 0x00010000 in 4.7 seconds (effective 1380.7 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.0 seconds (effective 832.7 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

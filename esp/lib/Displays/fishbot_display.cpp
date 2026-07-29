@@ -2,7 +2,7 @@
  * @file fishbot_display.cpp
  * @brief PLD2026 V4: s1 三档双屏联动——OLED 页与 FPGA LCD 模式同步
  *        s1上(1)=视角档: OLED 接收页（FPGA 下行指令/四轮速度）
- *        s1中(3)=轨迹档: OLED 姿态页（大字 P/R + 轮速 + 编码器）
+ *        s1中(3)=轨迹档: OLED 姿态页（大字 P/R + Y + 轮速）
  *        s1下(2)=调试档: OLED 发送页（上行帧 HEX/IMU 原始值/链路计数）
  *        遥控器失联时自动回到接收页（视角档）。
  */
@@ -43,7 +43,7 @@ void FishBotDisplay::updateDisplay()
 
         // ---- s1_pos_: 1=上(视角) 3=中(轨迹) 2=下(调试)，与 FPGA disp_mode 同步 ----
         if (s1_pos_ == 3) {
-            // ============ s1 中：轨迹档 → 姿态页（配 FPGA 轨迹仪表盘） ============
+            // ============ s1 中：轨迹档 → 姿态页（P/R/Y 三轴 + 轮速） ============
             // 行1: 版本 + 状态机 + 档名 + RX在线
             _display.print(version_code_);
             _display.print(" ");
@@ -64,7 +64,13 @@ void FishBotDisplay::updateDisplay()
             _display.println("d");
             _display.setTextSize(1);
 
-            // 行4~5: 四轮目标速度（mm/s，运动学解算输出）
+            // 行4: [V5] 航向角 yaw（±180°，gyro_z 积分；无磁力计，分钟级缓漂为物理特性）
+            _display.print("Y:");
+            if (yaw_ >= 0) _display.print("+");
+            _display.print(yaw_, 1);
+            _display.println("d");
+
+            // 行5~6: 四轮目标速度（mm/s，运动学解算输出）
             _display.print("T0:");
             _display.print((int)target_speed_[0]);
             _display.print(" T1:");
@@ -75,16 +81,6 @@ void FishBotDisplay::updateDisplay()
             _display.print(" T3:");
             _display.print((int)target_speed_[3]);
             _display.println("mm/s");
-
-            // 行6: 编码器（cnt）
-            _display.print("E0:");
-            _display.print(enc_[0]);
-            _display.print(" E1:");
-            _display.println(enc_[1]);
-            _display.print("E2:");
-            _display.print(enc_[2]);
-            _display.print(" E3:");
-            _display.println(enc_[3]);
         }
         else if (s1_pos_ == 2) {
             // ============ s1 下：调试档 → 发送页（上行链路 + IMU 原始值） ============
@@ -269,9 +265,10 @@ void FishBotDisplay::updateCommDebug(uint32_t txCnt, uint32_t rxOk, uint32_t rxE
     if (rxRaw) memcpy(rx_raw_, rxRaw, 9);
     if (txRaw) memcpy(tx_raw_, txRaw, PROTO_FRAME_LEN);
 }
-// PLD2026 V3：姿态角更新（fishbot.cpp 互补滤波计算，单位 deg）
-void FishBotDisplay::updateAttitude(float pitch, float roll)
+// PLD2026 V5：姿态角更新（fishbot.cpp 互补滤波计算，单位 deg）
+void FishBotDisplay::updateAttitude(float pitch, float roll, float yaw)
 {
     pitch_ = pitch;
     roll_  = roll;
+    yaw_   = yaw;
 }

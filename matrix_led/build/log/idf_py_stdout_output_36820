@@ -1,0 +1,49 @@
+-- IDF_TARGET is not set, guessed 'esp32s3' from sdkconfig 'E:/FPGA/project/smart_car_pld2026/matrix_led/sdkconfig.defaults'
+-- Found Git: D:/APP/Git/Git/cmd/git.exe (found version "2.53.0.windows.1") 
+-- The C compiler identification is GNU 12.2.0
+-- The CXX compiler identification is GNU 12.2.0
+-- The ASM compiler identification is GNU
+-- Found assembler: D:/DevEnv/Espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/xtensa-esp32s3-elf-gcc.exe
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: D:/DevEnv/Espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/xtensa-esp32s3-elf-gcc.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: D:/DevEnv/Espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/xtensa-esp32s3-elf-g++.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Building ESP-IDF components for target esp32s3
+Dependencies lock doesn't exist, solving dependencies.
+..Updating lock file at E:\FPGA\project\smart_car_pld2026\matrix_led\dependencies.lock
+Processing 2 dependencies:
+[1/2] espressif/led_strip (2.5.5)
+[2/2] idf (5.1.2)
+-- Project sdkconfig file E:/FPGA/project/smart_car_pld2026/matrix_led/sdkconfig
+Loading defaults file E:/FPGA/project/smart_car_pld2026/matrix_led/sdkconfig.defaults...
+-- Looking for sys/types.h
+-- Looking for sys/types.h - found
+-- Looking for stdint.h
+-- Looking for stdint.h - found
+-- Looking for stddef.h
+-- Looking for stddef.h - found
+-- Check size of time_t
+-- Check size of time_t - done
+-- Found Python3: D:/DevEnv/Espressif/python_env/idf5.1_py3.11_env/Scripts/python.exe (found version "3.11.2") found components: Interpreter 
+-- Performing Test C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS
+-- Performing Test C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS - Success
+-- App "matrix_led" version: 1009f7d
+-- Adding linker script E:/FPGA/project/smart_car_pld2026/matrix_led/build/esp-idf/esp_system/ld/memory.ld
+-- Adding linker script D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/ld/esp32s3/sections.ld.in
+-- Adding linker script D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/esp_rom/esp32s3/ld/esp32s3.rom.ld
+-- Adding linker script D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/esp_rom/esp32s3/ld/esp32s3.rom.api.ld
+-- Adding linker script D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/esp_rom/esp32s3/ld/esp32s3.rom.libgcc.ld
+-- Adding linker script D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/esp_rom/esp32s3/ld/esp32s3.rom.newlib.ld
+-- Adding linker script D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/esp_rom/esp32s3/ld/esp32s3.rom.version.ld
+-- Adding linker script D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/soc/esp32s3/ld/esp32s3.peripherals.ld
+-- Components: app_trace app_update bootloader bootloader_support bt cmock console cxx driver efuse esp-tls esp_adc esp_app_format esp_coex esp_common esp_eth esp_event esp_gdbstub esp_hid esp_http_client esp_http_server esp_https_ota esp_https_server esp_hw_support esp_lcd esp_local_ctrl esp_mm esp_netif esp_netif_stack esp_partition esp_phy esp_pm esp_psram esp_ringbuf esp_rom esp_system esp_timer esp_wifi espcoredump espressif__led_strip esptool_py fatfs freertos hal heap http_parser idf_test ieee802154 json log lwip main mbedtls mqtt newlib nvs_flash openthread partition_table perfmon protobuf-c protocomm pthread sdmmc soc spi_flash spiffs tcp_transport touch_element ulp unity usb vfs wear_levelling wifi_provisioning wpa_supplicant xtensa
+-- Component paths: D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/app_trace D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/app_update D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/bootloader D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/bootloader_support D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/bt D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/cmock D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/console D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/cxx D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/driver D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/efuse D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/esp-tls D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/esp_adc D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/esp_app_format D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/esp_coex D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/esp_common D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/esp_eth D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/esp_event D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/esp_gdbstub D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/esp_hid D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/esp_http_client D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/esp_http_server D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/esp_https_ota D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/esp_https_server D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/esp_hw_support D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/esp_lcd D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/esp_local_ctrl D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/esp_mm D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/esp_netif D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/esp_netif_stack D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/esp_partition D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/esp_phy D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/esp_pm D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/esp_psram D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/esp_ringbuf D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/esp_rom D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/esp_timer D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/esp_wifi D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/espcoredump E:/FPGA/project/smart_car_pld2026/matrix_led/managed_components/espressif__led_strip D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/esptool_py D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/fatfs D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/freertos D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/hal D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/heap D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/http_parser D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/idf_test D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/ieee802154 D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/json D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/log D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/lwip E:/FPGA/project/smart_car_pld2026/matrix_led/main D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/mbedtls D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/mqtt D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/newlib D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/nvs_flash D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/openthread D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/partition_table D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/perfmon D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/protobuf-c D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/protocomm D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/pthread D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/sdmmc D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/soc D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/spi_flash D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/spiffs D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/tcp_transport D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/touch_element D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/ulp D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/unity D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/usb D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/vfs D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/wear_levelling D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/wifi_provisioning D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/wpa_supplicant D:/DevEnv/Espressif/frameworks/esp-idf-v5.1.2/components/xtensa
+-- Configuring done
+-- Generating done
+-- Build files have been written to: E:/FPGA/project/smart_car_pld2026/matrix_led/build
