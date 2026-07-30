@@ -2,8 +2,8 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Thu Jul 30 01:47:01 2026
-# Process ID: 36216
+# Start of session at: Thu Jul 30 10:22:35 2026
+# Process ID: 52648
 # Current directory: E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1
 # Command line: vivado.exe -log top_dual_ov5640_lcd.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_dual_ov5640_lcd.tcl
 # Log file: E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/top_dual_ov5640_lcd.vds
@@ -15,7 +15,7 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 27672 
+INFO: Helper process launched with PID 47688 
 WARNING: [Synth 8-2611] redeclaration of ansi port wfifo_dout is not allowed [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl_top.v:60]
 WARNING: [Synth 8-2611] redeclaration of ansi port wfifo_rcount_1 is not allowed [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl_top.v:63]
 WARNING: [Synth 8-2611] redeclaration of ansi port wfifo_rcount_2 is not allowed [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl_top.v:64]
@@ -27,7 +27,7 @@ WARNING: [Synth 8-2611] redeclaration of ansi port rfifo_wdata_2 is not allowed 
 WARNING: [Synth 8-2611] redeclaration of ansi port rfifo_wren_1 is not allowed [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_rw.v:98]
 WARNING: [Synth 8-2611] redeclaration of ansi port rfifo_wren_2 is not allowed [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_rw.v:99]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 508.031 ; gain = 106.223
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 507.707 ; gain = 105.387
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'top_dual_ov5640_lcd' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v:26]
 INFO: [Synth 8-6157] synthesizing module 'picture_size' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/picture_size.v:19]
@@ -61,23 +61,27 @@ INFO: [Synth 8-6155] done synthesizing module 'cmos_capture_data' (4#1) [E:/FPGA
 INFO: [Synth 8-6155] done synthesizing module 'ov5640_dri' (5#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ov5640_dri/ov5640_dri.v:19]
 WARNING: [Synth 8-350] instance 'u_ov5640_dri_1' of module 'ov5640_dri' requires 22 connections, but only 21 given [E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v:225]
 WARNING: [Synth 8-350] instance 'u_ov5640_dri_2' of module 'ov5640_dri' requires 22 connections, but only 21 given [E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v:252]
-INFO: [Synth 8-6157] synthesizing module 'green_detect' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/vision/green_detect.v:21]
+INFO: [Synth 8-6157] synthesizing module 'green_detect' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/vision/green_detect.v:45]
 	Parameter H_ACTIVE bound to: 400 - type: integer 
 	Parameter TH_G bound to: 6'b101000 
-	Parameter TH_RB bound to: 5'b01100 
-	Parameter MIN_AREA bound to: 18'b000000000001100100 
+	Parameter TH_DIFF bound to: 6'b010000 
+	Parameter MIN_AREA bound to: 18'b000000000000111100 
+	Parameter MAX_AREA bound to: 18'b000001011101110000 
+	Parameter DEN_SHIFT bound to: 4'b0100 
+	Parameter CONFIRM bound to: 2'b10 
+	Parameter SQUARE_EN bound to: 1'b1 
 	Parameter IDLE_MAX bound to: 24'b000000000100111000100000 
 	Parameter D_IDLE bound to: 0 - type: integer 
 	Parameter D_RUN_U bound to: 1 - type: integer 
 	Parameter D_RUN_V bound to: 2 - type: integer 
 	Parameter D_LATCH bound to: 3 - type: integer 
-INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/vision/green_detect.v:148]
-WARNING: [Synth 8-5788] Register c_cnt_reg in module green_detect is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/vision/green_detect.v:157]
-WARNING: [Synth 8-5788] Register c_min_x_reg in module green_detect is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/vision/green_detect.v:158]
-WARNING: [Synth 8-5788] Register c_max_x_reg in module green_detect is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/vision/green_detect.v:158]
-WARNING: [Synth 8-5788] Register c_min_y_reg in module green_detect is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/vision/green_detect.v:159]
-WARNING: [Synth 8-5788] Register c_max_y_reg in module green_detect is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/vision/green_detect.v:159]
-INFO: [Synth 8-6155] done synthesizing module 'green_detect' (6#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/vision/green_detect.v:21]
+INFO: [Synth 8-226] default block is never used [E:/FPGA/project/smart_car_pld2026/my_car/rtl/vision/green_detect.v:206]
+WARNING: [Synth 8-5788] Register c_cnt_reg in module green_detect is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/vision/green_detect.v:219]
+WARNING: [Synth 8-5788] Register c_min_x_reg in module green_detect is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/vision/green_detect.v:220]
+WARNING: [Synth 8-5788] Register c_max_x_reg in module green_detect is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/vision/green_detect.v:220]
+WARNING: [Synth 8-5788] Register c_min_y_reg in module green_detect is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/vision/green_detect.v:221]
+WARNING: [Synth 8-5788] Register c_max_y_reg in module green_detect is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FPGA/project/smart_car_pld2026/my_car/rtl/vision/green_detect.v:221]
+INFO: [Synth 8-6155] done synthesizing module 'green_detect' (6#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/vision/green_detect.v:45]
 INFO: [Synth 8-6157] synthesizing module 'stereo_dist' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/vision/stereo_dist.v:14]
 	Parameter F_PIX bound to: 16'b0000000111000010 
 	Parameter BASELINE_MM bound to: 16'b0000000001100100 
@@ -128,14 +132,14 @@ INFO: [Synth 8-6157] synthesizing module 'ttc_warn' [E:/FPGA/project/smart_car_p
 	Parameter D_IDLE bound to: 1'b0 
 	Parameter D_RUN bound to: 1'b1 
 INFO: [Synth 8-6155] done synthesizing module 'ttc_warn' (12#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/vision/ttc_warn.v:18]
-INFO: [Synth 8-6157] synthesizing module 'mode_switch' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/mode_switch.v:18]
+INFO: [Synth 8-6157] synthesizing module 'mode_switch' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/mode_switch.v:21]
 	Parameter DEB_CNT bound to: 20'b11110100001001000000 
 	Parameter RC_TIMEOUT bound to: 25'b1011111010111100001000000 
 	Parameter NORM_TH_G bound to: 6'b101000 
-	Parameter NORM_TH_RB bound to: 5'b01100 
+	Parameter NORM_TH_DIFF bound to: 6'b010000 
 	Parameter NIGHT_TH_G bound to: 6'b011100 
-	Parameter NIGHT_TH_RB bound to: 5'b10010 
-INFO: [Synth 8-6155] done synthesizing module 'mode_switch' (13#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/mode_switch.v:18]
+	Parameter NIGHT_TH_DIFF bound to: 6'b001010 
+INFO: [Synth 8-6155] done synthesizing module 'mode_switch' (13#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/mode_switch.v:21]
 INFO: [Synth 8-6157] synthesizing module 'ddr3_top' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_top.v:19]
 INFO: [Synth 8-6157] synthesizing module 'ddr3_rw' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_rw.v:19]
 	Parameter IDLE bound to: 7'b0000001 
@@ -146,16 +150,16 @@ INFO: [Synth 8-6157] synthesizing module 'ddr3_rw' [E:/FPGA/project/smart_car_pl
 	Parameter READ_2 bound to: 7'b0100000 
 	Parameter READ_WAIT bound to: 7'b1000000 
 INFO: [Synth 8-6155] done synthesizing module 'ddr3_rw' (14#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_rw.v:19]
-INFO: [Synth 8-6157] synthesizing module 'mig_7series_0' [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-36216-LAPTOP-2K88VM5F/realtime/mig_7series_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'mig_7series_0' (15#1) [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-36216-LAPTOP-2K88VM5F/realtime/mig_7series_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_0' [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-52648-LAPTOP-2K88VM5F/realtime/mig_7series_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_0' (15#1) [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-52648-LAPTOP-2K88VM5F/realtime/mig_7series_0_stub.v:5]
 WARNING: [Synth 8-350] instance 'u_mig_7series_0' of module 'mig_7series_0' requires 40 connections, but only 39 given [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_top.v:143]
 INFO: [Synth 8-6157] synthesizing module 'ddr3_fifo_ctrl_top' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl_top.v:19]
 INFO: [Synth 8-6157] synthesizing module 'ddr3_fifo_ctrl' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl.v:20]
-INFO: [Synth 8-6157] synthesizing module 'rd_fifo' [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-36216-LAPTOP-2K88VM5F/realtime/rd_fifo_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'rd_fifo' (16#1) [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-36216-LAPTOP-2K88VM5F/realtime/rd_fifo_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'rd_fifo' [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-52648-LAPTOP-2K88VM5F/realtime/rd_fifo_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'rd_fifo' (16#1) [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-52648-LAPTOP-2K88VM5F/realtime/rd_fifo_stub.v:6]
 WARNING: [Synth 8-689] width (10) of port connection 'wr_data_count' does not match port width (9) of module 'rd_fifo' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl.v:200]
-INFO: [Synth 8-6157] synthesizing module 'wr_fifo' [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-36216-LAPTOP-2K88VM5F/realtime/wr_fifo_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'wr_fifo' (17#1) [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-36216-LAPTOP-2K88VM5F/realtime/wr_fifo_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'wr_fifo' [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-52648-LAPTOP-2K88VM5F/realtime/wr_fifo_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'wr_fifo' (17#1) [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-52648-LAPTOP-2K88VM5F/realtime/wr_fifo_stub.v:6]
 WARNING: [Synth 8-689] width (10) of port connection 'rd_data_count' does not match port width (9) of module 'wr_fifo' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl.v:215]
 INFO: [Synth 8-6155] done synthesizing module 'ddr3_fifo_ctrl' (18#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl.v:20]
 WARNING: [Synth 8-689] width (11) of port connection 'wfifo_rcount' does not match port width (10) of module 'ddr3_fifo_ctrl' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl_top.v:106]
@@ -164,8 +168,8 @@ WARNING: [Synth 8-689] width (11) of port connection 'wfifo_rcount' does not mat
 WARNING: [Synth 8-689] width (11) of port connection 'rfifo_wcount' does not match port width (10) of module 'ddr3_fifo_ctrl' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl_top.v:129]
 INFO: [Synth 8-6155] done synthesizing module 'ddr3_fifo_ctrl_top' (19#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl_top.v:19]
 INFO: [Synth 8-6155] done synthesizing module 'ddr3_top' (20#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_top.v:19]
-INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-36216-LAPTOP-2K88VM5F/realtime/clk_wiz_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (21#1) [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-36216-LAPTOP-2K88VM5F/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-52648-LAPTOP-2K88VM5F/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (21#1) [E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/.Xil/Vivado-52648-LAPTOP-2K88VM5F/realtime/clk_wiz_0_stub.v:5]
 INFO: [Synth 8-6157] synthesizing module 'lcd_rgb_top' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/lcd_rgb_top.v:25]
 INFO: [Synth 8-6157] synthesizing module 'clk_div' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/clk_div.v:19]
 INFO: [Synth 8-6155] done synthesizing module 'clk_div' (22#1) [E:/FPGA/project/smart_car_pld2026/my_car/rtl/lcd_rgb_top/clk_div.v:19]
@@ -528,7 +532,7 @@ WARNING: [Synth 8-3331] design ddr3_rw has unconnected port app_addr_wr_max[4]
 WARNING: [Synth 8-3331] design ddr3_rw has unconnected port app_addr_wr_max[3]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 621.137 ; gain = 219.328
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 622.184 ; gain = 219.863
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -541,10 +545,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 621.137 ; gain = 219.328
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 622.184 ; gain = 219.863
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 621.137 ; gain = 219.328
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 622.184 ; gain = 219.863
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tfgg484-2
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -572,24 +576,24 @@ Finished Parsing XDC File [E:/FPGA/project/smart_car_pld2026/my_car/prj/constrs_
 WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [E:/FPGA/project/smart_car_pld2026/my_car/prj/constrs_1/new/pin.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/top_dual_ov5640_lcd_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [E:/FPGA/project/smart_car_pld2026/my_car/prj/constrs_1/new/pin.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_dual_ov5640_lcd_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_dual_ov5640_lcd_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1033.180 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1034.551 ; gain = 0.000
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1033.180 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1034.551 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1033.180 ; gain = 0.000
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 1033.180 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1034.551 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1034.551 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 1033.180 ; gain = 631.371
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1034.551 ; gain = 632.230
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tfgg484-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 1033.180 ; gain = 631.371
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1034.551 ; gain = 632.230
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -743,7 +747,7 @@ Applied set_property DONT_TOUCH = true for u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr
 Applied set_property DONT_TOUCH = true for u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/u_rd_fifo. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for u_ddr3_top/u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/u_rd_fifo. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 1033.180 ; gain = 631.371
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1034.551 ; gain = 632.230
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "total_h_pixel" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "total_v_pixel" won't be mapped to RAM because it is too sparse
@@ -784,13 +788,11 @@ INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because addre
 INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-802] inferred FSM for state register 'dstate_reg' in module 'green_detect'
 INFO: [Synth 8-5546] ROM "frame_end" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "y" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "dstate" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "dcnt" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5544] ROM "gd_u" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "dstate" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'dstate_reg' in module 'green_detect'
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [E:/FPGA/project/smart_car_pld2026/my_car/rtl/vision/stereo_dist.v:55]
 INFO: [Synth 8-5546] ROM "dstate" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "dcnt" won't be mapped to RAM because it is too sparse
@@ -815,7 +817,7 @@ INFO: [Synth 8-5546] ROM "trk_x" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "dstate" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "dcnt" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5544] ROM "th_g" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "th_rb" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "th_diff" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-802] inferred FSM for state register 'state_cnt_reg' in module 'ddr3_rw'
 INFO: [Synth 8-5546] ROM "rfifo_data_en_1" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5544] ROM "state_cnt" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
@@ -919,6 +921,8 @@ INFO: [Synth 8-5544] ROM "sat12520" won't be mapped to Block RAM because address
 INFO: [Synth 8-5544] ROM "sat12530" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "sat12540" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "sat12550" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12560" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sat12570" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Common 17-14] Message 'Synth 8-5544' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'sl_uart_rx'
 INFO: [Synth 8-5546] ROM "state" won't be mapped to RAM because it is too sparse
@@ -1026,7 +1030,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'v1_decode'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:27 . Memory (MB): peak = 1033.180 ; gain = 631.371
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1034.551 ; gain = 632.230
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1043,8 +1047,8 @@ Report RTL Partitions:
 |8     |dash_osd__GB1             |           1|     13797|
 |9     |lcd_rgb_top__GC0          |           1|     14874|
 |10    |top_dual_ov5640_lcd__GCB0 |           1|     19987|
-|11    |top_dual_ov5640_lcd__GCB1 |           1|     10665|
-|12    |top_dual_ov5640_lcd__GCB2 |           1|     30196|
+|11    |top_dual_ov5640_lcd__GCB1 |           1|     11129|
+|12    |top_dual_ov5640_lcd__GCB2 |           1|     30661|
 +------+--------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -1072,16 +1076,16 @@ Detailed RTL Component Info :
 	   5 Input     11 Bit       Adders := 1     
 	   4 Input     11 Bit       Adders := 2     
 	   2 Input     10 Bit       Adders := 10    
-	   3 Input     10 Bit       Adders := 4     
+	   3 Input     10 Bit       Adders := 8     
 	   2 Input      9 Bit       Adders := 2     
 	   2 Input      8 Bit       Adders := 10    
 	   3 Input      7 Bit       Adders := 1     
-	   2 Input      7 Bit       Adders := 2     
+	   2 Input      7 Bit       Adders := 6     
 	   2 Input      6 Bit       Adders := 5     
 	   2 Input      5 Bit       Adders := 2     
 	   2 Input      4 Bit       Adders := 14    
 	   2 Input      3 Bit       Adders := 2     
-	   2 Input      2 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 3     
 	   2 Input      1 Bit       Adders := 1     
 +---XORs : 
 	   2 Input      8 Bit         XORs := 54    
@@ -1109,7 +1113,7 @@ Detailed RTL Component Info :
 	                5 Bit    Registers := 2     
 	                4 Bit    Registers := 8     
 	                3 Bit    Registers := 2     
-	                2 Bit    Registers := 16    
+	                2 Bit    Registers := 18    
 	                1 Bit    Registers := 101   
 +---Multipliers : 
 	                16x32  Multipliers := 2     
@@ -1176,12 +1180,12 @@ Detailed RTL Component Info :
 	   3 Input      2 Bit        Muxes := 2     
 	   6 Input      2 Bit        Muxes := 15    
 	   4 Input      2 Bit        Muxes := 4     
-	   2 Input      2 Bit        Muxes := 15    
+	   2 Input      2 Bit        Muxes := 17    
 	   5 Input      2 Bit        Muxes := 1     
 	   8 Input      1 Bit        Muxes := 10    
-	   2 Input      1 Bit        Muxes := 203   
+	   2 Input      1 Bit        Muxes := 209   
 	   6 Input      1 Bit        Muxes := 11    
-	   4 Input      1 Bit        Muxes := 63    
+	   4 Input      1 Bit        Muxes := 67    
 	   3 Input      1 Bit        Muxes := 5     
 	   5 Input      1 Bit        Muxes := 10    
 	  31 Input      1 Bit        Muxes := 14    
@@ -1523,13 +1527,17 @@ Detailed RTL Component Info :
 	   3 Input     32 Bit       Adders := 1     
 	   2 Input     15 Bit       Adders := 1     
 	   2 Input     10 Bit       Adders := 2     
+	   3 Input     10 Bit       Adders := 2     
+	   2 Input      7 Bit       Adders := 2     
 	   2 Input      6 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 1     
 +---Registers : 
 	               32 Bit    Registers := 4     
 	               24 Bit    Registers := 1     
 	               18 Bit    Registers := 2     
 	               10 Bit    Registers := 18    
 	                6 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
 	                1 Bit    Registers := 2     
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 4     
@@ -1540,9 +1548,10 @@ Detailed RTL Component Info :
 	   4 Input     10 Bit        Muxes := 4     
 	   2 Input      6 Bit        Muxes := 1     
 	   4 Input      6 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
 	   4 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 12    
-	   4 Input      1 Bit        Muxes := 9     
+	   2 Input      1 Bit        Muxes := 15    
+	   4 Input      1 Bit        Muxes := 11    
 Module mode_switch 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -1649,13 +1658,17 @@ Detailed RTL Component Info :
 	   3 Input     32 Bit       Adders := 1     
 	   2 Input     15 Bit       Adders := 1     
 	   2 Input     10 Bit       Adders := 2     
+	   3 Input     10 Bit       Adders := 2     
+	   2 Input      7 Bit       Adders := 2     
 	   2 Input      6 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 1     
 +---Registers : 
 	               32 Bit    Registers := 4     
 	               24 Bit    Registers := 1     
 	               18 Bit    Registers := 2     
 	               10 Bit    Registers := 18    
 	                6 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
 	                1 Bit    Registers := 2     
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 4     
@@ -1666,9 +1679,10 @@ Detailed RTL Component Info :
 	   4 Input     10 Bit        Muxes := 4     
 	   2 Input      6 Bit        Muxes := 1     
 	   4 Input      6 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
 	   4 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 12    
-	   4 Input      1 Bit        Muxes := 9     
+	   2 Input      1 Bit        Muxes := 15    
+	   4 Input      1 Bit        Muxes := 11    
 Module i2c_ov5640_rgb565_cfg__1 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -2017,11 +2031,11 @@ DSP Report: operator roll_f1 is absorbed into DSP roll_f0.
 DSP Report: Generating DSP yaw_sum, operation Mode is: C+A*(B:0x1f4).
 DSP Report: operator yaw_sum is absorbed into DSP yaw_sum.
 DSP Report: operator gz_m is absorbed into DSP yaw_sum.
-WARNING: [Synth 8-3917] design top_dual_ov5640_lcd__GCB1 has port th_g[3] driven by constant 1
-WARNING: [Synth 8-3917] design top_dual_ov5640_lcd__GCB1 has port th_g[1] driven by constant 0
-WARNING: [Synth 8-3917] design top_dual_ov5640_lcd__GCB1 has port th_g[0] driven by constant 0
-WARNING: [Synth 8-3917] design top_dual_ov5640_lcd__GCB1 has port th_rb[0] driven by constant 0
+DSP Report: Generating DSP bbox_area, operation Mode is: A*B.
+DSP Report: operator bbox_area is absorbed into DSP bbox_area.
 INFO: [Synth 8-4471] merging register 'u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_2/rd_load_d0_reg' into 'u_ddr3_fifo_ctrl_top/u_ddr3_fifo_ctrl_1/rd_load_d0_reg' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_fifo_ctrl.v:144]
+DSP Report: Generating DSP bbox_area, operation Mode is: A*B.
+DSP Report: operator bbox_area is absorbed into DSP bbox_area.
 INFO: [Synth 8-5587] ROM size for "scl" is below threshold of ROM address width. It will be mapped to LUTs
 INFO: [Synth 8-5587] ROM size for "sda_out" is below threshold of ROM address width. It will be mapped to LUTs
 INFO: [Synth 8-5587] ROM size for "scl" is below threshold of ROM address width. It will be mapped to LUTs
@@ -2084,7 +2098,7 @@ INFO: [Synth 8-3886] merging instance 'u_stereo_dist/dvs_reg[30]' (FDCE) to 'u_s
 INFO: [Synth 8-3886] merging instance 'u_stereo_dist/dvs_reg[31]' (FDCE) to 'u_stereo_dist/dvs_reg[29]'
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:08 ; elapsed = 00:01:29 . Memory (MB): peak = 1073.602 ; gain = 671.793
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:44 ; elapsed = 00:00:56 . Memory (MB): peak = 1073.355 ; gain = 671.035
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -2122,6 +2136,8 @@ DSP: Preliminary Mapping  Report (see note below)
 |attitude_cf  | A*(B:0x3ec)            | 17     | 10     | -      | -      | 27     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |attitude_cf  | C+A*(B:0x14)           | 21     | 5      | 26     | -      | 26     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
 |attitude_cf  | C+A*(B:0x1f4)          | 17     | 10     | 40     | -      | 40     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|green_detect | A*B                    | 10     | 10     | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|green_detect | A*B                    | 10     | 10     | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 +-------------+------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
@@ -2146,8 +2162,8 @@ Report RTL Partitions:
 |8     |dash_osd__GB1             |           1|      5473|
 |9     |lcd_rgb_top__GC0          |           1|      2026|
 |10    |top_dual_ov5640_lcd__GCB0 |           1|      9782|
-|11    |top_dual_ov5640_lcd__GCB1 |           1|      5440|
-|12    |top_dual_ov5640_lcd__GCB2 |           1|     10332|
+|11    |top_dual_ov5640_lcd__GCB1 |           1|      5752|
+|12    |top_dual_ov5640_lcd__GCB2 |           1|     10644|
 +------+--------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
@@ -2159,33 +2175,33 @@ WARNING: [Synth 8-565] redefining clock 'sys_clk'
 WARNING: [Synth 8-565] redefining clock 'cmos_pclk'
 INFO: [Synth 8-5819] Moved 3 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:19 ; elapsed = 00:01:41 . Memory (MB): peak = 1087.633 ; gain = 685.824
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:50 ; elapsed = 00:01:02 . Memory (MB): peak = 1073.355 ; gain = 671.035
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:08:36 ; elapsed = 00:09:33 . Memory (MB): peak = 1918.352 ; gain = 1516.543
+Finished Timing Optimization : Time (s): cpu = 00:04:10 ; elapsed = 00:04:26 . Memory (MB): peak = 1941.766 ; gain = 1539.445
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+------+-------------------------------------+------------+----------+
-|      |RTL Partition                        |Replication |Instances |
-+------+-------------------------------------+------------+----------+
-|1     |dash_osd__GB0                        |           1|      6375|
-|2     |lcd_rgb_top__GC0                     |           1|      2008|
-|3     |top_dual_ov5640_lcd__GCB0            |           1|      9747|
-|4     |top_dual_ov5640_lcd__GCB1            |           1|      5227|
-|5     |top_dual_ov5640_lcd__GCB2            |           1|     10315|
-|6     |top_dual_ov5640_lcd_GT3              |           1|      5912|
-|7     |top_dual_ov5640_lcd_GT4              |           1|      4521|
-|8     |top_dual_ov5640_lcd_GT0__2           |           1|       589|
-|9     |top_dual_ov5640_lcd_GT2              |           1|        20|
-|10    |top_dual_ov5640_lcd_GT0              |           1|     10681|
-|11    |top_dual_ov5640_lcd_GT1              |           1|       176|
-|12    |top_dual_ov5640_lcd_GT2__1           |           1|     41488|
-|13    |datapath__10_top_dual_ov5640_lcd__GD |           1|      1551|
-+------+-------------------------------------+------------+----------+
++------+--------------------------------------+------------+----------+
+|      |RTL Partition                         |Replication |Instances |
++------+--------------------------------------+------------+----------+
+|1     |dash_osd__GB0                         |           1|      6375|
+|2     |lcd_rgb_top__GC0                      |           1|      2008|
+|3     |top_dual_ov5640_lcd__GCB0             |           1|      9747|
+|4     |top_dual_ov5640_lcd__GCB1             |           1|      5539|
+|5     |top_dual_ov5640_lcd__GCB2             |           1|     10606|
+|6     |top_dual_ov5640_lcd_GT2               |           1|       239|
+|7     |top_dual_ov5640_lcd_GT4               |           1|      4521|
+|8     |top_dual_ov5640_lcd_GT2__1            |           1|      3070|
+|9     |top_dual_ov5640_lcd_GT1               |           1|      1821|
+|10    |datapath__21_top_dual_ov5640_lcd__GD  |           1|      1451|
+|11    |top_dual_ov5640_lcd_GT0               |           1|     10948|
+|12    |top_dual_ov5640_lcd_GT1__1            |           1|     40272|
+|13    |datapath__868_top_dual_ov5640_lcd__GD |           1|      1400|
++------+--------------------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
@@ -2294,28 +2310,29 @@ WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_tim
 INFO: [Common 17-14] Message 'Synth 8-326' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/attitude_cf.v:177]
 INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [E:/FPGA/project/smart_car_pld2026/my_car/rtl/sensor_link/sensor_calc.v:154]
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:09:09 ; elapsed = 00:10:13 . Memory (MB): peak = 1918.352 ; gain = 1516.543
+Finished Technology Mapping : Time (s): cpu = 00:04:20 ; elapsed = 00:04:40 . Memory (MB): peak = 1941.766 ; gain = 1539.445
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+------+-------------------------------------+------------+----------+
-|      |RTL Partition                        |Replication |Instances |
-+------+-------------------------------------+------------+----------+
-|1     |dash_osd__GB0                        |           1|      4385|
-|2     |lcd_rgb_top__GC0                     |           1|       811|
-|3     |top_dual_ov5640_lcd__GCB0            |           1|      4309|
-|4     |top_dual_ov5640_lcd__GCB1            |           1|      3334|
-|5     |top_dual_ov5640_lcd__GCB2            |           1|      6699|
-|6     |top_dual_ov5640_lcd_GT3              |           1|      1850|
-|7     |top_dual_ov5640_lcd_GT4              |           1|      1364|
-|8     |top_dual_ov5640_lcd_GT0__2           |           1|       588|
-|9     |top_dual_ov5640_lcd_GT2              |           1|        20|
-|10    |top_dual_ov5640_lcd_GT0              |           1|      4525|
-|11    |top_dual_ov5640_lcd_GT1              |           1|       176|
-|12    |top_dual_ov5640_lcd_GT2__1           |           1|     15136|
-|13    |datapath__10_top_dual_ov5640_lcd__GD |           1|       389|
-+------+-------------------------------------+------------+----------+
++------+--------------------------------------+------------+----------+
+|      |RTL Partition                         |Replication |Instances |
++------+--------------------------------------+------------+----------+
+|1     |dash_osd__GB0                         |           1|      4385|
+|2     |lcd_rgb_top__GC0                      |           1|       811|
+|3     |top_dual_ov5640_lcd__GCB0             |           1|      4309|
+|4     |top_dual_ov5640_lcd__GCB1             |           1|      3447|
+|5     |top_dual_ov5640_lcd__GCB2             |           1|      6820|
+|6     |top_dual_ov5640_lcd_GT2               |           1|       239|
+|7     |top_dual_ov5640_lcd_GT4               |           1|      1364|
+|8     |top_dual_ov5640_lcd_GT2__1            |           1|       830|
+|9     |top_dual_ov5640_lcd_GT1               |           1|       802|
+|10    |datapath__21_top_dual_ov5640_lcd__GD  |           1|       432|
+|11    |top_dual_ov5640_lcd_GT0               |           1|      4661|
+|12    |top_dual_ov5640_lcd_GT1__1            |           1|     15136|
+|13    |datapath__868_top_dual_ov5640_lcd__GD |           1|       529|
++------+--------------------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start IO Insertion
 ---------------------------------------------------------------------------------
@@ -2335,7 +2352,7 @@ INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM bloc
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:09:18 ; elapsed = 00:10:23 . Memory (MB): peak = 1918.352 ; gain = 1516.543
+Finished IO Insertion : Time (s): cpu = 00:04:23 ; elapsed = 00:04:43 . Memory (MB): peak = 1941.766 ; gain = 1539.445
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -2348,7 +2365,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:09:19 ; elapsed = 00:10:24 . Memory (MB): peak = 1918.352 ; gain = 1516.543
+Finished Renaming Generated Instances : Time (s): cpu = 00:04:24 ; elapsed = 00:04:43 . Memory (MB): peak = 1941.766 ; gain = 1539.445
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -6927,25 +6944,25 @@ Inferred a: "set_disable_timing -from C[1] -to P[20] \u_attitude_cf/roll_f0 "
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:09:28 ; elapsed = 00:10:34 . Memory (MB): peak = 1918.352 ; gain = 1516.543
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:04:26 ; elapsed = 00:04:46 . Memory (MB): peak = 1941.766 ; gain = 1539.445
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:09:28 ; elapsed = 00:10:34 . Memory (MB): peak = 1918.352 ; gain = 1516.543
+Finished Renaming Generated Ports : Time (s): cpu = 00:04:27 ; elapsed = 00:04:46 . Memory (MB): peak = 1941.766 ; gain = 1539.445
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:09:29 ; elapsed = 00:10:36 . Memory (MB): peak = 1918.352 ; gain = 1516.543
+Finished Handling Custom Attributes : Time (s): cpu = 00:04:27 ; elapsed = 00:04:46 . Memory (MB): peak = 1941.766 ; gain = 1539.445
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:09:29 ; elapsed = 00:10:36 . Memory (MB): peak = 1918.352 ; gain = 1516.543
+Finished Renaming Generated Nets : Time (s): cpu = 00:04:27 ; elapsed = 00:04:47 . Memory (MB): peak = 1941.766 ; gain = 1539.445
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -6986,19 +7003,19 @@ Report Cell Usage:
 |5     |wr_fifo       |     1|
 |6     |wr_fifo__2    |     1|
 |7     |BUFG          |     5|
-|8     |CARRY4        |  4569|
-|9     |DSP48E1       |     7|
+|8     |CARRY4        |  4599|
+|9     |DSP48E1       |     9|
 |10    |DSP48E1_1     |     5|
-|11    |LUT1          |  2003|
-|12    |LUT2          |  8165|
-|13    |LUT3          |  5113|
-|14    |LUT4          |  6649|
-|15    |LUT5          |  3231|
-|16    |LUT6          |  7203|
-|17    |MUXF7         |   357|
+|11    |LUT1          |  2010|
+|12    |LUT2          |  8219|
+|13    |LUT3          |  5114|
+|14    |LUT4          |  6737|
+|15    |LUT5          |  3215|
+|16    |LUT6          |  7271|
+|17    |MUXF7         |   355|
 |18    |MUXF8         |    77|
 |19    |SRL16E        |    14|
-|20    |FDCE          |  5788|
+|20    |FDCE          |  5792|
 |21    |FDPE          |    78|
 |22    |FDRE          |   442|
 |23    |FDSE          |     5|
@@ -7012,7 +7029,7 @@ Report Instance Areas:
 +------+-------------------------+--------------------------+------+
 |      |Instance                 |Module                    |Cells |
 +------+-------------------------+--------------------------+------+
-|1     |top                      |                          | 45198|
+|1     |top                      |                          | 45434|
 |2     |  u_attitude_cf          |attitude_cf               |  1664|
 |3     |    u_atan_lut           |atan_lut                  |   538|
 |4     |  u_ddr3_top             |ddr3_top                  |  4324|
@@ -7020,61 +7037,60 @@ Report Instance Areas:
 |6     |      u_ddr3_fifo_ctrl_1 |ddr3_fifo_ctrl__xdcDup__1 |  1264|
 |7     |      u_ddr3_fifo_ctrl_2 |ddr3_fifo_ctrl            |  1022|
 |8     |    u_ddr3_rw            |ddr3_rw                   |  1682|
-|9     |  u_green_detect         |green_detect              |  1152|
-|10    |  u_green_detect_2       |green_detect_0            |   941|
-|11    |  u_lcd_rgb_top          |lcd_rgb_top               | 28325|
+|9     |  u_green_detect         |green_detect              |  1253|
+|10    |  u_green_detect_2       |green_detect_0            |  1046|
+|11    |  u_lcd_rgb_top          |lcd_rgb_top               | 28315|
 |12    |    u_clk_div            |clk_div                   |     6|
-|13    |    u_dash_osd           |dash_osd                  |  8730|
+|13    |    u_dash_osd           |dash_osd                  |  6853|
 |14    |    u_lcd_disply         |lcd_disply                |    20|
-|15    |    u_lcd_driver         |lcd_driver                |   883|
-|16    |    u_osd_overlay        |osd_overlay               | 18595|
-|17    |      u_osd_font         |osd_font                  |   339|
+|15    |    u_lcd_driver         |lcd_driver                |   879|
+|16    |    u_osd_overlay        |osd_overlay               | 20466|
+|17    |      u_osd_font         |osd_font                  |   533|
 |18    |    u_rd_id              |rd_id                     |    91|
-|19    |  u_mode_switch          |mode_switch               |   127|
-|20    |  u_ov5640_dri_1         |ov5640_dri                |   443|
-|21    |    u_cmos_capture_data  |cmos_capture_data_2       |    75|
+|19    |  u_mode_switch          |mode_switch               |   128|
+|20    |  u_ov5640_dri_1         |ov5640_dri                |   456|
+|21    |    u_cmos_capture_data  |cmos_capture_data_2       |    88|
 |22    |    u_i2c_cfg            |i2c_ov5640_rgb565_cfg_3   |   217|
 |23    |    u_i2c_dr             |i2c_dri_4                 |   151|
-|24    |  u_ov5640_dri_2         |ov5640_dri_1              |   441|
-|25    |    u_cmos_capture_data  |cmos_capture_data         |    72|
+|24    |  u_ov5640_dri_2         |ov5640_dri_1              |   455|
+|25    |    u_cmos_capture_data  |cmos_capture_data         |    86|
 |26    |    u_i2c_cfg            |i2c_ov5640_rgb565_cfg     |   217|
 |27    |    u_i2c_dr             |i2c_dri                   |   151|
 |28    |  u_picture_size         |picture_size              |    49|
 |29    |  u_sensor_calc          |sensor_calc               |  1409|
 |30    |    u_sincos_lut         |sincos_lut                |   265|
-|31    |  u_sensor_link          |sensor_link               |  2333|
+|31    |  u_sensor_link          |sensor_link               |  2334|
 |32    |    u_ctrl_tx            |ctrl_link_tx              |   213|
 |33    |      u_tx               |sl_uart_tx                |    71|
-|34    |    u_decode             |v1_decode                 |  1548|
+|34    |    u_decode             |v1_decode                 |  1549|
 |35    |    u_rx                 |sl_uart_rx                |    94|
 |36    |    u_tracker            |tracker_ctrl              |   478|
 |37    |  u_stereo_dist          |stereo_dist               |   528|
 |38    |  u_ttc_warn             |ttc_warn                  |   472|
 +------+-------------------------+--------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:09:29 ; elapsed = 00:10:36 . Memory (MB): peak = 1918.352 ; gain = 1516.543
+Finished Writing Synthesis Report : Time (s): cpu = 00:04:27 ; elapsed = 00:04:47 . Memory (MB): peak = 1941.766 ; gain = 1539.445
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 898 critical warnings and 320 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:09:18 ; elapsed = 00:10:28 . Memory (MB): peak = 1918.352 ; gain = 1104.500
-Synthesis Optimization Complete : Time (s): cpu = 00:09:30 ; elapsed = 00:10:38 . Memory (MB): peak = 1918.352 ; gain = 1516.543
+Synthesis finished with 0 errors, 898 critical warnings and 317 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:04:21 ; elapsed = 00:04:42 . Memory (MB): peak = 1941.766 ; gain = 1127.078
+Synthesis Optimization Complete : Time (s): cpu = 00:04:27 ; elapsed = 00:04:47 . Memory (MB): peak = 1941.766 ; gain = 1539.445
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 5018 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 5048 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 1918.352 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1941.766 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 3 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 3 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-574 Infos, 342 Warnings, 100 Critical Warnings and 0 Errors encountered.
+575 Infos, 338 Warnings, 100 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:09:41 ; elapsed = 00:10:51 . Memory (MB): peak = 1918.352 ; gain = 1516.543
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 1918.352 ; gain = 0.000
+synth_design: Time (s): cpu = 00:04:31 ; elapsed = 00:04:52 . Memory (MB): peak = 1941.766 ; gain = 1539.445
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1941.766 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'E:/FPGA/project/smart_car_pld2026/my_car/prj/prj.runs/synth_1/top_dual_ov5640_lcd.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:11 ; elapsed = 00:00:10 . Memory (MB): peak = 1918.352 ; gain = 0.000
 INFO: [runtcl-4] Executing : report_utilization -file top_dual_ov5640_lcd_utilization_synth.rpt -pb top_dual_ov5640_lcd_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Jul 30 01:58:26 2026...
+INFO: [Common 17-206] Exiting Vivado at Thu Jul 30 10:27:35 2026...

@@ -182,7 +182,7 @@ wire  [ 7:0] ttc_ds                    ;
 // ---- [PLD2026 V3] 模式切换 ----
 wire  [ 1:0] disp_mode                 ;
 wire  [ 5:0] ms_th_g                   ;
-wire  [ 4:0] ms_th_rb                  ;
+wire  [ 5:0] ms_th_diff                ;
 
 // ---- [PLD2026 V2] 双目融合后的追踪输入（送 sensor_link/tracker） ----
 wire        any_found = gd_found | gd2_found;
@@ -281,8 +281,9 @@ ov5640_dri u_ov5640_dri_2(
 green_detect #(
     .H_ACTIVE (400),                 // 相机行有效像素 = h_disp/2
     .TH_G     (6'd40),               // 绿分量下限（实测再调）
-    .TH_RB    (5'd12),               // 红/蓝分量上限
-    .MIN_AREA (18'd100)              // 最少绿色像素数
+    .TH_DIFF  (6'd16),               // [V4] G-R/G-B 差分下限
+    .MIN_AREA (18'd60),              // [V4.2] 100→60：远距点阵每LED仅1px，cnt≈64
+    .DEN_SHIFT(4'd4)                 // [V4.2] 3→4（密度≥6.25%）：点阵是稀疏亮点非实心面
 ) u_green_detect (
     .clk          (cam_pclk_1),
     .rst_n        (rst_n),
@@ -290,7 +291,7 @@ green_detect #(
     .frame_valid  (cmos_frame_valid_1),
     .frame_data   (wr_data_1),
     .th_g         (ms_th_g),
-    .th_rb        (ms_th_rb),
+    .th_diff      (ms_th_diff),
     .gd_found     (gd_found),
     .gd_u         (gd_u),
     .gd_v         (gd_v),
@@ -307,8 +308,9 @@ green_detect #(
 green_detect #(
     .H_ACTIVE (400),
     .TH_G     (6'd40),
-    .TH_RB    (5'd12),
-    .MIN_AREA (18'd100)
+    .TH_DIFF  (6'd16),                 // [V4] G-R/G-B 差分下限
+    .MIN_AREA (18'd60),                // [V4.2] 100→60：远距点阵每LED仅1px，cnt≈64
+    .DEN_SHIFT(4'd4)                   // [V4.2] 3→4（密度≥6.25%）：点阵是稀疏亮点非实心面
 ) u_green_detect_2 (
     .clk          (cam_pclk_2),
     .rst_n        (rst_n),
@@ -316,7 +318,7 @@ green_detect #(
     .frame_valid  (cmos_frame_valid_2),
     .frame_data   (wr_data_2),
     .th_g         (ms_th_g),
-    .th_rb        (ms_th_rb),
+    .th_diff      (ms_th_diff),
     .gd_found     (gd2_found),
     .gd_u         (gd2_u),
     .gd_v         (gd2_v),
@@ -425,9 +427,9 @@ ttc_warn #(
 //*****************************************************
 mode_switch #(
     .NORM_TH_G   (6'd40),
-    .NORM_TH_RB  (5'd12),
+    .NORM_TH_DIFF (6'd16),
     .NIGHT_TH_G  (6'd28),                // 调试档：弱光放宽
-    .NIGHT_TH_RB (5'd18)
+    .NIGHT_TH_DIFF(6'd10)
 ) u_mode_switch (
     .clk       (clk_50m),
     .rst_n     (rst_n),
@@ -437,7 +439,7 @@ mode_switch #(
     .disp_mode (disp_mode),
     .rc_active (),
     .th_g      (ms_th_g),
-    .th_rb     (ms_th_rb)
+    .th_diff   (ms_th_diff)
 );
 
 //DDR3顶层模块

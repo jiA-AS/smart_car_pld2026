@@ -12,8 +12,8 @@
       <Properties Property="PROGRAM.CFG_PROGRAM" value="1"/>
       <Properties Property="PROGRAM.CHECKSUM" value="0"/>
       <Properties Property="PROGRAM.ERASE" value="1"/>
-      <Properties Property="PROGRAM.FILES" value="$_project_name_.runs/impl_1/my_car.mcs"/>
-      <Properties Property="PROGRAM.PRM_FILE" value="$_project_name_.runs/impl_1/my_car.prm"/>
+      <Properties Property="PROGRAM.FILES" value="$_project_name_.runs/impl_1/mycar.mcs"/>
+      <Properties Property="PROGRAM.PRM_FILE" value="$_project_name_.runs/impl_1/mycar.prm"/>
       <Properties Property="PROGRAM.UNUSED_PIN_TERMINATION" value="pull-none"/>
       <Properties Property="PROGRAM.VERIFY" value="1"/>
     </Object>
@@ -22,8 +22,8 @@
     <Object name="xc7a100t_0" gui_info="">
       <Properties Property="FULL_PROBES.FILE" value=""/>
       <Properties Property="PROBES.FILE" value=""/>
-      <Properties Property="PROGRAM.HW_BITSTREAM" value="D:/Xilinx/Vivado/2018.3/data/xicom/cfgmem/bitfile/spi_xc7a100t_pullnone.bit"/>
-      <Properties Property="PROGRAM.HW_CFGMEM_PART" value="mt25ql128-spi-x1_x2_x4"/>
+      <Properties Property="PROGRAM.HW_BITSTREAM" value="$_project_name_.runs/impl_1/top_dual_ov5640_lcd.bit"/>
+      <Properties Property="PROGRAM.HW_CFGMEM_PART" value=""/>
       <Properties Property="SLR.COUNT" value="1"/>
     </Object>
   </ObjectList>

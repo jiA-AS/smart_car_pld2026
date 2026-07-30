@@ -5,10 +5,10 @@ Using 2 slave threads.
 Starting static elaboration
 WARNING: [VRFC 10-3091] actual bit length 12 differs from formal bit length 13 for port 'cmos_h_pixel' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v:239]
 WARNING: [VRFC 10-3091] actual bit length 12 differs from formal bit length 13 for port 'cmos_h_pixel' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v:266]
-WARNING: [VRFC 10-3091] actual bit length 26 differs from formal bit length 28 for port 'app_addr_rd_max' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v:449]
-WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 8 for port 'rd_bust_len' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v:450]
-WARNING: [VRFC 10-3091] actual bit length 26 differs from formal bit length 28 for port 'app_addr_wr_max' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v:452]
-WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 8 for port 'wr_bust_len' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v:453]
+WARNING: [VRFC 10-3091] actual bit length 26 differs from formal bit length 28 for port 'app_addr_rd_max' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v:451]
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 8 for port 'rd_bust_len' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v:452]
+WARNING: [VRFC 10-3091] actual bit length 26 differs from formal bit length 28 for port 'app_addr_wr_max' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v:454]
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 8 for port 'wr_bust_len' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/top_dual_ov5640_lcd.v:455]
 WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'app_sr_req' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_top.v:174]
 WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'app_ref_req' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_top.v:175]
 WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'app_zq_req' [E:/FPGA/project/smart_car_pld2026/my_car/rtl/ddr3_top/ddr3_top.v:176]
@@ -31,7 +31,7 @@ Compiling module xil_defaultlib.i2c_ov5640_rgb565_cfg
 Compiling module xil_defaultlib.i2c_dri(SLAVE_ADDR=7'b0111100,CL...
 Compiling module xil_defaultlib.cmos_capture_data
 Compiling module xil_defaultlib.ov5640_dri
-Compiling module xil_defaultlib.green_detect(TH_G=6'b101000,TH_R...
+Compiling module xil_defaultlib.green_detect(MIN_AREA=18'b011110...
 Compiling module xil_defaultlib.stereo_dist_default
 Compiling module xil_defaultlib.atan_lut
 Compiling module xil_defaultlib.attitude_cf_default
